@@ -1,0 +1,26 @@
+# secrets and local config
+.env
+*.local
+
+# python
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# pipeline outputs and checkpoints
+output/
+*.sqlite
+*.sqlite-journal
+
+# downloaded public samples (fetched by evals/public/fetch.py)
+data/public/
+
+# editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
