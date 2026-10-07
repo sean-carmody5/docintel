@@ -1,0 +1,13 @@
+supplier,"Harbin Yuantai Pharmaceutical Co., Ltd."
+quotation_ref,HYT-2600130
+date,2026-07-26
+valid_until,2026-09-09
+currency,USD
+incoterm,CIF Dar es Salaam (TZDAR)
+
+line,product,inn,strength,form,units_per_pack,uom,unit_price,pack_price,moq_packs,lead_days
+1,Zincex 20,Zinc sulfate,20 mg,Dispersible tablet,10,tablet,0.0297,0.297,5000,60
+2,Yuanprazi 600,Praziquantel,600 mg,Film-coated tablet,4,tablet,0.1171,0.4684,5000,35
+3,Statinex 20,Atorvastatin,20 mg,Film-coated tablet,30,tablet,0.0326,0.978,1000,42
+4,Yuantld 300,Tenofovir disoproxil fumarate + Lamivudine + Dolutegravir,300 mg / 300 mg / 50 mg,Film-coated tablet,180,tablet,0.1379,24.822,500,21
+5,Dipex 10,Amlodipine,10 mg,Tablet,28,tablet,0.0115,0.322,20000,75

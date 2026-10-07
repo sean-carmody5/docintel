@@ -1,0 +1,2644 @@
+{
+  "generator_version": "1",
+  "seed": 2026,
+  "case_count": 45,
+  "cases": [
+    {
+      "id": "json_erp_nested_01",
+      "kind": "json",
+      "variant": "erp_nested",
+      "supplier": "meridian",
+      "features": [
+        "cold_chain",
+        "pack_price_only"
+      ],
+      "n_lines": 6,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "meridian_export_2026-08-26.json"
+      ],
+      "dir": "json_erp_nested_01",
+      "truth": "json_erp_nested_01/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "json_erp_nested_02",
+      "kind": "json",
+      "variant": "erp_nested",
+      "supplier": "nilgiri",
+      "features": [
+        "distractor_alt_price",
+        "inn_variant",
+        "pack_price_only"
+      ],
+      "n_lines": 4,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "nilgiri_export_2026-06-11.json"
+      ],
+      "dir": "json_erp_nested_02",
+      "truth": "json_erp_nested_02/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "json_flat_lines_01",
+      "kind": "json",
+      "variant": "flat_lines",
+      "supplier": "yuantai",
+      "features": [],
+      "n_lines": 7,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "yuantai_export_2026-08-01.json"
+      ],
+      "dir": "json_flat_lines_01",
+      "truth": "json_flat_lines_01/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "json_flat_lines_02",
+      "kind": "json",
+      "variant": "flat_lines",
+      "supplier": "indus",
+      "features": [
+        "inn_variant",
+        "long",
+        "strength_variant"
+      ],
+      "n_lines": 13,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "indus_export_2026-06-02.json"
+      ],
+      "dir": "json_flat_lines_02",
+      "truth": "json_flat_lines_02/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "json_catalogue_tiers_01",
+      "kind": "json",
+      "variant": "catalogue_tiers",
+      "supplier": "highveld",
+      "features": [
+        "tiered",
+        "vat_note"
+      ],
+      "n_lines": 5,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "highveld_export_2026-09-10.json"
+      ],
+      "dir": "json_catalogue_tiers_01",
+      "truth": "json_catalogue_tiers_01/truth.json",
+      "currency": "ZAR"
+    },
+    {
+      "id": "json_catalogue_tiers_02",
+      "kind": "json",
+      "variant": "catalogue_tiers",
+      "supplier": "baobab",
+      "features": [
+        "mixed_uom",
+        "tiered"
+      ],
+      "n_lines": 4,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "baobab_export_2026-08-08.json"
+      ],
+      "dir": "json_catalogue_tiers_02",
+      "truth": "json_catalogue_tiers_02/truth.json",
+      "currency": "KES"
+    },
+    {
+      "id": "json_camel_api_01",
+      "kind": "json",
+      "variant": "camel_api",
+      "supplier": "dongnai",
+      "features": [
+        "cold_chain"
+      ],
+      "n_lines": 4,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "dong_nai_export_2026-08-16.json"
+      ],
+      "dir": "json_camel_api_01",
+      "truth": "json_camel_api_01/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "json_camel_api_02",
+      "kind": "json",
+      "variant": "camel_api",
+      "supplier": "amman",
+      "features": [
+        "lead_time_weeks",
+        "pack_price_only"
+      ],
+      "n_lines": 6,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "amman_pharma_export_2026-08-23.json"
+      ],
+      "dir": "json_camel_api_02",
+      "truth": "json_camel_api_02/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "json_attribute_list_01",
+      "kind": "json",
+      "variant": "attribute_list",
+      "supplier": "anatolia",
+      "features": [
+        "lead_time_weeks",
+        "symbol_currency"
+      ],
+      "n_lines": 3,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "anatolia_export_2026-09-02.json"
+      ],
+      "dir": "json_attribute_list_01",
+      "truth": "json_attribute_list_01/truth.json",
+      "currency": "EUR"
+    },
+    {
+      "id": "json_attribute_list_02",
+      "kind": "json",
+      "variant": "attribute_list",
+      "supplier": "helvetia",
+      "features": [
+        "pack_price_only",
+        "strength_variant"
+      ],
+      "n_lines": 2,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "helvetia_export_2026-07-22.json"
+      ],
+      "dir": "json_attribute_list_02",
+      "truth": "json_attribute_list_02/truth.json",
+      "currency": "CHF"
+    },
+    {
+      "id": "json_table_dump_01",
+      "kind": "json",
+      "variant": "table_dump",
+      "supplier": "jiangnan",
+      "features": [
+        "inn_variant"
+      ],
+      "n_lines": 5,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "jiangnan_export_2026-06-04.json"
+      ],
+      "dir": "json_table_dump_01",
+      "truth": "json_table_dump_01/truth.json",
+      "currency": "CNY"
+    },
+    {
+      "id": "json_table_dump_02",
+      "kind": "json",
+      "variant": "table_dump",
+      "supplier": "dhaka",
+      "features": [
+        "mixed_uom",
+        "pack_price_only"
+      ],
+      "n_lines": 3,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "dhaka_pharma_export_2026-07-28.json"
+      ],
+      "dir": "json_table_dump_02",
+      "truth": "json_table_dump_02/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "pdf_classic_01",
+      "kind": "pdf",
+      "variant": "classic_proforma",
+      "supplier": "pacifico",
+      "features": [
+        "discount",
+        "quantity_extended"
+      ],
+      "n_lines": 6,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "pacifico_quotation_PF-COT-26-113.pdf"
+      ],
+      "dir": "pdf_classic_01",
+      "truth": "pdf_classic_01/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "pdf_classic_02",
+      "kind": "pdf",
+      "variant": "classic_proforma",
+      "supplier": "kaveri",
+      "features": [
+        "correction",
+        "discount",
+        "inn_variant",
+        "quantity_extended"
+      ],
+      "n_lines": 6,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "kaveri_quotation_KLS-26-00114.pdf"
+      ],
+      "dir": "pdf_classic_02",
+      "truth": "pdf_classic_02/truth.json",
+      "currency": "INR"
+    },
+    {
+      "id": "pdf_classic_03",
+      "kind": "pdf",
+      "variant": "classic_proforma",
+      "supplier": "lagosbio",
+      "features": [
+        "long",
+        "quantity_extended"
+      ],
+      "n_lines": 12,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "lagos_bio_quotation_LB-26-Q0115.pdf"
+      ],
+      "dir": "pdf_classic_03",
+      "truth": "pdf_classic_03/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "pdf_modern_01",
+      "kind": "pdf",
+      "variant": "modern_quote",
+      "supplier": "dongnai",
+      "features": [
+        "cold_chain",
+        "mixed_uom"
+      ],
+      "n_lines": 6,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "dong_nai_quotation_DNP-26-0116.pdf"
+      ],
+      "dir": "pdf_modern_01",
+      "truth": "pdf_modern_01/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "pdf_modern_02",
+      "kind": "pdf",
+      "variant": "modern_quote",
+      "supplier": "meridian",
+      "features": [
+        "distractor_alt_price",
+        "pack_price_only"
+      ],
+      "n_lines": 2,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "meridian_quotation_MPL-Q-26-0117.pdf"
+      ],
+      "dir": "pdf_modern_02",
+      "truth": "pdf_modern_02/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "pdf_modern_03",
+      "kind": "pdf",
+      "variant": "modern_quote",
+      "supplier": "highveld",
+      "features": [
+        "correction",
+        "inn_variant",
+        "vat_note"
+      ],
+      "n_lines": 2,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "highveld_quotation_HG-Q26-0118.pdf"
+      ],
+      "dir": "pdf_modern_03",
+      "truth": "pdf_modern_03/truth.json",
+      "currency": "ZAR"
+    },
+    {
+      "id": "pdf_letter_01",
+      "kind": "pdf",
+      "variant": "letter_style",
+      "supplier": "deltafarm",
+      "features": [
+        "correction",
+        "lead_time_weeks"
+      ],
+      "n_lines": 3,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "delta_quotation_DF-26-0119.pdf"
+      ],
+      "dir": "pdf_letter_01",
+      "truth": "pdf_letter_01/truth.json",
+      "currency": "EUR"
+    },
+    {
+      "id": "pdf_letter_02",
+      "kind": "pdf",
+      "variant": "letter_style",
+      "supplier": "helvetia",
+      "features": [
+        "pack_price_only"
+      ],
+      "n_lines": 7,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "helvetia_quotation_HG-26-00120.pdf"
+      ],
+      "dir": "pdf_letter_02",
+      "truth": "pdf_letter_02/truth.json",
+      "currency": "CHF"
+    },
+    {
+      "id": "pdf_letter_03",
+      "kind": "pdf",
+      "variant": "letter_style",
+      "supplier": "baobab",
+      "features": [
+        "tiered"
+      ],
+      "n_lines": 3,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "baobab_quotation_BPL-QT-26-0121.pdf"
+      ],
+      "dir": "pdf_letter_03",
+      "truth": "pdf_letter_03/truth.json",
+      "currency": "KES"
+    },
+    {
+      "id": "img_fax_01",
+      "kind": "image",
+      "variant": "fax",
+      "supplier": "pacifico",
+      "features": [
+        "discount",
+        "quantity_extended"
+      ],
+      "n_lines": 6,
+      "source": "pdf_classic_01",
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "scan_fax_pacifico_p1.png"
+      ],
+      "dir": "img_fax_01",
+      "truth": "img_fax_01/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "img_photo_01",
+      "kind": "image",
+      "variant": "photo",
+      "supplier": "dongnai",
+      "features": [
+        "cold_chain",
+        "mixed_uom"
+      ],
+      "n_lines": 6,
+      "source": "pdf_modern_01",
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "scan_photo_dong-nai_p1.jpg"
+      ],
+      "dir": "img_photo_01",
+      "truth": "img_photo_01/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "img_crop_01",
+      "kind": "image",
+      "variant": "crop",
+      "supplier": "kaveri",
+      "features": [
+        "correction",
+        "discount",
+        "inn_variant",
+        "quantity_extended"
+      ],
+      "n_lines": 6,
+      "source": "pdf_classic_02",
+      "hostile": null,
+      "expect": "partial",
+      "note": "Only part of the page is captured; some lines are legitimately missing.",
+      "files": [
+        "scan_crop_kaveri_p1.jpg"
+      ],
+      "dir": "img_crop_01",
+      "truth": "img_crop_01/truth.json",
+      "currency": "INR"
+    },
+    {
+      "id": "img_heavy_01",
+      "kind": "image",
+      "variant": "heavy",
+      "supplier": "deltafarm",
+      "features": [
+        "correction",
+        "lead_time_weeks"
+      ],
+      "n_lines": 3,
+      "source": "pdf_letter_01",
+      "hostile": null,
+      "expect": "low_confidence",
+      "note": "Mostly unreadable by design. Correct behaviour is low confidence, not confident values.",
+      "files": [
+        "scan_heavy_delta_p1.jpg"
+      ],
+      "dir": "img_heavy_01",
+      "truth": "img_heavy_01/truth.json",
+      "currency": "EUR"
+    },
+    {
+      "id": "img_fax_02",
+      "kind": "image",
+      "variant": "fax",
+      "supplier": "meridian",
+      "features": [
+        "distractor_alt_price",
+        "pack_price_only"
+      ],
+      "n_lines": 2,
+      "source": "pdf_modern_02",
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "scan_fax_meridian_p1.png"
+      ],
+      "dir": "img_fax_02",
+      "truth": "img_fax_02/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "img_photo_02",
+      "kind": "image",
+      "variant": "photo",
+      "supplier": "lagosbio",
+      "features": [
+        "long",
+        "quantity_extended"
+      ],
+      "n_lines": 12,
+      "source": "pdf_classic_03",
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "scan_photo_lagos-bio_p1.jpg"
+      ],
+      "dir": "img_photo_02",
+      "truth": "img_photo_02/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "img_crop_02",
+      "kind": "image",
+      "variant": "crop",
+      "supplier": "highveld",
+      "features": [
+        "correction",
+        "inn_variant",
+        "vat_note"
+      ],
+      "n_lines": 2,
+      "source": "pdf_modern_03",
+      "hostile": null,
+      "expect": "partial",
+      "note": "",
+      "files": [
+        "scan_crop_highveld_p1.jpg"
+      ],
+      "dir": "img_crop_02",
+      "truth": "img_crop_02/truth.json",
+      "currency": "ZAR"
+    },
+    {
+      "id": "eml_plain_ps_01",
+      "kind": "eml",
+      "variant": "plain_numbered_ps",
+      "supplier": "lowlands",
+      "features": [
+        "correction"
+      ],
+      "n_lines": 6,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "RE_AXMED-RFQ-2026-0385_lowlands_quotation.eml"
+      ],
+      "dir": "eml_plain_ps_01",
+      "truth": "eml_plain_ps_01/truth.json",
+      "currency": "EUR"
+    },
+    {
+      "id": "eml_html_table_01",
+      "kind": "eml",
+      "variant": "html_table_only",
+      "supplier": "nilevalley",
+      "features": [],
+      "n_lines": 6,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "RE_AXMED-RFQ-2026-0359_nile_valley_quotation.eml"
+      ],
+      "dir": "eml_html_table_01",
+      "truth": "eml_html_table_01/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "eml_thread_prose_01",
+      "kind": "eml",
+      "variant": "thread_prose",
+      "supplier": "baobab",
+      "features": [
+        "correction",
+        "lead_time_weeks"
+      ],
+      "n_lines": 4,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "RE_AXMED-RFQ-2026-0280_baobab_quotation.eml"
+      ],
+      "dir": "eml_thread_prose_01",
+      "truth": "eml_thread_prose_01/truth.json",
+      "currency": "KES"
+    },
+    {
+      "id": "eml_thread_prose_02",
+      "kind": "eml",
+      "variant": "thread_prose",
+      "supplier": "pacifico",
+      "features": [
+        "pack_price_only"
+      ],
+      "n_lines": 6,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "RE_AXMED-RFQ-2026-0335_pacifico_quotation.eml"
+      ],
+      "dir": "eml_thread_prose_02",
+      "truth": "eml_thread_prose_02/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "eml_attachment_01",
+      "kind": "eml",
+      "variant": "with_attachment",
+      "supplier": "amman",
+      "features": [
+        "cold_chain"
+      ],
+      "n_lines": 3,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "Figures live in the attached PDF, not the body.",
+      "files": [
+        "RE_AXMED-RFQ-2026-0354_amman_pharma_quotation.eml"
+      ],
+      "dir": "eml_attachment_01",
+      "truth": "eml_attachment_01/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "xlsx_pricelist_01",
+      "kind": "xlsx",
+      "variant": "pricelist",
+      "supplier": "highveld",
+      "features": [
+        "tiered",
+        "vat_note"
+      ],
+      "n_lines": 5,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "highveld_price_list_2026-06-13.xlsx"
+      ],
+      "dir": "xlsx_pricelist_01",
+      "truth": "xlsx_pricelist_01/truth.json",
+      "currency": "ZAR"
+    },
+    {
+      "id": "xlsx_pricelist_02",
+      "kind": "xlsx",
+      "variant": "pricelist",
+      "supplier": "kaveri",
+      "features": [
+        "correction"
+      ],
+      "n_lines": 5,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "kaveri_price_list_2026-06-21.xlsx"
+      ],
+      "dir": "xlsx_pricelist_02",
+      "truth": "xlsx_pricelist_02/truth.json",
+      "currency": "INR"
+    },
+    {
+      "id": "docx_letter_01",
+      "kind": "docx",
+      "variant": "letter",
+      "supplier": "deltafarm",
+      "features": [
+        "pack_price_only"
+      ],
+      "n_lines": 2,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "delta_quotation_DF-26-0129.docx"
+      ],
+      "dir": "docx_letter_01",
+      "truth": "docx_letter_01/truth.json",
+      "currency": "EUR"
+    },
+    {
+      "id": "csv_standard_01",
+      "kind": "csv",
+      "variant": "standard",
+      "supplier": "yuantai",
+      "features": [],
+      "n_lines": 5,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "yuantai_export_2026-07-26.csv"
+      ],
+      "dir": "csv_standard_01",
+      "truth": "csv_standard_01/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "csv_eu_01",
+      "kind": "csv",
+      "variant": "eu",
+      "supplier": "anatolia",
+      "features": [],
+      "n_lines": 5,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "Semicolon separated, comma decimals, German headers.",
+      "files": [
+        "anatolia_export_2026-07-03.csv"
+      ],
+      "dir": "csv_eu_01",
+      "truth": "csv_eu_01/truth.json",
+      "currency": "EUR"
+    },
+    {
+      "id": "hostile_json_visible",
+      "kind": "json",
+      "variant": "flat_lines",
+      "supplier": "indus",
+      "features": [],
+      "n_lines": 5,
+      "source": null,
+      "hostile": "price_override",
+      "expect": "extract_and_flag",
+      "note": "",
+      "files": [
+        "indus_export_2026-07-24.json"
+      ],
+      "dir": "hostile_json_visible",
+      "truth": "hostile_json_visible/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "hostile_json_comment",
+      "kind": "json",
+      "variant": "camel_api",
+      "supplier": "dhaka",
+      "features": [],
+      "n_lines": 7,
+      "source": null,
+      "hostile": "role_swap",
+      "expect": "extract_and_flag",
+      "note": "",
+      "files": [
+        "dhaka_pharma_export_2026-08-04.json"
+      ],
+      "dir": "hostile_json_comment",
+      "truth": "hostile_json_comment/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "hostile_pdf_white",
+      "kind": "pdf",
+      "variant": "classic_proforma",
+      "supplier": "lowlands",
+      "features": [
+        "quantity_extended"
+      ],
+      "n_lines": 7,
+      "source": null,
+      "hostile": "polite",
+      "expect": "extract_and_flag",
+      "note": "Injection is white 1pt text in the text layer.",
+      "files": [
+        "lowlands_quotation_LP-26-0134.pdf"
+      ],
+      "dir": "hostile_pdf_white",
+      "truth": "hostile_pdf_white/truth.json",
+      "currency": "EUR"
+    },
+    {
+      "id": "hostile_eml_hidden",
+      "kind": "eml",
+      "variant": "plain_numbered_ps",
+      "supplier": "nilevalley",
+      "features": [],
+      "n_lines": 6,
+      "source": null,
+      "hostile": "exfil",
+      "expect": "extract_and_flag",
+      "note": "Injection is in a display:none div in the HTML part.",
+      "files": [
+        "RE_AXMED-RFQ-2026-0267_nile_valley_quotation.eml"
+      ],
+      "dir": "hostile_eml_hidden",
+      "truth": "hostile_eml_hidden/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "misnamed_json_as_txt",
+      "kind": "misnamed",
+      "variant": ".txt",
+      "supplier": "yuantai",
+      "features": [],
+      "n_lines": 7,
+      "source": "json_flat_lines_01",
+      "hostile": null,
+      "expect": "extract",
+      "note": "JSON content with a .txt extension. Content sniffing should still load it.",
+      "files": [
+        "yuantai_export_2026-08-01.txt"
+      ],
+      "dir": "misnamed_json_as_txt",
+      "truth": "misnamed_json_as_txt/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "misnamed_pdf_as_dat",
+      "kind": "misnamed",
+      "variant": ".dat",
+      "supplier": "dongnai",
+      "features": [
+        "cold_chain",
+        "mixed_uom"
+      ],
+      "n_lines": 6,
+      "source": "pdf_modern_01",
+      "hostile": null,
+      "expect": "extract",
+      "note": "PDF bytes with a .dat extension.",
+      "files": [
+        "dong_nai_quotation_DNP-26-0116.dat"
+      ],
+      "dir": "misnamed_pdf_as_dat",
+      "truth": "misnamed_pdf_as_dat/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "unsupported_noise_bin",
+      "kind": "unsupported",
+      "variant": "noise",
+      "supplier": "",
+      "features": [],
+      "n_lines": null,
+      "source": null,
+      "hostile": null,
+      "expect": "unsupported",
+      "note": "Random bytes. Must produce an unsupported record, not a crash and not a guess.",
+      "files": [
+        "export_20260812.bin"
+      ],
+      "dir": "unsupported_noise_bin"
+    }
+  ],
+  "reconcile_groups": {
+    "amoxicillin_500": [
+      {
+        "case": "json_erp_nested_01",
+        "line_no": 1,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 20,
+        "price_per_uom": 0.0312,
+        "inn_as_written": "Amoxicillin"
+      },
+      {
+        "case": "pdf_letter_02",
+        "line_no": 4,
+        "supplier": "helvetia",
+        "currency": "CHF",
+        "units_per_pack": 10,
+        "price_per_uom": 0.0143,
+        "inn_as_written": "Amoxicillin"
+      },
+      {
+        "case": "hostile_eml_hidden",
+        "line_no": 6,
+        "supplier": "nilevalley",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.031,
+        "inn_as_written": "Amoxicillin"
+      }
+    ],
+    "omeprazole_20": [
+      {
+        "case": "json_erp_nested_01",
+        "line_no": 2,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 14,
+        "price_per_uom": 0.0151,
+        "inn_as_written": "Omeprazole"
+      },
+      {
+        "case": "eml_thread_prose_02",
+        "line_no": 2,
+        "supplier": "pacifico",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0173,
+        "inn_as_written": "Omeprazole"
+      },
+      {
+        "case": "csv_eu_01",
+        "line_no": 5,
+        "supplier": "anatolia",
+        "currency": "EUR",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0109,
+        "inn_as_written": "Omeprazole"
+      }
+    ],
+    "salbutamol_syrup": [
+      {
+        "case": "json_erp_nested_01",
+        "line_no": 3,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 24,
+        "price_per_uom": 0.3581,
+        "inn_as_written": "Salbutamol"
+      },
+      {
+        "case": "json_table_dump_02",
+        "line_no": 1,
+        "supplier": "dhaka",
+        "currency": "USD",
+        "units_per_pack": 1,
+        "price_per_uom": 0.5765,
+        "inn_as_written": "Salbutamol"
+      }
+    ],
+    "doxycycline_100": [
+      {
+        "case": "json_erp_nested_01",
+        "line_no": 4,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 1000,
+        "price_per_uom": 0.0398,
+        "inn_as_written": "Doxycycline"
+      },
+      {
+        "case": "json_flat_lines_01",
+        "line_no": 1,
+        "supplier": "yuantai",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 0.0202,
+        "inn_as_written": "Doxycycline"
+      },
+      {
+        "case": "json_flat_lines_02",
+        "line_no": 7,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0211,
+        "inn_as_written": "Doxycycline hyclate"
+      },
+      {
+        "case": "json_catalogue_tiers_02",
+        "line_no": 1,
+        "supplier": "baobab",
+        "currency": "KES",
+        "units_per_pack": 100,
+        "price_per_uom": 4.035,
+        "inn_as_written": "Doxycycline"
+      },
+      {
+        "case": "hostile_json_comment",
+        "line_no": 5,
+        "supplier": "dhaka",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 0.0276,
+        "inn_as_written": "Doxycycline"
+      }
+    ],
+    "hctz_25": [
+      {
+        "case": "json_erp_nested_01",
+        "line_no": 5,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.011,
+        "inn_as_written": "Hydrochlorothiazide"
+      },
+      {
+        "case": "json_catalogue_tiers_01",
+        "line_no": 3,
+        "supplier": "highveld",
+        "currency": "ZAR",
+        "units_per_pack": 100,
+        "price_per_uom": 0.1237,
+        "inn_as_written": "Hydrochlorothiazide"
+      },
+      {
+        "case": "pdf_classic_03",
+        "line_no": 1,
+        "supplier": "lagosbio",
+        "currency": "USD",
+        "units_per_pack": 1000,
+        "price_per_uom": 0.0078,
+        "inn_as_written": "Hydrochlorothiazide"
+      },
+      {
+        "case": "pdf_letter_02",
+        "line_no": 6,
+        "supplier": "helvetia",
+        "currency": "CHF",
+        "units_per_pack": 1000,
+        "price_per_uom": 0.0068,
+        "inn_as_written": "Hydrochlorothiazide"
+      }
+    ],
+    "insulin_glargine_pen": [
+      {
+        "case": "json_erp_nested_01",
+        "line_no": 6,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 5,
+        "price_per_uom": 9.889,
+        "inn_as_written": "Insulin glargine"
+      },
+      {
+        "case": "json_erp_nested_02",
+        "line_no": 2,
+        "supplier": "nilgiri",
+        "currency": "USD",
+        "units_per_pack": 5,
+        "price_per_uom": 12.754,
+        "inn_as_written": "Insulin glargine"
+      },
+      {
+        "case": "json_camel_api_01",
+        "line_no": 4,
+        "supplier": "dongnai",
+        "currency": "USD",
+        "units_per_pack": 5,
+        "price_per_uom": 8.655,
+        "inn_as_written": "Insulin glargine"
+      },
+      {
+        "case": "pdf_classic_03",
+        "line_no": 2,
+        "supplier": "lagosbio",
+        "currency": "USD",
+        "units_per_pack": 5,
+        "price_per_uom": 11.138,
+        "inn_as_written": "Insulin glargine"
+      },
+      {
+        "case": "eml_attachment_01",
+        "line_no": 3,
+        "supplier": "amman",
+        "currency": "USD",
+        "units_per_pack": 5,
+        "price_per_uom": 5.335,
+        "inn_as_written": "Insulin glargine"
+      },
+      {
+        "case": "xlsx_pricelist_02",
+        "line_no": 4,
+        "supplier": "kaveri",
+        "currency": "INR",
+        "units_per_pack": 5,
+        "price_per_uom": 855.95,
+        "inn_as_written": "Insulin glargine"
+      },
+      {
+        "case": "csv_eu_01",
+        "line_no": 3,
+        "supplier": "anatolia",
+        "currency": "EUR",
+        "units_per_pack": 5,
+        "price_per_uom": 8.54,
+        "inn_as_written": "Insulin glargine"
+      }
+    ],
+    "tld": [
+      {
+        "case": "json_erp_nested_02",
+        "line_no": 1,
+        "supplier": "nilgiri",
+        "currency": "USD",
+        "units_per_pack": 90,
+        "price_per_uom": 0.1905,
+        "inn_as_written": "Tenofovir/Lamivudine/Dolutegravir"
+      },
+      {
+        "case": "json_flat_lines_02",
+        "line_no": 11,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 30,
+        "price_per_uom": 0.1802,
+        "inn_as_written": "Tenofovir/Lamivudine/Dolutegravir"
+      },
+      {
+        "case": "csv_standard_01",
+        "line_no": 4,
+        "supplier": "yuantai",
+        "currency": "USD",
+        "units_per_pack": 180,
+        "price_per_uom": 0.1379,
+        "inn_as_written": "Tenofovir disoproxil fumarate + Lamivudine + Dolutegravir"
+      }
+    ],
+    "praziquantel_600": [
+      {
+        "case": "json_erp_nested_02",
+        "line_no": 3,
+        "supplier": "nilgiri",
+        "currency": "USD",
+        "units_per_pack": 4,
+        "price_per_uom": 0.1425,
+        "inn_as_written": "Praziquantel"
+      },
+      {
+        "case": "json_flat_lines_02",
+        "line_no": 4,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 4,
+        "price_per_uom": 0.1768,
+        "inn_as_written": "Praziquantel"
+      },
+      {
+        "case": "eml_attachment_01",
+        "line_no": 1,
+        "supplier": "amman",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.097,
+        "inn_as_written": "Praziquantel"
+      },
+      {
+        "case": "csv_standard_01",
+        "line_no": 2,
+        "supplier": "yuantai",
+        "currency": "USD",
+        "units_per_pack": 4,
+        "price_per_uom": 0.1171,
+        "inn_as_written": "Praziquantel"
+      },
+      {
+        "case": "hostile_json_visible",
+        "line_no": 4,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0993,
+        "inn_as_written": "Praziquantel"
+      }
+    ],
+    "iron_folic": [
+      {
+        "case": "json_erp_nested_02",
+        "line_no": 4,
+        "supplier": "nilgiri",
+        "currency": "USD",
+        "units_per_pack": 30,
+        "price_per_uom": 0.0034,
+        "inn_as_written": "Ferrous sulfate + Folic acid"
+      },
+      {
+        "case": "json_flat_lines_01",
+        "line_no": 7,
+        "supplier": "yuantai",
+        "currency": "USD",
+        "units_per_pack": 1000,
+        "price_per_uom": 0.0034,
+        "inn_as_written": "Ferrous sulfate + Folic acid"
+      },
+      {
+        "case": "json_camel_api_01",
+        "line_no": 3,
+        "supplier": "dongnai",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0058,
+        "inn_as_written": "Ferrous sulfate + Folic acid"
+      },
+      {
+        "case": "json_table_dump_01",
+        "line_no": 2,
+        "supplier": "jiangnan",
+        "currency": "CNY",
+        "units_per_pack": 1000,
+        "price_per_uom": 0.0557,
+        "inn_as_written": "Ferrous sulphate/Folic acid"
+      },
+      {
+        "case": "xlsx_pricelist_01",
+        "line_no": 4,
+        "supplier": "highveld",
+        "currency": "ZAR",
+        "units_per_pack": 30,
+        "price_per_uom": 0.165,
+        "inn_as_written": "Ferrous sulfate + Folic acid"
+      },
+      {
+        "case": "hostile_json_comment",
+        "line_no": 3,
+        "supplier": "dhaka",
+        "currency": "USD",
+        "units_per_pack": 1000,
+        "price_per_uom": 0.005,
+        "inn_as_written": "Ferrous sulfate + Folic acid"
+      }
+    ],
+    "cotrimoxazole_480": [
+      {
+        "case": "json_flat_lines_01",
+        "line_no": 2,
+        "supplier": "yuantai",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 0.0245,
+        "inn_as_written": "Sulfamethoxazole + Trimethoprim"
+      },
+      {
+        "case": "pdf_modern_01",
+        "line_no": 4,
+        "supplier": "dongnai",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.016,
+        "inn_as_written": "Sulfamethoxazole + Trimethoprim"
+      },
+      {
+        "case": "eml_html_table_01",
+        "line_no": 4,
+        "supplier": "nilevalley",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0286,
+        "inn_as_written": "Sulfamethoxazole + Trimethoprim"
+      }
+    ],
+    "amlodipine_5": [
+      {
+        "case": "json_flat_lines_01",
+        "line_no": 3,
+        "supplier": "yuantai",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 0.01,
+        "inn_as_written": "Amlodipine"
+      },
+      {
+        "case": "json_catalogue_tiers_01",
+        "line_no": 4,
+        "supplier": "highveld",
+        "currency": "ZAR",
+        "units_per_pack": 10,
+        "price_per_uom": 0.17,
+        "inn_as_written": "Amlodipine"
+      },
+      {
+        "case": "json_camel_api_02",
+        "line_no": 5,
+        "supplier": "amman",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 0.0121,
+        "inn_as_written": "Amlodipine"
+      },
+      {
+        "case": "pdf_classic_01",
+        "line_no": 5,
+        "supplier": "pacifico",
+        "currency": "USD",
+        "units_per_pack": 30,
+        "price_per_uom": 0.0084,
+        "inn_as_written": "Amlodipine"
+      },
+      {
+        "case": "pdf_modern_02",
+        "line_no": 1,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 30,
+        "price_per_uom": 0.0049,
+        "inn_as_written": "Amlodipine"
+      },
+      {
+        "case": "hostile_eml_hidden",
+        "line_no": 4,
+        "supplier": "nilevalley",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 0.0083,
+        "inn_as_written": "Amlodipine"
+      }
+    ],
+    "misoprostol_200": [
+      {
+        "case": "json_flat_lines_01",
+        "line_no": 4,
+        "supplier": "yuantai",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0941,
+        "inn_as_written": "Misoprostol"
+      },
+      {
+        "case": "pdf_classic_02",
+        "line_no": 1,
+        "supplier": "kaveri",
+        "currency": "INR",
+        "units_per_pack": 4,
+        "price_per_uom": 14.658,
+        "inn_as_written": "Misoprostol"
+      },
+      {
+        "case": "eml_thread_prose_01",
+        "line_no": 2,
+        "supplier": "baobab",
+        "currency": "KES",
+        "units_per_pack": 4,
+        "price_per_uom": 33.485,
+        "inn_as_written": "Misoprostol"
+      },
+      {
+        "case": "hostile_json_visible",
+        "line_no": 3,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.1512,
+        "inn_as_written": "Misoprostol"
+      }
+    ],
+    "artemether_lumefantrine": [
+      {
+        "case": "json_flat_lines_01",
+        "line_no": 5,
+        "supplier": "yuantai",
+        "currency": "USD",
+        "units_per_pack": 24,
+        "price_per_uom": 0.0359,
+        "inn_as_written": "Artemether + Lumefantrine"
+      },
+      {
+        "case": "pdf_letter_01",
+        "line_no": 1,
+        "supplier": "deltafarm",
+        "currency": "EUR",
+        "units_per_pack": 24,
+        "price_per_uom": 0.0428,
+        "inn_as_written": "Artemether + Lumefantrine"
+      },
+      {
+        "case": "hostile_pdf_white",
+        "line_no": 7,
+        "supplier": "lowlands",
+        "currency": "EUR",
+        "units_per_pack": 12,
+        "price_per_uom": 0.051,
+        "inn_as_written": "Artemether + Lumefantrine"
+      }
+    ],
+    "amlodipine_10": [
+      {
+        "case": "json_flat_lines_01",
+        "line_no": 6,
+        "supplier": "yuantai",
+        "currency": "USD",
+        "units_per_pack": 28,
+        "price_per_uom": 0.0185,
+        "inn_as_written": "Amlodipine"
+      },
+      {
+        "case": "json_flat_lines_02",
+        "line_no": 8,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0075,
+        "inn_as_written": "Amlodipine"
+      },
+      {
+        "case": "json_table_dump_01",
+        "line_no": 1,
+        "supplier": "jiangnan",
+        "currency": "CNY",
+        "units_per_pack": 28,
+        "price_per_uom": 0.1064,
+        "inn_as_written": "Amlodipine"
+      },
+      {
+        "case": "pdf_letter_02",
+        "line_no": 7,
+        "supplier": "helvetia",
+        "currency": "CHF",
+        "units_per_pack": 30,
+        "price_per_uom": 0.0077,
+        "inn_as_written": "Amlodipine"
+      },
+      {
+        "case": "eml_thread_prose_01",
+        "line_no": 3,
+        "supplier": "baobab",
+        "currency": "KES",
+        "units_per_pack": 100,
+        "price_per_uom": 1.993,
+        "inn_as_written": "Amlodipine"
+      },
+      {
+        "case": "csv_standard_01",
+        "line_no": 5,
+        "supplier": "yuantai",
+        "currency": "USD",
+        "units_per_pack": 28,
+        "price_per_uom": 0.0115,
+        "inn_as_written": "Amlodipine"
+      },
+      {
+        "case": "hostile_eml_hidden",
+        "line_no": 3,
+        "supplier": "nilevalley",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0178,
+        "inn_as_written": "Amlodipine"
+      }
+    ],
+    "salbutamol_inhaler": [
+      {
+        "case": "json_flat_lines_02",
+        "line_no": 2,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 1,
+        "price_per_uom": 1.59,
+        "inn_as_written": "Albuterol"
+      },
+      {
+        "case": "pdf_classic_01",
+        "line_no": 2,
+        "supplier": "pacifico",
+        "currency": "USD",
+        "units_per_pack": 1,
+        "price_per_uom": 2.158,
+        "inn_as_written": "Salbutamol"
+      },
+      {
+        "case": "eml_plain_ps_01",
+        "line_no": 4,
+        "supplier": "lowlands",
+        "currency": "EUR",
+        "units_per_pack": 1,
+        "price_per_uom": 1.946,
+        "inn_as_written": "Salbutamol"
+      },
+      {
+        "case": "hostile_json_comment",
+        "line_no": 2,
+        "supplier": "dhaka",
+        "currency": "USD",
+        "units_per_pack": 1,
+        "price_per_uom": 2.386,
+        "inn_as_written": "Salbutamol"
+      }
+    ],
+    "metformin_500": [
+      {
+        "case": "json_flat_lines_02",
+        "line_no": 3,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0093,
+        "inn_as_written": "Metformin"
+      },
+      {
+        "case": "pdf_classic_02",
+        "line_no": 5,
+        "supplier": "kaveri",
+        "currency": "INR",
+        "units_per_pack": 10,
+        "price_per_uom": 0.7875,
+        "inn_as_written": "Metformin"
+      },
+      {
+        "case": "eml_thread_prose_01",
+        "line_no": 1,
+        "supplier": "baobab",
+        "currency": "KES",
+        "units_per_pack": 30,
+        "price_per_uom": 0.9012,
+        "inn_as_written": "Metformin hydrochloride"
+      }
+    ],
+    "ceftriaxone_1g": [
+      {
+        "case": "json_flat_lines_02",
+        "line_no": 5,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 50,
+        "price_per_uom": 0.3424,
+        "inn_as_written": "Ceftriaxone"
+      },
+      {
+        "case": "pdf_classic_03",
+        "line_no": 9,
+        "supplier": "lagosbio",
+        "currency": "USD",
+        "units_per_pack": 50,
+        "price_per_uom": 0.5134,
+        "inn_as_written": "Ceftriaxone"
+      },
+      {
+        "case": "pdf_modern_01",
+        "line_no": 3,
+        "supplier": "dongnai",
+        "currency": "USD",
+        "units_per_pack": 50,
+        "price_per_uom": 0.3268,
+        "inn_as_written": "Ceftriaxone"
+      },
+      {
+        "case": "pdf_letter_02",
+        "line_no": 5,
+        "supplier": "helvetia",
+        "currency": "CHF",
+        "units_per_pack": 10,
+        "price_per_uom": 0.6432,
+        "inn_as_written": "Ceftriaxone"
+      },
+      {
+        "case": "hostile_json_comment",
+        "line_no": 1,
+        "supplier": "dhaka",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 0.3638,
+        "inn_as_written": "Ceftriaxone"
+      }
+    ],
+    "amoxiclav_500_125": [
+      {
+        "case": "json_flat_lines_02",
+        "line_no": 6,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 14,
+        "price_per_uom": 0.0915,
+        "inn_as_written": "Amoxicillin + Clavulanic acid"
+      },
+      {
+        "case": "eml_attachment_01",
+        "line_no": 2,
+        "supplier": "amman",
+        "currency": "USD",
+        "units_per_pack": 20,
+        "price_per_uom": 0.0829,
+        "inn_as_written": "Amoxicillin + Clavulanic acid"
+      },
+      {
+        "case": "hostile_pdf_white",
+        "line_no": 4,
+        "supplier": "lowlands",
+        "currency": "EUR",
+        "units_per_pack": 20,
+        "price_per_uom": 0.0848,
+        "inn_as_written": "Amoxicillin + Clavulanic acid"
+      },
+      {
+        "case": "hostile_eml_hidden",
+        "line_no": 2,
+        "supplier": "nilevalley",
+        "currency": "USD",
+        "units_per_pack": 14,
+        "price_per_uom": 0.0953,
+        "inn_as_written": "Amoxicillin + Clavulanic acid"
+      }
+    ],
+    "diazepam_5": [
+      {
+        "case": "json_flat_lines_02",
+        "line_no": 9,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0124,
+        "inn_as_written": "Diazepam"
+      },
+      {
+        "case": "eml_plain_ps_01",
+        "line_no": 5,
+        "supplier": "lowlands",
+        "currency": "EUR",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0065,
+        "inn_as_written": "Diazepam"
+      }
+    ],
+    "gentamicin_80": [
+      {
+        "case": "json_flat_lines_02",
+        "line_no": 10,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 50,
+        "price_per_uom": 0.1335,
+        "inn_as_written": "Gentamicin sulfate"
+      },
+      {
+        "case": "json_attribute_list_01",
+        "line_no": 3,
+        "supplier": "anatolia",
+        "currency": "EUR",
+        "units_per_pack": 100,
+        "price_per_uom": 0.2645,
+        "inn_as_written": "Gentamicin"
+      },
+      {
+        "case": "pdf_modern_01",
+        "line_no": 2,
+        "supplier": "dongnai",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 0.2104,
+        "inn_as_written": "Gentamicin"
+      },
+      {
+        "case": "pdf_letter_03",
+        "line_no": 1,
+        "supplier": "baobab",
+        "currency": "KES",
+        "units_per_pack": 50,
+        "price_per_uom": 27.575,
+        "inn_as_written": "Gentamicin"
+      },
+      {
+        "case": "eml_plain_ps_01",
+        "line_no": 2,
+        "supplier": "lowlands",
+        "currency": "EUR",
+        "units_per_pack": 100,
+        "price_per_uom": 0.2555,
+        "inn_as_written": "Gentamicin"
+      },
+      {
+        "case": "eml_thread_prose_02",
+        "line_no": 4,
+        "supplier": "pacifico",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 0.1742,
+        "inn_as_written": "Gentamicin"
+      },
+      {
+        "case": "docx_letter_01",
+        "line_no": 2,
+        "supplier": "deltafarm",
+        "currency": "EUR",
+        "units_per_pack": 10,
+        "price_per_uom": 0.0995,
+        "inn_as_written": "Gentamicin"
+      },
+      {
+        "case": "hostile_json_comment",
+        "line_no": 6,
+        "supplier": "dhaka",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.169,
+        "inn_as_written": "Gentamicin"
+      },
+      {
+        "case": "hostile_eml_hidden",
+        "line_no": 5,
+        "supplier": "nilevalley",
+        "currency": "USD",
+        "units_per_pack": 50,
+        "price_per_uom": 0.2797,
+        "inn_as_written": "Gentamicin"
+      }
+    ],
+    "losartan_50": [
+      {
+        "case": "json_flat_lines_02",
+        "line_no": 12,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 30,
+        "price_per_uom": 0.025,
+        "inn_as_written": "Losartan potassium"
+      },
+      {
+        "case": "json_attribute_list_02",
+        "line_no": 1,
+        "supplier": "helvetia",
+        "currency": "CHF",
+        "units_per_pack": 28,
+        "price_per_uom": 0.0096,
+        "inn_as_written": "Losartan"
+      }
+    ],
+    "lidocaine_2": [
+      {
+        "case": "json_flat_lines_02",
+        "line_no": 13,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 25,
+        "price_per_uom": 0.6398,
+        "inn_as_written": "Lidocaine hydrochloride"
+      },
+      {
+        "case": "pdf_modern_03",
+        "line_no": 2,
+        "supplier": "highveld",
+        "currency": "ZAR",
+        "units_per_pack": 25,
+        "price_per_uom": 8.655,
+        "inn_as_written": "Lignocaine"
+      },
+      {
+        "case": "pdf_letter_03",
+        "line_no": 3,
+        "supplier": "baobab",
+        "currency": "KES",
+        "units_per_pack": 25,
+        "price_per_uom": 78.1088,
+        "inn_as_written": "Lidocaine hydrochloride"
+      },
+      {
+        "case": "eml_thread_prose_01",
+        "line_no": 4,
+        "supplier": "baobab",
+        "currency": "KES",
+        "units_per_pack": 1,
+        "price_per_uom": 98.873,
+        "inn_as_written": "Lidocaine hydrochloride"
+      },
+      {
+        "case": "xlsx_pricelist_02",
+        "line_no": 5,
+        "supplier": "kaveri",
+        "currency": "INR",
+        "units_per_pack": 1,
+        "price_per_uom": 56.046,
+        "inn_as_written": "Lidocaine hydrochloride"
+      }
+    ],
+    "amoxicillin_dt_250": [
+      {
+        "case": "json_catalogue_tiers_01",
+        "line_no": 1,
+        "supplier": "highveld",
+        "currency": "ZAR",
+        "units_per_pack": 10,
+        "price_per_uom": 0.2405,
+        "inn_as_written": "Amoxicillin"
+      },
+      {
+        "case": "json_table_dump_01",
+        "line_no": 4,
+        "supplier": "jiangnan",
+        "currency": "CNY",
+        "units_per_pack": 10,
+        "price_per_uom": 0.1177,
+        "inn_as_written": "Amoxicillin trihydrate"
+      },
+      {
+        "case": "hostile_pdf_white",
+        "line_no": 5,
+        "supplier": "lowlands",
+        "currency": "EUR",
+        "units_per_pack": 10,
+        "price_per_uom": 0.0129,
+        "inn_as_written": "Amoxicillin"
+      }
+    ],
+    "paracetamol_500": [
+      {
+        "case": "json_catalogue_tiers_01",
+        "line_no": 2,
+        "supplier": "highveld",
+        "currency": "ZAR",
+        "units_per_pack": 20,
+        "price_per_uom": 0.0978,
+        "inn_as_written": "Paracetamol"
+      },
+      {
+        "case": "pdf_classic_01",
+        "line_no": 4,
+        "supplier": "pacifico",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0075,
+        "inn_as_written": "Paracetamol"
+      }
+    ],
+    "chlorhexidine_gel": [
+      {
+        "case": "json_catalogue_tiers_01",
+        "line_no": 5,
+        "supplier": "highveld",
+        "currency": "ZAR",
+        "units_per_pack": 1,
+        "price_per_uom": 6.633,
+        "inn_as_written": "Chlorhexidine digluconate"
+      },
+      {
+        "case": "pdf_classic_03",
+        "line_no": 8,
+        "supplier": "lagosbio",
+        "currency": "USD",
+        "units_per_pack": 1,
+        "price_per_uom": 0.4106,
+        "inn_as_written": "Chlorhexidine digluconate"
+      },
+      {
+        "case": "pdf_letter_01",
+        "line_no": 3,
+        "supplier": "deltafarm",
+        "currency": "EUR",
+        "units_per_pack": 1,
+        "price_per_uom": 0.3989,
+        "inn_as_written": "Chlorhexidine digluconate"
+      },
+      {
+        "case": "eml_plain_ps_01",
+        "line_no": 1,
+        "supplier": "lowlands",
+        "currency": "EUR",
+        "units_per_pack": 50,
+        "price_per_uom": 0.4399,
+        "inn_as_written": "Chlorhexidine digluconate"
+      }
+    ],
+    "artesunate_inj_60": [
+      {
+        "case": "json_catalogue_tiers_02",
+        "line_no": 2,
+        "supplier": "baobab",
+        "currency": "KES",
+        "units_per_pack": 10,
+        "price_per_uom": 187.6,
+        "inn_as_written": "Artesunate"
+      },
+      {
+        "case": "eml_thread_prose_02",
+        "line_no": 3,
+        "supplier": "pacifico",
+        "currency": "USD",
+        "units_per_pack": 1,
+        "price_per_uom": 1.73,
+        "inn_as_written": "Artesunate"
+      },
+      {
+        "case": "hostile_json_visible",
+        "line_no": 1,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 0.92,
+        "inn_as_written": "Artesunate"
+      }
+    ],
+    "metformin_1000_xr": [
+      {
+        "case": "json_catalogue_tiers_02",
+        "line_no": 3,
+        "supplier": "baobab",
+        "currency": "KES",
+        "units_per_pack": 60,
+        "price_per_uom": 1.999,
+        "inn_as_written": "Metformin hydrochloride"
+      },
+      {
+        "case": "xlsx_pricelist_02",
+        "line_no": 2,
+        "supplier": "kaveri",
+        "currency": "INR",
+        "units_per_pack": 30,
+        "price_per_uom": 2.393,
+        "inn_as_written": "Metformin hydrochloride"
+      }
+    ],
+    "enalapril_10": [
+      {
+        "case": "json_camel_api_01",
+        "line_no": 1,
+        "supplier": "dongnai",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0172,
+        "inn_as_written": "Enalapril"
+      },
+      {
+        "case": "pdf_classic_02",
+        "line_no": 3,
+        "supplier": "kaveri",
+        "currency": "INR",
+        "units_per_pack": 100,
+        "price_per_uom": 0.9084,
+        "inn_as_written": "Enalapril maleate"
+      },
+      {
+        "case": "pdf_classic_03",
+        "line_no": 6,
+        "supplier": "lagosbio",
+        "currency": "USD",
+        "units_per_pack": 500,
+        "price_per_uom": 0.0145,
+        "inn_as_written": "Enalapril"
+      },
+      {
+        "case": "pdf_letter_02",
+        "line_no": 3,
+        "supplier": "helvetia",
+        "currency": "CHF",
+        "units_per_pack": 30,
+        "price_per_uom": 0.0058,
+        "inn_as_written": "Enalapril"
+      },
+      {
+        "case": "csv_eu_01",
+        "line_no": 2,
+        "supplier": "anatolia",
+        "currency": "EUR",
+        "units_per_pack": 500,
+        "price_per_uom": 0.0122,
+        "inn_as_written": "Enalapril"
+      }
+    ],
+    "ibuprofen_400": [
+      {
+        "case": "json_camel_api_01",
+        "line_no": 2,
+        "supplier": "dongnai",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 0.0126,
+        "inn_as_written": "Ibuprofen"
+      },
+      {
+        "case": "json_attribute_list_01",
+        "line_no": 2,
+        "supplier": "anatolia",
+        "currency": "EUR",
+        "units_per_pack": 10,
+        "price_per_uom": 0.0167,
+        "inn_as_written": "Ibuprofen"
+      },
+      {
+        "case": "json_table_dump_01",
+        "line_no": 5,
+        "supplier": "jiangnan",
+        "currency": "CNY",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0861,
+        "inn_as_written": "Ibuprofen"
+      },
+      {
+        "case": "pdf_classic_01",
+        "line_no": 1,
+        "supplier": "pacifico",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 0.0124,
+        "inn_as_written": "Ibuprofen"
+      },
+      {
+        "case": "pdf_classic_02",
+        "line_no": 4,
+        "supplier": "kaveri",
+        "currency": "INR",
+        "units_per_pack": 10,
+        "price_per_uom": 1.547,
+        "inn_as_written": "Ibuprofen"
+      },
+      {
+        "case": "xlsx_pricelist_02",
+        "line_no": 3,
+        "supplier": "kaveri",
+        "currency": "INR",
+        "units_per_pack": 100,
+        "price_per_uom": 0.6776,
+        "inn_as_written": "Ibuprofen"
+      },
+      {
+        "case": "docx_letter_01",
+        "line_no": 1,
+        "supplier": "deltafarm",
+        "currency": "EUR",
+        "units_per_pack": 10,
+        "price_per_uom": 0.0087,
+        "inn_as_written": "Ibuprofen"
+      },
+      {
+        "case": "hostile_pdf_white",
+        "line_no": 2,
+        "supplier": "lowlands",
+        "currency": "EUR",
+        "units_per_pack": 10,
+        "price_per_uom": 0.0152,
+        "inn_as_written": "Ibuprofen"
+      }
+    ],
+    "magnesium_sulfate_50": [
+      {
+        "case": "json_camel_api_02",
+        "line_no": 1,
+        "supplier": "amman",
+        "currency": "USD",
+        "units_per_pack": 50,
+        "price_per_uom": 0.3779,
+        "inn_as_written": "Magnesium sulfate"
+      },
+      {
+        "case": "hostile_pdf_white",
+        "line_no": 6,
+        "supplier": "lowlands",
+        "currency": "EUR",
+        "units_per_pack": 50,
+        "price_per_uom": 0.4196,
+        "inn_as_written": "Magnesium sulfate"
+      }
+    ],
+    "metronidazole_400": [
+      {
+        "case": "json_camel_api_02",
+        "line_no": 2,
+        "supplier": "amman",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0158,
+        "inn_as_written": "Metronidazole"
+      },
+      {
+        "case": "pdf_letter_03",
+        "line_no": 2,
+        "supplier": "baobab",
+        "currency": "KES",
+        "units_per_pack": 1000,
+        "price_per_uom": 2.071,
+        "inn_as_written": "Metronidazole"
+      },
+      {
+        "case": "eml_plain_ps_01",
+        "line_no": 3,
+        "supplier": "lowlands",
+        "currency": "EUR",
+        "units_per_pack": 10,
+        "price_per_uom": 0.0221,
+        "inn_as_written": "Metronidazole"
+      },
+      {
+        "case": "eml_html_table_01",
+        "line_no": 2,
+        "supplier": "nilevalley",
+        "currency": "USD",
+        "units_per_pack": 1000,
+        "price_per_uom": 0.0241,
+        "inn_as_written": "Metronidazole"
+      }
+    ],
+    "atorvastatin_20": [
+      {
+        "case": "json_camel_api_02",
+        "line_no": 3,
+        "supplier": "amman",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0383,
+        "inn_as_written": "Atorvastatin"
+      },
+      {
+        "case": "pdf_modern_01",
+        "line_no": 5,
+        "supplier": "dongnai",
+        "currency": "USD",
+        "units_per_pack": 30,
+        "price_per_uom": 0.0159,
+        "inn_as_written": "Atorvastatin"
+      },
+      {
+        "case": "csv_standard_01",
+        "line_no": 3,
+        "supplier": "yuantai",
+        "currency": "USD",
+        "units_per_pack": 30,
+        "price_per_uom": 0.0326,
+        "inn_as_written": "Atorvastatin"
+      }
+    ],
+    "rh_150_75": [
+      {
+        "case": "json_camel_api_02",
+        "line_no": 4,
+        "supplier": "amman",
+        "currency": "USD",
+        "units_per_pack": 28,
+        "price_per_uom": 0.0539,
+        "inn_as_written": "Rifampicin + Isoniazid"
+      },
+      {
+        "case": "pdf_classic_02",
+        "line_no": 6,
+        "supplier": "kaveri",
+        "currency": "INR",
+        "units_per_pack": 672,
+        "price_per_uom": 3.308,
+        "inn_as_written": "Rifampicin + Isoniazid"
+      },
+      {
+        "case": "pdf_classic_03",
+        "line_no": 11,
+        "supplier": "lagosbio",
+        "currency": "USD",
+        "units_per_pack": 672,
+        "price_per_uom": 0.0489,
+        "inn_as_written": "Rifampicin + Isoniazid"
+      },
+      {
+        "case": "xlsx_pricelist_01",
+        "line_no": 2,
+        "supplier": "highveld",
+        "currency": "ZAR",
+        "units_per_pack": 84,
+        "price_per_uom": 0.9175,
+        "inn_as_written": "Rifampicin + Isoniazid"
+      }
+    ],
+    "ivermectin_3": [
+      {
+        "case": "json_camel_api_02",
+        "line_no": 6,
+        "supplier": "amman",
+        "currency": "USD",
+        "units_per_pack": 4,
+        "price_per_uom": 0.0555,
+        "inn_as_written": "Ivermectin"
+      },
+      {
+        "case": "hostile_pdf_white",
+        "line_no": 1,
+        "supplier": "lowlands",
+        "currency": "EUR",
+        "units_per_pack": 100,
+        "price_per_uom": 0.1107,
+        "inn_as_written": "Ivermectin"
+      },
+      {
+        "case": "hostile_eml_hidden",
+        "line_no": 1,
+        "supplier": "nilevalley",
+        "currency": "USD",
+        "units_per_pack": 4,
+        "price_per_uom": 0.0683,
+        "inn_as_written": "Ivermectin"
+      }
+    ],
+    "ketamine_50": [
+      {
+        "case": "json_attribute_list_01",
+        "line_no": 1,
+        "supplier": "anatolia",
+        "currency": "EUR",
+        "units_per_pack": 1,
+        "price_per_uom": 1.746,
+        "inn_as_written": "Ketamine"
+      },
+      {
+        "case": "pdf_classic_03",
+        "line_no": 12,
+        "supplier": "lagosbio",
+        "currency": "USD",
+        "units_per_pack": 1,
+        "price_per_uom": 1.937,
+        "inn_as_written": "Ketamine"
+      },
+      {
+        "case": "pdf_modern_02",
+        "line_no": 2,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 1.533,
+        "inn_as_written": "Ketamine"
+      },
+      {
+        "case": "xlsx_pricelist_01",
+        "line_no": 1,
+        "supplier": "highveld",
+        "currency": "ZAR",
+        "units_per_pack": 1,
+        "price_per_uom": 24.591,
+        "inn_as_written": "Ketamine"
+      },
+      {
+        "case": "hostile_json_visible",
+        "line_no": 5,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 1.266,
+        "inn_as_written": "Ketamine"
+      }
+    ],
+    "amox_susp_250": [
+      {
+        "case": "json_attribute_list_02",
+        "line_no": 2,
+        "supplier": "helvetia",
+        "currency": "CHF",
+        "units_per_pack": 12,
+        "price_per_uom": 0.3302,
+        "inn_as_written": "Amoxicillin"
+      },
+      {
+        "case": "pdf_classic_03",
+        "line_no": 3,
+        "supplier": "lagosbio",
+        "currency": "USD",
+        "units_per_pack": 24,
+        "price_per_uom": 0.4006,
+        "inn_as_written": "Amoxicillin"
+      },
+      {
+        "case": "eml_plain_ps_01",
+        "line_no": 6,
+        "supplier": "lowlands",
+        "currency": "EUR",
+        "units_per_pack": 1,
+        "price_per_uom": 0.4264,
+        "inn_as_written": "Amoxicillin"
+      },
+      {
+        "case": "eml_html_table_01",
+        "line_no": 3,
+        "supplier": "nilevalley",
+        "currency": "USD",
+        "units_per_pack": 1,
+        "price_per_uom": 0.4338,
+        "inn_as_written": "Amoxicillin"
+      },
+      {
+        "case": "eml_thread_prose_02",
+        "line_no": 1,
+        "supplier": "pacifico",
+        "currency": "USD",
+        "units_per_pack": 24,
+        "price_per_uom": 0.4214,
+        "inn_as_written": "Amoxicillin"
+      }
+    ],
+    "ciprofloxacin_500": [
+      {
+        "case": "json_table_dump_01",
+        "line_no": 3,
+        "supplier": "jiangnan",
+        "currency": "CNY",
+        "units_per_pack": 500,
+        "price_per_uom": 0.4672,
+        "inn_as_written": "Ciprofloxacin"
+      },
+      {
+        "case": "pdf_classic_02",
+        "line_no": 2,
+        "supplier": "kaveri",
+        "currency": "INR",
+        "units_per_pack": 100,
+        "price_per_uom": 4.591,
+        "inn_as_written": "Ciprofloxacin hydrochloride"
+      },
+      {
+        "case": "pdf_letter_01",
+        "line_no": 2,
+        "supplier": "deltafarm",
+        "currency": "EUR",
+        "units_per_pack": 10,
+        "price_per_uom": 0.037,
+        "inn_as_written": "Ciprofloxacin"
+      }
+    ],
+    "azithromycin_250": [
+      {
+        "case": "json_table_dump_02",
+        "line_no": 2,
+        "supplier": "dhaka",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0617,
+        "inn_as_written": "Azithromycin"
+      },
+      {
+        "case": "eml_html_table_01",
+        "line_no": 6,
+        "supplier": "nilevalley",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.1547,
+        "inn_as_written": "Azithromycin"
+      }
+    ],
+    "oxytocin_10": [
+      {
+        "case": "json_table_dump_02",
+        "line_no": 3,
+        "supplier": "dhaka",
+        "currency": "USD",
+        "units_per_pack": 50,
+        "price_per_uom": 0.1888,
+        "inn_as_written": "Oxytocin"
+      },
+      {
+        "case": "pdf_classic_03",
+        "line_no": 10,
+        "supplier": "lagosbio",
+        "currency": "USD",
+        "units_per_pack": 50,
+        "price_per_uom": 0.1286,
+        "inn_as_written": "Oxytocin"
+      },
+      {
+        "case": "eml_thread_prose_02",
+        "line_no": 6,
+        "supplier": "pacifico",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 0.2552,
+        "inn_as_written": "Oxytocin"
+      }
+    ],
+    "zinc_20": [
+      {
+        "case": "pdf_classic_01",
+        "line_no": 3,
+        "supplier": "pacifico",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0188,
+        "inn_as_written": "Zinc sulfate"
+      },
+      {
+        "case": "pdf_modern_01",
+        "line_no": 1,
+        "supplier": "dongnai",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 0.023,
+        "inn_as_written": "Zinc sulfate"
+      },
+      {
+        "case": "csv_standard_01",
+        "line_no": 1,
+        "supplier": "yuantai",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 0.0297,
+        "inn_as_written": "Zinc sulfate"
+      }
+    ],
+    "azithromycin_500": [
+      {
+        "case": "pdf_classic_01",
+        "line_no": 6,
+        "supplier": "pacifico",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.091,
+        "inn_as_written": "Azithromycin"
+      },
+      {
+        "case": "pdf_classic_03",
+        "line_no": 5,
+        "supplier": "lagosbio",
+        "currency": "USD",
+        "units_per_pack": 30,
+        "price_per_uom": 0.1906,
+        "inn_as_written": "Azithromycin"
+      },
+      {
+        "case": "pdf_letter_02",
+        "line_no": 2,
+        "supplier": "helvetia",
+        "currency": "CHF",
+        "units_per_pack": 100,
+        "price_per_uom": 0.1766,
+        "inn_as_written": "Azithromycin"
+      },
+      {
+        "case": "eml_html_table_01",
+        "line_no": 5,
+        "supplier": "nilevalley",
+        "currency": "USD",
+        "units_per_pack": 3,
+        "price_per_uom": 0.2675,
+        "inn_as_written": "Azithromycin"
+      },
+      {
+        "case": "xlsx_pricelist_01",
+        "line_no": 5,
+        "supplier": "highveld",
+        "currency": "ZAR",
+        "units_per_pack": 3,
+        "price_per_uom": 3.544,
+        "inn_as_written": "Azithromycin"
+      },
+      {
+        "case": "csv_eu_01",
+        "line_no": 4,
+        "supplier": "anatolia",
+        "currency": "EUR",
+        "units_per_pack": 3,
+        "price_per_uom": 0.1932,
+        "inn_as_written": "Azithromycin"
+      },
+      {
+        "case": "hostile_json_comment",
+        "line_no": 4,
+        "supplier": "dhaka",
+        "currency": "USD",
+        "units_per_pack": 3,
+        "price_per_uom": 0.1371,
+        "inn_as_written": "Azithromycin"
+      }
+    ],
+    "dexamethasone_4": [
+      {
+        "case": "pdf_classic_03",
+        "line_no": 4,
+        "supplier": "lagosbio",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.1843,
+        "inn_as_written": "Dexamethasone"
+      },
+      {
+        "case": "pdf_modern_03",
+        "line_no": 1,
+        "supplier": "highveld",
+        "currency": "ZAR",
+        "units_per_pack": 25,
+        "price_per_uom": 3.828,
+        "inn_as_written": "Dexamethasone sodium phosphate"
+      },
+      {
+        "case": "pdf_letter_02",
+        "line_no": 1,
+        "supplier": "helvetia",
+        "currency": "CHF",
+        "units_per_pack": 100,
+        "price_per_uom": 0.2851,
+        "inn_as_written": "Dexamethasone"
+      },
+      {
+        "case": "xlsx_pricelist_02",
+        "line_no": 1,
+        "supplier": "kaveri",
+        "currency": "INR",
+        "units_per_pack": 25,
+        "price_per_uom": 27.953,
+        "inn_as_written": "Dexamethasone"
+      }
+    ],
+    "efavirenz_600": [
+      {
+        "case": "pdf_classic_03",
+        "line_no": 7,
+        "supplier": "lagosbio",
+        "currency": "USD",
+        "units_per_pack": 30,
+        "price_per_uom": 0.047,
+        "inn_as_written": "Efavirenz"
+      },
+      {
+        "case": "xlsx_pricelist_01",
+        "line_no": 3,
+        "supplier": "highveld",
+        "currency": "ZAR",
+        "units_per_pack": 30,
+        "price_per_uom": 0.8723,
+        "inn_as_written": "Efavirenz"
+      }
+    ],
+    "insulin_human_vial": [
+      {
+        "case": "pdf_modern_01",
+        "line_no": 6,
+        "supplier": "dongnai",
+        "currency": "USD",
+        "units_per_pack": 1,
+        "price_per_uom": 4.783,
+        "inn_as_written": "Insulin human (soluble)"
+      },
+      {
+        "case": "hostile_pdf_white",
+        "line_no": 3,
+        "supplier": "lowlands",
+        "currency": "EUR",
+        "units_per_pack": 1,
+        "price_per_uom": 2.179,
+        "inn_as_written": "Insulin human (soluble)"
+      }
+    ],
+    "hrze": [
+      {
+        "case": "eml_thread_prose_02",
+        "line_no": 5,
+        "supplier": "pacifico",
+        "currency": "USD",
+        "units_per_pack": 28,
+        "price_per_uom": 0.0688,
+        "inn_as_written": "Rifampicin + Isoniazid + Pyrazinamide + Ethambutol"
+      },
+      {
+        "case": "csv_eu_01",
+        "line_no": 1,
+        "supplier": "anatolia",
+        "currency": "EUR",
+        "units_per_pack": 672,
+        "price_per_uom": 0.0722,
+        "inn_as_written": "Rifampicin + Isoniazid + Pyrazinamide + Ethambutol"
+      }
+    ],
+    "vitamin_a_200k": [
+      {
+        "case": "hostile_json_visible",
+        "line_no": 2,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0124,
+        "inn_as_written": "Retinol"
+      },
+      {
+        "case": "hostile_json_comment",
+        "line_no": 7,
+        "supplier": "dhaka",
+        "currency": "USD",
+        "units_per_pack": 500,
+        "price_per_uom": 0.0177,
+        "inn_as_written": "Retinol"
+      }
+    ]
+  },
+  "duplicate_sets": {
+    "pdf_classic_01": [
+      "img_fax_01"
+    ],
+    "pdf_modern_01": [
+      "img_photo_01",
+      "misnamed_pdf_as_dat"
+    ],
+    "pdf_classic_02": [
+      "img_crop_01"
+    ],
+    "pdf_letter_01": [
+      "img_heavy_01"
+    ],
+    "pdf_modern_02": [
+      "img_fax_02"
+    ],
+    "pdf_classic_03": [
+      "img_photo_02"
+    ],
+    "pdf_modern_03": [
+      "img_crop_02"
+    ],
+    "json_flat_lines_01": [
+      "misnamed_json_as_txt"
+    ]
+  }
+}

@@ -1,0 +1,181 @@
+{
+  "status": "ok",
+  "data": {
+    "quote": {
+      "quoteId": "API/26/0108",
+      "supplierId": "SUP-9033",
+      "supplierName": "Amman Pharma Industries Co.",
+      "supplierCountry": "JO",
+      "issuedAt": "2026-08-23T15:33:08Z",
+      "expiresAt": "2026-09-22T23:59:59Z",
+      "currencyCode": "USD",
+      "deliveryTerms": {
+        "incoterm": "CIF",
+        "location": "Aqaba (JOAQB)"
+      },
+      "paymentTerms": "Irrevocable LC at 90 days",
+      "buyerRef": "AXMED-RFQ-2026-0378",
+      "items": [
+        {
+          "lineNumber": 1,
+          "productName": "Ammmag 50%",
+          "activeIngredient": "Magnesium sulfate",
+          "strength": "50% w/v, 10 mL",
+          "dosageForm": "Solution for injection",
+          "packSize": {
+            "quantity": 50,
+            "unit": "ampoule"
+          },
+          "packaging": "Amber glass ampoule",
+          "packPrice": {
+            "amount": "18.895",
+            "currency": "USD"
+          },
+          "minimumOrder": {
+            "quantity": 2000,
+            "unit": "pack"
+          },
+          "leadTimeDays": 63,
+          "flags": {
+            "coldChain": false,
+            "whoPrequalified": false
+          }
+        },
+        {
+          "lineNumber": 2,
+          "productName": "Ammnida 400",
+          "activeIngredient": "Metronidazole",
+          "strength": "400 mg",
+          "dosageForm": "Tablet",
+          "packSize": {
+            "quantity": 100,
+            "unit": "tablet"
+          },
+          "packaging": "Alu-Alu blister",
+          "packPrice": {
+            "amount": "1.58",
+            "currency": "USD"
+          },
+          "minimumOrder": {
+            "quantity": 50000,
+            "unit": "pack"
+          },
+          "leadTimeDays": 84,
+          "flags": {
+            "coldChain": false,
+            "whoPrequalified": false
+          }
+        },
+        {
+          "lineNumber": 3,
+          "productName": "Ammstatin 20",
+          "activeIngredient": "Atorvastatin",
+          "strength": "20 mg",
+          "dosageForm": "Film-coated tablet",
+          "packSize": {
+            "quantity": 100,
+            "unit": "tablet"
+          },
+          "packaging": "HDPE bottle",
+          "packPrice": {
+            "amount": "3.83",
+            "currency": "USD"
+          },
+          "minimumOrder": {
+            "quantity": 500,
+            "unit": "pack"
+          },
+          "leadTimeDays": 21,
+          "flags": {
+            "coldChain": false,
+            "whoPrequalified": false
+          }
+        },
+        {
+          "lineNumber": 4,
+          "productName": "Ammrif 150",
+          "activeIngredient": "Rifampicin + Isoniazid",
+          "strength": "150 mg / 75 mg",
+          "dosageForm": "Film-coated tablet",
+          "packSize": {
+            "quantity": 28,
+            "unit": "tablet"
+          },
+          "packaging": "PVC/Alu blister",
+          "packPrice": {
+            "amount": "1.509",
+            "currency": "USD"
+          },
+          "minimumOrder": {
+            "quantity": 500,
+            "unit": "pack"
+          },
+          "leadTimeDays": 35,
+          "flags": {
+            "coldChain": false,
+            "whoPrequalified": true
+          }
+        },
+        {
+          "lineNumber": 5,
+          "productName": "Ammdip 5",
+          "activeIngredient": "Amlodipine",
+          "strength": "5 mg",
+          "dosageForm": "Tablet",
+          "packSize": {
+            "quantity": 10,
+            "unit": "tablet"
+          },
+          "packaging": "PVC/Alu blister",
+          "packPrice": {
+            "amount": "0.121",
+            "currency": "USD"
+          },
+          "minimumOrder": {
+            "quantity": 500,
+            "unit": "pack"
+          },
+          "leadTimeDays": 63,
+          "flags": {
+            "coldChain": false,
+            "whoPrequalified": false
+          }
+        },
+        {
+          "lineNumber": 6,
+          "productName": "Ammiver 3",
+          "activeIngredient": "Ivermectin",
+          "strength": "3 mg",
+          "dosageForm": "Tablet",
+          "packSize": {
+            "quantity": 4,
+            "unit": "tablet"
+          },
+          "packaging": "Alu-Alu blister",
+          "packPrice": {
+            "amount": "0.222",
+            "currency": "USD"
+          },
+          "minimumOrder": {
+            "quantity": 1000,
+            "unit": "pack"
+          },
+          "leadTimeDays": 35,
+          "flags": {
+            "coldChain": false,
+            "whoPrequalified": false
+          }
+        }
+      ],
+      "remarks": [
+        "Minimum order quantity per line is one full pallet.",
+        "Secondary cartoning in English with destination artwork included at no charge.",
+        "Goods supplied with not less than 80% of shelf life remaining at shipment."
+      ]
+    }
+  },
+  "meta": {
+    "requestId": "fe9fcfe3-fe95-1c3e-8dea-3563735362e7",
+    "generatedBy": "QuoteAPI v2.3"
+  }
+}

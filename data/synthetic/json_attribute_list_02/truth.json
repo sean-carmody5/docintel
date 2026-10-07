@@ -1,0 +1,88 @@
+{
+  "case_id": "json_attribute_list_02",
+  "kind": "json",
+  "variant": "attribute_list",
+  "expect": "extract",
+  "hostile": null,
+  "source_case": null,
+  "files": [
+    "helvetia_export_2026-07-22.json"
+  ],
+  "quotation": {
+    "supplier_key": "helvetia",
+    "supplier_name": "Helvetia Generics AG",
+    "quotation_ref": "HG-26-00110",
+    "document_date": "2026-07-22",
+    "valid_until": "2026-08-21",
+    "currency": "CHF",
+    "incoterm": "FCA",
+    "named_place": "Basel",
+    "buyer_reference": "AXMED-RFQ-2026-0255",
+    "destination": "Kampala, Uganda",
+    "buyer_contact": "Cesar Dominguez",
+    "payment_terms": "30 days net",
+    "features": [
+      "pack_price_only",
+      "strength_variant"
+    ],
+    "lines": [
+      {
+        "line_no": 1,
+        "product_key": "losartan_50",
+        "product_name": "Sartex 50",
+        "inn": "Losartan",
+        "inn_canonical": "Losartan",
+        "strength": "50 mg",
+        "dosage_form": "Film-coated tablet",
+        "packaging": "PVC/Alu blister",
+        "uom": "tablet",
+        "units_per_pack": 28,
+        "price_per_uom": 0.0096,
+        "price_per_pack": 0.2688,
+        "price_basis": "derived",
+        "discount_pct": null,
+        "price_tiers": null,
+        "moq_packs": 1000,
+        "lead_time_days": 21,
+        "quantity": null,
+        "extended_amount": null,
+        "superseded": null,
+        "cold_chain": false,
+        "atc": "C09CA01",
+        "net_price_per_uom": 0.0096
+      },
+      {
+        "line_no": 2,
+        "product_key": "amox_susp_250",
+        "product_name": "Helvmoxsusp 250",
+        "inn": "Amoxicillin",
+        "inn_canonical": "Amoxicillin",
+        "strength": "250 mg / 5 mL",
+        "dosage_form": "Oral suspension",
+        "packaging": "Amber glass bottle",
+        "uom": "bottle",
+        "units_per_pack": 12,
+        "price_per_uom": 0.3302,
+        "price_per_pack": 3.962,
+        "price_basis": "derived",
+        "discount_pct": null,
+        "price_tiers": null,
+        "moq_packs": 10000,
+        "lead_time_days": 42,
+        "quantity": null,
+        "extended_amount": null,
+        "superseded": null,
+        "cold_chain": false,
+        "atc": "J01CA04",
+        "net_price_per_uom": 0.3302
+      }
+    ],
+    "notes": [
+      "Certificate of analysis and CPP supplied with every batch.",
+      "Prices exclude destination duties, VAT and local regulatory fees.",
+      "Orders below MOQ attract a 12% surcharge on the unit price.",
+      "This quotation is an offer to treat and does not constitute a binding contract."
+    ],
+    "alt_price_note": null
+  }
+}

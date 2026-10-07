@@ -1,0 +1,127 @@
+{
+  "export": {
+    "system": "Helvetia CRM",
+    "entity": "Quotation",
+    "id": "HG-26-00110",
+    "fields": [
+      {
+        "key": "Supplier",
+        "value": "Helvetia Generics AG"
+      },
+      {
+        "key": "Supplier country",
+        "value": "CH"
+      },
+      {
+        "key": "Reference",
+        "value": "HG-26-00110"
+      },
+      {
+        "key": "Currency",
+        "value": "CHF"
+      },
+      {
+        "key": "Date",
+        "value": "22 July 2026"
+      },
+      {
+        "key": "Valid until",
+        "value": "21 August 2026"
+      },
+      {
+        "key": "Delivery",
+        "value": "FCA Basel"
+      },
+      {
+        "key": "Payment",
+        "value": "30 days net"
+      },
+      {
+        "key": "Buyer reference",
+        "value": "AXMED-RFQ-2026-0255"
+      }
+    ],
+    "items": [
+      {
+        "id": "ITM-001",
+        "attributes": [
+          {
+            "name": "Trade name",
+            "value": "Sartex 50"
+          },
+          {
+            "name": "INN",
+            "value": "Losartan"
+          },
+          {
+            "name": "Strength",
+            "value": "50 mg"
+          },
+          {
+            "name": "Form",
+            "value": "Film-coated tablet"
+          },
+          {
+            "name": "Pack",
+            "value": "28 x tablet, PVC/Alu blister"
+          },
+          {
+            "name": "Pack price",
+            "value": "CHF 0.2688 per pack"
+          },
+          {
+            "name": "MOQ",
+            "value": "1,000 packs"
+          },
+          {
+            "name": "Lead time",
+            "value": "21 days"
+          }
+        ]
+      },
+      {
+        "id": "ITM-002",
+        "attributes": [
+          {
+            "name": "Trade name",
+            "value": "Helvmoxsusp 250"
+          },
+          {
+            "name": "INN",
+            "value": "Amoxicillin"
+          },
+          {
+            "name": "Strength",
+            "value": "250 mg / 5 mL"
+          },
+          {
+            "name": "Form",
+            "value": "Oral suspension"
+          },
+          {
+            "name": "Pack",
+            "value": "12 x bottle, Amber glass bottle"
+          },
+          {
+            "name": "Pack price",
+            "value": "CHF 3.962 per pack"
+          },
+          {
+            "name": "MOQ",
+            "value": "10,000 packs"
+          },
+          {
+            "name": "Lead time",
+            "value": "42 days"
+          }
+        ]
+      }
+    ],
+    "notes": [
+      "Certificate of analysis and CPP supplied with every batch.",
+      "Prices exclude destination duties, VAT and local regulatory fees.",
+      "Orders below MOQ attract a 12% surcharge on the unit price.",
+      "This quotation is an offer to treat and does not constitute a binding contract."
+    ]
+  }
+}

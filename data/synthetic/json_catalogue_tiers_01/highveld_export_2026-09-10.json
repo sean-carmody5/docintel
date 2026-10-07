@@ -1,0 +1,187 @@
+{
+  "catalogue": {
+    "title": "Institutional Price List - Q3 2026",
+    "issuer": "Highveld Generics (Pty) Ltd.",
+    "issuer_country": "ZA",
+    "issuer_site": "12 Isando Road, Isando, Kempton Park 1600, Gauteng, South Africa",
+    "list_reference": "HG-Q26-0105",
+    "effective_from": "2026-09-10",
+    "effective_to": "2026-12-09",
+    "quotation_currency": "ZAR",
+    "delivery_terms": "EXW Isando",
+    "price_note": "Prices exclude 15% VAT where applicable. Certificate of analysis and CPP supplied with every batch.",
+    "contact": "tenders@highveldgenerics.co.za"
+  },
+  "products": [
+    {
+      "item_code": "HIG-AMOXICIL",
+      "product_name": "Highmoxdt 250",
+      "inn": "Amoxicillin",
+      "strength": "250 mg",
+      "dosage_form": "Dispersible tablet",
+      "unit_of_measure": "tablet",
+      "pack": {
+        "units_per_pack": 10,
+        "description": "Alu-Alu blister, 10 tablets"
+      },
+      "price_tiers": [
+        {
+          "tier": 1,
+          "min_packs": 250,
+          "max_packs": 1249,
+          "price_per_pack": 2.405
+        },
+        {
+          "tier": 2,
+          "min_packs": 1250,
+          "max_packs": 4999,
+          "price_per_pack": 2.206
+        },
+        {
+          "tier": 3,
+          "min_packs": 5000,
+          "max_packs": null,
+          "price_per_pack": 1.969
+        }
+      ],
+      "lead_time_days": 35,
+      "shelf_life_months": 48
+    },
+    {
+      "item_code": "HIG-PARACETA",
+      "product_name": "Highcetam 500",
+      "inn": "Paracetamol",
+      "strength": "500 mg",
+      "dosage_form": "Tablet",
+      "unit_of_measure": "tablet",
+      "pack": {
+        "units_per_pack": 20,
+        "description": "Alu-Alu blister, 20 tablets"
+      },
+      "price_tiers": [
+        {
+          "tier": 1,
+          "min_packs": 100,
+          "max_packs": 999,
+          "price_per_pack": 1.956
+        },
+        {
+          "tier": 2,
+          "min_packs": 1000,
+          "max_packs": 4999,
+          "price_per_pack": 1.852
+        },
+        {
+          "tier": 3,
+          "min_packs": 5000,
+          "max_packs": null,
+          "price_per_pack": 1.642
+        }
+      ],
+      "lead_time_days": 63,
+      "shelf_life_months": 24
+    },
+    {
+      "item_code": "HIG-HCTZ_25",
+      "product_name": "Thiazex 25",
+      "inn": "Hydrochlorothiazide",
+      "strength": "25 mg",
+      "dosage_form": "Tablet",
+      "unit_of_measure": "tablet",
+      "pack": {
+        "units_per_pack": 100,
+        "description": "HDPE bottle, 100 tablets"
+      },
+      "price_tiers": [
+        {
+          "tier": 1,
+          "min_packs": 500,
+          "max_packs": 4999,
+          "price_per_pack": 12.37
+        },
+        {
+          "tier": 2,
+          "min_packs": 5000,
+          "max_packs": 24999,
+          "price_per_pack": 11.595
+        },
+        {
+          "tier": 3,
+          "min_packs": 25000,
+          "max_packs": null,
+          "price_per_pack": 10.409
+        }
+      ],
+      "lead_time_days": 60,
+      "shelf_life_months": 24
+    },
+    {
+      "item_code": "HIG-AMLODIPI",
+      "product_name": "Highdip 5",
+      "inn": "Amlodipine",
+      "strength": "5 mg",
+      "dosage_form": "Tablet",
+      "unit_of_measure": "tablet",
+      "pack": {
+        "units_per_pack": 10,
+        "description": "Alu-Alu blister, 10 tablets"
+      },
+      "price_tiers": [
+        {
+          "tier": 1,
+          "min_packs": 500,
+          "max_packs": 2499,
+          "price_per_pack": 1.7
+        },
+        {
+          "tier": 2,
+          "min_packs": 2500,
+          "max_packs": 12499,
+          "price_per_pack": 1.59
+        },
+        {
+          "tier": 3,
+          "min_packs": 12500,
+          "max_packs": null,
+          "price_per_pack": 1.429
+        }
+      ],
+      "lead_time_days": 42,
+      "shelf_life_months": 24
+    },
+    {
+      "item_code": "HIG-CHLORHEX",
+      "product_name": "Chlorex 7.1%",
+      "inn": "Chlorhexidine digluconate",
+      "strength": "7.1% w/w",
+      "dosage_form": "Gel, 20 g tube",
+      "unit_of_measure": "tube",
+      "pack": {
+        "units_per_pack": 1,
+        "description": "Laminated tube, 1 tube"
+      },
+      "price_tiers": [
+        {
+          "tier": 1,
+          "min_packs": 500,
+          "max_packs": 4999,
+          "price_per_pack": 6.633
+        },
+        {
+          "tier": 2,
+          "min_packs": 5000,
+          "max_packs": 19999,
+          "price_per_pack": 5.861
+        },
+        {
+          "tier": 3,
+          "min_packs": 20000,
+          "max_packs": null,
+          "price_per_pack": 5.263
+        }
+      ],
+      "lead_time_days": 42,
+      "shelf_life_months": 36
+    }
+  ]
+}

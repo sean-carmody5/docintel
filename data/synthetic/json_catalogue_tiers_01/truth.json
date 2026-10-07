@@ -1,0 +1,244 @@
+{
+  "case_id": "json_catalogue_tiers_01",
+  "kind": "json",
+  "variant": "catalogue_tiers",
+  "expect": "extract",
+  "hostile": null,
+  "source_case": null,
+  "files": [
+    "highveld_export_2026-09-10.json"
+  ],
+  "quotation": {
+    "supplier_key": "highveld",
+    "supplier_name": "Highveld Generics (Pty) Ltd.",
+    "quotation_ref": "HG-Q26-0105",
+    "document_date": "2026-09-10",
+    "valid_until": "2026-12-09",
+    "currency": "ZAR",
+    "incoterm": "EXW",
+    "named_place": "Isando",
+    "buyer_reference": "AXMED-RFQ-2026-0374",
+    "destination": "Kampala, Uganda",
+    "buyer_contact": "Cesar Dominguez",
+    "payment_terms": "30 days from statement, prices exclude 15% VAT",
+    "features": [
+      "tiered",
+      "vat_note"
+    ],
+    "lines": [
+      {
+        "line_no": 1,
+        "product_key": "amoxicillin_dt_250",
+        "product_name": "Highmoxdt 250",
+        "inn": "Amoxicillin",
+        "inn_canonical": "Amoxicillin",
+        "strength": "250 mg",
+        "dosage_form": "Dispersible tablet",
+        "packaging": "Alu-Alu blister",
+        "uom": "tablet",
+        "units_per_pack": 10,
+        "price_per_uom": 0.2405,
+        "price_per_pack": 2.405,
+        "price_basis": "tiered",
+        "discount_pct": null,
+        "price_tiers": [
+          {
+            "min_packs": 250,
+            "max_packs": 1249,
+            "price_per_pack": 2.405
+          },
+          {
+            "min_packs": 1250,
+            "max_packs": 4999,
+            "price_per_pack": 2.206
+          },
+          {
+            "min_packs": 5000,
+            "max_packs": null,
+            "price_per_pack": 1.969
+          }
+        ],
+        "moq_packs": 1000,
+        "lead_time_days": 35,
+        "quantity": null,
+        "extended_amount": null,
+        "superseded": null,
+        "cold_chain": false,
+        "atc": "J01CA04",
+        "net_price_per_uom": 0.2405
+      },
+      {
+        "line_no": 2,
+        "product_key": "paracetamol_500",
+        "product_name": "Highcetam 500",
+        "inn": "Paracetamol",
+        "inn_canonical": "Paracetamol",
+        "strength": "500 mg",
+        "dosage_form": "Tablet",
+        "packaging": "Alu-Alu blister",
+        "uom": "tablet",
+        "units_per_pack": 20,
+        "price_per_uom": 0.0978,
+        "price_per_pack": 1.956,
+        "price_basis": "tiered",
+        "discount_pct": null,
+        "price_tiers": [
+          {
+            "min_packs": 100,
+            "max_packs": 999,
+            "price_per_pack": 1.956
+          },
+          {
+            "min_packs": 1000,
+            "max_packs": 4999,
+            "price_per_pack": 1.852
+          },
+          {
+            "min_packs": 5000,
+            "max_packs": null,
+            "price_per_pack": 1.642
+          }
+        ],
+        "moq_packs": 5000,
+        "lead_time_days": 63,
+        "quantity": null,
+        "extended_amount": null,
+        "superseded": null,
+        "cold_chain": false,
+        "atc": "N02BE01",
+        "net_price_per_uom": 0.0978
+      },
+      {
+        "line_no": 3,
+        "product_key": "hctz_25",
+        "product_name": "Thiazex 25",
+        "inn": "Hydrochlorothiazide",
+        "inn_canonical": "Hydrochlorothiazide",
+        "strength": "25 mg",
+        "dosage_form": "Tablet",
+        "packaging": "HDPE bottle",
+        "uom": "tablet",
+        "units_per_pack": 100,
+        "price_per_uom": 0.1237,
+        "price_per_pack": 12.37,
+        "price_basis": "tiered",
+        "discount_pct": null,
+        "price_tiers": [
+          {
+            "min_packs": 500,
+            "max_packs": 4999,
+            "price_per_pack": 12.37
+          },
+          {
+            "min_packs": 5000,
+            "max_packs": 24999,
+            "price_per_pack": 11.595
+          },
+          {
+            "min_packs": 25000,
+            "max_packs": null,
+            "price_per_pack": 10.409
+          }
+        ],
+        "moq_packs": 500,
+        "lead_time_days": 60,
+        "quantity": null,
+        "extended_amount": null,
+        "superseded": null,
+        "cold_chain": false,
+        "atc": "C03AA03",
+        "net_price_per_uom": 0.1237
+      },
+      {
+        "line_no": 4,
+        "product_key": "amlodipine_5",
+        "product_name": "Highdip 5",
+        "inn": "Amlodipine",
+        "inn_canonical": "Amlodipine",
+        "strength": "5 mg",
+        "dosage_form": "Tablet",
+        "packaging": "Alu-Alu blister",
+        "uom": "tablet",
+        "units_per_pack": 10,
+        "price_per_uom": 0.17,
+        "price_per_pack": 1.7,
+        "price_basis": "tiered",
+        "discount_pct": null,
+        "price_tiers": [
+          {
+            "min_packs": 500,
+            "max_packs": 2499,
+            "price_per_pack": 1.7
+          },
+          {
+            "min_packs": 2500,
+            "max_packs": 12499,
+            "price_per_pack": 1.59
+          },
+          {
+            "min_packs": 12500,
+            "max_packs": null,
+            "price_per_pack": 1.429
+          }
+        ],
+        "moq_packs": 2000,
+        "lead_time_days": 42,
+        "quantity": null,
+        "extended_amount": null,
+        "superseded": null,
+        "cold_chain": false,
+        "atc": "C08CA01",
+        "net_price_per_uom": 0.17
+      },
+      {
+        "line_no": 5,
+        "product_key": "chlorhexidine_gel",
+        "product_name": "Chlorex 7.1%",
+        "inn": "Chlorhexidine digluconate",
+        "inn_canonical": "Chlorhexidine digluconate",
+        "strength": "7.1% w/w",
+        "dosage_form": "Gel, 20 g tube",
+        "packaging": "Laminated tube",
+        "uom": "tube",
+        "units_per_pack": 1,
+        "price_per_uom": 6.633,
+        "price_per_pack": 6.633,
+        "price_basis": "tiered",
+        "discount_pct": null,
+        "price_tiers": [
+          {
+            "min_packs": 500,
+            "max_packs": 4999,
+            "price_per_pack": 6.633
+          },
+          {
+            "min_packs": 5000,
+            "max_packs": 19999,
+            "price_per_pack": 5.861
+          },
+          {
+            "min_packs": 20000,
+            "max_packs": null,
+            "price_per_pack": 5.263
+          }
+        ],
+        "moq_packs": 10000,
+        "lead_time_days": 42,
+        "quantity": null,
+        "extended_amount": null,
+        "superseded": null,
+        "cold_chain": false,
+        "atc": "D08AC02",
+        "net_price_per_uom": 6.633
+      }
+    ],
+    "notes": [
+      "Prices exclude 15% VAT where applicable.",
+      "Certificate of analysis and CPP supplied with every batch.",
+      "Cold-chain items ship in validated passive shippers with temperature loggers.",
+      "Partial shipments allowed.",
+      "This quotation is an offer to treat and does not constitute a binding contract."
+    ],
+    "alt_price_note": null
+  }
+}

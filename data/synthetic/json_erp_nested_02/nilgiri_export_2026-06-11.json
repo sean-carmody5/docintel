@@ -1,0 +1,170 @@
+{
+  "meta": {
+    "source_system": "NilgiriERP",
+    "export_version": "4.2.3",
+    "generated_at": "2026-06-11T15:20:03Z",
+    "record_count": 4,
+    "document_class": "OFFER"
+  },
+  "vendor": {
+    "name": "Nilgiri Biologics Ltd.",
+    "vendor_code": "NIL-0540",
+    "registered_country": "IN",
+    "site_of_manufacture": "Survey 212, Genome Valley, Shamirpet, Hyderabad 500078, Telangana, India",
+    "quality_status": {
+      "who_prequalified_site": true,
+      "who_gmp": true
+    },
+    "commercial_contact": {
+      "name": "Meera Reddy",
+      "role": "Director, Global Supply",
+      "email": "meera@nilgiribio.com",
+      "phone": "+91 40 2348 1100"
+    }
+  },
+  "offer": {
+    "offer_reference": "NB/EXP/260102",
+    "offer_date": "2026-06-11",
+    "expiry_date": "2026-07-26",
+    "against_enquiry": "AXMED-RFQ-2026-0247",
+    "price_basis": {
+      "currency": "USD",
+      "incoterms": "FCA",
+      "named_place": "Hyderabad (INHYD)"
+    },
+    "payment_terms": "Confirmed LC at 60 days",
+    "note_on_pricing": "Unit prices not stated separately; pack price and pack composition given.",
+    "products": [
+      {
+        "sku": "NIL-TLD-90",
+        "trade_name": "Tldex 300",
+        "generic_name": [
+          "Tenofovir/Lamivudine/Dolutegravir"
+        ],
+        "strength": "300 mg / 300 mg / 50 mg",
+        "form": "Film-coated tablet",
+        "packaging": {
+          "primary": "HDPE bottle",
+          "units_per_pack": 90,
+          "unit_label": "tablet",
+          "packs_per_shipper": 50
+        },
+        "commercials": {
+          "price_per_pack": 17.145,
+          "minimum_order_quantity_packs": 500,
+          "lead_time_days": 30
+        },
+        "regulatory": {
+          "who_prequalified": true,
+          "registered_markets": [
+            "UG",
+            "ZM",
+            "KE"
+          ]
+        },
+        "shelf_life_months": 48,
+        "storage": "Below 30 C, protect from moisture"
+      },
+      {
+        "sku": "NIL-INSULI-5",
+        "trade_name": "Nilglar 100",
+        "generic_name": [
+          "Insulin glargine"
+        ],
+        "strength": "100 IU/mL",
+        "form": "Solution for injection in pre-filled pen",
+        "packaging": {
+          "primary": "Pre-filled pen, carton",
+          "units_per_pack": 5,
+          "unit_label": "pen",
+          "packs_per_shipper": 50
+        },
+        "commercials": {
+          "price_per_pack": 63.77,
+          "minimum_order_quantity_packs": 500,
+          "lead_time_days": 63
+        },
+        "regulatory": {
+          "who_prequalified": false,
+          "registered_markets": [
+            "UG",
+            "GH",
+            "NG"
+          ]
+        },
+        "shelf_life_months": 48,
+        "storage": "2-8 C, do not freeze"
+      },
+      {
+        "sku": "NIL-PRAZIQ-4",
+        "trade_name": "Praziex 600",
+        "generic_name": [
+          "Praziquantel"
+        ],
+        "strength": {
+          "value": 600.0,
+          "unit": "mg",
+          "label": "600 mg"
+        },
+        "form": "Film-coated tablet",
+        "packaging": {
+          "primary": "Alu-Alu blister",
+          "units_per_pack": 4,
+          "unit_label": "tablet",
+          "packs_per_shipper": 4
+        },
+        "commercials": {
+          "price_per_pack": 0.57,
+          "minimum_order_quantity_packs": 2000,
+          "lead_time_days": 63
+        },
+        "regulatory": {
+          "who_prequalified": false,
+          "registered_markets": [
+            "ZM",
+            "NG",
+            "UG"
+          ]
+        },
+        "shelf_life_months": 36,
+        "storage": "Below 30 C, protect from moisture"
+      },
+      {
+        "sku": "NIL-IRON_F-30",
+        "trade_name": "Nilfer 60",
+        "generic_name": [
+          "Ferrous sulfate",
+          "Folic acid"
+        ],
+        "strength": "60 mg / 0.4 mg",
+        "form": "Tablet",
+        "packaging": {
+          "primary": "Alu-Alu blister",
+          "units_per_pack": 30,
+          "unit_label": "tablet",
+          "packs_per_shipper": 24
+        },
+        "commercials": {
+          "price_per_pack": 0.102,
+          "minimum_order_quantity_packs": 500,
+          "lead_time_days": 35
+        },
+        "regulatory": {
+          "who_prequalified": true,
+          "registered_markets": [
+            "TZ",
+            "ET",
+            "KE"
+          ]
+        },
+        "shelf_life_months": 36,
+        "storage": "Below 30 C, protect from moisture"
+      }
+    ],
+    "notes": [
+      "Orders below MOQ attract a 12% surcharge on the unit price.",
+      "Mixed-line consolidation into a single 20' container is possible.",
+      "A larger presentation of Tldex 300 is available on request at USD 0.2473 per tablet; not included in this offer."
+    ]
+  }
+}

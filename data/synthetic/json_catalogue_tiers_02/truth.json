@@ -1,0 +1,201 @@
+{
+  "case_id": "json_catalogue_tiers_02",
+  "kind": "json",
+  "variant": "catalogue_tiers",
+  "expect": "extract",
+  "hostile": null,
+  "source_case": null,
+  "files": [
+    "baobab_export_2026-08-08.json"
+  ],
+  "quotation": {
+    "supplier_key": "baobab",
+    "supplier_name": "Baobab Pharmaceuticals Ltd.",
+    "quotation_ref": "BPL/QT/26/0106",
+    "document_date": "2026-08-08",
+    "valid_until": "2026-10-07",
+    "currency": "KES",
+    "incoterm": "DAP",
+    "named_place": "Kampala",
+    "buyer_reference": "AXMED-RFQ-2026-0389",
+    "destination": "Lagos, Nigeria",
+    "buyer_contact": "Mattia Albergante",
+    "payment_terms": "30 days from delivery",
+    "features": [
+      "mixed_uom",
+      "tiered"
+    ],
+    "lines": [
+      {
+        "line_no": 1,
+        "product_key": "doxycycline_100",
+        "product_name": "Baocycline 100",
+        "inn": "Doxycycline",
+        "inn_canonical": "Doxycycline",
+        "strength": "100 mg",
+        "dosage_form": "Capsule",
+        "packaging": "HDPE bottle",
+        "uom": "capsule",
+        "units_per_pack": 100,
+        "price_per_uom": 4.035,
+        "price_per_pack": 403.5,
+        "price_basis": "tiered",
+        "discount_pct": null,
+        "price_tiers": [
+          {
+            "min_packs": 500,
+            "max_packs": 2499,
+            "price_per_pack": 403.5
+          },
+          {
+            "min_packs": 2500,
+            "max_packs": 9999,
+            "price_per_pack": 364.34
+          },
+          {
+            "min_packs": 10000,
+            "max_packs": null,
+            "price_per_pack": 329.88
+          }
+        ],
+        "moq_packs": 5000,
+        "lead_time_days": 45,
+        "quantity": null,
+        "extended_amount": null,
+        "superseded": null,
+        "cold_chain": false,
+        "atc": "J01AA02",
+        "net_price_per_uom": 4.035
+      },
+      {
+        "line_no": 2,
+        "product_key": "artesunate_inj_60",
+        "product_name": "Baoartes 60",
+        "inn": "Artesunate",
+        "inn_canonical": "Artesunate",
+        "strength": "60 mg",
+        "dosage_form": "Powder and solvent for solution for injection",
+        "packaging": "Glass vial, carton",
+        "uom": "vial",
+        "units_per_pack": 10,
+        "price_per_uom": 187.6,
+        "price_per_pack": 1876.0,
+        "price_basis": "tiered",
+        "discount_pct": null,
+        "price_tiers": [
+          {
+            "min_packs": 100,
+            "max_packs": 999,
+            "price_per_pack": 1876.0
+          },
+          {
+            "min_packs": 1000,
+            "max_packs": 4999,
+            "price_per_pack": 1763.85
+          },
+          {
+            "min_packs": 5000,
+            "max_packs": null,
+            "price_per_pack": 1620.29
+          }
+        ],
+        "moq_packs": 1000,
+        "lead_time_days": 35,
+        "quantity": null,
+        "extended_amount": null,
+        "superseded": null,
+        "cold_chain": false,
+        "atc": "P01BE03",
+        "net_price_per_uom": 187.6
+      },
+      {
+        "line_no": 3,
+        "product_key": "metformin_1000_xr",
+        "product_name": "Baometxr 1000",
+        "inn": "Metformin hydrochloride",
+        "inn_canonical": "Metformin hydrochloride",
+        "strength": "1000 mg",
+        "dosage_form": "Prolonged-release tablet",
+        "packaging": "Alu-Alu blister",
+        "uom": "tablet",
+        "units_per_pack": 60,
+        "price_per_uom": 1.999,
+        "price_per_pack": 119.94,
+        "price_basis": "tiered",
+        "discount_pct": null,
+        "price_tiers": [
+          {
+            "min_packs": 500,
+            "max_packs": 4999,
+            "price_per_pack": 119.94
+          },
+          {
+            "min_packs": 5000,
+            "max_packs": 19999,
+            "price_per_pack": 107.1
+          },
+          {
+            "min_packs": 20000,
+            "max_packs": null,
+            "price_per_pack": 96.499
+          }
+        ],
+        "moq_packs": 2000,
+        "lead_time_days": 28,
+        "quantity": null,
+        "extended_amount": null,
+        "superseded": null,
+        "cold_chain": false,
+        "atc": "A10BA02",
+        "net_price_per_uom": 1.999
+      },
+      {
+        "line_no": 4,
+        "product_key": "ors",
+        "product_name": "Baoors 20.5",
+        "inn": "Oral rehydration salts",
+        "inn_canonical": "Oral rehydration salts",
+        "strength": "20.5 g/L",
+        "dosage_form": "Powder for oral solution",
+        "packaging": "Alu laminate sachet",
+        "uom": "sachet",
+        "units_per_pack": 100,
+        "price_per_uom": 11.756,
+        "price_per_pack": 1175.6,
+        "price_basis": "tiered",
+        "discount_pct": null,
+        "price_tiers": [
+          {
+            "min_packs": 200,
+            "max_packs": 1999,
+            "price_per_pack": 1175.6
+          },
+          {
+            "min_packs": 2000,
+            "max_packs": 9999,
+            "price_per_pack": 1113.24
+          },
+          {
+            "min_packs": 10000,
+            "max_packs": null,
+            "price_per_pack": 993.21
+          }
+        ],
+        "moq_packs": 2000,
+        "lead_time_days": 90,
+        "quantity": null,
+        "extended_amount": null,
+        "superseded": null,
+        "cold_chain": false,
+        "atc": "A07CA",
+        "net_price_per_uom": 11.756
+      }
+    ],
+    "notes": [
+      "Goods supplied with not less than 80% of shelf life remaining at shipment.",
+      "Secondary cartoning in English with destination artwork included at no charge.",
+      "Cold-chain items ship in validated passive shippers with temperature loggers."
+    ],
+    "alt_price_note": null
+  }
+}

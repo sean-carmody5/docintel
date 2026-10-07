@@ -1,0 +1,94 @@
+{
+  "sheet": "Quotation",
+  "exported": "2026-07-28T08:41:26Z",
+  "header_rows": [
+    [
+      "Supplier",
+      "Dhaka Pharma Ltd."
+    ],
+    [
+      "Ref",
+      "DPL/EXP/26/0112"
+    ],
+    [
+      "Date",
+      "28/07/2026"
+    ],
+    [
+      "Valid to",
+      "11/09/2026"
+    ],
+    [
+      "Currency",
+      "USD"
+    ],
+    [
+      "Terms",
+      "FOB Chittagong (BDCGP)"
+    ],
+    [
+      "Buyer ref",
+      "AXMED-RFQ-2026-0317"
+    ]
+  ],
+  "columns": [
+    "#",
+    "Product",
+    "INN",
+    "Strength",
+    "Form",
+    "Pk Sz",
+    "UOM",
+    "Unit Px",
+    "Pack Px",
+    "MOQ (pk)",
+    "Lead (d)"
+  ],
+  "rows": [
+    [
+      1,
+      "Dhasalbsyr 2",
+      "Salbutamol",
+      "2 mg / 5 mL",
+      "Syrup",
+      1,
+      "bottle",
+      null,
+      0.5765,
+      50000,
+      35
+    ],
+    [
+      2,
+      "Zithex 250",
+      "Azithromycin",
+      "250 mg",
+      "Film-coated tablet",
+      100,
+      "tablet",
+      null,
+      6.17,
+      50000,
+      56
+    ],
+    [
+      3,
+      "Dhaoxy 10",
+      "Oxytocin",
+      "10 IU/mL",
+      "Solution for injection",
+      50,
+      "ampoule",
+      null,
+      9.44,
+      1000,
+      42
+    ]
+  ],
+  "footer": [
+    "Secondary cartoning in English with destination artwork included at no charge.",
+    "Minimum order quantity per line is one full pallet.",
+    "This quotation is an offer to treat and does not constitute a binding contract.",
+    "Orders below MOQ attract a 12% surcharge on the unit price."
+  ]
+}

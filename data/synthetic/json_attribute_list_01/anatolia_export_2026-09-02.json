@@ -1,0 +1,170 @@
+{
+  "export": {
+    "system": "Anatolia CRM",
+    "entity": "Quotation",
+    "id": "AIS-2600109",
+    "fields": [
+      {
+        "key": "Supplier",
+        "value": "Anatolia Ilac Sanayi A.S."
+      },
+      {
+        "key": "Supplier country",
+        "value": "TR"
+      },
+      {
+        "key": "Reference",
+        "value": "AIS-2600109"
+      },
+      {
+        "key": "Date",
+        "value": "02 September 2026"
+      },
+      {
+        "key": "Valid until",
+        "value": "17 October 2026"
+      },
+      {
+        "key": "Delivery",
+        "value": "FCA Istanbul (TRIST)"
+      },
+      {
+        "key": "Payment",
+        "value": "60 days from invoice"
+      },
+      {
+        "key": "Buyer reference",
+        "value": "AXMED-RFQ-2026-0419"
+      }
+    ],
+    "items": [
+      {
+        "id": "ITM-001",
+        "attributes": [
+          {
+            "name": "Trade name",
+            "value": "Ketaex 50"
+          },
+          {
+            "name": "INN",
+            "value": "Ketamine"
+          },
+          {
+            "name": "Strength",
+            "value": "50 mg/mL, 10 mL"
+          },
+          {
+            "name": "Form",
+            "value": "Solution for injection"
+          },
+          {
+            "name": "Pack",
+            "value": "1 x vial, Glass vial, carton"
+          },
+          {
+            "name": "Pack price",
+            "value": "€1.746 per pack"
+          },
+          {
+            "name": "Unit price",
+            "value": "€1.746 per vial"
+          },
+          {
+            "name": "MOQ",
+            "value": "1,000 packs"
+          },
+          {
+            "name": "Lead time",
+            "value": "5 weeks"
+          }
+        ]
+      },
+      {
+        "id": "ITM-002",
+        "attributes": [
+          {
+            "name": "Trade name",
+            "value": "Anaprofen 400"
+          },
+          {
+            "name": "INN",
+            "value": "Ibuprofen"
+          },
+          {
+            "name": "Strength",
+            "value": "400 mg"
+          },
+          {
+            "name": "Form",
+            "value": "Film-coated tablet"
+          },
+          {
+            "name": "Pack",
+            "value": "10 x tablet, PVC/Alu blister"
+          },
+          {
+            "name": "Pack price",
+            "value": "€0.1670 per pack"
+          },
+          {
+            "name": "Unit price",
+            "value": "€0.0167 per tablet"
+          },
+          {
+            "name": "MOQ",
+            "value": "20,000 packs"
+          },
+          {
+            "name": "Lead time",
+            "value": "9 weeks"
+          }
+        ]
+      },
+      {
+        "id": "ITM-003",
+        "attributes": [
+          {
+            "name": "Trade name",
+            "value": "Anagenta 80"
+          },
+          {
+            "name": "INN",
+            "value": "Gentamicin"
+          },
+          {
+            "name": "Strength",
+            "value": "80 mg / 2 mL"
+          },
+          {
+            "name": "Form",
+            "value": "Solution for injection"
+          },
+          {
+            "name": "Pack",
+            "value": "100 x ampoule, Amber glass ampoule"
+          },
+          {
+            "name": "Pack price",
+            "value": "€26.450 per pack"
+          },
+          {
+            "name": "Unit price",
+            "value": "€0.2645 per ampoule"
+          },
+          {
+            "name": "MOQ",
+            "value": "2,000 packs"
+          },
+          {
+            "name": "Lead time",
+            "value": "3 weeks"
+          }
+        ]
+      }
+    ],
+    "notes": [
+      "Certificate of analysis and CPP supplied with every batch.",
+      "Partial shipments allowed."
+    ]
+  }
+}

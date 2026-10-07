@@ -1,0 +1,118 @@
+{
+  "sheet": "Quotation",
+  "exported": "2026-06-04T14:43:15Z",
+  "header_rows": [
+    [
+      "Supplier",
+      "Jiangnan Medica Co., Ltd."
+    ],
+    [
+      "Ref",
+      "JNM/26/0111"
+    ],
+    [
+      "Date",
+      "04/06/2026"
+    ],
+    [
+      "Valid to",
+      "04/07/2026"
+    ],
+    [
+      "Currency",
+      "CNY"
+    ],
+    [
+      "Terms",
+      "FOB Shanghai (CNSHA)"
+    ],
+    [
+      "Buyer ref",
+      "AXMED-RFQ-2026-0404"
+    ]
+  ],
+  "columns": [
+    "#",
+    "Product",
+    "INN",
+    "Strength",
+    "Form",
+    "Pk Sz",
+    "UOM",
+    "Unit Px",
+    "Pack Px",
+    "MOQ (pk)",
+    "Lead (d)"
+  ],
+  "rows": [
+    [
+      1,
+      "Jiadip 10",
+      "Amlodipine",
+      "10 mg",
+      "Tablet",
+      28,
+      "tablet",
+      0.1064,
+      2.979,
+      50000,
+      28
+    ],
+    [
+      2,
+      "Jiafer 60",
+      "Ferrous sulphate/Folic acid",
+      "60 mg / 0.4 mg",
+      "Tablet",
+      1000,
+      "tablet",
+      0.0557,
+      55.7,
+      2000,
+      60
+    ],
+    [
+      3,
+      "Jiaflox 500",
+      "Ciprofloxacin",
+      "500 mg",
+      "Film-coated tablet",
+      500,
+      "tablet",
+      0.4672,
+      233.6,
+      5000,
+      42
+    ],
+    [
+      4,
+      "Jiamoxdt 250",
+      "Amoxicillin trihydrate",
+      "250 mg",
+      "Dispersible tab",
+      10,
+      "tablet",
+      0.1177,
+      1.177,
+      20000,
+      28
+    ],
+    [
+      5,
+      "Profenex 400",
+      "Ibuprofen",
+      "400 mg",
+      "Film-coated tablet",
+      100,
+      "tablet",
+      0.0861,
+      8.61,
+      500,
+      42
+    ]
+  ],
+  "footer": [
+    "Prices exclude destination duties, VAT and local regulatory fees.",
+    "Orders below MOQ attract a 12% surcharge on the unit price."
+  ]
+}
