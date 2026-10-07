@@ -38,6 +38,10 @@ src = ["src", "evals", "tests"]
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP", "N", "W", "SIM"]
 
+[tool.ruff.lint.per-file-ignores]
+# Document templates and prose literals read better unwrapped.
+"evals/synth/*.py" = ["E501"]
+
 [tool.mypy]
 python_version = "3.12"
 strict = true
