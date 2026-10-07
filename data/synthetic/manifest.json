@@ -1,7 +1,7 @@
 {
   "generator_version": "1",
   "seed": 2026,
-  "case_count": 45,
+  "case_count": 47,
   "cases": [
     {
       "id": "json_erp_nested_01",
@@ -692,6 +692,49 @@
       "currency": "USD"
     },
     {
+      "id": "chat_whatsapp_01",
+      "kind": "chat",
+      "variant": "whatsapp",
+      "supplier": "meridian",
+      "features": [
+        "correction",
+        "pack_price_only"
+      ],
+      "n_lines": 4,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "WhatsApp export. Prices in messages, one revised mid-thread after the buyer pushes back.",
+      "files": [
+        "WhatsApp Chat with Priya Nair.txt"
+      ],
+      "dir": "chat_whatsapp_01",
+      "truth": "chat_whatsapp_01/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "chat_whatsapp_02",
+      "kind": "chat",
+      "variant": "whatsapp",
+      "supplier": "baobab",
+      "features": [
+        "distractor_alt_price",
+        "inn_variant",
+        "tiered"
+      ],
+      "n_lines": 2,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "WhatsApp Chat with Wanjiru Kamau.txt"
+      ],
+      "dir": "chat_whatsapp_02",
+      "truth": "chat_whatsapp_02/truth.json",
+      "currency": "KES"
+    },
+    {
       "id": "xlsx_pricelist_01",
       "kind": "xlsx",
       "variant": "pricelist",
@@ -746,7 +789,7 @@
       "expect": "extract",
       "note": "",
       "files": [
-        "delta_quotation_DF-26-0129.docx"
+        "delta_quotation_DF-26-0131.docx"
       ],
       "dir": "docx_letter_01",
       "truth": "docx_letter_01/truth.json",
@@ -838,7 +881,7 @@
       "expect": "extract_and_flag",
       "note": "Injection is white 1pt text in the text layer.",
       "files": [
-        "lowlands_quotation_LP-26-0134.pdf"
+        "lowlands_quotation_LP-26-0136.pdf"
       ],
       "dir": "hostile_pdf_white",
       "truth": "hostile_pdf_white/truth.json",
@@ -1080,6 +1123,15 @@
         "units_per_pack": 1000,
         "price_per_uom": 0.0068,
         "inn_as_written": "Hydrochlorothiazide"
+      },
+      {
+        "case": "chat_whatsapp_02",
+        "line_no": 1,
+        "supplier": "baobab",
+        "currency": "KES",
+        "units_per_pack": 30,
+        "price_per_uom": 1.218,
+        "inn_as_written": "Hydrochlorothiazide"
       }
     ],
     "insulin_glargine_pen": [
@@ -1165,6 +1217,15 @@
         "units_per_pack": 30,
         "price_per_uom": 0.1802,
         "inn_as_written": "Tenofovir/Lamivudine/Dolutegravir"
+      },
+      {
+        "case": "chat_whatsapp_01",
+        "line_no": 4,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 30,
+        "price_per_uom": 0.1916,
+        "inn_as_written": "Tenofovir disoproxil fumarate + Lamivudine + Dolutegravir"
       },
       {
         "case": "csv_standard_01",
@@ -1419,6 +1480,15 @@
         "currency": "EUR",
         "units_per_pack": 24,
         "price_per_uom": 0.0428,
+        "inn_as_written": "Artemether + Lumefantrine"
+      },
+      {
+        "case": "chat_whatsapp_01",
+        "line_no": 1,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 24,
+        "price_per_uom": 0.0571,
         "inn_as_written": "Artemether + Lumefantrine"
       },
       {
@@ -2191,6 +2261,15 @@
         "inn_as_written": "Rifampicin + Isoniazid"
       },
       {
+        "case": "chat_whatsapp_01",
+        "line_no": 2,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 84,
+        "price_per_uom": 0.03,
+        "inn_as_written": "Rifampicin + Isoniazid"
+      },
+      {
         "case": "xlsx_pricelist_01",
         "line_no": 2,
         "supplier": "highveld",
@@ -2468,6 +2547,15 @@
         "inn_as_written": "Azithromycin"
       },
       {
+        "case": "chat_whatsapp_01",
+        "line_no": 3,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.2906,
+        "inn_as_written": "Azithromycin"
+      },
+      {
         "case": "xlsx_pricelist_01",
         "line_no": 5,
         "supplier": "highveld",
@@ -2571,6 +2659,26 @@
         "units_per_pack": 1,
         "price_per_uom": 2.179,
         "inn_as_written": "Insulin human (soluble)"
+      }
+    ],
+    "albendazole_400": [
+      {
+        "case": "eml_html_table_01",
+        "line_no": 1,
+        "supplier": "nilevalley",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0464,
+        "inn_as_written": "Albendazole"
+      },
+      {
+        "case": "chat_whatsapp_02",
+        "line_no": 2,
+        "supplier": "baobab",
+        "currency": "KES",
+        "units_per_pack": 100,
+        "price_per_uom": 5.37,
+        "inn_as_written": "Albendazole"
       }
     ],
     "hrze": [

@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any
 
 from evals.synth import hostile, vocab
+from evals.synth.render_chat import write_whatsapp
 from evals.synth.render_eml import write_eml
 from evals.synth.render_image import write_image
 from evals.synth.render_json import write_json
@@ -141,6 +142,22 @@ CASES: tuple[Case, ...] = (
         ("cold_chain",),
         note="Figures live in the attached PDF, not the body.",
     ),
+    # Chat exports: the negotiation is the document
+    Case(
+        "chat_whatsapp_01",
+        "chat",
+        "whatsapp",
+        "meridian",
+        ("correction", "pack_price_only"),
+        note="WhatsApp export. Prices in messages, one revised mid-thread after the buyer pushes back.",
+    ),
+    Case(
+        "chat_whatsapp_02",
+        "chat",
+        "whatsapp",
+        "baobab",
+        ("tiered", "distractor_alt_price", "inn_variant"),
+    ),
     # Office formats
     Case("xlsx_pricelist_01", "xlsx", "pricelist", "highveld", ("tiered", "vat_note")),
     Case("xlsx_pricelist_02", "xlsx", "pricelist", "kaveri", ("correction",)),
@@ -230,6 +247,7 @@ def _doc_name(case: Case, q: Quotation) -> str:
         "xlsx": f"{short}_price_list_{date}.xlsx",
         "docx": f"{short}_quotation_{ref}.docx",
         "csv": f"{short}_export_{date}.csv",
+        "chat": f"WhatsApp Chat with {q.supplier.contact_name}.txt",
     }[case.kind]
 
 
@@ -268,7 +286,7 @@ def build(out: Path, seed: int) -> dict[str, Any]:
         files: list[str] = []
         q: Quotation | None = None
 
-        if case.kind in ("json", "pdf", "eml", "xlsx", "docx", "csv"):
+        if case.kind in ("json", "pdf", "eml", "xlsx", "docx", "csv", "chat"):
             seq += 1
             supplier = vocab.SUPPLIER_BY_KEY[case.supplier]
             q = make_quotation(
@@ -304,6 +322,8 @@ def build(out: Path, seed: int) -> dict[str, Any]:
                 write_docx(q, rng, target)
             elif case.kind == "csv":
                 write_csv(q, rng, target, style=case.variant)
+            elif case.kind == "chat":
+                write_whatsapp(q, rng, target)
             files.append(name)
 
         elif case.kind == "image":

@@ -52,7 +52,11 @@ def test_truth_prices_are_consistent(manifest: dict) -> None:
 def test_corrections_appear_in_documents(manifest: dict) -> None:
     out: Path = manifest["_out"]
     for case in manifest["cases"]:
-        if "correction" not in case.get("features", []) or case["kind"] not in ("eml", "csv"):
+        if "correction" not in case.get("features", []) or case["kind"] not in (
+            "eml",
+            "csv",
+            "chat",
+        ):
             continue
         truth = json.loads((out / case["truth"]).read_text(encoding="utf-8"))
         corrected = [ln for ln in truth["quotation"]["lines"] if ln["superseded"]]

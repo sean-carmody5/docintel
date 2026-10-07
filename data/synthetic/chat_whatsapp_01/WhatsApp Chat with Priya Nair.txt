@@ -1,0 +1,18 @@
+[18/07/2026, 11:34:00] Messages and calls are end-to-end encrypted. No one outside of this chat, not even WhatsApp, can read or listen to them.
+[18/07/2026, 11:35:30] Cesar Dominguez: Hi Priya, following up on AXMED-RFQ-2026-0245. Any news on pricing?
+[18/07/2026, 11:49:13] Priya Nair: Hi Cesar, yes just got sign off. Sending now 👍
+[18/07/2026, 11:51:33] Priya Nair: All USD, FOB Nhava Sheva (INNSA). Valid to 17 Aug.
+[18/07/2026, 12:05:19] Priya Nair: Meriarte 20 (Artemether + Lumefantrine 20 mg / 120 mg, tablet) USD 1.306 per pack of 24 tablets
+[18/07/2026, 12:15:20] Priya Nair: MOQ 5,000 packs, lead time 45 days
+[18/07/2026, 12:24:48] Priya Nair: Rifex 150 (Rifampicin + Isoniazid 150 mg / 75 mg, film-coated tablet) USD 2.520 per pack of 84 tablets
+[18/07/2026, 12:30:47] Priya Nair: MOQ 50,000 packs, lead time 28 days
+[18/07/2026, 12:32:04] Priya Nair: Merizith 500 (Azithromycin 500 mg, film-coated tablet) USD 29.060 per pack of 100 tablets
+[18/07/2026, 12:33:57] Priya Nair: MOQ 20,000 packs, lead time 42 days
+[18/07/2026, 12:37:28] Priya Nair: Meritld 300 (Tenofovir disoproxil fumarate + Lamivudine + Dolutegravir 300 mg / 300 mg / 50 mg, film-coated tablet) USD 5.748 per pack of 30 tablets
+[18/07/2026, 12:38:41] Cesar Dominguez: Thanks, that's clear
+[18/07/2026, 14:50:31] Priya Nair: Sorry Cesar, one correction. Meriarte 20 should be 1.371 per pack, not 1.306. The 1.306 was last quarter's list
+[18/07/2026, 14:51:43] Cesar Dominguez: Noted, thanks for flagging
+[18/07/2026, 15:02:38] Cesar Dominguez: Payment terms as before? 30% advance, balance against shipping documents?
+[18/07/2026, 15:06:59] Priya Nair: Yes same terms
+[18/07/2026, 15:19:24] Priya Nair: Formal quotation MPL/Q/26/0127 to follow by email tomorrow
+[18/07/2026, 15:23:27] Cesar Dominguez: Perfect, thanks 🙏
