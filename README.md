@@ -21,14 +21,24 @@ flowchart LR
 
 ## Status
 
-Planning complete, build starting. See [PLAN.md](PLAN.md) for the architecture, the extension points, how confidence is computed, and the build sequence.
+Evaluation data in place, pipeline build starting. See [PLAN.md](PLAN.md) for the architecture, the extension points, how confidence is computed, and the build sequence.
+
+## Data
+
+| Set | Where | What | Ground truth |
+|---|---|---|---|
+| Provided | `data/provided/` | The eight documents supplied with the brief | Hand-checked fixtures |
+| Synthetic | `data/synthetic/` | 45 generated cases across JSON, PDF, email, scans, Excel, Word, CSV, hostile and misnamed files ([README](data/synthetic/README.md)) | Exact, by construction |
+| Public | `data/public/` (git-ignored) | 37 real price lists, catalogues and RFQ forms from UNICEF, Global Fund, PAHO, national procurement bodies and manufacturers, fetched by `evals/public/fetch.py` | None, robustness only |
 
 ## Layout
 
 ```
 data/provided/    the eight documents supplied with the brief
 data/synthetic/   generated documents with known ground truth
-evals/            synthetic generator, public sample fetcher, scorer
+data/public/      downloaded real documents, git-ignored
+evals/synth/      synthetic generator
+evals/public/     public sample sources and fetcher
 src/docintel/     the pipeline
 docs/             brief, agent log, write-up
 ```

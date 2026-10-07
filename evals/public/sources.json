@@ -1,0 +1,574 @@
+{
+  "_about": "Public documents that resemble supplier price lists and quotations. Verified reachable on 2026-10-07. Downloaded into data/public (git-ignored) by evals/public/fetch.py. Licences vary; several publishers assert all rights reserved, so nothing here is redistributed with the repository.",
+  "sources": [
+    {
+      "id": "gf_ppm_arv_2026q1",
+      "name": "Global Fund PPM reference pricing, ARVs Q1 2026",
+      "publisher": "The Global Fund",
+      "url": "https://www.theglobalfund.org/media/3x0lhsks/ppm_arvreferencepricing_table_en.pdf",
+      "format": "pdf",
+      "content": "USD reference price per ARV product and pack",
+      "licence": "CC BY-NC 4.0 per site terms",
+      "tags": [
+        "prices",
+        "tabular",
+        "usd"
+      ]
+    },
+    {
+      "id": "gf_ppm_hiv_strategic",
+      "name": "Global Fund PPM reference pricing, HIV strategic medicines",
+      "publisher": "The Global Fund",
+      "url": "https://www.theglobalfund.org/media/ibxas5fs/ppm_strategicmedicineshivreferencepricing_table_en.pdf",
+      "format": "pdf",
+      "content": "USD per product, one page",
+      "licence": "CC BY-NC 4.0 per site terms",
+      "tags": [
+        "prices",
+        "tabular",
+        "usd"
+      ]
+    },
+    {
+      "id": "unicef_dtp_prices",
+      "name": "UNICEF Supply Division DTP vaccine price data",
+      "publisher": "UNICEF",
+      "url": "https://www.unicef.org/supply/media/24356/file/DTP-vaccines-prices-30092025.pdf",
+      "format": "pdf",
+      "content": "USD per dose by supplier, presentation and year",
+      "licence": "None stated; unicef.org terms",
+      "tags": [
+        "prices",
+        "tabular",
+        "usd",
+        "cold_chain"
+      ]
+    },
+    {
+      "id": "unicef_antimalarial_2026",
+      "name": "UNICEF antimalarial medicines price data, May 2026",
+      "publisher": "UNICEF",
+      "url": "https://www.unicef.org/supply/media/25546/file/Antimalarial-Medicines-price-data-May2026.pdf",
+      "format": "pdf",
+      "content": "Material code, description, min and max LTA price USD",
+      "licence": "None stated; unicef.org terms",
+      "tags": [
+        "prices",
+        "tabular",
+        "usd",
+        "price_range"
+      ]
+    },
+    {
+      "id": "unicef_rutf_prices",
+      "name": "UNICEF RUTF price data 2003 to 2026",
+      "publisher": "UNICEF",
+      "url": "https://www.unicef.org/supply/media/25986/file/Ready-to-use-therapeutic-food-price-data-2003-2026.pdf",
+      "format": "pdf",
+      "content": "Weighted average USD per carton by supplier and year",
+      "licence": "None stated; unicef.org terms",
+      "tags": [
+        "prices",
+        "tabular",
+        "usd"
+      ]
+    },
+    {
+      "id": "paho_sf_reference_2026",
+      "name": "PAHO Strategic Fund reference prices, June 2026",
+      "publisher": "PAHO",
+      "url": "https://www.paho.org/sites/default/files/2026/06/prsfreferenceprices-9-1.pdf",
+      "format": "pdf",
+      "content": "45 pages: item with pack, price range, UoM, UNSPSC, ATC; many rows without a price",
+      "licence": "Prices FCA, not guaranteed, not a formal proposal",
+      "tags": [
+        "prices",
+        "tabular",
+        "usd",
+        "wide_table",
+        "price_range",
+        "long"
+      ]
+    },
+    {
+      "id": "paho_sf_lta_2022",
+      "name": "PAHO Strategic Fund LTA price list, October 2022",
+      "publisher": "PAHO",
+      "url": "https://paho.org/sites/default/files/2022-10/sf-lta-ptoducts-and-prices-oct-2022.pdf",
+      "format": "pdf",
+      "content": "Bilingual EN/ES, USD per product by therapeutic area",
+      "licence": "None stated",
+      "tags": [
+        "prices",
+        "tabular",
+        "usd",
+        "bilingual"
+      ]
+    },
+    {
+      "id": "ghsc_psm_ecatalog_2026",
+      "name": "USAID GHSC-PSM product e-catalog, June 2026",
+      "publisher": "USAID GHSC-PSM",
+      "url": "https://ghsupplychain.org/sites/default/files/2026-07/eCatalog%20June%202026.pdf",
+      "format": "pdf",
+      "content": "38 pages: product code, description, pack, USD unit price",
+      "licence": "Prices are estimates and may not be current",
+      "tags": [
+        "prices",
+        "tabular",
+        "usd",
+        "long",
+        "large"
+      ]
+    },
+    {
+      "id": "msh_price_guide_2015",
+      "name": "MSH International Medical Products Price Guide 2015",
+      "publisher": "Management Sciences for Health",
+      "url": "https://msh.org/wp-content/uploads/2020/03/msh-2015-international-medical-products-price-guide.pdf",
+      "format": "pdf",
+      "content": "443 pages, trilingual: supplier and buyer prices USD per unit with pack and source",
+      "licence": "Copyright MSH, all rights reserved. Do not redistribute.",
+      "tags": [
+        "prices",
+        "tabular",
+        "usd",
+        "long",
+        "large",
+        "multilingual"
+      ]
+    },
+    {
+      "id": "who_afro_price_indicator_2007",
+      "name": "WHO AFRO essential medicines price indicator 2007",
+      "publisher": "WHO AFRO",
+      "url": "https://afro.who.int/sites/default/files/2017-06/afro_essential_medicine_price_indicator_2007.pdf",
+      "format": "pdf",
+      "content": "81 pages: pack and unit price USD by supplier, EXW/FOB",
+      "licence": "None stated",
+      "tags": [
+        "prices",
+        "tabular",
+        "usd",
+        "long",
+        "incoterms"
+      ]
+    },
+    {
+      "id": "chai_arv_2016",
+      "name": "CHAI ARV reference price list 2016",
+      "publisher": "Clinton Health Access Initiative",
+      "url": "https://clintonhealthaccess.org/wp-content/uploads/2016/11/2016-CHAI-ARV-Reference-Price-List_FINAL.pdf",
+      "format": "pdf",
+      "content": "USD per pack and patient-year, footnoted",
+      "licence": "None stated",
+      "tags": [
+        "prices",
+        "tabular",
+        "usd",
+        "footnotes"
+      ]
+    },
+    {
+      "id": "msf_untangling_web_14",
+      "name": "MSF Untangling the Web of ARV price reductions, 14th edition",
+      "publisher": "MSF Access Campaign",
+      "url": "https://msf.org/sites/default/files/utw_14_eng_july2011.pdf",
+      "format": "pdf",
+      "content": "112 pages of narrative with per-product price tables by company",
+      "licence": "None stated",
+      "tags": [
+        "prices",
+        "narrative",
+        "usd",
+        "long"
+      ]
+    },
+    {
+      "id": "sa_ndoh_hp07_2026",
+      "name": "South Africa NDoH contract circular HP07-2026DAI",
+      "publisher": "South Africa National Department of Health",
+      "url": "https://www.health.gov.za/wp-content/uploads/2026/06/HP07-2026DAI-Contract-Circular-22-June-2026.pdf",
+      "format": "pdf",
+      "content": "83 pages: item spec, unit, quantity, awarded supplier, product name, ZAR unit price",
+      "licence": "None stated",
+      "insecure_tls": true,
+      "tags": [
+        "prices",
+        "tabular",
+        "zar",
+        "long",
+        "awards"
+      ]
+    },
+    {
+      "id": "msd_tanzania_catalogue_2018",
+      "name": "Tanzania MSD price catalogue 2018/19",
+      "publisher": "Medical Stores Department Tanzania, via openAFRICA",
+      "url": "https://open.africa/dataset/dc2e1146-020a-4920-a3ff-cb22f30eb24f/resource/1c802418-e493-4fe2-858d-b3418f2cb536/download/msd-price-catalogue-2018-2019-final.pdf",
+      "format": "pdf",
+      "content": "86 pages: terms preamble, then code, VEN, description, UoM, TZS price",
+      "licence": "CC BY",
+      "tags": [
+        "prices",
+        "tabular",
+        "tzs",
+        "long",
+        "terms_preamble"
+      ]
+    },
+    {
+      "id": "ghana_nhis_medicines_2025",
+      "name": "Ghana NHIS medicines list 2025",
+      "publisher": "National Health Insurance Authority, Ghana",
+      "url": "https://www.nhis.gov.gh/files/2025%20NHIS%20ML.pdf",
+      "format": "pdf",
+      "content": "36 pages: code, generic name, form, strength, unit of pricing, price GHS",
+      "licence": "All rights reserved. Do not redistribute.",
+      "tags": [
+        "prices",
+        "tabular",
+        "ghs",
+        "long"
+      ]
+    },
+    {
+      "id": "jan_aushadhi_mrp_2015",
+      "name": "Jan Aushadhi MRP list, October 2015",
+      "publisher": "PMBI India",
+      "url": "https://www.pmbi.co.in/old-data/New_MRP_Oct15.pdf",
+      "format": "pdf",
+      "content": "Drug code, name, pack unit, MRP INR",
+      "licence": "None stated",
+      "tags": [
+        "prices",
+        "tabular",
+        "inr"
+      ]
+    },
+    {
+      "id": "drap_sro100_2002",
+      "name": "DRAP Pakistan SRO 100(I)/2002 MRP schedule",
+      "publisher": "Drug Regulatory Authority of Pakistan",
+      "url": "https://www.dra.gov.pk/wp-content/uploads/2022/01/100.pdf",
+      "format": "pdf",
+      "content": "Gazette notification fixing MRP in PKR per pack",
+      "licence": "Government notification",
+      "tags": [
+        "prices",
+        "tabular",
+        "pkr",
+        "gazette"
+      ]
+    },
+    {
+      "id": "drap_20drugs_2023_scanned",
+      "name": "DRAP SRO 24(I)/2023, MRPs of 20 drugs",
+      "publisher": "Drug Regulatory Authority of Pakistan",
+      "url": "https://www.dra.gov.pk/wp-content/uploads/2023/01/Notification-of-Reduction-in-MRPs-of-20-Drugs-11.01.2023.pdf",
+      "format": "pdf",
+      "content": "Scanned notification with a garbled OCR layer; price table PKR per pack",
+      "licence": "Government notification",
+      "tags": [
+        "prices",
+        "scanned",
+        "pkr",
+        "bad_ocr_layer"
+      ]
+    },
+    {
+      "id": "drap_paracetamol_2022_scanned",
+      "name": "DRAP SRO 1995(I)/2022 paracetamol MRP",
+      "publisher": "Drug Regulatory Authority of Pakistan",
+      "url": "https://www.dra.gov.pk/wp-content/uploads/2022/11/MRP-of-Paracetamol-03.11.2022.pdf",
+      "format": "pdf",
+      "content": "Scanned one-page MRP table PKR",
+      "licence": "Government notification",
+      "tags": [
+        "prices",
+        "scanned",
+        "pkr",
+        "bad_ocr_layer"
+      ]
+    },
+    {
+      "id": "quezon_city_rfq_scanned",
+      "name": "Quezon City RFQ for drugs and medicines, QCPC-24-DM-0178C",
+      "publisher": "Quezon City Government, Philippines",
+      "url": "https://quezoncity.gov.ph/wp-content/uploads/2024/03/QCPC-24-DM-0178C-DRUGS-AND-MEDICINES-AND-OTHERS.pdf",
+      "format": "pdf",
+      "content": "Scanned RFQ form: item list, budget PHP, supplier price columns, signatures",
+      "licence": "None stated",
+      "tags": [
+        "rfq",
+        "scanned",
+        "php",
+        "bad_ocr_layer",
+        "form"
+      ]
+    },
+    {
+      "id": "gmc_baramati_quotation_scanned",
+      "name": "GMC Baramati quotation form for drugs",
+      "publisher": "Government Medical College Baramati, India",
+      "url": "https://gmcbaramati.org/brcp/pdf/pdf_02_03_2022_11_55_03_Quotation402%20(3).pdf",
+      "format": "pdf",
+      "content": "Scanned hospital letterhead with about 25 drugs and rate columns",
+      "licence": "None stated",
+      "tags": [
+        "rfq",
+        "scanned",
+        "inr",
+        "bad_ocr_layer",
+        "form"
+      ]
+    },
+    {
+      "id": "mmwgh_rfq_2023",
+      "name": "Mariveles Mental Wellness and General Hospital RFQ PR 2023-09-0604",
+      "publisher": "Department of Health, Philippines",
+      "url": "https://mmwgh.gov.ph/wp-content/uploads/2023/09/PR-No.-2023-09-0604.pdf",
+      "format": "pdf",
+      "content": "RFQ with items, quantity, unit price and total PHP",
+      "licence": "None stated",
+      "tags": [
+        "rfq",
+        "prices",
+        "php",
+        "form"
+      ]
+    },
+    {
+      "id": "philhealth_app_2011",
+      "name": "PhilHealth 2011 annual procurement plan, drugs and medicines",
+      "publisher": "PhilHealth",
+      "url": "https://www.philhealth.gov.ph/about_us/app/2011/region/appro2011dm.pdf",
+      "format": "pdf",
+      "content": "13 pages, messy layout: brand and generic, quarterly quantities, unit price PHP",
+      "licence": "None stated",
+      "tags": [
+        "prices",
+        "tabular",
+        "php",
+        "messy_layout"
+      ],
+      "insecure_tls": true
+    },
+    {
+      "id": "dbm_rfq_25_028",
+      "name": "DBM Philippines RFQ 25-028, clinic medicines",
+      "publisher": "Department of Budget and Management, Philippines",
+      "url": "https://www.dbm.gov.ph/wp-content/uploads/Bids/RFQ/RFQ2025/RFQ-25-028-Procurement-of-Medicines-and-Supplies-for-the-DBM-Clinic.pdf",
+      "format": "pdf",
+      "content": "16 pages of RFQ terms, then an item schedule with budget PHP",
+      "licence": "None stated",
+      "tags": [
+        "rfq",
+        "php",
+        "text_heavy",
+        "terms_preamble"
+      ],
+      "insecure_tls": true
+    },
+    {
+      "id": "ipca_domestic_pricelist_2025",
+      "name": "Ipca Laboratories domestic formulations price list, September 2025",
+      "publisher": "Ipca Laboratories",
+      "url": "https://ipca.com/wp-content/pdf/revised-pricelist-of-all-domestic-formulations-applicable-22-09-2025.pdf",
+      "format": "pdf",
+      "content": "17 dense pages: product, composition, pack, MRP INR. A manufacturer's own list.",
+      "licence": "None stated",
+      "tags": [
+        "prices",
+        "tabular",
+        "inr",
+        "manufacturer",
+        "dense"
+      ]
+    },
+    {
+      "id": "unfpa_jordan_rfq_20_002",
+      "name": "UNFPA Jordan RFQ 20/002 pharmaceuticals",
+      "publisher": "UNFPA",
+      "url": "https://jordan.unfpa.org/sites/default/files/submissions/UNFPA_JOR_RFQ_20_002_Pharmaceuticals.pdf",
+      "format": "pdf",
+      "content": "Request with item, dosage, UoM, quantity table and a blank JOD price schedule",
+      "licence": "None stated",
+      "tags": [
+        "rfq",
+        "no_prices",
+        "form"
+      ]
+    },
+    {
+      "id": "sa_medicine_prices_2026_10",
+      "name": "South Africa database of medicine prices, 1 October 2026",
+      "publisher": "South Africa National Department of Health",
+      "url": "https://www.health.gov.za/wp-content/uploads/2026/10/Database_Of_Medicine_Prices_1_October_2026.xlsx",
+      "format": "xlsx",
+      "content": "Tens of thousands of rows: NAPPI, name, actives, strength, form, pack size, SEP and unit price ZAR",
+      "licence": "None stated",
+      "insecure_tls": true,
+      "tags": [
+        "prices",
+        "spreadsheet",
+        "zar",
+        "large"
+      ]
+    },
+    {
+      "id": "who_mi4a_vaccine_purchases_2026",
+      "name": "WHO MI4A vaccine purchase dataset, September 2026",
+      "publisher": "WHO",
+      "url": "https://cdn.who.int/media/docs/default-source/immunization/mi4a/who-mi4a-dataset-final-september-2026.xlsx?sfvrsn=a19b7135_5&download=true",
+      "format": "xlsx",
+      "content": "Three sheets: instructions, purchase data with price per dose USD and Incoterm, glossary",
+      "licence": "WHO terms; disclaimer in sheet 1",
+      "tags": [
+        "prices",
+        "spreadsheet",
+        "usd",
+        "multi_sheet",
+        "incoterms"
+      ]
+    },
+    {
+      "id": "spc_sri_lanka_awards_2026_06",
+      "name": "Sri Lanka SPC awarded pharmaceutical tenders, June 2026",
+      "publisher": "State Pharmaceuticals Corporation of Sri Lanka",
+      "url": "https://www.spc.lk/pub/awarded-tenders/pharmaceutical/pharmaceutical-june-2026.xlsx",
+      "format": "xlsx",
+      "content": "Five sheets: item, supplier, quantity, currency USD/LKR, pack size, awarded and unit price",
+      "licence": "None stated",
+      "tags": [
+        "prices",
+        "spreadsheet",
+        "mixed_currency",
+        "multi_sheet",
+        "awards"
+      ]
+    },
+    {
+      "id": "jordan_jfda_prices_2020",
+      "name": "Jordan JFDA drug prices 2020",
+      "publisher": "JFDA via opendata.gov.jo",
+      "url": "https://opendata.gov.jo/dataset/MIGRATED-838-2021/resource/b3c4be77-c54b-40a3-b048-17f4a4cad431/download/12-drug2020-.xls?increment=true",
+      "format": "xlsx",
+      "content": "About 15,400 rows: barcode, trade name, strength, pack, agent (Arabic), prices JOD. Served with an .xls extension but is XLSX.",
+      "licence": "Open Jordanian Licence",
+      "tags": [
+        "prices",
+        "spreadsheet",
+        "jod",
+        "misnamed_extension",
+        "arabic",
+        "large"
+      ]
+    },
+    {
+      "id": "titck_reference_prices_2026",
+      "name": "Turkish Medicines Agency reference-based price list, February 2026",
+      "publisher": "TITCK",
+      "url": "https://titck.gov.tr/storage/Archive/2026/dynamicModulesAttachment/REFERANSBAZLILALSTES_ede284aa-9979-4009-b573-ebc0cf98b834.xlsx",
+      "format": "xlsx",
+      "content": "About 2,470 rows in Turkish: product with pack, firm, source price EUR",
+      "licence": "None stated",
+      "tags": [
+        "prices",
+        "spreadsheet",
+        "eur",
+        "turkish"
+      ],
+      "insecure_tls": true
+    },
+    {
+      "id": "kemsa_pricelist_2017",
+      "name": "KEMSA price list 2017",
+      "publisher": "KEMSA via openAFRICA",
+      "url": "https://open.africa/dataset/739db8d3-54d1-4655-87c7-d9821f2ebf1b/resource/6eea972a-5403-4648-86e1-8af3c3e001ce/download/kemsa_pricelist_2017.csv",
+      "format": "csv",
+      "content": "553 rows: product code, name, category, pack size, price KES",
+      "licence": "CC BY",
+      "tags": [
+        "prices",
+        "csv",
+        "kes"
+      ]
+    },
+    {
+      "id": "msd_tanzania_catalogue_2018_csv",
+      "name": "Tanzania MSD price catalogue 2018/19, CSV",
+      "publisher": "Medical Stores Department Tanzania, via openAFRICA",
+      "url": "https://open.africa/dataset/dc2e1146-020a-4920-a3ff-cb22f30eb24f/resource/a5f3adfc-e603-4e3e-b49a-a687d12de3cc/download/tz_msd-price_catalogue-2018-2019.csv",
+      "format": "csv",
+      "content": "570 rows: code, VEN, description, UoM such as 1000TB, price TZS",
+      "licence": "CC BY",
+      "tags": [
+        "prices",
+        "csv",
+        "tzs"
+      ]
+    },
+    {
+      "id": "spc_sri_lanka_awards_2012_doc",
+      "name": "Sri Lanka SPC tender board decisions, August 2012",
+      "publisher": "State Pharmaceuticals Corporation of Sri Lanka",
+      "url": "https://www.spc.lk/pub/spc-awarded-tenders-pharmaceutical-2012-august.doc",
+      "format": "doc",
+      "content": "Legacy Word: tender ref, item, packs, supplier, country, unit price C&F USD",
+      "licence": "None stated",
+      "tags": [
+        "prices",
+        "legacy_office",
+        "usd",
+        "incoterms"
+      ]
+    },
+    {
+      "id": "unfpa_syria_quotation_form",
+      "name": "UNFPA Syria Annex 1 quotation form",
+      "publisher": "UNFPA",
+      "url": "https://syria.unfpa.org/sites/default/files/submissions/annex_1.docx",
+      "format": "docx",
+      "content": "Blank supplier quotation template: bidder, currency, Incoterm DAP, price schedule columns",
+      "licence": "None stated",
+      "tags": [
+        "rfq",
+        "no_prices",
+        "form",
+        "docx"
+      ]
+    },
+    {
+      "id": "ida_product_indicator_2025",
+      "name": "IDA Foundation product indicator 2025/26",
+      "publisher": "IDA Foundation",
+      "url": "https://idafoundation.org/wp-content/uploads/2026/01/Product_Indicator.pdf",
+      "format": "pdf",
+      "content": "64 pages EN/FR: codes and pack sizes, no prices. A negative case.",
+      "licence": "None stated",
+      "tags": [
+        "no_prices",
+        "catalogue",
+        "bilingual",
+        "long"
+      ]
+    },
+    {
+      "id": "jms_uganda_catalogue_2026",
+      "name": "Joint Medical Store Uganda product catalogue, March 2026",
+      "publisher": "Joint Medical Store",
+      "url": "https://jms.co.ug/wp-content/uploads/2026/05/JMS-Product-Catalogue-March-26-protected.xlsx",
+      "format": "xlsx",
+      "content": "Seven sheets, about 860 medicine rows with part number, UOM, formulation; no price column. Sheet-protected.",
+      "licence": "None stated",
+      "tags": [
+        "no_prices",
+        "catalogue",
+        "spreadsheet",
+        "multi_sheet",
+        "protected"
+      ]
+    }
+  ]
+}

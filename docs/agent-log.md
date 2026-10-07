@@ -41,3 +41,13 @@ Seán reviewed the first plan and steered the following. Each is now in PLAN.md 
 **MCP (Seán asked).** Agent's view: overkill for the core, a possible stretch as a reviewer-facing server over the review table.
 
 **Standard (Seán's direction).** No room for mediocrity. Plan now includes uv, ruff, mypy, pytest, pre-commit and GitHub Actions. Realistic estimate revised from 6 to about 10 hours, to be stated honestly in the write-up.
+
+## Session 3, 7 October 2026: repository and evaluation data
+
+**Repository (Seán's go-ahead).** Local git init, private GitHub repository created through the API with the credential Git Credential Manager already held, first push of the provided materials, brief, plan, CLAUDE.md and agent log. Git on this machine would have rewritten the provided PDFs as text on checkout, so a gitattributes file pinning binaries and LF went in as the second commit. Package scaffold with uv, exact lockfile, ruff, mypy and a src layout.
+
+**Dataset (Seán's direction, agent built).** Seán asked for plenty of time on a synthetic plus real dataset with manual review and iteration. The agent built a generator that writes ground truth first and renders it into six JSON dialects, three PDF layouts, four email styles, Excel, Word, two CSV conventions, four image degradations, three injection carriers, misnamed files and an unsupported blob: 45 cases. Review found packaging types that did not fit pack sizes, a heavy scan that was too readable, table columns that wrapped or overflowed, Spanish taglines on Indian suppliers and email timezones that did not match the sender. All fixed and rechecked. Invariant tests cover price arithmetic, corrections, tiers and duplicate sets.
+
+**Public data (agent researched, Seán to review).** A research agent searched about 45 sources and verified 36 downloadable documents. Thirty-seven are now listed in evals/public/sources.json with publisher, licence and tags, and fetched into a git-ignored folder by a script that checks magic bytes and records hashes. Three hosts need relaxed TLS because of broken certificate chains. Licence note: MSH and Ghana NHIS assert all rights reserved, so nothing in that folder is redistributed.
+
+**Determinism (agent).** Regeneration must be byte-identical for the commit history to stay honest, so PDFs are rendered invariant, email message IDs come from the seeded generator, Office packages are rewritten with fixed timestamps, and all text outputs are LF.
