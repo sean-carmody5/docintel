@@ -151,6 +151,7 @@ def classic_proforma(q: Quotation, rng: random.Random, path: Path, hidden_text: 
 
     doc = SimpleDocTemplate(
         str(path),
+        invariant=1,
         pagesize=LETTER,
         leftMargin=18 * mm,
         rightMargin=18 * mm,
@@ -457,6 +458,7 @@ def modern_quote(q: Quotation, rng: random.Random, path: Path, hidden_text: str 
 
     doc = SimpleDocTemplate(
         str(path),
+        invariant=1,
         pagesize=A4,
         leftMargin=14 * mm,
         rightMargin=14 * mm,
@@ -726,6 +728,7 @@ def letter_style(q: Quotation, rng: random.Random, path: Path, hidden_text: str 
 
     doc = SimpleDocTemplate(
         str(path),
+        invariant=1,
         pagesize=A4,
         leftMargin=24 * mm,
         rightMargin=24 * mm,

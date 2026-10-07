@@ -437,7 +437,11 @@ def write_json(
     payload = DIALECTS[dialect](q, rng)
     if extra:
         payload.update(extra)
-    path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    path.write_text(
+        json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
 
 
 __all__ = ["DIALECTS", "write_json", "vocab"]

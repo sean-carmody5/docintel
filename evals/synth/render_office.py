@@ -3,7 +3,10 @@
 from __future__ import annotations
 
 import csv
+import io
 import random
+import re
+import zipfile
 from pathlib import Path
 
 from docx import Document
@@ -13,6 +16,30 @@ from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 
 from evals.synth.truth import Line, Quotation, fmt_money, fmt_money_eu, plural
+
+_FIXED_STAMP = b"2026-01-01T00:00:00Z"
+
+
+def _normalise_zip(path: Path) -> None:
+    """Rewrite an OOXML package with fixed entry dates and document timestamps.
+
+    openpyxl and python-docx stamp the current time into zip entries and docProps,
+    which would make every regeneration differ byte for byte.
+    """
+    buf = io.BytesIO()
+    with zipfile.ZipFile(path) as src, zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as dst:
+        for info in src.infolist():
+            data = src.read(info.filename)
+            if info.filename == "docProps/core.xml":
+                data = re.sub(
+                    rb"(<dcterms:(created|modified)[^>]*>)[^<]*(</dcterms:\2>)",
+                    rb"\g<1>" + _FIXED_STAMP + rb"\3",
+                    data,
+                )
+            entry = zipfile.ZipInfo(info.filename, date_time=(1980, 1, 1, 0, 0, 0))
+            entry.compress_type = zipfile.ZIP_DEFLATED
+            dst.writestr(entry, data)
+    path.write_bytes(buf.getvalue())
 
 
 def _shown_unit(line: Line) -> float:
@@ -131,6 +158,7 @@ def write_xlsx(q: Quotation, rng: random.Random, path: Path) -> None:
     contacts.append(["Phone", s.phone])
     contacts.append(["Address", s.address])
     wb.save(path)
+    _normalise_zip(path)
 
 
 def write_docx(q: Quotation, rng: random.Random, path: Path) -> None:
@@ -189,6 +217,7 @@ def write_docx(q: Quotation, rng: random.Random, path: Path) -> None:
             )
     doc.add_paragraph(f"\nYours faithfully,\n\n{s.contact_name}\n{s.contact_title}")
     doc.save(path)
+    _normalise_zip(path)
 
 
 def write_csv(q: Quotation, rng: random.Random, path: Path, *, style: str = "standard") -> None:
@@ -196,7 +225,7 @@ def write_csv(q: Quotation, rng: random.Random, path: Path, *, style: str = "sta
     pack_only = "pack_price_only" in q.features
     with path.open("w", newline="", encoding="utf-8") as fh:
         if style == "standard":
-            w = csv.writer(fh)
+            w = csv.writer(fh, lineterminator="\n")
             w.writerow(["supplier", q.supplier_name])
             w.writerow(["quotation_ref", q.quotation_ref])
             w.writerow(["date", q.document_date.isoformat()])
@@ -236,7 +265,7 @@ def write_csv(q: Quotation, rng: random.Random, path: Path, *, style: str = "sta
                     ]
                 )
         else:
-            w = csv.writer(fh, delimiter=";")
+            w = csv.writer(fh, delimiter=";", lineterminator="\n")
             w.writerow(["Lieferant", q.supplier_name])
             w.writerow(["Angebotsnummer", q.quotation_ref])
             w.writerow(["Datum", q.document_date.strftime("%d.%m.%Y")])

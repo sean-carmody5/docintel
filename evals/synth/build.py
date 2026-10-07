@@ -337,6 +337,7 @@ def build(out: Path, seed: int) -> dict[str, Any]:
             (case_dir / "truth.json").write_text(
                 json.dumps(_truth_payload(case, q, files), indent=2, ensure_ascii=False) + "\n",
                 encoding="utf-8",
+                newline="\n",
             )
             entry["truth"] = f"{case.id}/truth.json"
             entry["supplier"] = q.supplier_key
@@ -381,9 +382,9 @@ def build(out: Path, seed: int) -> dict[str, Any]:
         "duplicate_sets": duplicates,
     }
     (out / "manifest.json").write_text(
-        json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+        json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n"
     )
-    (out / "README.md").write_text(_readme(manifest), encoding="utf-8")
+    (out / "README.md").write_text(_readme(manifest), encoding="utf-8", newline="\n")
     return manifest
 
 

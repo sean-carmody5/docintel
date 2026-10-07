@@ -7,7 +7,7 @@ from collections.abc import Callable
 from datetime import datetime, timedelta, timezone
 from email.message import EmailMessage
 from email.policy import default as default_policy
-from email.utils import format_datetime, make_msgid
+from email.utils import format_datetime
 from html import escape
 from pathlib import Path
 
@@ -96,7 +96,9 @@ def _headers(
     )
     msg["Subject"] = subject
     msg["Date"] = format_datetime(sent)
-    msg["Message-ID"] = make_msgid(domain=q.supplier.email_domain)
+    msg["Message-ID"] = (
+        f"<{rng.getrandbits(64):016x}.{rng.getrandbits(32):08x}@{q.supplier.email_domain}>"
+    )
     if reply:
         parent = f"<{q.buyer_reference.lower()}.{rng.getrandbits(32):08x}@mail.axmed.com>"
         msg["In-Reply-To"] = parent
@@ -144,6 +146,11 @@ def _html_table(q: Quotation) -> str:
         f'<table cellpadding="0" cellspacing="0" style="border-collapse:collapse;font-size:10.5pt">'
         f'<tr style="background:#eef2f7">{th}</tr>{"".join(rows)}</table>'
     )
+
+
+def _pin_boundary(msg: EmailMessage, rng: random.Random) -> None:
+    """The stdlib picks a random boundary at serialisation time; pin it to the seed."""
+    msg.set_boundary(f"================{rng.getrandbits(62):020d}==")
 
 
 def _write(msg: EmailMessage, path: Path) -> None:
@@ -199,6 +206,7 @@ def plain_numbered_ps(
     )
     msg.set_content(text)
     msg.add_alternative(html_body, subtype="html")
+    _pin_boundary(msg, rng)
     _write(msg, path)
 
 
@@ -229,6 +237,7 @@ def html_table_only(
     _headers(msg, q, rng, f"Quotation {q.quotation_ref} / {q.buyer_reference}")
     msg.set_content(text)
     msg.add_alternative(html_body, subtype="html")
+    _pin_boundary(msg, rng)
     _write(msg, path)
 
 
@@ -307,6 +316,7 @@ def with_attachment(
     msg.add_attachment(
         attachment.read_bytes(), maintype="application", subtype="pdf", filename=attachment.name
     )
+    _pin_boundary(msg, rng)
     _write(msg, path)
 
 
