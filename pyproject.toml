@@ -31,6 +31,7 @@ dev = [
     "mypy",
     "pytest",
     "types-openpyxl>=3.1.5.20260827",
+    "playwright>=1.63.0",
 ]
 evals = [
     "reportlab",
@@ -62,6 +63,8 @@ select = ["E", "F", "I", "B", "UP", "N", "W", "SIM"]
 # Report rows and SQL DDL are templates; wrapping them hides their shape.
 "src/docintel/store/writer.py" = ["E501"]
 "evals/score.py" = ["E501"]
+# Embedded CSS and JS for the self-contained review page.
+"src/docintel/store/review_html.py" = ["E501"]
 
 [tool.mypy]
 python_version = "3.12"

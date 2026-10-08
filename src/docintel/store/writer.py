@@ -16,6 +16,7 @@ from typing import Any
 
 from docintel.reconcile import Conflict, Duplicate
 from docintel.records import KEY_FIELDS, Record
+from docintel.store.review_html import render_review_html
 
 CSV_COLUMNS = [
     "record_id",
@@ -60,6 +61,7 @@ CSV_COLUMNS = [
     "lead_time_days",
     "cold_chain",
     "superseded",
+    "evidence",
     *[f"conf_{k}" for k in KEY_FIELDS],
     "confidence",
     "flags",
@@ -284,10 +286,14 @@ def write_all(
         "sqlite": out_dir / "review.sqlite",
         "report": out_dir / "review_report.md",
         "conflicts": out_dir / "conflicts.json",
+        "html": out_dir / "review.html",
     }
     write_csv(records, paths["csv"])
     write_sqlite(records, conflicts, duplicates, paths["sqlite"], run)
     write_report(records, conflicts, duplicates, paths["report"], run)
+    paths["html"].write_text(
+        render_review_html(records, conflicts, duplicates, run), encoding="utf-8", newline="\n"
+    )
     paths["conflicts"].write_text(
         json.dumps(
             {

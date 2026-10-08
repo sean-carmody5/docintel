@@ -75,6 +75,7 @@ class Record(BaseModel):
     cold_chain: bool | None = None
     superseded: dict[str, Any] | None = None
 
+    evidence: dict[str, str] = Field(default_factory=dict)
     confidence: dict[str, FieldConfidence] = Field(default_factory=dict)
     overall_confidence: float = 0.0
     needs_review: bool = True
