@@ -195,10 +195,17 @@ def check_line(line: QuotationLine, document_currency: str | None) -> list[Findi
 
 
 def check_header(
-    document_date: str | None, valid_until: str | None, incoterm: str | None
+    document_date: str | None,
+    valid_until: str | None,
+    incoterm: str | None,
+    as_of: date | None = None,
 ) -> list[Finding]:
     out: list[Finding] = []
     d1, d2 = _parse_date(document_date), _parse_date(valid_until)
+    if as_of and d2 and d2 < as_of:
+        out.append(
+            ("valid_until", "expired", f"validity ended {valid_until}, before {as_of.isoformat()}")
+        )
     if document_date and d1 is None:
         out.append(("document_date", "bad_date", f"{document_date!r} is not ISO 8601"))
     if valid_until and d2 is None:

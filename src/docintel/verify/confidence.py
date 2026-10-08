@@ -10,6 +10,7 @@ reason. Nothing here asks the model how sure it is.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from datetime import date
 
 from docintel.documents import Document
 from docintel.extract.schema import ExtractionResult, QuotationLine
@@ -189,9 +190,13 @@ def build_records(
     sources: Sources,
     extractor_name: str,
     weights: Weights | None = None,
+    as_of: date | None = None,
 ) -> list[Record]:
+    """`as_of` enables the expiry check; None means validity is not judged against a date."""
     w = weights or Weights()
-    header_findings = check_header(result.document_date, result.valid_until, result.incoterm)
+    header_findings = check_header(
+        result.document_date, result.valid_until, result.incoterm, as_of=as_of
+    )
     doc_flags = [
         RecordFlag(code=f.code, severity=f.severity.value, detail=f.detail, field=f.field)
         for f in doc.flags
@@ -240,6 +245,7 @@ def build_records(
             if k in conf and conf[k].tier == "low"
         ]
         reasons += [f"{f.code}: {f.detail[:80]}" for f in high_flags]
+        reasons += [f"{code}: {detail}" for _, code, detail in findings if code == "expired"]
         if line.superseded is not None:
             s = line.superseded
             reasons.append(f"{s.field} corrected in the document from {s.old} to {s.new}")

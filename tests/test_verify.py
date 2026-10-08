@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from datetime import date
 from pathlib import Path
 
 import pytest
@@ -153,3 +154,21 @@ def test_no_lines_and_failed_loads_still_produce_rows() -> None:
     result = ExtractionResult(contains_prices=False, warnings=["RFQ without prices"])
     rows = build_records(doc, result, sources=Sources(primary=""), extractor_name="fixture")
     assert rows[0].status == "no_lines" and rows[0].needs_review
+
+
+def test_expired_quotation_is_flagged_only_when_an_as_of_date_is_given() -> None:
+    case = next(c for c in _cases() if c["id"] == "pdf_modern_04")
+    doc = load(SYNTH / case["id"] / case["files"][0])
+    result = FixtureExtractor(FIXTURES).extract(doc)
+    dated = build_records(
+        doc,
+        result,
+        sources=Sources(primary=doc.text),
+        extractor_name="fixture",
+        as_of=date(2026, 10, 8),
+    )
+    assert all(r.needs_review and any("expired" in x for x in r.review_reasons) for r in dated)
+    undated = build_records(
+        doc, result, sources=Sources(primary=doc.text), extractor_name="fixture"
+    )
+    assert not any("expired" in x for r in undated for x in r.review_reasons)
