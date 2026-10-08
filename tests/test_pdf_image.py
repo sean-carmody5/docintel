@@ -43,7 +43,7 @@ def test_scanned_pdf_routes_to_vision(case: dict) -> None:
     doc = load(SYNTH / case["id"] / case["files"][0])
     assert not doc.failed
     assert doc.images, "scanned PDF must render pages"
-    if case["variant"] == "image_only":
+    if case["variant"] in ("image_only", "cover_sheet"):
         assert doc.has_flag("no_text_layer") and doc.text == ""
     else:
         assert doc.has_flag("scanned_with_text_layer")

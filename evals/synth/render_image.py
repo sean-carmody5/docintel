@@ -195,12 +195,19 @@ def degrade_glare_wipe(im: Image.Image, rng: random.Random) -> Image.Image:
     return out.filter(ImageFilter.GaussianBlur(rng.uniform(0.4, 0.9)))
 
 
+def degrade_rotated(im: Image.Image, rng: random.Random) -> Image.Image:
+    """A landscape scan of a portrait page: the whole page on its side, lightly scanned."""
+    out = degrade_scanner(im, rng)
+    return out.rotate(rng.choice((90, -90)), expand=True, fillcolor=(250, 250, 250))
+
+
 DEGRADATIONS: dict[str, tuple[Degrade, str]] = {
     "fax": (degrade_fax, "png"),
     "photo": (degrade_photo, "jpg"),
     "crop": (degrade_crop, "jpg"),
     "heavy": (degrade_heavy, "jpg"),
     "glare_wipe": (degrade_glare_wipe, "jpg"),
+    "rotated": (degrade_rotated, "jpg"),
 }
 
 

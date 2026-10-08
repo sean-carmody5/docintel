@@ -56,6 +56,8 @@ def _price_sentence(ln: Line, q: Quotation) -> str:
             for t in ln.price_tiers
         ]
         return f"Price ({cur}): " + "; ".join(parts)
+    if "ambiguous_price_basis" in q.features:
+        return f"Price: {cur} {fmt_money(_shown_pack(ln))}"
     if "pack_price_only" in q.features:
         return f"Price: {cur} {fmt_money(_shown_pack(ln))} per pack of {ln.units_per_pack}"
     return f"Price: {fmt_money(_shown_unit(ln))} per {ln.uom}"
@@ -278,7 +280,16 @@ def thread_prose(
         f"> Subject: {q.buyer_reference} - request for quotation\n>\n"
         f"> Dear {s.contact_name.split()[0]},\n>\n"
         f"> Could you quote the following for delivery to {q.destination}, {q.incoterm} preferred?\n"
-        + "".join(f"> - {ln.inn} {ln.strength} {ln.dosage_form.lower()}\n" for ln in q.lines)
+        + "".join(
+            f"> - {ln.inn} {ln.strength} {ln.dosage_form.lower()}"
+            + (
+                f" (our target: {q.currency} {fmt_money(round(ln.price_per_uom * rng.uniform(0.7, 0.9), 4))} per {ln.uom})"
+                if "distractor_rfq_prices" in q.features
+                else ""
+            )
+            + "\n"
+            for ln in q.lines
+        )
         + f">\n> Validity 60 days please. Many thanks,\n> {q.buyer_contact}\n"
     )
     text = (

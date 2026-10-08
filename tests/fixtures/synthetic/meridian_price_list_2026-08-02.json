@@ -7,7 +7,7 @@
     "contact_name": null,
     "contact_email": null
   },
-  "quotation_ref": "MPL/Q/26/0133",
+  "quotation_ref": "MPL/Q/26/0136",
   "buyer_reference": "AXMED-RFQ-2026-0413",
   "document_date": "2026-08-02",
   "valid_until": "2026-10-31",
@@ -1338,7 +1338,7 @@
     }
   ],
   "evidence": {
-    "quotation_ref": "MPL/Q/26/0133",
+    "quotation_ref": "MPL/Q/26/0136",
     "currency": "USD"
   },
   "warnings": []

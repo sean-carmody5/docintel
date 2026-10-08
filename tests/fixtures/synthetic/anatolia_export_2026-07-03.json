@@ -7,7 +7,7 @@
     "contact_name": null,
     "contact_email": null
   },
-  "quotation_ref": "AIS-2600138",
+  "quotation_ref": "AIS-2600141",
   "buyer_reference": "AXMED-RFQ-2026-0391",
   "document_date": "2026-07-03",
   "valid_until": "2026-08-02",
@@ -183,7 +183,7 @@
     }
   ],
   "evidence": {
-    "quotation_ref": "AIS-2600138",
+    "quotation_ref": "AIS-2600141",
     "currency": "EUR"
   },
   "warnings": []

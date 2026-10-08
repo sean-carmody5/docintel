@@ -3,7 +3,7 @@
 
                                                       QUOTATION                                                       
 ======================================================================================================================
-Ref: IRL-26-0132                  Date: 05-Jul-2026      Valid: 04-Aug-2026      Currency: USD
+Ref: IRL-26-0135                  Date: 05-Jul-2026      Valid: 04-Aug-2026      Currency: USD
 To: Axmed Ltd / Alberto Vazquez          Your ref: AXMED-RFQ-2026-0270      Terms: CFR Dar es Salaam (TZDAR)
 ======================================================================================================================
 NO  PRODUCT               INN                               STRENGTH        PACK              UNIT PRICE  PACK PRICE     MOQ  LEAD

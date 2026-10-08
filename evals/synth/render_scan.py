@@ -13,6 +13,7 @@ import re
 from pathlib import Path
 
 import pymupdf
+from PIL import Image, ImageDraw
 
 from evals.synth.render_image import degrade_scanner, render_page
 
@@ -53,8 +54,38 @@ def garble(text: str, rng: random.Random, rate: float = 0.14) -> str:
     return "".join(out).replace("rn", "m").replace("cl", "d")
 
 
+def cover_sheet(
+    rng: random.Random, pages: int, width: int = 1240, height: int = 1754
+) -> Image.Image:
+    """A fax cover page: no quotation data on it, so it must yield no lines."""
+    im = Image.new("RGB", (width, height), (255, 255, 255))
+    d = ImageDraw.Draw(im)
+    lines = [
+        "FAX TRANSMITTAL",
+        "",
+        f"To:      Axmed Ltd, Procurement        Fax: +353 1 {rng.randint(400, 699)} {rng.randint(1000, 9999)}",
+        f"From:    Export department              Pages: {pages + 1} (including cover)",
+        f"Date:    {rng.randint(1, 28):02d}/{rng.randint(6, 9):02d}/2026",
+        "Re:      Quotation as requested",
+        "",
+        "Please find our quotation on the following pages.",
+        "Kindly confirm receipt. This transmission is confidential.",
+    ]
+    y = 160
+    for text in lines:
+        d.text((120, y), text, fill=(20, 20, 20), font_size=34 if text == lines[0] else 26)
+        y += 70
+    return degrade_scanner(im, rng)
+
+
 def write_scanned_pdf(src_pdf: Path, out_path: Path, variant: str, rng: random.Random) -> Path:
     with pymupdf.open(src_pdf) as src, pymupdf.open() as out:
+        if variant == "cover_sheet":
+            cover = cover_sheet(rng, len(src))
+            buf = io.BytesIO()
+            cover.save(buf, "JPEG", quality=50, optimize=True)
+            first = out.new_page(width=src[0].rect.width, height=src[0].rect.height)
+            first.insert_image(first.rect, stream=buf.getvalue())
         for i, page in enumerate(src):
             im = degrade_scanner(render_page(src_pdf, page=i, dpi=150), rng)
             buf = io.BytesIO()

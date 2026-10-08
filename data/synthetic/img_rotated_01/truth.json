@@ -1,0 +1,158 @@
+{
+  "case_id": "img_rotated_01",
+  "kind": "image",
+  "variant": "rotated",
+  "expect": "extract",
+  "hostile": null,
+  "source_case": "pdf_letter_03",
+  "files": [
+    "scan_rotated_baobab_p1.jpg"
+  ],
+  "quotation": {
+    "supplier_key": "baobab",
+    "supplier_name": "Baobab Pharmaceuticals Ltd.",
+    "quotation_ref": "BPL/QT/26/0122",
+    "document_date": "2026-06-02",
+    "valid_until": "2026-08-31",
+    "currency": "KES",
+    "incoterm": "EXW",
+    "named_place": "Nairobi plant",
+    "buyer_reference": "AXMED-RFQ-2026-0245",
+    "destination": "Dar es Salaam, Tanzania",
+    "buyer_contact": "Mattia Albergante",
+    "payment_terms": "30 days from delivery",
+    "features": [
+      "tiered"
+    ],
+    "lines": [
+      {
+        "line_no": 1,
+        "product_key": "gentamicin_80",
+        "product_name": "Gentaex 80",
+        "inn": "Gentamicin",
+        "inn_canonical": "Gentamicin",
+        "strength": "80 mg / 2 mL",
+        "dosage_form": "Solution for injection",
+        "packaging": "Glass ampoule, tray",
+        "uom": "ampoule",
+        "units_per_pack": 50,
+        "price_per_uom": 27.575,
+        "price_per_pack": 1378.75,
+        "price_basis": "tiered",
+        "discount_pct": null,
+        "price_tiers": [
+          {
+            "min_packs": 100,
+            "max_packs": 499,
+            "price_per_pack": 1378.75
+          },
+          {
+            "min_packs": 500,
+            "max_packs": 1999,
+            "price_per_pack": 1300.75
+          },
+          {
+            "min_packs": 2000,
+            "max_packs": null,
+            "price_per_pack": 1175.03
+          }
+        ],
+        "moq_packs": 500,
+        "lead_time_days": 90,
+        "quantity": null,
+        "extended_amount": null,
+        "superseded": null,
+        "cold_chain": false,
+        "atc": "J01GB03",
+        "net_price_per_uom": 27.575
+      },
+      {
+        "line_no": 2,
+        "product_key": "metronidazole_400",
+        "product_name": "Baonida 400",
+        "inn": "Metronidazole",
+        "inn_canonical": "Metronidazole",
+        "strength": "400 mg",
+        "dosage_form": "Tablet",
+        "packaging": "HDPE jar",
+        "uom": "tablet",
+        "units_per_pack": 1000,
+        "price_per_uom": 2.071,
+        "price_per_pack": 2071.0,
+        "price_basis": "tiered",
+        "discount_pct": null,
+        "price_tiers": [
+          {
+            "min_packs": 500,
+            "max_packs": 2499,
+            "price_per_pack": 2071.0
+          },
+          {
+            "min_packs": 2500,
+            "max_packs": 9999,
+            "price_per_pack": 1862.62
+          },
+          {
+            "min_packs": 10000,
+            "max_packs": null,
+            "price_per_pack": 1715.13
+          }
+        ],
+        "moq_packs": 5000,
+        "lead_time_days": 60,
+        "quantity": null,
+        "extended_amount": null,
+        "superseded": null,
+        "cold_chain": false,
+        "atc": "P01AB01",
+        "net_price_per_uom": 2.071
+      },
+      {
+        "line_no": 3,
+        "product_key": "lidocaine_2",
+        "product_name": "Lidoex 2%",
+        "inn": "Lidocaine hydrochloride",
+        "inn_canonical": "Lidocaine hydrochloride",
+        "strength": "2%, 20 mL",
+        "dosage_form": "Solution for injection",
+        "packaging": "Clear glass vial with flip-off cap",
+        "uom": "vial",
+        "units_per_pack": 25,
+        "price_per_uom": 78.1088,
+        "price_per_pack": 1952.72,
+        "price_basis": "tiered",
+        "discount_pct": null,
+        "price_tiers": [
+          {
+            "min_packs": 250,
+            "max_packs": 1249,
+            "price_per_pack": 1952.72
+          },
+          {
+            "min_packs": 1250,
+            "max_packs": 6249,
+            "price_per_pack": 1724.56
+          },
+          {
+            "min_packs": 6250,
+            "max_packs": null,
+            "price_per_pack": 1571.46
+          }
+        ],
+        "moq_packs": 5000,
+        "lead_time_days": 56,
+        "quantity": null,
+        "extended_amount": null,
+        "superseded": null,
+        "cold_chain": false,
+        "atc": "N01BB02",
+        "net_price_per_uom": 78.1088
+      }
+    ],
+    "notes": [
+      "This quotation is an offer to treat and does not constitute a binding contract.",
+      "Cold-chain items ship in validated passive shippers with temperature loggers."
+    ],
+    "alt_price_note": null
+  }
+}

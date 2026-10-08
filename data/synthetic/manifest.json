@@ -1,7 +1,7 @@
 {
   "generator_version": "1",
   "seed": 2026,
-  "case_count": 61,
+  "case_count": 66,
   "cases": [
     {
       "id": "json_erp_nested_01",
@@ -463,6 +463,26 @@
       "currency": "KES"
     },
     {
+      "id": "pdf_modern_04",
+      "kind": "pdf",
+      "variant": "modern_quote",
+      "supplier": "amman",
+      "features": [
+        "expired"
+      ],
+      "n_lines": 2,
+      "source": null,
+      "hostile": null,
+      "expect": "extract_and_flag",
+      "note": "Issued last year, validity long past. Values are right; the record must be flagged expired.",
+      "files": [
+        "amman_pharma_quotation_API-25-0123.pdf"
+      ],
+      "dir": "pdf_modern_04",
+      "truth": "pdf_modern_04/truth.json",
+      "currency": "USD"
+    },
+    {
       "id": "img_fax_01",
       "kind": "image",
       "variant": "fax",
@@ -658,6 +678,26 @@
       "currency": "ZAR"
     },
     {
+      "id": "img_rotated_01",
+      "kind": "image",
+      "variant": "rotated",
+      "supplier": "baobab",
+      "features": [
+        "tiered"
+      ],
+      "n_lines": 3,
+      "source": "pdf_letter_03",
+      "hostile": null,
+      "expect": "extract",
+      "note": "Portrait page scanned on its side. Orientation must be handled, not guessed around.",
+      "files": [
+        "scan_rotated_baobab_p1.jpg"
+      ],
+      "dir": "img_rotated_01",
+      "truth": "img_rotated_01/truth.json",
+      "currency": "KES"
+    },
+    {
       "id": "pdf_scanned_image_only_01",
       "kind": "scanned_pdf",
       "variant": "image_only",
@@ -718,6 +758,27 @@
       "dir": "pdf_scanned_garbled_layer_02",
       "truth": "pdf_scanned_garbled_layer_02/truth.json",
       "currency": "CHF"
+    },
+    {
+      "id": "pdf_scanned_cover_sheet_01",
+      "kind": "scanned_pdf",
+      "variant": "cover_sheet",
+      "supplier": "pacifico",
+      "features": [
+        "discount",
+        "quantity_extended"
+      ],
+      "n_lines": 6,
+      "source": "pdf_classic_01",
+      "hostile": null,
+      "expect": "extract",
+      "note": "Fax cover page first, then the quotation. The cover page must yield no lines.",
+      "files": [
+        "scan_pacifico_cover_sheet.pdf"
+      ],
+      "dir": "pdf_scanned_cover_sheet_01",
+      "truth": "pdf_scanned_cover_sheet_01/truth.json",
+      "currency": "USD"
     },
     {
       "id": "eml_plain_ps_01",
@@ -799,6 +860,47 @@
       "currency": "USD"
     },
     {
+      "id": "eml_thread_prose_03",
+      "kind": "eml",
+      "variant": "thread_prose",
+      "supplier": "dhaka",
+      "features": [
+        "distractor_rfq_prices"
+      ],
+      "n_lines": 3,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "The quoted RFQ below the reply carries the buyer's target prices. They are not the quote.",
+      "files": [
+        "RE_AXMED-RFQ-2026-0413_dhaka_pharma_quotation.eml"
+      ],
+      "dir": "eml_thread_prose_03",
+      "truth": "eml_thread_prose_03/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "eml_plain_ps_02",
+      "kind": "eml",
+      "variant": "plain_numbered_ps",
+      "supplier": "helvetia",
+      "features": [
+        "ambiguous_price_basis",
+        "pack_price_only"
+      ],
+      "n_lines": 5,
+      "source": null,
+      "hostile": null,
+      "expect": "extract_and_flag",
+      "note": "Prices stated with no unit. Per pack or per tablet is ambiguous and must be flagged.",
+      "files": [
+        "RE_AXMED-RFQ-2026-0406_helvetia_quotation.eml"
+      ],
+      "dir": "eml_plain_ps_02",
+      "truth": "eml_plain_ps_02/truth.json",
+      "currency": "CHF"
+    },
+    {
       "id": "eml_attachment_01",
       "kind": "eml",
       "variant": "with_attachment",
@@ -875,7 +977,7 @@
       "expect": "extract",
       "note": "",
       "files": [
-        "jiangnan_quotation_JNM-26-0130.xml"
+        "jiangnan_quotation_JNM-26-0133.xml"
       ],
       "dir": "xml_export_01",
       "truth": "xml_export_01/truth.json",
@@ -895,7 +997,7 @@
       "expect": "extract",
       "note": "Saved supplier-portal page with navigation chrome around the table.",
       "files": [
-        "Quotation NB-EXP-260131 _ Nilgiri Supplier Portal.html"
+        "Quotation NB-EXP-260134 _ Nilgiri Supplier Portal.html"
       ],
       "dir": "html_portal_01",
       "truth": "html_portal_01/truth.json",
@@ -915,7 +1017,7 @@
       "expect": "extract",
       "note": "Fixed-width ERP print-out.",
       "files": [
-        "indus_QUOT_IRL-26-0132.txt"
+        "indus_QUOT_IRL-26-0135.txt"
       ],
       "dir": "txt_fixed_width_01",
       "truth": "txt_fixed_width_01/truth.json",
@@ -997,7 +1099,7 @@
       "expect": "extract",
       "note": "",
       "files": [
-        "delta_quotation_DF-26-0136.docx"
+        "delta_quotation_DF-26-0139.docx"
       ],
       "dir": "docx_letter_01",
       "truth": "docx_letter_01/truth.json",
@@ -1089,7 +1191,7 @@
       "expect": "extract_and_flag",
       "note": "Injection is white 1pt text in the text layer.",
       "files": [
-        "lowlands_quotation_LP-26-0141.pdf"
+        "lowlands_quotation_LP-26-0144.pdf"
       ],
       "dir": "hostile_pdf_white",
       "truth": "hostile_pdf_white/truth.json",
@@ -1321,6 +1423,15 @@
         "currency": "USD",
         "units_per_pack": 100,
         "price_per_uom": 0.0173,
+        "inn_as_written": "Omeprazole"
+      },
+      {
+        "case": "eml_thread_prose_03",
+        "line_no": 1,
+        "supplier": "dhaka",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0236,
         "inn_as_written": "Omeprazole"
       },
       {
@@ -1604,6 +1715,15 @@
         "inn_as_written": "Tenofovir/Lamivudine/Dolutegravir"
       },
       {
+        "case": "eml_plain_ps_02",
+        "line_no": 5,
+        "supplier": "helvetia",
+        "currency": "CHF",
+        "units_per_pack": 30,
+        "price_per_uom": 0.1256,
+        "inn_as_written": "Tenofovir disoproxil fumarate + Lamivudine + Dolutegravir"
+      },
+      {
         "case": "chat_whatsapp_01",
         "line_no": 4,
         "supplier": "meridian",
@@ -1732,6 +1852,15 @@
         "units_per_pack": 1000,
         "price_per_uom": 0.0557,
         "inn_as_written": "Ferrous sulphate/Folic acid"
+      },
+      {
+        "case": "pdf_modern_04",
+        "line_no": 2,
+        "supplier": "amman",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0048,
+        "inn_as_written": "Ferrous sulfate + Folic acid"
       },
       {
         "case": "xlsx_pricelist_03",
@@ -2186,6 +2315,15 @@
         "inn_as_written": "Amoxicillin + Clavulanic acid"
       },
       {
+        "case": "eml_plain_ps_02",
+        "line_no": 1,
+        "supplier": "helvetia",
+        "currency": "CHF",
+        "units_per_pack": 10,
+        "price_per_uom": 0.0777,
+        "inn_as_written": "Amoxicillin + Clavulanic acid"
+      },
+      {
         "case": "eml_attachment_01",
         "line_no": 2,
         "supplier": "amman",
@@ -2322,6 +2460,15 @@
         "currency": "USD",
         "units_per_pack": 10,
         "price_per_uom": 0.1742,
+        "inn_as_written": "Gentamicin"
+      },
+      {
+        "case": "eml_thread_prose_03",
+        "line_no": 2,
+        "supplier": "dhaka",
+        "currency": "USD",
+        "units_per_pack": 50,
+        "price_per_uom": 0.2716,
         "inn_as_written": "Gentamicin"
       },
       {
@@ -2539,6 +2686,15 @@
         "currency": "EUR",
         "units_per_pack": 50,
         "price_per_uom": 0.4399,
+        "inn_as_written": "Chlorhexidine digluconate"
+      },
+      {
+        "case": "eml_plain_ps_02",
+        "line_no": 2,
+        "supplier": "helvetia",
+        "currency": "CHF",
+        "units_per_pack": 50,
+        "price_per_uom": 0.2561,
         "inn_as_written": "Chlorhexidine digluconate"
       },
       {
@@ -2882,6 +3038,15 @@
         "inn_as_written": "Atorvastatin"
       },
       {
+        "case": "eml_plain_ps_02",
+        "line_no": 4,
+        "supplier": "helvetia",
+        "currency": "CHF",
+        "units_per_pack": 30,
+        "price_per_uom": 0.0309,
+        "inn_as_written": "Atorvastatin"
+      },
+      {
         "case": "xlsx_pricelist_03",
         "line_no": 14,
         "supplier": "meridian",
@@ -3202,6 +3367,15 @@
         "inn_as_written": "Oxytocin"
       },
       {
+        "case": "pdf_modern_04",
+        "line_no": 1,
+        "supplier": "amman",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 0.1586,
+        "inn_as_written": "Oxytocin"
+      },
+      {
         "case": "eml_thread_prose_02",
         "line_no": 6,
         "supplier": "pacifico",
@@ -3237,6 +3411,15 @@
         "currency": "USD",
         "units_per_pack": 10,
         "price_per_uom": 0.023,
+        "inn_as_written": "Zinc sulfate"
+      },
+      {
+        "case": "eml_plain_ps_02",
+        "line_no": 3,
+        "supplier": "helvetia",
+        "currency": "CHF",
+        "units_per_pack": 10,
+        "price_per_uom": 0.0228,
         "inn_as_written": "Zinc sulfate"
       },
       {
@@ -3293,6 +3476,15 @@
         "currency": "USD",
         "units_per_pack": 3,
         "price_per_uom": 0.2675,
+        "inn_as_written": "Azithromycin"
+      },
+      {
+        "case": "eml_thread_prose_03",
+        "line_no": 3,
+        "supplier": "dhaka",
+        "currency": "USD",
+        "units_per_pack": 30,
+        "price_per_uom": 0.1181,
         "inn_as_written": "Azithromycin"
       },
       {
@@ -3528,7 +3720,8 @@
   "duplicate_sets": {
     "pdf_classic_01": [
       "img_fax_01",
-      "pdf_scanned_image_only_01"
+      "pdf_scanned_image_only_01",
+      "pdf_scanned_cover_sheet_01"
     ],
     "pdf_modern_01": [
       "img_photo_01",
@@ -3553,6 +3746,9 @@
     "pdf_modern_03": [
       "img_crop_02",
       "img_glare_wipe_02"
+    ],
+    "pdf_letter_03": [
+      "img_rotated_01"
     ],
     "pdf_letter_02": [
       "pdf_scanned_garbled_layer_02"

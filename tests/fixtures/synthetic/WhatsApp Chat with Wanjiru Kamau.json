@@ -7,7 +7,7 @@
     "contact_name": null,
     "contact_email": null
   },
-  "quotation_ref": "BPL/QT/26/0129",
+  "quotation_ref": "BPL/QT/26/0132",
   "buyer_reference": "AXMED-RFQ-2026-0263",
   "document_date": "2026-08-19",
   "valid_until": "2026-09-18",
@@ -114,7 +114,7 @@
     }
   ],
   "evidence": {
-    "quotation_ref": "BPL/QT/26/0129",
+    "quotation_ref": "BPL/QT/26/0132",
     "currency": "KES"
   },
   "warnings": []

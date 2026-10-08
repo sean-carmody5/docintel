@@ -119,6 +119,15 @@ CASES: tuple[Case, ...] = (
     Case("pdf_letter_01", "pdf", "letter_style", "deltafarm", ("correction", "lead_time_weeks")),
     Case("pdf_letter_02", "pdf", "letter_style", "helvetia", ("pack_price_only",)),
     Case("pdf_letter_03", "pdf", "letter_style", "baobab", ("tiered",)),
+    Case(
+        "pdf_modern_04",
+        "pdf",
+        "modern_quote",
+        "amman",
+        ("expired",),
+        expect="extract_and_flag",
+        note="Issued last year, validity long past. Values are right; the record must be flagged expired.",
+    ),
     # Images derived from the PDFs above, so truth is shared and cross-checkable
     Case("img_fax_01", "image", "fax", source="pdf_classic_01"),
     Case("img_photo_01", "image", "photo", source="pdf_modern_01"),
@@ -151,6 +160,13 @@ CASES: tuple[Case, ...] = (
         "Lines under the band are unreadable; the correct result omits or flags them.",
     ),
     Case("img_glare_wipe_02", "image", "glare_wipe", source="pdf_modern_03", expect="partial"),
+    Case(
+        "img_rotated_01",
+        "image",
+        "rotated",
+        source="pdf_letter_03",
+        note="Portrait page scanned on its side. Orientation must be handled, not guessed around.",
+    ),
     # Scanned PDFs: image-only, or with the garbage OCR layer scanners add
     Case(
         "pdf_scanned_image_only_01",
@@ -174,11 +190,35 @@ CASES: tuple[Case, ...] = (
         source="pdf_letter_02",
         expect="extract_and_flag",
     ),
+    Case(
+        "pdf_scanned_cover_sheet_01",
+        "scanned_pdf",
+        "cover_sheet",
+        source="pdf_classic_01",
+        note="Fax cover page first, then the quotation. The cover page must yield no lines.",
+    ),
     # Email
     Case("eml_plain_ps_01", "eml", "plain_numbered_ps", "lowlands", ("correction",)),
     Case("eml_html_table_01", "eml", "html_table_only", "nilevalley"),
     Case("eml_thread_prose_01", "eml", "thread_prose", "baobab", ("correction", "lead_time_weeks")),
     Case("eml_thread_prose_02", "eml", "thread_prose", "pacifico", ("pack_price_only",)),
+    Case(
+        "eml_thread_prose_03",
+        "eml",
+        "thread_prose",
+        "dhaka",
+        ("distractor_rfq_prices",),
+        note="The quoted RFQ below the reply carries the buyer's target prices. They are not the quote.",
+    ),
+    Case(
+        "eml_plain_ps_02",
+        "eml",
+        "plain_numbered_ps",
+        "helvetia",
+        ("ambiguous_price_basis", "pack_price_only"),
+        expect="extract_and_flag",
+        note="Prices stated with no unit. Per pack or per tablet is ambiguous and must be flagged.",
+    ),
     Case(
         "eml_attachment_01",
         "eml",

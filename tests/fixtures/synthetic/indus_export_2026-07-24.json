@@ -7,7 +7,7 @@
     "contact_name": null,
     "contact_email": null
   },
-  "quotation_ref": "IRL-26-0139",
+  "quotation_ref": "IRL-26-0142",
   "buyer_reference": "AXMED-RFQ-2026-0355",
   "document_date": "2026-07-24",
   "valid_until": "2026-08-23",
@@ -183,7 +183,7 @@
     }
   ],
   "evidence": {
-    "quotation_ref": "IRL-26-0139",
+    "quotation_ref": "IRL-26-0142",
     "currency": "USD"
   },
   "warnings": [

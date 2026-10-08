@@ -6,12 +6,12 @@
   "hostile": null,
   "source_case": null,
   "files": [
-    "jiangnan_quotation_JNM-26-0130.xml"
+    "jiangnan_quotation_JNM-26-0133.xml"
   ],
   "quotation": {
     "supplier_key": "jiangnan",
     "supplier_name": "Jiangnan Medica Co., Ltd.",
-    "quotation_ref": "JNM/26/0130",
+    "quotation_ref": "JNM/26/0133",
     "document_date": "2026-08-06",
     "valid_until": "2026-09-20",
     "currency": "CNY",

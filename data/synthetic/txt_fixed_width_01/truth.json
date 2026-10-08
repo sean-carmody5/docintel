@@ -6,12 +6,12 @@
   "hostile": null,
   "source_case": null,
   "files": [
-    "indus_QUOT_IRL-26-0132.txt"
+    "indus_QUOT_IRL-26-0135.txt"
   ],
   "quotation": {
     "supplier_key": "indus",
     "supplier_name": "Indus Remedies (Pvt.) Ltd.",
-    "quotation_ref": "IRL-26-0132",
+    "quotation_ref": "IRL-26-0135",
     "document_date": "2026-07-05",
     "valid_until": "2026-08-04",
     "currency": "USD",

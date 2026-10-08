@@ -7,7 +7,7 @@
     "contact_name": null,
     "contact_email": null
   },
-  "quotation_ref": "LP-26-0123",
+  "quotation_ref": "LP-26-0124",
   "buyer_reference": "AXMED-RFQ-2026-0385",
   "document_date": "2026-09-17",
   "valid_until": "2026-11-16",
@@ -223,7 +223,7 @@
     }
   ],
   "evidence": {
-    "quotation_ref": "LP-26-0123",
+    "quotation_ref": "LP-26-0124",
     "currency": "EUR"
   },
   "warnings": []

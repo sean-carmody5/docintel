@@ -7,7 +7,7 @@
     "contact_name": null,
     "contact_email": null
   },
-  "quotation_ref": "NVP/26/0124",
+  "quotation_ref": "NVP/26/0125",
   "buyer_reference": "AXMED-RFQ-2026-0359",
   "document_date": "2026-08-01",
   "valid_until": "2026-09-30",
@@ -216,7 +216,7 @@
     }
   ],
   "evidence": {
-    "quotation_ref": "NVP/26/0124",
+    "quotation_ref": "NVP/26/0125",
     "currency": "USD"
   },
   "warnings": []

@@ -27,6 +27,9 @@ FEATURES = frozenset(
         "mixed_uom",  # tablets, vials and bottles in one document
         "long",  # twelve or more lines
         "cold_chain",  # at least one cold-chain line with storage notes
+        "expired",  # issued months ago; validity has passed by the evaluation date
+        "distractor_rfq_prices",  # the quoted RFQ carries the buyer's target prices
+        "ambiguous_price_basis",  # a price is stated with no unit: per pack or per tablet?
     }
 )
 
@@ -189,8 +192,12 @@ def make_quotation(
         n_lines = rng.randint(12, 16) if "long" in features else rng.randint(2, 7)
     products = _pick_products(rng, product_pool, n_lines, features)
 
-    doc_date = date(2026, rng.randint(6, 9), rng.randint(1, 28))
-    validity_days = rng.choice((30, 45, 60, 90))
+    if "expired" in features:
+        doc_date = date(2025, rng.randint(10, 12), rng.randint(1, 28))
+        validity_days = rng.choice((30, 45, 60))
+    else:
+        doc_date = date(2026, rng.randint(6, 9), rng.randint(1, 28))
+        validity_days = rng.choice((30, 45, 60, 90))
     incoterm, place = rng.choice(supplier.incoterms)
     destination, _, _ = rng.choice(vocab.DESTINATIONS)
     currency = supplier.currency
