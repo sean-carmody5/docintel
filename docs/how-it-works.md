@@ -71,7 +71,7 @@ Lines from all documents are matched on normalised INN, strength and form. Where
 
 ## 5. Review, then approve
 
-The run writes the table, the report and the page, then stops. The reviewer decides each line on the page, corrects any value they can read in the source that the pipeline could not, and exports both. `approve` resumes the same run from its checkpoint, applies corrections first (the corrected field scores 1.0 with the reason "set by reviewer", and the original is kept beside it in the audit), then the decisions, writes `approved.csv` with the lines that go on, and records everything in `decisions_applied.json`. Nothing reaches a system of record without a person.
+The run writes the table, the report and the page, then stops. With `--review` it serves the page on the loopback interface and opens it. The reviewer decides each line, corrects any value they can read in the source that the pipeline could not, and presses Apply; the page posts both to the local server and the result comes back to the page. Opened from disk instead, the button saves `decisions.json` for `docintel approve`. `approve` resumes the same run from its checkpoint, applies corrections first (the corrected field scores 1.0 with the reason "set by reviewer", and the original is kept beside it in the audit), then the decisions, writes `approved.csv` with the lines that go on, and records everything in `decisions_applied.json`. Nothing reaches a system of record without a person.
 
 ## Orchestration
 

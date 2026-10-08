@@ -94,6 +94,7 @@ def test_single_file_input_and_review_page(tmp_path: Path) -> None:
     assert len(values["documents"]) == 1 and values["review"]["records"] == 4
     html = Path(values["outputs"]["html"]).read_text(encoding="utf-8")
     assert "<title>Quotation Review</title>" in html and "Zenamox 500/125" in html
+    assert '"thread_id": "t5"' in html  # the page can print the approve command
     source = values["documents"][0]["source"]
     assert source["text"] and not source["pages"]  # JSON shows as text with evidence marked
 

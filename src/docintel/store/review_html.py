@@ -68,6 +68,7 @@ h1{font-size:22px;font-weight:600;letter-spacing:-.01em;margin:0 0 4px}.sub{marg
 .helpbox table{border-collapse:collapse}.helpbox td{padding:3px 12px 3px 0;vertical-align:top;color:var(--muted)}.helpbox td:first-child{white-space:nowrap}
 .helpbox kbd{font:inherit;font-size:12px;padding:0 6px;border:1px solid var(--line);border-radius:4px;color:var(--fg);background:var(--soft)}
 .helpbox .x{position:absolute;top:10px;right:12px;color:var(--faint);font-size:16px}.helpbox .x:hover{color:var(--fg)}
+.result{margin:-10px 0 18px;padding:12px 14px;border:1px solid var(--line);border-left:3px solid var(--green);border-radius:0 6px 6px 0;background:var(--soft);font-size:13px}.result.bad{border-left-color:var(--red)}.result[hidden]{display:none}.result code{white-space:normal;word-break:break-all}
 .tabs{display:flex;gap:22px;border-bottom:1px solid var(--line);margin-bottom:18px}
 .tabs button{padding:8px 0 10px;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px}
 .tabs button span{color:var(--faint);margin-left:6px}.tabs button.on{color:var(--fg);border-bottom-color:var(--fg)}.tabs button:hover{color:var(--fg)}
@@ -251,8 +252,15 @@ $('#help').onclick=e=>{e.stopPropagation();help($('#helpbox').hidden)};$('#helpx
 document.addEventListener('click',e=>{if(!$('#helpbox').hidden&&!$('#helpbox').contains(e.target))help(false)});
 try{if(!localStorage.getItem('docintel-help-seen'))help(true)}catch(e){}
 $('#q').oninput=e=>{S.q=e.target.value;render()};$('#doc').onchange=e=>{S.doc=e.target.value;render()};$('#sort').onchange=e=>{S.sort=e.target.value;render()};
-$('#export').onclick=()=>{const payload=JSON.stringify({run:D.run.started,decisions:dec,corrections:corr},null,2);const btn=$('#export');const ok=()=>{btn.textContent='Copied';setTimeout(()=>btn.textContent='Export decisions',1600)};
- const show=()=>{$('#out').hidden=false;$('#out').value=payload};if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(payload).then(ok).catch(show);else show()};
+const SERVED=/^https?:$/.test(location.protocol);$('#export').textContent=SERVED?'Apply decisions':'Save decisions';
+function banner(html,bad){const b=$('#result');b.hidden=false;b.className='result'+(bad?' bad':'');b.innerHTML=html}
+function folderOfPage(){let p=decodeURIComponent(location.pathname);p=p.slice(0,p.lastIndexOf('/'));if(/^\/[A-Za-z]:/.test(p))p=p.slice(1);return p}
+$('#export').onclick=async()=>{const payload={run:D.run.started,thread_id:D.run.thread_id,decisions:dec,corrections:corr};const btn=$('#export');
+ if(SERVED){btn.disabled=true;btn.textContent='Applying…';try{const res=await fetch('/api/decisions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const j=await res.json();if(!j.ok)throw new Error(j.error||res.statusText);
+  banner(`<b>Applied.</b> ${j.approved} approved, ${j.rejected} rejected, ${j.held} held${j.corrected?', '+j.corrected+' corrected':''}. <a href="approved.csv" download>approved.csv</a> holds the lines that go on${j.held?'; decide the held ones and apply again':''}.`)}
+  catch(e){banner('<b>Could not apply.</b> '+esc(e.message),true)}finally{btn.disabled=false;btn.textContent='Apply decisions'}return}
+ const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='decisions.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+ const dir=folderOfPage();banner(`<b>Saved decisions.json</b> to your downloads. Move it into <code>${esc(dir)}</code>, then run:<br><code>docintel approve --thread-id ${esc(D.run.thread_id||'<thread id>')} --out "${esc(dir)}" --decisions "${esc(dir)}/decisions.json"</code><br>Or serve the page instead and apply from here: <code>docintel review --out "${esc(dir)}"</code>`)};
 render();
 })();
 """
@@ -264,7 +272,7 @@ HELP = """<div id="helpbox" class="helpbox" hidden><button class="x" id="helpx" 
 <p><span class="ind none"></span><b>No mark.</b> Every key value appears word for word in the document and passed the checks. Approve without opening, or spot-check.</p></div>
 <div class="sec"><h3>Correcting a value</h3><p>Open a line and click any value to type what the document says. A corrected value shows "set by reviewer" with the original beside it, clears that field's mark, and goes with the decisions when you export. <b>approve</b> applies corrections before decisions and keeps both values in the audit.</p></div>
 <div class="sec"><h3>Keys</h3><table><tr><td><kbd>J</kbd></td><td>open the next line</td></tr><tr><td><kbd>K</kbd></td><td>open the previous line, or close the one at the top</td></tr><tr><td><kbd>A</kbd> <kbd>H</kbd> <kbd>R</kbd></td><td>approve, hold or reject the open line</td></tr><tr><td><kbd>Esc</kbd></td><td>close the open line, the zoomed page, or this help</td></tr><tr><td><kbd>+</kbd> <kbd>&minus;</kbd> <kbd>0</kbd></td><td>zoom the page in, out, or back to fit (the scroll wheel zooms too)</td></tr></table></div>
-<div class="sec"><h3>Decisions</h3><p><b>Approve</b> sends the line on, <b>Hold</b> keeps it for later, <b>Reject</b> drops it. Decisions stay in this browser until you press <b>Export decisions</b>, which copies them as JSON for <code>docintel approve --decisions</code>.</p></div></div>"""
+<div class="sec"><h3>Decisions</h3><p><b>Approve</b> sends the line on, <b>Hold</b> keeps it for later, <b>Reject</b> drops it. Decisions stay in this browser until you press the button at the top: <b>Apply decisions</b> when the page is served by <code>docintel review</code>, which applies them and writes approved.csv straight away; <b>Save decisions</b> when the page was opened from disk, which saves decisions.json for <code>docintel approve</code>.</p></div></div>"""
 
 
 def _record_payload(r: Record) -> dict[str, Any]:
@@ -302,6 +310,7 @@ def render_review_html(
 <main class="page">
 <header class="hd"><div><h1>Quotation review</h1><p class="sub" id="sub"></p></div>
 <div class="hd-r"><button id="help" class="help" aria-label="How to read this page">?</button><div class="prog"><span id="progtxt"></span><i><b id="progbar"></b></i></div><button id="export" class="btn primary">Export decisions</button>{HELP}</div></header>
+<div id="result" class="result" hidden></div>
 <nav class="tabs" id="tabs"></nav>
 <div class="bar" id="bar"><input id="q" type="search" placeholder="Search products, suppliers or documents"><select id="doc"></select><select id="sort"><option value="confidence">Least certain first</option><option value="document">By document</option><option value="supplier">By supplier</option><option value="price">Highest unit price</option></select></div>
 <section id="list"></section>

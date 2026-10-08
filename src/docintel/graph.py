@@ -53,6 +53,7 @@ VISION_FLAGS = {"no_text_layer", "scanned_with_text_layer", "text_layer_untruste
 
 class RunState(TypedDict, total=False):
     input_dir: str
+    thread_id: str
     paths: list[str]
     records: Annotated[list[dict[str, Any]], operator.add]
     documents: Annotated[list[dict[str, Any]], operator.add]
@@ -239,6 +240,7 @@ class Pipeline:
         docs = state.get("documents", [])
         run = {
             "input_dir": state.get("input_dir"),
+            "thread_id": state.get("thread_id"),
             "started": state.get("started"),
             "documents": len(docs),
             "failed_documents": sum(1 for d in docs if d["status"] == "failed"),
@@ -374,7 +376,7 @@ def run(
         "configurable": {"thread_id": thread_id},
         "max_concurrency": pipeline.settings.max_concurrency,
     }
-    graph.invoke({"input_dir": str(input_dir)}, config=config)
+    graph.invoke({"input_dir": str(input_dir), "thread_id": thread_id}, config=config)
     state = graph.get_state(config)
     return {"values": state.values, "interrupted": bool(state.next), "next": list(state.next)}
 

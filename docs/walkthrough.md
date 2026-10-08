@@ -4,13 +4,13 @@ What a user does and sees, on the eight documents supplied with the brief, offli
 
 ```mermaid
 flowchart LR
-  A[1. run] --> B[2. open the page] --> C[3. decide] --> D[4. export] --> E[5. approve] --> F[(approved.csv)]
+  A["<b>1. run</b>"] --> B["<b>2. the page opens</b>"] --> C["<b>3. decide and correct</b>"] --> D["<b>4. apply</b>"] --> F[("<b>approved.csv</b>")]
 ```
 
 ## 1. Run
 
 ```
-uv run docintel run data/provided --out output/demo --as-of 2026-08-20
+uv run docintel run data/provided --out output/demo --as-of 2026-08-20 --review
 ```
 
 ```
@@ -24,21 +24,21 @@ report:        output\demo\review_report.md
 conflicts:     output\demo\conflicts.json
 html:          output\demo\review.html
 
-Stopped for review. Open output\demo\review.html in a browser, decide, export the decisions, then:
-  docintel approve --thread-id run-20261008-162829 --out output\demo --decisions output\demo\decisions.json
+Review page: http://127.0.0.1:59018/review.html
+Decide on the page and press Apply decisions. Ctrl+C here when you are done.
 ```
 
-The input can be a folder or a single file. `--as-of` is the date validity is judged against; without it, today. The run stops at the review step and keeps its state in `checkpoints.sqlite` under the thread id it printed, so `approve` later picks up exactly where it stopped.
+The input can be a folder or a single file. `--as-of` is the date validity is judged against; without it, today. The run stops at the review step, keeps its state in `checkpoints.sqlite` under the thread id it printed, and with `--review` serves the page on the loopback interface and opens it. Without `--review` it prints the two ways to continue: `docintel review --out output/demo` to serve the page later, or open `review.html` from disk and run `docintel approve` by hand (section 5).
 
-## 2. Open the page
+## 2. The page opens
 
-`output/demo/review.html` opens from disk in any browser. The first time, a short help panel explains the marks and the keys; after that it is behind the `?`.
+The first time, a short help panel explains the marks and the keys; after that it is behind the `?`.
 
 ![The list, least certain first](img/review-list.png)
 
 One row per quotation line, least certain first. The note on each row is the one thing a person needs to know. Clean lines, 23 of the 37 here, carry no mark and no note.
 
-## 3. Decide
+## 3. Decide and correct
 
 Open a row by clicking it or pressing `J`. The fields are on the left, the document on the right. For the glare photo that is the page itself; for the PDFs it is the rendered page with a Text view; for the JSON exports and the email it is the text with this line's evidence highlighted.
 
@@ -54,40 +54,46 @@ In this session the reviewer rejected the five lines whose price or product coul
 
 ![All 37 lines decided](img/review-decided.png)
 
-## 4. Export
+## 4. Apply
 
-**Export decisions** copies the decisions as JSON. Save it as `output/demo/decisions.json`:
+Press **Apply decisions**. The page sends the decisions and corrections to the local server, the run resumes from its checkpoint, and the result appears under the heading:
 
-```json
-{
-  "run": "2026-10-08T16:28:30+00:00",
-  "decisions": {
-    "687ef24b38889f7b:1": "reject",
-    "687ef24b38889f7b:2": "reject",
-    "4f98a2993aad8978:1": "hold",
-    "4f98a2993aad8978:2": "approve",
-    "6dbf066a71947643:1": "approve",
-    ...
-  }
-}
+> **Applied.** 31 approved, 5 rejected, 1 held, 1 corrected. approved.csv holds the lines that go on; decide the held ones and apply again.
+
+The terminal shows the same:
+
+```
+INFO docintel.graph: promote: 31 lines approved, 5 rejected, 1 held, 1 corrected
+applied:   31 approved, 5 rejected, 1 held, 1 corrected -> output\demo\approved.csv
 ```
 
-Each key is a record id: the document's content hash and the line number, so the decision follows the line even if the file is renamed.
+Corrections are applied first, so a line whose price the reviewer typed in from the zoomed page is approved with that price. A held line stays pending; decide it and press Apply again. Ctrl+C in the terminal when you are done.
 
-## 5. Approve
+## 5. Without the server
+
+Open `review.html` from disk and the same button reads **Save decisions**: it saves `decisions.json` to your downloads and shows the command to run once the file is next to the page:
 
 ```
 uv run docintel approve --thread-id run-20261008-162829 --out output/demo --decisions output/demo/decisions.json
 ```
 
 ```
-INFO docintel.graph: promote: 31 lines approved, 5 rejected, 1 held
 approved:  31 lines -> output\demo\approved.csv
 rejected:  5
+corrected: 1 lines had values set by the reviewer
 held:      1 (no decision yet; run approve again with more)
 ```
 
-The run resumes from its checkpoint, applies the decisions, writes `approved.csv` with the lines that go on, and records every decision in `decisions_applied.json`. A held line stays pending; a later `approve` with more decisions picks it up.
+The file is small and readable. Each key is a record id, the document's content hash and the line number, so a decision follows the line even if the file is renamed:
+
+```json
+{
+  "run": "2026-10-08T16:28:30+00:00",
+  "thread_id": "run-20261008-162829",
+  "decisions": { "687ef24b38889f7b:1": "approve", "687ef24b38889f7b:2": "reject", ... },
+  "corrections": { "687ef24b38889f7b:1": { "price_per_uom": 0.0091 } }
+}
+```
 
 ## What is in the folder afterwards
 
@@ -99,9 +105,9 @@ The run resumes from its checkpoint, applies the decisions, writes `approved.csv
 | `review_report.md` | The same table as a report: what to look at first, then everything. |
 | `conflicts.json` | Four products quoted by two suppliers each, and the Andina proforma that arrived as a PDF and two scans, cross-checked. |
 | `review.sqlite` | Records, conflicts and duplicates as tables, for anyone who prefers SQL. |
-| `decisions.json`, `decisions_applied.json` | What the reviewer exported, and what the pipeline did with it. |
+| `decisions.json`, `decisions_applied.json` | What the reviewer sent, and what the pipeline did with it, corrections included. |
 | `sources/` | Page previews the review page shows. |
-| `checkpoints.sqlite` | The run's state, so it can be resumed. |
+| `checkpoints.sqlite`, `run.json` | The run's state, so it can be resumed, and the thread id `docintel review` uses to find it. |
 
 ## Live, with a model
 

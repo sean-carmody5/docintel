@@ -10,6 +10,7 @@ manual-review step, run before the page is shown to anyone.
 import json
 import pathlib
 import sys
+from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 
@@ -177,17 +178,18 @@ with sync_playwright() as p:
     pg.wait_for_timeout(300)
     check("decisions survive reload", pg.locator("#progtxt").inner_text() == "2 of 14 decided")
 
-    # export
-    pg.locator("#export").click()
-    pg.wait_for_timeout(200)
-    clip = pg.evaluate("navigator.clipboard.readText()")
-    try:
-        payload = json.loads(clip)
-        ok = len(payload["decisions"]) == 2 and set(payload["decisions"].values()) == {"reject"}
-    except Exception as exc:  # noqa: BLE001
-        ok, clip = False, str(exc)
-    check("Export copies decisions JSON", ok, clip[:80])
-    check("Export button says Copied", pg.locator("#export").inner_text() == "Copied")
+    # save (file mode): a download, not the clipboard
+    with pg.expect_download() as dl:
+        pg.locator("#export").click()
+    saved = json.loads(Path(dl.value.path()).read_text(encoding="utf-8"))
+    check(
+        "Save writes decisions.json with both decisions",
+        len(saved["decisions"]) == 2 and set(saved["decisions"].values()) == {"reject"},
+    )
+    check(
+        "Save tells the user the approve command",
+        "docintel approve --thread-id" in pg.locator("#result").inner_text(),
+    )
 
     # corrections: click a value, type, Enter; export carries it; revert clears it
     pg.locator(".row").first.click()
@@ -214,9 +216,9 @@ with sync_playwright() as p:
         "a non-number is refused for a numeric field",
         "set by reviewer" not in pg.locator(".f[data-f='units_per_pack']").inner_text(),
     )
-    pg.locator("#export").click()
-    pg.wait_for_timeout(200)
-    exported = json.loads(pg.evaluate("navigator.clipboard.readText()"))
+    with pg.expect_download() as dl2:
+        pg.locator("#export").click()
+    exported = json.loads(Path(dl2.value.path()).read_text(encoding="utf-8"))
     rid = pg.locator(".rec.open").get_attribute("data-id")
     check(
         "export carries the correction",

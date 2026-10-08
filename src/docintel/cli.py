@@ -11,12 +11,15 @@ import argparse
 import json
 import logging
 import sys
+import time
+from collections.abc import Callable
 from datetime import UTC, date, datetime
 from pathlib import Path
 from typing import Any
 
 from docintel.config import Settings
 from docintel.graph import Pipeline, mermaid, resume, run, sqlite_checkpointer
+from docintel.serve import serve_review, url_of
 
 
 def _settings(args: argparse.Namespace) -> Settings:
@@ -45,16 +48,86 @@ def cmd_run(args: argparse.Namespace) -> int:
     )
     for name, path in values.get("outputs", {}).items():
         print(f"{name + ':':14} {path}")
+    (settings.output_dir / "run.json").write_text(
+        json.dumps({"thread_id": thread_id, "input_dir": str(args.input_dir)}, indent=2),
+        encoding="utf-8",
+        newline="\n",
+    )
     if result["interrupted"]:
+        if args.review:
+            return _serve(settings, thread_id, checkpointer, open_browser=not args.no_browser)
         html = values.get("outputs", {}).get("html", settings.output_dir / "review.html")
-        print(
-            f"\nStopped for review. Open {html} in a browser, decide, export the decisions, then:"
-        )
+        print("\nStopped for review. Either serve the page and finish there:")
+        print(f"  docintel review --out {settings.output_dir}")
+        print(f"or open {html}, decide, save the decisions next to it, then:")
         print(
             f"  docintel approve --thread-id {thread_id} --out {settings.output_dir}"
             f" --decisions {settings.output_dir / 'decisions.json'}"
         )
     return 0
+
+
+def _apply_payload(
+    settings: Settings, thread_id: str, checkpointer: Any
+) -> Callable[[dict[str, Any]], dict[str, Any]]:
+    """What the served page calls when the reviewer presses Apply."""
+
+    def apply(payload: dict[str, Any]) -> dict[str, Any]:
+        state = resume(
+            Pipeline(settings),
+            thread_id=thread_id,
+            approved=True,
+            checkpointer=checkpointer,
+            decisions=payload.get("decisions", {}),
+            corrections=payload.get("corrections", {}),
+        )
+        result = {
+            "approved": state.get("promoted", 0),
+            "rejected": state.get("rejected", 0),
+            "held": state.get("held", 0),
+            "corrected": state.get("corrected", 0),
+            "approved_csv": str(state.get("approved_csv", "")),
+        }
+        print(
+            f"applied:   {result['approved']} approved, {result['rejected']} rejected, "
+            f"{result['held']} held, {result['corrected']} corrected -> {result['approved_csv']}",
+            flush=True,
+        )
+        return result
+
+    return apply
+
+
+def _serve(settings: Settings, thread_id: str, checkpointer: Any, *, open_browser: bool) -> int:
+    server = serve_review(
+        settings.output_dir,
+        _apply_payload(settings, thread_id, checkpointer),
+        open_browser=open_browser,
+    )
+    print(f"\nReview page: {url_of(server)}")
+    print(
+        "Decide on the page and press Apply decisions. Ctrl+C here when you are done.", flush=True
+    )
+    try:
+        while True:
+            time.sleep(3600)
+    except KeyboardInterrupt:
+        server.shutdown()
+        print("stopped")
+    return 0
+
+
+def cmd_review(args: argparse.Namespace) -> int:
+    settings = _settings(args)
+    thread_id = args.thread_id
+    if not thread_id:
+        meta = settings.output_dir / "run.json"
+        if not meta.exists():
+            print(f"no run.json in {settings.output_dir}; pass --thread-id", file=sys.stderr)
+            return 2
+        thread_id = json.loads(meta.read_text(encoding="utf-8"))["thread_id"]
+    checkpointer = sqlite_checkpointer(settings.output_dir / "checkpoints.sqlite")
+    return _serve(settings, thread_id, checkpointer, open_browser=not args.no_browser)
 
 
 def cmd_approve(args: argparse.Namespace) -> int:
@@ -120,7 +193,22 @@ def main(argv: list[str] | None = None) -> int:
     p_run = sub.add_parser("run", parents=[common], help="process a folder up to the review stop")
     p_run.add_argument("input_dir", help="a folder of documents, or a single file")
     p_run.add_argument("--thread-id", help="resume key; generated if omitted")
+    p_run.add_argument(
+        "--review",
+        action="store_true",
+        help="then serve the review page and apply decisions from it",
+    )
+    p_run.add_argument(
+        "--no-browser", action="store_true", help="with --review: do not open a browser"
+    )
     p_run.set_defaults(fn=cmd_run)
+
+    p_rev = sub.add_parser(
+        "review", parents=[common], help="serve the review page for a stopped run"
+    )
+    p_rev.add_argument("--thread-id", help="defaults to the run recorded in <out>/run.json")
+    p_rev.add_argument("--no-browser", action="store_true")
+    p_rev.set_defaults(fn=cmd_review)
 
     p_app = sub.add_parser("approve", parents=[common], help="resume a stopped run after review")
     p_app.add_argument("--thread-id", required=True)

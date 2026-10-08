@@ -25,10 +25,10 @@ Replays recorded extractions through the real pipeline. Every loader, check, sco
 
 ```
 uv sync --all-groups
-uv run docintel run data/provided --out output/demo --as-of 2026-08-20
+uv run docintel run data/provided --out output/demo --as-of 2026-08-20 --review
 ```
 
-Then open `output/demo/review.html`, decide, press **Export decisions**, save the JSON as `output/demo/decisions.json`, and run the `approve` command the run printed. `approved.csv` holds the lines that go on. The full session, with what each step prints, is in [docs/walkthrough.md](docs/walkthrough.md).
+The run stops at the review step and opens the page in your browser. Decide, correct anything you can read in the source that the pipeline could not, press **Apply decisions**: approve runs and `approved.csv` holds the lines that go on. Without `--review` the page still opens from disk; there the button saves `decisions.json` for `docintel approve`, or serve it later with `docintel review --out output/demo`. The full session, with what each step prints, is in [docs/walkthrough.md](docs/walkthrough.md).
 
 ### Live run, with a model
 
@@ -37,7 +37,7 @@ cp .env.example .env                       # put ANTHROPIC_API_KEY in it
 uv run --env-file .env docintel run data/provided --out output/live --as-of 2026-08-20 --extractor model --model anthropic:claude-sonnet-5-5
 ```
 
-Review and approve exactly as above; the approve command needs no key. The model reads text documents directly and transcribes scanned pages; the OCR cross-check stays local. `DOCINTEL_VISION_MODEL` in `.env` picks a different model for pages. Flags fall back to `DOCINTEL_*` variables in `.env`, so with `DOCINTEL_EXTRACTOR=model` set there the live command is the mock one. Any folder or single file works as input.
+Add `--review` to finish on the page, exactly as above; applying decisions needs no model call. The model reads text documents directly and transcribes scanned pages; the OCR cross-check stays local. `DOCINTEL_VISION_MODEL` in `.env` picks a different model for pages. Flags fall back to `DOCINTEL_*` variables in `.env`, so with `DOCINTEL_EXTRACTOR=model` set there the live command is the mock one. Any folder or single file works as input.
 
 ### Other providers
 
