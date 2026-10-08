@@ -37,7 +37,7 @@ cp .env.example .env                       # put ANTHROPIC_API_KEY in it
 uv run --env-file .env docintel run data/provided --out output/live --as-of 2026-08-20 --extractor model --model anthropic:claude-sonnet-5-5
 ```
 
-Add `--review` to finish on the page, exactly as above; applying decisions needs no model call. The model reads text documents directly and transcribes scanned pages; the OCR cross-check stays local. `DOCINTEL_VISION_MODEL` in `.env` picks a different model for pages. Flags fall back to `DOCINTEL_*` variables in `.env`, so with `DOCINTEL_EXTRACTOR=model` set there the live command is the mock one. Any folder or single file works as input.
+Add `--review` to finish on the page, exactly as above; applying decisions needs no model call. Every live extraction and page transcript is recorded under `output/live/extractions`, and `--fixtures output/live/extractions` replays the run exactly, for free. The model reads text documents directly and transcribes scanned pages; the OCR cross-check stays local. `DOCINTEL_VISION_MODEL` in `.env` picks a different model for pages. Flags fall back to `DOCINTEL_*` variables in `.env`, so with `DOCINTEL_EXTRACTOR=model` set there the live command is the mock one. Any folder or single file works as input.
 
 ### Other providers
 

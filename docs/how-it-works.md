@@ -79,7 +79,7 @@ LangGraph holds the graph: discover, fan out one task per document with retries,
 
 ## What is real and what is mocked
 
-Real: every loader, the security scan, the OCR pass, every check and score, reconciliation, the page, the approve step, the tests and the evaluation. Mocked until a key is available: the model call itself, replayed from recorded extractions. Recorded sets exist from hand-written fixtures and from Haiku 4.5, Sonnet 5.5 and Opus 5.5 reading the documents independently.
+Real: every loader, the security scan, the OCR pass, every check and score, reconciliation, the page, the approve step, the tests and the evaluation. The model call is live with a key, or replayed from a recording. Every live run records its extractions and page transcripts under `<out>/extractions`, keyed by document id, and a fixture run pointed at that folder reproduces it exactly, grounding included. Recorded sets also exist from hand-written fixtures and from Haiku 4.5, Sonnet 5.5 and Opus 5.5 reading the documents by hand.
 
 ## How it is tested
 
