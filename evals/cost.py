@@ -63,14 +63,16 @@ def main() -> None:
     ap.add_argument("folders", nargs="+", type=Path)
     args = ap.parse_args()
     print(
-        "| Run | Model | Documents | Calls | Input tokens | Output tokens | USD total | USD per document |"
+        "| Run | Model | Documents | Calls | Input tokens | Output tokens "
+        "| USD total | USD per document |"
     )
     print("|---|---|---|---|---|---|---|---|")
     for folder in args.folders:
         s = summarise(folder)
         print(
             f"| {folder.name} | {', '.join(s['models'])} | {s['documents']} | {s['calls']} | "
-            f"{s['input_tokens']:,} | {s['output_tokens']:,} | {s['usd_total']:.2f} | {s['usd_per_document']:.4f} |"
+            f"{s['input_tokens']:,} | {s['output_tokens']:,} | {s['usd_total']:.2f} "
+            f"| {s['usd_per_document']:.4f} |"
         )
     print("\nPrices are assumptions in evals/cost.py; verify against the provider's price page.")
 

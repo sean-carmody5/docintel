@@ -345,7 +345,7 @@ def build_records(
             reasons.append(f"{s.field} corrected in the document from {s.old} to {s.new}")
         if line.price_basis == "tiered":
             reasons.append("tiered pricing; lowest-quantity tier shown")
-        elif line.price_basis == "derived":
+        elif line.price_basis == "derived" and not any("derived" in r for r in reasons):
             reasons.append("unit price derived, not stated")
         needs_review = bool(reasons) or overall < w.medium_tier or not result.contains_prices
 
