@@ -13,6 +13,9 @@ __pycache__/
 
 # pipeline outputs and checkpoints
 output/
+
+# held-out synthetic set: built on demand with a different seed, never committed
+data/synthetic_holdout/
 *.sqlite
 *.sqlite-journal
 
