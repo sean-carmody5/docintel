@@ -86,11 +86,11 @@ def _finger(im: Image.Image, rng: random.Random) -> Image.Image:
 def degrade_fax(im: Image.Image, rng: random.Random) -> Image.Image:
     """Low resolution grayscale, slight skew, speckle, crushed contrast, like a fax or cheap scanner."""
     g = ImageOps.grayscale(im)
-    scale = rng.uniform(0.5, 0.62)
+    scale = rng.uniform(0.6, 0.7)
     g = g.resize((int(g.width * scale), int(g.height * scale)), Image.BILINEAR)
     g = g.rotate(rng.uniform(-2.2, 2.2), resample=Image.BICUBIC, expand=True, fillcolor=255)
-    g = _noise(g, rng, rng.uniform(8, 16))
-    g = g.point(lambda p: 0 if p < 90 else (255 if p > 185 else int(40 + (p - 90) * 2.1)))
+    g = _noise(g, rng, rng.uniform(6, 11))
+    g = g.point(lambda p: 0 if p < 70 else (255 if p > 200 else int(30 + (p - 70) * 1.7)))
     g = _salt_pepper(g, rng, rng.uniform(0.002, 0.006))
     # a streak from a dirty roller
     d = ImageDraw.Draw(g)
