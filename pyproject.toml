@@ -57,3 +57,12 @@ files = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[[tool.mypy.overrides]]
+module = ["pymupdf4llm", "pymupdf4llm.*"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+# PyMuPDF ships partial annotations; its page and pixmap methods are untyped.
+module = ["docintel.ingest.pdf_loader"]
+disallow_untyped_calls = false
