@@ -136,11 +136,19 @@ class ModelTranscriber:
 
     def __init__(self, llm: Any) -> None:
         self.llm = llm
+        self.last_usage: dict[str, Any] | None = None
 
     def transcribe(self, images: list[PageImage]) -> str:
+        from langchain_core.callbacks import UsageMetadataCallbackHandler
+
+        from docintel.extract.extractor import flatten_usage
+
         parts: list[str] = []
+        usage = UsageMetadataCallbackHandler()
         for i, page in enumerate(images, start=1):
-            response = self.llm.invoke(transcription_messages(page.png, i, len(images)))
+            response = self.llm.invoke(
+                transcription_messages(page.png, i, len(images)), config={"callbacks": [usage]}
+            )
             content = response.content if hasattr(response, "content") else str(response)
             if isinstance(content, list):  # some providers return content blocks
                 content = "\n".join(
@@ -148,6 +156,7 @@ class ModelTranscriber:
                     for block in content
                 )
             parts.append(f"<!-- page {i} of {len(images)} -->\n{str(content).strip()}")
+        self.last_usage = flatten_usage(usage.usage_metadata)
         return "\n\n".join(parts)
 
 

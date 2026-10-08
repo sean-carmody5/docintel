@@ -61,15 +61,29 @@ class ModelExtractor:
         self.structured = llm.with_structured_output(ExtractionResult).with_retry(
             stop_after_attempt=max_retries + 1
         )
+        self.last_usage: dict[str, Any] | None = None  # tokens of the most recent call
 
     def extract(self, doc: Document, transcript: str | None = None) -> ExtractionResult:
+        from langchain_core.callbacks import UsageMetadataCallbackHandler
+
         messages = extraction_messages(doc, transcript)
-        result = self.structured.invoke(messages)
+        usage = UsageMetadataCallbackHandler()
+        result = self.structured.invoke(messages, config={"callbacks": [usage]})
+        self.last_usage = flatten_usage(usage.usage_metadata)
         if isinstance(result, ExtractionResult):
             return result
         if isinstance(result, dict):  # some providers hand back the raw dict
             return ExtractionResult.model_validate(result)
         raise TypeError(f"unexpected structured output type {type(result).__name__}")
+
+
+def flatten_usage(by_model: dict[str, Any]) -> dict[str, Any] | None:
+    """LangChain reports usage per model name; one call is one model, so sum and keep the name."""
+    if not by_model:
+        return None
+    inp = sum(int(u.get("input_tokens", 0)) for u in by_model.values())
+    out = sum(int(u.get("output_tokens", 0)) for u in by_model.values())
+    return {"model": ", ".join(by_model), "input_tokens": inp, "output_tokens": out}
 
 
 def build_llm(model: str, **kwargs: Any) -> Any:

@@ -15,6 +15,7 @@ import json
 import logging
 import operator
 import sqlite3
+import threading
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Annotated, Any, TypedDict
@@ -52,6 +53,7 @@ from docintel.store.writer import write_csv
 from docintel.verify import Sources, build_records, failed_record
 
 log = logging.getLogger(__name__)
+_USAGE_LOCK = threading.Lock()
 
 SKIP_NAMES = {"truth.json", "manifest.json", "README.md", ".DS_Store", "Thumbs.db"}
 VISION_FLAGS = {"no_text_layer", "scanned_with_text_layer", "text_layer_untrusted"}
@@ -147,6 +149,7 @@ class Pipeline:
             result = self.extractor.extract(doc, transcript)
             if self.settings.extractor == "model":
                 dump_result(result, self.settings.output_dir / "extractions" / f"{doc.id}.json")
+                self._log_usage(doc, "extract", getattr(self.extractor, "last_usage", None))
             return result
         except Exception as exc:  # noqa: BLE001 - the reason travels on the record
             log.exception("extraction failed for %s", doc.name)
@@ -155,6 +158,16 @@ class Pipeline:
                 contains_prices=False,
                 warnings=[f"extraction failed for {doc.name}: {type(exc).__name__}"],
             )
+
+    def _log_usage(self, doc: Document, stage: str, usage: dict[str, Any] | None) -> None:
+        """Tokens per call, appended beside the recordings, so cost per document is a fact."""
+        if not usage:
+            return
+        path = self.settings.output_dir / "extractions" / "usage.jsonl"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        line = json.dumps({"doc_id": doc.id, "name": doc.name, "stage": stage, **usage})
+        with _USAGE_LOCK, path.open("a", encoding="utf-8") as fh:
+            fh.write(line + "\n")
 
     def _recorded_transcript(self, doc: Document) -> str:
         """In fixture mode a transcript recorded by a live run replays with its extraction,
@@ -191,6 +204,7 @@ class Pipeline:
                 path = self.settings.output_dir / "extractions" / f"{doc.id}.transcript.md"
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_text(transcript, encoding="utf-8", newline="\n")
+                self._log_usage(doc, "transcribe", getattr(self.transcriber, "last_usage", None))
         else:
             doc.flag(
                 "vision_path",
