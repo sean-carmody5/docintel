@@ -29,6 +29,8 @@ def test_graph_runs_to_the_review_stop_and_resumes(tmp_path: Path) -> None:
     assert values["review"]["records"] == 37  # 4+3+4+5+6+3+6+6 provided lines, unmerged
     assert values["review"]["needs_review"] > 0
     assert Path(values["outputs"]["csv"]).exists() and Path(values["outputs"]["report"]).exists()
+    previews = list((tmp_path / "sources").rglob("page-1.jpg"))
+    assert len(previews) >= 4  # two scans and two PDFs get a page a reviewer can look at
     with Path(values["outputs"]["csv"]).open(encoding="utf-8") as fh:
         rows = list(csv.DictReader(fh))
     assert len(rows) == 37
@@ -92,6 +94,8 @@ def test_single_file_input_and_review_page(tmp_path: Path) -> None:
     assert len(values["documents"]) == 1 and values["review"]["records"] == 4
     html = Path(values["outputs"]["html"]).read_text(encoding="utf-8")
     assert "<title>Quotation Review</title>" in html and "Zenamox 500/125" in html
+    source = values["documents"][0]["source"]
+    assert source["text"] and not source["pages"]  # JSON shows as text with evidence marked
 
 
 def test_decisions_from_the_review_page_drive_promote(tmp_path: Path) -> None:

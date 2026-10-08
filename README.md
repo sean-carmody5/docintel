@@ -55,7 +55,7 @@ uv run docintel approve --thread-id <id> --out output/provided --decisions decis
 uv run docintel draw                                           # the graph as Mermaid
 ```
 
-`review.html` in the output folder is the review page: one row per quotation line with the product, the price and one short note saying what needs a person, least certain first. Open a row for the fields, the reasons and the evidence quotes; approve, hold or reject (`a`/`h`/`r`, `j`/`k` to move), then "Export decisions" and pass the JSON to `approve --decisions`. One file, no server, opens from disk.
+`review.html` in the output folder is the review page: one row per quotation line with the product, the price and one short note saying what needs a person, least certain first. Open a row for the fields beside the source itself, the page image for scans and PDFs or the text with the evidence quotes highlighted; approve, hold or reject (`a`/`h`/`r`, `j`/`k` to move), then "Export decisions" and pass the JSON to `approve --decisions`. One file, no server, opens from disk.
 
 Live extraction needs an API key and the model backend:
 

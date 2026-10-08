@@ -237,6 +237,8 @@ Eight files is not an evaluation. Two additions, both part of Phase A.
 
 **Expected-outcome backlog.** Built now: expired validity, a scan rotated sideways, a fax with a cover sheet, a reply thread whose quoted RFQ carries the buyer's target prices, a quote that states a price with no unit. Listed for after the pipeline runs end to end: an RFQ with no prices, a purchase order and an invoice that look like quotations, two quotations in one PDF, per-100 pricing, a document with two currencies, a bid tabulation with several suppliers, a spreadsheet with uncached formulas, a password-protected archive member, handwritten corrections on a scan.
 
+**Review page backlog.** The page shows the source beside the fields (page image or text with evidence highlighted). Next: outline on the scan the exact spot a price was read from, using the OCR engine's word boxes; decide-and-advance with undo; approve a document's clean lines in one action.
+
 **Passing is behaving as expected, not scoring 100%.** Every case carries an `expect` value and the scorer grades against it. A clean JSON must extract every line exactly. A glare-wiped photo or the provided `scan_03` must return what is legible, flag the rest, and never invent a line; a confident wrong price on such a case is a failure, a flagged gap is a pass. An encrypted file must produce a refused record with the reason. Accuracy on the legible cases and calibration on the illegible ones are reported separately, because a pipeline that is right when it is sure and says so when it is not is the product.
 
 ## Engineering standard

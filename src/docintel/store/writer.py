@@ -277,6 +277,7 @@ def write_all(
     duplicates: list[Duplicate],
     out_dir: Path,
     run: dict[str, Any] | None = None,
+    sources: list[dict[str, Any]] | None = None,
 ) -> dict[str, Path]:
     out_dir.mkdir(parents=True, exist_ok=True)
     run = dict(run or {})
@@ -292,7 +293,9 @@ def write_all(
     write_sqlite(records, conflicts, duplicates, paths["sqlite"], run)
     write_report(records, conflicts, duplicates, paths["report"], run)
     paths["html"].write_text(
-        render_review_html(records, conflicts, duplicates, run), encoding="utf-8", newline="\n"
+        render_review_html(records, conflicts, duplicates, run, sources=sources),
+        encoding="utf-8",
+        newline="\n",
     )
     paths["conflicts"].write_text(
         json.dumps(

@@ -40,6 +40,7 @@ from docintel.ingest import load
 from docintel.reconcile import reconcile
 from docintel.records import Record
 from docintel.store import write_all
+from docintel.store.sources import save_source
 from docintel.verify import Sources, build_records, failed_record
 
 log = logging.getLogger(__name__)
@@ -207,6 +208,7 @@ class Pipeline:
                 "parent": d.parent_id,
                 "flags": [f.code for f in d.flags],
                 "records": sum(1 for r in records if r.source_id == d.id),
+                "source": save_source(d, self.settings.output_dir),
             }
             for d in doc.walk()
         ]
@@ -236,7 +238,14 @@ class Pipeline:
             "failed_documents": sum(1 for d in docs if d["status"] == "failed"),
             **self.settings.describe(),
         }
-        paths = write_all(records, conflicts, duplicates, self.settings.output_dir, run=run)
+        paths = write_all(
+            records,
+            conflicts,
+            duplicates,
+            self.settings.output_dir,
+            run=run,
+            sources=[d["source"] for d in docs if d.get("source")],
+        )
         needs = sum(1 for r in records if r.needs_review)
         return {
             "outputs": {k: str(v) for k, v in paths.items()},
