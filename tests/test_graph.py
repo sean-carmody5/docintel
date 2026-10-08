@@ -104,16 +104,32 @@ def test_decisions_from_the_review_page_drive_promote(tmp_path: Path) -> None:
     result = run(pipeline, PROVIDED, thread_id="t6", checkpointer=checkpointer)
     ids = [r["record_id"] for r in result["values"]["final_records"]]
     decisions = {ids[0]: "approve", ids[1]: "approve", ids[2]: "reject"}
+    corrections = {
+        ids[0]: {"price_per_uom": 0.5, "record_id": "nope"},  # one value, one protected field
+        ids[1]: {"units_per_pack": "twelve"},  # not a number: refused, recorded
+    }
     final = resume(
-        pipeline, thread_id="t6", approved=True, checkpointer=checkpointer, decisions=decisions
+        pipeline,
+        thread_id="t6",
+        approved=True,
+        checkpointer=checkpointer,
+        decisions=decisions,
+        corrections=corrections,
     )
     assert final["promoted"] == 2 and final["rejected"] == 1 and final["held"] == len(ids) - 3
+    assert final["corrected"] == 2
     applied = json.loads((tmp_path / "decisions_applied.json").read_text(encoding="utf-8"))
-    assert applied[ids[0]] == "approved" and applied[ids[2]] == "rejected"
+    assert applied["decisions"][ids[0]] == "approved" and applied["decisions"][ids[2]] == "rejected"
+    fixed = applied["corrections"][ids[0]]["price_per_uom"]
+    assert fixed["to"] == 0.5 and fixed["from"] != 0.5 and "error" not in fixed
+    assert "error" in applied["corrections"][ids[0]]["record_id"]
+    assert "error" in applied["corrections"][ids[1]]["units_per_pack"]
     with (tmp_path / "approved.csv").open(encoding="utf-8") as fh:
         approved = list(csv.DictReader(fh))
     assert [r["record_id"] for r in approved] == ids[:2]
     assert all(r["status"] == "approved" for r in approved)
+    assert approved[0]["price_per_uom"] == "0.5" and "set by reviewer" in approved[0]["confidence"]
+    assert "corrected_by_reviewer" in approved[0]["flags"]
 
 
 def test_a_fixture_that_does_not_fit_the_schema_flags_the_document_not_the_run(

@@ -189,6 +189,53 @@ with sync_playwright() as p:
     check("Export copies decisions JSON", ok, clip[:80])
     check("Export button says Copied", pg.locator("#export").inner_text() == "Copied")
 
+    # corrections: click a value, type, Enter; export carries it; revert clears it
+    pg.locator(".row").first.click()
+    pg.wait_for_timeout(200)
+    pg.locator(".f[data-f='price_per_uom'] dd.v").click()
+    pg.wait_for_timeout(100)
+    pg.locator("input.ed").fill("0.0091")
+    pg.keyboard.press("Enter")
+    pg.wait_for_timeout(200)
+    fixed = pg.locator(".f[data-f='price_per_uom']")
+    check(
+        "typed correction shows as set by reviewer",
+        "set by reviewer" in fixed.inner_text() and "0.0091" in fixed.inner_text(),
+    )
+    check(
+        "row price updates from the correction",
+        "0.0091" in pg.locator(".rec.open .price").inner_text(),
+    )
+    pg.locator(".f[data-f='units_per_pack'] dd.v").click()
+    pg.locator("input.ed").fill("abc")
+    pg.keyboard.press("Enter")
+    pg.wait_for_timeout(150)
+    check(
+        "a non-number is refused for a numeric field",
+        "set by reviewer" not in pg.locator(".f[data-f='units_per_pack']").inner_text(),
+    )
+    pg.locator("#export").click()
+    pg.wait_for_timeout(200)
+    exported = json.loads(pg.evaluate("navigator.clipboard.readText()"))
+    rid = pg.locator(".rec.open").get_attribute("data-id")
+    check(
+        "export carries the correction",
+        exported.get("corrections", {}).get(rid, {}).get("price_per_uom") == 0.0091,
+    )
+    pg.locator("[data-revert='price_per_uom']").click()
+    pg.wait_for_timeout(150)
+    check(
+        "revert removes the correction",
+        "set by reviewer" not in pg.locator(".f[data-f='price_per_uom']").inner_text(),
+    )
+    pg.locator(".f[data-f='price_per_uom'] dd.v").click()
+    pg.locator("input.ed").fill("0.0091")
+    pg.keyboard.press("Enter")
+    pg.wait_for_timeout(200)
+    pg.screenshot(path=str(out / "v11_corrected.png"))
+    pg.keyboard.press("Escape")
+    pg.wait_for_timeout(150)
+
     # show details
     pg.locator(".row").first.click()
     pg.wait_for_timeout(200)

@@ -71,7 +71,7 @@ Lines from all documents are matched on normalised INN, strength and form. Where
 
 ## 5. Review, then approve
 
-The run writes the table, the report and the page, then stops. The reviewer decides each line on the page and exports the decisions. `approve` resumes the same run from its checkpoint, applies the decisions, writes `approved.csv` with the lines that go on, and records every decision. Nothing reaches a system of record without a person.
+The run writes the table, the report and the page, then stops. The reviewer decides each line on the page, corrects any value they can read in the source that the pipeline could not, and exports both. `approve` resumes the same run from its checkpoint, applies corrections first (the corrected field scores 1.0 with the reason "set by reviewer", and the original is kept beside it in the audit), then the decisions, writes `approved.csv` with the lines that go on, and records everything in `decisions_applied.json`. Nothing reaches a system of record without a person.
 
 ## Orchestration
 

@@ -88,6 +88,8 @@ h1{font-size:22px;font-weight:600;letter-spacing:-.01em;margin:0 0 4px}.sub{marg
 .fields{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:18px 24px;margin:0}
 .f dt{font-size:12px;color:var(--muted);margin-bottom:2px}.f dd{margin:0;font-weight:500}.f dd em{font-style:normal;color:var(--faint);font-weight:400}.f dd .u{color:var(--muted);font-weight:400;font-size:13px}
 .f.flag dd{color:var(--amber)}.f.sev dd{color:var(--red)}.f.flag dd em,.f.sev dd em{color:inherit}
+.f dd.v{cursor:text;border-radius:4px;margin-left:-4px;padding:0 4px}.f dd.v:hover{background:var(--soft)}.f.fixed dd{color:var(--fg)}.f small.was{color:var(--muted)}
+.f input.ed{width:100%;height:28px;padding:0 6px;font-weight:500}.lnk{color:var(--muted);text-decoration:underline;text-underline-offset:2px}.lnk:hover{color:var(--fg)}
 .f small{display:block;font-size:12px;color:var(--muted);margin-top:3px;font-weight:400}.f small.ev{color:var(--faint);font-style:italic}.f small.sc{color:var(--faint)}
 .more{margin-top:18px;color:var(--muted);font-size:13px;text-decoration:underline;text-underline-offset:3px}.more:hover{color:var(--fg)}
 .extra{margin-top:18px;color:var(--muted);font-size:13px}.extra p{margin:4px 0}.extra b{color:var(--fg);font-weight:500}
@@ -116,8 +118,11 @@ h1{font-size:22px;font-weight:600;letter-spacing:-.01em;margin:0 0 4px}.sub{marg
 SCRIPT = r"""
 (function(){
 const D=window.__DATA__,R=D.records,SRC=D.sources||{};
-const KEY='docintel-decisions-'+(D.run.started||'run');let dec={};try{dec=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
-const S={view:'review',q:'',doc:'',sort:'confidence',open:null,more:{},page:{},tab:{}};
+const KEY='docintel-decisions-'+(D.run.started||'run');let dec={},corr={};try{dec=JSON.parse(localStorage.getItem(KEY)||'{}');corr=JSON.parse(localStorage.getItem(KEY+'-corr')||'{}')}catch(e){}
+const NUMERIC=new Set(['units_per_pack','price_per_uom','price_per_pack','discount_pct','quantity','extended_amount','moq_packs','lead_time_days']);
+const INTEGER=new Set(['units_per_pack','quantity','moq_packs','lead_time_days']);
+const corrOf=r=>corr[r.record_id]||{};const val=(r,f)=>f in corrOf(r)?corrOf(r)[f]:r[f];
+const S={view:'review',q:'',doc:'',sort:'confidence',open:null,more:{},page:{},tab:{},edit:null};
 const $=s=>document.querySelector(s);
 const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const LABEL={product_name:'Product',inn:'INN',strength:'Strength',dosage_form:'Form',uom:'Unit',units_per_pack:'Units per pack',price_per_uom:'Unit price',price_per_pack:'Pack price',currency:'Currency',discount_pct:'Discount',quantity:'Quantity',extended_amount:'Extended amount',moq_packs:'Minimum order (packs)',lead_time_days:'Lead time (days)',quotation_ref:'Reference',incoterm:'Incoterm',document_date:'Document date',valid_until:'Valid until'};
@@ -137,8 +142,9 @@ const reasons=r=>(r.review_reasons||[]).map(human);
 const RE_ESC=t=>t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
 const BY_LEN=Object.keys(LABEL).sort((a,b)=>LABEL[b].length-LABEL[a].length);
 function flaggedFields(r){const out=new Set();for(const x of r.review_reasons||[]){let t=x.toLowerCase();for(const f of BY_LEN){const tok=new RegExp('\\b'+f+'\\b'),lab=new RegExp('\\b'+RE_ESC(LABEL[f].toLowerCase())+'\\b');if(tok.test(t)||lab.test(t)){out.add(f);t=t.replace(tok,' ').replace(lab,' ')}}}return out}
-const severe=r=>grp(r)==='failed'||(r.review_reasons||[]).some(x=>UNREAD.test(x))||D.essential.some(f=>r[f]==null);
-function issue(r){if(grp(r)==='failed')return'Could not load';if(!r.needs_review)return'';const rs=reasons(r);if(!rs.length)return'Check';if(rs.length===1)return rs[0];return rs.length+' things to check'}
+const openIssues=r=>{const c=corrOf(r);const ff=flaggedFields(r);return(r.review_reasons||[]).filter(x=>{const m=/^([a-z_]+): /.exec(x);const f=m?m[1]:[...ff].find(k=>x.toLowerCase().includes(LABEL[k].toLowerCase()));return!(f&&f in c)})};
+const severe=r=>grp(r)==='failed'||openIssues(r).some(x=>UNREAD.test(x))||D.essential.some(f=>val(r,f)==null);
+function issue(r){if(grp(r)==='failed')return'Could not load';const n=Object.keys(corrOf(r)).length;if(!r.needs_review)return n?n+' corrected':'';const rs=openIssues(r).map(human);if(!rs.length)return n?'Corrected by reviewer':'Check';if(rs.length===1)return rs[0];return rs.length+' things to check'}
 function visible(){const q=S.q.toLowerCase();let rows=R.filter(r=>(S.view==='all'||grp(r)===S.view)&&(!S.doc||docOf(r)===S.doc)&&(!q||[r.source_document,r.supplier_name,r.product_name,r.inn,r.quotation_ref,r.currency].join(' ').toLowerCase().includes(q)));
  if(S.sort==='confidence')rows.sort((a,b)=>a.overall_confidence-b.overall_confidence||docOf(a).localeCompare(docOf(b))||(a.line_no||0)-(b.line_no||0));
  else if(S.sort==='document')rows.sort((a,b)=>docOf(a).localeCompare(docOf(b))||(a.line_no||0)-(b.line_no||0));
@@ -151,11 +157,12 @@ function header(){const docs=new Set(R.map(docOf)).size,need=R.filter(r=>grp(r)=
  $('#tabs').innerHTML=[['review','Needs review',c.review],['clean','Clean',c.clean],['failed','Failed',c.failed],['all','All',R.length],['compare','Comparisons',cmp]].filter(([k,,n])=>n||k==='review'||k==='all').map(([k,l,n])=>`<button class="${S.view===k?'on':''}" data-v="${k}">${l}<span>${n}</span></button>`).join('');
  document.querySelectorAll('#tabs button').forEach(b=>b.onclick=()=>{S.view=b.dataset.v;S.open=null;render()});
  const names=[...new Set(R.map(docOf))].sort();$('#doc').innerHTML=`<option value="">All documents</option>`+names.map(n=>`<option value="${esc(n)}"${S.doc===n?' selected':''}>${esc(n)}</option>`).join('')}
-function rowHtml(r){const d=dec[r.record_id]||'',sv=severe(r),g=grp(r),is=issue(r);const tone=g==='failed'||(g==='review'&&sv)?'red':g==='review'?'amber':'';
+function rowHtml(r){const d=dec[r.record_id]||'',sv=severe(r),g=grp(r),is=issue(r);const open=openIssues(r).length;const tone=g==='failed'||(g==='review'&&sv)?'red':g==='review'&&open?'amber':'';
  const meta=[r.inn?esc(r.inn)+(r.strength?' '+esc(r.strength):''):'',esc(r.supplier_name||''),esc(docOf(r))].filter(Boolean).join(' · ');
- const price=r.price_per_uom!=null?`<b>${money(r.price_per_uom)}</b><span>${esc(r.currency||'')}</span><small>per ${esc(r.uom||'unit')}${r.units_per_pack!=null?' · '+money(r.units_per_pack)+' per pack':''}</small>`:r.price_per_pack!=null?`<b>${money(r.price_per_pack)}</b><span>${esc(r.currency||'')}</span><small>per pack</small>`:`<span>${g==='failed'?'':'no price'}</span>`;
+ const pu=val(r,'price_per_uom'),pp=val(r,'price_per_pack'),cu=val(r,'currency'),up=val(r,'units_per_pack');
+ const price=pu!=null?`<b>${money(pu)}</b><span>${esc(cu||'')}</span><small>per ${esc(val(r,'uom')||'unit')}${up!=null?' · '+money(up)+' per pack':''}</small>`:pp!=null?`<b>${money(pp)}</b><span>${esc(cu||'')}</span><small>per pack</small>`:`<span>${g==='failed'?'':'no price'}</span>`;
  const decided=d==='approve'?'Approved':d==='hold'?'On hold':d==='reject'?'Rejected':'';
- return`<article class="rec${S.open===r.record_id?' open':''}" data-id="${esc(r.record_id)}"><div class="row" tabindex="0"><span class="ind ${tone}"></span><div><div class="name">${esc(r.product_name||(g==='failed'?r.source_document:'(no product name)'))}</div><div class="meta">${meta}</div></div><div class="issue ${tone}">${esc(is)}</div><div class="price num">${price}</div><div class="dec ${d}">${decided}</div></div>${S.open===r.record_id?detail(r):''}</article>`}
+ return`<article class="rec${S.open===r.record_id?' open':''}" data-id="${esc(r.record_id)}"><div class="row" tabindex="0"><span class="ind ${tone}"></span><div><div class="name">${esc(val(r,'product_name')||(g==='failed'?r.source_document:'(no product name)'))}</div><div class="meta">${meta}</div></div><div class="issue ${tone}">${esc(is)}</div><div class="price num">${price}</div><div class="dec ${d}">${decided}</div></div>${S.open===r.record_id?detail(r):''}</article>`}
 function highlight(text,evidence){const qs=Object.entries(evidence).filter(([,q])=>typeof q==='string'&&q.trim().length>=3).sort((a,b)=>b[1].length-a[1].length);const low=text.toLowerCase();const ranges=[];
  for(const [f,q] of qs){const ql=q.toLowerCase();let i=0,k=0;while(k<20&&(i=low.indexOf(ql,i))!==-1){ranges.push([i,i+ql.length,f]);i+=ql.length;k++}}
  ranges.sort((a,b)=>a[0]-b[0]);const merged=[];for(const x of ranges){const l=merged[merged.length-1];if(l&&x[0]<=l[1])l[1]=Math.max(l[1],x[1]);else merged.push(x.slice())}
@@ -169,13 +176,16 @@ function sourcePanel(r){const s=SRC[docId(r)];if(!s)return'';const hasPages=!!(s
 function detail(r){const d=dec[r.record_id]||'',rs=reasons(r),more=!!S.more[r.record_id],c=r.confidence||{},ev=r.evidence||{},sv=severe(r);
  const flagged=flaggedFields(r);
  const fields=D.field_order.filter(f=>f in r&&(r[f]!=null||D.essential.includes(f)||flagged.has(f)||more));
- const cells=fields.map(f=>{const v=r[f],x=c[f],miss=v==null,rr=x?(x.reasons||[]).map(plain):[],unread=rr.some(s=>UNREAD.test(s));
-  const hot=flagged.has(f)||D.essential.includes(f),sev=hot&&(miss||unread),flag=!sev&&flagged.has(f);
-  const val=miss?`<em>${unread?'unreadable':'not stated'}</em>`:fmt(f,v)+(f==='price_per_uom'&&r.uom?` <span class="u">per ${esc(r.uom)}</span>`:'');
-  const note=more&&rr.length?`<small>${esc(rr.join(' · '))}</small>`:'';
-  const quote=(flag||more)&&ev[f]?`<small class="ev">“${esc(ev[f])}”</small>`:'';
-  const score=more&&x?`<small class="sc">confidence ${x.score.toFixed(2)}</small>`:'';
-  return`<div class="f${flag?' flag':''}${sev?' sev':''}"><dt>${label(f)}</dt><dd>${val}</dd>${note}${quote}${score}</div>`}).join('');
+ const cr=corrOf(r);
+ const cells=fields.map(f=>{const v=r[f],x=c[f],miss=v==null,rr=x?(x.reasons||[]).map(plain):[],unread=rr.some(s=>UNREAD.test(s));const fixed=f in cr;
+  const hot=flagged.has(f)||D.essential.includes(f),sev=!fixed&&hot&&(miss||unread),flag=!fixed&&!sev&&flagged.has(f);
+  if(S.edit===r.record_id+'|'+f){const cur=fixed?cr[f]:(v==null?'':v);return`<div class="f editing"><dt>${label(f)}</dt><dd><input class="ed" data-ef="${f}" value="${esc(cur)}" ${NUMERIC.has(f)?'inputmode="decimal"':''} aria-label="${label(f)}"></dd><small>Enter saves, Esc cancels, empty reverts</small></div>`}
+  const shown=fixed?fmt(f,cr[f]):miss?`<em>${unread?'unreadable':'not stated'}</em>`:fmt(f,v)+(f==='price_per_uom'&&r.uom?` <span class="u">per ${esc(r.uom)}</span>`:'');
+  const was=fixed?`<small class="was">set by reviewer · was ${miss?(unread?'unreadable':'not stated'):fmt(f,v)} · <button class="lnk" data-revert="${f}">revert</button></small>`:'';
+  const note=!fixed&&more&&rr.length?`<small>${esc(rr.join(' · '))}</small>`:'';
+  const quote=!fixed&&(flag||more)&&ev[f]?`<small class="ev">“${esc(ev[f])}”</small>`:'';
+  const score=!fixed&&more&&x?`<small class="sc">confidence ${x.score.toFixed(2)}</small>`:'';
+  return`<div class="f${flag?' flag':''}${sev?' sev':''}${fixed?' fixed':''}" data-f="${f}"><dt>${label(f)}</dt><dd class="v" title="Click to correct">${shown}</dd>${was}${note}${quote}${score}</div>`}).join('');
  const conflicts=(D.conflicts||[]).filter(x=>x.record_ids.includes(r.record_id));
  const extra=[r.superseded?`<p><b>Corrected in the document:</b> ${label(r.superseded.field).toLowerCase()} ${money(r.superseded.old)} became ${money(r.superseded.new)}${r.superseded.reason?' ('+esc(r.superseded.reason)+')':''}</p>`:'',
   r.price_tiers?`<p><b>Volume tiers:</b> ${r.price_tiers.map(t=>money(t.min_packs)+(t.max_packs!=null?'–'+money(t.max_packs):'+')+' packs at '+money(t.price_per_pack)).join(', ')}</p>`:'',
@@ -200,12 +210,18 @@ function render(){header();const el=$('#list');$('#bar').hidden=S.view==='compar
  el.querySelectorAll('.row').forEach(x=>{const id=x.parentElement.dataset.id;x.onclick=()=>{S.open=S.open===id?null:id;render()};x.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();x.onclick()}}});
  el.querySelectorAll('.actions button').forEach(b=>b.onclick=()=>decide(S.open,b.dataset.d));
  el.querySelectorAll('[data-more]').forEach(b=>b.onclick=()=>{S.more[S.open]=!S.more[S.open];render()});
+ el.querySelectorAll('.f dd.v').forEach(d=>d.onclick=()=>{S.edit=S.open+'|'+d.parentElement.dataset.f;render()});
+ el.querySelectorAll('[data-revert]').forEach(b=>b.onclick=e=>{e.stopPropagation();correct(S.open,b.dataset.revert,'');});
+ const ed=el.querySelector('input.ed');if(ed){ed.focus();ed.select();ed.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();correct(S.open,ed.dataset.ef,ed.value)}else if(e.key==='Escape'){e.preventDefault();S.edit=null;render()}};ed.onblur=()=>{if(S.edit)correct(S.open,ed.dataset.ef,ed.value)}}
  el.querySelectorAll('[data-stab]').forEach(b=>b.onclick=()=>{S.tab[S.open]=b.dataset.stab;render()});
  el.querySelectorAll('[data-pg]').forEach(b=>b.onclick=()=>{S.page[S.open]=(S.page[S.open]||0)+Number(b.dataset.pg);render()});
  el.querySelectorAll('[data-zoom]').forEach(i=>i.onclick=()=>lbOpen(S.open));
  const pre=el.querySelector('.rec.open .txt');if(pre){const m=pre.querySelector('mark[data-f="product_name"]')||pre.querySelector('mark[data-f="price_per_uom"]')||pre.querySelector('mark[data-f="inn"]')||pre.querySelector('mark');if(m)pre.scrollTop=Math.max(0,m.offsetTop-pre.clientHeight/3)}
  const open=el.querySelector('.rec.open');if(open)open.scrollIntoView({block:'nearest'})}
 function decide(id,d){if(!id)return;if(dec[id]===d)delete dec[id];else dec[id]=d;try{localStorage.setItem(KEY,JSON.stringify(dec))}catch(e){}render()}
+function correct(id,f,raw){S.edit=null;const r=R.find(x=>x.record_id===id);if(!r)return;const t=String(raw).trim();const c=corr[id]||{};
+ if(t===''){delete c[f]}else if(NUMERIC.has(f)){const n=Number(t.replace(/,/g,''));if(!isFinite(n)||(INTEGER.has(f)&&!Number.isInteger(n))){render();return}c[f]=n}else{c[f]=t}
+ if(Object.keys(c).length)corr[id]=c;else delete corr[id];try{localStorage.setItem(KEY+'-corr',JSON.stringify(corr))}catch(e){}render()}
 function help(on){$('#helpbox').hidden=!on;$('#help').classList.toggle('on',on);if(on)try{localStorage.setItem('docintel-help-seen','1')}catch(e){}}
 document.addEventListener('keydown',e=>{if(/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;
  if(e.key==='Escape'){if(!$('#lb').hidden)$('#lb').hidden=true;else if(!$('#helpbox').hidden)help(false);else{S.open=null;render()}return}
@@ -235,7 +251,7 @@ $('#help').onclick=e=>{e.stopPropagation();help($('#helpbox').hidden)};$('#helpx
 document.addEventListener('click',e=>{if(!$('#helpbox').hidden&&!$('#helpbox').contains(e.target))help(false)});
 try{if(!localStorage.getItem('docintel-help-seen'))help(true)}catch(e){}
 $('#q').oninput=e=>{S.q=e.target.value;render()};$('#doc').onchange=e=>{S.doc=e.target.value;render()};$('#sort').onchange=e=>{S.sort=e.target.value;render()};
-$('#export').onclick=()=>{const payload=JSON.stringify({run:D.run.started,decisions:dec},null,2);const btn=$('#export');const ok=()=>{btn.textContent='Copied';setTimeout(()=>btn.textContent='Export decisions',1600)};
+$('#export').onclick=()=>{const payload=JSON.stringify({run:D.run.started,decisions:dec,corrections:corr},null,2);const btn=$('#export');const ok=()=>{btn.textContent='Copied';setTimeout(()=>btn.textContent='Export decisions',1600)};
  const show=()=>{$('#out').hidden=false;$('#out').value=payload};if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(payload).then(ok).catch(show);else show()};
 render();
 })();
@@ -246,6 +262,7 @@ HELP = """<div id="helpbox" class="helpbox" hidden><button class="x" id="helpx" 
 <p><span class="ind red"></span><b>Red.</b> This line cannot be used yet. Something you need to price it (the product, the INN, the unit price or the currency) could not be read from the document, or was not in it. Open it, look at the source, then reject or hold it.</p>
 <p><span class="ind amber"></span><b>Amber.</b> The values are there, but one of them was reached in a way that deserves a human look. The usual reasons: the unit price was calculated from the pack price; the document corrected a value further down; the price depends on quantity and the lowest tier is shown; a value does not appear word for word in the document, so it could not be confirmed automatically.</p>
 <p><span class="ind none"></span><b>No mark.</b> Every key value appears word for word in the document and passed the checks. Approve without opening, or spot-check.</p></div>
+<div class="sec"><h3>Correcting a value</h3><p>Open a line and click any value to type what the document says. A corrected value shows "set by reviewer" with the original beside it, clears that field's mark, and goes with the decisions when you export. <b>approve</b> applies corrections before decisions and keeps both values in the audit.</p></div>
 <div class="sec"><h3>Keys</h3><table><tr><td><kbd>J</kbd></td><td>open the next line</td></tr><tr><td><kbd>K</kbd></td><td>open the previous line, or close the one at the top</td></tr><tr><td><kbd>A</kbd> <kbd>H</kbd> <kbd>R</kbd></td><td>approve, hold or reject the open line</td></tr><tr><td><kbd>Esc</kbd></td><td>close the open line, the zoomed page, or this help</td></tr><tr><td><kbd>+</kbd> <kbd>&minus;</kbd> <kbd>0</kbd></td><td>zoom the page in, out, or back to fit (the scroll wheel zooms too)</td></tr></table></div>
 <div class="sec"><h3>Decisions</h3><p><b>Approve</b> sends the line on, <b>Hold</b> keeps it for later, <b>Reject</b> drops it. Decisions stay in this browser until you press <b>Export decisions</b>, which copies them as JSON for <code>docintel approve --decisions</code>.</p></div></div>"""
 

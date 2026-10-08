@@ -48,7 +48,7 @@ Click the page to zoom. Scroll wheel or `+` and `-` zoom around the cursor, drag
 
 ![The page viewer at 169 percent](img/review-viewer.png)
 
-Decide with the buttons or `A`, `H`, `R`, then `J` for the next line. Pressing the same key again clears the decision. Decisions stay in the browser, so closing the tab loses nothing.
+Decide with the buttons or `A`, `H`, `R`, then `J` for the next line. Pressing the same key again clears the decision. If you can read a value on the page that the pipeline could not, click the field and type it: it shows as "set by reviewer" with the original beside it, the red mark clears, and the line can be approved. Decisions and corrections stay in the browser, so closing the tab loses nothing.
 
 In this session the reviewer rejected the five lines whose price or product could not be read on the photo, held one line whose price the supplier corrected in a postscript for a colleague to confirm, and approved the other thirty-one.
 

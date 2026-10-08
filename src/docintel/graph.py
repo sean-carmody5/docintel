@@ -39,6 +39,7 @@ from docintel.extract.vision import (
 from docintel.ingest import load
 from docintel.reconcile import reconcile
 from docintel.records import Record
+from docintel.review import apply_corrections
 from docintel.store import write_all
 from docintel.store.sources import save_source
 from docintel.store.writer import write_csv
@@ -62,10 +63,12 @@ class RunState(TypedDict, total=False):
     review: dict[str, Any]
     approved: bool
     decisions: dict[str, str]
+    corrections: dict[str, dict[str, Any]]
     promoted: int
     held: int
     rejected: int
     approved_csv: str
+    corrected: int
     started: str
 
 
@@ -271,7 +274,12 @@ class Pipeline:
         )
         approved = bool(decision.get("approved")) if isinstance(decision, dict) else bool(decision)
         decisions = decision.get("decisions", {}) if isinstance(decision, dict) else {}
-        return {"approved": approved, "decisions": dict(decisions)}
+        corrections = decision.get("corrections", {}) if isinstance(decision, dict) else {}
+        return {
+            "approved": approved,
+            "decisions": dict(decisions),
+            "corrections": dict(corrections),
+        }
 
     def promote_node(self, state: RunState) -> dict[str, Any]:
         """Stub for the hand-off to systems of record.
@@ -283,7 +291,8 @@ class Pipeline:
             return {"promoted": 0, "held": len(state.get("final_records", [])), "rejected": 0}
         records = [Record.model_validate(r) for r in state.get("final_records", [])]
         decisions = state.get("decisions") or {}
-        if decisions:
+        corrected = apply_corrections(records, state.get("corrections") or {})
+        if decisions or corrected:
             for r in records:
                 d = decisions.get(r.record_id)
                 if d == "approve":
@@ -293,7 +302,14 @@ class Pipeline:
             ready = [r for r in records if r.status == "approved"]
             out = self.settings.output_dir / "decisions_applied.json"
             out.write_text(
-                json.dumps({r.record_id: r.status for r in records}, indent=2),
+                json.dumps(
+                    {
+                        "decisions": {r.record_id: r.status for r in records},
+                        "corrections": corrected,
+                    },
+                    indent=2,
+                    default=str,
+                ),
                 encoding="utf-8",
                 newline="\n",
             )
@@ -305,16 +321,18 @@ class Pipeline:
         approved_csv = self.settings.output_dir / "approved.csv"
         write_csv(ready, approved_csv)
         log.info(
-            "promote: %d lines approved, %d rejected, %d held",
+            "promote: %d lines approved, %d rejected, %d held, %d corrected",
             len(ready),
             rejected,
             len(records) - len(ready) - rejected,
+            len(corrected),
         )
         return {
             "promoted": len(ready),
             "rejected": rejected,
             "held": len(records) - len(ready) - rejected,
             "approved_csv": str(approved_csv),
+            "corrected": len(corrected),
         }
 
     # ------------------------------------------------------------------ graph
@@ -368,10 +386,15 @@ def resume(
     approved: bool,
     checkpointer: Any,
     decisions: dict[str, str] | None = None,
+    corrections: dict[str, dict[str, Any]] | None = None,
 ) -> dict[str, Any]:
     graph = pipeline.build(checkpointer)
     config = {"configurable": {"thread_id": thread_id}}
-    payload: dict[str, Any] = {"approved": approved, "decisions": decisions or {}}
+    payload: dict[str, Any] = {
+        "approved": approved,
+        "decisions": decisions or {},
+        "corrections": corrections or {},
+    }
     result = graph.invoke(Command(resume=payload), config=config)
     return dict(result)
 

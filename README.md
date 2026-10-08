@@ -61,7 +61,7 @@ One row per quotation line, least certain first. A red mark means something need
 
 ![An open row: fields on the left, the scanned page on the right](docs/img/review-open.png)
 
-Keys: `J` `K` move, `A` `H` `R` decide, `Esc` closes. The `?` explains the rest.
+Click any value to correct it from the source; the correction travels with the decisions and `approve` keeps both values in the audit. Keys: `J` `K` move, `A` `H` `R` decide, `Esc` closes. The `?` explains the rest.
 
 ## What comes out
 

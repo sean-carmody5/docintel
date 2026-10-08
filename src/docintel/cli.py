@@ -13,6 +13,7 @@ import logging
 import sys
 from datetime import UTC, date, datetime
 from pathlib import Path
+from typing import Any
 
 from docintel.config import Settings
 from docintel.graph import Pipeline, mermaid, resume, run, sqlite_checkpointer
@@ -61,18 +62,24 @@ def cmd_approve(args: argparse.Namespace) -> int:
     pipeline = Pipeline(settings)
     checkpointer = sqlite_checkpointer(settings.output_dir / "checkpoints.sqlite")
     decisions: dict[str, str] = {}
+    corrections: dict[str, dict[str, Any]] = {}
     if args.decisions:
         payload = json.loads(Path(args.decisions).read_text(encoding="utf-8"))
-        decisions = payload.get("decisions", payload) if isinstance(payload, dict) else {}
+        if isinstance(payload, dict):
+            decisions = payload.get("decisions", payload)
+            corrections = payload.get("corrections", {})
     state = resume(
         pipeline,
         thread_id=args.thread_id,
         approved=not args.reject,
         checkpointer=checkpointer,
         decisions=decisions,
+        corrections=corrections,
     )
     print(f"approved:  {state.get('promoted', 0)} lines -> {state.get('approved_csv', '')}")
     print(f"rejected:  {state.get('rejected', 0)}")
+    if state.get("corrected"):
+        print(f"corrected: {state['corrected']} lines had values set by the reviewer")
     print(f"held:      {state.get('held', 0)} (no decision yet; run approve again with more)")
     return 0
 
@@ -119,7 +126,7 @@ def main(argv: list[str] | None = None) -> int:
     p_app.add_argument("--thread-id", required=True)
     p_app.add_argument("--reject", action="store_true", help="resume without promoting anything")
     p_app.add_argument(
-        "--decisions", help="JSON copied from the review page: {record_id: approve|hold|reject}"
+        "--decisions", help="JSON exported from the review page: decisions and corrections"
     )
     p_app.set_defaults(fn=cmd_approve)
 
