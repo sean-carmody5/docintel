@@ -598,11 +598,11 @@
         "long",
         "quantity_extended"
       ],
-      "n_lines": 12,
+      "n_lines": 10,
       "source": "pdf_classic_03",
       "hostile": null,
       "expect": "extract",
-      "note": "",
+      "note": "Page 1 of 3 only: 10 of 12 lines are on the page.",
       "files": [
         "scan_photo_lagos-bio_p1.jpg"
       ],
@@ -730,8 +730,8 @@
       "n_lines": 6,
       "source": "pdf_modern_01",
       "hostile": null,
-      "expect": "extract_and_flag",
-      "note": "Invisible OCR layer full of substitutions. Trusting it yields confident garbage.",
+      "expect": "extract",
+      "note": "Invisible OCR layer full of substitutions. Trusting it yields confident garbage; reading the page image instead yields the right values, which need no review.",
       "files": [
         "scan_dong-nai_garbled_layer.pdf"
       ],
@@ -750,7 +750,7 @@
       "n_lines": 7,
       "source": "pdf_letter_02",
       "hostile": null,
-      "expect": "extract_and_flag",
+      "expect": "extract",
       "note": "",
       "files": [
         "scan_helvetia_garbled_layer.pdf"
@@ -1015,7 +1015,7 @@
       "source": null,
       "hostile": null,
       "expect": "extract",
-      "note": "Fixed-width ERP print-out.",
+      "note": "Fixed-width ERP print-out. Column widths cut long cells short; truth holds the text as printed, because that is all the page says.",
       "files": [
         "indus_QUOT_IRL-26-0135.txt"
       ],
@@ -2348,7 +2348,7 @@
         "currency": "USD",
         "units_per_pack": 21,
         "price_per_uom": 0.0672,
-        "inn_as_written": "Amoxicillin and clavulanate potassium"
+        "inn_as_written": "Amoxicillin and clavulanate potas"
       },
       {
         "case": "xlsx_pricelist_03",

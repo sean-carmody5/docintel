@@ -168,9 +168,22 @@ footer{{color:#777;font-size:12px;margin-top:32px}}
     path.write_text(html, encoding="utf-8", newline="\n")
 
 
-def write_txt(q: Quotation, rng: random.Random, path: Path) -> None:
-    """A fixed-width text dump, the kind an old ERP prints to a .txt file."""
+def write_txt(q: Quotation, rng: random.Random, path: Path) -> list[tuple[Line, str, str]]:
+    """A fixed-width text dump, the kind an old ERP prints to a .txt file.
+
+    Returns the cells the column widths cut short, as (line, field, text as printed), so
+    the truth can say what the page says rather than what the ERP knew.
+    """
     s = q.supplier
+    cut: list[tuple[Line, str, str]] = []
+
+    def cell(ln: Line, f: str, width: int) -> str:
+        value = str(getattr(ln, f))
+        shown = value[:width]
+        if shown != value:
+            cut.append((ln, f, shown))
+        return shown
+
     pack_only = "pack_price_only" in q.features
     w = 118
     out = [
@@ -191,7 +204,8 @@ def write_txt(q: Quotation, rng: random.Random, path: Path) -> None:
     out += [head, "-" * w]
     for ln in q.lines:
         row = (
-            f"{ln.line_no:<4}{ln.product_name[:21]:<22}{ln.inn[:33]:<34}{ln.strength[:15]:<16}"
+            f"{ln.line_no:<4}{cell(ln, 'product_name', 21):<22}{cell(ln, 'inn', 33):<34}"
+            f"{cell(ln, 'strength', 15):<16}"
             f"{(str(ln.units_per_pack) + ' ' + ln.uom)[:15]:<16}"
         )
         if pack_only:
@@ -200,7 +214,7 @@ def write_txt(q: Quotation, rng: random.Random, path: Path) -> None:
             row += f"{fmt_money(_shown_unit(ln)):>12}{fmt_money(_shown_pack(ln)):>12}"
         row += f"{ln.moq_packs:>8}{ln.lead_time_days:>6}"
         out.append(row)
-        out.append(f"{'':<4}{ln.dosage_form[:21]:<22}{ln.packaging[:33]:<34}")
+        out.append(f"{'':<4}{cell(ln, 'dosage_form', 21):<22}{cell(ln, 'packaging', 33):<34}")
     out += ["-" * w, "NOTES:"]
     out += [f"  - {n}" for n in q.notes]
     for ln in q.lines:
@@ -216,3 +230,4 @@ def write_txt(q: Quotation, rng: random.Random, path: Path) -> None:
         "",
     ]
     path.write_text("\n".join(out), encoding="utf-8", newline="\n")
+    return cut

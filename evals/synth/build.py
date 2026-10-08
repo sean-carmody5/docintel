@@ -9,10 +9,11 @@ import argparse
 import json
 import random
 import shutil
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from pathlib import Path
 from typing import Any
 
+import pymupdf
 from reportlab.lib.pdfencrypt import StandardEncryption
 
 from evals.synth import hostile, vocab
@@ -180,15 +181,14 @@ CASES: tuple[Case, ...] = (
         "scanned_pdf",
         "garbled_layer",
         source="pdf_modern_01",
-        expect="extract_and_flag",
-        note="Invisible OCR layer full of substitutions. Trusting it yields confident garbage.",
+        note="Invisible OCR layer full of substitutions. Trusting it yields confident garbage; "
+        "reading the page image instead yields the right values, which need no review.",
     ),
     Case(
         "pdf_scanned_garbled_layer_02",
         "scanned_pdf",
         "garbled_layer",
         source="pdf_letter_02",
-        expect="extract_and_flag",
     ),
     Case(
         "pdf_scanned_cover_sheet_01",
@@ -259,7 +259,8 @@ CASES: tuple[Case, ...] = (
         "fixed_width",
         "indus",
         ("inn_variant",),
-        note="Fixed-width ERP print-out.",
+        note="Fixed-width ERP print-out. Column widths cut long cells short; truth holds the text "
+        "as printed, because that is all the page says.",
     ),
     # Office formats
     Case(
@@ -398,6 +399,18 @@ def _doc_name(case: Case, q: Quotation) -> str:
     }[case.kind]
 
 
+def _page_one_only(q: Quotation, src_pdf: Path) -> tuple[Quotation, str]:
+    """An image is one page. If the source ran longer, truth keeps the lines on that page."""
+    with pymupdf.open(src_pdf) as pdf:
+        pages = pdf.page_count
+        text = " ".join(pdf[0].get_text().split())  # names wrap across lines in narrow columns
+    visible = [ln for ln in q.lines if ln.product_name in text]
+    if pages == 1 or len(visible) == len(q.lines):
+        return q, ""
+    note = f"Page 1 of {pages} only: {len(visible)} of {len(q.lines)} lines are on the page."
+    return replace(q, lines=visible), note
+
+
 def _truth_payload(case: Case, q: Quotation, files: list[str]) -> dict[str, Any]:
     return {
         "case_id": case.id,
@@ -430,6 +443,7 @@ def build(out: Path, seed: int) -> dict[str, Any]:
         rng = random.Random(f"{seed}/{case.id}")
         case_dir = out / case.id
         case_dir.mkdir()
+        extra_note = ""
         files: list[str] = []
         q: Quotation | None = None
 
@@ -476,7 +490,8 @@ def build(out: Path, seed: int) -> dict[str, Any]:
             elif case.kind == "html":
                 write_html(q, rng, target)
             elif case.kind == "txt":
-                write_txt(q, rng, target)
+                for ln, f, shown in write_txt(q, rng, target):
+                    setattr(ln, f, shown)  # truth says what the page says
             files.append(name)
 
         elif case.kind == "image":
@@ -490,6 +505,7 @@ def build(out: Path, seed: int) -> dict[str, Any]:
                 rng,
             )
             files.append(target.name)
+            q, extra_note = _page_one_only(q, src_pdf)
 
         elif case.kind == "scanned_pdf":
             src = built[case.source or ""]
@@ -547,6 +563,8 @@ def build(out: Path, seed: int) -> dict[str, Any]:
             files.append(target.name)
 
         entry: dict[str, Any] = {**asdict(case), "files": files, "dir": case.id}
+        if extra_note:
+            entry["note"] = f"{case.note} {extra_note}".strip()
         if q is not None:
             quotations[case.id] = q
             (case_dir / "truth.json").write_text(

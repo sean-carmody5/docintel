@@ -21,7 +21,7 @@
       "product_name": "Prazoleex 20",
       "inn": "Omeprazole",
       "strength": "20 mg",
-      "dosage_form": "Gastro-resistant capsule",
+      "dosage_form": "Gastro-resistant caps",
       "uom": "capsule",
       "units_per_pack": 100,
       "packaging": "PVC/Alu blister",
@@ -41,7 +41,7 @@
         "product_name": "Prazoleex 20",
         "inn": "Omeprazole",
         "strength": "20 mg",
-        "dosage_form": "Gastro-resistant capsule",
+        "dosage_form": "Gastro-resistant caps",
         "units_per_pack": "100",
         "price_per_pack": "1.240",
         "price_per_uom": "0.0124"
@@ -184,7 +184,7 @@
     {
       "line_no": 6,
       "product_name": "Indmoxclav 500",
-      "inn": "Amoxicillin and clavulanate potassium",
+      "inn": "Amoxicillin and clavulanate potas",
       "strength": "500 mg / 125 mg",
       "dosage_form": "Film-coated tablet",
       "uom": "tablet",
@@ -204,7 +204,7 @@
       "superseded": null,
       "evidence": {
         "product_name": "Indmoxclav 500",
-        "inn": "Amoxicillin and clavulanate potassium",
+        "inn": "Amoxicillin and clavulanate potas",
         "strength": "500 mg / 125 mg",
         "dosage_form": "Film-coated tablet",
         "units_per_pack": "21",

@@ -82,14 +82,14 @@ manifest.json       every case, its features, what a correct pipeline should do 
 | `img_crop_01` | image | crop | kaveri | INR | 6 | correction, discount, inn_variant, quantity_extended | partial | from pdf_classic_02. Only part of the page is captured; some lines are legitimately missing. |
 | `img_heavy_01` | image | heavy | deltafarm | EUR | 3 | correction, lead_time_weeks | low_confidence | from pdf_letter_01. Mostly unreadable by design. Correct behaviour is low confidence, not confident values. |
 | `img_fax_02` | image | fax | meridian | USD | 2 | distractor_alt_price, pack_price_only | extract | from pdf_modern_02. |
-| `img_photo_02` | image | photo | lagosbio | USD | 12 | long, quantity_extended | extract | from pdf_classic_03. |
+| `img_photo_02` | image | photo | lagosbio | USD | 10 | long, quantity_extended | extract | from pdf_classic_03. Page 1 of 3 only: 10 of 12 lines are on the page. |
 | `img_crop_02` | image | crop | highveld | ZAR | 2 | correction, inn_variant, vat_note | partial | from pdf_modern_03. |
 | `img_glare_wipe_01` | image | glare_wipe | kaveri | INR | 6 | correction, discount, inn_variant, quantity_extended | partial | from pdf_classic_02. A reflection wipes a band through the table, like the provided scan_03. Lines under the band are unreadable; the correct result omits or flags them. |
 | `img_glare_wipe_02` | image | glare_wipe | highveld | ZAR | 2 | correction, inn_variant, vat_note | partial | from pdf_modern_03. |
 | `img_rotated_01` | image | rotated | baobab | KES | 3 | tiered | extract | from pdf_letter_03. Portrait page scanned on its side. Orientation must be handled, not guessed around. |
 | `pdf_scanned_image_only_01` | scanned_pdf | image_only | pacifico | USD | 6 | discount, quantity_extended | extract | from pdf_classic_01. No text layer at all. Must route to the vision path. |
-| `pdf_scanned_garbled_layer_01` | scanned_pdf | garbled_layer | dongnai | USD | 6 | cold_chain, mixed_uom | extract_and_flag | from pdf_modern_01. Invisible OCR layer full of substitutions. Trusting it yields confident garbage. |
-| `pdf_scanned_garbled_layer_02` | scanned_pdf | garbled_layer | helvetia | CHF | 7 | pack_price_only | extract_and_flag | from pdf_letter_02. |
+| `pdf_scanned_garbled_layer_01` | scanned_pdf | garbled_layer | dongnai | USD | 6 | cold_chain, mixed_uom | extract | from pdf_modern_01. Invisible OCR layer full of substitutions. Trusting it yields confident garbage; reading the page image instead yields the right values, which need no review. |
+| `pdf_scanned_garbled_layer_02` | scanned_pdf | garbled_layer | helvetia | CHF | 7 | pack_price_only | extract | from pdf_letter_02. |
 | `pdf_scanned_cover_sheet_01` | scanned_pdf | cover_sheet | pacifico | USD | 6 | discount, quantity_extended | extract | from pdf_classic_01. Fax cover page first, then the quotation. The cover page must yield no lines. |
 | `eml_plain_ps_01` | eml | plain_numbered_ps | lowlands | EUR | 6 | correction | extract |  |
 | `eml_html_table_01` | eml | html_table_only | nilevalley | USD | 6 |  | extract |  |
@@ -102,7 +102,7 @@ manifest.json       every case, its features, what a correct pipeline should do 
 | `chat_whatsapp_02` | chat | whatsapp | baobab | KES | 2 | distractor_alt_price, inn_variant, tiered | extract |  |
 | `xml_export_01` | xml | erp_xml | jiangnan | CNY | 3 | correction | extract |  |
 | `html_portal_01` | html | portal_page | nilgiri | USD | 2 | tiered | extract | Saved supplier-portal page with navigation chrome around the table. |
-| `txt_fixed_width_01` | txt | fixed_width | indus | USD | 6 | inn_variant | extract | Fixed-width ERP print-out. |
+| `txt_fixed_width_01` | txt | fixed_width | indus | USD | 6 | inn_variant | extract | Fixed-width ERP print-out. Column widths cut long cells short; truth holds the text as printed, because that is all the page says. |
 | `xlsx_pricelist_03` | xlsx | pricelist | meridian | USD | 40 | long, mixed_uom | extract | Forty lines. Tests chunking and that nothing is dropped from a long table. |
 | `xlsx_pricelist_01` | xlsx | pricelist | highveld | ZAR | 5 | tiered, vat_note | extract |  |
 | `xlsx_pricelist_02` | xlsx | pricelist | kaveri | INR | 5 | correction | extract |  |

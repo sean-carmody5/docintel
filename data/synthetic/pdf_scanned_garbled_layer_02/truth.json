@@ -2,7 +2,7 @@
   "case_id": "pdf_scanned_garbled_layer_02",
   "kind": "scanned_pdf",
   "variant": "garbled_layer",
-  "expect": "extract_and_flag",
+  "expect": "extract",
   "hostile": null,
   "source_case": "pdf_letter_02",
   "files": [
