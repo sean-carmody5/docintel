@@ -246,6 +246,9 @@ def build_records(
             conf[name] = score_field(
                 name, value, evidence, sources, findings, name in line.illegible, w
             )
+        if line.price_basis == "derived" and line.price_per_uom is not None:
+            # 8.42 / 672 is 0.0125297...; a person would write 0.01253
+            line.price_per_uom = float(f"{line.price_per_uom:.4g}")
         if line.price_basis in ("derived", "tiered") and line.price_per_uom is not None:
             conf["price_per_uom"] = _derived_price(conf, findings, w)
         if high_flags:

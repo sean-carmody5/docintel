@@ -103,3 +103,29 @@ def test_writer_produces_csv_sqlite_and_report(tmp_path: Path) -> None:
     report = paths["report"].read_text(encoding="utf-8")
     assert "## Look at these first" in report and "Same product, more than one supplier" in report
     assert json.loads(paths["conflicts"].read_text(encoding="utf-8"))["duplicates"]
+
+
+def test_a_misread_name_in_a_duplicate_copy_is_a_disagreement() -> None:
+    """One wrong letter in a scan's product name is what the second copy is there to catch;
+    punctuation and spacing differences in a strength are not."""
+    records = _provided_records()
+    scan = next(
+        r
+        for r in records
+        if r.source_document.startswith("scan_02") and r.product_name == "Losandina 50"
+    )
+    scan.product_name = "Losardina 50"
+    syrup = next(
+        r
+        for r in records
+        if r.source_document.startswith("scan_02") and r.product_name == "Salbudina 2/5"
+    )
+    syrup.strength = "2 mg / 5.ml"
+    reconcile(records)
+    names = [
+        f for f in scan.flags if f.code == "duplicate_disagreement" and f.field == "product_name"
+    ]
+    assert names and scan.needs_review
+    assert not [
+        f for f in syrup.flags if f.code == "duplicate_disagreement" and f.field == "strength"
+    ]

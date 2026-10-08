@@ -26,7 +26,13 @@ from langgraph.types import Command, RetryPolicy, Send, interrupt
 
 from docintel.config import Settings
 from docintel.documents import Document, Severity
-from docintel.extract.extractor import Extractor, FixtureExtractor, ModelExtractor, build_llm
+from docintel.extract.extractor import (
+    Extractor,
+    FixtureExtractor,
+    ModelExtractor,
+    build_llm,
+    dump_result,
+)
 from docintel.extract.schema import ExtractionResult
 from docintel.extract.vision import (
     ModelTranscriber,
@@ -138,7 +144,10 @@ class Pipeline:
         finishes and the reviewer sees why this file produced nothing.
         """
         try:
-            return self.extractor.extract(doc, transcript)
+            result = self.extractor.extract(doc, transcript)
+            if self.settings.extractor == "model":
+                dump_result(result, self.settings.output_dir / "extractions" / f"{doc.id}.json")
+            return result
         except Exception as exc:  # noqa: BLE001 - the reason travels on the record
             log.exception("extraction failed for %s", doc.name)
             doc.flag("extraction_failed", Severity.HIGH, f"{type(exc).__name__}: {exc}"[:500])
@@ -146,6 +155,18 @@ class Pipeline:
                 contains_prices=False,
                 warnings=[f"extraction failed for {doc.name}: {type(exc).__name__}"],
             )
+
+    def _recorded_transcript(self, doc: Document) -> str:
+        """In fixture mode a transcript recorded by a live run replays with its extraction,
+        so a paid run is reproduced exactly, grounding included."""
+        if self.settings.extractor != "fixture":
+            return ""
+        for root in self.settings.fixtures:
+            for stem in (doc.id, Path(doc.name).stem):
+                path = root / f"{stem}.transcript.md"
+                if path.is_file():
+                    return path.read_text(encoding="utf-8")
+        return ""
 
     def _vision(self, doc: Document) -> list[Record]:
         ocr_text: str | None = None
@@ -160,10 +181,16 @@ class Pipeline:
                 Severity.INFO,
                 f"{self.ocr.name}: {len(ocr.lines)} lines, mean score {ocr.mean_score:.2f}",
             )
-        transcript = ""
-        if self.transcriber is not None:
+        transcript = self._recorded_transcript(doc)
+        if transcript:
+            doc.flag("vision_path", Severity.INFO, "transcript recorded by an earlier live run")
+        elif self.transcriber is not None:
             transcript = self.transcriber.transcribe(doc.images)
             doc.flag("vision_path", Severity.INFO, f"pages transcribed by {self.transcriber.name}")
+            if self.settings.extractor == "model":
+                path = self.settings.output_dir / "extractions" / f"{doc.id}.transcript.md"
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(transcript, encoding="utf-8", newline="\n")
         else:
             doc.flag(
                 "vision_path",

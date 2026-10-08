@@ -58,6 +58,12 @@ def _root(record: Record) -> str:
     return record.parent_document or record.source_document
 
 
+def _same_text(a: str, b: str) -> bool:
+    """Equal once case, spacing and punctuation are ignored: '2 mg / 5.ml' is '2 mg / 5 ml'."""
+    squash = str.maketrans("", "", " .,;:-_/()[]")
+    return a.lower().translate(squash) == b.lower().translate(squash)
+
+
 def find_conflicts(records: list[Record]) -> list[Conflict]:
     groups: dict[tuple[str, str, str], list[Record]] = defaultdict(list)
     for r in records:
@@ -145,14 +151,28 @@ def reconcile_duplicates(records: list[Record]) -> list[Duplicate]:
                     if a is None:
                         continue
                     matched += 1
-                    # The product key matched, so the identity fields agree by construction.
-                    for fld in ("product_name", "inn", "uom", "currency"):
-                        _lift(a, b, fld, a_name, b_name)
-                    for fld in ("price_per_uom", "units_per_pack", "price_per_pack"):
+                    # The key matched on normalised INN, strength and form; everything else
+                    # is compared, because one misread letter in a name is exactly what a
+                    # second copy is for.
+                    for fld in (
+                        "product_name",
+                        "inn",
+                        "strength",
+                        "uom",
+                        "currency",
+                        "price_per_uom",
+                        "units_per_pack",
+                        "price_per_pack",
+                    ):
                         av, bv = getattr(a, fld), getattr(b, fld)
                         if av is None or bv is None:
                             continue
-                        if _close(float(av), float(bv)):
+                        same = (
+                            _close(float(av), float(bv))
+                            if isinstance(av, int | float) and isinstance(bv, int | float)
+                            else _same_text(str(av), str(bv))
+                        )
+                        if same:
                             agreements += 1
                             _lift(a, b, fld, a_name, b_name)
                         else:

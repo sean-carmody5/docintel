@@ -9,7 +9,7 @@ from pathlib import Path
 from langgraph.checkpoint.memory import MemorySaver
 
 from docintel.cli import main
-from docintel.config import Settings
+from docintel.config import DEFAULT_FIXTURES, Settings
 from docintel.graph import Pipeline, mermaid, resume, run, sqlite_checkpointer
 
 PROVIDED = Path("data/provided")
@@ -148,3 +148,38 @@ def test_a_fixture_that_does_not_fit_the_schema_flags_the_document_not_the_run(
     records = result["values"]["final_records"]
     assert len(records) == 1 and records[0]["needs_review"]
     assert any(f["code"] == "extraction_failed" for f in records[0]["flags"])
+
+
+class _CannedTranscriber:
+    name = "canned"
+
+    def transcribe(self, images: list[object]) -> str:
+        return "SCHEDULE OF PRICES\nDolostop 500 Paracetamol 500 mg tablet 20 0.0091 USD\n"
+
+
+def test_live_extractions_and_transcripts_are_recorded_and_replay(tmp_path: Path) -> None:
+    """A paid run is written down so it never has to be paid for twice."""
+    from docintel.extract.extractor import FixtureExtractor
+
+    live = Settings(extractor="model", ocr=False, output_dir=tmp_path / "live")
+    pipeline = Pipeline(
+        live, extractor=FixtureExtractor(list(DEFAULT_FIXTURES)), transcriber=_CannedTranscriber()
+    )
+    scan = next(PROVIDED.glob("scan_02*"))
+    first = run(pipeline, scan, thread_id="t8")["values"]["final_records"]
+    recorded = sorted(p.name for p in (tmp_path / "live" / "extractions").iterdir())
+    assert (
+        len(recorded) == 2
+        and recorded[0].endswith(".json")
+        and recorded[1].endswith(".transcript.md")
+    )
+
+    replay = Settings(
+        extractor="fixture",
+        ocr=False,
+        output_dir=tmp_path / "replay",
+        fixtures=[tmp_path / "live" / "extractions"],
+    )
+    second = run(Pipeline(replay), scan, thread_id="t9")["values"]["final_records"]
+    assert [r["product_name"] for r in second] == [r["product_name"] for r in first]
+    assert any("recorded by an earlier live run" in f["detail"] for r in second for f in r["flags"])
