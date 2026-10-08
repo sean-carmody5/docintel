@@ -4,13 +4,13 @@ The ins and outs, in the order a document goes through them. For what a user see
 
 ```mermaid
 flowchart LR
-  A[document] --> B[load]
-  B --> C[extract]
-  C --> D[verify]
-  D --> E[reconcile]
-  E --> F[review]
-  F --> G[approve]
-  B -.-> S[security scan]
+  A["<b>document</b>"] --> B["<b>load</b>"]
+  B --> C["<b>extract</b>"]
+  C --> D["<b>verify</b>"]
+  D --> E["<b>reconcile</b>"]
+  E --> F["<b>review</b>"]
+  F --> G["<b>approve</b>"]
+  B -.-> S["<b>security scan</b>"]
   S -.-> D
 ```
 

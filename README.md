@@ -6,15 +6,15 @@ Supplier quotations arrive as PDFs, scans, emails, spreadsheets and JSON exports
 
 ```mermaid
 flowchart LR
-  F[(folder of<br/>documents)] --> L
+  F[("<b>folder of documents</b>")] --> L
   subgraph P["per document, in parallel"]
     direction LR
-    L[load<br/>detect the type from<br/>content, pick a loader] --> X[extract<br/>one schema,<br/>evidence quoted] --> V[verify<br/>ground, check,<br/>score]
+    L["<b>load</b><br/>detect the type from<br/>content, pick a loader"] --> X["<b>extract</b><br/>one schema,<br/>evidence quoted"] --> V["<b>verify</b><br/>ground, check,<br/>score"]
   end
-  V --> R[reconcile<br/>across suppliers<br/>and copies]
-  R --> W[(table +<br/>review page)]
-  W --> H{{person decides}}
-  H --> A[(approved.csv)]
+  V --> R["<b>reconcile</b><br/>across suppliers<br/>and copies"]
+  R --> W[("<b>table + review page</b>")]
+  W --> H{{"<b>person decides</b>"}}
+  H --> A[("<b>approved.csv</b>")]
 ```
 
 ## Try it
@@ -80,17 +80,17 @@ Confidence is computed, never asked of the model. Every value is tested against 
 
 ```mermaid
 flowchart LR
-  V[value] --> G{found in the<br/>document text?}
-  G -->|yes| C{arithmetic,<br/>codes, dates<br/>plausible?}
-  G -->|no| D[deduct, say why]
-  C -->|yes| O{scan: does the<br/>OCR pass agree?}
+  V["<b>value</b>"] --> G{"<b>grounded?</b><br/>found in the<br/>document text"}
+  G -->|yes| C{"<b>consistent?</b><br/>arithmetic, codes,<br/>dates plausible"}
+  G -->|no| D["<b>deduct</b>, say why"]
+  C -->|yes| O{"<b>agreed?</b><br/>scan: the OCR<br/>pass reads the same"}
   C -->|no| D
-  O -->|yes or n/a| S[score, tier]
+  O -->|yes or n/a| S["<b>score</b>, tier"]
   O -->|no| D
   D --> S
-  S --> R{any key field<br/>below the bar, or<br/>missing?}
-  R -->|yes| N[needs a person]
-  R -->|no| K[clean]
+  S --> R{"any key field<br/>below the bar,<br/>or missing?"}
+  R -->|yes| N["<b>needs a person</b>"]
+  R -->|no| K["<b>clean</b>"]
 ```
 
 Rules a reviewer can rely on: a value that is not in the document is never confident; a unit price worked out from a pack price inherits the weaker of its inputs; a document that corrects itself later wins with the later value and keeps both; text addressed to an automated reader is flagged and ignored.

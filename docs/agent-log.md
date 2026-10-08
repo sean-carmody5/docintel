@@ -144,4 +144,6 @@ Haiku declined most of the work: it marked xlsx, docx, html and csv as needing s
 
 **Testing (Seán asked).** Unit tests per module plus end-to-end graph runs on the provided pack; CI now also replays the whole synthetic set through the pipeline and scores it with a require-pass flag, and runs the provided pack to the review stop and through approve, so the "66 of 66" claim is checked on every push rather than asserted.
 
+**Write-up notes (Seán).** Compare the other closed-source families too, not only Claude's. The second vision pass stays future work until a live run shows whether it earns its cost.
+
 **CLI `--fixtures` (agent).** Any recorded set replays without code changes, and the run metadata names the roots it used.

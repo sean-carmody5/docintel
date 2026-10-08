@@ -10,16 +10,16 @@ Every input becomes the same neutral `Document` (text, optional page images, met
 
 ```mermaid
 flowchart LR
-  F[(folder or file)] --> D[discover]
+  F[("<b>folder or file</b>")] --> D["<b>discover</b>"]
   D -->|one task per file| L
   subgraph P["per document, in parallel, with retries"]
     direction LR
-    L[load] --> X[extract] --> V[verify]
+    L["<b>load</b>"] --> X["<b>extract</b>"] --> V["<b>verify</b>"]
   end
-  V --> R[reconcile]
-  R --> W[(table, report,<br/>review page)]
-  W --> H{{person decides<br/>on the page}}
-  H -->|approve with decisions| M[(approved.csv)]
+  V --> R["<b>reconcile</b>"]
+  R --> W[("<b>table, report,<br/>review page</b>")]
+  W --> H{{"<b>person decides</b><br/>on the page"}}
+  H -->|approve with decisions| M[("<b>approved.csv</b>")]
 ```
 
 | Layer | What it is | Why |
@@ -173,7 +173,7 @@ uv with a locked environment; ruff for lint and format; mypy strict on `src/`; 4
 ## Planned, not built, and why
 
 - **Render-to-image fallback for unknown formats.** Everything the spec names has a loader or converts through markitdown; a LibreOffice dependency was not worth it for the long tail.
-- **Second extraction pass from a different model family on low-confidence prices.** The setting exists; the pass does not, because live runs are blocked on an API key. The OCR agreement signal covers the scan case it was meant for.
+- **Second extraction pass from a different model family on low-confidence prices.** The setting exists; the pass does not. It cannot be verified without live calls, and whether it earns its cost (one extra call per flagged page) is a question the first live run's calibration answers. Until then the OCR agreement signal covers the scan case it was meant for.
 - **Calibration plot** in the write-up. The scorer measures wrong-at-high-confidence; the plot waits for live runs.
-- **Model comparison with cost per document.** Blocked on the same key. The blind agent sets are the interim comparison.
+- **Model comparison with cost per document.** Blocked on the same key. The blind agent sets are the interim comparison. In practice the comparison would cover the other closed-source families too (OpenAI, Google), not only Claude's, since the provider is a config string (Seán's note for the write-up).
 - **MCP server over the review table.** A stretch item; the page and the SQLite file cover the need.
