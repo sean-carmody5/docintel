@@ -27,6 +27,7 @@ from langgraph.types import Command, RetryPolicy, Send, interrupt
 from docintel.config import Settings
 from docintel.documents import Document, Severity
 from docintel.extract.extractor import Extractor, FixtureExtractor, ModelExtractor, build_llm
+from docintel.extract.schema import ExtractionResult
 from docintel.extract.vision import (
     ModelTranscriber,
     OcrEngine,
@@ -112,7 +113,7 @@ class Pipeline:
         if vision:
             return self._vision(doc)
         sources = Sources(primary=doc.text, extra=[c.text for c in doc.children if c.text])
-        result = self.extractor.extract(doc)
+        result = self._extract(doc)
         return build_records(
             doc,
             result,
@@ -120,6 +121,23 @@ class Pipeline:
             extractor_name=self.extractor.name,
             as_of=self.settings.as_of,
         )
+
+    def _extract(self, doc: Document, transcript: str | None = None) -> ExtractionResult:
+        """One document's failure is that document's problem, not the batch's.
+
+        The model backend already retries; a recorded fixture that does not fit the
+        schema, or a backend that gives up, becomes a flagged empty result so the run
+        finishes and the reviewer sees why this file produced nothing.
+        """
+        try:
+            return self.extractor.extract(doc, transcript)
+        except Exception as exc:  # noqa: BLE001 - the reason travels on the record
+            log.exception("extraction failed for %s", doc.name)
+            doc.flag("extraction_failed", Severity.HIGH, f"{type(exc).__name__}: {exc}"[:500])
+            return ExtractionResult(
+                contains_prices=False,
+                warnings=[f"extraction failed for {doc.name}: {type(exc).__name__}"],
+            )
 
     def _vision(self, doc: Document) -> list[Record]:
         ocr_text: str | None = None
@@ -147,7 +165,7 @@ class Pipeline:
         primary = transcript or ocr_text or doc.text
         extra = [t for t in (doc.text, ocr_text) if t and t != primary]
         sources = Sources(primary=primary, secondary=ocr_text, secondary_label=label, extra=extra)
-        result = self.extractor.extract(doc, transcript=primary or None)
+        result = self._extract(doc, transcript=primary or None)
         return build_records(
             doc,
             result,

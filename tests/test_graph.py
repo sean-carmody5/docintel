@@ -106,3 +106,20 @@ def test_decisions_from_the_review_page_drive_promote(tmp_path: Path) -> None:
     assert final["promoted"] == 2 and final["held"] == len(ids) - 2
     applied = json.loads((tmp_path / "decisions_applied.json").read_text(encoding="utf-8"))
     assert applied[ids[0]] == "approved" and applied[ids[2]] == "rejected"
+
+
+def test_a_fixture_that_does_not_fit_the_schema_flags_the_document_not_the_run(
+    tmp_path: Path,
+) -> None:
+    bad_root = tmp_path / "fixtures"
+    bad_root.mkdir()
+    one = next(PROVIDED.glob("zenith*.json"))
+    (bad_root / f"{one.stem}.json").write_text(
+        '{"contains_prices": true, "lines": [{"product_name": 5, "evidence": {"moq_packs": 50}}]}',
+        encoding="utf-8",
+    )
+    settings = Settings(extractor="fixture", ocr=False, output_dir=tmp_path, fixtures=[bad_root])
+    result = run(Pipeline(settings), one, thread_id="t7")
+    records = result["values"]["final_records"]
+    assert len(records) == 1 and records[0]["needs_review"]
+    assert any(f["code"] == "extraction_failed" for f in records[0]["flags"])
