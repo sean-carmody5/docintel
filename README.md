@@ -105,6 +105,8 @@ Loaders are chosen by what the file contains, not what it is called. A new forma
 |---|---|---|---|
 | Provided pack | 8 | Hand-written expected extractions | 37 lines, 14 flagged for a person, 5 of them unreadable on the glare photo |
 | Synthetic | 66 cases in 15 kinds, generated from truth | Exact | Fixture replay 66 of 66; Sonnet 5.5 and Opus 5.5 reading blind, 24 of 24 covered cases each, no invented lines |
+| Synthetic, live | The same 66 cases through Sonnet 5.5 | Exact | First run 55 of 66, with 10 wrong values at high confidence, all on scans. The same recorded extractions through the fixed pipeline: 65 of 66, no invented lines, 2 wrong at high confidence (one cropped photo where the model and the OCR read the same wrong digit), 8 wrong values flagged for a person |
+| Provided pack, live | 8 documents through Sonnet 5.5 | Hand-written fixtures | 37 lines in 76 s; key values agree with the fixtures except where the model was more careful than the fixture writer |
 | Held-out synthetic | Same generator, different seed | Exact | Never opened while tuning |
 | Public | 37 real price lists and RFQ forms | None | Robustness only |
 

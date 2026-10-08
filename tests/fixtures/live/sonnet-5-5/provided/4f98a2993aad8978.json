@@ -1,0 +1,160 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Novara Farmaceutici S.p.A.",
+    "country": "IT",
+    "contact_name": "Giulia Ferraro",
+    "contact_email": "giulia.ferraro@novarafarma.it"
+  },
+  "quotation_ref": null,
+  "buyer_reference": "RFQ-2026-0244",
+  "document_date": "2026-08-04",
+  "valid_until": "2026-09-30",
+  "currency": "EUR",
+  "incoterm": "FCA",
+  "named_place": "Milan Malpensa",
+  "payment_terms": "45 days from invoice for Axmed-registered buyers, otherwise 50% advance",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Azimax 250",
+      "inn": "azithromycin",
+      "strength": "250 mg",
+      "dosage_form": "film-coated tablets",
+      "uom": "tablet",
+      "units_per_pack": 6,
+      "packaging": "blister of 6 tablets",
+      "price_per_pack": 0.804,
+      "price_per_uom": 0.134,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "EUR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 30000,
+      "lead_time_days": 42,
+      "cold_chain": null,
+      "superseded": {
+        "field": "price_per_uom",
+        "old": 0.128,
+        "new": 0.134,
+        "reason": "P.S.: \"Correction on line 1 - I quoted you last quarter's price. Azimax 250 is 0.134 per tablet as of this month's list.\""
+      },
+      "evidence": {
+        "product_name": "Azimax 250",
+        "inn": "azithromycin 250 mg film-coated tablets",
+        "strength": "250 mg",
+        "dosage_form": "film-coated tablets",
+        "packaging": "blister of 6 tablets",
+        "units_per_pack": "blister of 6 tablets",
+        "uom": "per tablet",
+        "price_per_uom": "Azimax 250 is\n0.134 per tablet",
+        "moq_packs": "MOQ: 30,000 packs",
+        "lead_time_days": "lead time 6 weeks"
+      },
+      "illegible": [],
+      "notes": [
+        "Pack price 0.804 computed as 0.134 x 6; 100 packs per shipper",
+        "Price corrected in P.S. from 0.128 to 0.134 per tablet"
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Zincora 20",
+      "inn": "zinc sulfate",
+      "strength": "20 mg",
+      "dosage_form": "dispersible tablets",
+      "uom": "tablet",
+      "units_per_pack": 100,
+      "packaging": "100 tablets per box",
+      "price_per_pack": 1.55,
+      "price_per_uom": 0.0155,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "EUR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 5000,
+      "lead_time_days": 28,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Zincora 20",
+        "inn": "zinc sulfate 20 mg dispersible tablets",
+        "strength": "20 mg",
+        "dosage_form": "dispersible tablets",
+        "packaging": "100 tablets per box",
+        "units_per_pack": "100 tablets per box",
+        "uom": "100 tablets per box",
+        "price_per_pack": "1.55 per box of 100",
+        "moq_packs": "MOQ: 5,000 boxes",
+        "lead_time_days": "lead time 4 weeks"
+      },
+      "illegible": [],
+      "notes": [
+        "WHO prequalified (PQ ref. NU003)",
+        "MOQ stated in boxes; treated as packs"
+      ]
+    },
+    {
+      "line_no": 3,
+      "product_name": "Dexafar 4 mg/mL",
+      "inn": "dexamethasone sodium phosphate",
+      "strength": "4 mg/mL",
+      "dosage_form": "solution for injection",
+      "uom": "ampoule",
+      "units_per_pack": 25,
+      "packaging": "25 x 1 mL ampoules",
+      "price_per_pack": 10.25,
+      "price_per_uom": 0.41,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "EUR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 2000,
+      "lead_time_days": 63,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Dexafar 4 mg/mL",
+        "inn": "dexamethasone sodium phosphate",
+        "strength": "4 mg/mL",
+        "dosage_form": "solution for injection",
+        "packaging": "25 x 1 mL ampoules",
+        "units_per_pack": "25 x 1 mL ampoules",
+        "uom": "per ampoule",
+        "price_per_uom": "0.41 per ampoule",
+        "moq_packs": "MOQ: 2,000 packs",
+        "lead_time_days": "lead time 9 weeks"
+      },
+      "illegible": [],
+      "notes": [
+        "Quoted ex-stock, batch expiring 03/2028",
+        "Pack price 10.25 computed as 0.41 x 25",
+        "Lead time 9 weeks stated despite ex-stock note"
+      ]
+    }
+  ],
+  "evidence": {
+    "buyer_reference": "RFQ-2026-0244",
+    "currency": "All prices are in EUR",
+    "document_date": "Date: Tue, 04 Aug 2026 16:42:11 +0200",
+    "valid_until": "hold\nuntil 30 September 2026",
+    "incoterm": "FCA Milan Malpensa",
+    "named_place": "FCA Milan Malpensa",
+    "payment_terms": "Payment terms 45 days from invoice for Axmed-registered buyers, otherwise\n50% advance",
+    "supplier": "Novara Farmaceutici S.p.A."
+  },
+  "warnings": [
+    "Offer described as 'indicative'.",
+    "Line 1 price corrected in P.S. from 0.128 to 0.134 per tablet; corrected value used. Lines 2 and 3 unchanged.",
+    "Line 2 price is per box of 100; per-tablet price derived (0.0155).",
+    "Freight and insurance not included; to be quoted separately (Mombasa mentioned only as assumption).",
+    "Line 3: 9-week lead time conflicts somewhat with 'ex-stock' note."
+  ]
+}

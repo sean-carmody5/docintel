@@ -1,0 +1,108 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": null,
+  "quotation_ref": null,
+  "buyer_reference": null,
+  "document_date": null,
+  "valid_until": null,
+  "currency": "ZAR",
+  "incoterm": null,
+  "named_place": null,
+  "payment_terms": "30 days from state",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Dexex 4",
+      "inn": "Dexamethasone sodium phosphate",
+      "strength": "4 mg/mL",
+      "dosage_form": "Solution for injection",
+      "uom": "ampoule",
+      "units_per_pack": 25,
+      "packaging": "Amber glass ampoule",
+      "price_per_pack": null,
+      "price_per_uom": 3.828,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "line_no": "1",
+        "product_name": "Dexex 4",
+        "inn": "Dexamethasone sodium phosphate",
+        "strength": "4 mg/mL",
+        "dosage_form": "Solution for injection",
+        "packaging": "Amber glass ampoule",
+        "units_per_pack": "25 ampoules/pack",
+        "uom": "ampoule",
+        "price_per_uom": "3.828",
+        "currency": "Unit price ZAR / UOM"
+      },
+      "illegible": [],
+      "notes": [
+        "Not PQ; national registrations only. Not registered at destination - waiver requested. Shelf life 36 months. Storage condition truncated in source."
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Lidoex 2%",
+      "inn": "Lignocaine",
+      "strength": "2%, 20 mL",
+      "dosage_form": "Solution for injection",
+      "uom": "vial",
+      "units_per_pack": 25,
+      "packaging": "Glass vial, carton",
+      "price_per_pack": null,
+      "price_per_uom": 8.655,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": {
+        "field": "price_per_uom",
+        "old": 8.403,
+        "new": 8.655,
+        "reason": "Term 5: \"Correction to item 02 (Lidoex 2%): the unit price should read ZAR 8.655, not ZAR 8.403 as printed in the schedule\""
+      },
+      "evidence": {
+        "line_no": "2",
+        "product_name": "Lidoex 2%",
+        "inn": "Lignocaine",
+        "strength": "2%, 20 mL",
+        "dosage_form": "Solution for injection",
+        "packaging": "Glass vial, carton",
+        "units_per_pack": "25 vials/pack",
+        "uom": "vial",
+        "price_per_uom": "ZAR 8.655",
+        "currency": "Unit price ZAR / UOM"
+      },
+      "illegible": [],
+      "notes": [
+        "Schedule printed 8.403; corrected to 8.655 by term 5 (text partly truncated at right edge). Registered at destination: Yes. Not PQ; shelf life 36 months. Storage condition truncated."
+      ]
+    }
+  ],
+  "evidence": {
+    "currency": "Unit price ZAR / UOM",
+    "payment_terms": "30 days from state"
+  },
+  "warnings": [
+    "Page is cropped on the right: payment terms line, unit price header, footnote, 'Stora...' (storage) column and term 5 are truncated. Payment terms 'from state...' is incomplete.",
+    "Supplier name, quotation reference, date, validity, incoterm and lead times are not visible in the document; left null.",
+    "Term 5 correction for item 2 (8.403 -> 8.655) is partly cut off; the corrected value 8.655 was used and the original recorded in superseded. Reviewer should confirm.",
+    "Footnote says pack price = unit price x units per pack, but no pack prices are printed; price_per_pack left null. Footnote text partly truncated.",
+    "Prices stated to exclude 15% VAT where applicable.",
+    "Storage conditions truncated ('Below'); cold chain status unknown."
+  ]
+}

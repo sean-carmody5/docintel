@@ -1,0 +1,132 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Meridian Pharma Ltd.",
+    "country": "IN",
+    "contact_name": "Priya Nair",
+    "contact_email": null
+  },
+  "quotation_ref": null,
+  "buyer_reference": "AXMED-RFQ-2026-0319",
+  "document_date": "2026-09-27",
+  "valid_until": null,
+  "currency": "USD",
+  "incoterm": "CIF",
+  "named_place": "Mombasa (KEMBA)",
+  "payment_terms": "30% advance, balance against shipping documents",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Meridip 5",
+      "inn": "Amlodipine",
+      "strength": "5 mg",
+      "dosage_form": "Tablet",
+      "uom": "tablet",
+      "units_per_pack": 30,
+      "packaging": "PVC/Alu blister 30 tablets/pack",
+      "price_per_pack": 0.147,
+      "price_per_uom": 0.0049,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "USD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 500,
+      "lead_time_days": null,
+      "cold_chain": false,
+      "superseded": null,
+      "evidence": {
+        "line_no": "1",
+        "product_name": "Meridip 5",
+        "inn": "Amlodipine",
+        "strength": "5 mg Tablet",
+        "dosage_form": "5 mg Tablet",
+        "packaging": "PVC/Alu blister 30 tablets/pack",
+        "uom": "tablet",
+        "units_per_pack": "30 tablets/pack",
+        "price_per_pack": "0.1470",
+        "price_per_uom": "0.1470",
+        "price_basis": "Pack price is the price per pack of the stated number of units. Unit price is not quoted separately.",
+        "currency": "Pack price USD",
+        "moq_packs": "500",
+        "cold_chain": "Below 30 C, dry"
+      },
+      "illegible": [
+        "lead_time_days"
+      ],
+      "notes": [
+        "Unit price not quoted; derived as 0.1470 / 30 = 0.0049 per tablet.",
+        "Lead days value printed as 90 but partly obscured by a dark vertical line; not extracted.",
+        "Larger presentation of Meridip 5 at USD 0.0077 per tablet is on request only and not part of this offer; not extracted as a line.",
+        "Not WHO PQ; EU-GMP site; not registered at destination - waiver requested; shelf life 24 months."
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Meriketa 50",
+      "inn": "Ketamine",
+      "strength": "50 mg/mL, 10 mL",
+      "dosage_form": "Solution for injection",
+      "uom": "vial",
+      "units_per_pack": 10,
+      "packaging": "Clear glass vial with flip-off cap 10 vials/pack",
+      "price_per_pack": 15.33,
+      "price_per_uom": 1.533,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "USD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 500,
+      "lead_time_days": null,
+      "cold_chain": false,
+      "superseded": null,
+      "evidence": {
+        "line_no": "2",
+        "product_name": "Meriketa 50",
+        "inn": "Ketamine",
+        "strength": "50 mg/mL, 10 mL Solution for injection",
+        "dosage_form": "Solution for injection",
+        "packaging": "Clear glass vial with flip-off cap 10 vials/pack",
+        "uom": "vial",
+        "units_per_pack": "10 vials/pack",
+        "price_per_pack": "15.330",
+        "price_per_uom": "15.330",
+        "price_basis": "Pack price is the price per pack of the stated number of units. Unit price is not quoted separately.",
+        "currency": "Pack price USD",
+        "moq_packs": "500",
+        "cold_chain": "Below 30 C, dry"
+      },
+      "illegible": [
+        "lead_time_days"
+      ],
+      "notes": [
+        "Unit price not quoted; derived as 15.330 / 10 = 1.533 per vial.",
+        "Lead days value printed as 21 but partly obscured by a dark vertical line; not extracted.",
+        "Ketamine is a controlled substance; import/permit requirements may apply.",
+        "Not WHO PQ; national registrations only; not registered at destination - waiver requested; shelf life 24 months."
+      ]
+    }
+  ],
+  "evidence": {
+    "supplier": "MERIDIAN PHARMA LTD.",
+    "buyer_reference": "AXMED-RFQ-2026-0319",
+    "document_date": "27 September 2026",
+    "currency": "USD",
+    "incoterm": "CIF Mombasa (KEMBA)",
+    "named_place": "CIF Mombasa (KEMBA)",
+    "payment_terms": "30% advance, balance against shipping documents"
+  },
+  "warnings": [
+    "A dark vertical line on the scan obscures the quotation number, dates, 'Lead days' column and end of the payment terms. Quotation number (read as 'MPL Q 26 0118'), valid-until date (read as 26 November 2026) and lead times (90 and 21) may be inexact, so they were left null; please verify against the original.",
+    "Issue date 27 September 2026 is also repeated in the signature block, so it was used for document_date; the header copy overlaps the line.",
+    "Payment terms text ends where the dark line overlaps; it may be truncated.",
+    "Incoterm is CIF Mombasa (KEMBA) but the destination is Accra, Ghana (via Tema); named place and destination are inconsistent, so please clarify with the supplier.",
+    "Prices are per pack; unit prices were derived by dividing by units per pack.",
+    "The footer is very faint, so the contact email was not extracted.",
+    "The scan note describes the obscured text; it contains no instructions to follow."
+  ]
+}

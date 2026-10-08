@@ -1,0 +1,283 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": null,
+    "country": "IN",
+    "contact_name": null,
+    "contact_email": null
+  },
+  "quotation_ref": "KLS-26-00115",
+  "buyer_reference": "AXMED-RFQ-2026-0357",
+  "document_date": "2026-09-19",
+  "valid_until": "2026-11-03",
+  "currency": "INR",
+  "incoterm": "EXW",
+  "named_place": "Chennai plant",
+  "payment_terms": "Irrevocable LC at sight",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Kavmiso 200",
+      "inn": "Misoprostol",
+      "strength": "200 mcg",
+      "dosage_form": "tablet",
+      "uom": "tablet",
+      "units_per_pack": 4,
+      "packaging": "PVC/Alu blister",
+      "price_per_pack": null,
+      "price_per_uom": 14.658,
+      "price_basis": "list",
+      "discount_pct": 10.0,
+      "price_tiers": null,
+      "currency": "INR",
+      "quantity": 80000,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Kavmiso 200",
+        "inn": "Misoprostol",
+        "strength": "200 mcg tablet",
+        "dosage_form": "200 mcg tablet",
+        "packaging": "PVC/Alu blister, 4 tablets per pack",
+        "units_per_pack": "4 tablets per pack",
+        "uom": "tablet",
+        "quantity": "80,000",
+        "price_per_uom": "14.658",
+        "discount_pct": "10.0",
+        "currency": "INR"
+      },
+      "illegible": [
+        "extended_amount"
+      ],
+      "notes": [
+        "Extended amount truncated at right edge ('1,055,37'); not extracted. Unit price is list price before 10.0% discount."
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Floxex 500",
+      "inn": "Ciprofloxacin hydrochloride",
+      "strength": "500 mg",
+      "dosage_form": "film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 100,
+      "packaging": "Alu-Alu blister",
+      "price_per_pack": null,
+      "price_per_uom": 4.591,
+      "price_basis": "list",
+      "discount_pct": 0.0,
+      "price_tiers": null,
+      "currency": "INR",
+      "quantity": 50000,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Floxex 500",
+        "inn": "Ciprofloxacin hydrochloride",
+        "strength": "500 mg film-coated tablet",
+        "dosage_form": "film-coated tablet",
+        "packaging": "Alu-Alu blister, 100 tablets per pack",
+        "units_per_pack": "100 tablets per pack",
+        "uom": "tablet",
+        "quantity": "50,000",
+        "price_per_uom": "4.591",
+        "discount_pct": "0.0",
+        "currency": "INR"
+      },
+      "illegible": [
+        "extended_amount"
+      ],
+      "notes": [
+        "Extended amount truncated ('229,55'); not extracted."
+      ]
+    },
+    {
+      "line_no": 3,
+      "product_name": "Kavpril 10",
+      "inn": "Enalapril maleate",
+      "strength": "10 mg",
+      "dosage_form": "tablet",
+      "uom": "tablet",
+      "units_per_pack": 100,
+      "packaging": "HDPE bottle",
+      "price_per_pack": null,
+      "price_per_uom": 0.8676,
+      "price_basis": "list",
+      "discount_pct": 7.5,
+      "price_tiers": null,
+      "currency": "INR",
+      "quantity": 1000000,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Kavpril 10",
+        "inn": "Enalapril maleate",
+        "strength": "10 mg tablet",
+        "dosage_form": "10 mg tablet",
+        "packaging": "HDPE bottle, 100 tablets per pack",
+        "units_per_pack": "100 tablets per pack",
+        "uom": "tablet",
+        "quantity": "1,000,000",
+        "price_per_uom": "0.8676",
+        "discount_pct": "7.5",
+        "currency": "INR"
+      },
+      "illegible": [
+        "extended_amount"
+      ],
+      "notes": [
+        "Extended amount truncated ('802,53'); not extracted. Unit price is list price before 7.5% discount."
+      ]
+    },
+    {
+      "line_no": 4,
+      "product_name": "Profenex 400",
+      "inn": "Ibuprofen",
+      "strength": "400 mg",
+      "dosage_form": "tablet",
+      "uom": "tablet",
+      "units_per_pack": 10,
+      "packaging": "PVC/Alu blister",
+      "price_per_pack": null,
+      "price_per_uom": 1.547,
+      "price_basis": "list",
+      "discount_pct": 5.0,
+      "price_tiers": null,
+      "currency": "INR",
+      "quantity": 5000,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Profenex 400",
+        "inn": "Ibuprofen",
+        "strength": "400 mg tablet",
+        "dosage_form": "400 mg tablet",
+        "packaging": "PVC/Alu blister, 10 tablets per pack",
+        "units_per_pack": "10 tablets per pack",
+        "uom": "tablet",
+        "quantity": "5,000",
+        "price_per_uom": "1.547",
+        "discount_pct": "5.0",
+        "currency": "INR"
+      },
+      "illegible": [
+        "extended_amount"
+      ],
+      "notes": [
+        "Extended amount truncated ('7,34'); not extracted. Unit price is list price before 5.0% discount."
+      ]
+    },
+    {
+      "line_no": 5,
+      "product_name": "Kavmet 500",
+      "inn": "Metformin",
+      "strength": "500 mg",
+      "dosage_form": "film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 10,
+      "packaging": "PVC/Alu blister",
+      "price_per_pack": null,
+      "price_per_uom": 0.7875,
+      "price_basis": "list",
+      "discount_pct": 5.0,
+      "price_tiers": null,
+      "currency": "INR",
+      "quantity": 5000,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Kavmet 500",
+        "inn": "Metformin",
+        "strength": "500 mg film-coated tablet",
+        "dosage_form": "film-coated tablet",
+        "packaging": "PVC/Alu blister, 10 tablets per pack",
+        "units_per_pack": "10 tablets per pack",
+        "uom": "tablet",
+        "quantity": "5,000",
+        "price_per_uom": "0.7875",
+        "discount_pct": "5.0",
+        "currency": "INR"
+      },
+      "illegible": [
+        "extended_amount"
+      ],
+      "notes": [
+        "Extended amount truncated ('3,74'); not extracted. Unit price is list price before 5.0% discount."
+      ]
+    },
+    {
+      "line_no": 6,
+      "product_name": "Kavrif 150",
+      "inn": "Rifampicin + Isoniazid",
+      "strength": "150 mg / 75 mg",
+      "dosage_form": "film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 672,
+      "packaging": "Bulk HDPE jar",
+      "price_per_pack": null,
+      "price_per_uom": 3.308,
+      "price_basis": "list",
+      "discount_pct": 5.0,
+      "price_tiers": null,
+      "currency": "INR",
+      "quantity": 13440000,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Kavrif 150",
+        "inn": "Rifampicin + Isoniazid",
+        "strength": "150 mg / 75 mg film-coated tablet",
+        "dosage_form": "film-coated tablet",
+        "packaging": "Bulk HDPE jar, 672 tablets",
+        "units_per_pack": "672 tablets",
+        "uom": "tablet",
+        "quantity": "13,440,000",
+        "price_per_uom": "3.308",
+        "discount_pct": "5.0",
+        "currency": "INR"
+      },
+      "illegible": [
+        "extended_amount"
+      ],
+      "notes": [
+        "Presentation text partly cut off at bottom of page; 672 tablets per jar read from visible text (13,440,000 / 672 = 20,000 packs). Extended amount truncated ('42,236,54'); not extracted. Unit price is list price before 5.0% discount."
+      ]
+    }
+  ],
+  "evidence": {
+    "quotation_ref": "KLS-26-00115",
+    "buyer_reference": "AXMED-RFQ-2026-0357",
+    "document_date": "19 September 2026",
+    "valid_until": "45 calendar days from issue (to 03 Nov 2026)",
+    "currency": "INR",
+    "incoterm": "EXW Chennai plant",
+    "named_place": "EXW Chennai plant",
+    "payment_terms": "Irrevocable LC at sight"
+  },
+  "warnings": [
+    "Image is photographed at an angle; right edge and bottom are cut off. Greeting sentence and Extended INR column are truncated, so extended amounts were not extracted.",
+    "Supplier name is not stated in the visible text (only the reference prefix KLS); supplier name left null. Country set to IN from the Chennai plant and INR currency.",
+    "Item 06 presentation text is partly cut off below the visible portion; verify units per pack and packaging.",
+    "Unit prices are per tablet (UOM), shown as list prices with a discount column; discounts not applied.",
+    "Validity date 03 Nov 2026 matches 45 days from issue."
+  ]
+}

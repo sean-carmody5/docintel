@@ -1,0 +1,132 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Highveld Generics (Pty) Ltd.",
+    "country": "ZA",
+    "contact_name": "Thabo Mokoena",
+    "contact_email": "export@highveldgenerics.co.za"
+  },
+  "quotation_ref": "HG-Q26-0119",
+  "buyer_reference": "AXMED-RFQ-2026-0330",
+  "document_date": "2026-09-08",
+  "valid_until": "2026-10-23",
+  "currency": "ZAR",
+  "incoterm": "EXW",
+  "named_place": "Isando",
+  "payment_terms": "30 days from statement, prices exclude 15% VAT",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Dexex 4",
+      "inn": "Dexamethasone sodium phosphate",
+      "strength": "4 mg/mL",
+      "dosage_form": "Solution for injection",
+      "uom": "ampoule",
+      "units_per_pack": 25,
+      "packaging": "Amber glass ampoule 25 ampoules/pack",
+      "price_per_pack": 95.7,
+      "price_per_uom": 3.828,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 2000,
+      "lead_time_days": 63,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Dexex 4",
+        "inn": "Dexamethasone sodium phosphate",
+        "strength": "4 mg/mL",
+        "dosage_form": "Solution for injection",
+        "packaging": "Amber glass ampoule 25 ampoules/pack",
+        "uom": "ampoule",
+        "units_per_pack": "25 ampoules/pack",
+        "price_per_uom": "3.828",
+        "price_per_pack": "95.700",
+        "moq_packs": "2,000",
+        "lead_time_days": "63",
+        "currency": "ZAR",
+        "line_no": "1"
+      },
+      "illegible": [],
+      "notes": [
+        "Not PQ; national registrations only",
+        "Not registered at destination - waiver requested",
+        "Shelf life 36 months; store below 30 C, dry",
+        "Lead time runs from receipt of a workable letter of credit",
+        "Prices exclude 15% VAT where applicable"
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Lidoex 2%",
+      "inn": "Lignocaine",
+      "strength": "2%, 20 mL",
+      "dosage_form": "Solution for injection",
+      "uom": "vial",
+      "units_per_pack": 25,
+      "packaging": "Glass vial, carton 25 vials/pack",
+      "price_per_pack": 216.37,
+      "price_per_uom": 8.655,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 50000,
+      "lead_time_days": 75,
+      "cold_chain": null,
+      "superseded": {
+        "field": "price_per_uom",
+        "old": 8.403,
+        "new": 8.655,
+        "reason": "Terms and conditions item 5: \"the unit price should read ZAR 8.655, not ZAR 8.403 as printed in the schedule above.\""
+      },
+      "evidence": {
+        "product_name": "Lidoex 2%",
+        "inn": "Lignocaine",
+        "strength": "2%, 20 mL",
+        "dosage_form": "Solution for injection",
+        "packaging": "Glass vial, carton 25 vials/pack",
+        "uom": "vial",
+        "units_per_pack": "25 vials/pack",
+        "price_per_uom": "the unit price should read ZAR 8.655",
+        "price_per_pack": "216.37",
+        "moq_packs": "50,000",
+        "lead_time_days": "75",
+        "currency": "ZAR",
+        "line_no": "2"
+      },
+      "illegible": [],
+      "notes": [
+        "Unit price corrected in T&C item 5 from 8.403 to 8.655; printed pack price 216.37 is consistent with the corrected price (8.655 x 25 = 216.375)",
+        "Registered at destination; Not PQ; national registrations only",
+        "Shelf life 36 months; store below 30 C, dry",
+        "Lead time runs from receipt of a workable letter of credit",
+        "Prices exclude 15% VAT where applicable"
+      ]
+    }
+  ],
+  "evidence": {
+    "supplier": "HIGHVELD GENERICS (PTY) LTD.",
+    "quotation_ref": "Quotation no. HG-Q26-0119",
+    "buyer_reference": "AXMED-RFQ-2026-0330",
+    "document_date": "Issue date: 08 September 2026",
+    "valid_until": "Valid until: 23 October 2026",
+    "currency": "ZAR",
+    "incoterm": "EXW Isando",
+    "named_place": "EXW Isando",
+    "payment_terms": "30 days from statement, prices exclude 15% VAT"
+  },
+  "warnings": [
+    "Line 2 (Lidoex 2%) unit price was corrected in T&C item 5 from ZAR 8.403 (schedule) to ZAR 8.655; the corrected value is used.",
+    "Line 2 MOQ of 50,000 packs is very large relative to line 1 (2,000 packs); reviewer may wish to confirm.",
+    "Line 1 product is not registered at destination (waiver requested).",
+    "Prices exclude 15% VAT; lead times run from receipt of a workable letter of credit."
+  ]
+}

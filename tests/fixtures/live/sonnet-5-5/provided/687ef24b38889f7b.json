@@ -1,0 +1,279 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "FARMACEUTICA ANDINA S.A.S.",
+    "country": "CO",
+    "contact_name": null,
+    "contact_email": null
+  },
+  "quotation_ref": "FA-COT-2026-118",
+  "buyer_reference": "AXMED-RFQ-2026-0233",
+  "document_date": "2026-08-06",
+  "valid_until": "2026-09-20",
+  "currency": "USD",
+  "incoterm": "FOB",
+  "named_place": "Cartagena (COCTG)",
+  "payment_terms": "T/T 30 days from B/L date",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Dolostop 500",
+      "inn": "Paracetamol",
+      "strength": "500 mg",
+      "dosage_form": null,
+      "uom": null,
+      "units_per_pack": null,
+      "packaging": null,
+      "price_per_pack": null,
+      "price_per_uom": null,
+      "price_basis": "list",
+      "discount_pct": 3.0,
+      "price_tiers": null,
+      "currency": null,
+      "quantity": null,
+      "extended_amount": 22348.8,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Dolostop 500",
+        "inn": "Paracetamol",
+        "strength": "500 mg tab",
+        "discount_pct": "3.0",
+        "extended_amount": "22,348.80"
+      },
+      "illegible": [
+        "dosage_form",
+        "packaging",
+        "uom",
+        "quantity",
+        "price_per_uom"
+      ],
+      "notes": [
+        "Unit price, quantity and unit of measure obscured by glare; presentation text truncated ('tab[illegible]', 'bli[illegible]')."
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Amlodin 5",
+      "inn": "Amlodipine besylate",
+      "strength": "5 mg",
+      "dosage_form": "tablet",
+      "uom": null,
+      "units_per_pack": 30,
+      "packaging": "PVC/Alu blister",
+      "price_per_pack": null,
+      "price_per_uom": null,
+      "price_basis": "list",
+      "discount_pct": 5.0,
+      "price_tiers": null,
+      "currency": null,
+      "quantity": null,
+      "extended_amount": 46740.0,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Amlodin 5",
+        "inn": "Amlodipine besylate",
+        "strength": "5 mg tablet",
+        "dosage_form": "tablet",
+        "packaging": "PVC/Alu blister",
+        "units_per_pack": "30 tab",
+        "discount_pct": "5.0",
+        "extended_amount": "46,740.00"
+      },
+      "illegible": [
+        "uom",
+        "quantity",
+        "price_per_uom"
+      ],
+      "notes": [
+        "Unit price only partly visible ('[illegible]225'); not guessed.",
+        "Units per pack read from '30 tab[illegible]' - truncated."
+      ]
+    },
+    {
+      "line_no": 3,
+      "product_name": "Losandina 50",
+      "inn": "Losartan potassium",
+      "strength": "50 mg",
+      "dosage_form": "film-coated tablet",
+      "uom": null,
+      "units_per_pack": 30,
+      "packaging": "PVC/Alu blister",
+      "price_per_pack": null,
+      "price_per_uom": 0.345,
+      "price_basis": "list",
+      "discount_pct": 0.0,
+      "price_tiers": null,
+      "currency": null,
+      "quantity": 120000,
+      "extended_amount": 41400.0,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Losandina 50",
+        "inn": "Losartan potassium",
+        "strength": "50 mg film-coated tablet",
+        "dosage_form": "film-coated tablet",
+        "packaging": "PVC/Alu blister",
+        "units_per_pack": "30 tablets per pack",
+        "quantity": "120,000",
+        "price_per_uom": "0.3450",
+        "discount_pct": "0.0",
+        "extended_amount": "41,400.00"
+      },
+      "illegible": [
+        "uom"
+      ],
+      "notes": [
+        "Unit of measure column illegible; quantity x price = extended amount (120,000 x 0.3450 = 41,400.00)."
+      ]
+    },
+    {
+      "line_no": 4,
+      "product_name": null,
+      "inn": "Amoxicillin trihydrate",
+      "strength": "250 mg / 5 mL",
+      "dosage_form": "powder for oral suspension",
+      "uom": "bottle",
+      "units_per_pack": null,
+      "packaging": "Amber glass bottle, 60 mL, with dosing spoon",
+      "price_per_pack": null,
+      "price_per_uom": null,
+      "price_basis": "unknown",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": null,
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "inn": "Amoxicillin trihydrate",
+        "strength": "250 mg / 5 mL",
+        "dosage_form": "powder for oral suspension",
+        "packaging": "Amber glass bottle, 60 mL, with dosing spoon",
+        "uom": "bottle"
+      },
+      "illegible": [
+        "product_name",
+        "quantity",
+        "price_per_uom",
+        "discount_pct",
+        "extended_amount"
+      ],
+      "notes": [
+        "Product name partly hidden by finger ('[illegible]ndina 250/5'); quantity, price, discount and extended amount illegible."
+      ]
+    },
+    {
+      "line_no": 5,
+      "product_name": null,
+      "inn": "Enalapril maleate",
+      "strength": "10 mg",
+      "dosage_form": "tablet",
+      "uom": "tablet",
+      "units_per_pack": 500,
+      "packaging": "HDPE jar",
+      "price_per_pack": null,
+      "price_per_uom": 0.0074,
+      "price_basis": "list",
+      "discount_pct": 5.0,
+      "price_tiers": null,
+      "currency": null,
+      "quantity": 3000000,
+      "extended_amount": 21090.0,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "inn": "Enalapril maleate",
+        "strength": "10 mg",
+        "dosage_form": "tablet",
+        "packaging": "HDPE jar",
+        "units_per_pack": "500 tablets per pack",
+        "uom": "tablet",
+        "quantity": "3,000,000",
+        "price_per_uom": "0.0074",
+        "discount_pct": "5.0",
+        "extended_amount": "21,090.00"
+      },
+      "illegible": [
+        "product_name"
+      ],
+      "notes": [
+        "Product name hidden by finger. Check: 3,000,000 x 0.0074 x 0.95 = 21,090.00."
+      ]
+    },
+    {
+      "line_no": 6,
+      "product_name": null,
+      "inn": "Salbutamol sulfate",
+      "strength": "2 mg / 5 mL",
+      "dosage_form": "syrup",
+      "uom": "bottle",
+      "units_per_pack": null,
+      "packaging": "Amber PET bottle, 120 mL",
+      "price_per_pack": null,
+      "price_per_uom": 0.412,
+      "price_basis": "list",
+      "discount_pct": 0.0,
+      "price_tiers": null,
+      "currency": null,
+      "quantity": 90000,
+      "extended_amount": 37080.0,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "inn": "Salbutamol sulfate",
+        "strength": "2 mg / 5 mL",
+        "dosage_form": "syrup",
+        "packaging": "Amber PET bottle, 120 mL",
+        "uom": "bottle",
+        "quantity": "90,000",
+        "price_per_uom": "0.4120",
+        "discount_pct": "0.0",
+        "extended_amount": "37,080.00"
+      },
+      "illegible": [
+        "product_name"
+      ],
+      "notes": [
+        "Product name hidden by finger.",
+        "Cover letter says a variation is under review for item 06 (partly legible)."
+      ]
+    }
+  ],
+  "evidence": {
+    "supplier": "FARMACEUTICA ANDINA S.A.S.",
+    "quotation_ref": "FA-COT-2026-118",
+    "buyer_reference": "AXMED-RFQ-2026-0233",
+    "document_date": "06 August 2026",
+    "valid_until": "45 calendar days from issue (to 20 Sept 2026)",
+    "currency": "USD - United States dollar",
+    "incoterm": "FOB Cartagena (COCTG)",
+    "named_place": "FOB Cartagena (COCTG)",
+    "payment_terms": "T/T 30 days from B/L date"
+  },
+  "warnings": [
+    "Photo is skewed/blurred with glare and a finger covering part of the page; many fields are illegible and left null.",
+    "Row alignment is uncertain due to skew; line values were assigned as printed per row.",
+    "Cover letter paragraph partly illegible; it states item 06 has a variation under review (see note 3, cut off).",
+    "Subtotal FOB Cartagena shows 221,626.80 but is partly cut off; the legible extended amounts sum to 168,658.80, so line 04's missing amount is not recoverable with certainty. Subtotal not used.",
+    "Page bottom is cut off; notes (e.g. note 3) and any further terms are not visible.",
+    "Discount column exists, so printed unit prices are treated as list prices (price_basis 'list'); the extended amounts are net of discount.",
+    "Salutation 'Dear Mr Albergante' conflicts with 'Maria Albergante' (buyer contact); not relevant to extraction."
+  ]
+}

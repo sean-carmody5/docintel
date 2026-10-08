@@ -1,0 +1,85 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Highveld Generics (Pty) Ltd.",
+    "country": "ZA",
+    "contact_name": "Thabo Mokoena",
+    "contact_email": "export@highveldgenerics.co.za"
+  },
+  "quotation_ref": "HG-Q26-0119",
+  "buyer_reference": "AXMED-RFQ-2026-0330",
+  "document_date": "2026-09-08",
+  "valid_until": null,
+  "currency": "ZAR",
+  "incoterm": null,
+  "named_place": null,
+  "payment_terms": null,
+  "lines": [
+    {
+      "line_no": 2,
+      "product_name": "Lidoex",
+      "inn": null,
+      "strength": "2%",
+      "dosage_form": null,
+      "uom": null,
+      "units_per_pack": null,
+      "packaging": null,
+      "price_per_pack": null,
+      "price_per_uom": 8.655,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": {
+        "field": "price_per_uom",
+        "old": 8.403,
+        "new": 8.655,
+        "reason": "Terms item 5: 'the unit price should read ZAR 8.655, not ZAR 8.403 as printed in the schedule above'"
+      },
+      "evidence": {
+        "line_no": "Correction to item 02 (Lidoex 2%)",
+        "product_name": "Lidoex 2%",
+        "strength": "Lidoex 2%",
+        "currency": "ZAR 8.655",
+        "price_per_uom": "ZAR 8.655",
+        "superseded": "the unit price should read ZAR 8.655, not ZAR 8.403 as printed in the schedule above"
+      },
+      "illegible": [
+        "dosage_form",
+        "packaging",
+        "units_per_pack",
+        "uom",
+        "quantity",
+        "moq_packs",
+        "lead_time_days",
+        "inn"
+      ],
+      "notes": [
+        "Line identified only from the correction note (terms item 5); the item schedule is hidden by glare, so dosage form, pack, UOM, quantity, MOQ and lead time could not be read.",
+        "Regulatory table row 2: Not PQ; national registrations only; registered at destination: Yes; shelf life 36 months; storage below 30 C, dry. Row mapping to item 02 assumed by row number.",
+        "Unit of measure for the corrected unit price is not readable; price excludes 15% VAT where applicable."
+      ]
+    }
+  ],
+  "evidence": {
+    "supplier": "HIGHVELD GENERICS (PTY) LTD.",
+    "quotation_ref": "[illegible] HG-Q26-0119",
+    "buyer_reference": "AXMED-RFQ-2026-0330",
+    "document_date": "[illegible] 08 September 2026",
+    "currency": "ZAR"
+  },
+  "warnings": [
+    "A large glare/washed-out region hides the item schedule and pricing table and the header labels; only fragments are readable.",
+    "Item 01 (regulatory table row 1: not PQ, not registered at destination - waiver requested, 36 months, below 30 C) has no readable product name or price, so no line was created for it. Other lines in the schedule may also exist but are unreadable.",
+    "Header labels are illegible. Quotation ref and date were taken from the values; the date matches the signature date 08 September 2026. The value '23 October 2026' is probably the validity date but its label is unreadable, so valid_until was left null.",
+    "Only line 2's price (ZAR 8.655, corrected from 8.403) is readable. Pack price is described as unit price multiplied by units per pack, and the unit price governs in case of discrepancy.",
+    "Contact phone number partly faded; footer bottom right covered by a pink circular object.",
+    "No incoterm or payment terms are stated. Delivery is to Accra, Ghana (via Tema). Lead times run from receipt of a workable letter of credit; the lead-time values are unreadable."
+  ]
+}

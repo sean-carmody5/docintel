@@ -1,0 +1,118 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Amman Pharma Industries Co.",
+    "country": "JO",
+    "contact_name": "Rania Haddad",
+    "contact_email": "export@ammanpharma.jo"
+  },
+  "quotation_ref": "API/25/0123",
+  "buyer_reference": "AXMED-RFQ-2026-0250",
+  "document_date": "2025-11-15",
+  "valid_until": "2026-01-14",
+  "currency": "USD",
+  "incoterm": "CIF",
+  "named_place": "Aqaba (JOAQB)",
+  "payment_terms": "Irrevocable LC at 90 days",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Oxyex 10",
+      "inn": "Oxytocin",
+      "strength": "10 IU/mL",
+      "dosage_form": "Solution for injection",
+      "uom": "ampoule",
+      "units_per_pack": 10,
+      "packaging": "Amber glass ampoule 10 ampoules/pack",
+      "price_per_pack": 1.586,
+      "price_per_uom": 0.1586,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "USD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 500,
+      "lead_time_days": 45,
+      "cold_chain": true,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Oxyex 10",
+        "inn": "Oxytocin",
+        "strength": "10 IU/mL Solution for injection",
+        "dosage_form": "10 IU/mL Solution for injection",
+        "packaging": "Amber glass ampoule 10 ampoules/pack",
+        "uom": "ampoule",
+        "units_per_pack": "10 ampoules/pack",
+        "price_per_uom": "0.1586",
+        "price_per_pack": "1.586",
+        "currency": "USD",
+        "moq_packs": "500",
+        "lead_time_days": "45",
+        "cold_chain": "2-8 C, do not freeze"
+      },
+      "illegible": [],
+      "notes": [
+        "Orders below MOQ attract a 12% surcharge on the unit price.",
+        "Not PQ; national registrations only; registered at destination; shelf life 24 months"
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Ammfer 60",
+      "inn": "Ferrous sulfate + Folic acid",
+      "strength": "60 mg / 0.4 mg",
+      "dosage_form": "Tablet",
+      "uom": "tablet",
+      "units_per_pack": 100,
+      "packaging": "HDPE bottle 100 tablets/pack",
+      "price_per_pack": 0.48,
+      "price_per_uom": 0.0048,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "USD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 2000,
+      "lead_time_days": 56,
+      "cold_chain": false,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Ammfer 60",
+        "inn": "Ferrous sulfate + Folic acid",
+        "strength": "60 mg / 0.4 mg Tablet",
+        "dosage_form": "60 mg / 0.4 mg Tablet",
+        "packaging": "HDPE bottle 100 tablets/pack",
+        "uom": "tablet",
+        "units_per_pack": "100 tablets/pack",
+        "price_per_uom": "0.0048",
+        "price_per_pack": "0.4800",
+        "currency": "USD",
+        "moq_packs": "2,000",
+        "lead_time_days": "56",
+        "cold_chain": "Below 30 C, dry"
+      },
+      "illegible": [],
+      "notes": [
+        "Orders below MOQ attract a 12% surcharge on the unit price.",
+        "WHO PQ ref. BA312; registered at destination; shelf life 24 months; store below 30 C, dry"
+      ]
+    }
+  ],
+  "evidence": {
+    "buyer_reference": "Request for quotation AXMED-RFQ-2026-0250",
+    "currency": "Currency|USD",
+    "document_date": "Issue date: 15 November 2025",
+    "incoterm": "CIF Aqaba (JOAQB)",
+    "named_place": "CIF Aqaba (JOAQB)",
+    "payment_terms": "Irrevocable LC at 90 days",
+    "quotation_ref": "Quotation no. API/25/0123",
+    "valid_until": "Valid until: 14 January 2026"
+  },
+  "warnings": [
+    "Line 1 pack price 1.586 equals unit price x 10; consistent. Unit price governs per document.",
+    "Incoterm CIF with named place Aqaba (JOAQB), a port in Jordan rather than the destination Lusaka."
+  ]
+}

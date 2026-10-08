@@ -1,0 +1,170 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Delta Farmaceutici S.r.l.",
+    "country": "IT",
+    "contact_name": "Marco Ricci",
+    "contact_email": null
+  },
+  "quotation_ref": "DF-2043/20",
+  "buyer_reference": "AXMED-RFQ-2026-0311",
+  "document_date": "2026-08-25",
+  "valid_until": "2026-09-24",
+  "currency": "EUR",
+  "incoterm": "FCA",
+  "named_place": "Bologna",
+  "payment_terms": "45 days from invoice",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Arteze 20",
+      "inn": "Artemether + Lumefantrine",
+      "strength": "20 mg / 120 mg",
+      "dosage_form": "tablet",
+      "uom": "tablet",
+      "units_per_pack": 24,
+      "packaging": null,
+      "price_per_pack": 1.027,
+      "price_per_uom": 0.0428,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "EUR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 10000,
+      "lead_time_days": 84,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Arteze 20",
+        "inn": "Artemether + Lumefantrine",
+        "strength": "20 mg / 120 mg",
+        "dosage_form": "tablet",
+        "units_per_pack": "blister of 24 tablets",
+        "uom": "per tablet",
+        "price_per_uom": "EUR 0.0428 per tablet",
+        "price_per_pack": "EUR 1.027 per pack",
+        "moq_packs": "Minimum order 10,000 packs",
+        "lead_time_days": "lead time 12 weeks"
+      },
+      "illegible": [
+        "packaging"
+      ],
+      "notes": [
+        "Blister material illegible in scan; pack is a blister of 24 tablets.",
+        "Stated pack price 1.027 vs 0.0428 x 24 = 1.0272 (rounding).",
+        "Lead time 12 weeks converted to 84 days.",
+        "Decimal figures hard to read in blurred image; verify against original."
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Flexes 500",
+      "inn": "Ciprofloxacin",
+      "strength": "500 mg",
+      "dosage_form": "film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 10,
+      "packaging": null,
+      "price_per_pack": 0.37,
+      "price_per_uom": 0.037,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "EUR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 5000,
+      "lead_time_days": 49,
+      "cold_chain": null,
+      "superseded": {
+        "field": "price_per_uom",
+        "old": 0.0385,
+        "new": 0.037,
+        "reason": "P.S.: \"the unit price should read EUR 0.0370, not EUR 0.0385 as printed in the schedule above\""
+      },
+      "evidence": {
+        "product_name": "Flexes 500",
+        "inn": "Ciprofloxacin 500 mg",
+        "strength": "Ciprofloxacin 500 mg",
+        "dosage_form": "film-coated tablet",
+        "units_per_pack": "blister of 10 tablets",
+        "uom": "per tablet",
+        "price_per_uom": "the unit price should read EUR 0.0370",
+        "price_per_pack": "EUR 0.3700 per pack",
+        "moq_packs": "Minimum order 5,000 packs",
+        "lead_time_days": "lead time 7 weeks"
+      },
+      "illegible": [
+        "packaging"
+      ],
+      "notes": [
+        "Unit price corrected in P.S. from 0.0385 to 0.0370; pack price 0.3700 is consistent with corrected price.",
+        "Blister material illegible in scan; pack is a blister of 10 tablets.",
+        "Lead time 7 weeks converted to 49 days."
+      ]
+    },
+    {
+      "line_no": 3,
+      "product_name": "Dolchlor 7.1%",
+      "inn": "Chlorhexidine digluconate",
+      "strength": "7.1% w/w",
+      "dosage_form": "gel",
+      "uom": "tube",
+      "units_per_pack": 1,
+      "packaging": "laminated tube of 1 tube",
+      "price_per_pack": 0.398,
+      "price_per_uom": 0.398,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "EUR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 20000,
+      "lead_time_days": 56,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Dolchlor 7.1%",
+        "inn": "Chlorhexidine digluconate 7.1% w/w",
+        "strength": "7.1% w/w",
+        "dosage_form": "gel",
+        "packaging": "laminated tube of 1 tube",
+        "units_per_pack": "1 tube",
+        "uom": "per tube",
+        "price_per_uom": "EUR 0.3980 per tube",
+        "price_per_pack": "EUR 0.3980 per pack",
+        "moq_packs": "Minimum order 20,000 packs",
+        "lead_time_days": "lead time 8 weeks"
+      },
+      "illegible": [],
+      "notes": [
+        "Lead time 8 weeks converted to 56 days.",
+        "Decimal figures hard to read in blurred image; verify against original."
+      ]
+    }
+  ],
+  "evidence": {
+    "supplier": "Delta Farmaceutici S.r.l.",
+    "quotation_ref": "Our ref.: DF-2043/20",
+    "buyer_reference": "Your ref.: AXMED-RFQ-2026-0311",
+    "document_date": "Bologna, 25 August 2026",
+    "valid_until": "remain valid until 24 September 2026",
+    "currency": "All prices are in EUR",
+    "incoterm": "FCA Bologna",
+    "named_place": "FCA Bologna",
+    "payment_terms": "Payment terms: 45 days from invoice."
+  },
+  "warnings": [
+    "Image is blurred and photographed at an angle; the document itself says to check against the original.",
+    "Letterhead address/contact line is illegible; supplier email not available.",
+    "Blister material for Items 1 and 2 is illegible; packaging left null for those lines.",
+    "Several decimal figures are hard to read per the document's own note; verify prices against the original.",
+    "Item 2 unit price corrected by P.S. from EUR 0.0385 to EUR 0.0370; corrected value used.",
+    "Cold-chain sentence is general; no line is explicitly marked 2-8 C, so cold_chain left null.",
+    "'Sterilisation to GS1 standards available on request' is not a product line and was not extracted."
+  ]
+}

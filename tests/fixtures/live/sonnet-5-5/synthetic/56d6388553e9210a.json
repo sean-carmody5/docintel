@@ -1,0 +1,263 @@
+{
+  "document_type": "price_list",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Baobab Pharmaceuticals Ltd.",
+    "country": "KE",
+    "contact_name": null,
+    "contact_email": "tenders@baobabpharma.co.ke"
+  },
+  "quotation_ref": "BPL/QT/26/0106",
+  "buyer_reference": null,
+  "document_date": "2026-08-08",
+  "valid_until": "2026-10-07",
+  "currency": "KES",
+  "incoterm": "DAP",
+  "named_place": "Kampala",
+  "payment_terms": null,
+  "lines": [
+    {
+      "line_no": null,
+      "product_name": "Baocycline 100",
+      "inn": "Doxycycline",
+      "strength": "100 mg",
+      "dosage_form": "Capsule",
+      "uom": "capsule",
+      "units_per_pack": 100,
+      "packaging": "HDPE bottle, 100 capsules",
+      "price_per_pack": 403.5,
+      "price_per_uom": 4.035,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 500,
+          "max_packs": 2499,
+          "price_per_pack": 403.5
+        },
+        {
+          "min_packs": 2500,
+          "max_packs": 9999,
+          "price_per_pack": 364.34
+        },
+        {
+          "min_packs": 10000,
+          "max_packs": null,
+          "price_per_pack": 329.88
+        }
+      ],
+      "currency": "KES",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": 45,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Baocycline 100",
+        "inn": "Doxycycline",
+        "strength": "100 mg",
+        "dosage_form": "Capsule",
+        "packaging": "HDPE bottle, 100 capsules",
+        "uom": "capsule",
+        "units_per_pack": "\"units_per_pack\": 100",
+        "price_per_pack": "\"price_per_pack\": 403.5",
+        "price_per_uom": "\"price_per_pack\": 403.5",
+        "price_tiers": "\"min_packs\": 500,\n          \"max_packs\": 2499,\n          \"price_per_pack\": 403.5",
+        "lead_time_days": "\"lead_time_days\": 45",
+        "currency": "KES"
+      },
+      "illegible": [],
+      "notes": [
+        "Per-unit price derived from lowest-quantity tier pack price / 100.",
+        "Lowest tier starts at 500 packs; no explicit MOQ stated."
+      ]
+    },
+    {
+      "line_no": null,
+      "product_name": "Baoartes 60",
+      "inn": "Artesunate",
+      "strength": "60 mg",
+      "dosage_form": "Powder and solvent for solution for injection",
+      "uom": "vial",
+      "units_per_pack": 10,
+      "packaging": "Glass vial, carton, 10 vials",
+      "price_per_pack": 1876.0,
+      "price_per_uom": 187.6,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 100,
+          "max_packs": 999,
+          "price_per_pack": 1876.0
+        },
+        {
+          "min_packs": 1000,
+          "max_packs": 4999,
+          "price_per_pack": 1763.85
+        },
+        {
+          "min_packs": 5000,
+          "max_packs": null,
+          "price_per_pack": 1620.29
+        }
+      ],
+      "currency": "KES",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": 35,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Baoartes 60",
+        "inn": "Artesunate",
+        "strength": "60 mg",
+        "dosage_form": "Powder and solvent for solution for injection",
+        "packaging": "Glass vial, carton, 10 vials",
+        "uom": "vial",
+        "units_per_pack": "\"units_per_pack\": 10",
+        "price_per_pack": "\"price_per_pack\": 1876.0",
+        "price_per_uom": "\"price_per_pack\": 1876.0",
+        "price_tiers": "\"min_packs\": 100,\n          \"max_packs\": 999,\n          \"price_per_pack\": 1876.0",
+        "lead_time_days": "\"lead_time_days\": 35",
+        "currency": "KES"
+      },
+      "illegible": [],
+      "notes": [
+        "Per-unit price derived from lowest-quantity tier pack price / 10.",
+        "Lowest tier starts at 100 packs; no explicit MOQ stated."
+      ]
+    },
+    {
+      "line_no": null,
+      "product_name": "Baometxr 1000",
+      "inn": "Metformin hydrochloride",
+      "strength": "1000 mg",
+      "dosage_form": "Prolonged-release tablet",
+      "uom": "tablet",
+      "units_per_pack": 60,
+      "packaging": "Alu-Alu blister, 60 tablets",
+      "price_per_pack": 119.94,
+      "price_per_uom": 1.999,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 500,
+          "max_packs": 4999,
+          "price_per_pack": 119.94
+        },
+        {
+          "min_packs": 5000,
+          "max_packs": 19999,
+          "price_per_pack": 107.1
+        },
+        {
+          "min_packs": 20000,
+          "max_packs": null,
+          "price_per_pack": 96.499
+        }
+      ],
+      "currency": "KES",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": 28,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Baometxr 1000",
+        "inn": "Metformin hydrochloride",
+        "strength": "1000 mg",
+        "dosage_form": "Prolonged-release tablet",
+        "packaging": "Alu-Alu blister, 60 tablets",
+        "uom": "tablet",
+        "units_per_pack": "\"units_per_pack\": 60",
+        "price_per_pack": "\"price_per_pack\": 119.94",
+        "price_per_uom": "\"price_per_pack\": 119.94",
+        "price_tiers": "\"min_packs\": 500,\n          \"max_packs\": 4999,\n          \"price_per_pack\": 119.94",
+        "lead_time_days": "\"lead_time_days\": 28",
+        "currency": "KES"
+      },
+      "illegible": [],
+      "notes": [
+        "Per-unit price derived from lowest-quantity tier pack price / 60.",
+        "Tier 3 pack price printed with three decimals (96.499).",
+        "Lowest tier starts at 500 packs; no explicit MOQ stated."
+      ]
+    },
+    {
+      "line_no": null,
+      "product_name": "Baoors 20.5",
+      "inn": "Oral rehydration salts",
+      "strength": "20.5 g/L",
+      "dosage_form": "Powder for oral solution",
+      "uom": "sachet",
+      "units_per_pack": 100,
+      "packaging": "Alu laminate sachet, 100 sachets",
+      "price_per_pack": 1175.6,
+      "price_per_uom": 11.756,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 200,
+          "max_packs": 1999,
+          "price_per_pack": 1175.6
+        },
+        {
+          "min_packs": 2000,
+          "max_packs": 9999,
+          "price_per_pack": 1113.24
+        },
+        {
+          "min_packs": 10000,
+          "max_packs": null,
+          "price_per_pack": 993.21
+        }
+      ],
+      "currency": "KES",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": 90,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Baoors 20.5",
+        "inn": "Oral rehydration salts",
+        "strength": "20.5 g/L",
+        "dosage_form": "Powder for oral solution",
+        "packaging": "Alu laminate sachet, 100 sachets",
+        "uom": "sachet",
+        "units_per_pack": "\"units_per_pack\": 100",
+        "price_per_pack": "\"price_per_pack\": 1175.6",
+        "price_per_uom": "\"price_per_pack\": 1175.6",
+        "price_tiers": "\"min_packs\": 200,\n          \"max_packs\": 1999,\n          \"price_per_pack\": 1175.6",
+        "lead_time_days": "\"lead_time_days\": 90",
+        "currency": "KES"
+      },
+      "illegible": [],
+      "notes": [
+        "Per-unit price derived from lowest-quantity tier pack price / 100.",
+        "Lowest tier starts at 200 packs; no explicit MOQ stated."
+      ]
+    }
+  ],
+  "evidence": {
+    "supplier": "Baobab Pharmaceuticals Ltd.",
+    "quotation_ref": "BPL/QT/26/0106",
+    "document_date": "\"effective_from\": \"2026-08-08\"",
+    "valid_until": "2026-10-07",
+    "currency": "KES",
+    "incoterm": "DAP Kampala",
+    "named_place": "DAP Kampala"
+  },
+  "warnings": [
+    "Document date taken from effective_from; no explicit issue date given.",
+    "Price list is tiered by pack quantity; price_per_pack/price_per_uom reflect the lowest-quantity tier.",
+    "Price note: goods supplied with not less than 80% of shelf life remaining at shipment; secondary cartoning in English with destination artwork included at no charge."
+  ]
+}
