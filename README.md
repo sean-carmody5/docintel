@@ -50,9 +50,12 @@ docs/             brief, agent log, write-up
 ```
 uv sync --all-groups
 uv run docintel run data/provided --out output/provided        # offline: replays recorded extractions
-uv run docintel approve --thread-id <id> --out output/provided # resume after reviewing the table
+uv run docintel run data/provided/some_quotation.pdf --out output/one   # a single file works too
+uv run docintel approve --thread-id <id> --out output/provided --decisions decisions.json
 uv run docintel draw                                           # the graph as Mermaid
 ```
+
+`review.html` in the output folder is the review workstation: documents on the left, records in the middle with a confidence strip per row, the selected record's fields, scores, reasons and evidence quotes on the right. Approve, hold or reject with the keyboard (`j`/`k`, `a`/`h`/`r`), then "Copy decisions" and pass the JSON to `approve --decisions`. It is one file with no server and opens from disk.
 
 Live extraction needs an API key and the model backend:
 
@@ -61,4 +64,4 @@ export ANTHROPIC_API_KEY=...
 uv run docintel run data/provided --out output/provided --extractor model --model anthropic:claude-sonnet-5-5
 ```
 
-Set `LANGSMITH_TRACING=true` and `LANGSMITH_API_KEY` to trace every call. Outputs are `records.csv`, `review.sqlite`, `review_report.md` and `conflicts.json` in the output folder. The run stops after writing them; `approve` resumes it.
+Set `LANGSMITH_TRACING=true` and `LANGSMITH_API_KEY` to trace every call. Outputs are `records.csv`, `review.sqlite`, `review_report.md`, `review.html` and `conflicts.json` in the output folder. The run stops after writing them; `approve` resumes it.
