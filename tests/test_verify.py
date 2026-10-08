@@ -172,3 +172,44 @@ def test_expired_quotation_is_flagged_only_when_an_as_of_date_is_given() -> None
         doc, result, sources=Sources(primary=doc.text), extractor_name="fixture"
     )
     assert not any("expired" in x for r in undated for x in r.review_reasons)
+
+
+def test_a_name_the_ocr_reads_differently_is_not_high_confidence() -> None:
+    """On a scan the model's own transcript cannot vouch for the model; the OCR reading can."""
+    from docintel.verify.confidence import Sources, Weights, score_field
+
+    src = Sources(primary="Pacetam 500 Paracetamol", secondary="Paccetam 500 Paracetamol")
+    c = score_field("product_name", "Pacetam 500", "Pacetam 500", src, [], False, Weights())
+    assert c.tier != "high" and any("not found by" in r for r in c.reasons)
+    agreed = Sources(primary="Paccetam 500 Paracetamol", secondary="Paccetam 500 Paracetamol")
+    ok = score_field("product_name", "Paccetam 500", "Paccetam 500", agreed, [], False, Weights())
+    assert ok.tier == "high"
+
+
+def test_repairs_move_a_concentration_out_of_the_inn_and_derive_the_other_price() -> None:
+    from docintel.extract.schema import QuotationLine
+    from docintel.verify.confidence import _empty_line, _repair_line
+
+    line = QuotationLine(
+        product_name="Lidoex 2%",
+        inn="Lidocaine hydrochloride 2%",
+        strength="20 mL",
+        units_per_pack=10,
+        price_per_uom=0.9,
+        uom="vial",
+    )
+    notes = _repair_line(line)
+    assert line.inn == "Lidocaine hydrochloride" and line.strength == "2%, 20 mL"
+    assert line.price_per_pack == 9.0 and any("pack price derived" in n for n in notes)
+    other = QuotationLine(
+        product_name="X", inn="Zinc sulfate", units_per_pack=100, price_per_pack=1.55, uom="tablet"
+    )
+    _repair_line(other)
+    assert other.price_per_uom == 0.0155 and other.price_basis == "derived"
+    assert _empty_line(QuotationLine()) and not _empty_line(line)
+
+
+def test_normalised_inn_ignores_a_trailing_concentration() -> None:
+    from docintel.verify.normalise import normalise_inn
+
+    assert normalise_inn("Lidocaine hydrochloride 2%") == normalise_inn("Lidocaine hydrochloride")

@@ -40,8 +40,17 @@ class Superseded(BaseModel):
 class QuotationLine(BaseModel):
     line_no: int | None = Field(None, description="Line or item number as printed, if any")
     product_name: str | None = Field(None, description="Trade or brand name exactly as written")
-    inn: str | None = Field(None, description="Active ingredient(s) exactly as written")
-    strength: str | None = Field(None, description="Strength exactly as written, e.g. '500 mg'")
+    inn: str | None = Field(
+        None,
+        description="Active ingredient(s) exactly as written, without strength or concentration",
+    )
+    strength: str | None = Field(
+        None,
+        description=(
+            "Strength exactly as written and complete: "
+            "'500 mg', '2% 20 mL', '300 mg / 300 mg / 50 mg'"
+        ),
+    )
     dosage_form: str | None = Field(
         None, description="Form exactly as written, e.g. 'Film-coated tablet'"
     )

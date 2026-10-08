@@ -30,9 +30,7 @@ class Settings:
     temperature: float | None = (
         None  # the model's default unless set; newer models reject other values
     )
-    max_tokens: int = (
-        8192  # a long quotation with evidence quotes needs more than the library default
-    )
+    max_tokens: int = 32768  # a 40-line price list with an evidence quote per field runs past 8k
 
     @classmethod
     def from_env(cls, **overrides: Any) -> Settings:

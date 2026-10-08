@@ -9,10 +9,11 @@ reason. Nothing here asks the model how sure it is.
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 from datetime import date
 
-from docintel.documents import Document
+from docintel.documents import Document, Severity
 from docintel.extract.schema import ExtractionResult, QuotationLine
 from docintel.records import KEY_FIELDS, FieldConfidence, Record, RecordFlag, Tier
 from docintel.verify.checks import Finding, check_header, check_line
@@ -37,6 +38,9 @@ LINE_FIELDS = (
 )
 HEADER_FIELDS = ("quotation_ref", "currency", "incoterm", "document_date", "valid_until")
 SECOND_SOURCE_FIELDS = {
+    "product_name",
+    "inn",
+    "strength",
     "price_per_uom",
     "price_per_pack",
     "units_per_pack",
@@ -145,6 +149,57 @@ def score_field(
     return FieldConfidence(score=score, tier=_tier(score, w), reasons=reasons)
 
 
+_TRAILING_DOSE = re.compile(
+    r"^(?P<inn>.+?)[\s,]+(?P<dose>\d[\d.,]*\s*(?:%|mg|mcg|µg|g|iu|units?|ml)"
+    r"(?:\s*/\s*\d[\d.,]*\s*(?:ml|g|dose|actuation|puff))?)\s*$",
+    re.IGNORECASE,
+)
+
+
+def _empty_line(line: QuotationLine) -> bool:
+    """A line with no product, no INN and no price carries nothing a person can act on."""
+    return all(
+        getattr(line, f) is None for f in ("product_name", "inn", "price_per_uom", "price_per_pack")
+    )
+
+
+def _repair_line(line: QuotationLine) -> list[str]:
+    """Repairs a person would make without thinking, recorded as notes.
+
+    A concentration written into the INN belongs in the strength. A pack price follows
+    from a unit price and a pack size, and the other way round; a derived value says so
+    and inherits the weaker of its inputs' confidence.
+    """
+    notes: list[str] = []
+    if line.inn:
+        m = _TRAILING_DOSE.match(line.inn)
+        if m:
+            dose = m.group("dose").strip()
+            line.inn = m.group("inn").strip(" ,")
+            if not line.strength:
+                line.strength = dose
+            elif dose.lower().replace(" ", "") not in line.strength.lower().replace(" ", ""):
+                line.strength = f"{dose}, {line.strength}"
+            notes.append(f"'{dose}' moved from INN to strength")
+    units = line.units_per_pack
+    if line.price_per_pack is None and line.price_per_uom is not None and units:
+        line.price_per_pack = float(f"{line.price_per_uom * units:.6g}")
+        notes.append("pack price derived from unit price and units per pack")
+    elif line.price_per_uom is None and line.price_per_pack is not None and units:
+        line.price_per_uom = float(f"{line.price_per_pack / units:.4g}")
+        line.price_basis = "derived"
+        notes.append("unit price derived from pack price and units per pack")
+    return notes
+
+
+def _derived_from(
+    conf: dict[str, FieldConfidence], parents: tuple[str, ...], w: Weights, reason: str
+) -> FieldConfidence:
+    present = [conf[k] for k in parents if k in conf]
+    score = round(max(0.0, min((p.score for p in present), default=0.0) - w.derived), 3)
+    return FieldConfidence(score=score, tier=_tier(score, w), reasons=[reason])
+
+
 def _derived_price(
     conf: dict[str, FieldConfidence], findings: list[Finding], w: Weights
 ) -> FieldConfidence:
@@ -216,6 +271,14 @@ def build_records(
     header_findings = check_header(
         result.document_date, result.valid_until, result.incoterm, as_of=as_of
     )
+    empty = [ln for ln in result.lines if _empty_line(ln)]
+    if empty:
+        result.lines = [ln for ln in result.lines if not _empty_line(ln)]
+        doc.flag(
+            "empty_lines_dropped",
+            Severity.WARNING,
+            f"{len(empty)} line(s) with no product, INN or price were dropped",
+        )
     doc_flags = [
         RecordFlag(code=f.code, severity=f.severity.value, detail=f.detail, field=f.field)
         for f in doc.flags
@@ -236,6 +299,7 @@ def build_records(
 
     records: list[Record] = []
     for index, line in enumerate(result.lines):
+        repairs = _repair_line(line)
         findings = check_line(line, result.currency) + header_findings
         conf: dict[str, FieldConfidence] = dict(header_conf)
         for name in LINE_FIELDS:
@@ -251,6 +315,15 @@ def build_records(
             line.price_per_uom = float(f"{line.price_per_uom:.4g}")
         if line.price_basis in ("derived", "tiered") and line.price_per_uom is not None:
             conf["price_per_uom"] = _derived_price(conf, findings, w)
+        if any(r.startswith("pack price derived") for r in repairs):
+            conf["price_per_pack"] = _derived_from(
+                conf,
+                ("price_per_uom", "units_per_pack"),
+                w,
+                "derived from unit price and units per pack",
+            )
+        if repairs and isinstance(getattr(line, "notes", None), list):
+            line.notes.extend(repairs)
         if high_flags:
             for c in conf.values():
                 if c.score > 0:

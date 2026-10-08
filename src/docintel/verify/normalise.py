@@ -103,7 +103,7 @@ def normalise_inn(inn: str | None) -> str | None:
     if not inn:
         return None
     text = _PARENS.sub(" ", inn.lower())
-    text = re.sub(r"\b\d+(\.\d+)?\s*(mg|mcg|g|ml|iu|%)\b", " ", text)
+    text = re.sub(r"\b\d+(\.\d+)?\s*(mg|mcg|g|ml|iu|%)(?!\w)", " ", text)
     parts = [p.strip() for p in _SEPARATORS.split(text) if p and p.strip()]
     parts = [p for p in parts if p not in ("+", "/", ",", "and", "with", "&")]
     out: list[str] = []
