@@ -119,6 +119,26 @@ flowchart LR
 - Adding a format with special needs is one file and one registry line. A contract test runs over every registered loader and every sample file.
 - `xlsx_loader.py` is the demonstrated extension: the generic path already handles Excel, the specific loader adds sheet and header awareness. A `.docx` dropped in the folder is the demonstration that the fallback works with zero code.
 
+### Formats: built, anticipated, refused
+
+We work from the spec, not from the eight files. The spec names JSON exports, PDFs, email and WhatsApp threads, scans and photos, and "a new file type entirely". This is the coverage we build to.
+
+| Tier | Formats | How | Why this tier |
+|---|---|---|---|
+| Built, specific loader | JSON (any shape), PDF with a text layer, PDF without one (image-only scan), PDF with a garbled OCR layer, PNG/JPG/TIFF, EML with plain, HTML and attachments, XLSX, CSV in any dialect, DOCX, WhatsApp and other chat exports | One module each. The PDF loader measures text-layer quality and routes bad layers to the vision path. | Named in the spec, or the most common things a supplier actually sends. |
+| Handled generically | HTML, XML, Markdown, plain text, PPTX, RTF, legacy .doc and .xls | Content sniffing plus the markitdown converter. No code per format. The extractor reads them as text. | The next file type should cost nothing. |
+| Rendered to image | Anything LibreOffice can open that the tiers above cannot read | Optional render-to-page-images path, then the vision path. | Last resort before giving up. |
+| Containers | ZIP, email with several attachments | Expanded into their members, each becomes its own Document with a parent reference. | Suppliers bundle. |
+| Refused with a reason | Encrypted PDFs, empty files, truncated files, unknown binaries, audio voice notes | An unsupported record carrying the reason. Never a crash, never a guess. | A reviewer needs to know it arrived and why nothing came out. |
+
+### Malformed files
+
+- Every loader either returns a Document or raises a typed `LoaderError` with a reason. The registry turns the error into an unsupported record that appears in the output table and the review report with `status: failed` and the reason.
+- Strict parse first, then degrade: a JSON with a trailing comma is retried leniently and flagged `parsed_leniently`; if that fails the bytes are handed to the extractor as text and flagged `parsed_as_text`. A truncated PDF yields the pages it still has, flagged `truncated`.
+- Encrypted files are reported as encrypted. No attempt to open them.
+- A size cap and a page cap, both flagged when hit, so one 400-page catalogue cannot stall the run.
+- The synthetic set carries one case of each: empty, truncated PDF, encrypted PDF, broken JSON, misnamed, random bytes.
+
 ## Confidence is computed, not asked for
 
 Models are poor at estimating their own confidence. The extractor is asked for evidence instead: for every field, the verbatim snippet it took the value from. Code then scores each field from independent signals.
@@ -145,6 +165,31 @@ flowchart LR
 
 Score starts at 1.0 and each failed signal subtracts a configured weight. Tiers: high, medium, low. Low forces `needs_review`. Every subtraction is recorded as a reason the reviewer can read. Weights live in config and are tuned on the synthetic set, where ground truth is known. The model's own confidence, if given, is a tie-breaker at most. The write-up shows a calibration plot: do low-confidence fields actually turn out wrong more often.
 
+## Vision path
+
+Images, image-only PDFs and PDFs whose text layer fails the quality gate all take the same route.
+
+```mermaid
+flowchart LR
+  I[page image] --> T[vision model transcribes<br/>the page to markdown,<br/>verbatim, tables kept,<br/>unreadable marked]
+  I --> O[Tesseract OCR<br/>with word confidences]
+  T --> X[same extraction prompt<br/>as every other format]
+  X --> V[verify: grounding against<br/>the transcript, agreement<br/>with OCR, OCR confidence]
+```
+
+Why transcribe first rather than extract straight from the image:
+
+- One extraction path for every format. The generalisation argument holds for scans too.
+- The transcript is an inspectable artefact. A reviewer can see what the model read, and grounding and evidence checks have a text source to check against.
+- Transcription errors are local and visible. A direct image-to-schema call hides them inside the numbers.
+
+Safeguards, because transcription can quietly normalise or invent:
+
+- The transcription prompt demands verbatim text, keeps table structure, and marks anything unreadable as `[illegible]` rather than guessing.
+- Tesseract runs independently. Numbers present in both the transcript and the OCR text score high; numbers in only one score low. OCR word confidence around the evidence region feeds the score.
+- Optional second pass straight from the image for the price fields only, when confidence is low. Costs one more call per flagged page.
+- The text-layer quality gate: a PDF whose extracted text has a low ratio of dictionary words, or a high density of odd characters, is treated as having no text layer. The DRAP and Quezon City scans in the public set are exactly this case, and naive text extraction would return garbage with full confidence.
+
 ## Prompt injection and hostile documents
 
 Supplier documents are untrusted input to a model. Mitigations at four points:
@@ -164,7 +209,11 @@ Eight files is not an evaluation. Two additions, both part of Phase A.
 
 **Synthetic by construction.** `evals/synth/` generates ground truth first (a pharma vocabulary of INNs, strengths, forms, suppliers, currencies, incoterms), then renders each truth into every format: JSON in several unrelated shapes (nested, flat, camelCase, pack price only, tiered), PDF in several ReportLab layouts, email with and without a later correction, and images degraded with rotation, blur, noise, glare and cropping. Because the truth is known exactly, the scorer measures field-level precision and recall, numeric tolerance, and confidence calibration. This is the same method Axmed used to make the pack.
 
-**Public samples for robustness.** A fetch script downloads a handful of real price lists and catalogues (UNICEF Supply Division, Global Fund pooled procurement reference prices, MSH price guide, IDA Foundation). No ground truth, so these are smoke tests: does the pipeline degrade into flags rather than crash or guess. Git-ignored, documented.
+**Public samples for robustness.** A fetch script downloads real price lists, catalogues and RFQ forms (UNICEF, Global Fund, PAHO, WHO, national procurement bodies, a manufacturer). No ground truth, so these are smoke tests: does the pipeline degrade into flags rather than crash or guess.
+
+**Licences.** Every public source is recorded with publisher, URL, licence, hash and fetch date. Only files under an explicit open licence (CC BY, Open Jordanian Licence, CC BY-NC with attribution) are committed. The rest, including MSH and Ghana NHIS which assert all rights reserved, are fetched on demand and never redistributed, even in a private repository. The committed README in `data/public` lists all of them so a reviewer can see what was used and on what terms.
+
+**Diversity, honestly.** Half of the synthetic variants were modelled on the eight provided files, the other half on the spec and on what suppliers send in practice. The set is checked against the spec's list, not the pack: JSON in unrelated shapes including non-English keys, PDFs with and without text layers, PDFs with a garbled OCR layer, photos and faxes, emails in four styles, chat exports, spreadsheets, Word, CSV dialects, XML, HTML, plain text, hostile carriers, misnamed files and the malformed family. Gaps still open: non-English prose documents beyond headers, catalogues with no prices at all, and documents mixing several suppliers.
 
 **Model comparison.** The same eval runs across Haiku 4.5, Sonnet 5.5 and Opus 5.5 behind the one config string. The table goes in the write-up with cost per document.
 
