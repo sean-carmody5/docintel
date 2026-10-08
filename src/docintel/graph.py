@@ -95,13 +95,13 @@ class Pipeline:
 
     def _default_extractor(self) -> Extractor:
         if self.settings.extractor == "model":
-            llm = build_llm(self.settings.model, temperature=self.settings.temperature)
+            llm = build_llm(self.settings.model, **self.settings.model_kwargs())
             return ModelExtractor(llm)
         return FixtureExtractor(self.settings.fixtures)
 
     def _default_transcriber(self) -> Transcriber | None:
         if self.settings.extractor == "model":
-            llm = build_llm(self.settings.effective_vision_model, temperature=0.0)
+            llm = build_llm(self.settings.effective_vision_model, **self.settings.model_kwargs())
             return ModelTranscriber(llm)
         return OcrTranscriber(self.ocr) if self.ocr else None
 

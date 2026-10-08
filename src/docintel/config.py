@@ -27,7 +27,12 @@ class Settings:
     checkpoint_db: Path = Path("output/checkpoints.sqlite")
     fixtures: list[Path] = field(default_factory=lambda: list(DEFAULT_FIXTURES))
     as_of: date | None = None
-    temperature: float = 0.0
+    temperature: float | None = (
+        None  # the model's default unless set; newer models reject other values
+    )
+    max_tokens: int = (
+        8192  # a long quotation with evidence quotes needs more than the library default
+    )
 
     @classmethod
     def from_env(cls, **overrides: Any) -> Settings:
@@ -56,6 +61,12 @@ class Settings:
                 f"DOCINTEL_EXTRACTOR must be fixture or model, got {settings.extractor!r}"
             )
         return settings
+
+    def model_kwargs(self) -> dict[str, Any]:
+        kwargs: dict[str, Any] = {"max_tokens": self.max_tokens}
+        if self.temperature is not None:
+            kwargs["temperature"] = self.temperature
+        return kwargs
 
     @property
     def effective_vision_model(self) -> str:
