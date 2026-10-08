@@ -52,6 +52,10 @@ class RapidOcrEngine:
     def __init__(self) -> None:
         from rapidocr import RapidOCR
 
+        rapid_log = logging.getLogger("RapidOCR")  # the import sets it to INFO with a handler
+        rapid_log.setLevel(logging.WARNING)
+        for h in rapid_log.handlers:
+            h.setLevel(logging.WARNING)
         self._engine = RapidOCR()
 
     def read(self, png: bytes) -> OcrResult:

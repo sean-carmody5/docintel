@@ -45,8 +45,14 @@ def cmd_run(args: argparse.Namespace) -> int:
     for name, path in values.get("outputs", {}).items():
         print(f"{name + ':':14} {path}")
     if result["interrupted"]:
-        print("\nStopped for review. Edit the table, then:")
-        print(f"  docintel approve --thread-id {thread_id} --out {settings.output_dir}")
+        html = values.get("outputs", {}).get("html", settings.output_dir / "review.html")
+        print(
+            f"\nStopped for review. Open {html} in a browser, decide, export the decisions, then:"
+        )
+        print(
+            f"  docintel approve --thread-id {thread_id} --out {settings.output_dir}"
+            f" --decisions {settings.output_dir / 'decisions.json'}"
+        )
     return 0
 
 
@@ -65,9 +71,9 @@ def cmd_approve(args: argparse.Namespace) -> int:
         checkpointer=checkpointer,
         decisions=decisions,
     )
-    print(f"approved:  {state.get('approved')}")
-    print(f"promoted:  {state.get('promoted', 0)} records ready for systems of record")
-    print(f"held:      {state.get('held', 0)}")
+    print(f"approved:  {state.get('promoted', 0)} lines -> {state.get('approved_csv', '')}")
+    print(f"rejected:  {state.get('rejected', 0)}")
+    print(f"held:      {state.get('held', 0)} (no decision yet; run approve again with more)")
     return 0
 
 

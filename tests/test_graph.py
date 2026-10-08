@@ -107,9 +107,13 @@ def test_decisions_from_the_review_page_drive_promote(tmp_path: Path) -> None:
     final = resume(
         pipeline, thread_id="t6", approved=True, checkpointer=checkpointer, decisions=decisions
     )
-    assert final["promoted"] == 2 and final["held"] == len(ids) - 2
+    assert final["promoted"] == 2 and final["rejected"] == 1 and final["held"] == len(ids) - 3
     applied = json.loads((tmp_path / "decisions_applied.json").read_text(encoding="utf-8"))
     assert applied[ids[0]] == "approved" and applied[ids[2]] == "rejected"
+    with (tmp_path / "approved.csv").open(encoding="utf-8") as fh:
+        approved = list(csv.DictReader(fh))
+    assert [r["record_id"] for r in approved] == ids[:2]
+    assert all(r["status"] == "approved" for r in approved)
 
 
 def test_a_fixture_that_does_not_fit_the_schema_flags_the_document_not_the_run(

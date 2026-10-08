@@ -98,7 +98,7 @@ h1{font-size:22px;font-weight:600;letter-spacing:-.01em;margin:0 0 4px}.sub{marg
 .pg{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:6px;cursor:zoom-in;background:#fff}
 .txt{position:relative;margin:0;max-height:560px;overflow:auto;padding:12px 14px;border:1px solid var(--line);border-radius:6px;font:12px/1.55 var(--mono);white-space:pre-wrap;word-break:break-word;color:var(--muted)}
 .txt mark{background:var(--mark);color:var(--fg);border-radius:2px;padding:0 1px}
-.lb{position:fixed;inset:0;z-index:20;background:rgba(10,10,10,.97);display:flex;flex-direction:column}.lb[hidden]{display:none}
+.lb{position:fixed;inset:0;z-index:20;background:#0f0f0f;display:flex;flex-direction:column}.lb[hidden]{display:none}
 .lbbar{display:flex;align-items:center;gap:6px;padding:8px 14px;color:#ddd;font-size:13px}.lbbar .n{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .lbbar button{min-width:30px;height:30px;padding:0 10px;border:1px solid #3a3a3a;border-radius:6px;color:#eee;font-size:14px;line-height:1}.lbbar button:hover{background:#2a2a2a}.lbbar button[hidden]{display:none}.lbbar .pct{min-width:48px;text-align:center;font-variant-numeric:tabular-nums}
 .lbview{flex:1;overflow:auto;cursor:grab;position:relative}.lbview.drag{cursor:grabbing}.lbview img{display:block;max-width:none;background:#fff;margin:16px auto;user-select:none;-webkit-user-drag:none}

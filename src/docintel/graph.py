@@ -41,6 +41,7 @@ from docintel.reconcile import reconcile
 from docintel.records import Record
 from docintel.store import write_all
 from docintel.store.sources import save_source
+from docintel.store.writer import write_csv
 from docintel.verify import Sources, build_records, failed_record
 
 log = logging.getLogger(__name__)
@@ -63,6 +64,8 @@ class RunState(TypedDict, total=False):
     decisions: dict[str, str]
     promoted: int
     held: int
+    rejected: int
+    approved_csv: str
     started: str
 
 
@@ -277,7 +280,7 @@ class Pipeline:
         the statuses are written back. Without them, rows needing review are held.
         """
         if not state.get("approved"):
-            return {"promoted": 0, "held": len(state.get("final_records", []))}
+            return {"promoted": 0, "held": len(state.get("final_records", [])), "rejected": 0}
         records = [Record.model_validate(r) for r in state.get("final_records", [])]
         decisions = state.get("decisions") or {}
         if decisions:
@@ -296,12 +299,23 @@ class Pipeline:
             )
         else:
             ready = [r for r in records if r.status == "pending_review" and not r.needs_review]
+            for r in ready:
+                r.status = "approved"
+        rejected = sum(1 for r in records if r.status == "rejected")
+        approved_csv = self.settings.output_dir / "approved.csv"
+        write_csv(ready, approved_csv)
         log.info(
-            "promote: %d records would be sent on; %d held back for review",
+            "promote: %d lines approved, %d rejected, %d held",
             len(ready),
-            len(records) - len(ready),
+            rejected,
+            len(records) - len(ready) - rejected,
         )
-        return {"promoted": len(ready), "held": len(records) - len(ready)}
+        return {
+            "promoted": len(ready),
+            "rejected": rejected,
+            "held": len(records) - len(ready) - rejected,
+            "approved_csv": str(approved_csv),
+        }
 
     # ------------------------------------------------------------------ graph
 
