@@ -1,5 +1,7 @@
 # docintel
 
+[![ci](https://github.com/sean-carmody5/axmed-docintel/actions/workflows/ci.yml/badge.svg)](https://github.com/sean-carmody5/axmed-docintel/actions/workflows/ci.yml)
+
 Document intelligence pipeline for supplier quotations. Takes a folder of mixed documents (JSON exports, PDFs, emails, scanned images, and whatever arrives next), extracts quotation lines into one schema, writes a table a person can review, and says exactly which values it is unsure of and why.
 
 Built for the Axmed AI Engineer take-home. The [brief](docs/brief.md), the [plan](PLAN.md) and the [agent log](docs/agent-log.md) record what was asked, what was decided, and who decided it.
