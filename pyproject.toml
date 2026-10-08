@@ -5,8 +5,14 @@ description = "Document intelligence pipeline for supplier quotations"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "markitdown[docx,pptx,xlsx]>=0.1.8",
     "onnxruntime>=1.30.0",
+    "openpyxl>=3.1.5",
+    "pillow>=12.3.0",
     "pydantic>=2.11",
+    "pymupdf>=1.28.2",
+    "pymupdf4llm>=1.28.2",
+    "python-docx>=1.2.0",
     "rapidocr>=3.9.2",
 ]
 
