@@ -56,6 +56,9 @@ def test_corrections_appear_in_documents(manifest: dict) -> None:
             "eml",
             "csv",
             "chat",
+            "xml",
+            "html",
+            "txt",
         ):
             continue
         truth = json.loads((out / case["truth"]).read_text(encoding="utf-8"))

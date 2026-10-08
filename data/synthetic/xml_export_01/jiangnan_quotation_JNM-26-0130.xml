@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Quotation reference="JNM/26/0130" issued="2026-08-06" validUntil="2026-09-20" currency="CNY" schemaVersion="2.1">
+  <Supplier code="JIA424">
+    <Name>Jiangnan Medica Co., Ltd.</Name>
+    <Country>CN</Country>
+    <Address>Building 6, BioBay, 218 Xinghu Street, Suzhou 215123, Jiangsu, China</Address>
+    <Contact>
+      <Name>Chen Yu</Name>
+      <Role>Export Sales Supervisor</Role>
+      <Email>chen@jiangnanmedica.com</Email>
+    </Contact>
+  </Supplier>
+  <Buyer>
+    <Name>Axmed Ltd</Name>
+    <Reference>AXMED-RFQ-2026-0248</Reference>
+    <Destination>Addis Ababa, Ethiopia</Destination>
+  </Buyer>
+  <Terms>
+    <Incoterm place="Shanghai (CNSHA)">FOB</Incoterm>
+    <Payment>T/T in advance</Payment>
+  </Terms>
+  <Lines count="3">
+    <Line no="1">
+      <Product>Moxclavex 500</Product>
+      <INN>Amoxicillin + Clavulanic acid</INN>
+      <Strength>500 mg / 125 mg</Strength>
+      <Form>Tablet</Form>
+      <Pack units="10" uom="tablet">PVC/Alu blister</Pack>
+      <UnitPrice currency="CNY">0.4737</UnitPrice>
+      <PackPrice currency="CNY">4.737</PackPrice>
+      <MOQ unit="pack">20000</MOQ>
+      <LeadTime unit="days">35</LeadTime>
+    </Line>
+    <Line no="2">
+      <Product>Jiamox 500</Product>
+      <INN>Amoxicillin</INN>
+      <Strength>500 mg</Strength>
+      <Form>Capsules</Form>
+      <Pack units="500" uom="capsule">Bulk HDPE jar</Pack>
+      <UnitPrice currency="CNY">0.162</UnitPrice>
+      <PackPrice currency="CNY">74.5</PackPrice>
+      <MOQ unit="pack">10000</MOQ>
+      <LeadTime unit="days">60</LeadTime>
+    </Line>
+    <Line no="3">
+      <Product>Jiametxr 1000</Product>
+      <INN>Metformin hydrochloride</INN>
+      <Strength>1000 mg</Strength>
+      <Form>Prolonged-release tablet</Form>
+      <Pack units="60" uom="tablet">HDPE bottle</Pack>
+      <UnitPrice currency="CNY">0.1042</UnitPrice>
+      <PackPrice currency="CNY">6.252</PackPrice>
+      <MOQ unit="pack">5000</MOQ>
+      <LeadTime unit="days">21</LeadTime>
+    </Line>
+  </Lines>
+  <Notes>
+    <Note>Partial shipments allowed.</Note>
+    <Note>This quotation is an offer to treat and does not constitute a binding contract.</Note>
+    <Note>Cold-chain items ship in validated passive shippers with temperature loggers.</Note>
+    <Note>Serialisation to GS1 standards available on request.</Note>
+    <Revision line="2" field="price_per_uom">Revised from 0.1620 to 0.1490; the earlier figure no longer applies.</Revision>
+  </Notes>
+</Quotation>

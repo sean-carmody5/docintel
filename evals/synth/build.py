@@ -18,6 +18,7 @@ from evals.synth.render_chat import write_whatsapp
 from evals.synth.render_eml import write_eml
 from evals.synth.render_image import write_image
 from evals.synth.render_json import write_json
+from evals.synth.render_markup import write_html, write_txt, write_xml
 from evals.synth.render_office import write_csv, write_docx, write_xlsx
 from evals.synth.render_pdf import write_pdf
 from evals.synth.truth import Quotation, make_quotation
@@ -166,6 +167,24 @@ CASES: tuple[Case, ...] = (
         "baobab",
         ("tiered", "distractor_alt_price", "inn_variant"),
     ),
+    # Markup and text: the generic path must absorb these with no code per format
+    Case("xml_export_01", "xml", "erp_xml", "jiangnan", ("correction",)),
+    Case(
+        "html_portal_01",
+        "html",
+        "portal_page",
+        "nilgiri",
+        ("tiered",),
+        note="Saved supplier-portal page with navigation chrome around the table.",
+    ),
+    Case(
+        "txt_fixed_width_01",
+        "txt",
+        "fixed_width",
+        "indus",
+        ("inn_variant",),
+        note="Fixed-width ERP print-out.",
+    ),
     # Office formats
     Case("xlsx_pricelist_01", "xlsx", "pricelist", "highveld", ("tiered", "vat_note")),
     Case("xlsx_pricelist_02", "xlsx", "pricelist", "kaveri", ("correction",)),
@@ -256,6 +275,9 @@ def _doc_name(case: Case, q: Quotation) -> str:
         "docx": f"{short}_quotation_{ref}.docx",
         "csv": f"{short}_export_{date}.csv",
         "chat": f"WhatsApp Chat with {q.supplier.contact_name}.txt",
+        "xml": f"{short}_quotation_{ref}.xml",
+        "html": f"Quotation {ref} _ {q.supplier.short} Supplier Portal.html",
+        "txt": f"{short}_QUOT_{ref}.txt",
     }[case.kind]
 
 
@@ -294,7 +316,7 @@ def build(out: Path, seed: int) -> dict[str, Any]:
         files: list[str] = []
         q: Quotation | None = None
 
-        if case.kind in ("json", "pdf", "eml", "xlsx", "docx", "csv", "chat"):
+        if case.kind in ("json", "pdf", "eml", "xlsx", "docx", "csv", "chat", "xml", "html", "txt"):
             seq += 1
             supplier = vocab.SUPPLIER_BY_KEY[case.supplier]
             q = make_quotation(
@@ -332,6 +354,12 @@ def build(out: Path, seed: int) -> dict[str, Any]:
                 write_csv(q, rng, target, style=case.variant)
             elif case.kind == "chat":
                 write_whatsapp(q, rng, target)
+            elif case.kind == "xml":
+                write_xml(q, rng, target)
+            elif case.kind == "html":
+                write_html(q, rng, target)
+            elif case.kind == "txt":
+                write_txt(q, rng, target)
             files.append(name)
 
         elif case.kind == "image":

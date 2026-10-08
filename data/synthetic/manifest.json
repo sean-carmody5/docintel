@@ -1,7 +1,7 @@
 {
   "generator_version": "1",
   "seed": 2026,
-  "case_count": 48,
+  "case_count": 51,
   "cases": [
     {
       "id": "json_erp_nested_01",
@@ -755,6 +755,66 @@
       "currency": "KES"
     },
     {
+      "id": "xml_export_01",
+      "kind": "xml",
+      "variant": "erp_xml",
+      "supplier": "jiangnan",
+      "features": [
+        "correction"
+      ],
+      "n_lines": 3,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "",
+      "files": [
+        "jiangnan_quotation_JNM-26-0130.xml"
+      ],
+      "dir": "xml_export_01",
+      "truth": "xml_export_01/truth.json",
+      "currency": "CNY"
+    },
+    {
+      "id": "html_portal_01",
+      "kind": "html",
+      "variant": "portal_page",
+      "supplier": "nilgiri",
+      "features": [
+        "tiered"
+      ],
+      "n_lines": 2,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "Saved supplier-portal page with navigation chrome around the table.",
+      "files": [
+        "Quotation NB-EXP-260131 _ Nilgiri Supplier Portal.html"
+      ],
+      "dir": "html_portal_01",
+      "truth": "html_portal_01/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "txt_fixed_width_01",
+      "kind": "txt",
+      "variant": "fixed_width",
+      "supplier": "indus",
+      "features": [
+        "inn_variant"
+      ],
+      "n_lines": 6,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "Fixed-width ERP print-out.",
+      "files": [
+        "indus_QUOT_IRL-26-0132.txt"
+      ],
+      "dir": "txt_fixed_width_01",
+      "truth": "txt_fixed_width_01/truth.json",
+      "currency": "USD"
+    },
+    {
       "id": "xlsx_pricelist_01",
       "kind": "xlsx",
       "variant": "pricelist",
@@ -809,7 +869,7 @@
       "expect": "extract",
       "note": "",
       "files": [
-        "delta_quotation_DF-26-0132.docx"
+        "delta_quotation_DF-26-0135.docx"
       ],
       "dir": "docx_letter_01",
       "truth": "docx_letter_01/truth.json",
@@ -901,7 +961,7 @@
       "expect": "extract_and_flag",
       "note": "Injection is white 1pt text in the text layer.",
       "files": [
-        "lowlands_quotation_LP-26-0137.pdf"
+        "lowlands_quotation_LP-26-0140.pdf"
       ],
       "dir": "hostile_pdf_white",
       "truth": "hostile_pdf_white/truth.json",
@@ -1002,6 +1062,15 @@
         "inn_as_written": "Amoxicillin"
       },
       {
+        "case": "xml_export_01",
+        "line_no": 2,
+        "supplier": "jiangnan",
+        "currency": "CNY",
+        "units_per_pack": 500,
+        "price_per_uom": 0.149,
+        "inn_as_written": "Amoxicillin"
+      },
+      {
         "case": "hostile_eml_hidden",
         "line_no": 6,
         "supplier": "nilevalley",
@@ -1037,6 +1106,15 @@
         "currency": "USD",
         "units_per_pack": 100,
         "price_per_uom": 0.0173,
+        "inn_as_written": "Omeprazole"
+      },
+      {
+        "case": "txt_fixed_width_01",
+        "line_no": 1,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0124,
         "inn_as_written": "Omeprazole"
       },
       {
@@ -1107,6 +1185,15 @@
         "inn_as_written": "Doxycycline"
       },
       {
+        "case": "html_portal_01",
+        "line_no": 2,
+        "supplier": "nilgiri",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.035,
+        "inn_as_written": "Doxycycline"
+      },
+      {
         "case": "hostile_json_comment",
         "line_no": 5,
         "supplier": "dhaka",
@@ -1160,6 +1247,15 @@
         "currency": "KES",
         "units_per_pack": 30,
         "price_per_uom": 1.218,
+        "inn_as_written": "Hydrochlorothiazide"
+      },
+      {
+        "case": "txt_fixed_width_01",
+        "line_no": 2,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0066,
         "inn_as_written": "Hydrochlorothiazide"
       }
     ],
@@ -1292,6 +1388,15 @@
         "currency": "USD",
         "units_per_pack": 100,
         "price_per_uom": 0.097,
+        "inn_as_written": "Praziquantel"
+      },
+      {
+        "case": "html_portal_01",
+        "line_no": 1,
+        "supplier": "nilgiri",
+        "currency": "USD",
+        "units_per_pack": 4,
+        "price_per_uom": 0.1446,
         "inn_as_written": "Praziquantel"
       },
       {
@@ -1729,6 +1834,24 @@
         "inn_as_written": "Amoxicillin + Clavulanic acid"
       },
       {
+        "case": "xml_export_01",
+        "line_no": 1,
+        "supplier": "jiangnan",
+        "currency": "CNY",
+        "units_per_pack": 10,
+        "price_per_uom": 0.4737,
+        "inn_as_written": "Amoxicillin + Clavulanic acid"
+      },
+      {
+        "case": "txt_fixed_width_01",
+        "line_no": 6,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 21,
+        "price_per_uom": 0.0672,
+        "inn_as_written": "Amoxicillin and clavulanate potassium"
+      },
+      {
         "case": "hostile_pdf_white",
         "line_no": 4,
         "supplier": "lowlands",
@@ -2011,6 +2134,15 @@
         "units_per_pack": 50,
         "price_per_uom": 0.4399,
         "inn_as_written": "Chlorhexidine digluconate"
+      },
+      {
+        "case": "txt_fixed_width_01",
+        "line_no": 3,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 50,
+        "price_per_uom": 0.4252,
+        "inn_as_written": "Chlorhexidine digluconate"
       }
     ],
     "artesunate_inj_60": [
@@ -2050,6 +2182,15 @@
         "currency": "KES",
         "units_per_pack": 60,
         "price_per_uom": 1.999,
+        "inn_as_written": "Metformin hydrochloride"
+      },
+      {
+        "case": "xml_export_01",
+        "line_no": 3,
+        "supplier": "jiangnan",
+        "currency": "CNY",
+        "units_per_pack": 60,
+        "price_per_uom": 0.1042,
         "inn_as_written": "Metformin hydrochloride"
       },
       {
@@ -2485,6 +2626,15 @@
         "units_per_pack": 10,
         "price_per_uom": 0.037,
         "inn_as_written": "Ciprofloxacin"
+      },
+      {
+        "case": "txt_fixed_width_01",
+        "line_no": 5,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0262,
+        "inn_as_written": "Ciprofloxacin hydrochloride"
       }
     ],
     "azithromycin_250": [
@@ -2758,6 +2908,15 @@
       }
     ],
     "vitamin_a_200k": [
+      {
+        "case": "txt_fixed_width_01",
+        "line_no": 4,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 500,
+        "price_per_uom": 0.0235,
+        "inn_as_written": "Vitamin A"
+      },
       {
         "case": "hostile_json_visible",
         "line_no": 2,

@@ -1,0 +1,31 @@
+                                              INDUS REMEDIES (PVT.) LTD.                                              
+                            D-45, S.I.T.E. Industrial Area, Karachi 75700, Sindh, Pakistan                            
+
+                                                      QUOTATION                                                       
+======================================================================================================================
+Ref: IRL-26-0132                  Date: 05-Jul-2026      Valid: 04-Aug-2026      Currency: USD
+To: Axmed Ltd / Alberto Vazquez          Your ref: AXMED-RFQ-2026-0270      Terms: CFR Dar es Salaam (TZDAR)
+======================================================================================================================
+NO  PRODUCT               INN                               STRENGTH        PACK              UNIT PRICE  PACK PRICE     MOQ  LEAD
+----------------------------------------------------------------------------------------------------------------------
+1   Prazoleex 20          Omeprazole                        20 mg           100 capsule           0.0124       1.240   20000    30
+    Gastro-resistant caps PVC/Alu blister                   
+2   Indthiaz 25           Hydrochlorothiazide               25 mg           100 tablet            0.0066      0.6600    1000    28
+    Tablet                PVC/Alu blister                   
+3   Chlorex 7.1%          Chlorhexidine digluconate         7.1% w/w        50 tube               0.4252      21.260   50000    75
+    Gel, 20 g tube        Laminated tube                    
+4   Indvita 200000        Vitamin A                         200,000 IU      500 capsule           0.0235      11.750     500    90
+    Soft capsule          HDPE bottle                       
+5   Indflox 500           Ciprofloxacin hydrochloride       500 mg          100 tablet            0.0262       2.620   20000    35
+    Film-coated tablet    PVC/Alu blister                   
+6   Indmoxclav 500        Amoxicillin and clavulanate potas 500 mg / 125 mg 21 tablet             0.0672       1.411   20000    28
+    Film-coated tablet    PVC/Alu blister                   
+----------------------------------------------------------------------------------------------------------------------
+NOTES:
+  - Orders below MOQ attract a 12% surcharge on the unit price.
+  - Secondary cartoning in English with destination artwork included at no charge.
+  - Serialisation to GS1 standards available on request.
+  - Partial shipments allowed.
+
+Payment: Confirmed LC at sight
+Contact: Sana Qureshi, Export Coordinator, +92 21 3256 0800
