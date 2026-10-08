@@ -183,21 +183,31 @@ def reconcile_duplicates(records: list[Record]) -> list[Duplicate]:
     return duplicates
 
 
+def _agree(va: object, vb: object) -> bool:
+    if va is None or vb is None:
+        return False
+    if isinstance(va, int | float) and isinstance(vb, int | float):
+        return _close(float(va), float(vb))
+    return str(va).strip().lower() == str(vb).strip().lower()
+
+
 def _lift(a: Record, b: Record, fld: str, a_name: str, b_name: str) -> None:
     ca, cb = a.confidence.get(fld), b.confidence.get(fld)
-    if ca is None or cb is None:
+    if ca is None or cb is None or not _agree(getattr(a, fld), getattr(b, fld)):
         return
     low, high, low_rec, other = (ca, cb, a, b_name) if ca.score < cb.score else (cb, ca, b, a_name)
     if high.score > low.score:
         low.score = round(min(high.score, 0.9), 3)
         low.tier = "high" if low.score >= 0.85 else "medium" if low.score >= 0.6 else "low"
         low.reasons.append(f"agrees with {other}, confidence lifted")
+        low_rec.review_reasons = [x for x in low_rec.review_reasons if not x.startswith(f"{fld}: ")]
         key_scores = [
             low_rec.confidence[k].score
             for k in KEY_FIELDS
             if k in low_rec.confidence and getattr(low_rec, k) is not None
         ]
         low_rec.overall_confidence = round(min(key_scores), 3) if key_scores else 0.0
+        low_rec.needs_review = bool(low_rec.review_reasons) or low_rec.overall_confidence < 0.6
 
 
 def reconcile(records: list[Record]) -> tuple[list[Conflict], list[Duplicate]]:

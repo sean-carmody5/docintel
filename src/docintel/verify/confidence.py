@@ -166,6 +166,7 @@ def _base(doc: Document, result: ExtractionResult, extractor_name: str, suffix: 
     return {
         "record_id": f"{doc.id}:{suffix}",
         "source_document": doc.name,
+        "source_path": str(doc.source_path),
         "source_id": doc.id,
         "source_kind": doc.kind.value,
         "parent_document": doc.metadata.get("attachment_of") or doc.metadata.get("member_of"),
@@ -322,6 +323,7 @@ def failed_record(doc: Document) -> Record:
     return Record(
         record_id=f"{doc.id}:0",
         source_document=doc.name,
+        source_path=str(doc.source_path),
         source_id=doc.id,
         source_kind=doc.kind.value,
         parent_document=doc.metadata.get("attachment_of") or doc.metadata.get("member_of"),

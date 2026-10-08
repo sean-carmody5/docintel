@@ -32,6 +32,7 @@ class RecordFlag(BaseModel):
 class Record(BaseModel):
     record_id: str
     source_document: str
+    source_path: str = ""
     source_id: str
     source_kind: str
     source_locator: str = ""
