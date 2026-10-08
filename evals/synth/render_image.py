@@ -173,11 +173,34 @@ def degrade_scanner(im: Image.Image, rng: random.Random) -> Image.Image:
     return g.convert("RGB")
 
 
+def degrade_glare_wipe(im: Image.Image, rng: random.Random) -> Image.Image:
+    """A phone photo where a reflection saturates a band across the table.
+
+    Rows under the band are gone, not degraded. The expected outcome is partial
+    extraction with low confidence on whatever sits near the band, never a guess.
+    """
+    w, h = im.size
+    out = degrade_photo(im, rng)
+    ow, oh = out.size
+    arr = np.asarray(out).astype(np.float32)
+    # a diagonal band, fully blown out in the middle, feathered at the edges
+    yy, xx = np.mgrid[0:oh, 0:ow]
+    angle = rng.uniform(-0.35, 0.35)
+    centre = rng.uniform(0.38, 0.62) * oh
+    dist = np.abs((yy - centre) - angle * (xx - ow / 2))
+    half = rng.uniform(0.07, 0.11) * oh
+    wipe = np.clip(1 - (dist - half) / (half * 0.8), 0, 1)
+    arr = arr + wipe[..., None] * (255 - arr)
+    out = Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8), "RGB")
+    return out.filter(ImageFilter.GaussianBlur(rng.uniform(0.4, 0.9)))
+
+
 DEGRADATIONS: dict[str, tuple[Degrade, str]] = {
     "fax": (degrade_fax, "png"),
     "photo": (degrade_photo, "jpg"),
     "crop": (degrade_crop, "jpg"),
     "heavy": (degrade_heavy, "jpg"),
+    "glare_wipe": (degrade_glare_wipe, "jpg"),
 }
 
 

@@ -1,0 +1,94 @@
+{
+  "case_id": "img_glare_wipe_02",
+  "kind": "image",
+  "variant": "glare_wipe",
+  "expect": "partial",
+  "hostile": null,
+  "source_case": "pdf_modern_03",
+  "files": [
+    "scan_glare_wipe_highveld_p1.jpg"
+  ],
+  "quotation": {
+    "supplier_key": "highveld",
+    "supplier_name": "Highveld Generics (Pty) Ltd.",
+    "quotation_ref": "HG-Q26-0119",
+    "document_date": "2026-09-08",
+    "valid_until": "2026-10-23",
+    "currency": "ZAR",
+    "incoterm": "EXW",
+    "named_place": "Isando",
+    "buyer_reference": "AXMED-RFQ-2026-0330",
+    "destination": "Accra, Ghana (via Tema)",
+    "buyer_contact": "Mattia Albergante",
+    "payment_terms": "30 days from statement, prices exclude 15% VAT",
+    "features": [
+      "correction",
+      "inn_variant",
+      "vat_note"
+    ],
+    "lines": [
+      {
+        "line_no": 1,
+        "product_key": "dexamethasone_4",
+        "product_name": "Dexex 4",
+        "inn": "Dexamethasone sodium phosphate",
+        "inn_canonical": "Dexamethasone",
+        "strength": "4 mg/mL",
+        "dosage_form": "Solution for injection",
+        "packaging": "Amber glass ampoule",
+        "uom": "ampoule",
+        "units_per_pack": 25,
+        "price_per_uom": 3.828,
+        "price_per_pack": 95.7,
+        "price_basis": "stated",
+        "discount_pct": null,
+        "price_tiers": null,
+        "moq_packs": 2000,
+        "lead_time_days": 63,
+        "quantity": null,
+        "extended_amount": null,
+        "superseded": null,
+        "cold_chain": false,
+        "atc": "H02AB02",
+        "net_price_per_uom": 3.828
+      },
+      {
+        "line_no": 2,
+        "product_key": "lidocaine_2",
+        "product_name": "Lidoex 2%",
+        "inn": "Lignocaine",
+        "inn_canonical": "Lidocaine hydrochloride",
+        "strength": "2%, 20 mL",
+        "dosage_form": "Solution for injection",
+        "packaging": "Glass vial, carton",
+        "uom": "vial",
+        "units_per_pack": 25,
+        "price_per_uom": 8.655,
+        "price_per_pack": 216.37,
+        "price_basis": "stated",
+        "discount_pct": null,
+        "price_tiers": null,
+        "moq_packs": 50000,
+        "lead_time_days": 75,
+        "quantity": null,
+        "extended_amount": null,
+        "superseded": {
+          "field": "price_per_uom",
+          "old": 8.403,
+          "new": 8.655,
+          "reason": "corrected later in the same document"
+        },
+        "cold_chain": false,
+        "atc": "N01BB02",
+        "net_price_per_uom": 8.655
+      }
+    ],
+    "notes": [
+      "Prices exclude 15% VAT where applicable.",
+      "Lead times run from receipt of a workable letter of credit.",
+      "Certificate of analysis and CPP supplied with every batch.",
+      "Secondary cartoning in English with destination artwork included at no charge."
+    ],
+    "alt_price_note": null
+  }
+}

@@ -141,6 +141,16 @@ CASES: tuple[Case, ...] = (
     Case("img_fax_02", "image", "fax", source="pdf_modern_02"),
     Case("img_photo_02", "image", "photo", source="pdf_classic_03"),
     Case("img_crop_02", "image", "crop", source="pdf_modern_03", expect="partial"),
+    Case(
+        "img_glare_wipe_01",
+        "image",
+        "glare_wipe",
+        source="pdf_classic_02",
+        expect="partial",
+        note="A reflection wipes a band through the table, like the provided scan_03. "
+        "Lines under the band are unreadable; the correct result omits or flags them.",
+    ),
+    Case("img_glare_wipe_02", "image", "glare_wipe", source="pdf_modern_03", expect="partial"),
     # Scanned PDFs: image-only, or with the garbage OCR layer scanners add
     Case(
         "pdf_scanned_image_only_01",

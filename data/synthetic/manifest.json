@@ -1,7 +1,7 @@
 {
   "generator_version": "1",
   "seed": 2026,
-  "case_count": 59,
+  "case_count": 61,
   "cases": [
     {
       "id": "json_erp_nested_01",
@@ -610,6 +610,51 @@
       ],
       "dir": "img_crop_02",
       "truth": "img_crop_02/truth.json",
+      "currency": "ZAR"
+    },
+    {
+      "id": "img_glare_wipe_01",
+      "kind": "image",
+      "variant": "glare_wipe",
+      "supplier": "kaveri",
+      "features": [
+        "correction",
+        "discount",
+        "inn_variant",
+        "quantity_extended"
+      ],
+      "n_lines": 6,
+      "source": "pdf_classic_02",
+      "hostile": null,
+      "expect": "partial",
+      "note": "A reflection wipes a band through the table, like the provided scan_03. Lines under the band are unreadable; the correct result omits or flags them.",
+      "files": [
+        "scan_glare_wipe_kaveri_p1.jpg"
+      ],
+      "dir": "img_glare_wipe_01",
+      "truth": "img_glare_wipe_01/truth.json",
+      "currency": "INR"
+    },
+    {
+      "id": "img_glare_wipe_02",
+      "kind": "image",
+      "variant": "glare_wipe",
+      "supplier": "highveld",
+      "features": [
+        "correction",
+        "inn_variant",
+        "vat_note"
+      ],
+      "n_lines": 2,
+      "source": "pdf_modern_03",
+      "hostile": null,
+      "expect": "partial",
+      "note": "",
+      "files": [
+        "scan_glare_wipe_highveld_p1.jpg"
+      ],
+      "dir": "img_glare_wipe_02",
+      "truth": "img_glare_wipe_02/truth.json",
       "currency": "ZAR"
     },
     {
@@ -3491,7 +3536,8 @@
       "misnamed_pdf_as_dat"
     ],
     "pdf_classic_02": [
-      "img_crop_01"
+      "img_crop_01",
+      "img_glare_wipe_01"
     ],
     "pdf_letter_01": [
       "img_heavy_01"
@@ -3505,7 +3551,8 @@
       "malformed_pdf_truncated"
     ],
     "pdf_modern_03": [
-      "img_crop_02"
+      "img_crop_02",
+      "img_glare_wipe_02"
     ],
     "pdf_letter_02": [
       "pdf_scanned_garbled_layer_02"
