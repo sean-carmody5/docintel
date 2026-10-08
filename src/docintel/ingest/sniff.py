@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import csv
 import json
 import re
 import zipfile
@@ -125,17 +124,25 @@ def _sniff_text(data: bytes, suffix: str) -> str:
 
 
 def _looks_like_csv(sample: str) -> bool:
+    """A delimiter that appears the same number of times on most lines of a table.
+
+    csv.Sniffer gives up on exports that put key/value rows above the table, so this
+    counts candidate delimiters per line and looks for a dominant, repeated count.
+    """
     lines = [ln for ln in sample.splitlines() if ln.strip()]
     if len(lines) < 3:
         return False
-    try:
-        dialect = csv.Sniffer().sniff(sample, delimiters=",;\t|")
-    except csv.Error:
-        return False
-    counts = [ln.count(dialect.delimiter) for ln in lines[:40]]
-    rows_with_delims = [c for c in counts if c > 0]
-    if len(rows_with_delims) < max(3, len(counts) // 2):
-        return False
-    most = max(set(rows_with_delims), key=rows_with_delims.count)
-    # Metadata rows above a table have fewer delimiters; the table itself must be consistent.
-    return rows_with_delims.count(most) >= 3
+    best: tuple[int, int] = (0, 0)
+    for delim in (",", ";", "\t", "|"):
+        counts = [ln.count(delim) for ln in lines[:60]]
+        nonzero = [c for c in counts if c > 0]
+        if len(nonzero) < 3:
+            continue
+        mode = max(set(nonzero), key=lambda c: (nonzero.count(c), c))
+        rows = nonzero.count(mode)
+        if rows < 3:
+            continue
+        # Either most lines agree, or the agreeing lines are wide enough to be a real table.
+        if rows >= len(lines) * 0.6 or mode >= 3:
+            best = max(best, (rows, mode))
+    return best[0] >= 3
