@@ -1,0 +1,130 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Highveld Generics (Pty) Ltd.",
+    "country": "ZA",
+    "contact_name": "Thabo Mokoena",
+    "contact_email": "export@highveldgenerics.co.za"
+  },
+  "quotation_ref": "HG-Q26-0119",
+  "buyer_reference": "AXMED-RFQ-2026-0393",
+  "document_date": "2026-08-17",
+  "valid_until": "2026-11-15",
+  "currency": "ZAR",
+  "incoterm": "EXW",
+  "named_place": "Isando",
+  "payment_terms": "30 days from statement, prices exclude 15% VAT",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Thiazan 25",
+      "inn": null,
+      "strength": null,
+      "dosage_form": null,
+      "uom": null,
+      "units_per_pack": null,
+      "packaging": null,
+      "price_per_pack": null,
+      "price_per_uom": 0.0812,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": {
+        "field": "price_per_uom",
+        "old": 0.0883,
+        "new": 0.0812,
+        "reason": "Terms and conditions item 4: \"the unit price should read ZAR 0.0812, not ZAR 0.0883 as printed in the schedule above.\""
+      },
+      "evidence": {
+        "line_no": "Correction to item 01 (Thiazan 25)",
+        "product_name": "Thiazan 25",
+        "price_per_uom": "ZAR 0.0812",
+        "currency": "ZAR 0.0812"
+      },
+      "illegible": [
+        "inn",
+        "strength",
+        "dosage_form",
+        "packaging",
+        "uom",
+        "units_per_pack",
+        "price_per_pack",
+        "moq_packs",
+        "lead_time_days"
+      ],
+      "notes": [
+        "Line schedule is hidden by glare; this line is built only from the correction note in the terms (item 4). Strength, form, pack, UOM, MOQ and lead time could not be read.",
+        "Product name and both prices were flagged as blurry / limited confidence in the scan note.",
+        "Unit of measure not stated in the legible text, so the unit price is per an unknown UOM (probably per tablet, but not confirmed)."
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": null,
+      "inn": null,
+      "strength": null,
+      "dosage_form": null,
+      "uom": null,
+      "units_per_pack": null,
+      "packaging": null,
+      "price_per_pack": null,
+      "price_per_uom": null,
+      "price_basis": "unknown",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": null,
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "line_no": "2"
+      },
+      "illegible": [
+        "product_name",
+        "inn",
+        "strength",
+        "dosage_form",
+        "packaging",
+        "uom",
+        "units_per_pack",
+        "price_per_uom",
+        "price_per_pack",
+        "moq_packs",
+        "lead_time_days"
+      ],
+      "notes": [
+        "Row 2 is almost entirely hidden by glare. Only faint fragments are visible: \"WHO PQ ref. HA290\" in the product name column, \"Application filed\", \"36 months\", \"Below 25 C, dry\". The product name field is not extracted because the fragment looks like a reference rather than a name.",
+        "No price could be read."
+      ]
+    }
+  ],
+  "evidence": {
+    "quotation_ref": "Quotation no: HG-Q26-0119",
+    "buyer_reference": "Request for quotation AXMED-RFQ-2026-0393",
+    "document_date": "Issue date: 17 August 2026",
+    "valid_until": "Valid until: 15 November 2026",
+    "currency": "ZAR",
+    "incoterm": "EXW Isando",
+    "named_place": "EXW Isando",
+    "payment_terms": "30 days from statement, prices exclude 15% VAT",
+    "supplier": "Highveld Generics (Pty) Ltd."
+  },
+  "warnings": [
+    "A bright glare band hides the line-items table. Only the table header and fragments of row 2 are partly legible. All other rows are lost, so the quotation is very likely incomplete. Needs manual review or a re-scan.",
+    "Only item 01 (Thiazan 25) has a price, taken from the correction note in the terms. The corrected unit price is ZAR 0.0812, replacing the printed ZAR 0.0883.",
+    "The scan note refers to the correction as 'item 4', but the terms text says 'item 01'. The item numbering is inconsistent.",
+    "The pink object over the bottom-right corner partly obscures the page number.",
+    "Prices exclude 15% VAT.",
+    "The terms mention cold-chain items, but no line could be read to confirm cold chain, so cold_chain is left null on all lines."
+  ]
+}

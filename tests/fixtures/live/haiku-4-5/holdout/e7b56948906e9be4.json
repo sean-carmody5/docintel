@@ -1,0 +1,113 @@
+{
+  "document_type": "other",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Baobab Pharmaceuticals",
+    "country": null,
+    "contact_name": null,
+    "contact_email": null
+  },
+  "quotation_ref": "BBP-0024/2022",
+  "buyer_reference": null,
+  "document_date": "2026-07-23",
+  "valid_until": null,
+  "currency": null,
+  "incoterm": null,
+  "named_place": null,
+  "payment_terms": null,
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Bun addendum",
+      "inn": null,
+      "strength": "250 mg/kg",
+      "dosage_form": "tablets",
+      "uom": null,
+      "units_per_pack": 30,
+      "packaging": "pack",
+      "price_per_pack": 12.19,
+      "price_per_uom": null,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 30,
+          "max_packs": 99,
+          "price_per_pack": 12.19
+        },
+        {
+          "min_packs": 39,
+          "max_packs": null,
+          "price_per_pack": 8.0
+        }
+      ],
+      "currency": null,
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 30,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Bun addendum",
+        "strength": "250 mg",
+        "dosage_form": "tablets",
+        "price_per_pack": "12.19 per pack",
+        "moq_packs": "30"
+      },
+      "illegible": [
+        "units_per_pack",
+        "extended_amount"
+      ],
+      "notes": [
+        "Pricing appears tiered; first tier 30-99 packs at 12.19 per pack, second tier 39+ packs at 8.00 per pack",
+        "Document text is heavily distorted; interpretation uncertain"
+      ]
+    },
+    {
+      "line_no": 3,
+      "product_name": "Aspirin",
+      "inn": null,
+      "strength": null,
+      "dosage_form": null,
+      "uom": null,
+      "units_per_pack": null,
+      "packaging": null,
+      "price_per_pack": 100.0,
+      "price_per_uom": null,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": null,
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 2000,
+      "lead_time_days": 40,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "price_per_pack": "100.00",
+        "moq_packs": "Minimum order 2000 packs",
+        "lead_time_days": "led time 40 days"
+      },
+      "illegible": [
+        "strength",
+        "dosage_form",
+        "packaging",
+        "units_per_pack"
+      ],
+      "notes": [
+        "Text is largely illegible in original image",
+        "Minimum order 2000 packs with 40 day lead time"
+      ]
+    }
+  ],
+  "evidence": {},
+  "warnings": [
+    "Document is heavily rotated and difficult to read; many sections are illegible",
+    "Text appears to contain clinical guidance mixed with quotation data; unable to clearly distinguish product information from instructions",
+    "Currency not specified; prices are numeric only",
+    "Line items are difficult to parse due to image quality and rotation",
+    "The document structure is unclear and may not be a standard quotation format"
+  ]
+}

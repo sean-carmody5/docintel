@@ -1,0 +1,272 @@
+{
+  "document_type": "price_list",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Baobab Pharmaceuticals Ltd.",
+    "country": "KE",
+    "contact_name": null,
+    "contact_email": "tenders@baobabpharma.co.ke"
+  },
+  "quotation_ref": "BPL/QT/26/0106",
+  "buyer_reference": null,
+  "document_date": "2026-06-26",
+  "valid_until": "2026-08-10",
+  "currency": "KES",
+  "incoterm": "DAP",
+  "named_place": "Kampala",
+  "payment_terms": null,
+  "lines": [
+    {
+      "line_no": null,
+      "product_name": "Vitaex 200000",
+      "inn": "Retinol",
+      "strength": "200,000 IU",
+      "dosage_form": "Soft capsule",
+      "uom": "capsule",
+      "units_per_pack": 500,
+      "packaging": "HDPE jar, 500 capsules",
+      "price_per_pack": 1028.5,
+      "price_per_uom": 2.057,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 250,
+          "max_packs": 1249,
+          "price_per_pack": 1028.5
+        },
+        {
+          "min_packs": 1250,
+          "max_packs": 6249,
+          "price_per_pack": 921.36
+        },
+        {
+          "min_packs": 6250,
+          "max_packs": null,
+          "price_per_pack": 873.37
+        }
+      ],
+      "currency": "KES",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": 90,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Vitaex 200000",
+        "inn": "Retinol",
+        "strength": "200,000 IU",
+        "dosage_form": "Soft capsule",
+        "packaging": "HDPE jar, 500 capsules",
+        "uom": "capsule",
+        "units_per_pack": "\"units_per_pack\": 500",
+        "price_per_pack": "\"price_per_pack\": 1028.5",
+        "price_per_uom": "\"price_per_pack\": 1028.5",
+        "price_tiers": "\"min_packs\": 250, \"max_packs\": 1249, \"price_per_pack\": 1028.5",
+        "currency": "KES",
+        "lead_time_days": "\"lead_time_days\": 90"
+      },
+      "illegible": [],
+      "notes": [
+        "price_per_uom derived: 1028.5 / 500 (lowest-quantity tier)",
+        "MOQ not explicitly stated; price note mentions a 12% surcharge for orders below MOQ. Lowest tier starts at 250 packs.",
+        "Lead times run from receipt of a workable letter of credit.",
+        "Shelf life 48 months"
+      ]
+    },
+    {
+      "line_no": null,
+      "product_name": "Baodip 10",
+      "inn": "Amlodipine",
+      "strength": "10 mg",
+      "dosage_form": "Tablet",
+      "uom": "tablet",
+      "units_per_pack": 28,
+      "packaging": "Alu-Alu blister, 28 tablets",
+      "price_per_pack": 23.377,
+      "price_per_uom": 0.834893,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 100,
+          "max_packs": 999,
+          "price_per_pack": 23.377
+        },
+        {
+          "min_packs": 1000,
+          "max_packs": 4999,
+          "price_per_pack": 20.764
+        },
+        {
+          "min_packs": 5000,
+          "max_packs": null,
+          "price_per_pack": 19.368
+        }
+      ],
+      "currency": "KES",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": 35,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Baodip 10",
+        "inn": "Amlodipine",
+        "strength": "10 mg",
+        "dosage_form": "Tablet",
+        "packaging": "Alu-Alu blister, 28 tablets",
+        "uom": "tablet",
+        "units_per_pack": "\"units_per_pack\": 28",
+        "price_per_pack": "\"price_per_pack\": 23.377",
+        "price_per_uom": "\"price_per_pack\": 23.377",
+        "price_tiers": "\"min_packs\": 100, \"max_packs\": 999, \"price_per_pack\": 23.377",
+        "currency": "KES",
+        "lead_time_days": "\"lead_time_days\": 35"
+      },
+      "illegible": [],
+      "notes": [
+        "price_per_uom derived: 23.377 / 28 = 0.834893 (rounded; lowest-quantity tier)",
+        "MOQ not explicitly stated; price note mentions a 12% surcharge for orders below MOQ. Lowest tier starts at 100 packs.",
+        "Lead times run from receipt of a workable letter of credit.",
+        "Shelf life 36 months"
+      ]
+    },
+    {
+      "line_no": null,
+      "product_name": "Neviex 200",
+      "inn": "Nevirapine",
+      "strength": "200 mg",
+      "dosage_form": "Tablet",
+      "uom": "tablet",
+      "units_per_pack": 60,
+      "packaging": "PVC/Alu blister, 60 tablets",
+      "price_per_pack": 376.5,
+      "price_per_uom": 6.275,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 200,
+          "max_packs": 1999,
+          "price_per_pack": 376.5
+        },
+        {
+          "min_packs": 2000,
+          "max_packs": 7999,
+          "price_per_pack": 350.12
+        },
+        {
+          "min_packs": 8000,
+          "max_packs": null,
+          "price_per_pack": 331.85
+        }
+      ],
+      "currency": "KES",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": 75,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Neviex 200",
+        "inn": "Nevirapine",
+        "strength": "200 mg",
+        "dosage_form": "Tablet",
+        "packaging": "PVC/Alu blister, 60 tablets",
+        "uom": "tablet",
+        "units_per_pack": "\"units_per_pack\": 60",
+        "price_per_pack": "\"price_per_pack\": 376.5",
+        "price_per_uom": "\"price_per_pack\": 376.5",
+        "price_tiers": "\"min_packs\": 200, \"max_packs\": 1999, \"price_per_pack\": 376.5",
+        "currency": "KES",
+        "lead_time_days": "\"lead_time_days\": 75"
+      },
+      "illegible": [],
+      "notes": [
+        "price_per_uom derived: 376.5 / 60 (lowest-quantity tier)",
+        "MOQ not explicitly stated; price note mentions a 12% surcharge for orders below MOQ. Lowest tier starts at 200 packs.",
+        "Lead times run from receipt of a workable letter of credit.",
+        "Shelf life 24 months"
+      ]
+    },
+    {
+      "line_no": null,
+      "product_name": "Chlorex 7.1%",
+      "inn": "Chlorhexidine digluconate",
+      "strength": "7.1% w/w",
+      "dosage_form": "Gel",
+      "uom": "tube",
+      "units_per_pack": 50,
+      "packaging": "Aluminium tube, 50 tubes",
+      "price_per_pack": 2069.35,
+      "price_per_uom": 41.387,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 500,
+          "max_packs": 2499,
+          "price_per_pack": 2069.35
+        },
+        {
+          "min_packs": 2500,
+          "max_packs": 9999,
+          "price_per_pack": 1872.79
+        },
+        {
+          "min_packs": 10000,
+          "max_packs": null,
+          "price_per_pack": 1676.98
+        }
+      ],
+      "currency": "KES",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": 56,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Chlorex 7.1%",
+        "inn": "Chlorhexidine digluconate",
+        "strength": "7.1% w/w",
+        "dosage_form": "Gel",
+        "packaging": "Aluminium tube, 50 tubes",
+        "uom": "tube",
+        "units_per_pack": "\"units_per_pack\": 50",
+        "price_per_pack": "\"price_per_pack\": 2069.35",
+        "price_per_uom": "\"price_per_pack\": 2069.35",
+        "price_tiers": "\"min_packs\": 500, \"max_packs\": 2499, \"price_per_pack\": 2069.35",
+        "currency": "KES",
+        "lead_time_days": "\"lead_time_days\": 56"
+      },
+      "illegible": [],
+      "notes": [
+        "price_per_uom derived: 2069.35 / 50 (lowest-quantity tier)",
+        "MOQ not explicitly stated; price note mentions a 12% surcharge for orders below MOQ. Lowest tier starts at 500 packs.",
+        "Lead times run from receipt of a workable letter of credit.",
+        "Shelf life 24 months",
+        "Pack is 50 tubes, so the pack price is not a per-tube price"
+      ]
+    }
+  ],
+  "evidence": {
+    "supplier": "Baobab Pharmaceuticals Ltd.",
+    "quotation_ref": "BPL/QT/26/0106",
+    "document_date": "\"effective_from\": \"2026-06-26\"",
+    "valid_until": "2026-08-10",
+    "currency": "KES",
+    "incoterm": "DAP Kampala",
+    "named_place": "DAP Kampala"
+  },
+  "warnings": [
+    "All prices are per pack with volume tiers; per-unit prices are derived from the lowest-quantity tier.",
+    "MOQ is not stated per product. The price note says: \"Orders below MOQ attract a 12% surcharge on the unit price.\" moq_packs left null; lowest tier minimums may be the intended MOQ.",
+    "Lead times run from receipt of a workable letter of credit.",
+    "Payment terms are not stated apart from the letter of credit reference in the price note."
+  ]
+}

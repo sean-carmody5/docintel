@@ -1,0 +1,31 @@
+{
+  "document_type": "quotation",
+  "contains_prices": false,
+  "supplier": {
+    "name": "Highveld Generics (Pty) Ltd.",
+    "country": "ZA",
+    "contact_name": "Thabo Mokgena, Key Account Manager",
+    "contact_email": "support@highveldgenerics.co.za"
+  },
+  "quotation_ref": "HG-QON-0119",
+  "buyer_reference": "AXMED-RFQ 2026-0030",
+  "document_date": "2026-09-08",
+  "valid_until": "2026-10-03",
+  "currency": "ZAR",
+  "incoterm": "via",
+  "named_place": "Tema",
+  "payment_terms": "Letter of credit",
+  "lines": [],
+  "evidence": {
+    "quotation_ref": "HG-QON-0119",
+    "document_date": "08 September 2026",
+    "valid_until": "03 October 2026",
+    "currency": "Zar",
+    "buyer_reference": "Request for quotation AXMED-RFQ 2026-0030",
+    "incoterm": "via Tema",
+    "named_place": "Tema"
+  },
+  "warnings": [
+    "Document is a quotation template with reference to 'item 02 (Lobes Zn)' in terms and conditions, but the actual pricing schedule with product lines is not visible in the provided document - only page 1 of 1 is shown and it contains header information and terms only. The pricing schedule with line items appears to be on a separate page or section not captured in this image. Instruction found in document: 'In case of' appears incomplete, suggesting document may be truncated."
+  ]
+}

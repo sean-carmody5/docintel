@@ -1,0 +1,231 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Bachi Pharma Limited Ltd.",
+    "country": "IN",
+    "contact_name": null,
+    "contact_email": null
+  },
+  "quotation_ref": "BRM07042025",
+  "buyer_reference": null,
+  "document_date": "2025-04-07",
+  "valid_until": "2026-08-01",
+  "currency": "INR",
+  "incoterm": "EXW",
+  "named_place": "Starch plant",
+  "payment_terms": null,
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Granulum",
+      "inn": null,
+      "strength": "80 mg / 2 ml",
+      "dosage_form": "solution for injection",
+      "uom": null,
+      "units_per_pack": 100,
+      "packaging": "glass vials",
+      "price_per_pack": 1175.0,
+      "price_per_uom": null,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 100,
+          "max_packs": 990,
+          "price_per_pack": 1175.0
+        },
+        {
+          "min_packs": 2000,
+          "max_packs": null,
+          "price_per_pack": 1175.0
+        }
+      ],
+      "currency": "INR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 2000,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Granatum",
+        "strength": "80 mg / 2 ml",
+        "dosage_form": "solution for injection",
+        "packaging": "glass vials",
+        "price_per_pack": "Rs1,1,175 per pack for 2,000 or more packs"
+      },
+      "illegible": [
+        "units_per_pack"
+      ],
+      "notes": [
+        "Subject to storage and handling requirements",
+        "Minimum order 500 packs stated in context but appears to conflict with 2000 packs minimum"
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Blisters",
+      "inn": null,
+      "strength": null,
+      "dosage_form": null,
+      "uom": null,
+      "units_per_pack": 100,
+      "packaging": "blisters",
+      "price_per_pack": 1382.0,
+      "price_per_uom": null,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "INR",
+      "quantity": 400,
+      "extended_amount": null,
+      "moq_packs": 500,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Blisters 400 per case",
+        "packaging": "100 blister Vols per case",
+        "price_per_pack": "Rs1,382 per pack 500 packs"
+      },
+      "illegible": [
+        "strength",
+        "dosage_form",
+        "quantity"
+      ],
+      "notes": [
+        "Subject to storage and handling requirements",
+        "Text indicates '400 per case' but structure unclear"
+      ]
+    },
+    {
+      "line_no": 3,
+      "product_name": "ELS",
+      "inn": null,
+      "strength": "1.75 lg",
+      "dosage_form": null,
+      "uom": null,
+      "units_per_pack": null,
+      "packaging": "pads",
+      "price_per_pack": null,
+      "price_per_uom": null,
+      "price_basis": "unknown",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": null,
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 5000,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "ELS",
+        "strength": "1.75 lg",
+        "moq_packs": "for 1,000 or more pads. Minimum ordered 5,000 pads"
+      },
+      "illegible": [
+        "price_per_pack",
+        "units_per_pack",
+        "dosage_form"
+      ],
+      "notes": [
+        "Minimum order stated as 5,000 pads",
+        "Pricing information not legible"
+      ]
+    },
+    {
+      "line_no": 4,
+      "product_name": "ELS",
+      "inn": null,
+      "strength": "1.75 lg",
+      "dosage_form": null,
+      "uom": null,
+      "units_per_pack": null,
+      "packaging": "pads",
+      "price_per_pack": null,
+      "price_per_uom": null,
+      "price_basis": "unknown",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": null,
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 2000,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "ELS",
+        "strength": "1.75 lg",
+        "moq_packs": "for 1,000 or more pads. Minimum ordered 2,000 pads"
+      },
+      "illegible": [
+        "price_per_pack",
+        "units_per_pack",
+        "dosage_form"
+      ],
+      "notes": [
+        "Duplicate or variant of Line 3 with different MOQ (2,000 pads vs 5,000)",
+        "Pricing information not legible"
+      ]
+    },
+    {
+      "line_no": 5,
+      "product_name": "Liquid concentrate",
+      "inn": null,
+      "strength": "2 mg/2ml",
+      "dosage_form": "intravenous vial",
+      "uom": null,
+      "units_per_pack": 25,
+      "packaging": "powder packs",
+      "price_per_pack": null,
+      "price_per_uom": null,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 250,
+          "max_packs": 1249,
+          "price_per_pack": 157.46
+        },
+        {
+          "min_packs": 1250,
+          "max_packs": 2249,
+          "price_per_pack": 172.56
+        }
+      ],
+      "currency": "INR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 5000,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Liquid concentrate",
+        "strength": "2 mg/2ml",
+        "dosage_form": "intravenous vial",
+        "packaging": "per pack of 25 Vol powder packs",
+        "price_tiers": "EBS 1.57.46 per pack for 250 to 1,249 packs. KBS 1.72.56 per pack for 1,250 to 2,249 packs"
+      },
+      "illegible": [],
+      "notes": [
+        "MOQ of 5,000 packs stated but pricing tiers only go to 2,249 packs",
+        "Pricing notation appears corrupted (EBS, KBS prefixes unclear)"
+      ]
+    }
+  ],
+  "evidence": {},
+  "warnings": [
+    "Document appears rotated and heavily corrupted with poor OCR quality",
+    "Multiple sections are illegible or contain garbled text",
+    "Product names and specifications are unclear due to scanning/OCR issues",
+    "Pricing structure is ambiguous - unclear if prices are per pack or per unit",
+    "MOQ quantities and pack sizes are inconsistent or unclear in several lines",
+    "Line numbering and organization is confusing (multiple 'Item' entries with similar descriptions)",
+    "Payment terms mentioned but illegible",
+    "Incoterm inference based on 'EXN' which may be corruption of 'EXW'"
+  ]
+}

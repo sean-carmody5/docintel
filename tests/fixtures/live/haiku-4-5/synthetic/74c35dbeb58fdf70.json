@@ -1,0 +1,285 @@
+{
+  "document_type": "price_list",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Highveld Generics (Pty) Ltd.",
+    "country": "ZA",
+    "contact_name": null,
+    "contact_email": null
+  },
+  "quotation_ref": "HG-Q26-0105",
+  "buyer_reference": null,
+  "document_date": "2026-09-10",
+  "valid_until": "2026-12-09",
+  "currency": "ZAR",
+  "incoterm": "EXW",
+  "named_place": "Isando",
+  "payment_terms": "Prices exclude 15% VAT where applicable",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Highmoxdt 250",
+      "inn": "Amoxicillin",
+      "strength": "250 mg",
+      "dosage_form": "Dispersible tablet",
+      "uom": "tablet",
+      "units_per_pack": 10,
+      "packaging": "Alu-Alu blister, 10 tablets",
+      "price_per_pack": 2.405,
+      "price_per_uom": 0.2405,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 250,
+          "max_packs": 1249,
+          "price_per_pack": 2.405
+        },
+        {
+          "min_packs": 1250,
+          "max_packs": 4999,
+          "price_per_pack": 2.206
+        },
+        {
+          "min_packs": 5000,
+          "max_packs": null,
+          "price_per_pack": 1.969
+        }
+      ],
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": 35,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Highmoxdt 250",
+        "inn": "Amoxicillin",
+        "strength": "250 mg",
+        "dosage_form": "Dispersible tablet",
+        "uom": "tablet",
+        "units_per_pack": "10",
+        "packaging": "Alu-Alu blister, 10 tablets",
+        "price_tiers": "tier 1: 250-1249 packs @ 2.405; tier 2: 1250-4999 packs @ 2.206; tier 3: 5000+ packs @ 1.969",
+        "lead_time_days": "35"
+      },
+      "illegible": [],
+      "notes": []
+    },
+    {
+      "line_no": 2,
+      "product_name": "Highcetam 500",
+      "inn": "Paracetamol",
+      "strength": "500 mg",
+      "dosage_form": "Tablet",
+      "uom": "tablet",
+      "units_per_pack": 20,
+      "packaging": "Alu-Alu blister, 20 tablets",
+      "price_per_pack": 1.956,
+      "price_per_uom": 0.0978,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 100,
+          "max_packs": 999,
+          "price_per_pack": 1.956
+        },
+        {
+          "min_packs": 1000,
+          "max_packs": 4999,
+          "price_per_pack": 1.852
+        },
+        {
+          "min_packs": 5000,
+          "max_packs": null,
+          "price_per_pack": 1.642
+        }
+      ],
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": 63,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Highcetam 500",
+        "inn": "Paracetamol",
+        "strength": "500 mg",
+        "dosage_form": "Tablet",
+        "uom": "tablet",
+        "units_per_pack": "20",
+        "packaging": "Alu-Alu blister, 20 tablets",
+        "price_tiers": "tier 1: 100-999 packs @ 1.956; tier 2: 1000-4999 packs @ 1.852; tier 3: 5000+ packs @ 1.642",
+        "lead_time_days": "63"
+      },
+      "illegible": [],
+      "notes": []
+    },
+    {
+      "line_no": 3,
+      "product_name": "Thiazex 25",
+      "inn": "Hydrochlorothiazide",
+      "strength": "25 mg",
+      "dosage_form": "Tablet",
+      "uom": "tablet",
+      "units_per_pack": 100,
+      "packaging": "HDPE bottle, 100 tablets",
+      "price_per_pack": 12.37,
+      "price_per_uom": 0.1237,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 500,
+          "max_packs": 4999,
+          "price_per_pack": 12.37
+        },
+        {
+          "min_packs": 5000,
+          "max_packs": 24999,
+          "price_per_pack": 11.595
+        },
+        {
+          "min_packs": 25000,
+          "max_packs": null,
+          "price_per_pack": 10.409
+        }
+      ],
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": 60,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Thiazex 25",
+        "inn": "Hydrochlorothiazide",
+        "strength": "25 mg",
+        "dosage_form": "Tablet",
+        "uom": "tablet",
+        "units_per_pack": "100",
+        "packaging": "HDPE bottle, 100 tablets",
+        "price_tiers": "tier 1: 500-4999 packs @ 12.37; tier 2: 5000-24999 packs @ 11.595; tier 3: 25000+ packs @ 10.409",
+        "lead_time_days": "60"
+      },
+      "illegible": [],
+      "notes": []
+    },
+    {
+      "line_no": 4,
+      "product_name": "Highdip 5",
+      "inn": "Amlodipine",
+      "strength": "5 mg",
+      "dosage_form": "Tablet",
+      "uom": "tablet",
+      "units_per_pack": 10,
+      "packaging": "Alu-Alu blister, 10 tablets",
+      "price_per_pack": 1.7,
+      "price_per_uom": 0.17,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 500,
+          "max_packs": 2499,
+          "price_per_pack": 1.7
+        },
+        {
+          "min_packs": 2500,
+          "max_packs": 12499,
+          "price_per_pack": 1.59
+        },
+        {
+          "min_packs": 12500,
+          "max_packs": null,
+          "price_per_pack": 1.429
+        }
+      ],
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": 42,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Highdip 5",
+        "inn": "Amlodipine",
+        "strength": "5 mg",
+        "dosage_form": "Tablet",
+        "uom": "tablet",
+        "units_per_pack": "10",
+        "packaging": "Alu-Alu blister, 10 tablets",
+        "price_tiers": "tier 1: 500-2499 packs @ 1.7; tier 2: 2500-12499 packs @ 1.59; tier 3: 12500+ packs @ 1.429",
+        "lead_time_days": "42"
+      },
+      "illegible": [],
+      "notes": []
+    },
+    {
+      "line_no": 5,
+      "product_name": "Chlorex 7.1%",
+      "inn": "Chlorhexidine digluconate",
+      "strength": "7.1% w/w",
+      "dosage_form": "Gel, 20 g tube",
+      "uom": "tube",
+      "units_per_pack": 1,
+      "packaging": "Laminated tube, 1 tube",
+      "price_per_pack": 6.633,
+      "price_per_uom": 6.633,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 500,
+          "max_packs": 4999,
+          "price_per_pack": 6.633
+        },
+        {
+          "min_packs": 5000,
+          "max_packs": 19999,
+          "price_per_pack": 5.861
+        },
+        {
+          "min_packs": 20000,
+          "max_packs": null,
+          "price_per_pack": 5.263
+        }
+      ],
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": 42,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Chlorex 7.1%",
+        "inn": "Chlorhexidine digluconate",
+        "strength": "7.1% w/w",
+        "dosage_form": "Gel, 20 g tube",
+        "uom": "tube",
+        "units_per_pack": "1",
+        "packaging": "Laminated tube, 1 tube",
+        "price_tiers": "tier 1: 500-4999 packs @ 6.633; tier 2: 5000-19999 packs @ 5.861; tier 3: 20000+ packs @ 5.263",
+        "lead_time_days": "42"
+      },
+      "illegible": [],
+      "notes": []
+    }
+  ],
+  "evidence": {
+    "quotation_ref": "HG-Q26-0105",
+    "document_date": "2026-09-10",
+    "valid_until": "2026-12-09",
+    "currency": "ZAR",
+    "incoterm": "EXW Isando",
+    "supplier_name": "Highveld Generics (Pty) Ltd.",
+    "supplier_country": "ZA"
+  },
+  "warnings": []
+}

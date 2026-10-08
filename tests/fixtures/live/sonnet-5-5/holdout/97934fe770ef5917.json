@@ -1,0 +1,129 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Highveld Generics (Pty) Ltd.",
+    "country": "ZA",
+    "contact_name": "Thabo Mokoena",
+    "contact_email": "export@highveldgenerics.co.za"
+  },
+  "quotation_ref": "HG-Q26-0119",
+  "buyer_reference": "AXMED-RFQ-2026-0393",
+  "document_date": "2026-08-17",
+  "valid_until": "2026-11-15",
+  "currency": "ZAR",
+  "incoterm": "EXW",
+  "named_place": "Isando",
+  "payment_terms": "30 days from statement, prices exclude 15% VAT",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Thiazex 25",
+      "inn": "Hydrochlorothiazide",
+      "strength": "25 mg",
+      "dosage_form": "Tablet",
+      "uom": "tablet",
+      "units_per_pack": 1000,
+      "packaging": "Bulk HDPE jar 1000 tablets/pack",
+      "price_per_pack": 81.2,
+      "price_per_uom": 0.0812,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 10000,
+      "lead_time_days": 42,
+      "cold_chain": null,
+      "superseded": {
+        "field": "price_per_uom",
+        "old": 0.0883,
+        "new": 0.0812,
+        "reason": "Terms and conditions item 4: 'the unit price should read ZAR 0.0812, not ZAR 0.0883 as printed in the schedule above.'"
+      },
+      "evidence": {
+        "line_no": "1 Thiazex 25",
+        "product_name": "Thiazex 25",
+        "inn": "Hydrochlorothiazide",
+        "strength": "25 mg Tablet",
+        "dosage_form": "25 mg Tablet",
+        "packaging": "Bulk HDPE jar 1000 tablets/pack",
+        "uom": "tablet",
+        "units_per_pack": "1000 tablets/pack",
+        "price_per_uom": "the unit price should read ZAR 0.0812",
+        "price_per_pack": "81.200",
+        "price_basis": "Unit price is the price per unit of measure (UOM) shown.",
+        "currency": "ZAR",
+        "moq_packs": "10,000",
+        "lead_time_days": "42",
+        "superseded": "the unit price should read ZAR 0.0812, not ZAR 0.0883 as printed in the schedule above"
+      },
+      "illegible": [],
+      "notes": [
+        "Unit price corrected in T&C item 4; the printed pack price 81.200 is consistent with the corrected unit price (0.0812 x 1000).",
+        "Lead time column printed as '42' (days); MOQ 10,000 packs.",
+        "Not PQ; national registrations only; registration at destination: application filed. Shelf life 24 months; store below 30 C, dry."
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Highmiso 200",
+      "inn": "Misoprostol",
+      "strength": "200 mcg",
+      "dosage_form": "Tablet",
+      "uom": "tablet",
+      "units_per_pack": 60,
+      "packaging": "HDPE bottle 60 tablets/pack",
+      "price_per_pack": 147.96,
+      "price_per_uom": 2.466,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 2000,
+      "lead_time_days": 28,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "line_no": "2 Highmiso 200",
+        "product_name": "Highmiso 200",
+        "inn": "Misoprostol",
+        "strength": "200 mcg Tablet",
+        "dosage_form": "200 mcg Tablet",
+        "packaging": "HDPE bottle 60 tablets/pack",
+        "uom": "tablet",
+        "units_per_pack": "60 tablets/pack",
+        "price_per_uom": "2.466",
+        "price_per_pack": "147.96",
+        "price_basis": "Unit price is the price per unit of measure (UOM) shown.",
+        "currency": "ZAR",
+        "moq_packs": "2,000",
+        "lead_time_days": "28"
+      },
+      "illegible": [],
+      "notes": [
+        "WHO PQ ref. HA290; registration at destination: application filed. Shelf life 36 months; store below 30 C, dry.",
+        "Pack price 147.96 equals 60 x 2.466."
+      ]
+    }
+  ],
+  "evidence": {
+    "supplier": "HIGHVELD GENERICS (PTY) LTD.",
+    "quotation_ref": "Quotation no. HG-Q26-0119",
+    "buyer_reference": "AXMED-RFQ-2026-0393",
+    "document_date": "Issue date: 17 August 2026",
+    "valid_until": "Valid until: 15 November 2026",
+    "currency": "ZAR",
+    "incoterm": "EXW Isando",
+    "named_place": "EXW Isando",
+    "payment_terms": "30 days from statement, prices exclude 15% VAT"
+  },
+  "warnings": [
+    "Line 1 unit price was corrected within the document (T&C item 4): 0.0883 printed in schedule, corrected to 0.0812; corrected value used.",
+    "Prices exclude 15% VAT.",
+    "T&C mentions cold-chain items, but neither quoted line is stated as cold chain (storage below 30 C)."
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Wanjiru Kamau",
+    "country": null,
+    "contact_name": "Wanjiru Kamau",
+    "contact_email": null
+  },
+  "quotation_ref": "BPL/QT/26/0132",
+  "buyer_reference": "AXMED-RFQ-2026-0263",
+  "document_date": "2026-08-19",
+  "valid_until": "2026-09-18",
+  "currency": "KES",
+  "incoterm": "EXW",
+  "named_place": "Nairobi plant",
+  "payment_terms": "30 days from delivery",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Baothiaz 25",
+      "inn": "Hydrochlorothiazide",
+      "strength": "25 mg",
+      "dosage_form": null,
+      "uom": "tablet",
+      "units_per_pack": 30,
+      "packaging": null,
+      "price_per_pack": 36.54,
+      "price_per_uom": 1.218,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 1,
+          "max_packs": 2499,
+          "price_per_pack": 36.54
+        },
+        {
+          "min_packs": 10000,
+          "max_packs": null,
+          "price_per_pack": 29.174
+        }
+      ],
+      "currency": "KES",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 10000,
+      "lead_time_days": 21,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Baothiaz 25",
+        "inn": "Hydrochlorothiazide",
+        "strength": "25 mg",
+        "units_per_pack": "pack of 30",
+        "price_tiers": "KES 36.540 per pack of 30 up to 2,499 packs, 29.174 from 10,000 packs",
+        "moq_packs": "MOQ 10,000 packs",
+        "lead_time_days": "lead time 21 days"
+      },
+      "illegible": [],
+      "notes": [
+        "MOQ applies across both tiers"
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Baoalben 400",
+      "inn": "Albendazole",
+      "strength": "400 mg",
+      "dosage_form": null,
+      "uom": "tablet",
+      "units_per_pack": 100,
+      "packaging": null,
+      "price_per_pack": 537.0,
+      "price_per_uom": 5.37,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 1,
+          "max_packs": 1249,
+          "price_per_pack": 537.0
+        },
+        {
+          "min_packs": 5000,
+          "max_packs": null,
+          "price_per_pack": 452.94
+        }
+      ],
+      "currency": "KES",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Baoalben 400",
+        "inn": "Albendazole",
+        "strength": "400 mg",
+        "units_per_pack": "pack of 100",
+        "price_tiers": "KES 537.00 per pack of 100 up to 1,249 packs, 452.94 from 5,000 packs"
+      },
+      "illegible": [],
+      "notes": []
+    }
+  ],
+  "evidence": {
+    "document_date": "[19/08/2026, 11:18:14] Mattia Albergante: Hi Wanjiru, following up on AXMED-RFQ-2026-0263.",
+    "valid_until": "Valid to 18 Sep",
+    "quotation_ref": "Formal quotation BPL/QT/26/0132 to follow by email tomorrow",
+    "buyer_reference": "AXMED-RFQ-2026-0263",
+    "currency": "All KES",
+    "incoterm": "EXW Nairobi plant",
+    "named_place": "Nairobi plant",
+    "payment_terms": "30 days from delivery"
+  },
+  "warnings": [
+    "Supplier identity uncertain: only a contact name 'Wanjiru Kamau' is provided; no formal company name given",
+    "Alternative presentation of Baoalben 400 mentioned ('larger presentation at KES 7.432 per tablet on request') but explicitly not included in this offer, so not extracted as a line",
+    "Chat format with timestamps; formal quotation reference noted but document itself is informal communication",
+    "Valid until date stated as '18 Sep' without year specified; assuming 2026 based on document date"
+  ]
+}

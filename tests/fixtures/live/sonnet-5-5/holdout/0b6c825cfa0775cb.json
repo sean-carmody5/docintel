@@ -1,0 +1,204 @@
+{
+  "document_type": "price_list",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Highveld Generics (Pty) Ltd.",
+    "country": "ZA",
+    "contact_name": null,
+    "contact_email": "tenders@highveldgenerics.co.za"
+  },
+  "quotation_ref": "HG-Q26-0105",
+  "buyer_reference": null,
+  "document_date": "2026-06-17",
+  "valid_until": "2026-07-17",
+  "currency": "ZAR",
+  "incoterm": "EXW",
+  "named_place": "Isando",
+  "payment_terms": null,
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Dexex 4",
+      "inn": "Dexamethasone",
+      "strength": "4 mg/mL",
+      "dosage_form": "Solution for injection",
+      "uom": "ampoule",
+      "units_per_pack": 10,
+      "packaging": "Amber glass ampoule, 10 ampoules",
+      "price_per_pack": 18.81,
+      "price_per_uom": 1.881,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 200,
+          "max_packs": 1999,
+          "price_per_pack": 18.81
+        },
+        {
+          "min_packs": 2000,
+          "max_packs": 7999,
+          "price_per_pack": 17.446
+        },
+        {
+          "min_packs": 8000,
+          "max_packs": null,
+          "price_per_pack": 16.185
+        }
+      ],
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 200,
+      "lead_time_days": 60,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Dexex 4",
+        "inn": "Dexamethasone",
+        "strength": "4 mg/mL",
+        "dosage_form": "Solution for injection",
+        "packaging": "Amber glass ampoule, 10 ampoules",
+        "uom": "ampoule",
+        "units_per_pack": "\"units_per_pack\": 10",
+        "price_per_pack": "\"price_per_pack\": 18.81",
+        "lead_time_days": "\"lead_time_days\": 60",
+        "moq_packs": "\"min_packs\": 200",
+        "currency": "ZAR"
+      },
+      "illegible": [],
+      "notes": [
+        "Price per ampoule derived from lowest-quantity tier pack price / 10",
+        "MOQ taken from lowest tier min_packs",
+        "Shelf life 48 months"
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Highmag 50%",
+      "inn": "Magnesium sulfate",
+      "strength": "50% w/v, 10 mL",
+      "dosage_form": "Solution for injection",
+      "uom": "ampoule",
+      "units_per_pack": 50,
+      "packaging": "Amber glass ampoule, 50 ampoules",
+      "price_per_pack": 188.5,
+      "price_per_uom": 3.77,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 200,
+          "max_packs": 1999,
+          "price_per_pack": 188.5
+        },
+        {
+          "min_packs": 2000,
+          "max_packs": 7999,
+          "price_per_pack": 167.85
+        },
+        {
+          "min_packs": 8000,
+          "max_packs": null,
+          "price_per_pack": 154.15
+        }
+      ],
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 200,
+      "lead_time_days": 42,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Highmag 50%",
+        "inn": "Magnesium sulfate",
+        "strength": "50% w/v, 10 mL",
+        "dosage_form": "Solution for injection",
+        "packaging": "Amber glass ampoule, 50 ampoules",
+        "uom": "ampoule",
+        "units_per_pack": "\"units_per_pack\": 50",
+        "price_per_pack": "\"price_per_pack\": 188.5",
+        "lead_time_days": "\"lead_time_days\": 42",
+        "moq_packs": "\"min_packs\": 200",
+        "currency": "ZAR"
+      },
+      "illegible": [],
+      "notes": [
+        "Price per ampoule derived from lowest-quantity tier pack price / 50",
+        "MOQ taken from lowest tier min_packs",
+        "Shelf life 24 months"
+      ]
+    },
+    {
+      "line_no": 3,
+      "product_name": "Nidaex 400",
+      "inn": "Metronidazole",
+      "strength": "400 mg",
+      "dosage_form": "Tablet",
+      "uom": "tablet",
+      "units_per_pack": 100,
+      "packaging": "PVC/Alu blister, 100 tablets",
+      "price_per_pack": 22.93,
+      "price_per_uom": 0.2293,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 500,
+          "max_packs": 4999,
+          "price_per_pack": 22.93
+        },
+        {
+          "min_packs": 5000,
+          "max_packs": 24999,
+          "price_per_pack": 21.544
+        },
+        {
+          "min_packs": 25000,
+          "max_packs": null,
+          "price_per_pack": 19.239
+        }
+      ],
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 500,
+      "lead_time_days": 21,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Nidaex 400",
+        "inn": "Metronidazole",
+        "strength": "400 mg",
+        "dosage_form": "Tablet",
+        "packaging": "PVC/Alu blister, 100 tablets",
+        "uom": "tablet",
+        "units_per_pack": "\"units_per_pack\": 100",
+        "price_per_pack": "\"price_per_pack\": 22.93",
+        "lead_time_days": "\"lead_time_days\": 21",
+        "moq_packs": "\"min_packs\": 500",
+        "currency": "ZAR"
+      },
+      "illegible": [],
+      "notes": [
+        "Price per tablet derived from lowest-quantity tier pack price / 100",
+        "MOQ taken from lowest tier min_packs",
+        "Shelf life 36 months"
+      ]
+    }
+  ],
+  "evidence": {
+    "supplier": "Highveld Generics (Pty) Ltd.",
+    "quotation_ref": "HG-Q26-0105",
+    "document_date": "2026-06-17",
+    "valid_until": "2026-07-17",
+    "currency": "ZAR",
+    "incoterm": "EXW Isando",
+    "named_place": "EXW Isando"
+  },
+  "warnings": [
+    "Prices exclude 15% VAT where applicable. Partial shipments allowed.",
+    "Tier price per pack values are used as stated; per-unit prices are derived."
+  ]
+}

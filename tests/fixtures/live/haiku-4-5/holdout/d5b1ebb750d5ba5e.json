@@ -1,0 +1,136 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Delta Formagioni S.r.l.",
+    "country": "IT",
+    "contact_name": "Marvin Ricci",
+    "contact_email": null
+  },
+  "quotation_ref": "AAMRS-RDZ-2025-C064",
+  "buyer_reference": null,
+  "document_date": null,
+  "valid_until": null,
+  "currency": "EUR",
+  "incoterm": "FCA",
+  "named_place": "Bologna",
+  "payment_terms": null,
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Umlaitium",
+      "inn": "Umlaitium",
+      "strength": "20 mg",
+      "dosage_form": null,
+      "uom": "vial",
+      "units_per_pack": 100,
+      "packaging": "10ml vials",
+      "price_per_pack": 1500.0,
+      "price_per_uom": 15.0,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "EUR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 5000,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Umlaitium",
+        "strength": "20 mg",
+        "units_per_pack": "100 x 10ml vials per pack",
+        "moq_packs": "Minimum order 5,000 per pack",
+        "price_per_uom": "EUR 15,00 / unit"
+      },
+      "illegible": [],
+      "notes": [
+        "Item identifier: ZE-1",
+        "Pack contains 100 x 10ml vials"
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Umlaitium",
+      "inn": "Umlaitium",
+      "strength": "20 mg",
+      "dosage_form": null,
+      "uom": "vial",
+      "units_per_pack": 50,
+      "packaging": "10ml vials",
+      "price_per_pack": 625.0,
+      "price_per_uom": 12.5,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "EUR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 3000,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Umlaitium",
+        "strength": "20 mg",
+        "units_per_pack": "50 x 10ml vials per pack",
+        "moq_packs": "Minimum order 3,000 per pack",
+        "price_per_uom": "EUR 12,50 / unit"
+      },
+      "illegible": [],
+      "notes": [
+        "Item identifier: ZE-2",
+        "Pack contains 50 x 10ml vials",
+        "Full carton couverture 24",
+        "Delivered in colour glass vials with PA cap and PTFE-lined closure"
+      ]
+    },
+    {
+      "line_no": 3,
+      "product_name": "Umlaitium",
+      "inn": "Umlaitium",
+      "strength": "50 mg",
+      "dosage_form": null,
+      "uom": "vial",
+      "units_per_pack": 30,
+      "packaging": "5ml vials",
+      "price_per_pack": 255.0,
+      "price_per_uom": 8.5,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "EUR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 2000,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Umlaitium",
+        "strength": "50 mg",
+        "units_per_pack": "30 x 5ml vials per pack",
+        "moq_packs": "Minimum order 2,000 per pack",
+        "price_per_uom": "EUR 8,50 / unit"
+      },
+      "illegible": [],
+      "notes": [
+        "Item identifier: Disposition AB",
+        "Pack contains 30 x 5ml vials",
+        "Delivered in colour glass vials with PA cap and PTFE-lined closure",
+        "Specifications as per your consultation"
+      ]
+    }
+  ],
+  "evidence": {},
+  "warnings": [
+    "Document image quality is poor with blurred and illegible text throughout",
+    "P.S. section is largely illegible; contains reference to USD 4,000s and EUR 8,000 but context is unclear",
+    "Product names appear unusual (Umlaitium); these may be placeholder or proprietary names but recorded as written",
+    "Header address details are partially illegible",
+    "Some sentences in the document are grammatically unclear or appear garbled (e.g. 'Any both Sampled is your order and execute as per despatch for any classification')",
+    "No document issue date is clearly legible on the quotation",
+    "Recipient name spelling uncertain ('Cindy Dominguen' may be misread due to image quality)"
+  ]
+}

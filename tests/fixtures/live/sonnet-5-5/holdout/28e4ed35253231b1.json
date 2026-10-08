@@ -1,0 +1,33 @@
+{
+  "document_type": "correspondence",
+  "contains_prices": false,
+  "supplier": {
+    "name": "Amman Pharma Industries Co.",
+    "country": "JO",
+    "contact_name": "Rania Haddad",
+    "contact_email": "rania.haddad@ammanpharma.jo"
+  },
+  "quotation_ref": "API/26/0130",
+  "buyer_reference": "AXMED-RFQ-2026-0295",
+  "document_date": "2026-09-23",
+  "valid_until": "2026-11-22",
+  "currency": "USD",
+  "incoterm": "FCA",
+  "named_place": "Amman (JOAMM)",
+  "payment_terms": null,
+  "lines": [],
+  "evidence": {
+    "buyer_reference": "AXMED-RFQ-2026-0295",
+    "currency": "Prices are in USD",
+    "document_date": "Date: Wed, 23 Sep 2026 10:54:00 +0300",
+    "incoterm": "FCA Amman (JOAMM)",
+    "named_place": "FCA Amman (JOAMM)",
+    "quotation_ref": "API/26/0130",
+    "valid_until": "valid to 22 November 2026",
+    "supplier": "Rania Haddad\nExport Manager | Amman Pharma Industries Co."
+  },
+  "warnings": [
+    "The email body contains no product lines or prices. It says the quotation API/26/0130 is attached and covers 6 lines, but no attachment was provided. Only the cover email was extracted, so lines is empty and contains_prices is false.",
+    "The attached quotation must be reviewed separately to get the 6 lines and their prices."
+  ]
+}

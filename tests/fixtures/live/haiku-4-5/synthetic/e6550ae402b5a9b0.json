@@ -1,0 +1,116 @@
+{
+  "document_type": "quotation",
+  "contains_prices": false,
+  "supplier": {
+    "name": "Meridian Pharma Ltd",
+    "country": "IN",
+    "contact_name": "Priya Nair",
+    "contact_email": null
+  },
+  "quotation_ref": "MPL Q 26-0118",
+  "buyer_reference": "AXMED-RFQ-2026-0319",
+  "document_date": "2026-09-27",
+  "valid_until": "2026-11-26",
+  "currency": "USD",
+  "incoterm": "CIF",
+  "named_place": "Mombasa",
+  "payment_terms": "30% advance, balance against shipping documents.",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Meridip 5",
+      "inn": "Amlodipine",
+      "strength": "5 mg",
+      "dosage_form": "Tablet",
+      "uom": "tablet",
+      "units_per_pack": 30,
+      "packaging": "PVC Alu blister",
+      "price_per_pack": null,
+      "price_per_uom": null,
+      "price_basis": "unknown",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "USD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 500,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "line_no": "1",
+        "product_name": "Meridip 5.",
+        "inn": "Amlodipine",
+        "strength": "5 mg",
+        "dosage_form": "Tablet",
+        "packaging": "PVC Alu blister",
+        "units_per_pack": "30 tablets/pack",
+        "uom": "tablet",
+        "moq_packs": "500"
+      },
+      "illegible": [
+        "price_per_pack"
+      ],
+      "notes": [
+        "List price column illegible in source document"
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Meriketa 50",
+      "inn": "Ketamine",
+      "strength": "50 mg/mL, 10 mL",
+      "dosage_form": "Solution for Injection",
+      "uom": "vial",
+      "units_per_pack": 10,
+      "packaging": "Clear glass vial with flip-off cap",
+      "price_per_pack": 21.0,
+      "price_per_uom": 2.1,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "USD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 500,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "line_no": "2",
+        "product_name": "Meriketa 50.",
+        "inn": "Ketamine",
+        "strength": "50 mg/mL, 10 mL",
+        "dosage_form": "Solution for Injection",
+        "packaging": "Clear glass vial with flip-off cap",
+        "units_per_pack": "10 vials/pack",
+        "uom": "vial",
+        "moq_packs": "500",
+        "price_per_pack": "21"
+      },
+      "illegible": [],
+      "notes": [
+        "Price derived: 21 USD per pack of 10 vials"
+      ]
+    }
+  ],
+  "evidence": {
+    "document_type": "quotation",
+    "document_date": "27 September 2026",
+    "valid_until": "26 November 2026",
+    "quotation_ref": "MPL Q 26-0118",
+    "buyer_reference": "Request for quotation AXMED-RFQ-2026-0319",
+    "supplier_name": "Meridian Pharma Ltd",
+    "supplier_country": "India",
+    "contact_name": "Priya Nair",
+    "currency": "USD",
+    "incoterm": "CIF Mombasa (KEMBA)",
+    "payment_terms": "30% advance, balance against shipping documents."
+  },
+  "warnings": [
+    "Right edge of page partially cut off, affecting last column header ('List Pr' appears truncated) and some numerical values in rightmost column",
+    "Line 1 (Meridip 5): List price column completely illegible",
+    "Terms and conditions section contains multiple illegible sections (items 1 and 3)",
+    "Document validity stated as 30 days from issue date in quotation text, but 'Valid upto' field shows 26 November 2026"
+  ]
+}

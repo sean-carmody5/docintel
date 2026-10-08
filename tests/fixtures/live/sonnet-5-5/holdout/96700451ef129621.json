@@ -1,0 +1,280 @@
+{
+  "document_type": "price_list",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Highveld Generics (Pty) Ltd.",
+    "country": "ZA",
+    "contact_name": "Thabo Mokoena",
+    "contact_email": "thabo@highveldgenerics.co.za"
+  },
+  "quotation_ref": "HG-Q26-0137",
+  "buyer_reference": "AXMED-RFQ-2026-0332",
+  "document_date": null,
+  "valid_until": "2026-08-21",
+  "currency": "ZAR",
+  "incoterm": "DAP",
+  "named_place": "Lusaka",
+  "payment_terms": "30 days from statement, prices exclude 15% VAT",
+  "lines": [
+    {
+      "line_no": null,
+      "product_name": "Dipex 5",
+      "inn": "Amlodipine",
+      "strength": "5 mg",
+      "dosage_form": "Tablet",
+      "uom": "tablet",
+      "units_per_pack": 10,
+      "packaging": "PVC/Alu blister",
+      "price_per_pack": 1.529,
+      "price_per_uom": 0.1529,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 100,
+          "max_packs": 499,
+          "price_per_pack": 1.529
+        },
+        {
+          "min_packs": 500,
+          "max_packs": 1999,
+          "price_per_pack": 1.411
+        },
+        {
+          "min_packs": 2000,
+          "max_packs": null,
+          "price_per_pack": 1.314
+        }
+      ],
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 2000,
+      "lead_time_days": 45,
+      "cold_chain": false,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Dipex 5",
+        "inn": "Amlodipine",
+        "strength": "5 mg",
+        "dosage_form": "Tablet",
+        "packaging": "PVC/Alu blister",
+        "uom": "tablet",
+        "units_per_pack": "10",
+        "price_per_pack": "1.529",
+        "price_tiers": "100 | 1.529 | 500 | 1.411 | 2000 | 1.314",
+        "moq_packs": "2000",
+        "lead_time_days": "45",
+        "cold_chain": "No",
+        "currency": "ZAR"
+      },
+      "illegible": [],
+      "notes": [
+        "Price per tablet derived: tier 1 pack price / 10.",
+        "MOQ (2000 packs) is higher than the tier 1 and tier 2 start quantities, so lower tiers are effectively unreachable below MOQ.",
+        "Terms sheet: orders below MOQ attract a 12% surcharge on the unit price.",
+        "Prices exclude 15% VAT.",
+        "Item code HIG-AMLODIPI. Tier max quantities inferred from next tier start."
+      ]
+    },
+    {
+      "line_no": null,
+      "product_name": "Highceft 1",
+      "inn": "Ceftriaxone",
+      "strength": "1 g",
+      "dosage_form": "Powder for injection",
+      "uom": "vial",
+      "units_per_pack": 10,
+      "packaging": "Clear glass vial with flip-off cap",
+      "price_per_pack": 64.06,
+      "price_per_uom": 6.406,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 100,
+          "max_packs": 999,
+          "price_per_pack": 64.06
+        },
+        {
+          "min_packs": 1000,
+          "max_packs": 4999,
+          "price_per_pack": 58.448
+        },
+        {
+          "min_packs": 5000,
+          "max_packs": null,
+          "price_per_pack": 54.95
+        }
+      ],
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 2000,
+      "lead_time_days": 30,
+      "cold_chain": false,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Highceft 1",
+        "inn": "Ceftriaxone",
+        "strength": "1 g",
+        "dosage_form": "Powder for injection",
+        "packaging": "Clear glass vial with flip-off cap",
+        "uom": "vial",
+        "units_per_pack": "10",
+        "price_per_pack": "64.06",
+        "price_tiers": "100 | 64.06 | 1000 | 58.448 | 5000 | 54.95",
+        "moq_packs": "2000",
+        "lead_time_days": "30",
+        "cold_chain": "No",
+        "currency": "ZAR"
+      },
+      "illegible": [],
+      "notes": [
+        "Price per vial derived: tier 1 pack price / 10.",
+        "MOQ (2000 packs) is higher than the tier 1 and tier 2 start quantities.",
+        "Terms sheet: orders below MOQ attract a 12% surcharge on the unit price.",
+        "Prices exclude 15% VAT.",
+        "Item code HIG-CEFTRIAX. Tier max quantities inferred from next tier start."
+      ]
+    },
+    {
+      "line_no": null,
+      "product_name": "Highzith 500",
+      "inn": "Azithromycin",
+      "strength": "500 mg",
+      "dosage_form": "Film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 30,
+      "packaging": "Alu-Alu blister",
+      "price_per_pack": 69.75,
+      "price_per_uom": 2.325,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 200,
+          "max_packs": 999,
+          "price_per_pack": 69.75
+        },
+        {
+          "min_packs": 1000,
+          "max_packs": 3999,
+          "price_per_pack": 64.215
+        },
+        {
+          "min_packs": 4000,
+          "max_packs": null,
+          "price_per_pack": 58.057
+        }
+      ],
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 5000,
+      "lead_time_days": 60,
+      "cold_chain": false,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Highzith 500",
+        "inn": "Azithromycin",
+        "strength": "500 mg",
+        "dosage_form": "Film-coated tablet",
+        "packaging": "Alu-Alu blister",
+        "uom": "tablet",
+        "units_per_pack": "30",
+        "price_per_pack": "69.75",
+        "price_tiers": "200 | 69.75 | 1000 | 64.215 | 4000 | 58.057",
+        "moq_packs": "5000",
+        "lead_time_days": "60",
+        "cold_chain": "No",
+        "currency": "ZAR"
+      },
+      "illegible": [],
+      "notes": [
+        "Price per tablet derived: tier 1 pack price / 30.",
+        "MOQ (5000 packs) is higher than all tier start quantities.",
+        "Terms sheet: orders below MOQ attract a 12% surcharge on the unit price.",
+        "Prices exclude 15% VAT.",
+        "Item code HIG-AZITHROM. Tier max quantities inferred from next tier start."
+      ]
+    },
+    {
+      "line_no": null,
+      "product_name": "Chlorex 7.1%",
+      "inn": "Chlorhexidine digluconate",
+      "strength": "7.1% w/w",
+      "dosage_form": "Gel",
+      "uom": "tube",
+      "units_per_pack": 1,
+      "packaging": "Laminated tube",
+      "price_per_pack": 4.549,
+      "price_per_uom": 4.549,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 200,
+          "max_packs": 999,
+          "price_per_pack": 4.549
+        },
+        {
+          "min_packs": 1000,
+          "max_packs": 4999,
+          "price_per_pack": 4.309
+        },
+        {
+          "min_packs": 5000,
+          "max_packs": null,
+          "price_per_pack": 3.836
+        }
+      ],
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 500,
+      "lead_time_days": 21,
+      "cold_chain": false,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Chlorex 7.1%",
+        "inn": "Chlorhexidine digluconate",
+        "strength": "7.1% w/w",
+        "dosage_form": "Gel",
+        "packaging": "Laminated tube",
+        "uom": "tube",
+        "units_per_pack": "1",
+        "price_per_pack": "4.549",
+        "price_tiers": "200 | 4.549 | 1000 | 4.309 | 5000 | 3.836",
+        "moq_packs": "500",
+        "lead_time_days": "21",
+        "cold_chain": "No",
+        "currency": "ZAR"
+      },
+      "illegible": [],
+      "notes": [
+        "Pack size 1 tube, so unit price equals pack price.",
+        "MOQ (500 packs) is higher than the tier 1 start quantity (200).",
+        "Terms sheet: orders below MOQ attract a 12% surcharge on the unit price.",
+        "Prices exclude 15% VAT.",
+        "Item code HIG-CHLORHEX. Tier max quantities inferred from next tier start."
+      ]
+    }
+  ],
+  "evidence": {
+    "quotation_ref": "HG-Q26-0137",
+    "buyer_reference": "AXMED-RFQ-2026-0332",
+    "valid_until": "2026-08-21T00:00:00",
+    "currency": "ZAR",
+    "incoterm": "DAP Lusaka",
+    "named_place": "DAP Lusaka",
+    "payment_terms": "30 days from statement, prices exclude 15% VAT"
+  },
+  "warnings": [
+    "No explicit document issue date; only validity 2026-06-22 to 2026-08-21 (valid from 2026-06-22), so document_date left null.",
+    "Column headers say price/pack; per-unit prices were derived by dividing by pack size. Pack prices look low (e.g. amlodipine 1.529 per 10 tablets), so the reviewer should confirm they are per pack and not per unit.",
+    "All MOQs exceed the starting quantity of the first tier(s), so lower-tier prices may not be reachable below MOQ; below-MOQ orders carry a 12% surcharge per Terms sheet.",
+    "Prices exclude 15% VAT.",
+    "Serialisation to GS1 standards available on request (not a line item)."
+  ]
+}

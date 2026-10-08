@@ -1,0 +1,123 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Highveld Generics (Pty) Ltd.",
+    "country": "ZA",
+    "contact_name": "Thabo Mokoena, Key Account Manager",
+    "contact_email": "export@highveldgenerics.co.za"
+  },
+  "quotation_ref": "HG-Q26-0119",
+  "buyer_reference": "AXMED-RFQ-2026-0393",
+  "document_date": "2026-08-17",
+  "valid_until": "2026-11-15",
+  "currency": "ZAR",
+  "incoterm": "EXW",
+  "named_place": "Isando",
+  "payment_terms": "30 days from statement, prices exclude 15% VAT",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Thiazex 25",
+      "inn": "Hydrochlorothiazide",
+      "strength": "25 mg",
+      "dosage_form": "Tablet",
+      "uom": "tablet",
+      "units_per_pack": 1000,
+      "packaging": "Bulk HDPE jar 1000 tablets/pack",
+      "price_per_pack": 81.2,
+      "price_per_uom": 0.0812,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 10000,
+      "lead_time_days": 42,
+      "cold_chain": false,
+      "superseded": {
+        "field": "price_per_uom",
+        "old": 0.0883,
+        "new": 0.0812,
+        "reason": "Correction noted in Terms and conditions item 4: 'Correction to item 01 (Thiazex 25): the unit price should read ZAR 0.0812, not ZAR 0.0883 as printed in the schedule above.'"
+      },
+      "evidence": {
+        "line_no": "1",
+        "product_name": "Thiazex 25",
+        "inn": "Hydrochlorothiazide",
+        "strength": "25 mg",
+        "dosage_form": "Tablet",
+        "packaging": "Bulk HDPE jar 1000 tablets/pack",
+        "uom": "tablet",
+        "units_per_pack": "1000 tablets/pack",
+        "price_per_uom": "ZAR 0.0812",
+        "moq_packs": "10,000",
+        "lead_time_days": "42"
+      },
+      "illegible": [],
+      "notes": [
+        "Pack price calculated: 0.0812 × 1000 = 81.2 ZAR",
+        "Original pack price in schedule: 81.200 ZAR (consistent with corrected unit price)",
+        "Storage: Below 30°C, dry"
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Highmiso 200",
+      "inn": "Misoprostol",
+      "strength": "200 mcg",
+      "dosage_form": "Tablet",
+      "uom": "tablet",
+      "units_per_pack": 60,
+      "packaging": "HDPE bottle 60 tablets/pack",
+      "price_per_pack": 147.96,
+      "price_per_uom": 2.466,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 2000,
+      "lead_time_days": 28,
+      "cold_chain": false,
+      "superseded": null,
+      "evidence": {
+        "line_no": "2",
+        "product_name": "Highmiso 200",
+        "inn": "Misoprostol",
+        "strength": "200 mcg",
+        "dosage_form": "Tablet",
+        "packaging": "HDPE bottle 60 tablets/pack",
+        "uom": "tablet",
+        "units_per_pack": "60 tablets/pack",
+        "price_per_uom": "2.466",
+        "price_per_pack": "147.96",
+        "moq_packs": "2,000",
+        "lead_time_days": "28"
+      },
+      "illegible": [],
+      "notes": [
+        "WHO PQ ref. HA290",
+        "Storage: Below 30°C, dry"
+      ]
+    }
+  ],
+  "evidence": {
+    "quotation_ref": "HG-Q26-0119",
+    "document_date": "17 August 2026",
+    "valid_until": "15 November 2026",
+    "buyer_reference": "AXMED-RFQ-2026-0393",
+    "currency": "Currency: ZAR",
+    "incoterm": "EXW Isando",
+    "payment_terms": "30 days from statement, prices exclude 15% VAT",
+    "supplier_name": "Highveld Generics (Pty) Ltd.",
+    "contact_name": "Thabo Mokoena, Key Account Manager, +27 11 974 3300",
+    "contact_email": "export@highveldgenerics.co.za"
+  },
+  "warnings": [
+    "Item 1 (Thiazex 25): Unit price corrected in Terms and conditions (section 4) from ZAR 0.0883 to ZAR 0.0812. The corrected value is used in price_per_uom; original value recorded in superseded field.",
+    "Document states 'Cold-chain items ship in validated passive shippers with temperature loggers' but does not explicitly designate which products require cold chain. Both items have storage requirement 'Below 30°C, dry' which suggests ambient storage, not active cold chain (2-8°C)."
+  ]
+}

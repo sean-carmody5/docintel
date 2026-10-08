@@ -1,0 +1,39 @@
+{
+  "document_type": "quotation",
+  "contains_prices": false,
+  "supplier": {
+    "name": "Highveld Generics (Pty) Ltd.",
+    "country": "ZA",
+    "contact_name": "Thabo Mokoena, Key Account Manager",
+    "contact_email": "support@highveldgenerics.co.za"
+  },
+  "quotation_ref": "HG-Q26-0119",
+  "buyer_reference": "AXMED-RFQ-2026-C301",
+  "document_date": "2026-08-17",
+  "valid_until": "2026-11-15",
+  "currency": "ZAR",
+  "incoterm": "EXW",
+  "named_place": "Isando",
+  "payment_terms": "30 days from statement, prices exclude 15% VAT",
+  "lines": [],
+  "evidence": {
+    "document_type": "Quotation no.: HG-Q26-0119",
+    "document_date": "Issue date: 17 August 2026",
+    "valid_until": "Valid until: 15 November 2026",
+    "quotation_ref": "HG-Q26-0119",
+    "buyer_reference": "Request for quotation AXMED-RFQ-2026-C301",
+    "supplier_name": "Highveld Generics (Pty) Ltd.",
+    "supplier_country": "12 Isando Road, Isando, Kempton Park 1600, Gauteng, South Africa",
+    "supplier_contact_name": "Thabo Mokoena, Key Account Manager +27 11 974 3300",
+    "supplier_contact_email": "support@highveldgenerics.co.za",
+    "currency": "Currency | ZAR",
+    "incoterm": "Incoterms 2020 | EXW Isando",
+    "named_place": "EXW Isando",
+    "payment_terms": "30 days from statement, prices exclude 15% VAT"
+  },
+  "warnings": [
+    "The 'Quoted line items' table is not legible due to image angle and glare—no product lines could be extracted.",
+    "A beige/tan circular object obscures part of the lower right corner of the page.",
+    "The document mentions a correction to item 01 (Thaxin 2B) in the terms and conditions: unit price should be ZAR 0.0812, not ZAR 0.0867, but the original table is not legible so the correction cannot be applied to a line item."
+  ]
+}

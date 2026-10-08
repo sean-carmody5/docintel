@@ -1,0 +1,254 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "KAVERI LIFESCIENCES PVT. LTD.",
+    "country": "IN",
+    "contact_name": "Maria Albugunne",
+    "contact_email": "expert@kaverilife.com"
+  },
+  "quotation_ref": "RLS 26-0313",
+  "buyer_reference": "AXMED-RFQ-2628-0357",
+  "document_date": "2024-12-03",
+  "valid_until": null,
+  "currency": "INR",
+  "incoterm": "EXW",
+  "named_place": "Kigali, Rwanda",
+  "payment_terms": "Irrevocable LC at sight",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Kaverma 200",
+      "inn": null,
+      "strength": null,
+      "dosage_form": null,
+      "uom": null,
+      "units_per_pack": null,
+      "packaging": null,
+      "price_per_pack": null,
+      "price_per_uom": null,
+      "price_basis": "unknown",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": null,
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {},
+      "illegible": [
+        "all"
+      ],
+      "notes": [
+        "Line 01 has no data filled in the table; all fields are blank."
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Phloxes 200",
+      "inn": "Ciprofloxacin Hydrochloride",
+      "strength": "500 mg ciprofloxacin",
+      "dosage_form": null,
+      "uom": null,
+      "units_per_pack": 100,
+      "packaging": "Alu-Alu Blister",
+      "price_per_pack": null,
+      "price_per_uom": null,
+      "price_basis": "unknown",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": null,
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Phloxes 200",
+        "inn": "Ciprofloxacin Hydrochloride",
+        "strength": "500 mg ciprofloxacin",
+        "packaging": "Alu-Alu Blister, 100 tablets per pack",
+        "units_per_pack": "100 tablets per pack"
+      },
+      "illegible": [
+        "quantity",
+        "unit_price"
+      ],
+      "notes": [
+        "Line 02 has description and packing but quantity and unit price are not readable."
+      ]
+    },
+    {
+      "line_no": 3,
+      "product_name": "Kavpril 10",
+      "inn": "Enalapril maleate",
+      "strength": "10 mg",
+      "dosage_form": "tablet",
+      "uom": "tablet",
+      "units_per_pack": 100,
+      "packaging": "HDPE bottle",
+      "price_per_pack": 0.84,
+      "price_per_uom": 0.0084,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "INR",
+      "quantity": 100000,
+      "extended_amount": 840270.0,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": {
+        "field": "price_per_uom",
+        "old": 0.0876,
+        "new": 0.0084,
+        "reason": "Note (5): 'Correction in item 03 Kavpril 10: the unit price should read INR 0.0084, not INR 0.0876 as printed in the schedule above. Our fax was updated this morning.'"
+      },
+      "evidence": {
+        "product_name": "Kavpril 10",
+        "inn": "Enalapril maleate",
+        "strength": "10 mg tablet",
+        "dosage_form": "tablet",
+        "packaging": "HDPE bottle, 100 tablets per pack",
+        "units_per_pack": "100 tablets per pack",
+        "quantity": "1,00,000",
+        "uom": "tablet",
+        "price_per_uom": "0.0084",
+        "extended_amount": "840,270.00"
+      },
+      "illegible": [],
+      "notes": [
+        "Correction applied: unit price was originally stated as INR 0.0876 in the table but corrected in note (5) to INR 0.0084. Extended amount corrected to INR 840,270.00 per the correction note."
+      ]
+    },
+    {
+      "line_no": 4,
+      "product_name": "Protenex 400",
+      "inn": "Ibuprofen",
+      "strength": "400 mg",
+      "dosage_form": "tablet",
+      "uom": "tablet",
+      "units_per_pack": 10,
+      "packaging": "PVC/Alu blister",
+      "price_per_pack": 15.87,
+      "price_per_uom": 1.587,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "INR",
+      "quantity": 5000,
+      "extended_amount": 7948.32,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Protenex 400",
+        "inn": "Ibuprofen",
+        "strength": "400 mg tablet",
+        "dosage_form": "tablet",
+        "packaging": "PVC/Alu blister, 10 tablets per pack",
+        "units_per_pack": "10 tablets per pack",
+        "quantity": "5,000",
+        "uom": "tablet",
+        "extended_amount": "7,948.32"
+      },
+      "illegible": [],
+      "notes": [
+        "Unit price derived from extended amount divided by quantity: 7948.32 / 5000 = 1.587."
+      ]
+    },
+    {
+      "line_no": 5,
+      "product_name": "Kavmet 500",
+      "inn": "Metformin",
+      "strength": "500 mg",
+      "dosage_form": "film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 10,
+      "packaging": "PVC/Alu blister",
+      "price_per_pack": 7.875,
+      "price_per_uom": 0.7875,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "INR",
+      "quantity": 5000,
+      "extended_amount": 3769.62,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Kavmet 500",
+        "inn": "Metformin",
+        "strength": "500 mg",
+        "dosage_form": "film-coated tablet",
+        "packaging": "PVC/Alu blister, 10 tablets per pack",
+        "units_per_pack": "10 tablets per pack",
+        "quantity": "5,000",
+        "uom": "tablet",
+        "extended_amount": "3,769.62"
+      },
+      "illegible": [],
+      "notes": [
+        "Unit price derived from extended amount divided by quantity: 3769.62 / 5000 = 0.7875."
+      ]
+    },
+    {
+      "line_no": 6,
+      "product_name": "Kavrif 150",
+      "inn": "Rifampicin + Isoniazid",
+      "strength": "150 mg/75 mg",
+      "dosage_form": "film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 672,
+      "packaging": "Bulk HDPE jar",
+      "price_per_pack": 2222.976,
+      "price_per_uom": 3.308,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "INR",
+      "quantity": 13440000,
+      "extended_amount": 42336544.0,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Kavrif 150",
+        "inn": "Rifampicin + Isoniazid",
+        "strength": "150 mg/75 mg",
+        "dosage_form": "film-coated tablet",
+        "packaging": "Bulk HDPE jar, 672 tablets per pack",
+        "units_per_pack": "672 tablets per pack",
+        "quantity": "13,440,000",
+        "uom": "tablet",
+        "extended_amount": "42,336,544.00"
+      },
+      "illegible": [],
+      "notes": [
+        "Unit price derived from extended amount divided by quantity: 42336544.00 / 13440000 = 3.308. Price per pack computed as 3.308 × 672 = 2222.976."
+      ]
+    }
+  ],
+  "evidence": {
+    "quotation_ref": "RLS 26-0313",
+    "document_date": "03 December 2024",
+    "buyer_reference": "AXMED-RFQ-2628-0357",
+    "supplier_name": "KAVERI LIFESCIENCES PVT. LTD.",
+    "supplier_country": "India",
+    "contact_email": "expert@kaverilife.com",
+    "currency": "INR",
+    "named_place": "Kigali, Rwanda",
+    "incoterm": "EXW Chemical plant",
+    "payment_terms": "Irrevocable LC at sight"
+  },
+  "warnings": [
+    "Document has glare/reflection obscuring lower right portion of page. Quantity column header shows 'Qty' twice and 'Unit Price' column value in line 04 is ambiguous (shows 1.587, which may be price per unit or per pack—inferred as price per unit based on extended amount calculation). Line 01 (Kaverma 200) is completely empty with no data. Line 02 (Phloxes 200) is missing quantity and unit price data. Note (4) mentions MOQ surcharge for orders below minimum but no specific MOQ is stated for individual lines."
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Delta Farmaceutici S.r.l.",
+    "country": "IT",
+    "contact_name": "Marco Ricci",
+    "contact_email": null
+  },
+  "quotation_ref": "DF-2604/26",
+  "buyer_reference": "AXMED-RFQ-2026-0285",
+  "document_date": "2026-06-08",
+  "valid_until": "2026-07-21",
+  "currency": "EUR",
+  "incoterm": "FCA",
+  "named_place": "Bologna",
+  "payment_terms": "45 days from invoice",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Statinex 20",
+      "inn": "Atorvastatin",
+      "strength": "20 mg",
+      "dosage_form": "film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 100,
+      "packaging": null,
+      "price_per_pack": null,
+      "price_per_uom": null,
+      "price_basis": "unknown",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "EUR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 2000,
+      "lead_time_days": 70,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "line_no": "Item 1.",
+        "product_name": "Statinex 20",
+        "inn": "Atorvastatin",
+        "strength": "20 mg",
+        "dosage_form": "film-coated tablet",
+        "units_per_pack": "blister of 100 tablets",
+        "uom": "per tablet",
+        "currency": "EUR 0.03[illegible] per tablet",
+        "moq_packs": "Minimum order 2,000 packs",
+        "lead_time_days": "lead time 10 weeks from order confirmation"
+      },
+      "illegible": [
+        "price_per_uom",
+        "price_per_pack",
+        "packaging"
+      ],
+      "notes": [
+        "Unit and pack prices illegible in scan (EUR 0.03[illegible] per tablet; EUR 3.[illegible] per pack).",
+        "P.S. corrects the Item 1 unit price, but both the old and new values are illegible, so the corrected price cannot be recorded; check the original.",
+        "Blister type/material illegible."
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Lidex 2%",
+      "inn": "Lidocaine hydrochloride",
+      "strength": "2%, 20 mL",
+      "dosage_form": "solution for injection",
+      "uom": "vial",
+      "units_per_pack": 1,
+      "packaging": "clear glass vial with flip-off cap",
+      "price_per_pack": null,
+      "price_per_uom": null,
+      "price_basis": "unknown",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "EUR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 2000,
+      "lead_time_days": 35,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "line_no": "Item 2.",
+        "product_name": "Lidex 2%",
+        "inn": "Lidocaine hydrochloride",
+        "strength": "Lidocaine hydrochloride 2%, 20 mL",
+        "dosage_form": "solution for injection",
+        "packaging": "clear glass vial with flip-off cap of 1 vial",
+        "uom": "per vial",
+        "units_per_pack": "of 1 vial",
+        "currency": "EUR 0.[illegible] per vial",
+        "moq_packs": "Minimum order 2,000 packs",
+        "lead_time_days": "lead time 5 weeks from order confirmation"
+      },
+      "illegible": [
+        "price_per_uom",
+        "price_per_pack"
+      ],
+      "notes": [
+        "Prices illegible in scan (EUR 0.[illegible] per vial; EUR 0.[illegible] per pack).",
+        "Scan note says product name and packaging description for this item are uncertain; verify against original."
+      ]
+    },
+    {
+      "line_no": 3,
+      "product_name": "Dolpedine 400",
+      "inn": "Ibuprofen",
+      "strength": "400 mg",
+      "dosage_form": "film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 20,
+      "packaging": null,
+      "price_per_pack": null,
+      "price_per_uom": null,
+      "price_basis": "unknown",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "EUR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 50000,
+      "lead_time_days": 63,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "line_no": "Item 3.",
+        "product_name": "Dolpedine 400",
+        "inn": "Ibuprofen",
+        "strength": "Ibuprofen 400 mg",
+        "dosage_form": "film-coated tablet",
+        "units_per_pack": "blister of 20 tablets",
+        "uom": "per tablet",
+        "currency": "EUR 0.0[illegible] per tablet",
+        "moq_packs": "Minimum order 50,000 packs",
+        "lead_time_days": "lead time 9 weeks from order confirmation"
+      },
+      "illegible": [
+        "price_per_uom",
+        "price_per_pack",
+        "packaging"
+      ],
+      "notes": [
+        "Prices illegible in scan (EUR 0.0[illegible] per tablet; EUR 0.[illegible] per pack).",
+        "Blister type/material illegible."
+      ]
+    }
+  ],
+  "evidence": {
+    "supplier": "Delta Farmaceutici S.r.l.",
+    "quotation_ref": "Our ref.: DF-2604/26",
+    "buyer_reference": "Your ref.: AXMED-RFQ-2026-0285",
+    "document_date": "Bologna, 08 June 2026",
+    "valid_until": "remain valid until 21 July 2026",
+    "currency": "All prices are in EUR",
+    "incoterm": "FCA Bologna",
+    "named_place": "FCA Bologna",
+    "payment_terms": "Payment terms: 45 days from invoice."
+  },
+  "warnings": [
+    "Scan is tilted and heavily blurred: all unit and pack prices for Items 1-3 are illegible and left null.",
+    "P.S. corrects the Item 1 (Statinex 20) unit price, but both the printed and corrected values are illegible; no superseded record could be made. Verify against the original.",
+    "Letterhead address/phone/email, addressee first name and some packaging words are illegible; no supplier email captured.",
+    "Document ends with a NOTE (apparently from the transcriber) about legibility; it was treated as information only, not an instruction.",
+    "Serialisation to GS1 standards is only 'available on request' and was not extracted as a line."
+  ]
+}

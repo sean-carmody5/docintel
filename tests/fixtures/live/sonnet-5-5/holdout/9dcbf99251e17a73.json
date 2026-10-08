@@ -1,0 +1,191 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": null,
+    "country": null,
+    "contact_name": "Wanjiru Kamau",
+    "contact_email": null
+  },
+  "quotation_ref": "BPL/QT/26/0132",
+  "buyer_reference": "AXMED-RFQ-2026-0240",
+  "document_date": "2026-07-10",
+  "valid_until": "2026-08-24",
+  "currency": "KES",
+  "incoterm": "DAP",
+  "named_place": "Kampala",
+  "payment_terms": "30 days from delivery",
+  "lines": [
+    {
+      "line_no": null,
+      "product_name": "Misoex 200",
+      "inn": "Misoprostol",
+      "strength": "200 mcg",
+      "dosage_form": null,
+      "uom": "tablet",
+      "units_per_pack": 60,
+      "packaging": null,
+      "price_per_pack": 1616.04,
+      "price_per_uom": 26.934,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 1,
+          "max_packs": 4999,
+          "price_per_pack": 1616.04
+        },
+        {
+          "min_packs": 20000,
+          "max_packs": null,
+          "price_per_pack": 1312.05
+        }
+      ],
+      "currency": "KES",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 1000,
+      "lead_time_days": 63,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Misoex 200",
+        "inn": "Misoprostol",
+        "strength": "200 mcg",
+        "units_per_pack": "per pack of 60",
+        "price_per_pack": "KES 1,616.04 per pack of 60 up to 4,999 packs, 1,312.05 from 20,000 packs",
+        "price_tiers": "KES 1,616.04 per pack of 60 up to 4,999 packs, 1,312.05 from 20,000 packs",
+        "moq_packs": "MOQ 1,000 packs",
+        "lead_time_days": "lead time 63 days",
+        "uom": "per tablet",
+        "currency": "KES"
+      },
+      "illegible": [],
+      "notes": [
+        "Tier prices are per pack of 60; per-unit price derived (1616.04/60).",
+        "No price stated for 5,000-19,999 packs.",
+        "Unit 'tablet' inferred from later message about a larger presentation 'per tablet'.",
+        "Larger presentation at KES 34.42 per tablet is on request and not included in this offer; not extracted as a line.",
+        "MOQ and lead time taken from the message immediately following this line."
+      ]
+    },
+    {
+      "line_no": null,
+      "product_name": "Baoartes 60",
+      "inn": "Artesunate",
+      "strength": "60 mg",
+      "dosage_form": null,
+      "uom": null,
+      "units_per_pack": 1,
+      "packaging": null,
+      "price_per_pack": 230.49,
+      "price_per_uom": 230.49,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 1,
+          "max_packs": 499,
+          "price_per_pack": 230.49
+        },
+        {
+          "min_packs": 2000,
+          "max_packs": null,
+          "price_per_pack": 200.57
+        }
+      ],
+      "currency": "KES",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Baoartes 60",
+        "inn": "Artesunate",
+        "strength": "60 mg",
+        "units_per_pack": "per pack of 1",
+        "price_per_pack": "KES 230.49 per pack of 1 up to 499 packs, 200.57 from 2,000 packs",
+        "price_tiers": "KES 230.49 per pack of 1 up to 499 packs, 200.57 from 2,000 packs",
+        "currency": "KES"
+      },
+      "illegible": [],
+      "notes": [
+        "No price stated for 500-1,999 packs.",
+        "Unit of measure not stated (pack of 1).",
+        "MOQ/lead time (5,000 packs / 75 days) appears after the next product line; unclear whether it applies to this product, so left null."
+      ]
+    },
+    {
+      "line_no": null,
+      "product_name": "Baodex 4",
+      "inn": "Dexamethasone",
+      "strength": "4 mg/mL",
+      "dosage_form": null,
+      "uom": null,
+      "units_per_pack": 25,
+      "packaging": null,
+      "price_per_pack": 841.0,
+      "price_per_uom": 33.64,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 1,
+          "max_packs": 499,
+          "price_per_pack": 841.0
+        },
+        {
+          "min_packs": 2000,
+          "max_packs": null,
+          "price_per_pack": 683.7
+        }
+      ],
+      "currency": "KES",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 5000,
+      "lead_time_days": 75,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Baodex 4",
+        "inn": "Dexamethasone",
+        "strength": "4 mg/mL",
+        "units_per_pack": "per pack of 25",
+        "price_per_pack": "KES 841.00 per pack of 25 up to 499 packs, 683.70 from 2,000 packs",
+        "price_tiers": "KES 841.00 per pack of 25 up to 499 packs, 683.70 from 2,000 packs",
+        "moq_packs": "MOQ 5,000 packs",
+        "lead_time_days": "lead time 75 days",
+        "currency": "KES"
+      },
+      "illegible": [],
+      "notes": [
+        "Per-unit price derived (841.00/25); unit type (ampoule/vial) not stated.",
+        "No price stated for 500-1,999 packs.",
+        "MOQ 5,000 packs and 75 days lead time follow this line; may also apply to Baoartes 60 (ambiguous)."
+      ]
+    }
+  ],
+  "evidence": {
+    "buyer_reference": "AXMED-RFQ-2026-0240",
+    "quotation_ref": "Formal quotation BPL/QT/26/0132 to follow by email tomorrow",
+    "currency": "All KES, DAP Kampala. Valid to 24 Aug.",
+    "incoterm": "DAP Kampala",
+    "named_place": "DAP Kampala",
+    "valid_until": "Valid to 24 Aug.",
+    "payment_terms": "Payment terms as before? 30 days from delivery?",
+    "document_date": "[10/07/2026, 12:03:54]"
+  },
+  "warnings": [
+    "WhatsApp chat; formal quotation BPL/QT/26/0132 is to follow by email and should be checked against these figures.",
+    "Supplier company name not stated; only contact Wanjiru Kamau.",
+    "Dosage forms and packaging not stated.",
+    "Tier gaps: no prices given between the 'up to' and 'from' quantities for any product.",
+    "MOQ 5,000 packs / lead time 75 days is ambiguous between Baoartes 60 and Baodex 4; applied to Baodex 4 only.",
+    "Chat date 10/07/2026 read as day-first (10 July 2026); 'Valid to 24 Aug' assumed to be 2026.",
+    "A media attachment (said to be a CoA for the last batch) was omitted from the chat and not reviewed.",
+    "Payment terms '30 days from delivery' were proposed by the buyer and confirmed with 'Yes same terms'."
+  ]
+}

@@ -1,0 +1,272 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Baobab Pharmaceuticals Ltd.",
+    "country": "KE",
+    "contact_name": "Wanjiru Kamau",
+    "contact_email": "wanjiru@baobabpharma.co.ke"
+  },
+  "quotation_ref": "BPL/QT/26/0122",
+  "buyer_reference": "AXMED-RFQ-2026-0282",
+  "document_date": "2026-07-22",
+  "valid_until": "2026-08-21",
+  "currency": "KES",
+  "incoterm": "DAP",
+  "named_place": "Kampala",
+  "payment_terms": "30 days from delivery",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Baomoxsusp 250",
+      "inn": "Amoxicillin",
+      "strength": "250 mg / 5 mL",
+      "dosage_form": "oral suspension",
+      "uom": "bottle",
+      "units_per_pack": 24,
+      "packaging": "amber pet bottle",
+      "price_per_pack": 1286.18,
+      "price_per_uom": 53.59,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 250,
+          "max_packs": 2499,
+          "price_per_pack": 1286.18
+        },
+        {
+          "min_packs": 2500,
+          "max_packs": 12499,
+          "price_per_pack": 1167.03
+        },
+        {
+          "min_packs": 12500,
+          "max_packs": null,
+          "price_per_pack": 1081.24
+        }
+      ],
+      "currency": "KES",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 20000,
+      "lead_time_days": 60,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Baomoxsusp 250",
+        "inn": "Amoxicillin",
+        "strength": "250 mg / 5 mL",
+        "dosage_form": "oral suspension",
+        "packaging": "amber pet bottle",
+        "units_per_pack": "of 24 bottles",
+        "uom": "of 24 bottles",
+        "price_per_pack": "KES 1,286.18 per pack for 250 to 2,499 packs",
+        "price_per_uom": "KES 1,286.18 per pack",
+        "price_tiers": "KES 1,286.18 per pack for 250 to 2,499 packs; KES 1,167.03 per pack for 2,500 to 12,499 packs; KES 1,081.24 per pack for 12,500 or more packs",
+        "moq_packs": "Minimum order 20,000 packs",
+        "lead_time_days": "lead time 60 days from order confirmation",
+        "currency": "KES",
+        "line_no": "Item 1."
+      },
+      "illegible": [],
+      "notes": [
+        "Pack described as 'amber pet bottle of 24 bottles'; units per pack taken as 24 bottles.",
+        "price_per_uom derived: 1286.18 / 24 = 53.5908 (rounded), lowest-quantity tier.",
+        "MOQ 20,000 packs is above the first two tiers' upper bounds."
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Baozith 250",
+      "inn": "Azithromycin",
+      "strength": "250 mg",
+      "dosage_form": "film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 30,
+      "packaging": "alu-alu blister",
+      "price_per_pack": 381.0,
+      "price_per_uom": 12.7,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 200,
+          "max_packs": 999,
+          "price_per_pack": 381.0
+        },
+        {
+          "min_packs": 1000,
+          "max_packs": 3999,
+          "price_per_pack": 354.74
+        },
+        {
+          "min_packs": 4000,
+          "max_packs": null,
+          "price_per_pack": 321.95
+        }
+      ],
+      "currency": "KES",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 50000,
+      "lead_time_days": 45,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Baozith 250",
+        "inn": "Azithromycin",
+        "strength": "250 mg",
+        "dosage_form": "film-coated tablet",
+        "packaging": "alu-alu blister",
+        "units_per_pack": "of 30 tablets",
+        "uom": "of 30 tablets",
+        "price_per_pack": "KES 381.00 per pack for 200 to 999 packs",
+        "price_per_uom": "KES 381.00 per pack",
+        "price_tiers": "KES 381.00 per pack for 200 to 999 packs; KES 354.74 per pack for 1,000 to 3,999 packs; KES 321.95 per pack for 4,000 or more packs",
+        "moq_packs": "Minimum order 50,000 packs",
+        "lead_time_days": "lead time 45 days from order confirmation",
+        "currency": "KES",
+        "line_no": "Item 2."
+      },
+      "illegible": [],
+      "notes": [
+        "price_per_uom derived: 381.00 / 30 = 12.70, lowest-quantity tier."
+      ]
+    },
+    {
+      "line_no": 3,
+      "product_name": "Moxdtex 250",
+      "inn": "Amoxicillin",
+      "strength": "250 mg",
+      "dosage_form": "dt",
+      "uom": "tablet",
+      "units_per_pack": 100,
+      "packaging": "hdpe bottle",
+      "price_per_pack": 219.0,
+      "price_per_uom": 2.19,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 250,
+          "max_packs": 2499,
+          "price_per_pack": 219.0
+        },
+        {
+          "min_packs": 2500,
+          "max_packs": 9999,
+          "price_per_pack": 194.65
+        },
+        {
+          "min_packs": 10000,
+          "max_packs": null,
+          "price_per_pack": 178.3
+        }
+      ],
+      "currency": "KES",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 2000,
+      "lead_time_days": 21,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Moxdtex 250",
+        "inn": "Amoxicillin",
+        "strength": "250 mg",
+        "dosage_form": "dt",
+        "packaging": "hdpe bottle",
+        "units_per_pack": "of 100 tablets",
+        "uom": "of 100 tablets",
+        "price_per_pack": "KES 219.00 per pack for 250 to 2,499 packs",
+        "price_per_uom": "KES 219.00 per pack",
+        "price_tiers": "KES 219.00 per pack for 250 to 2,499 packs; KES 194.65 per pack for 2,500 to 9,999 packs; KES 178.30 per pack for 10,000 or more packs",
+        "moq_packs": "Minimum order 2,000 packs",
+        "lead_time_days": "lead time 21 days from order confirmation",
+        "currency": "KES",
+        "line_no": "Item 3."
+      },
+      "illegible": [],
+      "notes": [
+        "price_per_uom derived: 219.00 / 100 = 2.19, lowest-quantity tier.",
+        "MOQ 2,000 packs is below the first tier minimum of 250? No: 2,000 is above 250; tier applies from 250 packs."
+      ]
+    },
+    {
+      "line_no": 4,
+      "product_name": "Salbex 100",
+      "inn": "Salbutamol",
+      "strength": "100 mcg/dose",
+      "dosage_form": "pressurised inhalation, suspension",
+      "uom": "inhaler",
+      "units_per_pack": 1,
+      "packaging": "aluminium canister with actuator",
+      "price_per_pack": 306.42,
+      "price_per_uom": 306.42,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 250,
+          "max_packs": 2499,
+          "price_per_pack": 306.42
+        },
+        {
+          "min_packs": 2500,
+          "max_packs": 9999,
+          "price_per_pack": 270.4
+        },
+        {
+          "min_packs": 10000,
+          "max_packs": null,
+          "price_per_pack": 256.29
+        }
+      ],
+      "currency": "KES",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 50000,
+      "lead_time_days": 90,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Salbex 100",
+        "inn": "Salbutamol",
+        "strength": "100 mcg/dose",
+        "dosage_form": "pressurised inhalation, suspension",
+        "packaging": "aluminium canister with actuator",
+        "units_per_pack": "of 1 inhaler",
+        "uom": "of 1 inhaler",
+        "price_per_pack": "KES 306.42 per pack for 250 to 2,499 packs",
+        "price_per_uom": "KES 306.42 per pack",
+        "price_tiers": "KES 306.42 per pack for 250 to 2,499 packs; KES 270.40 per pack for 2,500 to 9,999 packs; KES 256.29 per pack for 10,000 or more packs",
+        "moq_packs": "Minimum order 50,000 packs",
+        "lead_time_days": "lead time 90 days from order confirmation",
+        "currency": "KES",
+        "line_no": "Item 4."
+      },
+      "illegible": [],
+      "notes": [
+        "One inhaler per pack, so unit price equals pack price (lowest tier)."
+      ]
+    }
+  ],
+  "evidence": {
+    "supplier": "Baobab Pharmaceuticals Ltd.",
+    "quotation_ref": "Our ref.: BPL/QT/26/0122",
+    "buyer_reference": "Your ref.: AXMED-RFQ-2026-0282",
+    "document_date": "Nairobi, 22 July 2026",
+    "valid_until": "remain valid until 21 August 2026",
+    "currency": "All prices are in KES",
+    "incoterm": "DAP Kampala",
+    "named_place": "DAP Kampala",
+    "payment_terms": "Payment terms: 30 days from delivery."
+  },
+  "warnings": [
+    "Page was scanned rotated 90 degrees; text was transcribed in reading order, so verify digits against the original image.",
+    "Item 1 pack described as 'amber pet bottle of 24 bottles' - ambiguous; units per pack taken as 24.",
+    "Document mentions 'Cold-chain items ship in validated passive shippers' but does not mark any line as 2-8 C, so cold_chain left null.",
+    "Serialisation to GS1 standards 'available on request' is not a product line."
+  ]
+}

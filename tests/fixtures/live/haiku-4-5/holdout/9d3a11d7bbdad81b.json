@@ -1,0 +1,235 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Nilgiri Biologics Ltd., Hyderabad",
+    "country": "IN",
+    "contact_name": null,
+    "contact_email": null
+  },
+  "quotation_ref": "NB/EXP/260134",
+  "buyer_reference": "AXMED-RFQ-2026-0343",
+  "document_date": "2026-08-12",
+  "valid_until": "2026-11-10",
+  "currency": "USD",
+  "incoterm": "FCA",
+  "named_place": "Hyderabad (INHYD)",
+  "payment_terms": "Confirmed LC at 60 days",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Dexex 4",
+      "inn": "Dexamethasone",
+      "strength": "4 mg/mL",
+      "dosage_form": "solution for injection",
+      "uom": null,
+      "units_per_pack": 25,
+      "packaging": "25 ampoules Amber glass ampoule",
+      "price_per_pack": 7.067,
+      "price_per_uom": 0.28268,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 500,
+          "max_packs": 4999,
+          "price_per_pack": 7.067
+        },
+        {
+          "min_packs": 5000,
+          "max_packs": 24999,
+          "price_per_pack": 6.432
+        },
+        {
+          "min_packs": 25000,
+          "max_packs": null,
+          "price_per_pack": 5.925
+        }
+      ],
+      "currency": "USD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 20000,
+      "lead_time_days": 30,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Dexex 4",
+        "inn": "Dexamethasone",
+        "strength": "4 mg/mL",
+        "dosage_form": "solution for injection",
+        "packaging": "25 ampoules Amber glass ampoule",
+        "units_per_pack": "25 ampoules",
+        "price_tiers": "7.067 from 500 packs, 6.432 from 5,000 packs, 5.925 from 25,000 packs",
+        "moq_packs": "20,000",
+        "lead_time_days": "30"
+      },
+      "illegible": [],
+      "notes": []
+    },
+    {
+      "line_no": 2,
+      "product_name": "Nilmoxclav 500",
+      "inn": "Amoxicillin + Clavulanic acid",
+      "strength": "500 mg / 125 mg",
+      "dosage_form": "tablet",
+      "uom": null,
+      "units_per_pack": 14,
+      "packaging": "14 tablets PVC/Alu blister",
+      "price_per_pack": 1.137,
+      "price_per_uom": 0.08121,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 500,
+          "max_packs": 4999,
+          "price_per_pack": 1.137
+        },
+        {
+          "min_packs": 5000,
+          "max_packs": 24999,
+          "price_per_pack": 1.004
+        },
+        {
+          "min_packs": 25000,
+          "max_packs": null,
+          "price_per_pack": 0.922
+        }
+      ],
+      "currency": "USD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 1000,
+      "lead_time_days": 45,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Nilmoxclav 500",
+        "inn": "Amoxicillin + Clavulanic acid",
+        "strength": "500 mg / 125 mg",
+        "dosage_form": "tablet",
+        "packaging": "14 tablets PVC/Alu blister",
+        "units_per_pack": "14 tablets",
+        "price_tiers": "1.137 from 500 packs, 1.004 from 5,000 packs, 0.9220 from 25,000 packs",
+        "moq_packs": "1,000",
+        "lead_time_days": "45"
+      },
+      "illegible": [],
+      "notes": []
+    },
+    {
+      "line_no": 3,
+      "product_name": "Dipex 5",
+      "inn": "Amlodipine",
+      "strength": "5 mg",
+      "dosage_form": "tablet",
+      "uom": null,
+      "units_per_pack": 30,
+      "packaging": "30 tablets Alu-Alu blister",
+      "price_per_pack": 0.279,
+      "price_per_uom": 0.0093,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 200,
+          "max_packs": 1999,
+          "price_per_pack": 0.279
+        },
+        {
+          "min_packs": 2000,
+          "max_packs": 7999,
+          "price_per_pack": 0.2514
+        },
+        {
+          "min_packs": 8000,
+          "max_packs": null,
+          "price_per_pack": 0.2327
+        }
+      ],
+      "currency": "USD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 500,
+      "lead_time_days": 75,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Dipex 5",
+        "inn": "Amlodipine",
+        "strength": "5 mg",
+        "dosage_form": "tablet",
+        "packaging": "30 tablets Alu-Alu blister",
+        "units_per_pack": "30 tablets",
+        "price_tiers": "0.2790 from 200 packs, 0.2514 from 2,000 packs, 0.2327 from 8,000 packs",
+        "moq_packs": "500",
+        "lead_time_days": "75"
+      },
+      "illegible": [],
+      "notes": []
+    },
+    {
+      "line_no": 4,
+      "product_name": "Nilzith 500",
+      "inn": "Azithromycin",
+      "strength": "500 mg",
+      "dosage_form": "film-coated tablet",
+      "uom": null,
+      "units_per_pack": 30,
+      "packaging": "30 tablets Alu-Alu blister",
+      "price_per_pack": 8.994,
+      "price_per_uom": 0.2998,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 250,
+          "max_packs": 2499,
+          "price_per_pack": 8.994
+        },
+        {
+          "min_packs": 2500,
+          "max_packs": 12499,
+          "price_per_pack": 8.407
+        },
+        {
+          "min_packs": 12500,
+          "max_packs": null,
+          "price_per_pack": 7.887
+        }
+      ],
+      "currency": "USD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 20000,
+      "lead_time_days": 56,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Nilzith 500",
+        "inn": "Azithromycin",
+        "strength": "500 mg",
+        "dosage_form": "film-coated tablet",
+        "packaging": "30 tablets Alu-Alu blister",
+        "units_per_pack": "30 tablets",
+        "price_tiers": "8.994 from 250 packs, 8.407 from 2,500 packs, 7.887 from 12,500 packs",
+        "moq_packs": "20,000",
+        "lead_time_days": "56"
+      },
+      "illegible": [],
+      "notes": []
+    }
+  ],
+  "evidence": {
+    "quotation_ref": "NB/EXP/260134",
+    "supplier": "Nilgiri Biologics Ltd., Hyderabad (IN)",
+    "document_date": "Issued 12 Aug 2026",
+    "valid_until": "Valid until 10 Nov 2026",
+    "currency": "USD",
+    "incoterm": "FCA Hyderabad (INHYD)",
+    "payment_terms": "Confirmed LC at 60 days",
+    "buyer_reference": "AXMED-RFQ-2026-0343"
+  },
+  "warnings": []
+}

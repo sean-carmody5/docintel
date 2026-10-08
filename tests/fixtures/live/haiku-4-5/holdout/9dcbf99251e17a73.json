@@ -1,0 +1,169 @@
+{
+  "document_type": "correspondence",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Wanjiru Kamau",
+    "country": null,
+    "contact_name": "Wanjiru Kamau",
+    "contact_email": null
+  },
+  "quotation_ref": "BPL/QT/26/0132",
+  "buyer_reference": "AXMED-RFQ-2026-0240",
+  "document_date": "2026-07-10",
+  "valid_until": "2026-08-24",
+  "currency": "KES",
+  "incoterm": "DAP",
+  "named_place": "Kampala",
+  "payment_terms": "30 days from delivery",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Misoex 200",
+      "inn": "Misoprostol",
+      "strength": "200 mcg",
+      "dosage_form": null,
+      "uom": "tablet",
+      "units_per_pack": 60,
+      "packaging": "pack of 60",
+      "price_per_pack": 1616.04,
+      "price_per_uom": 26.93,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 1,
+          "max_packs": 4999,
+          "price_per_pack": 1616.04
+        },
+        {
+          "min_packs": 20000,
+          "max_packs": null,
+          "price_per_pack": 1312.05
+        }
+      ],
+      "currency": "KES",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 1000,
+      "lead_time_days": 63,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Misoex 200",
+        "inn": "Misoprostol",
+        "strength": "200 mcg",
+        "packaging": "pack of 60",
+        "units_per_pack": "60",
+        "price_per_pack": "KES 1,616.04 per pack of 60 up to 4,999 packs, 1,312.05 from 20,000 packs",
+        "moq_packs": "MOQ 1,000 packs",
+        "lead_time_days": "lead time 63 days"
+      },
+      "illegible": [],
+      "notes": []
+    },
+    {
+      "line_no": 2,
+      "product_name": "Baoartes 60",
+      "inn": "Artesunate",
+      "strength": "60 mg",
+      "dosage_form": null,
+      "uom": "pack",
+      "units_per_pack": 1,
+      "packaging": "pack of 1",
+      "price_per_pack": 230.49,
+      "price_per_uom": 230.49,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 1,
+          "max_packs": 499,
+          "price_per_pack": 230.49
+        },
+        {
+          "min_packs": 2000,
+          "max_packs": null,
+          "price_per_pack": 200.57
+        }
+      ],
+      "currency": "KES",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Baoartes 60",
+        "inn": "Artesunate",
+        "strength": "60 mg",
+        "packaging": "pack of 1",
+        "units_per_pack": "1",
+        "price_per_pack": "KES 230.49 per pack of 1 up to 499 packs, 200.57 from 2,000 packs"
+      },
+      "illegible": [],
+      "notes": []
+    },
+    {
+      "line_no": 3,
+      "product_name": "Baodex 4",
+      "inn": "Dexamethasone",
+      "strength": "4 mg/mL",
+      "dosage_form": null,
+      "uom": "vial",
+      "units_per_pack": 25,
+      "packaging": "pack of 25",
+      "price_per_pack": 841.0,
+      "price_per_uom": 33.64,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 1,
+          "max_packs": 499,
+          "price_per_pack": 841.0
+        },
+        {
+          "min_packs": 2000,
+          "max_packs": null,
+          "price_per_pack": 683.7
+        }
+      ],
+      "currency": "KES",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 5000,
+      "lead_time_days": 75,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Baodex 4",
+        "inn": "Dexamethasone",
+        "strength": "4 mg/mL",
+        "packaging": "pack of 25",
+        "units_per_pack": "25",
+        "price_per_pack": "KES 841.00 per pack of 25 up to 499 packs, 683.70 from 2,000 packs",
+        "moq_packs": "MOQ 5,000 packs",
+        "lead_time_days": "lead time 75 days"
+      },
+      "illegible": [],
+      "notes": []
+    }
+  ],
+  "evidence": {
+    "document_date": "[10/07/2026, 11:48:42]",
+    "currency": "All KES",
+    "incoterm": "DAP",
+    "named_place": "Kampala",
+    "valid_until": "Valid to 24 Aug",
+    "payment_terms": "30 days from delivery",
+    "buyer_reference": "AXMED-RFQ-2026-0240",
+    "quotation_ref": "BPL/QT/26/0132"
+  },
+  "warnings": [
+    "Document is a WhatsApp chat, not a formal quotation document. Formal quotation BPL/QT/26/0132 referenced as 'to follow by email tomorrow'",
+    "Line 2 (Baoartes 60): units_per_pack is 1; UOM set to 'pack' as the product appears to be presented in single-unit packs. Interpretation of whether the item itself is a tablet, vial, or other form is unclear from the chat",
+    "Line 3 (Baodex 4): UOM set to 'vial' based on the strength notation (mg/mL) suggesting an injectable preparation, but not explicitly stated in the chat",
+    "MOQ stated separately for Misoex 200 (1,000 packs) and Baodex 4 (5,000 packs); no MOQ mentioned for Baoartes 60"
+  ]
+}
