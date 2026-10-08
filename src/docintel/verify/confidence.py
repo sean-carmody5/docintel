@@ -156,6 +156,28 @@ _TRAILING_DOSE = re.compile(
 )
 
 
+_STRENGTH_PREFIX = re.compile(
+    r"^(?:[\d.,]+\s*(?:mg|mcg|µg|g|ml|iu|%|units?)(?:\s*/\s*(?:[\d.,]+\s*)?(?:ml|g|dose|actuation|kg))?[\s,/+]*)+",
+    re.IGNORECASE,
+)
+_FORM_WORDS = re.compile(
+    r"\b(tablet|capsule|injection|solution|suspension|syrup|cream|ointment|drops|inhaler|"
+    r"ampoule|vial|powder|sachet|suppository|pen|spray|gel|lozenge|patch|elixir)s?\b",
+    re.IGNORECASE,
+)
+
+
+def _split_form_from_strength(strength: str) -> tuple[str, str | None]:
+    """'20 mg Film-coated tablet' is a strength and a form. Returns (strength, form or None)."""
+    m = _STRENGTH_PREFIX.match(strength)
+    if not m:
+        return strength, None
+    rest = strength[m.end() :].strip(" ,")
+    if rest and _FORM_WORDS.search(rest):
+        return m.group(0).strip(" ,/+"), rest
+    return strength, None
+
+
 def _empty_line(line: QuotationLine) -> bool:
     """A line with no product, no INN and no price carries nothing a person can act on."""
     return all(
@@ -181,6 +203,13 @@ def _repair_line(line: QuotationLine) -> list[str]:
             elif dose.lower().replace(" ", "") not in line.strength.lower().replace(" ", ""):
                 line.strength = f"{dose}, {line.strength}"
             notes.append(f"'{dose}' moved from INN to strength")
+    if line.strength:
+        strength, form = _split_form_from_strength(line.strength)
+        if form:
+            line.strength = strength
+            if not line.dosage_form:
+                line.dosage_form = form
+            notes.append(f"'{form}' moved from strength to form")
     units = line.units_per_pack
     if line.price_per_pack is None and line.price_per_uom is not None and units:
         line.price_per_pack = float(f"{line.price_per_uom * units:.6g}")

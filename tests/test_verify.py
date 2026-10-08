@@ -213,3 +213,38 @@ def test_normalised_inn_ignores_a_trailing_concentration() -> None:
     from docintel.verify.normalise import normalise_inn
 
     assert normalise_inn("Lidocaine hydrochloride 2%") == normalise_inn("Lidocaine hydrochloride")
+
+
+def test_a_form_written_into_the_strength_moves_to_the_form_field() -> None:
+    from docintel.extract.schema import QuotationLine
+    from docintel.verify.confidence import _repair_line
+
+    line = QuotationLine(
+        product_name="Doninsu 100",
+        inn="Insulin",
+        strength="100 IU/mL, 10 mL Solution for injection",
+    )
+    _repair_line(line)
+    assert line.strength == "100 IU/mL, 10 mL" and line.dosage_form == "Solution for injection"
+    keep = QuotationLine(product_name="X", inn="Y", strength="500 mg / 5 mL", dosage_form="syrup")
+    _repair_line(keep)
+    assert keep.strength == "500 mg / 5 mL" and keep.dosage_form == "syrup"
+
+
+def test_evidence_sent_as_numbers_is_kept_as_text() -> None:
+    from docintel.extract.schema import ExtractionResult
+
+    result = ExtractionResult.model_validate(
+        {
+            "contains_prices": True,
+            "evidence": {"currency": "USD"},
+            "lines": [
+                {
+                    "product_name": "X",
+                    "units_per_pack": 90,
+                    "evidence": {"units_per_pack": 90, "price_per_uom": 0.5},
+                }
+            ],
+        }
+    )
+    assert result.lines[0].evidence == {"units_per_pack": "90", "price_per_uom": "0.5"}
