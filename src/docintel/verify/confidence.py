@@ -120,6 +120,8 @@ def score_field(
     if not evidence:
         score -= w.evidence_missing
         reasons.append("no evidence quote")
+    elif note == "stated in weeks":
+        pass  # the quote names the weeks; the days are our conversion
     elif found and not g.evidence_found:
         score -= w.evidence_false
         reasons.append("evidence quote not found in the source")
@@ -156,6 +158,22 @@ def _derived_price(
             reasons.append(f"{code}: {detail}")
     score = round(max(0.0, score), 3)
     return FieldConfidence(score=score, tier=_tier(score, w), reasons=reasons)
+
+
+ESSENTIAL = ("product_name", "inn", "price_per_uom", "currency")
+
+
+def overall_score(conf: dict[str, FieldConfidence], values: dict[str, object]) -> float:
+    """Minimum over the key fields. An essential field with no value scores zero, not nothing."""
+    scores: list[float] = []
+    for k in KEY_FIELDS:
+        if k not in conf:
+            continue
+        if values.get(k) is not None:
+            scores.append(conf[k].score)
+        elif k in ESSENTIAL:
+            scores.append(0.0)
+    return round(min(scores), 3) if scores else 0.0
 
 
 def _locator(line: QuotationLine, index: int) -> str:
@@ -236,10 +254,9 @@ def build_records(
                     c.score = round(max(0.0, c.score - w.high_flag), 3)
                     c.tier = _tier(c.score, w)
 
-        key_scores = [
-            conf[k].score for k in KEY_FIELDS if k in conf and getattr(line, k, None) is not None
-        ]
-        overall = round(min(key_scores), 3) if key_scores else 0.0
+        values = {k: getattr(line, k, None) for k in KEY_FIELDS}
+        values["currency"] = line.currency or result.currency
+        overall = overall_score(conf, values)
         reasons = [
             f"{k}: " + "; ".join(conf[k].reasons[:2])
             for k in KEY_FIELDS
@@ -289,6 +306,7 @@ def build_records(
                 lead_time_days=line.lead_time_days,
                 cold_chain=line.cold_chain,
                 superseded=line.superseded.model_dump() if line.superseded else None,
+                evidence={**result.evidence, **line.evidence},
                 confidence=conf,
                 overall_confidence=overall,
                 needs_review=needs_review,

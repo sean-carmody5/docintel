@@ -17,6 +17,7 @@ from typing import Any
 from pydantic import BaseModel, Field
 
 from docintel.records import KEY_FIELDS, Record, RecordFlag
+from docintel.verify.confidence import overall_score
 
 COMPARE_FIELDS = ("currency", "uom", "units_per_pack", "price_per_uom", "price_per_pack")
 
@@ -201,12 +202,8 @@ def _lift(a: Record, b: Record, fld: str, a_name: str, b_name: str) -> None:
         low.tier = "high" if low.score >= 0.85 else "medium" if low.score >= 0.6 else "low"
         low.reasons.append(f"agrees with {other}, confidence lifted")
         low_rec.review_reasons = [x for x in low_rec.review_reasons if not x.startswith(f"{fld}: ")]
-        key_scores = [
-            low_rec.confidence[k].score
-            for k in KEY_FIELDS
-            if k in low_rec.confidence and getattr(low_rec, k) is not None
-        ]
-        low_rec.overall_confidence = round(min(key_scores), 3) if key_scores else 0.0
+        values = {k: getattr(low_rec, k, None) for k in KEY_FIELDS}
+        low_rec.overall_confidence = overall_score(low_rec.confidence, values)
         low_rec.needs_review = bool(low_rec.review_reasons) or low_rec.overall_confidence < 0.6
 
 
