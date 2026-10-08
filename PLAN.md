@@ -186,9 +186,20 @@ Why transcribe first rather than extract straight from the image:
 Safeguards, because transcription can quietly normalise or invent:
 
 - The transcription prompt demands verbatim text, keeps table structure, and marks anything unreadable as `[illegible]` rather than guessing.
-- Tesseract runs independently. Numbers present in both the transcript and the OCR text score high; numbers in only one score low. OCR word confidence around the evidence region feeds the score.
-- Optional second pass straight from the image for the price fields only, when confidence is low. Costs one more call per flagged page.
+- An independent OCR engine runs on the same page. Numbers present in both the transcript and the OCR text score high; numbers in only one score low. OCR line confidence around the evidence region feeds the score.
+- A second extraction pass from a different model family, on the price fields only, when confidence is low. Two unrelated models have to agree before a value scores high. One extra call per flagged page.
 - The text-layer quality gate: a PDF whose extracted text has a low ratio of dictionary words, or a high density of odd characters, is treated as having no text layer. The DRAP and Quezon City scans in the public set are exactly this case, and naive text extraction would return garbage with full confidence.
+
+### OCR engine choice
+
+Measured on our degraded synthetic scans and the two provided scans, where the prices are known. Recall is the share of printed prices or product names found anywhere in the OCR output.
+
+| Engine | Price recall | Name recall | Confidence on legible pages | Confidence on unreadable pages |
+|---|---|---|---|---|
+| RapidOCR (PP-OCRv6 models on ONNX Runtime) | 0.44 | 0.54 | 0.96 to 0.99 | 0.58 and 0.64 |
+| Tesseract 5 | 0.10 | 0.27 | 0.3 to 0.9, erratic | 0.16 to 0.33 |
+
+RapidOCR recovers 12 of the 13 prices on the provided fax; Tesseract recovers 2. Its line confidence also discriminates readable from unreadable pages, which is the property the agreement score needs. Tesseract's does not. Decision: RapidOCR is the default behind an `OcrEngine` interface, Tesseract is the fallback when installed, and a cloud engine (Textract, Azure Document Intelligence) is the production option for key-value and table confidence, with the caveat that supplier data then leaves the environment. Apache 2.0, CPU only, about two seconds a page. Fine-tuning Tesseract was rejected: its failures are image quality and layout, not glyphs.
 
 ## Prompt injection and hostile documents
 

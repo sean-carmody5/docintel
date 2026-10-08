@@ -5,7 +5,9 @@ description = "Document intelligence pipeline for supplier quotations"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "onnxruntime>=1.30.0",
     "pydantic>=2.11",
+    "rapidocr>=3.9.2",
 ]
 
 [dependency-groups]
