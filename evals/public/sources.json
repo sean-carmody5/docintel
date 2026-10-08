@@ -8,12 +8,13 @@
       "url": "https://www.theglobalfund.org/media/3x0lhsks/ppm_arvreferencepricing_table_en.pdf",
       "format": "pdf",
       "content": "USD reference price per ARV product and pack",
-      "licence": "CC BY-NC 4.0 per site terms",
+      "licence": "CC BY-NC 4.0 (The Global Fund). Attribution: The Global Fund to Fight AIDS, Tuberculosis and Malaria.",
       "tags": [
         "prices",
         "tabular",
         "usd"
-      ]
+      ],
+      "redistributable": true
     },
     {
       "id": "gf_ppm_hiv_strategic",
@@ -22,12 +23,13 @@
       "url": "https://www.theglobalfund.org/media/ibxas5fs/ppm_strategicmedicineshivreferencepricing_table_en.pdf",
       "format": "pdf",
       "content": "USD per product, one page",
-      "licence": "CC BY-NC 4.0 per site terms",
+      "licence": "CC BY-NC 4.0 (The Global Fund). Attribution: The Global Fund to Fight AIDS, Tuberculosis and Malaria.",
       "tags": [
         "prices",
         "tabular",
         "usd"
-      ]
+      ],
+      "redistributable": true
     },
     {
       "id": "unicef_dtp_prices",
@@ -42,7 +44,8 @@
         "tabular",
         "usd",
         "cold_chain"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "unicef_antimalarial_2026",
@@ -57,7 +60,8 @@
         "tabular",
         "usd",
         "price_range"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "unicef_rutf_prices",
@@ -71,7 +75,8 @@
         "prices",
         "tabular",
         "usd"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "paho_sf_reference_2026",
@@ -88,7 +93,8 @@
         "wide_table",
         "price_range",
         "long"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "paho_sf_lta_2022",
@@ -103,7 +109,8 @@
         "tabular",
         "usd",
         "bilingual"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "ghsc_psm_ecatalog_2026",
@@ -119,7 +126,8 @@
         "usd",
         "long",
         "large"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "msh_price_guide_2015",
@@ -136,7 +144,8 @@
         "long",
         "large",
         "multilingual"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "who_afro_price_indicator_2007",
@@ -152,7 +161,8 @@
         "usd",
         "long",
         "incoterms"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "chai_arv_2016",
@@ -167,7 +177,8 @@
         "tabular",
         "usd",
         "footnotes"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "msf_untangling_web_14",
@@ -182,7 +193,8 @@
         "narrative",
         "usd",
         "long"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "sa_ndoh_hp07_2026",
@@ -199,7 +211,8 @@
         "zar",
         "long",
         "awards"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "msd_tanzania_catalogue_2018",
@@ -208,14 +221,15 @@
       "url": "https://open.africa/dataset/dc2e1146-020a-4920-a3ff-cb22f30eb24f/resource/1c802418-e493-4fe2-858d-b3418f2cb536/download/msd-price-catalogue-2018-2019-final.pdf",
       "format": "pdf",
       "content": "86 pages: terms preamble, then code, VEN, description, UoM, TZS price",
-      "licence": "CC BY",
+      "licence": "CC BY (openAFRICA). Attribution: Medical Stores Department, Tanzania, via openAFRICA.",
       "tags": [
         "prices",
         "tabular",
         "tzs",
         "long",
         "terms_preamble"
-      ]
+      ],
+      "redistributable": true
     },
     {
       "id": "ghana_nhis_medicines_2025",
@@ -230,7 +244,8 @@
         "tabular",
         "ghs",
         "long"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "jan_aushadhi_mrp_2015",
@@ -244,7 +259,8 @@
         "prices",
         "tabular",
         "inr"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "drap_sro100_2002",
@@ -259,7 +275,8 @@
         "tabular",
         "pkr",
         "gazette"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "drap_20drugs_2023_scanned",
@@ -274,7 +291,8 @@
         "scanned",
         "pkr",
         "bad_ocr_layer"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "drap_paracetamol_2022_scanned",
@@ -289,7 +307,8 @@
         "scanned",
         "pkr",
         "bad_ocr_layer"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "quezon_city_rfq_scanned",
@@ -305,7 +324,8 @@
         "php",
         "bad_ocr_layer",
         "form"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "gmc_baramati_quotation_scanned",
@@ -321,7 +341,8 @@
         "inr",
         "bad_ocr_layer",
         "form"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "mmwgh_rfq_2023",
@@ -336,7 +357,8 @@
         "prices",
         "php",
         "form"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "philhealth_app_2011",
@@ -352,7 +374,8 @@
         "php",
         "messy_layout"
       ],
-      "insecure_tls": true
+      "insecure_tls": true,
+      "redistributable": false
     },
     {
       "id": "dbm_rfq_25_028",
@@ -368,7 +391,8 @@
         "text_heavy",
         "terms_preamble"
       ],
-      "insecure_tls": true
+      "insecure_tls": true,
+      "redistributable": false
     },
     {
       "id": "ipca_domestic_pricelist_2025",
@@ -384,7 +408,8 @@
         "inr",
         "manufacturer",
         "dense"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "unfpa_jordan_rfq_20_002",
@@ -398,7 +423,8 @@
         "rfq",
         "no_prices",
         "form"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "sa_medicine_prices_2026_10",
@@ -414,7 +440,8 @@
         "spreadsheet",
         "zar",
         "large"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "who_mi4a_vaccine_purchases_2026",
@@ -430,7 +457,8 @@
         "usd",
         "multi_sheet",
         "incoterms"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "spc_sri_lanka_awards_2026_06",
@@ -446,7 +474,8 @@
         "mixed_currency",
         "multi_sheet",
         "awards"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "jordan_jfda_prices_2020",
@@ -455,7 +484,7 @@
       "url": "https://opendata.gov.jo/dataset/MIGRATED-838-2021/resource/b3c4be77-c54b-40a3-b048-17f4a4cad431/download/12-drug2020-.xls?increment=true",
       "format": "xlsx",
       "content": "About 15,400 rows: barcode, trade name, strength, pack, agent (Arabic), prices JOD. Served with an .xls extension but is XLSX.",
-      "licence": "Open Jordanian Licence",
+      "licence": "Open Jordanian Licence. Attribution: Jordan Food and Drug Administration via opendata.gov.jo.",
       "tags": [
         "prices",
         "spreadsheet",
@@ -463,7 +492,8 @@
         "misnamed_extension",
         "arabic",
         "large"
-      ]
+      ],
+      "redistributable": true
     },
     {
       "id": "titck_reference_prices_2026",
@@ -479,7 +509,8 @@
         "eur",
         "turkish"
       ],
-      "insecure_tls": true
+      "insecure_tls": true,
+      "redistributable": false
     },
     {
       "id": "kemsa_pricelist_2017",
@@ -488,12 +519,13 @@
       "url": "https://open.africa/dataset/739db8d3-54d1-4655-87c7-d9821f2ebf1b/resource/6eea972a-5403-4648-86e1-8af3c3e001ce/download/kemsa_pricelist_2017.csv",
       "format": "csv",
       "content": "553 rows: product code, name, category, pack size, price KES",
-      "licence": "CC BY",
+      "licence": "CC BY (openAFRICA). Attribution: KEMSA via openAFRICA / Code for Africa.",
       "tags": [
         "prices",
         "csv",
         "kes"
-      ]
+      ],
+      "redistributable": true
     },
     {
       "id": "msd_tanzania_catalogue_2018_csv",
@@ -502,12 +534,13 @@
       "url": "https://open.africa/dataset/dc2e1146-020a-4920-a3ff-cb22f30eb24f/resource/a5f3adfc-e603-4e3e-b49a-a687d12de3cc/download/tz_msd-price_catalogue-2018-2019.csv",
       "format": "csv",
       "content": "570 rows: code, VEN, description, UoM such as 1000TB, price TZS",
-      "licence": "CC BY",
+      "licence": "CC BY (openAFRICA). Attribution: Medical Stores Department, Tanzania, via openAFRICA.",
       "tags": [
         "prices",
         "csv",
         "tzs"
-      ]
+      ],
+      "redistributable": true
     },
     {
       "id": "spc_sri_lanka_awards_2012_doc",
@@ -522,7 +555,8 @@
         "legacy_office",
         "usd",
         "incoterms"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "unfpa_syria_quotation_form",
@@ -537,7 +571,8 @@
         "no_prices",
         "form",
         "docx"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "ida_product_indicator_2025",
@@ -552,7 +587,8 @@
         "catalogue",
         "bilingual",
         "long"
-      ]
+      ],
+      "redistributable": false
     },
     {
       "id": "jms_uganda_catalogue_2026",
@@ -568,7 +604,8 @@
         "spreadsheet",
         "multi_sheet",
         "protected"
-      ]
+      ],
+      "redistributable": false
     }
   ]
 }

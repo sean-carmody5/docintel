@@ -16,8 +16,17 @@ output/
 *.sqlite
 *.sqlite-journal
 
-# downloaded public samples (fetched by evals/public/fetch.py)
-data/public/
+# downloaded public samples (fetched by evals/public/fetch.py).
+# Only the README, the manifest and files under an explicit open licence are committed.
+data/public/*
+!data/public/README.md
+!data/public/manifest.json
+!data/public/gf_ppm_arv_2026q1.pdf
+!data/public/gf_ppm_hiv_strategic.pdf
+!data/public/msd_tanzania_catalogue_2018.pdf
+!data/public/msd_tanzania_catalogue_2018_csv.csv
+!data/public/kemsa_pricelist_2017.csv
+!data/public/jordan_jfda_prices_2020.xlsx
 
 # editors and OS
 .vscode/

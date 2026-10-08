@@ -1,0 +1,555 @@
+Item Type,Product Code,Product Name,Product Category,Pack Size, Price,Qty To Order,Notes,Value of Order
+Pharmaceutical,PM05ASA001,Acetylsalicylic acid Tablets 300mg,TABLETS AND CAPSULES,1000s,  265.00 ,0,,0.00 
+Pharmaceutical,PM05ASA002,Acetylsalicylic acid Tablets 75mg-enteric coated,TABLETS AND CAPSULES,28s,  45.00 ,0,,0.00 
+Pharmaceutical,PM04ACY001,Acyclovir Tablets 400mg,TABLETS AND CAPSULES,100s,  700.00 ,0,,0.00 
+Pharmaceutical,PM03ALB003,Albendazole Tablets 400mg,TABLETS AND CAPSULES,500s,"  1,300.00 ",0,,0.00 
+Pharmaceutical,PM07AMT001,Amitriptyline Tablets 25mg,TABLETS AND CAPSULES,1000s,  405.00 ,0,,0.00 
+Pharmaceutical,PM06AML001,Amlodipine Tablets 5mg,TABLETS AND CAPSULES,100s,  200.00 ,0,,0.00 
+Pharmaceutical,PM01AMX006,Amoxicillin /Clavulanic Acid Tablets 500mg/125mg ,TABLETS AND CAPSULES,10s,  120.00 ,0,,0.00 
+Pharmaceutical,PM01AMX004,Amoxicillin cap 250mg,TABLETS AND CAPSULES,1000s,"  1,400.00 ",0,,0.00 
+Pharmaceutical,PM03AMX012,Amoxicilln/Clavulanic Acid 250/125MG Tablets,TABLETS AND CAPSULES,20s,195.00,0,,0.00 
+Pharmaceutical,PM03AMX013,Amoxycillin/Clavulanic Dispersible Tablets 228.5mg,TABLETS AND CAPSULES,10s,360.00,0,New,0.00 
+Pharmaceutical,PM06ATE001,Atenolol Tablets 50mg,TABLETS AND CAPSULES,1000s,  440.00 ,0,,0.00 
+Pharmaceutical,PM01AZT005,Azithromycin Tablets 500mg,TABLETS AND CAPSULES,3s,  54.00 ,0,,0.00 
+Pharmaceutical,PM11BAS001,Bisacodyl 5mg Tablets,TABLETS AND CAPSULES,100s,  75.00 ,0,,0.00 
+Pharmaceutical,PM01CEF003,Cefixime Tablets 400mg,TABLETS AND CAPSULES,10s,  336.00 ,0,,0.00 
+Pharmaceutical,PM01CEF005 ,Cefuroxime 250mg  Tablets,TABLETS AND CAPSULES,10s,  137.00 ,0,,0.00 
+Pharmaceutical,PM01CEF009,Cefuroxime 500mg Tablets,TABLETS AND CAPSULES,10s,  205.00 ,0,New,0.00 
+Pharmaceutical,PM01CEP001,Cephradine Capsules 500mg,TABLETS AND CAPSULES,72s,"  3,600.00 ",0,,0.00 
+Pharmaceutical,PM03CFA002, Cefadroxil 500mg capsules,TABLETS AND CAPSULES, 100s ,  705.00 ,0,,0.00 
+Pharmaceutical,PM13CET001 ,Cetirizine 10mg Tablets,TABLETS AND CAPSULES,100s,  45.00 ,0,New,0.00 
+Pharmaceutical,PM13CHL004,Chlorpheniramine Tablets 4mg,TABLETS AND CAPSULES,1000s,  62.00 ,0,,0.00 
+Pharmaceutical,PM01CPR001,Ciprofloxacin Tablets 250mg,TABLETS AND CAPSULES,1000s,"  1,650.00 ",0,,0.00 
+Pharmaceutical,PM01CLA002,Clarithromycin  Tablets 500mg,TABLETS AND CAPSULES, 40s,"  1,012.00 ",0,,0.00 
+Pharmaceutical,PM01CLA003,Clarithromycin  Tablets 500mg,TABLETS AND CAPSULES,10s,  250.00 ,0,,0.00 
+Pharmaceutical,PM11CMT001,Compound Magnesium trisilicate Tablets 370mg,TABLETS AND CAPSULES,1000s,  250.00 ,0,,0.00 
+Pharmaceutical,PM01CTX004,Co-trimoxazole Tablets 480mg,TABLETS AND CAPSULES,1000s,"  1,045.00 ",0,,0.00 
+Pharmaceutical,PM07DAZ004,Diazepam Tablets 5mg,TABLETS AND CAPSULES,100s,  50.00 ,0,,0.00 
+Pharmaceutical,PM05DCL001,Diclofenac Sodium Tablets 50 mg,TABLETS AND CAPSULES,1000s,  276.00 ,0,,0.00 
+Pharmaceutical,PM06DGX004,Digoxin Tablets 250mcg,TABLETS AND CAPSULES,500s,"  2,300.00 ",0,,0.00 
+Pharmaceutical,PM05CDE002,Dihydrocodeine phosphate Tablets 30mg,TABLETS AND CAPSULES,100s,  770.00 ,0,,0.00 
+Pharmaceutical,PM03TND003,Diloxanide furoate Tablets 500mg,TABLETS AND CAPSULES,500s,"  1,350.00 ",0,,0.00 
+Pharmaceutical,PM11DMP002," Domperidone 10mg tablets (Film Coated), Blister Packs",TABLETS AND CAPSULES, 100s,  190.00 ,0,,0.00 
+Pharmaceutical,PM01DXY001,Doxycycline Capsules100mg,TABLETS AND CAPSULES,1000s,"  1,350.00 ",0,,0.00 
+Pharmaceutical,PM06ENA001,Enalapril Tablets 5mg,TABLETS AND CAPSULES,100s,  70.00 ,0,,0.00 
+Pharmaceutical,PM01ERY002,Erythromycin Tablets 250mg,TABLETS AND CAPSULES,1000s,"  2,750.00 ",0,,0.00 
+Pharmaceutical,PM11ESM001,Esomeprazole 20mg Tablet,TABLETS AND CAPSULES,30s,  70.00 ,0,,0.00 
+Pharmaceutical,PM14FER003,Ferrous sulph./folic acid Tablets 200mg/400mcg,TABLETS AND CAPSULES,1000s,  700.00 ,0,,0.00 
+Pharmaceutical,PM14FER001,Ferrous sulphate Tablets200mg,TABLETS AND CAPSULES,1000s,  285.00 ,0,,0.00 
+Pharmaceutical,PM01FLU003 ,Flucloxacillin  Capsules 250mg,TABLETS AND CAPSULES,500s,"  2,500.00 ",0,,0.00 
+Pharmaceutical,PM01FLU005,Flucloxacillin Capsules  500mg,TABLETS AND CAPSULES,500s,"  2,750.00 ",0,,0.00 
+Pharmaceutical,PM01FLU001,Flucloxacillin Capsules 250mg,TABLETS AND CAPSULES,1000s,"  2,800.00 ",0,,0.00 
+Pharmaceutical,PM02FLU008,Fluconazole Capsules 50mg (Diflucan),TABLETS AND CAPSULES,28s,"  1,200.00 ",0,,0.00 
+Pharmaceutical,PM14FLC002,Folic acid Tablets5mg,TABLETS AND CAPSULES,100s,  78.00 ,0,,0.00 
+Pharmaceutical,PM14FLC001,Folic acid Tablets5mg,TABLETS AND CAPSULES,1000s,  275.00 ,0,,0.00 
+Pharmaceutical,PM06FUR002,Furosemide Tablets 40mg,TABLETS AND CAPSULES,1000s,  440.00 ,0,,0.00 
+Pharmaceutical,PM07GAB001,Gabapentin capsules 300mg,TABLETS AND CAPSULES,30s,  200.00 ,0,,0.00 
+Pharmaceutical,PM10GLB001,Glibenclamide Tablets 5mg,TABLETS AND CAPSULES,1000s,  495.00 ,0,,0.00 
+Pharmaceutical,PM10GLB002, Glibenclamide Tablets 5mg (Blister Packs),TABLETS AND CAPSULES, 28s,  25.00 ,0,,0.00 
+Pharmaceutical,PM02GRF001,Griseofulvin Tablets 125mg,TABLETS AND CAPSULES,1000s,"  1,950.00 ",0,,0.00 
+Pharmaceutical,PM06HYD003,Hydrochlorothiazide Tablets 50mg,TABLETS AND CAPSULES,1000s,  360.00 ,0,,0.00 
+Pharmaceutical,PM11HBB002,Hyoscine butylbromide Tablets 10mg (f/c),TABLETS AND CAPSULES,1000s,"  10,000.00 ",0,,0.00 
+Pharmaceutical,PM05BRU002,Ibuprofen Tablets f/c 200mg ,TABLETS AND CAPSULES,1000s,  450.00 ,0,,0.00 
+Pharmaceutical,PM02KET001,Ketoconazole Tablets 200mg ,TABLETS AND CAPSULES,30s,  85.00 ,0,,0.00 
+Pharmaceutical,PM01LEV009, Levofloxacin 500mg tablets (Blister Packs),TABLETS AND CAPSULES, 10s,  90.00 ,0,,0.00 
+Pharmaceutical,PM10LVT005,Levothyroxine sodium Tablets 100mcg,TABLETS AND CAPSULES,100s,  690.00 ,0,,0.00 
+Pharmaceutical,PM11LPE001,Loperamide Capsules  - 2mg,TABLETS AND CAPSULES,100s,  110.00 ,0,,0.00 
+Pharmaceutical,PM10MET001,Metformin Tablets 500mg,TABLETS AND CAPSULES,1000s,  800.00 ,0,,0.00 
+Pharmaceutical,PM10MET003, Metformin Tablets 500mg,TABLETS AND CAPSULES, 30s,  35.00 ,0,,0.00 
+Pharmaceutical, PM10MET002, Metformin Tablets 850mg,TABLETS AND CAPSULES, 30s,  145.00 ,0,,0.00 
+Pharmaceutical,PM06MET001,Methyldopa Tablets  250mg,TABLETS AND CAPSULES,1000s,"  2,700.00 ",0,,0.00 
+Pharmaceutical,PM07MET001,Metoclopramide Tablets 10mg ,TABLETS AND CAPSULES,100s,  77.00 ,0,,0.00 
+Pharmaceutical,PM06AMTZ001,Metolazone tablets 5mg,TABLETS AND CAPSULES,30s,"  1,308.00 ",0,,0.00 
+Pharmaceutical,PM03MET003,Metronidazole Tablets 200mg,TABLETS AND CAPSULES,1000s,  545.00 ,0,,0.00 
+Pharmaceutical,PM06NFE001,Nifedipine Tablets s/r 20mg,TABLETS AND CAPSULES,1000s,  360.00 ,0,,0.00 
+Pharmaceutical,PM11MEP001,Omeprazole Capsules 20mg,TABLETS AND CAPSULES,1000s,"  1,200.00 ",0,,0.00 
+Pharmaceutical,PM11MEP004," Omeprazole Capsules 20mg, blister pack",TABLETS AND CAPSULES, 30s ,  40.00 ,0,,0.00 
+Pharmaceutical,PM05PAR005,Paracetamol Tablets500mg,TABLETS AND CAPSULES,1000s,  420.00 ,0,,0.00 
+Pharmaceutical,PM07PHB002,Phenobarbitone Tablets 30mg,TABLETS AND CAPSULES,100s,  73.00 ,0,,0.00 
+Pharmaceutical,PM03PRA001,Praziquantel Tablets  - 600mg,TABLETS AND CAPSULES,100s,"  1,900.00 ",0,,0.00 
+Pharmaceutical,PM10PRE001,Prednisolone Tablets  - 5mg,TABLETS AND CAPSULES,1000s,  800.00 ,0,,0.00 
+Pharmaceutical,PM03QUN001,"Quinine sulphate Tablets 300mg (f/c, scored)",TABLETS AND CAPSULES,1000s,"  4,500.00 ",0,,0.00 
+Pharmaceutical,PM14RET004,"Retinol (vitamin A) palmitate Capsules  50,000 IU",TABLETS AND CAPSULES,500s,"  1,257.00 ",0,,0.00 
+Pharmaceutical,PM13SAL001,Salbutamol  Inhaler 100mcg/Actuation,INHALER,Can,  146.00 ,0,,0.00 
+Pharmaceutical,PM13SAL006,Salbutamol Tablets 4mg (scored),TABLETS AND CAPSULES,1000s,  200.00 ,0,,0.00 
+Pharmaceutical,PM03TND002,Tinidazole Tablets 500mg (f/c),TABLETS AND CAPSULES,500s,  770.00 ,0,,0.00 
+Pharmaceutical,PM04ACY005,Valacyclovir Tabs 500mg,TABLETS AND CAPSULES,10s,"  2,470.00 ",0,,0.00 
+Pharmaceutical,PM07VAL001 ,Valproic Acid (Sodium Valproate)  Tablets 200mg,TABLETS AND CAPSULES,100s,  438.00 ,0,,0.00 
+Pharmaceutical,PM14PYR002,"Vitamin B complex (B1, B6 and B12)",TABLETS AND CAPSULES,20s,  108.00 ,0,,0.00 
+Pharmaceutical,PM09ZNC001,Zinc sulphate Tablets  20mg ,TABLETS AND CAPSULES,100s,  186.00 ,0,,0.00 
+Pharmaceutical,PM01AMX005,Amoxicillin oral Susp 125mg/5mL,ORAL LIQUIDS,100ml,  35.00 ,0,Issued in multiples of 100 bottles,0.00 
+Pharmaceutical,PM01AMX010,Amoxicillin/clavulanic acid oral Susp 312.5mg/5mL,ORAL LIQUIDS, 100ml,  205.00 ,0,Issued in multiples of 50 bottles,0.00 
+Pharmaceutical,PM13CHL005, Chlorpheniramine syrup 2mg/5ml     , Oral liquids, 60ml bottle,  15.00 ,0,,0.00 
+Pharmaceutical,PM13CHL003,Chlorpheniramine syrup 2mg/5mL,ORAL LIQUIDS,5l,  200.00 ,0,,0.00 
+Pharmaceutical,PM01CTX001,Cotrimoxazole susp 240mg/5mL,ORAL LIQUIDS,50ml,  21.00 ,0,Issued in multiples of 100 bottles,0.00 
+Pharmaceutical,PM06DGX001,Digoxin Elixir/Oral Solution 50mcg/ml,ORAL LIQUIDS,60ml,"  1,775.00 ",0,,0.00 
+Pharmaceutical,PM01ERY001,Erythromycin ethyl succ. Susp 125mg/5mL (pfr),ORAL LIQUIDS,100ml,  55.00 ,0,Issued in multiples of 100 bottles,0.00 
+Pharmaceutical,PM02FLU003,"Fluconazole Suspension  - 50mg/5ml, 35ml",ORAL LIQUIDS,bottle,  65.00 ,0,Issued in multiples of 100 bottles,0.00 
+Pharmaceutical,PM05BRU003,Ibuprofen Suspension 100mg/5ml,ORAL LIQUIDS,60ml,  22.00 ,0,Issued in multiples of 100 bottles,0.00 
+Pharmaceutical,PM03MET002,Metronidazole Susp 200mg/5mL,ORAL LIQUIDS,100ml,  32.00 ,0,Issued in multiples of 100 bottles,0.00 
+Pharmaceutical,PM14MUL001,Multivitamin Syrup,ORAL LIQUIDS,5l,  450.00 ,0,,0.00 
+Pharmaceutical,PM14MUL005,"Multivitamin Syrup  (Vit A,B1,B2,B6,D12,D3, Niacinamide D-Panthenol) ",ORAL LIQUIDS,100ml,  44.00 ,0,New,0.00 
+Pharmaceutical,PM02NYS001,"Nystatin oral Susp 100,000 IU/mL",ORAL LIQUIDS,30ml,  43.00 ,0,,0.00 
+Pharmaceutical,PM09REH002,ORS 4 Satchets & Zinc 10 Tablets 20 Mg,Anti diarrheal,Co-Pack (10s),  30.00 ,0,,0.00 
+Pharmaceutical,PM09REH001,ORS sachet (for 500mL) low osmolality,ORAL LIQUIDS,Satchet,  4.65 ,0,Issued in multiples of 100 satchets,0.00 
+Pharmaceutical,PM05PAR002,Paracetamol Syrup 120mg/5mL,ORAL LIQUIDS,5l,  400.00 ,0,,0.00 
+Pharmaceutical,PM05PAR011, Paracetamol Syrup 120mg/5ml , Oral liquids, 60ml bottle,  18.00 ,0,,0.00 
+Pharmaceutical,PM13SAL003,"Salbutamol  Sulphate respirator(nebulizing) solution,5mg/ml, 10ml bottle",ORAL LIQUIDS, 10ml  ,  430.00 ,0,,0.00 
+Pharmaceutical,PM13SAL004,Salbutamol Syrup 2mg/5mL,ORAL LIQUIDS,100ml,  20.00 ,0,Issued in multiples of 100 bottles,0.00 
+Pharmaceutical,PM13SAB001, Salbutamol+Beclomethasone 200 doses , Inhaler, Canister,  305.00 ,0,,0.00 
+Pharmaceutical,PM07ADR001,Adrenaline (epinephrine) Inj 1mg/1mL amp,INJECTIONS,amp,  7.00 ,0,Issued in multiples of 10 amps,0.00 
+Pharmaceutical,PM13AMN001,"Aminophylline Inj 25mg/mL, 10mL amp",INJECTIONS,amp,  12.00 ,0,Issued in multiples of 10 amps,0.00 
+Pharmaceutical,PV01SER001,Anti-D(Rh) Inj 300mcg,INJECTIONS,vial,"  5,000.00 ",0,,0.00 
+Pharmaceutical,PM07ATP001,"Atropine sulphate Inj 1mg/mL, 1mL amp",INJECTIONS,amp,  6.00 ,0,Issued in multiples of 10 amps,0.00 
+Pharmaceutical,PM01PEN001,Benzathine penicillin Inj 2.4 MU vial pfr,INJECTIONS,vial,  22.00 ,0,Issued in multiples of 10 vials,0.00 
+Pharmaceutical,PM01PEN003,Benzylpenicillin Inj -5mu,INJECTIONS,vial,  23.00 ,0,Issued in multiples of 50 vials,0.00 
+Pharmaceutical,PM01CEF004,Ceftazidime  Inj 1g   ,INJECTIONS,vial,  150.00 ,0,,0.00 
+Pharmaceutical,PM01CEF002,Ceftriaxone Inj 1g (pfr),INJECTIONS,vial,  42.00 ,0,,0.00 
+Pharmaceutical,PM01CEF001,Ceftriaxone Inj 250mg vial (pfr),INJECTIONS,vial,  38.00 ,0,,0.00 
+Pharmaceutical,PM01CAF002,Chloramphenicol sod. succ. Inj 1g vial (pfr),INJECTIONS,vial,  38.00 ,0,,0.00 
+Pharmaceutical,PM13CHL001,Chlorpheniramine Inj 10mg/1ml amp,INJECTIONS,amp,  10.00 ,0,Issued in multiples of 10 amps,0.00 
+Pharmaceutical,PM09DHS001,Darrows Half strength,INJECTIONS,500ml,  65.00 ,0,Issued in multiples of 24 bottles,0.00 
+Pharmaceutical,PM10DEX001,Dexamethasone Inj,INJECTIONS,amp,  14.00 ,0,,0.00 
+Pharmaceutical,PM09DEX001,Dextran 70 - 6% (60mg/ml),INJECTIONS,500ml,  650.00 ,0,,0.00 
+Pharmaceutical,PM07DAZ003,"Diazepam Inj 5mg/ml, 2ml amp",INJECTIONS,amp,  12.00 ,0,Issued in multiples 10 amps,0.00 
+Pharmaceutical,PM01FLU002,Flucloxacillin Inj 250mg (pfr),INJECTIONS,vial,  45.00 ,0,Issued in multiples 10 vials,0.00 
+Pharmaceutical,PM06FUR001,Frusemide Inj,INJECTIONS,amp,  9.00 ,0,Issued in multiples 10 amps,0.00 
+Pharmaceutical,PM01GEN001,"Gentamicin sulphate Inj 10mg/ml, 2ml amp",INJECTIONS,amp,  9.00 ,0,Issued in multiples 10 amps,0.00 
+Pharmaceutical,PM01GEN002,"Gentamicin sulphate Inj 40mg/ml, 2ml amp",INJECTIONS,amp,  9.00 ,0,Issued in multiples 100 amps,0.00 
+Pharmaceutical,PM09DEX002,"Glucose (dextrose) IV infusion 5%, 500ml",INJECTIONS,bottle,  40.00 ,0,Issued in multiples 25 bottles,0.00 
+Pharmaceutical,PM09DEX006,"Glucose (dextrose) IV infusion 50%, 50ml",INJECTIONS,bottle,  55.00 ,0,Issued in multiples 50 bottles,0.00 
+Pharmaceutical,PM09DEX004,"Glucose (dextrose) IV infusion, 10%
+(hypertonic) 500ml",INJECTIONS,bottle,  45.00 ,0,Issued in multiples 24 bottles,0.00 
+Pharmaceutical,PM06HEP002,"Heparin Injection 5000units/ml, 1ml vial",INJECTIONS,1ml,  150.00 ,0,,0.00 
+Pharmaceutical,PM06HEP001,"Heparin Injection 5000units/ml, 5ml Vial",INJECTIONS,5ml,  340.00 ,0,,0.00 
+Pharmaceutical,PM06HYD001,Hydralazine Inj 20mg amp pfr(Apresoline),INJECTIONS,amp,  635.00 ,0,Issued in multiples 5 amps,0.00 
+Pharmaceutical,PM10HYD001,Hydrocortisone Inj 100mg vial,INJECTIONS,vial,  40.00 ,0,Issued in multiples 10 vials,0.00 
+Pharmaceutical,PM11HBB001,Hyoscine butylbromide Inj 20mg/mL amp,INJECTIONS,amp,  20.00 ,0,Issued in multiples 10 amps,0.00 
+Pharmaceutical,PM10NSU001,Insulin biphasic 30/70 100 IU/ml. 10ml vial,INJECTIONS,vial,  320.00 ,0,Issued in multiples 10 amps,0.00 
+Pharmaceutical,PM10NSU003,"Insulin soluble 100 IU/mL, 10ml vial",INJECTIONS,vial,  320.00 ,0,Issued in multiples 10 amps,0.00 
+Pharmaceutical,PM07LGN003,"Lidocaine (lignocaine) Inj 1%, 
+1mg/1mL 30ml vial",INJECTIONS,vial,  43.00 ,0,Issued in multiples 10 vials,0.00 
+Pharmaceutical,PM07LGN001,Lignocaine Hydrochloride Injection  - 2%,INJECTIONS,30ml Vial,  50.00 ,0,,0.00 
+Pharmaceutical,PM09MAG002,Magnesium sulphate Inj 4% w/v 100ml amp,INJECTIONS,amp,  665.00 ,0,,0.00 
+Pharmaceutical,PM06MAG001,"Magnesium sulphate Inj 50%, 10ml amp",INJECTIONS,amp,  120.00 ,0,Issued in multiples 25 amps,0.00 
+Pharmaceutical,PM07MET002,"Metoclopramide Inj 5mg/mL, 2ml  amp",INJECTIONS,amp,  8.00 ,0,Issued in multiples 10 amps,0.00 
+Pharmaceutical,PM03MET004,"Metronidazole Inj 5mg/mL, 100mlvial",INJECTIONS,vial,  25.00 ,0,,0.00 
+Pharmaceutical,PM10XYT001,Oxytocin Inj 10 IU/ml ampoule (Cold Chain),INJECTIONS,amp,  12.00 ,0,Issued in multiples 10 amps,0.00 
+Pharmaceutical,PM10XYT002,Oxytocin Inj 5 IU/ml ampoule (Syntocinon),INJECTIONS,amp,  100.00 ,0,Issued in multiples 10 amps,0.00 
+Pharmaceutical,PM05PAR007,"Paracetamol solution for intravenous infusion 10mg/ml, 100ml ",INJECTIONS,vial,  230.00 ,0,,0.00 
+Pharmaceutical,PM07PHB001,"Phenobarbitone Inj 200mg/ml, 1ml amp",INJECTIONS,amp,  785.00 ,0,Issued in multiples 10 amps,0.00 
+Pharmaceutical,PM14PHY001,Phytomenadione injection (vit k1) - 10mg/ml ampuole,INJECTIONS,amp,  192.00 ,0,Issued in multiples 10 amps,0.00 
+Pharmaceutical,PM11RAN001,Ranitidine Injection 50mg/2ml,INJECTIONS,amp,  10.00 ,0,Issued in multiples 10 amps,0.00 
+Pharmaceutical,PM09SDU001,"Sodium bicarbonate 8.4%, 10ml amp",INJECTIONS,amp,  32.00 ,0,Issued in multiples 5 amps,0.00 
+Pharmaceutical,PM09SDU002,"Sodium chloride IV infusion 0.9%, 500ml
+(Normal saline)",INJECTIONS,bottle,  40.00 ,0,Issued in multiples of 25 bottles,0.00 
+Pharmaceutical,PM09SDU003,"Sodium lactate co IV infusion, 500ml 
+(Hartmann's/Ringer-Lactate)",INJECTIONS,bottle,  40.00 ,0,Issued in multiples 24 bottles,0.00 
+Pharmaceutical,PM03STB001,"Sodium stibogluconate inj 100mg/ml, 100ml amp",INJECTIONS,1,"  13,000.00 ",0,,0.00 
+Pharmaceutical,PM09WAT001,"Water for injection, 10ml vial",INJECTIONS,vial,  4.00 ,0,Issued in multiples 100 vials,0.00 
+Pharmaceutical,PM12BBE001,Benzyl benz.emulsion 25% w/v application 50ml,DERMATOLOGICALS,bottle,  30.00 ,0,,0.00 
+Pharmaceutical,PM12CAL001,Calamine lotion 15% 50ml,DERMATOLOGICALS,bottle,  25.00 ,0,,0.00 
+Pharmaceutical,PM12CLT001,Clotrimazole cream 1% 20g,DERMATOLOGICALS,tube,  17.00 ,0,,0.00 
+Pharmaceutical,PM12CLT002,Clotrimazole pessary 200mg ,DERMATOLOGICALS,pack of 3's,  17.00 ,0,,0.00 
+Pharmaceutical,PM12HYD001,Hydrocortisone ointment 1% 15g,DERMATOLOGICALS,tube,  40.00 ,0,,0.00 
+Pharmaceutical,PM05PAR008,Paracetamol supppositories 125 mg,DERMATOLOGICALS,10s,  100.00 ,0,,0.00 
+Pharmaceutical,PM12SLV001,Silver sulphadiazine cream 1% 250g,DERMATOLOGICALS,Jar,  260.00 ,0,,0.00 
+Pharmaceutical,NM13KYJ001,Water-based lubricant gel,DERMATOLOGICALS,tube,  110.00 ,0,,0.00 
+Pharmaceutical,PD01ALC002,Alcoholic based hand rub,DISINFECTANTS $ ANTISEPTICS,500ml,  305.00 ,0,,0.00 
+Pharmaceutical,PD01CHL001,Chlorhexidine gluconate soln 5%,DISINFECTANTS $ ANTISEPTICS,5l,"  1,000.00 ",0,,0.00 
+Pharmaceutical,PD01ETH002,Ethanol denatured solution 70% ,DISINFECTANTS $ ANTISEPTICS,5l,  900.00 ,0,,0.00 
+Pharmaceutical,PD01ETH001,Methylated spirit/denatured alcohol (Alcohol content 94-96%) ,DISINFECTANTS $ ANTISEPTICS,5l,"  1,015.00 ",0,,0.00 
+Pharmaceutical,PD01PDS001,Povidone iodine solution 10%,DISINFECTANTS $ ANTISEPTICS,1 l,  330.00 ,0,,0.00 
+Pharmaceutical,PD01SHS002,SODIUM HYPOCHLORITE SOLUTION(TBCIDE) 5-5.6%W/V,DISINFECTANTS $ ANTISEPTICS,5l,  278.00 ,0,,0.00 
+Pharmaceutical,PD01SHS001,Sodium hypochlorite solution 4-6% ,DISINFECTANTS $ ANTISEPTICS,5l,  255.00 ,0,,0.00 
+Pharmaceutical,PM05MRP003,"Morphine Inj. 10mg/ml, 1ml amp.",NARCOTIS,amp,  125.00 ,0,,0.00 
+Pharmaceutical,PM05MRP004,Morphine powder,NARCOTIS,100g,"  25,000.00 ",0,,0.00 
+Pharmaceutical,PM12ATR001,Atropine eye Drops -1%,OPTHALMOLOGICALS,5ml Bottle,  170.00 ,0,,0.00 
+Pharmaceutical,PM01CPR003, Ciprofloxacin Eye Drops 0.3%,OPTHALMOLOGICALS, 5ml Bottle,  45.00 ,0,,0.00 
+Pharmaceutical,PM12GEN002,"Gentamicin sulphate solution 0.3% w/v
+(eye/ear drops) 5ml",OPTHALMOLOGICALS,bottle,  17.00 ,0,Issued in multiples 25 bottles,0.00 
+Pharmaceutical,PM12TET002,Tetracycline eye ointment 1% 3.5g,OPTHALMOLOGICALS,tube,  19.00 ,0,Issued in multiples 25 tubes,0.00 
+Pharmaceutical,PM07BEN002,Benzhexol Tablets 5mg,PSYCHOTHERAPEUTICS,100s,  112.00 ,0,,0.00 
+Pharmaceutical,PM07BEN001,Benzhexol Tablets 5mg,PSYCHOTHERAPEUTICS,1000s,  456.00 ,0,,0.00 
+Pharmaceutical,PM07CAR002,Carbamazepine Tablets 200mg,PSYCHOTHERAPEUTICS,1000s,"  1,620.00 ",0,,0.00 
+Pharmaceutical,PM07CHL001,"Chlorpromazine inj 25mg/ml, 2ml amp",PSYCHOTHERAPEUTICS,amp,  9.00 ,0,Issued in multiples 10 amps,0.00 
+Pharmaceutical,PM07CHL002,Chlorpromazine Tablets 100mg,PSYCHOTHERAPEUTICS,1000s,  985.00 ,0,,0.00 
+Pharmaceutical,PM07FLX001,Fluoxetine Capsules - 20mg,PSYCHOTHERAPEUTICS,100s,  401.00 ,0,,0.00 
+Pharmaceutical,PM07FLP001,Flupenthixol Decanoate Inj - 20mg/ml,PSYCHOTHERAPEUTICS,amp,  675.00 ,0,,0.00 
+Pharmaceutical,PM07FLE001,Fluphenazine decanoate Inj 25mg/1ml amp,PSYCHOTHERAPEUTICS,amp,  86.00 ,0,Issued in multiples 5 amps,0.00 
+Pharmaceutical,PM07HAL001,"Haloperidol Decan. Inj. 50mg/ml, 1ml amp.",PSYCHOTHERAPEUTICS,amp,  245.00 ,0,Issued in multiples 5 amps,0.00 
+Pharmaceutical,PM07HAL003,Haloperidol Tablets 5mg,PSYCHOTHERAPEUTICS,1000s,"  1,255.00 ",0,,0.00 
+Pharmaceutical,PM07PHY002,Phenytoin Tablets  50mg,PSYCHOTHERAPEUTICS,1000s,  425.00 ,0,,0.00 
+Pharmaceutical,PM07PHY001,Phenytoin Tablets 100mg,PSYCHOTHERAPEUTICS,1000s,  465.00 ,0,,0.00 
+Pharmaceutical,PM07ATR001,"Atracurium besylate Inj. 10mg/ml, 2.5ml Ampoule",THEATRE MEDICINES,amp,  235.00 ,0,Issued in multiples 5 amps,0.00 
+Pharmaceutical,PM07ATR002,"Atracurium Injection. 10mg/ml, 5ml Ampoule ",THEATRE MEDICINES,amp,  400.00 ,0,Issued in multiples 5 amps,0.00 
+Pharmaceutical,PM07BUP001,Bupivacaine Hcl in dextrose  Inj 5mg  amp ,THEATRE MEDICINES,amp,  47.00 ,0,Issued in multiples 10 amps,0.00 
+Pharmaceutical,PM07BUP002,Bupivacaine Hcl in dextrose  Inj 5mg  amp (Marcaine heavy),THEATRE MEDICINES,amp,  344.00 ,0,Issued in multiples 5 amps,0.00 
+Pharmaceutical,PM07HAT001,"Halothane Inhalation, 250ml",THEATRE MEDICINES,bottle,"  4,070.00 ",0,,0.00 
+Pharmaceutical,PM07KET001,"Ketamine Injection 50mg/ml, 10ml",THEATRE MEDICINES,vial,  100.00 ,0,Issued in multiples 10 vials,0.00 
+Pharmaceutical,PM07NES001,"Neostigmine Inj. 2.5mg/mL, 1ml amp",THEATRE MEDICINES,amp,  30.00 ,0,Issued in multiples 10 amps,0.00 
+Pharmaceutical,PM06ATE002, Atenolol Tablets 50mg tablets (Blister Packs), TABLETS AND CAPSULES, 28's,  28.00 ,0,,0.00 
+Pharmaceutical,PM12SLV003," Silver Sulphadiazine Cream 1%, 100g ",DERMATOLOGICALS, 100g,  105.00 ,0,,0.00 
+Pharmaceutical,PM05DCL004," Diclofenac gel, 1% w/w, 20g",DERMATOLOGICALS,20g tube,18.00,0,,0.00 
+Pharmaceutical,PM03AMP001, Ampicillin/ Cloxacillin  250mg/5ml  100ml ,ORAL LIQUIDS,100ml,50.00,0,,0.00 
+Pharmaceutical,PM13CET002, Cetirizine syrup 60ml,ORAL LIQUIDS,60ml,30.00,0,New,0.00 
+Pharmaceutical,PM07PAN001,"Pancuronium bromide Inj 2mg/ml, 2ml amp",THEATRE MEDICINES,amp,  87.00 ,0,Issued in multiples 10 amps,0.00 
+Pharmaceutical,PM07SUX001,"Suxamethonium chloride Inj 50mg/ml, 2ml amp",THEATRE MEDICINES,amp,  45.00 ,0,Issued in multiples 10 amps,0.00 
+Pharmaceutical,PM07THP001,Thiopentone inj 500mg vial (pfr),THEATRE MEDICINES,vial,  100.00 ,0,,0.00 
+Pharmaceutical,PV01SER002,"Antirabies Immunoglobulin, 200IU/ml, 5ml vial",VACCINES,vial,  966.00 ,0,,0.00 
+Pharmaceutical,PV01SER004,"Rabies  Vaccine, purified verocell/human diploid, single dose vial: WHO prequalified and with vaccine vial monitor (vvm)",VACCINES,vial,"  1,575.00 ",0,,0.00 
+Pharmaceutical,PV01SER003,"Snake Venom Antiserum (African) I.V. Inj. 10ml Polyvalent mixture of at least 10 species of bitis, najas, echis & dendroaspis",VACCINES,vial,"  4,500.00 ",0,,0.00 
+SSD - Pharmaceutical,PM03AMN002,Aminosidine 250mg tablets,Tablets and Capsules,,,,New,0.00 
+SSD - Pharmaceutical,PM06ATV002,"Atorvastatin 20mg tablets (Film coated, blister pack)",Tablets and Capsules,30s,80,0,New,0.00 
+SSD - Pharmaceutical,PM06LST001,Lorsatan 50mg tablets (Blister Pack),TABLETS AND CAPSULES,30's,70,0,New,0.00 
+SSD - Pharmaceutical,PM06LST002,losartan potassium 50mg +hydrochlothiazide 12.5 mg tablets (Blister Pack),TABLETS AND CAPSULES,30's,60,0,New,0.00 
+SSD - Pharmaceutical,PM01NTF001,Nitrofurantoin 100mg tablets (Blister Pack),TABLETS AND CAPSULES,100s,140,0,New,0.00 
+SSD - Pharmaceutical,PM10SPN001,Spironolactone 25mg Tablets,TABLETS AND CAPSULES,100s,400,0,New,0.00 
+SSD - Pharmaceutical,PM01AZT001,"Azithromycin Suspension 200mg/5ml, 30ml (Dry powder for reconstitution with water. ",ORAL LIQUIDS,30ml ,70,0,New,0.00 
+SSD - Pharmaceutical,PM12BET001,"Betamethasone Ointment, 0.1%, 15g ",DERMATOLOGICALS,15g tube,21,0,New,0.00 
+SSD - Pharmaceutical,PM12DEX002,"Dexamethasone  eye drops 0.1%,  5ml",DERMATOLOGICALS,5ml,58,0,New,0.00 
+SSD - Pharmaceutical,PM12DEX004,"Dexamethasone + Neomycin + Polymixin B  600IU/1%/3.5MG/G EYE/Ear Drops, 5ml",DERMATOLOGICALS,5ml,200,0,New,0.00 
+SSD - Pharmaceutical,PM11MEP006,Omeprazole Injection 40mg/ml 10ml vial (Powder for reconstitution with a solvent),INJECTIONS,Vial,170,0,New,0.00 
+SSD - Pharmaceutical,PM09PTA002,"Potassium Chloride Inj 15% ,10 ml",INJECTIONS,Ampoule,80,0,New,0.00 
+SSD - Pharmaceutical,PM06TRA002,Tranexamic Acid Injection 500mg/5ml,INJECTIONS,Ampoule,80,0,New,0.00 
+SSD - Pharmaceutical,PM09CAL002,"Calcium Gluconate Injection, 10%, 10ml Ampoule ",INJECTIONS,Ampoule,57,0,New,0.00 
+SSD - Pharmaceutical,PM12CHR001,"Sodium Chromoglycate eye Drops 2%, 10ml ",OPTHALMOLOGICALS,10ml,150,0,New,0.00 
+SSD - Pharmaceutical,PM12TML001,Timolol eye drops 0.5%  5ml,OPTHALMOLOGICALS,5ml,85,0,New,0.00 
+SSD - Pharmaceutical,PM06ATV001,"Atorvastatin 10mg tablets (Film coated, blister pack)",Tablets and Capsules,30s,65,0,New,0.00 
+SSD - Pharmaceutical,PM11HKT001,"H.pyroli kit(Clarithromycin 500mg,amoxicillin 1gm, Lansoprazole 30mg)",Tablets and Capsules,kit,840,0,New,0.00 
+SSD - Pharmaceutical,PM14HAE001,Haemacel Infusion 500ml,Injections,500ml,1790,0,New,0.00 
+SSD - Pharmaceutical,PM11LAT001,"Lactulose solution 3.4mg/ml,200ml",Injections,200ml,290,0,New,0.00 
+SSD - Pharmaceutical,PM09MAN001,Mannitol 20% w/v Infusion 500ml,Injections,500ml,240,0,New,0.00 
+SSD - Pharmaceutical,PM05MEF001,Mefanamic Acid 250mg Capsules ,Tablets and Capsules,100s,86,0,New,0.00 
+SSD - Pharmaceutical,PM05MEL002,Meloxicam  7.5mg tablets (Blister Pack),Tablets and Capsules,100s,110,0,New,0.00 
+SSD - Pharmaceutical,PM07PRE001,Pregabalin 150mg capsules (Blister pack),Tablets and Capsules,30s,445,0,New,0.00 
+SSD - Pharmaceutical,PM07TRM001,Tramadol 100m  inj,Injections,Amp,10,0,New,0.00 
+Non - Pharmaceutical,NM01GAU003,ABD Gauze Swab X-ray detectable 12 Ply 22.5 * 22.5,SURGICAL DRESSINGS,10s,1025,0,,0.00 
+Non - Pharmaceutical,NM01GAU006,Abdominal Gauze Swabs,SURGICAL DRESSINGS,100s,296,0,,0.00 
+Non - Pharmaceutical,NU03ABS001,Absorbent Material for incontinence,LINEN,Piece,128,0,,0.00 
+Non - Pharmaceutical,NM14THE013,Adhesive Skin traction kit (adult) ,Orthopedic,Piece,535,0,,0.00 
+Non - Pharmaceutical,NM14THE014,Adhesive Skin traction kit (pediatric) ,Orthopedic,Piece,525,0,,0.00 
+Non - Pharmaceutical,NM20RES001,"Airway,Guedel,size 0",RESUCSITAIRE,Piece,52,0,,0.00 
+Non - Pharmaceutical,NM20RES002,"Airway,Guedel,size 00",RESUCSITAIRE,Piece,60,0,,0.00 
+Non - Pharmaceutical,NM20RES003,"Airway,Guedel,size 1",RESUCSITAIRE,Piece,60,0,,0.00 
+Non - Pharmaceutical,NM20RES004,"Airway,Guedel,size 2",RESUCSITAIRE,Piece,52,0,,0.00 
+Non - Pharmaceutical,NM20RES006,"Airway,Guedel,size 4",RESUCSITAIRE,Piece,52,0,,0.00 
+Non - Pharmaceutical,NM12APS001,Alcoholic pre injection swabs,SURGICAL DRESSINGS,100s,90,0,,0.00 
+Non - Pharmaceutical,NM12ADH006,Alcohol Pre Injection Swabs,SURGICAL DRESSINGS,200'S,114,0,,0.00 
+Non - Pharmaceutical,NM20RES008,Ambu bag with masks- Adult,RESUCSITAIRE,Piece,17000,0,,0.00 
+Non - Pharmaceutical,NM20RES009,Ambu bag with masks-Child,RESUCSITAIRE,Piece,15000,0,,0.00 
+Non - Pharmaceutical,NM20RES007,Ambu bag with masks-Neonate,RESUCSITAIRE,Piece,15373,0,,0.00 
+Non - Pharmaceutical,NM18TAP001,Autoclave tape 3/4'' (19mm x 50m) ,SURGICAL DRESSINGS,Roll,300,0,,0.00 
+Non - Pharmaceutical,NM01BAN010,"Bandages cotton crepe (R/W) elastic, 7.5cm x 4.5m BP",SURGICAL DRESSINGS,Roll,27.5,0,,0.00 
+Non - Pharmaceutical,NM01BAN006,Bandages Cotton Crepe (R/W) elastic-10CM X 4.5M BP,SURGICAL DRESSINGS,Roll,28,0,,0.00 
+Non - Pharmaceutical,NM01BAN007,"Bandages cotton crepe(R/W) elastic,  15cm x 4.5m BP",SURGICAL DRESSINGS,Roll,35,0,,0.00 
+Non - Pharmaceutical,NM01BAN009,Bandages Cotton Crepe(R/W)elasttic - 5cm X 4.5M BP,SURGICAL DRESSINGS,Roll,18,0,,0.00 
+Non - Pharmaceutical,NM01BAN002,Bandages cotton L/woven BP 7.5cm x 4.5m ,SURGICAL DRESSINGS,Dozen,90,0,,0.00 
+Non - Pharmaceutical,NM01BAN016,Bandages cotton L/woven BP Size   5CM X 4.5M BP,SURGICAL DRESSINGS,Dozen,54,0,,0.00 
+Non - Pharmaceutical,NM01BAN001,Bandages cotton L/woven BP Size  10CMX4.5M BP,SURGICAL DRESSINGS,Dozen,109,0,,0.00 
+Non - Pharmaceutical,NM01BAN003,Bandages cotton L/woven BP Size  15CM X 4.5M BP,SURGICAL DRESSINGS,Dozen,160,0,,0.00 
+Non - Pharmaceutical,NM01BAN004,Bandages elastic skin adhesive porous-10cmX4.5m BP,SURGICAL DRESSINGS,Roll,295,0,,0.00 
+Non - Pharmaceutical,NM01BAN005,Bandages elastic skin adhesive porous-7.5cmX4.5m BP,SURGICAL DRESSINGS,Roll,270,0,,0.00 
+Non - Pharmaceutical,NM01PLP003,Bandages Plaster of Paris 15cm X 2.75m BP,SURGICAL DRESSINGS,Dozen,620,0,,0.00 
+Non - Pharmaceutical,NM01PLP008,Bandages Plaster of Paris 20cm X 2.75m BP,SURGICAL DRESSINGS,Piece,60,0,,0.00 
+Non - Pharmaceutical,NM06BLA004,Blades  surgical  size 11,SURGICAL DRESSINGS,10s,350,0,,0.00 
+Non - Pharmaceutical,NM01BAN021,Brain Swabs,SURGICAL DRESSINGS,Pack of 20s,21400,0,,0.00 
+Non - Pharmaceutical,NM02CAT006,"Catheter, Foley's, 16FG 30mL 2-way",CATHETERS,Piece,48,0,,0.00 
+Non - Pharmaceutical,NM02CAT007,"Catheter, Foley's, 18FG 30mL 2-way",CATHETERS,Piece,48,0,,0.00 
+Non - Pharmaceutical,NM02CAT004,Catheters folley's 30ml  -size-12FG 2-way,CATHETERS,Piece,48,0,,0.00 
+Non - Pharmaceutical,NM02CAT005,Catheters folley's 30ml  -size-14 FG 2-way,CATHETERS,Piece,48,0,,0.00 
+Non - Pharmaceutical,NM02CAT008,Catheters folley's 30ml-size- 20 FG 2-way,CATHETERS,Piece,45,0,,0.00 
+Non - Pharmaceutical,NM02CAT012,Catheters folley's 30ml-size-10 FG 2-way,CATHETERS,Piece,60,0,,0.00 
+Non - Pharmaceutical,NM02CAT003,Catheters folley's 5ml -size - 10 FG 2-way,CATHETERS,Piece,41,0,,0.00 
+Non - Pharmaceutical,NM02CAT002,Catheters folley's 5ml -Size 8 FG 2-way,CATHETERS,Piece,45,0,,0.00 
+Non - Pharmaceutical,NM02CAT001,Catheters folley's 5ml-size- 6 FG 2-way,CATHETERS,Piece,70,0,,0.00 
+Non - Pharmaceutical,NM02CAT013,Catheter folleys' 16FG 30mls-3Ways,CATHETERS,Piece,65,0,,0.00 
+Non - Pharmaceutical,NM02CAT014,Catheter folleys' 18FG 30mls-3Ways,CATHETERS,Piece,65,0,,0.00 
+Non - Pharmaceutical,NM02CAT015,Catheter folleys' 20FG 30mls-3Ways,CATHETERS,Piece,65,0,,0.00 
+Non - Pharmaceutical,NM01BAG019,Colostomy Bag size 215 x 140 mm (Adult),Bag,Pack of 20,5700,0,,0.00 
+Non - Pharmaceutical,NM01BAG015,Colostomy Bag size 250x 140mm (Adult),Bag,Pack of 20,5700,0,,0.00 
+Non - Pharmaceutical,NM19MAT006,Cord clamp Umbilical,MATERNITY SUPPLIES,Packs of 20s,100,0,,0.00 
+Non - Pharmaceutical,NM14THE023,Corset (T-L And L-S),ORTHOPAEDIC,Piece,13017,0,,0.00 
+Non - Pharmaceutical,NM01GAU002,"Cotton gauze plain, L/wvn, absorb 36"" x 100yds, 1,500g BP",SURGICAL DRESSINGS,Roll,1450,0,,0.00 
+Non - Pharmaceutical,NM01GAU008,"Cotton gauze X-ray detectable l/wvn Absorb- ABSORB-36""X100 YDS 1500G BP",SURGICAL DRESSINGS,Roll,1480,0,,0.00 
+Non - Pharmaceutical,NM01CTW001,"Cotton wool, absorbent white, 400g BP",SURGICAL DRESSINGS,Roll,255,0,,0.00 
+Non - Pharmaceutical,NG05MSC011,Dialyzer,RENAL,Piece,1300,0,,0.00 
+Non - Pharmaceutical,NM12DAP001,Diapers (Extra Large) Adult,Diapers,Pack of 10s,600,0,,0.00 
+Non - Pharmaceutical,NM12DAP002,Diapers (Large) Adult,Diapers,Pack of 10s,520,0,,0.00 
+Non - Pharmaceutical,NM12DAP003,Diapers (Medium) Adult,Diapers,Pack of 10s,500,0,,0.00 
+Non - Pharmaceutical,NP02BTT001,"Dispensing bottle, plastic, 60mL",PACKAGING MATERIAL,Piece,10,0,,0.00 
+Non - Pharmaceutical,NP02ENV002,"Dispensing envelope, plastic, resealable (1x1000)",PACKAGING MATERIAL,1000s,660,0,,0.00 
+Non - Pharmaceutical,NP02LBL001,"Dispensing label, self-adhesive x 200pc ",LABELS,200s,660,0,,0.00 
+Non - Pharmaceutical,NM01ELA001,Elastogel 10cm x 10cm,SURGICAL DRESSINGS,Piece,2000,0,,0.00 
+Non - Pharmaceutical,NM01ELA002,Elastogel 15cm x 20cm,SURGICAL DRESSINGS,Piece,3500,0,,0.00 
+Non - Pharmaceutical,NM01ELA003,Elastogel 30cm x 30cm,SURGICAL DRESSINGS,Piece,6600,0,,0.00 
+Non - Pharmaceutical,NM05TUB003,Endotracheal   cuffed tube  - size 6.5mm,SURGICAL TUBES,Piece,75,0,,0.00 
+Non - Pharmaceutical,NM05TUB004,Endotracheal   Cuffed Tube Size 7.0mm  ,SURGICAL TUBES,Piece,75,0,,0.00 
+Non - Pharmaceutical,NM05TUB005,Endotracheal   Cuffed Tube Size 7.5mm ,SURGICAL TUBES,Piece,60,0,,0.00 
+Non - Pharmaceutical,NM05TUB043,Endotracheal  Cuffed Tube Size 3.5mm,SURGICAL TUBES,Piece,135,0,,0.00 
+Non - Pharmaceutical,NM05TUB047,Endotracheal  Cuffed Tube Size 5.0mm ,SURGICAL TUBES,Piece,80,0,,0.00 
+Non - Pharmaceutical,NM05TUB001,Endotracheal  Cuffed Tube Size 5.5mm ,SURGICAL TUBES,Piece,75,0,,0.00 
+Non - Pharmaceutical,NM05TUB007,Endotracheal  uncuffed Tube Size 2.5mm,SURGICAL TUBES,Piece,50,0,,0.00 
+Non - Pharmaceutical,NM05TUB008,Endotracheal  uncuffed Tube Size 3.0mm,SURGICAL TUBES,Piece,50,0,,0.00 
+Non - Pharmaceutical,NM05TUB009,Endotracheal  uncuffed Tube Size 3.5mm ,SURGICAL TUBES,Piece,50,0,,0.00 
+Non - Pharmaceutical,NM05TUB006,Endotracheal tube cuffed - size 8.0mm,SURGICAL TUBES,Piece,103,0,,0.00 
+Non - Pharmaceutical,NM05TUB044,Endotracheal tube cuffed size 4.5mm,SURGICAL TUBES,Piece,63,0,,0.00 
+Non - Pharmaceutical,NM05TUB011,Endotracheal tube uncuffed - size 4.5mm,SURGICAL TUBES,Piece,31,0,,0.00 
+Non - Pharmaceutical,NM05TUB015,Feeding tubes 10 FG,SURGICAL TUBES,Piece,26,0,,0.00 
+Non - Pharmaceutical,NM05TUB017,Feeding tubes 14 FG,SURGICAL TUBES,Piece,14,0,,0.00 
+Non - Pharmaceutical,NM05TUB014,Feeding tubes 4 FG,SURGICAL TUBES,Piece,13,0,,0.00 
+Non - Pharmaceutical,NM05TUB020,Feeding tubes- Size 20 FG,SURGICAL TUBES,Piece,30,0,,0.00 
+Non - Pharmaceutical,NM05TUB021,Feeding tubes- Size 22 FG,SURGICAL TUBES,Piece,30,0,,0.00 
+Non - Pharmaceutical,NM05TUB016,"Feeding tubes, 12FG",SURGICAL TUBES,Piece,13,0,,0.00 
+Non - Pharmaceutical,NM05TUB018,"Feeding tubes, 16FG",SURGICAL TUBES,Piece,13,0,,0.00 
+Non - Pharmaceutical,NM05TUB019,"Feeding tubes, 18FG ",SURGICAL TUBES,Piece,14,0,,0.00 
+Non - Pharmaceutical,NM05TUB023,"Feeding tubes, 6FG (pre-term) ",SURGICAL TUBES,Piece,13,0,,0.00 
+Non - Pharmaceutical,NM05TUB022,"Feeding tubes, 8FG (for term) ",SURGICAL TUBES,Piece,13,0,,0.00 
+Non - Pharmaceutical,NM01GAU007,"Gauze compress swabs 8 ply 10cm X 10cm, STERILE",SURGICAL DRESSINGS, 25s,133,0,,0.00 
+Non - Pharmaceutical,NM09SET006,"Giving sets, Blood, Double Chamber",ADMINISTRATION SETS,50s,990,0,,0.00 
+Non - Pharmaceutical,NM07GLV004,Gloves Surgeon - size 6.5 sterile,SURGICAL GLOVES,50 pairs,970,0,,0.00 
+Non - Pharmaceutical,NM07GLV007,"Gloves  surgeon -  size 8.0""  sterile",SURGICAL GLOVES,50 pairs,935,0,,0.00 
+Non - Pharmaceutical,NM07GLV010,"Gloves, gynaecological, size 7.5'' sterile",SURGICAL GLOVES,50 pairs,7400,0,,0.00 
+Non - Pharmaceutical,NM07GLV003,"Gloves, latex examination, large",SURGICAL GLOVES,50 pairs,395,0,,0.00 
+Non - Pharmaceutical,NM07GLV001,"Gloves, latex examination, medium",SURGICAL GLOVES,50 pairs,320,0,,0.00 
+Non - Pharmaceutical,NM07GLV005,"Gloves, surgical, size 7.0'' (sterile)",SURGICAL GLOVES,50 pairs,970,0,,0.00 
+Non - Pharmaceutical,NM07GLV006,"Gloves, surgical, size 7.5'' (sterile)",SURGICAL GLOVES,50 pairs,1070,0,,0.00 
+Non - Pharmaceutical,NM05TUB051,Haemodialysis tubing,RENAL,Piece,306,0,,0.00 
+Non - Pharmaceutical,NM19MAT002,"Identification band, baby",MATERNITY SUPPLIES,Piece,5,0,,0.00 
+Non - Pharmaceutical,NM09SET001,Infusion giving set with air inlet,ADMINISTRATION SETS,10s,225,0,Issued in multiples 50 Pieces,0.00 
+Non - Pharmaceutical,NM05TUB026,Intercoastal drainage tubes with Trocar size 24FG,DRAINAGE TUBES,Piece,275,0,,0.00 
+Non - Pharmaceutical,NM05TUB057,Intercoastal drainage tube with Trocar size 16FG,DRAINAGE TUBES,Piece,275,0,,0.00 
+Non - Pharmaceutical,NM05TUB058,Intercoastal drainage tubes with Trocar size 30FG,DRAINAGE TUBES,Piece,300,0,,0.00 
+Non - Pharmaceutical,NM05TUB024,Intercoastal drainage tubes size 28 FG,DRAINAGE TUBES,Piece,150,0,,0.00 
+Non - Pharmaceutical,NM05TUB025,Intercoastal drainage tubes size 32 FG,DRAINAGE TUBES,Piece,220,0,,0.00 
+Non - Pharmaceutical,EG04GEN082,Intraoccular lenses--+21d,OPTHAMOLOGICAL LENSES,Piece,805,0,,0.00 
+Non - Pharmaceutical,EG04GEN083,Intraoccular lenses--+22d,OPTHAMOLOGICAL LENSES,Piece,725,0,,0.00 
+Non - Pharmaceutical,NM08CAN006,IV Cannula - 26G,CANNULAS,Piece,14,0,Issued in multiples 50 Pieces,0.00 
+Non - Pharmaceutical,NM08CAN002,IV cannula 18G,CANNULAS,Piece,14,0,Issued in multiples 50 Pieces,0.00 
+Non - Pharmaceutical,NM08CAN003,IV cannula 20G,CANNULAS,Piece,15,0,Issued in multiples 50 Pieces,0.00 
+Non - Pharmaceutical,NM08CAN004,IV cannula 22G,CANNULAS,Piece,14,0,Issued in multiples 50 Pieces,0.00 
+Non - Pharmaceutical,NM08CAN005,IV cannula 24G,CANNULAS,Piece,15,0,Issued in multiples 50 Pieces,0.00 
+Non - Pharmaceutical,EG04GEN085,Keratome knives,SURGICAL KNIVES,Piece,116,0,,0.00 
+Non - Pharmaceutical,NM19MAT005,Maternity pads (towels),MATERNITY SUPPLIES,10s,130,0,,0.00 
+Non - Pharmaceutical,NG05MSC012,"Measuring spoon, double-sided 5mL/2.5mL",DISPENSING,200s,360,0,,0.00 
+Non - Pharmaceutical,NS01CLL032,Medical Supplies Register,STATIONERY,Piece,495,0,,0.00 
+Non - Pharmaceutical,NS01CLL031,Medicine Register,STATIONERY,Piece,495,0,,0.00 
+Non - Pharmaceutical,NM18TAP006,Micropore tape adhesive 5cm X 4.5m,SURGICAL DRESSINGS,Piece,29,0,,0.00 
+Non - Pharmaceutical,NM18TAP007,Micropore tape adhesive 7.5cm X 4.5m ,SURGICAL DRESSINGS,Piece,46,0,,0.00 
+Non - Pharmaceutical,NM18TAP002,Micropore tape adhesive 2.3cm x 9.44m ,SURGICAL DRESSINGS,Roll,30,0,,0.00 
+Non - Pharmaceutical,EM08SUC004,Miniclose wound drainage/suction unit,DRAINAGE TUBES,Piece,1250,0,,0.00 
+Non - Pharmaceutical,NM20RES011,Nasal Prongs for oxygen delivery -  Adult size,RESUCSITAIRE,Piece,35,0,,0.00 
+Non - Pharmaceutical,NM20RES010,Nasal prongs for oxygen delivery-Peads size,RESUCSITAIRE,Piece,35,0,,0.00 
+Non - Pharmaceutical,NM02CAT010,Nelaton catheter FG 12,CATHETERS,Piece,13,0,,0.00 
+Non - Pharmaceutical,NM02CAT011,Nelaton catheters  FG 16,CATHETERS,Piece,20,0,,0.00 
+Non - Pharmaceutical,NM01BAN025,"Orthopaedic /undercast padding (3"") 7.5cm*2.7m (soft bandage)",Orthopedic,Dozen,400,0,,0.00 
+Non - Pharmaceutical,NM01BAN020,"Orthopaedic/undercast padding (4"") 10cm*2.7m (soft bandage)",Orthopedic,Dozen,650,0,,0.00 
+Non - Pharmaceutical,NM01BAN018,"Orthopaedic /undercast padding (8"") 20cm*2.7m (soft bandage)",Orthopedic,Dozen,870,0,,0.00 
+Non - Pharmaceutical,EM10XYM004,"Oxygen mask with strap, adult",RESUCSITAIRE,Piece,77,0,,0.00 
+Non - Pharmaceutical,NM20RES012,"Oxygen mask, with strap, child",RESUCSITAIRE,Piece,75,0,,0.00 
+Non - Pharmaceutical,NM20RES013,"Oxygen mask, with strap, neonate",RESUCSITAIRE,Piece,75,0,,0.00 
+Non - Pharmaceutical,NM01GAU001,"Paraffin gauze dressing, 10cm x 10cm",SURGICAL DRESSINGS,10s,201,0,,0.00 
+Non - Pharmaceutical,NM11PBL003,Polythene Bags / Bin Liners (Black) - 30 litres,DISPOSAL BAGS,100s,2824.91,0,,0.00 
+Non - Pharmaceutical,NM11PBL007,Polythene Bags / Bin Liners (Red) - 30 litres,DISPOSAL BAGS,100s,4347.714,0,,0.00 
+Non - Pharmaceutical,NM11PBL011,Polythene Bags / Bin Liners (Yellow) - 30 litres,DISPOSAL BAGS,100s,2704.13,0,,0.00 
+Non - Pharmaceutical,NM11PBL008,Polythene  bag/liner red 50 liters,DISPOSAL BAGS,100s,6100,0,,0.00 
+Non - Pharmaceutical,NM11PBL004,Polythene bag /liner black 50 liters,DISPOSAL BAGS,100s,6100,0,,0.00 
+Non - Pharmaceutical,NM11PBL012,Polythene bag/liner yellow 50 liters,DISPOSAL BAGS,100s,6100,0,,0.00 
+Non - Pharmaceutical,NS01CLL001,Prescription Pads,STATIONERY,1,135,0,,0.00 
+Non - Pharmaceutical,NM05TUB029,"Rectal Tube ,CH24 ,L30cm,Sterile,disposable",SURGICAL TUBES,Piece,25,0,,0.00 
+Non - Pharmaceutical,NM05TUB028,"Rectal tube, CH20  L30cm Sterile,disposable",SURGICAL TUBES,Piece,25,0,,0.00 
+Non - Pharmaceutical,NM11BXS001,Safety Boxes ,ENVIROMENTAL SUPPLIES,Piece,362,0,,0.00 
+Non - Pharmaceutical,NM09SET004,Solusets for Blood,ADMINISTRATION SETS,Piece,250,0,,0.00 
+Non - Pharmaceutical,NM09SET002,Solusets for Fluids,ADMINISTRATION SETS,Piece,60,0,,0.00 
+Non - Pharmaceutical,NM12NED003,SPINAL NEEDLE  -  22G(0.9X90MM) STER DISP,SURGICAL NEEDLES,Piece,430,0,,0.00 
+Non - Pharmaceutical,NM11NED011,SPINAL NEEDLE  -  25G(0.7X40MM) STER DISP,SURGICAL NEEDLES,Piece,492.7824,0,,0.00 
+Non - Pharmaceutical,NM12NED007,"Spinal Needle ,22G x 40mm, ster,disp",SURGICAL NEEDLES,Piece,70,0,,0.00 
+Non - Pharmaceutical,NM12NED008,"Spinal needle 25g x 90mm, sterile, disp",SURGICAL NEEDLES,Piece,70,0,,0.00 
+Non - Pharmaceutical,NS01CLL003,Stock Control Card,STATIONERY,Piece,9,0,Issued in multiples of 50s,0.00 
+Non - Pharmaceutical,NM03SCA003,Suction catheter 14 FG,CATHETERS,Piece,16,0,,0.00 
+Non - Pharmaceutical,NM03SCA005,Suction catheter 18 FG,CATHETERS,Piece,18,0,,0.00 
+Non - Pharmaceutical,NM03SCA009,Suction catheter 8FG,CATHETERS,Piece,16,0,,0.00 
+Non - Pharmaceutical,NM03SCA001,"Suction catheter, size 10FG",CATHETERS,Piece,19,0,,0.00 
+Non - Pharmaceutical,NM03SCA002,"Suction catheter, size 12FG",CATHETERS,Piece,15,0,,0.00 
+Non - Pharmaceutical,NM03SCA004,"Suction catheter, size 16FG",CATHETERS,Piece,15,0,,0.00 
+Non - Pharmaceutical,NM03SCA007,"Suction catheter, size 4FG",CATHETERS,Piece,15,0,,0.00 
+Non - Pharmaceutical,NM03SCA008,"Suction catheter, size 6FG",CATHETERS,Piece,15,0,,0.00 
+Non - Pharmaceutical,NM03SCA015,Suction catheters with regulatory valve size  4 FG,CATHETERS,Dozen,145,0,,0.00 
+Non - Pharmaceutical,NM03SCA010 ,Suction catheters with regulatory valve size 10FG,CATHETERS,Dozen,145,0,,0.00 
+Non - Pharmaceutical,NM03SCA014,Suction catheters with regulatory valve size 18 FG,CATHETERS,Dozen,145,0,,0.00 
+Non - Pharmaceutical,NM06BLA001,"Surgical blades size 15, s.s/c.s on disp BP handle size 6 ",SURGICAL DRESSINGS,10s,200,0,,0.00 
+Non - Pharmaceutical,NM06BLA002,"Surgical blades size 23, s.s/c.s on disp BP handle  ",SURGICAL DRESSINGS,10s,210,0,,0.00 
+Non - Pharmaceutical,NM06BLA003,"Surgical blades size 22, s.s/c.s on disp BP handle (Sterile)",SURGICAL DRESSINGS,10s,300,0,,0.00 
+Non - Pharmaceutical,NM06BLA007,Skin Grafting  Blade No. 3,SURGICAL DRESSINGS,Piece,715,0,New,0.00 
+Non - Pharmaceutical,NM06BLA008,Skin Grafting  Blade No. 4,SURGICAL DRESSINGS,Piece,715,0,New,0.00 
+Non - Pharmaceutical,NM03SUT082,"Suture nylon, No. 0  ½C 40mm-RCN 75cm ",SURGICAL SUTURES,Dozen,430,0,,0.00 
+Non - Pharmaceutical,NM03SUT034,"Suture Nylon, No. 3/0 75cm1/2c26mm RCN ",SURGICAL SUTURES,Dozen,250,0,,0.00 
+Non - Pharmaceutical,NM03SUT042,"Suture Polyglactin 2/0, 75cm on 40mm ½ C RBN",SURGICAL SUTURES,Dozen,1810,0,,0.00 
+Non - Pharmaceutical,NM03SUT093,"Suture Polyglactin 3/0, 75cm on 36mm ½ C RBN",SURGICAL SUTURES,Dozen,900,0,,0.00 
+Non - Pharmaceutical,NM03SUT059,"Suture Polypropyelene-3/0,75cm,½C,22mm-CCN",SURGICAL SUTURES,Dozen,200,0,,0.00 
+Non - Pharmaceutical,NM03SUT067,"Suture, Nylon 1  100cm ½ C on 90mm CCN ",SURGICAL SUTURES,Dozen,175,0,,0.00 
+Non - Pharmaceutical,NM03SUT036,"Suture, Nylon 1 90cm ½ C 60mm RCN ",SURGICAL SUTURES,Dozen,250,0,,0.00 
+Non - Pharmaceutical,NM03SUT033,"Suture, Nylon 4/0 75cm ½ C 22mm RCN",SURGICAL SUTURES,Dozen,250,0,,0.00 
+Non - Pharmaceutical,NM03SUT065,"Suture, Nylon 4/0 75cm ½ C on 30mm RCN",SURGICAL SUTURES,Dozen,1900,0,,0.00 
+Non - Pharmaceutical,NM03SUT035,"Suture, nylon, No. 2/0, 75cm on 40mm ½C RCN",SURGICAL SUTURES,Dozen,224,0,,0.00 
+Non - Pharmaceutical,NM03SUT081,"Suture, Polyglactin  0 ½C  45mm RBN 75cm.",SURGICAL SUTURES,Dozen,1200,0,,0.00 
+Non - Pharmaceutical,NM03SUT041,"Suture, Polyglactin  1  90cm on 45mm ½C  RBN",SURGICAL SUTURES,Dozen,1200,0,,0.00 
+Non - Pharmaceutical,NM03SUT043,"Suture, Polyglactin  3/0  75cm on 20mm  ½C  RBN",SURGICAL SUTURES,Dozen,1200,0,,0.00 
+Non - Pharmaceutical,NM03SUT055,"Suture, Polyglactin 1, ½C, 40mm  RBN,75cm ",SURGICAL SUTURES,Dozen,1230,0,,0.00 
+Non - Pharmaceutical,NM03SUT066,"Suture, Polyglactin 5/0, 75cm on 30mm 3/8C RBN ",SURGICAL SUTURES,Dozen,1200,0,,0.00 
+Non - Pharmaceutical,NM03SUT087,SUTURE POLYGLACTIN NO 8/0  MICROPOINT -SPATULA 6.5MM 30CM.,SURGICAL SUTURES,Dozen,2013,0,,0.00 
+Non - Pharmaceutical,NM03SUT096,SUTURE POLYGLACTIN 5/0  75CM ON 19MM ½ C CCN,SURGICAL SUTURES,Dozen,1115.6046,0,,0.00 
+Non - Pharmaceutical,NM03SUT097,SUTURE POLYGLACTIN 2/0  75CM ON 40MM ½ C RCN,SURGICAL SUTURES,Dozen,1077.27708,0,,0.00 
+Non - Pharmaceutical,NM03SUT099,SUTURE POLYGLACTIN 2  90CM ON 45MM ½C  RCN,SURGICAL SUTURES,Dozen,1396.77678,0,,0.00 
+Non - Pharmaceutical,NM03SUT069,"Suture, Polyglycolic acid 1  75cm on 65mm ½ C  RBN",SURGICAL SUTURES,Dozen,1339,0,,0.00 
+Non - Pharmaceutical,NM03SUT014,"Suture, Polyglycolic acid 1 90cm on 45mm ½ C  RBN",SURGICAL SUTURES,Dozen,1260,0,,0.00 
+Non - Pharmaceutical,NM03SUT057,"Suture, Polyglycolic acid 2/0 90cm on 36 mm ½ C  TCN",SURGICAL SUTURES,Dozen,1250,0,,0.00 
+Non - Pharmaceutical,NM03SUT071,"Suture, Polyglycolic acid 3/0 75cm on 35mm ½ C  RBN",SURGICAL SUTURES,Dozen,1105,0,,0.00 
+Non - Pharmaceutical,NM03SUT070,"Suture, Polyglycolic acid 4/0 75cm on 30mm ½ C  RBN",SURGICAL SUTURES,Dozen,1025,0,,0.00 
+Non - Pharmaceutical,NM03SUT020,"Suture, polyglycolic acid 5/0  75cm on 19mm ½ C RBN",SURGICAL SUTURES,Dozen,860,0,,0.00 
+Non - Pharmaceutical,NM03SUT015,"Suture, polyglycolic acid, 2/0  ½C RBN 40mm X75cm",SURGICAL SUTURES,Dozen,895,0,,0.00 
+Non - Pharmaceutical,NM03SUT102,"SUTURE POLYGLACTIN NO 6/0, 45CM, 17MM 1/2C RCN",SURGICAL SUTURES,Dozen,875,0,New,0.00 
+Non - Pharmaceutical,NM03SUT104,"SUTURE POLYGLACTIN NO. 4/0, 45CM 17MM 1/2C RCN",SURGICAL SUTURES,Dozen,875,0,New,0.00 
+Non - Pharmaceutical,NM03SUT105,"SUTURE POLYGLACTIN NO.5/0, 45CM 17MM 1/2 C RCN",SURGICAL SUTURES,Dozen,875,0,New,0.00 
+Non - Pharmaceutical,NM03SUT106,"SUTURE NYLON 9/0, 45CM, 6.5MM 1/2C RCN",SURGICAL SUTURES,Dozen,1320,0,New,0.00 
+Non - Pharmaceutical,NM03SUT107,"SUTURE NYLON NO 1 75CM, 40MM 1/2 C RCN",SURGICAL SUTURES,Dozen,250,0,New,0.00 
+Non - Pharmaceutical,NM03SUT108,"SUTURE NYLON NO 10/0 30CM, 6.5MM 1/2 C RCN",SURGICAL SUTURES,Dozen,1320,0,New,0.00 
+Non - Pharmaceutical,NM03SUT109,"SUTURE POLYGLACTIN NO 3/0 75CM, 26MM 3/8 C RCN",SURGICAL SUTURES,Dozen,1100,0,New,0.00 
+Non - Pharmaceutical,NM10SYR002,"Syringes 2pc 10ml RUP with G21 needle x 1 1/2""",SURGICAL SYRINGES,100s,605,0,,0.00 
+Non - Pharmaceutical,NM10SYR003,"Syringes 2pc 20ml with G21 needle 1 1/2""",SURGICAL SYRINGES,100s,895,0,,0.00 
+Non - Pharmaceutical,NM10SYR004,"Syringes 2pc 2ml RUP with G23 needle x 1""",SURGICAL SYRINGES,100s,455,0,,0.00 
+Non - Pharmaceutical,NM10SYR006,"Syringes 2pc 5ml RUP with G21 needle x 1 1/2""",SURGICAL SYRINGES,100s,580,0,,0.00 
+Non - Pharmaceutical,NM10SYR007,"Syringes, insulin, 1mL with 29G x 3/8"" (12.7mm) needle std disp",SURGICAL SYRINGES,100s,800,0,,0.00 
+Non - Pharmaceutical,NM10SYR008,"Syringes, insulin, 1ml, with 30G needle, STD DISP.",SURGICAL SYRINGES,100s,800,0,,0.00 
+Non - Pharmaceutical,NG04TTC001,"Tablet counter, triangular",COUNTER,Piece,149,0,,0.00 
+Non - Pharmaceutical,NG02SPA006,Tongue depressor wooden 140mm x 19mm,RESUCSITAIRE,100s,100,0,,0.00 
+Non - Pharmaceutical,NG05CMD001,Torniquet,ADMINISTRATION SETS,Piece,75,0,,0.00 
+Non - Pharmaceutical,NM05TUB038,Tracheostomy   tube    - size 5.5,SURGICAL TUBES,Piece,370,0,,0.00 
+Non - Pharmaceutical,NM05TUB037,Tracheostomy   tube  -  size 5.0,SURGICAL TUBES,Piece,370,0,,0.00 
+Non - Pharmaceutical,NM05TUB040,Tracheostomy   tube   - size 6.5,SURGICAL TUBES,Piece,370,0,,0.00 
+Non - Pharmaceutical,NM05TUB034,Tracheostomy   tube -  size 3.5,SURGICAL TUBES,Piece,370,0,,0.00 
+Non - Pharmaceutical,NM05TUB035,Tracheostomy   tube -  size 4.0,SURGICAL TUBES,Piece,370,0,,0.00 
+Non - Pharmaceutical,NM05TUB036,Tracheostomy   tube -  size 4.5,SURGICAL TUBES,Piece,370,0,,0.00 
+Non - Pharmaceutical,NM05TUB039,Tracheostomy   tube  - size 6.0,SURGICAL TUBES,Piece,370,0,,0.00 
+Non - Pharmaceutical,NM05TUB041,Tracheostomy   tube  - size 7.0,SURGICAL TUBES,Piece,370,0,,0.00 
+Non - Pharmaceutical,NM01BAN024,"Orthopaedic /undercast padding (6"") 15cm*2.7m (soft bandage)",ORTHOPAEDIC,Dozen,324,0,,0.00 
+Non - Pharmaceutical,NM05TUB059,Tracheostomy tube size 8.0,SURGICAL TUBES,Piece,265,0,,0.00 
+Non - Pharmaceutical,NM20RES016,"Airways, guedel size 5",RESUCSITAIRE,Piece,30,0,,0.00 
+Non - Pharmaceutical,NM20RES005,"Airways, guedel size 3",RESUCSITAIRE,Piece,35,0,,0.00 
+Non - Pharmaceutical,NM01BAG014,Urine bag grad. with inlet/outlet 2000mls,SURGICAL TUBES,Piece,30,0,,0.00 
+Non - Pharmaceutical,NM01ZNS005,"Zinc oxide strapping, 10cm x 4.5m",SURGICAL DRESSINGS,Roll,165,0,,0.00 
+Non - Pharmaceutical,NM01ZNS002,"Zinc oxide strapping, 5cm x 4.5m",SURGICAL DRESSINGS,Roll,75,0,,0.00 
+Non - Pharmaceutical,NM01ZNS003,"Zinc oxide strapping, 7.5cm x 4.5m",SURGICAL DRESSINGS,Roll,93,0,,0.00 
+Laboratory Commodities,NL03MCS001,Microscope slides(Frosted),Lab devices & consumables,Pack of 50,89,0,Ecolat Medical brand,0.00 
+Laboratory Commodities,NL03MCS004,Microscope slides (plain),Lab devices & consumables,Pack of 50,81,0,Ecolat Medical brand,0.00 
+Laboratory Commodities,NL04TUB014,Capillary Tube (heparinised) 25ul,Lab devices & consumables,Pack of 100 ,355,0,Microhematocrit,0.00 
+Laboratory Commodities,NL04TUB013,EDTA blood collection tubes,Lab devices & consumables,Pack of 1000,6300,0,Weigo brand,0.00 
+Laboratory Commodities,NL04TUB025,ESR tube with stand,Lab devices & consumables,Set,1900,0,Westergreen,0.00 
+Laboratory Commodities,NL08LBL079,Plastic centrifuge Tubes (15mls),Lab devices & consumables,Pack of 50,960,0,Biologix brand,0.00 
+Laboratory Commodities,NL08LBL080,Plastic centrifuge Tubes (50mls),Lab devices & consumables,Pack of 50,1800,0,Biologix brand,0.00 
+Laboratory Commodities,NL04TUB024,Blood Collection Tube (Red Top 4 Ml),Lab devices & consumables,"Pack of 1,000",6228.7344,0,Weigo brand,0.00 
+Laboratory Commodities,NL05TES100,CRAG (Cryptococcal Antigen Test),Lab devices & consumables,Kit of 50 tests,17225,0,Immy brand,0.00 
+Laboratory Commodities,NL04TUB020,Prostate  specific antigen (PSA) 25 tests  ,Lab devices & consumables,Kit with all accessories,3500,0,PSA semi rapid test,0.00 
+Laboratory Commodities,NL05TES089,Brucella Abortus KIT (Antigen test) 100 tests,Lab devices & consumables,Kit with all accessories,480,0,Micropath Abortus,0.00 
+Laboratory Commodities,NL05TES090,Brucella Melitensis KIT (Antigen test) 100 tests,Lab devices & consumables,Kit with all accessories,480,0,Micropath Melitensis,0.00 
+Laboratory Commodities,NL05TES094,Helicobacter Pylori rapid kit (antigen),Lab devices & consumables,Kit of 20 tests,3000,0,Onsite H. Pylori,0.00 
+Laboratory Commodities,NL05TES092,Helicobacter Pylori rapid kit (antibody),Lab devices & consumables,Kit of 40 tests,7200,0,Lab rapid test,0.00 
+Laboratory Commodities,NL05TES101,Syphilis Anti-body Screening Test,Lab devices & consumables,Kit of 100 tests,2000,0,Omega brand,0.00 
+Laboratory Commodities,NL05TES093,Rheumatoid factor kit ,Lab devices & consumables,50 tests,1075,0,RF latex kit,0.00 
+Laboratory Commodities,NL02CNS067,Blood collection needles 21G,Lab devices & consumables,Pack of 100,500,0,Weigo brand,0.00 
+Laboratory Commodities,NL02CNS068,Blood collection needles 23G,Lab devices & consumables,Pack of 100,500,0,Weigo brand,0.00 
+Laboratory Commodities,NL08LBL081,Needle  holders,Lab devices & consumables,Case of 1000,3245,0,Weigo brand,0.00 
+Laboratory Commodities,EM03GLM001,Glucometer,Lab devices & consumables,Piece,512,0,Bionine brand,0.00 
+Laboratory Commodities,NL08BLB028,Glucose strip,Lab devices & consumables,Pack of 50,1100,0,Bionine brand,0.00 
+Linen Items,NU02STA035,Surgical masks,LINEN ITEMS,Piece,10,0,,0.00 
+Linen Items,NU02STA010,Disposable surgical gowns large,LINEN ITEMS,Piece,400,0,,0.00 
+Linen Items,NU02STA013,Disposable surgical gowns XLarge,LINEN ITEMS,Piece,395,0,,0.00 
+Linen Items,NU02STA011,Disposable surgical gowns medium,LINEN ITEMS,Piece,400,0,,0.00 
+Linen Items,NU06PCS001,"Pillow cases/slips with flip, 45 x 70cm",LINEN ITEMS,Piece,290,0,,0.00 
+Linen Items,NU03BLA002,Cot Blankets 90 x 130cm,LINEN ITEMS,Piece,770,0,,0.00 
+Linen Items,NU02STA009,Cotton Material Green for theatre use,LINEN ITEMS,"36"" x 40 meters Roll",11200,0,,0.00 
+Linen Items,NU02STA016,Operating Theatre Suits - X Large size,LINEN ITEMS,Set,1950,0,New,0.00 
+Linen Items,NU02STA017,Operating Theatre Suits - Large,LINEN ITEMS,Set,1950,0,New,0.00 
+Linen Items,NU02STA018,Operating Theatre Suits - Medium,LINEN ITEMS,Set,1950,0,New,0.00 
+Linen Items,NM19MAT003,Baby Wrappers Pure Cotton Flowered,LINEN ITEMS,Piece,500,0,,0.00 
+Linen Items,NU02PAT031,Patient uniform pyjamas blue and white stripped cotton drill Small (for psychiatric wards),LINEN ITEMS,Pair,2850,0,,0.00 
+Linen Items,NU02PAT030,Patient uniform pyjamas blue and white stripped cotton drill Medium (for psychiatric wards),LINEN ITEMS,Pair,2850,0,,0.00 
+Linen Items,NU02PAT029,Patient uniform pyjamas blue and white Cotton Drill Large (for psychiatric wards),LINEN ITEMS,Pair,2850,0,,0.00 
+Linen Items,NU02PAT026,Patient uniform pyjamas blue and white stripped cotton drill XLarge (for psychiatric wards),LINEN ITEMS,Pair,2850,0,,0.00 
+Linen Items,NU02PAT032,Patient uniform pyjamas blue and white stripped cotton drill XXLarge (for psychiatric wards),LINEN ITEMS,Pair,2850,0,,0.00 
+Linen Items,NU02PAT035,Patient uniform Pyjamas blue and white stripped Small (for General wards),LINEN ITEMS,Pair,1600,0,,0.00 
+Linen Items,NU02PAT034,Patient uniform Pyjamas blue and white stripped Medium (for General wards),LINEN ITEMS,Pair,1600,0,,0.00 
+Linen Items,NU02PAT033,Patient uniform Pyjamas blue and white stripped Large (for General wards),LINEN ITEMS,Pair,1600,0,,0.00 
+Linen Items,NU02PAT028,Patient uniform Pyjamas green and white stripped Small (for General wards),LINEN ITEMS,Pair,1600,0,,0.00 
+Linen Items,NU02PAT020,Patient uniform Pyjamas green and white stripped Medium (for General wards),LINEN ITEMS,Pair,1600,0,,0.00 
+Linen Items,NU02PAT018,Patient uniform Pyjamas green and white stripped Large (for General wards),LINEN ITEMS,Pair,1600,0,,0.00 
+Linen Items,NU02PAT027,Patient uniform Pyjamas green and white stripped X Large (for General wards),LINEN ITEMS,Pair,1600,0,,0.00 
+Linen Items,NU02PAT017,Patient Uniform pyjamas blue & white stripped cotton Extra Large (for General wards),LINEN ITEMS,Pair,1600,0,,0.00 
+Linen Items,NU03BLA001,Blankets Cellular Standard -180x230CM,LINEN ITEMS,Piece,3200,0,,0.00 
+Linen Items,NU03SHE002,"Draw Sheets 66"" x 36""",LINEN ITEMS,Piece,500,0,,0.00 
+Linen Items,NU03SPR001,Bed Spreads STD (COUNTER-PANES) - Light Cream-160X230CM,LINEN ITEMS,Piece,1900,0,New,0.00 
+Linen Items,NU02STA024,Theatre scholls size 11-11.5,LINEN ITEMS,Pair,1800,0,,0.00 
+Linen Items,NU02STA032,Theatre scholls size 7-7.5,LINEN ITEMS,Pair,1800,0,,0.00 
+Linen Items,NU02STA025,Theatre scholls size 8.5-9.5,LINEN ITEMS,Pair,1800,0,,0.00 
+Linen Items,NU02STA030,Theatre scholls size 10-10.5,LINEN ITEMS,Pair,1800,0,,0.00 
+Linen Items,NU02STA031,Theatre scholls size 6-6.5,LINEN ITEMS,Pair,1800,0,,0.00 
+Linen Items,NU02STA032,Theatre scholls size 7-7.5,LINEN ITEMS,Pair,1800,0,,0.00 
+Linen Items,NU02STA001,Boots Surgeons' Antistatic - Size 10,LINEN ITEMS,Pair,4700,0,,0.00 
+Linen Items,NU02STA002,Boots Surgeons' Antistatic - Size 11,LINEN ITEMS,Pair,4700,0,,0.00 
+Linen Items,NU02STA008,Boots Surgeons' Antistatic - Size 9,LINEN ITEMS,Pair,4700,0,,0.00 
+Linen Items,NU02STA007,Boots Surgeons' Antistatic - Size 8,LINEN ITEMS,Pair,4700,0,,0.00 
+Linen Items,NU02STA006,Boots Surgeons' Antistatic - Size 7,LINEN ITEMS,Pair,4700,0,,0.00 
+Linen Items,NU05MAC001,"Water Proof Sheeting Material, Deep Green (Mackintosh)",LINEN ITEMS,50M Roll,32000,0,New,0.00 
+X-ray Items,NX07BAS001,Barium sulphate suspension- 0.95GM/ML,X-RAY ITEMS,1 litre,1750,0,,0.00 
+X-ray Items,NX01FLM015,Drystar DT2 B films for direct digital thermal printing  for use in computerised tomography(CT) in medical imaging size 35 x 43cm,X-RAY ITEMS,100s,23000,0,,0.00 
+X-ray Items,NX07NHD002,Non-Ionic H2O Soluble with iodine content- 270MG/ML,X-RAY ITEMS,100 ml,4540,0,,0.00 
+X-ray Items,NX07NHD001,Non-Ionic H2O Soluble with iodine content-300MG/ML,X-RAY ITEMS,50ml,1135,0,,0.00 
+X-ray Items,NX07SAD001,Sod Amid/Meglumine Amidotrizoate-370MG/ML,X-RAY ITEMS,100 ml,1317,0,,0.00 
+X-ray Items,NX05PAP003,Thermal Printing paper 110mm X 18m,X-RAY ITEMS,Roll,1700,0,,0.00 
+X-ray Items,NM17CCU017,Ultrasound Gel/Jelly,X-RAY ITEMS,5 L,1220,0,,0.00 
+X-ray Items,NX05ENV001,Xray envelope large size- 37X46cm,X-RAY ITEMS,Piece,30,0,,0.00 
+X-ray Items,NX05ENV002,Xray envelope small  size - 25X32cm,X-RAY ITEMS,Piece,21,0,,0.00 
+X-ray Items,NX06FPD001,Xray film processing auto-Dev. To make 40litres.,X-RAY ITEMS,40L,6000,0,,0.00 
+X-ray Items,NX06FPF001,Xray film processing auto-Fixer to make 40litres,X-RAY ITEMS,40L,4400,0,,0.00 
+X-ray Items,NX01FLM002,X-ray Green-senstive films - 35X35cm,X-RAY ITEMS,100s,6940,0,,0.00 
+X-ray Items,NX01FLM001,X-ray Green-senstive films - 35X43cm,X-RAY ITEMS,100s,8525,0,,0.00 
+X-ray Items,NX01FLM017,X-ray Green-senstive films- 15X30cm,X-RAY ITEMS,Packs of 100s,2830,0,,0.00 
+X-ray Items,NX01FLM005,X-ray Green-senstive films- 18X24cm,X-RAY ITEMS,100s,2600,0,,0.00 
+X-ray Items,NX01FLM007,X-ray Green-senstive films- 18X43cm,X-RAY ITEMS,100s,4650,0,,0.00 
+X-ray Items,NX01FLM004,X-ray Green-senstive films- 24X30cm,X-RAY ITEMS,100s,4135,0,,0.00 
+X-ray Items,NX01FLM003,X-ray Green-senstive films- 30X40cm,X-RAY ITEMS,100s,7500,0,,0.00 
+X-ray Items,NX01FLM006,X-ray Green-senstive films-15X40cm,X-RAY ITEMS,100s,3775,0,,0.00 
+X-ray Items,NX01FLM009,X-ray Mammography films - 18X24cm,X-RAY ITEMS,100s,7845,0,,0.00 
+Dental Items,NM13DEN151,Absorbent paper points assorted sizes 45-80,DENTAL ITEMS,200 Tubes,702,0,,0.00 
+Dental Items,NM13DEN150,Absorbent paper points size  15-40(28mm-Length),DENTAL ITEMS,200 Tubes,615,0,,0.00 
+Dental Items,NM13DEN004,Acrylic teeth lower anterior set of 6,DENTAL ITEMS,Set of 6,281,0,,0.00 
+Dental Items,NM13DEN006,Acrylic teeth Upper anterior set of 6,DENTAL ITEMS,Set of 6,281,0,,0.00 
+Dental Items,NM13DEN016,Arch bars,DENTAL ITEMS,Roll of 1m,3825,0,,0.00 
+Dental Items,NM13DEN025,Clinical wire 0.4mm roll,DENTAL ITEMS,Piece,2500,0,,0.00 
+Dental Items,NM13DEN053,Dental Needles 27G x Long,DENTAL ITEMS,100,1870,0,,0.00 
+Dental Items,NM13DEN052,Dental Needles 27G x Short,DENTAL ITEMS,100,1020,0,,0.00 
+Dental Items,NM13DEN064,Endodontic reamers sizes  15-40  (21mm  25mm 28mm),DENTAL ITEMS,Set of 6,982,0,,0.00 
+Dental Items,NM13DEN062,Endodontic reamers sizes 45-80 (21mm 25mm 28mm),DENTAL ITEMS,Set of 6,915,0,,0.00 
+Dental Items,NM13DEN188,Light cure composite materials(kit),DENTAL ITEMS,Kit,30805,0,,0.00 
+Dental Items,PM07LGN002,Lignocaine 2% dental cart with adrenaline-1:80 000,DENTAL ITEMS,100s,3500,0,,0.00 
+Dental Items,NM13DEN154,Endodontic files sizes 15 – 40 (Dental),DENTAL ITEMS,Pack of 6,905.85,0,,0.00 
+Dental Items,NM13DEN111,Plaster of paris(25kgs),DENTAL ITEMS,25kg,3364,0,,0.00 
+Dental Items,NM14THE022,Plaster of paris(50kgs),DENTAL ITEMS,50kg,2850,0,,0.00 
+Programme Items,NM21CDM002,"Condoms, female, latex",Family Planning Commodities,Piece,N/A,0,Multiples of 1000s,
+Programme Items,NM21CDM001,"Condoms, male, latex",Family Planning Commodities,Piece,N/A,0,Multiples of 7200s,
+Programme Items,PM10DMP001,Depot Medroxyprogesterone acetate 150mg inj,Family Planning Commodities,Kit (100vials),N/A,0,,
+Programme Items,PM10ETN002,Etonogestrel implant 68mg (1 rod + trocar),Family Planning Commodities,10 sets,N/A,0,,
+Programme Items,PM10LEV007,Levonorgestrel implant 75mg with trocar,Family Planning Commodities,set,N/A,0,Multiples of 10s,
+Programme Items,PM10UDC001,IUD Copper T,Family Planning Commodities,Piece,N/A,0,Mulitples of 50s,
+Programme Items,PM10LEV005,Levonorgestrel/ethinylestradiol tab 0.15mg/0.03mg (COC) ,Family Planning Commodities,3x21,N/A,0,,
+Programme Items,PM10LEV006,Levonorgestrel tab 30mcg  (POP),Family Planning Commodities,3x35,N/A,0,,
+Programme Items,PM10LEV002,"Levonorgestrel tab 750mcg (EC), Pair",Family Planning Commodities,10,N/A,0,,
+Programme Items,PM03ART004,Artemether/lumefantrine Tablets 100/20mg blister of 6,Antimalaria,blister (6),N/A,0,Multiples of 30 Blisters,
+Programme Items,PM03ART005,Artemether/lumefantrine Tablets 100/20mg blister of 12,Antimalaria,blister (12),N/A,0,Multiples of 30 Blisters,
+Programme Items,PM03ART006,Artemether/lumefantrine Tablets 100/20mg blister of 18,Antimalaria,blister (18),N/A,0,Multiples of 30 Blisters,
+Programme Items,PM03ART007,Artemether/lumefantrine Tablets 100/20mg blister of 24,Antimalaria,blister (24),N/A,0,Multiples of 30 Blisters,
+Programme Items,PM03ART009,Artesunate 60mg,Antimalaria,Vial,N/A,0,,
+Programme Items,NL05TES067,Malaria Rapid Diagnostic Test Kit,Antimalaria,kit (25Test),N/A,0,,
+Programme Items,NL05TES066,Malaria Rapid Diagnostic Test Kit,Antimalaria,kit (40Test),N/A,0,,
+Programme Items,PM03SPY001,SULPHADOXINE/PYRIMETHAMINE TABLETS - 500/25MG,Antimalaria,TIN OF 1000S,N/A,,,
+Programme Items,NS01REC019                            ,DAILY ACTIVITY REGISTER - BOOKLET,Antimalaria,Book,N/A,0,,

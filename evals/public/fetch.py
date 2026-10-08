@@ -112,6 +112,7 @@ def fetch(out: Path, *, force: bool = False, only: set[str] | None = None) -> di
         print(f"  ok     {sid} ({size / 1024:.0f} KB)")
 
     manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8", newline="\n")
+    (out / "README.md").write_text(_readme(spec, manifest), encoding="utf-8", newline="\n")
     return manifest
 
 
@@ -127,6 +128,40 @@ def main() -> None:
     print(f"{len(m['fetched'])} fetched, {len(m['failed'])} failed, in {args.out}")
     if m["failed"]:
         sys.exit(1)
+
+
+def _readme(spec: dict[str, Any], manifest: dict[str, Any]) -> str:
+    rows = []
+    for src in spec["sources"]:
+        got = manifest["fetched"].get(src["id"])
+        size = f"{got['bytes'] / 1024:.0f} KB" if got else "not fetched"
+        committed = "yes" if src.get("redistributable") else "no, fetch on demand"
+        rows.append(
+            f"| {src['name']} | {src['publisher']} | {src['format']} | {size} | "
+            f"{', '.join(src['tags'])} | {src['licence']} | {committed} |"
+        )
+    n_open = sum(1 for s in spec["sources"] if s.get("redistributable"))
+    return f"""# Public sample documents
+
+Real price lists, catalogues and request-for-quotation forms, used as robustness
+smoke tests. They carry no ground truth. The pipeline is expected to degrade into
+flags on them, never to crash and never to guess with confidence.
+
+Fetched by `uv run python -m evals.public.fetch`. Sources, licences and tags live in
+`evals/public/sources.json`; `manifest.json` here records size, SHA-256 and fetch date.
+
+## Licences
+
+{n_open} of {len(spec["sources"])} files are under an explicit open licence (CC BY, CC BY-NC with
+attribution, Open Jordanian Licence) and are committed. The rest state no licence or
+assert all rights reserved (MSH, Ghana NHIS) and are fetched on demand, never
+redistributed, not even in a private repository. Three government hosts serve broken
+certificate chains and are fetched with verification off; they are marked in the sources file.
+
+| Document | Publisher | Format | Size | Tags | Licence | Committed |
+|---|---|---|---|---|---|---|
+{chr(10).join(rows)}
+"""
 
 
 if __name__ == "__main__":

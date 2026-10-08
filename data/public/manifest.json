@@ -1,0 +1,569 @@
+{
+  "fetched": {
+    "gf_ppm_arv_2026q1": {
+      "file": "gf_ppm_arv_2026q1.pdf",
+      "bytes": 167163,
+      "sha256": "edde975e5cb2cd4ed0d9f8b66d459eff1de0ccb2f0e1ab240c3ee22a43ff3d6e",
+      "url": "https://www.theglobalfund.org/media/3x0lhsks/ppm_arvreferencepricing_table_en.pdf",
+      "publisher": "The Global Fund",
+      "licence": "CC BY-NC 4.0 per site terms",
+      "tags": [
+        "prices",
+        "tabular",
+        "usd"
+      ],
+      "at": "2026-10-07T15:16:21.892055+00:00"
+    },
+    "gf_ppm_hiv_strategic": {
+      "file": "gf_ppm_hiv_strategic.pdf",
+      "bytes": 141101,
+      "sha256": "04c757a1a963b2861f70845807bd8e90e0f06e4bf5f6d76b33d31a91eeed880f",
+      "url": "https://www.theglobalfund.org/media/ibxas5fs/ppm_strategicmedicineshivreferencepricing_table_en.pdf",
+      "publisher": "The Global Fund",
+      "licence": "CC BY-NC 4.0 per site terms",
+      "tags": [
+        "prices",
+        "tabular",
+        "usd"
+      ],
+      "at": "2026-10-07T15:16:22.121742+00:00"
+    },
+    "unicef_dtp_prices": {
+      "file": "unicef_dtp_prices.pdf",
+      "bytes": 110287,
+      "sha256": "a9df3963c9a1352149630e4e400afbd7bdf242ea0b4367d68342d04cbb91b22e",
+      "url": "https://www.unicef.org/supply/media/24356/file/DTP-vaccines-prices-30092025.pdf",
+      "publisher": "UNICEF",
+      "licence": "None stated; unicef.org terms",
+      "tags": [
+        "prices",
+        "tabular",
+        "usd",
+        "cold_chain"
+      ],
+      "at": "2026-10-07T15:16:22.306133+00:00"
+    },
+    "unicef_antimalarial_2026": {
+      "file": "unicef_antimalarial_2026.pdf",
+      "bytes": 77685,
+      "sha256": "afc2de6f9b4c3b8a9a58fba9321d311b359dc3cfe2ee76671d5feeb514d5cea9",
+      "url": "https://www.unicef.org/supply/media/25546/file/Antimalarial-Medicines-price-data-May2026.pdf",
+      "publisher": "UNICEF",
+      "licence": "None stated; unicef.org terms",
+      "tags": [
+        "prices",
+        "tabular",
+        "usd",
+        "price_range"
+      ],
+      "at": "2026-10-07T15:16:22.415972+00:00"
+    },
+    "unicef_rutf_prices": {
+      "file": "unicef_rutf_prices.pdf",
+      "bytes": 137278,
+      "sha256": "e92fbb16efd50e46dabd72591f273fe20c9ac6c2dcc75a9d75efadcf018eaf6c",
+      "url": "https://www.unicef.org/supply/media/25986/file/Ready-to-use-therapeutic-food-price-data-2003-2026.pdf",
+      "publisher": "UNICEF",
+      "licence": "None stated; unicef.org terms",
+      "tags": [
+        "prices",
+        "tabular",
+        "usd"
+      ],
+      "at": "2026-10-07T15:16:22.581234+00:00"
+    },
+    "paho_sf_reference_2026": {
+      "file": "paho_sf_reference_2026.pdf",
+      "bytes": 661395,
+      "sha256": "f224800b6b9732068541ce7159b61ab01f2e8f1d26979c3245e5b05d3ea416bf",
+      "url": "https://www.paho.org/sites/default/files/2026/06/prsfreferenceprices-9-1.pdf",
+      "publisher": "PAHO",
+      "licence": "Prices FCA, not guaranteed, not a formal proposal",
+      "tags": [
+        "prices",
+        "tabular",
+        "usd",
+        "wide_table",
+        "price_range",
+        "long"
+      ],
+      "at": "2026-10-07T15:16:24.391476+00:00"
+    },
+    "paho_sf_lta_2022": {
+      "file": "paho_sf_lta_2022.pdf",
+      "bytes": 428074,
+      "sha256": "3ab6a3491b63ac6d3c44b5fe6a68a14892fa9533b41e1bbb7f76eba71c19481e",
+      "url": "https://paho.org/sites/default/files/2022-10/sf-lta-ptoducts-and-prices-oct-2022.pdf",
+      "publisher": "PAHO",
+      "licence": "None stated",
+      "tags": [
+        "prices",
+        "tabular",
+        "usd",
+        "bilingual"
+      ],
+      "at": "2026-10-07T15:16:26.443098+00:00"
+    },
+    "ghsc_psm_ecatalog_2026": {
+      "file": "ghsc_psm_ecatalog_2026.pdf",
+      "bytes": 4573228,
+      "sha256": "daa81f291bce0a7ed94c914cd5cadfa218c7bbb80b4ada63b47c1c0dfad43d49",
+      "url": "https://ghsupplychain.org/sites/default/files/2026-07/eCatalog%20June%202026.pdf",
+      "publisher": "USAID GHSC-PSM",
+      "licence": "Prices are estimates and may not be current",
+      "tags": [
+        "prices",
+        "tabular",
+        "usd",
+        "long",
+        "large"
+      ],
+      "at": "2026-10-07T15:16:28.073957+00:00"
+    },
+    "msh_price_guide_2015": {
+      "file": "msh_price_guide_2015.pdf",
+      "bytes": 3540056,
+      "sha256": "3f85905a8e52ea86714cdf61fbc55d6a2083f444e96c862e508945fc7935d8d0",
+      "url": "https://msh.org/wp-content/uploads/2020/03/msh-2015-international-medical-products-price-guide.pdf",
+      "publisher": "Management Sciences for Health",
+      "licence": "Copyright MSH, all rights reserved. Do not redistribute.",
+      "tags": [
+        "prices",
+        "tabular",
+        "usd",
+        "long",
+        "large",
+        "multilingual"
+      ],
+      "at": "2026-10-07T15:16:29.609948+00:00"
+    },
+    "who_afro_price_indicator_2007": {
+      "file": "who_afro_price_indicator_2007.pdf",
+      "bytes": 544301,
+      "sha256": "6013ac36de014ff4ab67985ca6a7c2001fc4f77f6da5c5c83cfbab13d4775255",
+      "url": "https://afro.who.int/sites/default/files/2017-06/afro_essential_medicine_price_indicator_2007.pdf",
+      "publisher": "WHO AFRO",
+      "licence": "None stated",
+      "tags": [
+        "prices",
+        "tabular",
+        "usd",
+        "long",
+        "incoterms"
+      ],
+      "at": "2026-10-07T15:16:29.981722+00:00"
+    },
+    "chai_arv_2016": {
+      "file": "chai_arv_2016.pdf",
+      "bytes": 275622,
+      "sha256": "e9efc4a6d0bd137af9fad31fcfe13f2ca1cdaca6c67b615b9844d2de159d02ba",
+      "url": "https://clintonhealthaccess.org/wp-content/uploads/2016/11/2016-CHAI-ARV-Reference-Price-List_FINAL.pdf",
+      "publisher": "Clinton Health Access Initiative",
+      "licence": "None stated",
+      "tags": [
+        "prices",
+        "tabular",
+        "usd",
+        "footnotes"
+      ],
+      "at": "2026-10-07T15:16:30.204664+00:00"
+    },
+    "msf_untangling_web_14": {
+      "file": "msf_untangling_web_14.pdf",
+      "bytes": 2687490,
+      "sha256": "ab3549022abcf90d92d454bc5e48c6ac6814ff45705aee801008a3322556c008",
+      "url": "https://msf.org/sites/default/files/utw_14_eng_july2011.pdf",
+      "publisher": "MSF Access Campaign",
+      "licence": "None stated",
+      "tags": [
+        "prices",
+        "narrative",
+        "usd",
+        "long"
+      ],
+      "at": "2026-10-07T15:16:31.298930+00:00"
+    },
+    "sa_ndoh_hp07_2026": {
+      "file": "sa_ndoh_hp07_2026.pdf",
+      "bytes": 1145305,
+      "sha256": "9573930356d49fef955e249cab93040798c5d1895c22798083990ef2ce15f68a",
+      "url": "https://www.health.gov.za/wp-content/uploads/2026/06/HP07-2026DAI-Contract-Circular-22-June-2026.pdf",
+      "publisher": "South Africa National Department of Health",
+      "licence": "None stated",
+      "tags": [
+        "prices",
+        "tabular",
+        "zar",
+        "long",
+        "awards"
+      ],
+      "at": "2026-10-07T15:16:33.388388+00:00"
+    },
+    "msd_tanzania_catalogue_2018": {
+      "file": "msd_tanzania_catalogue_2018.pdf",
+      "bytes": 1685940,
+      "sha256": "d6c5d1a491814c712eb2fbdd492e0b701996070bb636bd02df03cf605f6c8a5a",
+      "url": "https://open.africa/dataset/dc2e1146-020a-4920-a3ff-cb22f30eb24f/resource/1c802418-e493-4fe2-858d-b3418f2cb536/download/msd-price-catalogue-2018-2019-final.pdf",
+      "publisher": "Medical Stores Department Tanzania, via openAFRICA",
+      "licence": "CC BY",
+      "tags": [
+        "prices",
+        "tabular",
+        "tzs",
+        "long",
+        "terms_preamble"
+      ],
+      "at": "2026-10-07T15:16:34.839677+00:00"
+    },
+    "ghana_nhis_medicines_2025": {
+      "file": "ghana_nhis_medicines_2025.pdf",
+      "bytes": 1193842,
+      "sha256": "bbdd99ae107050e8b69cf2f1a0890e3e0d661938e654a047cc6227bcbf0a3ea2",
+      "url": "https://www.nhis.gov.gh/files/2025%20NHIS%20ML.pdf",
+      "publisher": "National Health Insurance Authority, Ghana",
+      "licence": "All rights reserved. Do not redistribute.",
+      "tags": [
+        "prices",
+        "tabular",
+        "ghs",
+        "long"
+      ],
+      "at": "2026-10-07T15:16:38.086229+00:00"
+    },
+    "jan_aushadhi_mrp_2015": {
+      "file": "jan_aushadhi_mrp_2015.pdf",
+      "bytes": 574908,
+      "sha256": "826d3481e61063a7fa50ee0af55dd27b4965a88928e83cfc6d57212fb92c525a",
+      "url": "https://www.pmbi.co.in/old-data/New_MRP_Oct15.pdf",
+      "publisher": "PMBI India",
+      "licence": "None stated",
+      "tags": [
+        "prices",
+        "tabular",
+        "inr"
+      ],
+      "at": "2026-10-07T15:16:39.997794+00:00"
+    },
+    "drap_sro100_2002": {
+      "file": "drap_sro100_2002.pdf",
+      "bytes": 365779,
+      "sha256": "31483fe4a3a4fb8aaef37145dbb93c922da01c785ad051559c1ee977ba66b757",
+      "url": "https://www.dra.gov.pk/wp-content/uploads/2022/01/100.pdf",
+      "publisher": "Drug Regulatory Authority of Pakistan",
+      "licence": "Government notification",
+      "tags": [
+        "prices",
+        "tabular",
+        "pkr",
+        "gazette"
+      ],
+      "at": "2026-10-07T15:16:42.596376+00:00"
+    },
+    "drap_20drugs_2023_scanned": {
+      "file": "drap_20drugs_2023_scanned.pdf",
+      "bytes": 109376,
+      "sha256": "d450f3e1827ee7996ad32237cb797e596bd79834ddc927965e6951288afe5f18",
+      "url": "https://www.dra.gov.pk/wp-content/uploads/2023/01/Notification-of-Reduction-in-MRPs-of-20-Drugs-11.01.2023.pdf",
+      "publisher": "Drug Regulatory Authority of Pakistan",
+      "licence": "Government notification",
+      "tags": [
+        "prices",
+        "scanned",
+        "pkr",
+        "bad_ocr_layer"
+      ],
+      "at": "2026-10-07T15:16:43.631188+00:00"
+    },
+    "drap_paracetamol_2022_scanned": {
+      "file": "drap_paracetamol_2022_scanned.pdf",
+      "bytes": 55043,
+      "sha256": "6a8bbb00219c34abc3fc53546c04eb40771576ca016f78980707fb265341e5b5",
+      "url": "https://www.dra.gov.pk/wp-content/uploads/2022/11/MRP-of-Paracetamol-03.11.2022.pdf",
+      "publisher": "Drug Regulatory Authority of Pakistan",
+      "licence": "Government notification",
+      "tags": [
+        "prices",
+        "scanned",
+        "pkr",
+        "bad_ocr_layer"
+      ],
+      "at": "2026-10-07T15:16:44.529041+00:00"
+    },
+    "quezon_city_rfq_scanned": {
+      "file": "quezon_city_rfq_scanned.pdf",
+      "bytes": 1490269,
+      "sha256": "a5a6f6b5f3ce6ef12898454d2386c98caec4a344dccf3199906e77903cabdfd5",
+      "url": "https://quezoncity.gov.ph/wp-content/uploads/2024/03/QCPC-24-DM-0178C-DRUGS-AND-MEDICINES-AND-OTHERS.pdf",
+      "publisher": "Quezon City Government, Philippines",
+      "licence": "None stated",
+      "tags": [
+        "rfq",
+        "scanned",
+        "php",
+        "bad_ocr_layer",
+        "form"
+      ],
+      "at": "2026-10-07T15:16:47.575598+00:00"
+    },
+    "gmc_baramati_quotation_scanned": {
+      "file": "gmc_baramati_quotation_scanned.pdf",
+      "bytes": 785118,
+      "sha256": "6e6b29854f818eb84760008952f3b15b76b3f51a029fceb3b24f574e603a66c6",
+      "url": "https://gmcbaramati.org/brcp/pdf/pdf_02_03_2022_11_55_03_Quotation402%20(3).pdf",
+      "publisher": "Government Medical College Baramati, India",
+      "licence": "None stated",
+      "tags": [
+        "rfq",
+        "scanned",
+        "inr",
+        "bad_ocr_layer",
+        "form"
+      ],
+      "at": "2026-10-07T15:16:49.169265+00:00"
+    },
+    "mmwgh_rfq_2023": {
+      "file": "mmwgh_rfq_2023.pdf",
+      "bytes": 500901,
+      "sha256": "e6717616398d5669b32db16cd233a8781b181a053937673334d608d5ba50fe7f",
+      "url": "https://mmwgh.gov.ph/wp-content/uploads/2023/09/PR-No.-2023-09-0604.pdf",
+      "publisher": "Department of Health, Philippines",
+      "licence": "None stated",
+      "tags": [
+        "rfq",
+        "prices",
+        "php",
+        "form"
+      ],
+      "at": "2026-10-07T15:16:51.258028+00:00"
+    },
+    "ipca_domestic_pricelist_2025": {
+      "file": "ipca_domestic_pricelist_2025.pdf",
+      "bytes": 356943,
+      "sha256": "a67c6c24fb8f2a1a69783548008a4b1cb638e84101bf60a749d031bf8d5bf96a",
+      "url": "https://ipca.com/wp-content/pdf/revised-pricelist-of-all-domestic-formulations-applicable-22-09-2025.pdf",
+      "publisher": "Ipca Laboratories",
+      "licence": "None stated",
+      "tags": [
+        "prices",
+        "tabular",
+        "inr",
+        "manufacturer",
+        "dense"
+      ],
+      "at": "2026-10-07T15:16:53.113421+00:00"
+    },
+    "unfpa_jordan_rfq_20_002": {
+      "file": "unfpa_jordan_rfq_20_002.pdf",
+      "bytes": 974520,
+      "sha256": "bd3c692b29592eebc64ab0d4d851c2b652514c28442056c07c086480d18dff38",
+      "url": "https://jordan.unfpa.org/sites/default/files/submissions/UNFPA_JOR_RFQ_20_002_Pharmaceuticals.pdf",
+      "publisher": "UNFPA",
+      "licence": "None stated",
+      "tags": [
+        "rfq",
+        "no_prices",
+        "form"
+      ],
+      "at": "2026-10-07T15:16:53.962128+00:00"
+    },
+    "sa_medicine_prices_2026_10": {
+      "file": "sa_medicine_prices_2026_10.xlsx",
+      "bytes": 3364351,
+      "sha256": "f1ec4dea9f9d33f5518227c192ef8da2a20389ba413aeb261f36a0abac1e2cbd",
+      "url": "https://www.health.gov.za/wp-content/uploads/2026/10/Database_Of_Medicine_Prices_1_October_2026.xlsx",
+      "publisher": "South Africa National Department of Health",
+      "licence": "None stated",
+      "tags": [
+        "prices",
+        "spreadsheet",
+        "zar",
+        "large"
+      ],
+      "at": "2026-10-07T15:16:57.702099+00:00"
+    },
+    "who_mi4a_vaccine_purchases_2026": {
+      "file": "who_mi4a_vaccine_purchases_2026.xlsx",
+      "bytes": 2089997,
+      "sha256": "da6a45be413117d8ecceafe1e16ca3f265b25c68f9bbe41761e5a5220d2356f1",
+      "url": "https://cdn.who.int/media/docs/default-source/immunization/mi4a/who-mi4a-dataset-final-september-2026.xlsx?sfvrsn=a19b7135_5&download=true",
+      "publisher": "WHO",
+      "licence": "WHO terms; disclaimer in sheet 1",
+      "tags": [
+        "prices",
+        "spreadsheet",
+        "usd",
+        "multi_sheet",
+        "incoterms"
+      ],
+      "at": "2026-10-07T15:16:58.721416+00:00"
+    },
+    "spc_sri_lanka_awards_2026_06": {
+      "file": "spc_sri_lanka_awards_2026_06.xlsx",
+      "bytes": 30218,
+      "sha256": "efd1b678842d9107d8fbf840bf94e2854616b737446e5b3ce1484005b5c83212",
+      "url": "https://www.spc.lk/pub/awarded-tenders/pharmaceutical/pharmaceutical-june-2026.xlsx",
+      "publisher": "State Pharmaceuticals Corporation of Sri Lanka",
+      "licence": "None stated",
+      "tags": [
+        "prices",
+        "spreadsheet",
+        "mixed_currency",
+        "multi_sheet",
+        "awards"
+      ],
+      "at": "2026-10-07T15:17:00.043411+00:00"
+    },
+    "jordan_jfda_prices_2020": {
+      "file": "jordan_jfda_prices_2020.xlsx",
+      "bytes": 1287012,
+      "sha256": "eb4f01e3cf44536c945c4daace48dc09e7faf916846c91d39f096ec103e277a5",
+      "url": "https://opendata.gov.jo/dataset/MIGRATED-838-2021/resource/b3c4be77-c54b-40a3-b048-17f4a4cad431/download/12-drug2020-.xls?increment=true",
+      "publisher": "JFDA via opendata.gov.jo",
+      "licence": "Open Jordanian Licence",
+      "tags": [
+        "prices",
+        "spreadsheet",
+        "jod",
+        "misnamed_extension",
+        "arabic",
+        "large"
+      ],
+      "at": "2026-10-07T15:17:02.283864+00:00"
+    },
+    "kemsa_pricelist_2017": {
+      "file": "kemsa_pricelist_2017.csv",
+      "bytes": 60093,
+      "sha256": "18b86af76f0fa332fcbb03bff6b57713c86a0d402756b6dd0e45d08c465ef812",
+      "url": "https://open.africa/dataset/739db8d3-54d1-4655-87c7-d9821f2ebf1b/resource/6eea972a-5403-4648-86e1-8af3c3e001ce/download/kemsa_pricelist_2017.csv",
+      "publisher": "KEMSA via openAFRICA",
+      "licence": "CC BY",
+      "tags": [
+        "prices",
+        "csv",
+        "kes"
+      ],
+      "at": "2026-10-07T15:17:03.106069+00:00"
+    },
+    "msd_tanzania_catalogue_2018_csv": {
+      "file": "msd_tanzania_catalogue_2018_csv.csv",
+      "bytes": 40747,
+      "sha256": "f62488c7da9aa4f7d17f926114ea44a9ca2af553048d0fdefebdd683e442d83b",
+      "url": "https://open.africa/dataset/dc2e1146-020a-4920-a3ff-cb22f30eb24f/resource/a5f3adfc-e603-4e3e-b49a-a687d12de3cc/download/tz_msd-price_catalogue-2018-2019.csv",
+      "publisher": "Medical Stores Department Tanzania, via openAFRICA",
+      "licence": "CC BY",
+      "tags": [
+        "prices",
+        "csv",
+        "tzs"
+      ],
+      "at": "2026-10-07T15:17:03.394683+00:00"
+    },
+    "spc_sri_lanka_awards_2012_doc": {
+      "file": "spc_sri_lanka_awards_2012_doc.doc",
+      "bytes": 202240,
+      "sha256": "9cabe26da776890a6451f33a3b05525a19cb71ed2c65dbf1c34e283de5bc6893",
+      "url": "https://www.spc.lk/pub/spc-awarded-tenders-pharmaceutical-2012-august.doc",
+      "publisher": "State Pharmaceuticals Corporation of Sri Lanka",
+      "licence": "None stated",
+      "tags": [
+        "prices",
+        "legacy_office",
+        "usd",
+        "incoterms"
+      ],
+      "at": "2026-10-07T15:17:04.643387+00:00"
+    },
+    "unfpa_syria_quotation_form": {
+      "file": "unfpa_syria_quotation_form.docx",
+      "bytes": 60175,
+      "sha256": "fb709e4f5c9b3dc8ee956fbab52ac09d480b82b2523906b2b347dbb7e0b42cb5",
+      "url": "https://syria.unfpa.org/sites/default/files/submissions/annex_1.docx",
+      "publisher": "UNFPA",
+      "licence": "None stated",
+      "tags": [
+        "rfq",
+        "no_prices",
+        "form",
+        "docx"
+      ],
+      "at": "2026-10-07T15:17:05.233614+00:00"
+    },
+    "ida_product_indicator_2025": {
+      "file": "ida_product_indicator_2025.pdf",
+      "bytes": 2728366,
+      "sha256": "fc995d039b69ee878ba8ba6be0e0f82f25079d1a48811801bdb9c127f0f1a05d",
+      "url": "https://idafoundation.org/wp-content/uploads/2026/01/Product_Indicator.pdf",
+      "publisher": "IDA Foundation",
+      "licence": "None stated",
+      "tags": [
+        "no_prices",
+        "catalogue",
+        "bilingual",
+        "long"
+      ],
+      "at": "2026-10-07T15:17:06.106218+00:00"
+    },
+    "jms_uganda_catalogue_2026": {
+      "file": "jms_uganda_catalogue_2026.xlsx",
+      "bytes": 307721,
+      "sha256": "bd4713018fa5c95a33f7bade66dee8e34f58ac9b0e39f98fd015574b8fc40fff",
+      "url": "https://jms.co.ug/wp-content/uploads/2026/05/JMS-Product-Catalogue-March-26-protected.xlsx",
+      "publisher": "Joint Medical Store",
+      "licence": "None stated",
+      "tags": [
+        "no_prices",
+        "catalogue",
+        "spreadsheet",
+        "multi_sheet",
+        "protected"
+      ],
+      "at": "2026-10-07T15:17:07.521433+00:00"
+    },
+    "philhealth_app_2011": {
+      "file": "philhealth_app_2011.pdf",
+      "bytes": 495851,
+      "sha256": "d94e8d59b29812f2476c9e42d1579e9033f9c1685f65780a1027dc492ffc8f3f",
+      "url": "https://www.philhealth.gov.ph/about_us/app/2011/region/appro2011dm.pdf",
+      "publisher": "PhilHealth",
+      "licence": "None stated",
+      "tags": [
+        "prices",
+        "tabular",
+        "php",
+        "messy_layout"
+      ],
+      "at": "2026-10-07T15:20:52.093697+00:00"
+    },
+    "dbm_rfq_25_028": {
+      "file": "dbm_rfq_25_028.pdf",
+      "bytes": 412498,
+      "sha256": "245a593972841352a52ca51d25d1d031c3e5267fd95bf46e0a7e837d83058267",
+      "url": "https://www.dbm.gov.ph/wp-content/uploads/Bids/RFQ/RFQ2025/RFQ-25-028-Procurement-of-Medicines-and-Supplies-for-the-DBM-Clinic.pdf",
+      "publisher": "Department of Budget and Management, Philippines",
+      "licence": "None stated",
+      "tags": [
+        "rfq",
+        "php",
+        "text_heavy",
+        "terms_preamble"
+      ],
+      "at": "2026-10-07T15:21:01.711303+00:00"
+    },
+    "titck_reference_prices_2026": {
+      "file": "titck_reference_prices_2026.xlsx",
+      "bytes": 115065,
+      "sha256": "9a7bea188cc239712e086556e9627e5644e571ac262792e8bf1b6ac337d1ec1d",
+      "url": "https://titck.gov.tr/storage/Archive/2026/dynamicModulesAttachment/REFERANSBAZLILALSTES_ede284aa-9979-4009-b573-ebc0cf98b834.xlsx",
+      "publisher": "TITCK",
+      "licence": "None stated",
+      "tags": [
+        "prices",
+        "spreadsheet",
+        "eur",
+        "turkish"
+      ],
+      "at": "2026-10-07T15:21:02.387215+00:00"
+    }
+  },
+  "failed": {}
+}
