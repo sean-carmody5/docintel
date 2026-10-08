@@ -2,6 +2,18 @@
 
 Agent-generated summary of the planning and build conversation between Seán and Claude Code (Claude Fable 5.1). Kept current from the first commit. Entries note who steered each decision.
 
+
+## The short version
+
+- Seán set the bar: generalise to documents we have not seen, confidence computed from evidence rather than asked of the model, best practices, visual docs, small commits that say why.
+- The agent proposed one neutral document shape, loaders chosen by content, one extraction schema with quoted evidence, and a computed confidence; Seán accepted it and moved human review to after the table is written.
+- Evaluation was built before the pipeline: 66 synthetic cases from exact truth, a held-out seed, 37 public documents, hand-written fixtures for the provided pack. Seán's rule: pass means behaving as expected, not scoring 100%.
+- OCR was measured, not assumed: RapidOCR over Tesseract, with the larger variants checked and rejected.
+- The pipeline runs end to end offline. Live runs wait on an API key.
+- Three blind model sets (Haiku 4.5, Sonnet 5.5, Opus 5.5) replayed through the pipeline found a crash on a malformed recording and three defects in the synthetic truth; both fixed, nothing in the pipeline tuned.
+- The review page went through three designs. Seán rejected a card page as "AI generated" and a dense workstation as "20 year old software"; the third is one calm list with the source beside the fields, and every control is checked by script.
+- Seán's notes for the write-up: data residency may force open-weight models in the organisation's own environment, with Qwen VL the first candidate for scans; OCR word boxes to point at where a price was read.
+
 ## Session 1, 6 to 7 October 2026: vetting and planning
 
 **Vetting the pack (Seán's request).** Before reading the brief in detail Seán asked for every provided file to be checked for embedded content or prompt injection. The agent inspected zip structure, PDF objects and content streams, hidden and white text, image chunks, EXIF and trailing bytes, contrast-stretched scans, the email's HTML part, and JSON for duplicate keys and unicode tricks. Nothing was found. White text in both PDFs is table headers on dark fills.

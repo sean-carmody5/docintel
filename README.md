@@ -118,7 +118,7 @@ data/              provided/ synthetic/ (truth included) public/ (fetched, licen
 evals/             synth/ generator, score.py, public/ fetcher, ui/ page check, reports/
 tests/             offline, with recorded fixtures
 docs/              brief, walkthrough, agent log, write-up
-PLAN.md            design, extension points, build sequence
+PLAN.md            the design as built, and what was planned but not
 ```
 
 ## Documents
