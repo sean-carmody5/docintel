@@ -6,12 +6,12 @@
   "hostile": null,
   "source_case": null,
   "files": [
-    "helvetia_quotation_HG-26-00120.pdf"
+    "helvetia_quotation_HG-26-00121.pdf"
   ],
   "quotation": {
     "supplier_key": "helvetia",
     "supplier_name": "Helvetia Generics AG",
-    "quotation_ref": "HG-26-00120",
+    "quotation_ref": "HG-26-00121",
     "document_date": "2026-09-07",
     "valid_until": "2026-12-06",
     "currency": "CHF",

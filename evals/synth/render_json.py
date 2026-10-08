@@ -416,7 +416,59 @@ def table_dump(q: Quotation, rng: random.Random) -> dict[str, Any]:
     }
 
 
+def erp_fr(q: Quotation, rng: random.Random) -> dict[str, Any]:
+    """A francophone ERP: every key in French, values as the supplier typed them."""
+    s = q.supplier
+    pack_only = "pack_price_only" in q.features
+    lignes = []
+    for ln in q.lines:
+        ligne: dict[str, Any] = {
+            "numero": ln.line_no,
+            "designation": ln.product_name,
+            "dci": ln.inn,
+            "dosage": ln.strength,
+            "forme_galenique": ln.dosage_form,
+            "conditionnement": {
+                "unites_par_boite": ln.units_per_pack,
+                "unite": ln.uom,
+                "emballage": ln.packaging,
+            },
+        }
+        if not pack_only:
+            ligne["prix_unitaire_ht"] = _shown_unit(ln)
+        ligne["prix_boite_ht"] = _shown_pack(ln)
+        ligne["quantite_minimale_boites"] = ln.moq_packs
+        ligne["delai_livraison_jours"] = ln.lead_time_days
+        if ln.cold_chain:
+            ligne["chaine_du_froid"] = True
+        lignes.append(ligne)
+    return {
+        "devis": {
+            "reference": q.quotation_ref,
+            "date_emission": q.document_date.strftime("%d/%m/%Y"),
+            "date_validite": q.valid_until.strftime("%d/%m/%Y"),
+            "devise": q.currency,
+            "incoterm": f"{q.incoterm} {q.named_place}",
+            "conditions_paiement": q.payment_terms,
+            "reference_client": q.buyer_reference,
+            "fournisseur": {
+                "raison_sociale": s.name,
+                "pays": s.country,
+                "adresse": s.address,
+                "contact": {
+                    "nom": s.contact_name,
+                    "fonction": s.contact_title,
+                    "courriel": f"{s.contact_name.split()[0].lower()}@{s.email_domain}",
+                },
+            },
+            "lignes": lignes,
+            "remarques": q.notes,
+        }
+    }
+
+
 DIALECTS: dict[str, Dialect] = {
+    "erp_fr": erp_fr,
     "erp_nested": erp_nested,
     "flat_lines": flat_lines,
     "catalogue_tiers": catalogue_tiers,

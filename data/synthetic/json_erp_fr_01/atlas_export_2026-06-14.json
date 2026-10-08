@@ -1,0 +1,89 @@
+{
+  "devis": {
+    "reference": "ATL/DEV/26/0113",
+    "date_emission": "14/06/2026",
+    "date_validite": "12/09/2026",
+    "devise": "MAD",
+    "incoterm": "FCA Casablanca (MACAS)",
+    "conditions_paiement": "30% a la commande, solde a 60 jours",
+    "reference_client": "AXMED-RFQ-2026-0331",
+    "fournisseur": {
+      "raison_sociale": "Laboratoires Atlas Pharma S.A.",
+      "pays": "MA",
+      "adresse": "Zone Industrielle Ain Sebaa, Lot 112, 20250 Casablanca, Maroc",
+      "contact": {
+        "nom": "Yasmine Benjelloun",
+        "fonction": "Responsable Export",
+        "courriel": "yasmine@atlaspharma.ma"
+      }
+    },
+    "lignes": [
+      {
+        "numero": 1,
+        "designation": "Prazoleex 20",
+        "dci": "Omeprazole",
+        "dosage": "20 mg",
+        "forme_galenique": "Gastro-resistant capsule",
+        "conditionnement": {
+          "unites_par_boite": 100,
+          "unite": "capsule",
+          "emballage": "HDPE bottle"
+        },
+        "prix_boite_ht": 14.31,
+        "quantite_minimale_boites": 2000,
+        "delai_livraison_jours": 30
+      },
+      {
+        "numero": 2,
+        "designation": "Moxdtex 250",
+        "dci": "Amoxicillin",
+        "dosage": "250 mg",
+        "forme_galenique": "Dispersible tablet",
+        "conditionnement": {
+          "unites_par_boite": 10,
+          "unite": "tablet",
+          "emballage": "Alu-Alu blister"
+        },
+        "prix_boite_ht": 1.41,
+        "quantite_minimale_boites": 50000,
+        "delai_livraison_jours": 63
+      },
+      {
+        "numero": 3,
+        "designation": "Floxex 500",
+        "dci": "Ciprofloxacin",
+        "dosage": "500 mg",
+        "forme_galenique": "Film-coated tablet",
+        "conditionnement": {
+          "unites_par_boite": 100,
+          "unite": "tablet",
+          "emballage": "PVC/Alu blister"
+        },
+        "prix_boite_ht": 31.71,
+        "quantite_minimale_boites": 5000,
+        "delai_livraison_jours": 30
+      },
+      {
+        "numero": 4,
+        "designation": "Rifex 150",
+        "dci": "Rifampicin + Isoniazid",
+        "dosage": "150 mg / 75 mg",
+        "forme_galenique": "Film-coated tablet",
+        "conditionnement": {
+          "unites_par_boite": 28,
+          "unite": "tablet",
+          "emballage": "Alu-Alu blister"
+        },
+        "prix_boite_ht": 13.591,
+        "quantite_minimale_boites": 1000,
+        "delai_livraison_jours": 42
+      }
+    ],
+    "remarques": [
+      "Orders below MOQ attract a 12% surcharge on the unit price.",
+      "Lead times run from receipt of a workable letter of credit.",
+      "Partial shipments allowed.",
+      "Cold-chain items ship in validated passive shippers with temperature loggers."
+    ]
+  }
+}

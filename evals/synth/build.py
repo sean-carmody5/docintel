@@ -77,6 +77,14 @@ CASES: tuple[Case, ...] = (
     ),
     Case("json_table_dump_01", "json", "table_dump", "jiangnan", ("inn_variant",)),
     Case("json_table_dump_02", "json", "table_dump", "dhaka", ("pack_price_only", "mixed_uom")),
+    Case(
+        "json_erp_fr_01",
+        "json",
+        "erp_fr",
+        "atlas",
+        ("pack_price_only",),
+        note="Every key in French. No field map can anticipate this.",
+    ),
     # PDF: three layouts
     Case(
         "pdf_classic_01", "pdf", "classic_proforma", "pacifico", ("quantity_extended", "discount")

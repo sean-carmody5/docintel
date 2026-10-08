@@ -697,6 +697,7 @@ COUNTRY_TZ_HOURS: dict[str, float] = {
     "NL": 2,
     "JO": 3,
     "PE": -5,
+    "MA": 1,
 }
 
 TAGLINE_BY_COUNTRY: dict[str, tuple[str, str]] = {
@@ -1131,6 +1132,28 @@ SUPPLIERS: tuple[Supplier, ...] = (
         "T/T 30 days from B/L",
         "DIGEMID-2018-0431",
     ),
+    Supplier(
+        "atlas",
+        "Laboratoires Atlas Pharma S.A.",
+        "Atlas",
+        "Atl",
+        "MA",
+        "Casablanca",
+        "Zone Industrielle Ain Sebaa, Lot 112, 20250 Casablanca, Maroc",
+        "MAD",
+        (("FCA", "Casablanca (MACAS)"), ("CIF", "Abidjan (CIABJ)")),
+        "ATL/DEV/{yy}/{n:04d}",
+        "atlaspharma.ma",
+        "Yasmine Benjelloun",
+        "Responsable Export",
+        "+212 522 66 10 20",
+        ("BPF (DMP Maroc)", "ISO 9001:2015"),
+        "Attijariwafa Bank, Ain Sebaa",
+        "BCMAMAMC",
+        "007 780 0001234567890123 45",
+        "30% a la commande, solde a 60 jours",
+        "DMP/AMM/2016/0442",
+    ),
 )
 
 SUPPLIER_BY_KEY = {s.key: s for s in SUPPLIERS}
@@ -1152,6 +1175,7 @@ USD_TO: dict[str, float] = {
     "PKR": 278.0,
     "JOD": 0.71,
     "PEN": 3.75,
+    "MAD": 9.9,
     "NGN": 1550.0,
 }
 

@@ -1,7 +1,7 @@
 {
   "generator_version": "1",
   "seed": 2026,
-  "case_count": 47,
+  "case_count": 48,
   "cases": [
     {
       "id": "json_erp_nested_01",
@@ -253,6 +253,26 @@
       "currency": "USD"
     },
     {
+      "id": "json_erp_fr_01",
+      "kind": "json",
+      "variant": "erp_fr",
+      "supplier": "atlas",
+      "features": [
+        "pack_price_only"
+      ],
+      "n_lines": 4,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "Every key in French. No field map can anticipate this.",
+      "files": [
+        "atlas_export_2026-06-14.json"
+      ],
+      "dir": "json_erp_fr_01",
+      "truth": "json_erp_fr_01/truth.json",
+      "currency": "MAD"
+    },
+    {
       "id": "pdf_classic_01",
       "kind": "pdf",
       "variant": "classic_proforma",
@@ -267,7 +287,7 @@
       "expect": "extract",
       "note": "",
       "files": [
-        "pacifico_quotation_PF-COT-26-113.pdf"
+        "pacifico_quotation_PF-COT-26-114.pdf"
       ],
       "dir": "pdf_classic_01",
       "truth": "pdf_classic_01/truth.json",
@@ -290,7 +310,7 @@
       "expect": "extract",
       "note": "",
       "files": [
-        "kaveri_quotation_KLS-26-00114.pdf"
+        "kaveri_quotation_KLS-26-00115.pdf"
       ],
       "dir": "pdf_classic_02",
       "truth": "pdf_classic_02/truth.json",
@@ -311,7 +331,7 @@
       "expect": "extract",
       "note": "",
       "files": [
-        "lagos_bio_quotation_LB-26-Q0115.pdf"
+        "lagos_bio_quotation_LB-26-Q0116.pdf"
       ],
       "dir": "pdf_classic_03",
       "truth": "pdf_classic_03/truth.json",
@@ -332,7 +352,7 @@
       "expect": "extract",
       "note": "",
       "files": [
-        "dong_nai_quotation_DNP-26-0116.pdf"
+        "dong_nai_quotation_DNP-26-0117.pdf"
       ],
       "dir": "pdf_modern_01",
       "truth": "pdf_modern_01/truth.json",
@@ -353,7 +373,7 @@
       "expect": "extract",
       "note": "",
       "files": [
-        "meridian_quotation_MPL-Q-26-0117.pdf"
+        "meridian_quotation_MPL-Q-26-0118.pdf"
       ],
       "dir": "pdf_modern_02",
       "truth": "pdf_modern_02/truth.json",
@@ -375,7 +395,7 @@
       "expect": "extract",
       "note": "",
       "files": [
-        "highveld_quotation_HG-Q26-0118.pdf"
+        "highveld_quotation_HG-Q26-0119.pdf"
       ],
       "dir": "pdf_modern_03",
       "truth": "pdf_modern_03/truth.json",
@@ -396,7 +416,7 @@
       "expect": "extract",
       "note": "",
       "files": [
-        "delta_quotation_DF-26-0119.pdf"
+        "delta_quotation_DF-26-0120.pdf"
       ],
       "dir": "pdf_letter_01",
       "truth": "pdf_letter_01/truth.json",
@@ -416,7 +436,7 @@
       "expect": "extract",
       "note": "",
       "files": [
-        "helvetia_quotation_HG-26-00120.pdf"
+        "helvetia_quotation_HG-26-00121.pdf"
       ],
       "dir": "pdf_letter_02",
       "truth": "pdf_letter_02/truth.json",
@@ -436,7 +456,7 @@
       "expect": "extract",
       "note": "",
       "files": [
-        "baobab_quotation_BPL-QT-26-0121.pdf"
+        "baobab_quotation_BPL-QT-26-0122.pdf"
       ],
       "dir": "pdf_letter_03",
       "truth": "pdf_letter_03/truth.json",
@@ -789,7 +809,7 @@
       "expect": "extract",
       "note": "",
       "files": [
-        "delta_quotation_DF-26-0131.docx"
+        "delta_quotation_DF-26-0132.docx"
       ],
       "dir": "docx_letter_01",
       "truth": "docx_letter_01/truth.json",
@@ -881,7 +901,7 @@
       "expect": "extract_and_flag",
       "note": "Injection is white 1pt text in the text layer.",
       "files": [
-        "lowlands_quotation_LP-26-0136.pdf"
+        "lowlands_quotation_LP-26-0137.pdf"
       ],
       "dir": "hostile_pdf_white",
       "truth": "hostile_pdf_white/truth.json",
@@ -938,7 +958,7 @@
       "expect": "extract",
       "note": "PDF bytes with a .dat extension.",
       "files": [
-        "dong_nai_quotation_DNP-26-0116.dat"
+        "dong_nai_quotation_DNP-26-0117.dat"
       ],
       "dir": "misnamed_pdf_as_dat",
       "truth": "misnamed_pdf_as_dat/truth.json",
@@ -999,6 +1019,15 @@
         "currency": "USD",
         "units_per_pack": 14,
         "price_per_uom": 0.0151,
+        "inn_as_written": "Omeprazole"
+      },
+      {
+        "case": "json_erp_fr_01",
+        "line_no": 1,
+        "supplier": "atlas",
+        "currency": "MAD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.1431,
         "inn_as_written": "Omeprazole"
       },
       {
@@ -1908,6 +1937,15 @@
         "inn_as_written": "Amoxicillin trihydrate"
       },
       {
+        "case": "json_erp_fr_01",
+        "line_no": 2,
+        "supplier": "atlas",
+        "currency": "MAD",
+        "units_per_pack": 10,
+        "price_per_uom": 0.141,
+        "inn_as_written": "Amoxicillin"
+      },
+      {
         "case": "hostile_pdf_white",
         "line_no": 5,
         "supplier": "lowlands",
@@ -2243,6 +2281,15 @@
         "inn_as_written": "Rifampicin + Isoniazid"
       },
       {
+        "case": "json_erp_fr_01",
+        "line_no": 4,
+        "supplier": "atlas",
+        "currency": "MAD",
+        "units_per_pack": 28,
+        "price_per_uom": 0.4854,
+        "inn_as_written": "Rifampicin + Isoniazid"
+      },
+      {
         "case": "pdf_classic_02",
         "line_no": 6,
         "supplier": "kaveri",
@@ -2410,6 +2457,15 @@
         "currency": "CNY",
         "units_per_pack": 500,
         "price_per_uom": 0.4672,
+        "inn_as_written": "Ciprofloxacin"
+      },
+      {
+        "case": "json_erp_fr_01",
+        "line_no": 3,
+        "supplier": "atlas",
+        "currency": "MAD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.3171,
         "inn_as_written": "Ciprofloxacin"
       },
       {
