@@ -19,16 +19,39 @@ flowchart LR
 
 ## Try it
 
-Offline, replaying recorded extractions, no key needed:
+### Mock run, no key
+
+Replays recorded extractions through the real pipeline. Every loader, check, score, the reconciliation and the page are real; only the model call is replayed.
 
 ```
 uv sync --all-groups
 uv run docintel run data/provided --out output/demo --as-of 2026-08-20
 ```
 
-Open `output/demo/review.html`, decide, press **Export decisions**, save the JSON as `output/demo/decisions.json`, then run the `approve` command the run printed. `approved.csv` holds the lines that go on. The full session, with what each step prints, is in [docs/walkthrough.md](docs/walkthrough.md).
+Then open `output/demo/review.html`, decide, press **Export decisions**, save the JSON as `output/demo/decisions.json`, and run the `approve` command the run printed. `approved.csv` holds the lines that go on. The full session, with what each step prints, is in [docs/walkthrough.md](docs/walkthrough.md).
 
-Live extraction: `export ANTHROPIC_API_KEY=...` and add `--extractor model --model anthropic:claude-sonnet-5-5`. A single file works in place of a folder.
+### Live run, with a model
+
+```
+cp .env.example .env                       # put ANTHROPIC_API_KEY in it
+uv run --env-file .env docintel run data/provided --out output/live --as-of 2026-08-20 --extractor model --model anthropic:claude-sonnet-5-5
+```
+
+Review and approve exactly as above; the approve command needs no key. The model reads text documents directly and transcribes scanned pages; the OCR cross-check stays local. `DOCINTEL_VISION_MODEL` in `.env` picks a different model for pages. Flags fall back to `DOCINTEL_*` variables in `.env`, so with `DOCINTEL_EXTRACTOR=model` set there the live command is the mock one. Any folder or single file works as input.
+
+### Other providers
+
+The model is a `provider:model` string resolved by LangChain. Install the provider's extra, put its key in `.env`, change the string:
+
+| Provider | Install | Model string | Credentials |
+|---|---|---|---|
+| Anthropic | included | `anthropic:claude-sonnet-5-5` | `ANTHROPIC_API_KEY` |
+| OpenAI | `uv sync --all-groups --extra openai` | `openai:<model>` | `OPENAI_API_KEY` |
+| Google | `uv sync --all-groups --extra google` | `google_genai:<model>` | `GOOGLE_API_KEY` |
+| AWS Bedrock | `uv sync --all-groups --extra aws` | `bedrock:<model id>` | AWS credentials and region |
+| Ollama, local | `uv sync --all-groups --extra ollama` | `ollama:<model>` | none |
+
+Structured output needs tool calling or a JSON mode on the provider's side; small local models do not always fill the schema reliably, which is what the synthetic set is for.
 
 ## The review page
 

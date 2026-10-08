@@ -22,6 +22,13 @@ dependencies = [
     "rapidocr>=3.9.2",
 ]
 
+[project.optional-dependencies]
+# One provider per extra. The model is a provider:model string; install the matching extra.
+openai = ["langchain-openai>=1.0"]
+google = ["langchain-google-genai>=3.0"]
+aws = ["langchain-aws>=1.0"]
+ollama = ["langchain-ollama>=1.0"]
+
 [project.scripts]
 docintel = "docintel.cli:main"
 
