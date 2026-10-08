@@ -61,6 +61,7 @@ select = ["E", "F", "I", "B", "UP", "N", "W", "SIM"]
 "evals/synth/*.py" = ["E501"]
 # Report rows and SQL DDL are templates; wrapping them hides their shape.
 "src/docintel/store/writer.py" = ["E501"]
+"evals/score.py" = ["E501"]
 
 [tool.mypy]
 python_version = "3.12"

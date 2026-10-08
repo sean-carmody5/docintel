@@ -24,6 +24,7 @@ CSV_COLUMNS = [
     "overall_confidence",
     "review_reasons",
     "source_document",
+    "source_path",
     "parent_document",
     "source_kind",
     "source_locator",
