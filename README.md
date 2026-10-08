@@ -47,4 +47,18 @@ docs/             brief, agent log, write-up
 
 ## Running
 
-Setup and run instructions follow once the pipeline exists.
+```
+uv sync --all-groups
+uv run docintel run data/provided --out output/provided        # offline: replays recorded extractions
+uv run docintel approve --thread-id <id> --out output/provided # resume after reviewing the table
+uv run docintel draw                                           # the graph as Mermaid
+```
+
+Live extraction needs an API key and the model backend:
+
+```
+export ANTHROPIC_API_KEY=...
+uv run docintel run data/provided --out output/provided --extractor model --model anthropic:claude-sonnet-5-5
+```
+
+Set `LANGSMITH_TRACING=true` and `LANGSMITH_API_KEY` to trace every call. Outputs are `records.csv`, `review.sqlite`, `review_report.md` and `conflicts.json` in the output folder. The run stops after writing them; `approve` resumes it.
