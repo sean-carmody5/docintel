@@ -32,10 +32,10 @@ jobs:
       - name: Type check
         run: uv run mypy src
 
-      - name: Regenerate the synthetic set and confirm it is byte-identical to the commit
-        run: |
-          uv run python -m evals.synth.build --out data/synthetic --seed 2026
-          git diff --stat --exit-code -- data/synthetic
+      - name: Regenerate the synthetic set and confirm the commit matches it
+        # Text byte for byte; images by pixels and Office files by zip members,
+        # because zlib output differs between platforms for identical content.
+        run: uv run python -m evals.synth.verify
 
       - name: Tests (offline; model calls are replayed from fixtures)
         run: uv run pytest -q
