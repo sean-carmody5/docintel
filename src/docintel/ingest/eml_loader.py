@@ -94,6 +94,7 @@ def load_email(path: Path, data: bytes, media_type: str) -> Document:
 
     for name, raw in attachments[:MAX_ATTACHMENTS]:
         child = load_bytes(Path(name), raw)
+        child.metadata["bytes"] = raw  # not on disk; kept so a page preview can be rendered
         child.parent_id = doc.id
         child.metadata["attachment_of"] = path.name
         doc.children.append(child)

@@ -49,7 +49,9 @@ def load_zip(path: Path, data: bytes, media_type: str) -> Document:
                     "member_encrypted", Severity.WARNING, f"{m.filename} is password protected"
                 )
                 continue
-            child = load_bytes(Path(m.filename), zf.read(m))
+            data = zf.read(m)
+            child = load_bytes(Path(m.filename), data)
+            child.metadata["bytes"] = data  # not on disk; kept so a page preview can be rendered
             child.parent_id = doc.id
             child.metadata["member_of"] = path.name
             doc.children.append(child)

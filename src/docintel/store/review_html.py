@@ -54,7 +54,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .btn:hover{background:var(--hover)}.btn.primary{background:var(--btn);color:var(--btn-fg);border-color:var(--btn)}.btn.primary:hover{opacity:.88}
 .btn.on{background:var(--btn);color:var(--btn-fg);border-color:var(--btn)}
 button:focus-visible,input:focus-visible,select:focus-visible,.row:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
-input,select{font:inherit;color:inherit;background:var(--bg);border:1px solid var(--line);border-radius:6px;height:32px;padding:0 10px}
+input,select{font:inherit;color:inherit;background:var(--bg);border:1px solid var(--line);border-radius:6px;height:32px;padding:0 10px;min-width:0;max-width:100%}
 select{appearance:none;-webkit-appearance:none;padding-right:26px;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:right 13px top 13px,right 9px top 13px;background-size:4px 4px,4px 4px;background-repeat:no-repeat}
 .hd{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:28px}
 h1{font-size:22px;font-weight:600;letter-spacing:-.01em;margin:0 0 4px}.sub{margin:0;color:var(--muted)}
@@ -110,7 +110,7 @@ h1{font-size:22px;font-weight:600;letter-spacing:-.01em;margin:0 0 4px}.sub{marg
 .cmp .note{color:var(--muted);font-size:13px;margin:0 0 22px}
 .out{width:100%;height:140px;font:12px/1.4 var(--mono);margin-top:12px;border:1px solid var(--line);border-radius:6px;padding:10px}
 @media (max-width:900px){.detail{grid-template-columns:1fr}}
-@media (max-width:760px){.page{padding:24px 16px 60px}.row{grid-template-columns:14px minmax(0,1fr) auto}.issue,.dec{display:none}.price small{display:none}.detail{padding-left:10px}.hd{flex-direction:column}.hd-r{padding:0}.prog{align-items:flex-start}.helpbox{right:auto;left:0}}
+@media (max-width:760px){.page{padding:24px 16px 60px}.row{grid-template-columns:14px minmax(0,1fr) auto}.issue,.dec{display:none}.price small{display:none}.detail{padding-left:10px}.hd{flex-direction:column}.hd-r{padding:0;flex-wrap:wrap}.prog{align-items:flex-start}.helpbox{right:auto;left:0}.bar{flex-wrap:wrap}.bar input{flex:1 1 100%}.bar select{flex:1 1 40%;min-width:0;max-width:100%}.fields{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}}
 """
 
 SCRIPT = r"""

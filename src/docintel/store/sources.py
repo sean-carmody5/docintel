@@ -29,7 +29,7 @@ def save_source(doc: Document, out_dir: Path) -> dict[str, Any]:
     """Write page previews under out_dir/sources/<doc id>/ and return what the page needs."""
     pngs = [p.png for p in doc.images]
     if not pngs and not doc.failed and doc.media_type == "application/pdf":
-        pngs = _render_pdf(doc.source_path)
+        pngs = _render_pdf(doc.source_path, doc.metadata.get("bytes"))
     pages: list[str] = []
     if pngs:
         folder = out_dir / "sources" / doc.id
@@ -58,14 +58,15 @@ def _save_jpeg(png: bytes, target: Path) -> None:
     im.convert("RGB").save(target, "JPEG", quality=JPEG_QUALITY, optimize=True)
 
 
-def _render_pdf(path: Path) -> list[bytes]:
-    """Pages of a PDF on disk, for a preview. Attachments live in memory and get text only."""
-    if not path.is_file():
+def _render_pdf(path: Path, data: bytes | None = None) -> list[bytes]:
+    """Pages of a PDF, from disk or from the bytes an attachment or archive member arrived as."""
+    if data is None and not path.is_file():
         return []
     try:
         import pymupdf
 
-        with pymupdf.open(path) as pdf:  # type: ignore[no-untyped-call]
+        args = (path,) if data is None else (None, data, "pdf")  # filename, stream, filetype
+        with pymupdf.open(*args) as pdf:  # type: ignore[no-untyped-call]
             return [page.get_pixmap(dpi=PREVIEW_DPI).tobytes("png") for page in pdf]
     except Exception as exc:  # noqa: BLE001 - a preview is optional
         log.warning("could not render %s for a preview: %s", path.name, exc)
