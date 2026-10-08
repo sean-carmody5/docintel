@@ -102,5 +102,6 @@ PLAN.md            design, extension points, build sequence
 
 - [docs/brief.md](docs/brief.md): the task as set.
 - [docs/walkthrough.md](docs/walkthrough.md): a run from start to finish, as the user sees it.
+- [docs/how-it-works.md](docs/how-it-works.md): the mechanism, stage by stage, in two pages.
 - [PLAN.md](PLAN.md): the design and why.
 - [docs/agent-log.md](docs/agent-log.md): what was decided, by whom, session by session.
