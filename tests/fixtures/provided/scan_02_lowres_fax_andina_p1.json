@@ -1,0 +1,29 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {"name": "Farmaceutica Andina S.A.S.", "country": "CO"},
+  "quotation_ref": "FA-COT-2026-118",
+  "buyer_reference": "AXMED-RFQ-2026-0233",
+  "document_date": "2026-08-06",
+  "valid_until": "2026-09-20",
+  "currency": "USD",
+  "incoterm": "FOB",
+  "named_place": "Cartagena (COCTG)",
+  "payment_terms": "T/T 30 days from B/L date",
+  "evidence": {"quotation_ref": "FA-COT-2026-118", "currency": "USD - United States dollar", "incoterm": "FOB Cartagena (COCTG)", "document_date": "06 August 2026"},
+  "lines": [
+    {"line_no": 1, "product_name": "Dolostop 500", "inn": "Paracetamol", "strength": "500 mg", "dosage_form": "tablet", "uom": "tablet", "units_per_pack": 20, "price_per_pack": 0.182, "price_per_uom": 0.0091, "price_basis": "list", "discount_pct": 3.0, "currency": "USD", "quantity": 6000000, "extended_amount": 52962.0,
+     "evidence": {"product_name": "Dolostop 500", "inn": "Paracetamol", "price_per_uom": "0.0091", "extended_amount": "52,962.00"}, "illegible": ["price_per_uom"], "notes": ["unit price digit partly obscured by fax noise; cross-check with extended amount 52,962.00 / 6,000,000 / 0.97"]},
+    {"line_no": 2, "product_name": "Amlodin 5", "inn": "Amlodipine besylate", "strength": "5 mg", "dosage_form": "tablet", "uom": "tablet", "units_per_pack": 30, "price_per_pack": 0.384, "price_per_uom": 0.0128, "price_basis": "list", "discount_pct": 3.0, "currency": "USD", "quantity": 1800000, "extended_amount": 22348.8,
+     "evidence": {"product_name": "Amlodin 5", "inn": "Amlodipine besylate", "price_per_uom": "0.0128", "extended_amount": "22,348.80"}},
+    {"line_no": 3, "product_name": "Losandina 50", "inn": "Losartan potassium", "strength": "50 mg", "dosage_form": "film-coated tablet", "uom": "tablet", "units_per_pack": 30, "price_per_pack": 0.615, "price_per_uom": 0.0205, "price_basis": "list", "discount_pct": 5.0, "currency": "USD", "quantity": 2400000, "extended_amount": 46740.0,
+     "evidence": {"product_name": "Losandina 50", "inn": "Losartan potassium", "price_per_uom": "0.0205", "extended_amount": "46,740.00"}},
+    {"line_no": 4, "product_name": "Amoxidina 250/5", "inn": "Amoxicillin trihydrate", "strength": "250 mg / 5 mL", "dosage_form": "powder for oral suspension", "uom": "bottle", "units_per_pack": 1, "price_per_pack": 0.345, "price_per_uom": 0.345, "price_basis": "list", "discount_pct": 0.0, "currency": "USD", "quantity": 120000, "extended_amount": 41400.0,
+     "evidence": {"product_name": "Amoxidina 250/5", "inn": "Amoxicillin trihydrate", "price_per_uom": "0.3450", "extended_amount": "41,400.00"}},
+    {"line_no": 5, "product_name": "Enalten 10", "inn": "Enalapril maleate", "strength": "10 mg", "dosage_form": "tablet", "uom": "tablet", "units_per_pack": 500, "price_per_pack": 3.7, "price_per_uom": 0.0074, "price_basis": "list", "discount_pct": 5.0, "currency": "USD", "quantity": 3000000, "extended_amount": 21090.0,
+     "evidence": {"product_name": "Enalten 10", "inn": "Enalapril maleate", "price_per_uom": "0.0074", "extended_amount": "21,090.00"}},
+    {"line_no": 6, "product_name": "Salbudina 2/5", "inn": "Salbutamol sulfate", "strength": "2 mg / 5 mL", "dosage_form": "syrup", "uom": "bottle", "units_per_pack": 1, "price_per_pack": 0.412, "price_per_uom": 0.412, "price_basis": "list", "discount_pct": 0.0, "currency": "USD", "quantity": 90000, "extended_amount": 37080.0,
+     "evidence": {"product_name": "Salbudina 2/5", "inn": "Salbutamol sulfate", "price_per_uom": "0.4120", "extended_amount": "37,080.00"}}
+  ],
+  "warnings": ["Low-resolution fax scan of page 1 only; page 2 (bank details, notes 3 to 5) is missing", "Fax noise over the unit price column; every price should be confirmed against the extended amounts or the clean PDF of the same quotation"]
+}
