@@ -54,6 +54,39 @@ def is_scanned_page(page: pymupdf.Page) -> bool:
     return False
 
 
+def hidden_spans(pdf: pymupdf.Document, pages: range) -> list[str]:
+    """Text a reader cannot see: tiny, off the page, or white with no dark fill beneath it.
+
+    White text over a dark table header is normal and is not reported.
+    """
+    found: list[str] = []
+    for i in pages:
+        page = pdf[i]
+        page_rect = page.rect
+        dark: list[pymupdf.Rect] = []
+        try:
+            for d in page.get_drawings():
+                fill = d.get("fill")
+                if fill and sum(fill[:3]) / 3 < 0.5 and d.get("rect") is not None:
+                    dark.append(pymupdf.Rect(d["rect"]))
+        except Exception:  # drawings are optional evidence
+            dark = []
+        for block in page.get_text("dict").get("blocks", []):
+            for line in block.get("lines", []):
+                for span in line.get("spans", []):
+                    text = str(span.get("text", "")).strip()
+                    if not text:
+                        continue
+                    bbox = pymupdf.Rect(span["bbox"])
+                    tiny = float(span.get("size", 10)) < 3
+                    off_page = not page_rect.intersects(bbox)
+                    white = int(span.get("color", 0)) == 0xFFFFFF
+                    on_dark = any(r.intersects(bbox) for r in dark)
+                    if tiny or off_page or (white and not on_dark):
+                        found.append(text)
+    return found
+
+
 def _markdown(pdf: pymupdf.Document, pages: range) -> str:
     try:
         md = pymupdf4llm.to_markdown(pdf, pages=list(pages), use_ocr=False, show_progress=False)
@@ -64,8 +97,7 @@ def _markdown(pdf: pymupdf.Document, pages: range) -> str:
     return re.sub(r"[ ]{2,}", " ", text).strip()
 
 
-@register("application/pdf")
-def load_pdf(path: Path, data: bytes, media_type: str) -> Document:
+def _load_pdf(path: Path, data: bytes, media_type: str) -> Document:
     try:
         pdf = pymupdf.open(stream=data, filetype="pdf")
     except Exception as err:
@@ -92,6 +124,9 @@ def load_pdf(path: Path, data: bytes, media_type: str) -> Document:
             )
 
         raw = "\n\n".join(pdf[i].get_text("text") for i in pages).strip()
+        hidden = hidden_spans(pdf, pages)
+        if hidden:
+            doc.metadata["hidden_text"] = hidden
         scanned = sum(1 for i in pages if is_scanned_page(pdf[i]))
         quality = text_quality(raw)
         doc.metadata["scanned_pages"] = scanned
@@ -135,4 +170,12 @@ def load_pdf(path: Path, data: bytes, media_type: str) -> Document:
             doc.text = raw
             doc.flag("markdown_fallback", Severity.INFO, str(err))
         doc.text_quality = quality
+    return doc
+
+
+@register("application/pdf")
+def load_pdf(path: Path, data: bytes, media_type: str) -> Document:
+    doc = _load_pdf(path, data, media_type)
+    for hidden in doc.metadata.get("hidden_text", []):
+        doc.text = doc.text.replace(hidden, "")
     return doc

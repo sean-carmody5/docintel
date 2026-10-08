@@ -13,6 +13,7 @@ from pathlib import Path
 
 from docintel.documents import Document, LoaderError, failed_document
 from docintel.ingest import sniff as _sniff
+from docintel.ingest.security import scan
 
 log = logging.getLogger(__name__)
 
@@ -70,6 +71,7 @@ def load_bytes(path: Path, data: bytes) -> Document:
         return failed_document(
             path, media, LoaderError("unreadable", f"{type(err).__name__}: {err}"), data
         )
+    scan(doc)
     return doc
 
 

@@ -10,6 +10,7 @@ from pathlib import Path
 
 from docintel.documents import Document, Kind, Severity, document_id
 from docintel.ingest.registry import register
+from docintel.ingest.security import strip_hidden_html
 
 _KIND_BY_MEDIA = {
     "text/csv": Kind.CSV,
@@ -57,7 +58,10 @@ def load_text(path: Path, data: bytes, media_type: str) -> Document:
     doc = Document(id=document_id(data), source_path=path, kind=kind, media_type=media_type)
     if kind is Kind.HTML:
         doc.metadata["raw_html_chars"] = len(text)
-        text = html_to_text(text)
+        clean, hidden = strip_hidden_html(text)
+        if hidden:
+            doc.metadata["hidden_html"] = hidden
+        text = html_to_text(clean)
     doc.text = text
     doc.text_quality = 1.0
     if media_type == "text/plain" and path.suffix.lower() not in (".txt", ".md", ".text", ""):

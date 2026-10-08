@@ -11,6 +11,7 @@ from pathlib import Path
 
 from docintel.documents import Document, Kind, Severity, document_id
 from docintel.ingest.registry import load_bytes, register
+from docintel.ingest.security import strip_hidden_html
 from docintel.ingest.text_loader import html_to_text
 
 MAX_ATTACHMENTS = 20
@@ -71,9 +72,13 @@ def load_email(path: Path, data: bytes, media_type: str) -> Document:
 
     header_block = "\n".join(f"{h}: {msg.get(h)}" for h in _HEADERS if msg.get(h))
     body = plain or ""
-    html_text = html_to_text(html) if html else ""
+    html_text = ""
     if html:
         doc.metadata["html_part"] = html
+        clean_html, hidden = strip_hidden_html(html)
+        if hidden:
+            doc.metadata["hidden_html"] = hidden
+        html_text = html_to_text(clean_html)
     if not body.strip() and html_text:
         body = html_text
         doc.flag("html_body_used", Severity.INFO, "no plain-text part; HTML part converted")
