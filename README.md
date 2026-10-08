@@ -2,66 +2,105 @@
 
 [![ci](https://github.com/sean-carmody5/axmed-docintel/actions/workflows/ci.yml/badge.svg)](https://github.com/sean-carmody5/axmed-docintel/actions/workflows/ci.yml)
 
-Document intelligence pipeline for supplier quotations. Takes a folder of mixed documents (JSON exports, PDFs, emails, scanned images, and whatever arrives next), extracts quotation lines into one schema, writes a table a person can review, and says exactly which values it is unsure of and why.
-
-Built for the Axmed AI Engineer take-home. The [brief](docs/brief.md), the [plan](PLAN.md) and the [agent log](docs/agent-log.md) record what was asked, what was decided, and who decided it.
+Supplier quotations arrive as PDFs, scans, emails, spreadsheets and JSON exports. docintel reads a folder of them, pulls every quotation line into one table, works out how sure it is of each value and why, and gives a person a page to approve, hold or reject each line with the source document beside it.
 
 ```mermaid
 flowchart LR
-  F[(folder)] --> D[discover]
-  D -->|one per file| L
-  subgraph P[per document, in parallel]
+  F[(folder of<br/>documents)] --> L
+  subgraph P["per document, in parallel"]
     direction LR
-    L[load] --> X[extract] --> V[verify]
+    L[load<br/>sniff the bytes,<br/>pick a loader] --> X[extract<br/>one schema,<br/>evidence quoted] --> V[verify<br/>ground, check,<br/>score]
   end
-  V --> R[reconcile]
-  R --> W[write]
-  W --> T[(review table)]
-  T -.-> H{{person reviews}}
-  H -->|approve| M[promote]
+  V --> R[reconcile<br/>across suppliers<br/>and copies]
+  R --> W[(table +<br/>review page)]
+  W --> H{{person decides}}
+  H --> A[(approved.csv)]
 ```
 
-## Status
+## Try it
 
-Evaluation data in place, pipeline build starting. See [PLAN.md](PLAN.md) for the architecture, the extension points, how confidence is computed, and the build sequence.
+Offline, replaying recorded extractions, no key needed:
 
-## Data
+```
+uv sync --all-groups
+uv run docintel run data/provided --out output/demo --as-of 2026-08-20
+```
 
-| Set | Where | What | Ground truth |
+Open `output/demo/review.html`, decide, press **Export decisions**, save the JSON as `output/demo/decisions.json`, then run the `approve` command the run printed. `approved.csv` holds the lines that go on. The full session, with what each step prints, is in [docs/walkthrough.md](docs/walkthrough.md).
+
+Live extraction: `export ANTHROPIC_API_KEY=...` and add `--extractor model --model anthropic:claude-sonnet-5-5`. A single file works in place of a folder.
+
+## The review page
+
+![The review page: one row per quotation line, least certain first](docs/img/review-list.png)
+
+One row per quotation line, least certain first. A red mark means something needed to price the line could not be read; amber means the values are there but one was reached in a way worth a look; no mark means every key value is in the document word for word. Open a row and the document sits beside the fields: the page image for scans and PDFs, zoomable, or the text with the evidence highlighted.
+
+![An open row: fields on the left, the scanned page on the right](docs/img/review-open.png)
+
+Keys: `J` `K` move, `A` `H` `R` decide, `Esc` closes. The `?` explains the rest.
+
+## What comes out
+
+| File | What it is |
+|---|---|
+| `review.html` | The page above. One file, opens from disk, no server. |
+| `records.csv` | Every line with its values, evidence quotes, per-field confidence and flags. |
+| `review_report.md` | The same, as a report that leads with what to look at first. |
+| `conflicts.json` | Products quoted by more than one supplier, and duplicate copies of a quotation cross-checked. |
+| `review.sqlite` | Records, conflicts and duplicates, queryable. |
+| `approved.csv`, `decisions_applied.json` | After `approve`: the lines that go on, and every decision. |
+
+## How it knows what it is unsure of
+
+Confidence is computed, never asked of the model. Every value is tested against the document and the deductions are recorded, so the page can say why.
+
+```mermaid
+flowchart LR
+  V[value] --> G{found in the<br/>document text?}
+  G -->|yes| C{arithmetic,<br/>codes, dates<br/>plausible?}
+  G -->|no| D[deduct, say why]
+  C -->|yes| O{scan: does the<br/>OCR pass agree?}
+  C -->|no| D
+  O -->|yes or n/a| S[score, tier]
+  O -->|no| D
+  D --> S
+  S --> R{any key field<br/>below the bar, or<br/>missing?}
+  R -->|yes| N[needs a person]
+  R -->|no| K[clean]
+```
+
+Rules a reviewer can rely on: a value that is not in the document is never confident; a unit price worked out from a pack price inherits the weaker of its inputs; a document that corrects itself later wins with the later value and keeps both; text addressed to an automated reader is flagged and ignored.
+
+## New file types
+
+Loaders are chosen by what the bytes are, not the file name. A new format is one loader; nothing downstream changes. Without a specific loader, text-like formats go through a generic text reader, Office and the long tail through markitdown, and anything else is refused with a reason rather than guessed at. Emails and archives open their attachments as documents of their own. The plan has the [full table](PLAN.md#loading-built-for-the-file-type-we-have-not-seen).
+
+## Evaluation
+
+| Set | Documents | Truth | Result |
 |---|---|---|---|
-| Provided | `data/provided/` | The eight documents supplied with the brief | Hand-checked fixtures |
-| Synthetic | `data/synthetic/` | 59 generated cases: JSON in seven dialects including French keys, three PDF layouts, scanned PDFs with and without a garbage OCR layer, faxes and photos, four email styles, WhatsApp exports, Excel, Word, CSV, XML, HTML, plain text, hostile carriers, misnamed and malformed files ([README](data/synthetic/README.md)) | Exact, by construction |
-| Public | `data/public/` | 37 real price lists, catalogues and RFQ forms from UNICEF, Global Fund, PAHO, WHO, national procurement bodies and a manufacturer. Six open-licensed files are committed, the rest are fetched by `evals/public/fetch.py` ([README](data/public/README.md) lists all with licences) | None, robustness only |
+| Provided pack | 8 | Hand-written expected extractions | 37 lines, 14 flagged for a person, 5 of them unreadable on the glare photo |
+| Synthetic | 66 cases in 15 kinds, generated from truth | Exact | Fixture replay 66 of 66; Sonnet 5.5 and Opus 5.5 reading blind, 24 of 24 covered cases each, no invented lines |
+| Held-out synthetic | Same generator, different seed | Exact | Never opened while tuning |
+| Public | 37 real price lists and RFQ forms | None | Robustness only |
+
+Cases are judged by the behaviour expected of them (extract, flag, degrade honestly, refuse), not by accuracy alone. Details in [PLAN.md](PLAN.md#data-and-evaluation) and [evals/reports](evals/reports).
 
 ## Layout
 
 ```
-data/provided/    the eight documents supplied with the brief
-data/synthetic/   generated documents with known ground truth
-data/public/      downloaded real documents, git-ignored
-evals/synth/      synthetic generator
-evals/public/     public sample sources and fetcher
-src/docintel/     the pipeline
-docs/             brief, agent log, write-up
+src/docintel/      ingest/ extract/ verify/ reconcile.py store/ graph.py cli.py
+data/              provided/ synthetic/ (truth included) public/ (fetched, licences listed)
+evals/             synth/ generator, score.py, public/ fetcher, ui/ page check, reports/
+tests/             offline, with recorded fixtures
+docs/              brief, walkthrough, agent log, write-up
+PLAN.md            design, extension points, build sequence
 ```
 
-## Running
+## Documents
 
-```
-uv sync --all-groups
-uv run docintel run data/provided --out output/provided        # offline: replays recorded extractions
-uv run docintel run data/provided/some_quotation.pdf --out output/one   # a single file works too
-uv run docintel approve --thread-id <id> --out output/provided --decisions decisions.json
-uv run docintel draw                                           # the graph as Mermaid
-```
-
-`review.html` in the output folder is the review page: one row per quotation line with the product, the price and one short note saying what needs a person, least certain first. Open a row for the fields beside the source itself, the page image for scans and PDFs or the text with the evidence quotes highlighted; approve, hold or reject (`a`/`h`/`r`, `j`/`k` to move), then "Export decisions" and pass the JSON to `approve --decisions`. One file, no server, opens from disk.
-
-Live extraction needs an API key and the model backend:
-
-```
-export ANTHROPIC_API_KEY=...
-uv run docintel run data/provided --out output/provided --extractor model --model anthropic:claude-sonnet-5-5
-```
-
-Set `LANGSMITH_TRACING=true` and `LANGSMITH_API_KEY` to trace every call. Outputs are `records.csv`, `review.sqlite`, `review_report.md`, `review.html` and `conflicts.json` in the output folder. The run stops after writing them; `approve` resumes it.
+- [docs/brief.md](docs/brief.md): the task as set.
+- [docs/walkthrough.md](docs/walkthrough.md): a run from start to finish, as the user sees it.
+- [PLAN.md](PLAN.md): the design and why.
+- [docs/agent-log.md](docs/agent-log.md): what was decided, by whom, session by session.
