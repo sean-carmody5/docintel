@@ -228,6 +228,15 @@ Eight files is not an evaluation. Two additions, both part of Phase A.
 
 **Model comparison.** The same eval runs across Haiku 4.5, Sonnet 5.5 and Opus 5.5 behind the one config string. The table goes in the write-up with cost per document.
 
+**Generalisation discipline.** The most heavily weighted criterion is surviving documents we have not seen, so the evaluation must not quietly become the specification.
+
+- A held-out set: the same generator with a different seed (`--seed 7` into `data/synthetic_holdout`, built on demand, not committed, not opened while tuning). Prompts, confidence weights and normalisation rules are tuned on the main set only. The held-out score is computed once at the end and reported separately in the write-up. If it is much worse than the main score, that is the finding.
+- The extraction prompt never names a supplier, a layout, a dialect or a field name from any export we hold. The loaders never branch on a filename. A reviewer can grep for either.
+- Public documents are robustness tests only: no truth, no tuning against them. A fresh handful fetched at the end, not seen before, is run blind.
+- Expected-outcome cases are grouped by the behaviour they test, so a gap in coverage is visible as an empty group rather than hidden in a count.
+
+**Expected-outcome backlog.** Built now: expired validity, a scan rotated sideways, a fax with a cover sheet, a reply thread whose quoted RFQ carries the buyer's target prices, a quote that states a price with no unit. Listed for after the pipeline runs end to end: an RFQ with no prices, a purchase order and an invoice that look like quotations, two quotations in one PDF, per-100 pricing, a document with two currencies, a bid tabulation with several suppliers, a spreadsheet with uncached formulas, a password-protected archive member, handwritten corrections on a scan.
+
 **Passing is behaving as expected, not scoring 100%.** Every case carries an `expect` value and the scorer grades against it. A clean JSON must extract every line exactly. A glare-wiped photo or the provided `scan_03` must return what is legible, flag the rest, and never invent a line; a confident wrong price on such a case is a failure, a flagged gap is a pass. An encrypted file must produce a refused record with the reason. Accuracy on the legible cases and calibration on the illegible ones are reported separately, because a pipeline that is right when it is sure and says so when it is not is the product.
 
 ## Engineering standard
