@@ -54,7 +54,7 @@ One row per quotation line. Every field in the Price group appears in at least o
 
 ```mermaid
 flowchart LR
-  A[file] --> S[sniff the bytes,<br/>suffix only as tie-break]
+  A[file] --> S[detect the type from content,<br/>extension only as tie-break]
   S --> R{loader for this<br/>media type?}
   R -->|exact or family| L[json, pdf, image,<br/>eml, office, text, zip]
   R -->|text-like| T[generic text]
@@ -163,6 +163,12 @@ uv with a locked environment; ruff for lint and format; mypy strict on `src/`; 4
 - Tiered price lists produce one row at the lowest-quantity tier, with all tiers kept and a flag.
 - A document that corrects itself later wins with the later value, and both are kept.
 - Scans of a document also present as a PDF are extracted independently, then cross-checked, because in production the PDF will not always be there.
+
+## Known limits
+
+- **Handwriting.** The brief names scans and photos, not handwriting, and quotations rarely carry much of it. Where it appears (a corrected price in pen, a signed note), a strong vision model will read legible handwriting but the OCR engine will not, so the agreement signal would deduct from values the model read correctly and over-flag the page. Seán's observation from earlier work on documents with handwriting. The mitigation path is known: detect handwritten regions, or treat low OCR line confidence over a region as "no second reading" rather than disagreement, and use a second vision pass as the agreement signal there.
+- **Phone photo formats.** HEIC and other formats Pillow does not open become refused records with the reason, not page images.
+- **Outlook `.msg`, OpenDocument, archives other than ZIP.** No loader; refused with the reason. Each is one loader if needed.
 
 ## Planned, not built, and why
 

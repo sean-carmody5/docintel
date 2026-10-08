@@ -317,6 +317,9 @@ def main() -> None:
     ap.add_argument("--manifest", type=Path, default=Path("data/synthetic/manifest.json"))
     ap.add_argument("--out", type=Path, default=None, help="markdown report path")
     ap.add_argument("--title", default="Synthetic set score")
+    ap.add_argument(
+        "--require-pass", action="store_true", help="exit non-zero if any case fails (for CI)"
+    )
     args = ap.parse_args()
     manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
     summary = score_run(load_records(args.records), manifest, args.manifest.parent)
@@ -328,6 +331,9 @@ def main() -> None:
     )
     print(text.split("\n## ")[0])
     print(f"written {out}")
+    if args.require_pass and summary["passed"] < summary["cases"]:
+        failed = [d["case"] for d in summary["details"] if not d["passed"]]
+        raise SystemExit(f"{len(failed)} of {summary['cases']} cases failed: {', '.join(failed)}")
 
 
 if __name__ == "__main__":

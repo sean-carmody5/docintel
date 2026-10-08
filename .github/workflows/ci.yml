@@ -39,3 +39,27 @@ jobs:
 
       - name: Tests (offline; model calls are replayed from fixtures)
         run: uv run pytest -q
+
+  eval:
+    # The claim in the README, "fixture replay 66 of 66", checked on every push:
+    # the whole synthetic set through the real graph with the OCR pass on, then scored.
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - name: Set up Python
+        run: uv python install 3.12
+      - name: Install the project, dev and evals groups, from the lockfile
+        run: uv sync --all-groups --frozen
+      - name: Run the pipeline over the synthetic set (model replayed from fixtures)
+        run: uv run docintel run data/synthetic --out output/synthetic --as-of 2026-08-20
+      - name: Score against truth and expected behaviour
+        run: uv run python -m evals.score --records output/synthetic/records.csv --manifest data/synthetic/manifest.json --require-pass
+      - name: Run the provided pack and resume with decisions
+        run: |
+          uv run docintel run data/provided --out output/provided --as-of 2026-08-20 --thread-id ci
+          uv run docintel approve --thread-id ci --out output/provided

@@ -138,4 +138,10 @@ Haiku declined most of the work: it marked xlsx, docx, html and csv as needing s
 
 **Zoom (Seán asked).** The full-size page viewer zooms with the scroll wheel or keys around the cursor, pans by dragging, fits or shows actual size, and steps through pages; previews are rendered at 170 dpi and capped at 2400 px wide so a price cell on a phone photo survives a 2x zoom. Seán's note for the write-up on the open-weight path: the larger Qwen VL models are the first candidates for the scan path because of their OCR-grade reading.
 
+**Documentation pass (Seán's priority: clarity over volume).** README rebuilt around what a reader needs, with the page in it and mock and live runs spelled out; a walkthrough of one real run; a two-page how-it-works; the plan rewritten as the design as built with an honest list of what was planned and not built; the log given a short version. Seán asked how non-Anthropic models are used: one optional extra each, a key in .env, a different model string; the README says only Anthropic has been exercised.
+
+**Handwriting (Seán's note for the write-up).** From earlier work on documents that often carried handwriting: a strong vision model reads legible handwriting, the OCR engine does not, so the agreement signal would over-flag such pages. The brief names scans and photos, not handwriting, and quotations rarely carry much. Recorded as a known limit with the mitigation path.
+
+**Testing (Seán asked).** Unit tests per module plus end-to-end graph runs on the provided pack; CI now also replays the whole synthetic set through the pipeline and scores it with a require-pass flag, and runs the provided pack to the review stop and through approve, so the "66 of 66" claim is checked on every push rather than asserted.
+
 **CLI `--fixtures` (agent).** Any recorded set replays without code changes, and the run metadata names the roots it used.

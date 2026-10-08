@@ -16,7 +16,7 @@ flowchart LR
 
 ## 1. One shape for every format
 
-Each file is sniffed by its bytes, not its name, and handed to a loader. Every loader produces the same neutral object: text, optional page images, metadata, flags, and children for anything nested (an email's attachments, a ZIP's members). From here on nothing knows or cares what the file was.
+Each file's type is detected from its content, not its name, and it is handed to a loader. Every loader produces the same neutral object: text, optional page images, metadata, flags, and children for anything nested (an email's attachments, a ZIP's members). From here on nothing knows or cares what the file was.
 
 | Arrives as | Loader | Becomes |
 |---|---|---|
@@ -87,4 +87,6 @@ Real: every loader, the security scan, the OCR pass, every check and score, reco
 - A held-out set from a different seed, never opened while tuning.
 - 37 public documents with no truth, for robustness.
 - The eight provided documents, with hand-written expected extractions.
-- 411 offline tests, and a Playwright script that drives every control on the review page.
+- 62 test functions, 411 cases after parametrisation: unit tests for every module (loaders, security, extraction schema, normalisation, grounding, checks, confidence, reconciliation, writers) and end-to-end runs of the real graph on the provided pack, including the review stop, resuming with decisions, a single-file input and a malformed recording.
+- CI on every push: lint, types, the synthetic set regenerated and compared with the commit, the tests, then the whole synthetic set through the pipeline and scored, and the provided pack run and resumed.
+- A Playwright script that drives every control on the review page, run by hand before the page is shown to anyone.

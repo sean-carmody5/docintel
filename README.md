@@ -9,7 +9,7 @@ flowchart LR
   F[(folder of<br/>documents)] --> L
   subgraph P["per document, in parallel"]
     direction LR
-    L[load<br/>sniff the bytes,<br/>pick a loader] --> X[extract<br/>one schema,<br/>evidence quoted] --> V[verify<br/>ground, check,<br/>score]
+    L[load<br/>detect the type from<br/>content, pick a loader] --> X[extract<br/>one schema,<br/>evidence quoted] --> V[verify<br/>ground, check,<br/>score]
   end
   V --> R[reconcile<br/>across suppliers<br/>and copies]
   R --> W[(table +<br/>review page)]
@@ -51,7 +51,7 @@ The model is a `provider:model` string resolved by LangChain. Install the provid
 | AWS Bedrock | `uv sync --all-groups --extra aws` | `bedrock:<model id>` | AWS credentials and region |
 | Ollama, local | `uv sync --all-groups --extra ollama` | `ollama:<model>` | none |
 
-Structured output needs tool calling or a JSON mode on the provider's side; small local models do not always fill the schema reliably, which is what the synthetic set is for.
+Only Anthropic has been exercised. The others resolve through the same LangChain interface and should work, but are untested here. Structured output needs tool calling or a JSON mode on the provider's side; small local models do not always fill the schema reliably, which is what the synthetic set is for.
 
 ## The review page
 
@@ -97,7 +97,7 @@ Rules a reviewer can rely on: a value that is not in the document is never confi
 
 ## New file types
 
-Loaders are chosen by what the bytes are, not the file name. A new format is one loader; nothing downstream changes. Without a specific loader, text-like formats go through a generic text reader, Office and the long tail through markitdown, and anything else is refused with a reason rather than guessed at. Emails and archives open their attachments as documents of their own. The plan has the [full table](PLAN.md#loading-built-for-the-file-type-we-have-not-seen).
+Loaders are chosen by what the file contains, not what it is called. A new format is one loader; nothing downstream changes. Without a specific loader, text-like formats go through a generic text reader, Office and the long tail through markitdown, and anything else is refused with a reason rather than guessed at. Emails and archives open their attachments as documents of their own. The plan has the [full table](PLAN.md#loading-built-for-the-file-type-we-have-not-seen).
 
 ## Evaluation
 
@@ -108,7 +108,7 @@ Loaders are chosen by what the bytes are, not the file name. A new format is one
 | Held-out synthetic | Same generator, different seed | Exact | Never opened while tuning |
 | Public | 37 real price lists and RFQ forms | None | Robustness only |
 
-Cases are judged by the behaviour expected of them (extract, flag, degrade honestly, refuse), not by accuracy alone. Details in [PLAN.md](PLAN.md#data-and-evaluation) and [evals/reports](evals/reports).
+Cases are judged by the behaviour expected of them (extract, flag, degrade honestly, refuse), not by accuracy alone. CI replays the whole synthetic set through the pipeline and scores it on every push, alongside 411 offline tests. Details in [PLAN.md](PLAN.md#data-and-evaluation) and [evals/reports](evals/reports).
 
 ## Layout
 
