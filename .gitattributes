@@ -7,3 +7,6 @@
 *.xlsx binary
 *.docx binary
 *.sqlite binary
+
+# downloaded public files stay byte-exact so manifest hashes verify on any clone
+data/public/** -text
