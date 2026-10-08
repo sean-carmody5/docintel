@@ -11,6 +11,7 @@ and waits. Everything inside the nodes is the plain Python built so far.
 
 from __future__ import annotations
 
+import json
 import logging
 import operator
 import sqlite3
@@ -57,7 +58,9 @@ class RunState(TypedDict, total=False):
     outputs: dict[str, str]
     review: dict[str, Any]
     approved: bool
+    decisions: dict[str, str]
     promoted: int
+    held: int
     started: str
 
 
@@ -157,6 +160,11 @@ class Pipeline:
 
     def discover(self, state: RunState) -> dict[str, Any]:
         root = Path(state["input_dir"])
+        if root.is_file():
+            return {
+                "paths": [str(root)],
+                "started": datetime.now(UTC).isoformat(timespec="seconds"),
+            }
         paths = sorted(
             str(p)
             for p in root.rglob("*")
@@ -232,21 +240,41 @@ class Pipeline:
             }
         )
         approved = bool(decision.get("approved")) if isinstance(decision, dict) else bool(decision)
-        return {"approved": approved}
+        decisions = decision.get("decisions", {}) if isinstance(decision, dict) else {}
+        return {"approved": approved, "decisions": dict(decisions)}
 
-    @staticmethod
-    def promote_node(state: RunState) -> dict[str, Any]:
-        """Stub for the hand-off to systems of record. Counts what a reviewer approved."""
+    def promote_node(self, state: RunState) -> dict[str, Any]:
+        """Stub for the hand-off to systems of record.
+
+        With per-row decisions from the review page, exactly the approved rows go on and
+        the statuses are written back. Without them, rows needing review are held.
+        """
         if not state.get("approved"):
-            return {"promoted": 0}
+            return {"promoted": 0, "held": len(state.get("final_records", []))}
         records = [Record.model_validate(r) for r in state.get("final_records", [])]
-        ready = [r for r in records if r.status == "pending_review" and not r.needs_review]
+        decisions = state.get("decisions") or {}
+        if decisions:
+            for r in records:
+                d = decisions.get(r.record_id)
+                if d == "approve":
+                    r.status = "approved"
+                elif d == "reject":
+                    r.status = "rejected"
+            ready = [r for r in records if r.status == "approved"]
+            out = self.settings.output_dir / "decisions_applied.json"
+            out.write_text(
+                json.dumps({r.record_id: r.status for r in records}, indent=2),
+                encoding="utf-8",
+                newline="\n",
+            )
+        else:
+            ready = [r for r in records if r.status == "pending_review" and not r.needs_review]
         log.info(
             "promote: %d records would be sent on; %d held back for review",
             len(ready),
             len(records) - len(ready),
         )
-        return {"promoted": len(ready)}
+        return {"promoted": len(ready), "held": len(records) - len(ready)}
 
     # ------------------------------------------------------------------ graph
 
@@ -293,11 +321,17 @@ def run(
 
 
 def resume(
-    pipeline: Pipeline, *, thread_id: str, approved: bool, checkpointer: Any
+    pipeline: Pipeline,
+    *,
+    thread_id: str,
+    approved: bool,
+    checkpointer: Any,
+    decisions: dict[str, str] | None = None,
 ) -> dict[str, Any]:
     graph = pipeline.build(checkpointer)
     config = {"configurable": {"thread_id": thread_id}}
-    result = graph.invoke(Command(resume={"approved": approved}), config=config)
+    payload: dict[str, Any] = {"approved": approved, "decisions": decisions or {}}
+    result = graph.invoke(Command(resume=payload), config=config)
     return dict(result)
 
 

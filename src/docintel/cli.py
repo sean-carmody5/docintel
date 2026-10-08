@@ -53,11 +53,20 @@ def cmd_approve(args: argparse.Namespace) -> int:
     settings = _settings(args)
     pipeline = Pipeline(settings)
     checkpointer = sqlite_checkpointer(settings.output_dir / "checkpoints.sqlite")
+    decisions: dict[str, str] = {}
+    if args.decisions:
+        payload = json.loads(Path(args.decisions).read_text(encoding="utf-8"))
+        decisions = payload.get("decisions", payload) if isinstance(payload, dict) else {}
     state = resume(
-        pipeline, thread_id=args.thread_id, approved=not args.reject, checkpointer=checkpointer
+        pipeline,
+        thread_id=args.thread_id,
+        approved=not args.reject,
+        checkpointer=checkpointer,
+        decisions=decisions,
     )
     print(f"approved:  {state.get('approved')}")
     print(f"promoted:  {state.get('promoted', 0)} records ready for systems of record")
+    print(f"held:      {state.get('held', 0)}")
     return 0
 
 
@@ -89,13 +98,16 @@ def main(argv: list[str] | None = None) -> int:
     common.add_argument("--as-of", help="ISO date to judge validity against")
 
     p_run = sub.add_parser("run", parents=[common], help="process a folder up to the review stop")
-    p_run.add_argument("input_dir")
+    p_run.add_argument("input_dir", help="a folder of documents, or a single file")
     p_run.add_argument("--thread-id", help="resume key; generated if omitted")
     p_run.set_defaults(fn=cmd_run)
 
     p_app = sub.add_parser("approve", parents=[common], help="resume a stopped run after review")
     p_app.add_argument("--thread-id", required=True)
     p_app.add_argument("--reject", action="store_true", help="resume without promoting anything")
+    p_app.add_argument(
+        "--decisions", help="JSON copied from the review page: {record_id: approve|hold|reject}"
+    )
     p_app.set_defaults(fn=cmd_approve)
 
     p_draw = sub.add_parser("draw", help="print the graph as Mermaid")

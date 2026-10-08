@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import json
 from pathlib import Path
 
 from langgraph.checkpoint.memory import MemorySaver
@@ -81,3 +82,27 @@ def test_mermaid_and_cli_draw(capsys) -> None:  # type: ignore[no-untyped-def]
     assert "process_document" in text and "review" in text
     assert main(["draw"]) == 0
     assert "reconcile" in capsys.readouterr().out
+
+
+def test_single_file_input_and_review_page(tmp_path: Path) -> None:
+    pipeline = Pipeline(_settings(tmp_path))
+    one = next(PROVIDED.glob("zenith*.json"))
+    result = run(pipeline, one, thread_id="t5")
+    values = result["values"]
+    assert len(values["documents"]) == 1 and values["review"]["records"] == 4
+    html = Path(values["outputs"]["html"]).read_text(encoding="utf-8")
+    assert "<title>Quotation Review</title>" in html and "Zenamox 500/125" in html
+
+
+def test_decisions_from_the_review_page_drive_promote(tmp_path: Path) -> None:
+    pipeline = Pipeline(_settings(tmp_path))
+    checkpointer = MemorySaver()
+    result = run(pipeline, PROVIDED, thread_id="t6", checkpointer=checkpointer)
+    ids = [r["record_id"] for r in result["values"]["final_records"]]
+    decisions = {ids[0]: "approve", ids[1]: "approve", ids[2]: "reject"}
+    final = resume(
+        pipeline, thread_id="t6", approved=True, checkpointer=checkpointer, decisions=decisions
+    )
+    assert final["promoted"] == 2 and final["held"] == len(ids) - 2
+    applied = json.loads((tmp_path / "decisions_applied.json").read_text(encoding="utf-8"))
+    assert applied[ids[0]] == "approved" and applied[ids[2]] == "rejected"
