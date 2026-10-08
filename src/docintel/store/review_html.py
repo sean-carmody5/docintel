@@ -96,7 +96,7 @@ ul.t{margin:0;padding-left:16px}ul.t li{margin:3px 0}
 .cmp table{border-collapse:collapse;width:100%}.cmp th{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;padding:3px 6px;border-bottom:1px solid var(--line)}
 .cmp td{padding:4px 6px;border-bottom:1px solid var(--line);font-size:12.5px}.cmp td.r,.cmp th.r{text-align:right}.cmp .note{margin-top:6px;font-size:12px;color:var(--muted)}.cmp .note.ok{color:var(--fg)}
 .ta{width:100%;height:120px;font-family:var(--mono);font-size:11.5px;margin:8px 0 0}
-@media (max-width:1100px){.panes{grid-template-columns:1fr;grid-auto-rows:minmax(0,auto)}.pane{border-right:0;border-bottom:1px solid var(--line);max-height:60vh}.row{grid-template-columns:18px 80px 1fr 86px}.row .pk,.row .cu,.row .ba,.row .d{display:none}.dist{display:none}}
+@media (max-width:1100px){.panes{grid-template-columns:1fr;grid-auto-rows:minmax(0,auto)}.pane{border-right:0;border-bottom:1px solid var(--line);max-height:60vh}.pane:first-child{max-height:30vh}.row{grid-template-columns:18px 80px 1fr 86px}.row .pk,.row .cu,.row .ba,.row .d{display:none}.dist{display:none}}
 """
 
 SCRIPT = r"""
