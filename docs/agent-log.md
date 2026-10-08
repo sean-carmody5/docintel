@@ -95,3 +95,25 @@ Seán reviewed the first plan and steered the following. Each is now in PLAN.md 
 **Findings during build.** The pack has 37 lines, not the 27 first assumed. A duplicate match must only lift fields whose values agree in both copies, and a lifted field must clear its stale review reason. Attachment records carry the attachment's name, so the scorer follows the parent to find the case.
 
 **Blocked on Seán.** Live runs need a Console API key with a small top-up. Everything up to that point runs offline.
+
+## Session 8, 8 October 2026: the review workstation, three model sets, and what they found
+
+**Single-file input (Seán asked).** `docintel run` takes one file as well as a folder.
+
+**Review page (Seán asked for a dry run, then rejected the first cut as "a classic AI generated UI").** The agent listed the tells it was reproducing: a row of metric tiles, pill badges on everything, uniform rounded cards with drop shadows, gradient blues, Inter, emoji markers, everything centred. Rebuilt as a three-pane workstation: documents on the left, records in the middle with a six-cell confidence strip per row so the weak field is visible before the number is read, and the selected record's fields with score bars, reasons and evidence quotes on the right. Hairlines, tabular numerals, one accent colour, keyboard navigation, decisions kept in the browser and copied out as JSON that `approve --decisions` applies. Screenshotted with Playwright in both themes and at a narrow width; a table overflow and a stacked-layout defect were fixed before showing it. Inspecting the first cut also found three logic faults: a record missing an essential field scored 0.85 overall because missing fields were skipped (now zero); absent fields rendered as red failures (now muted); the weeks conversion was penalised twice.
+
+**Three model sets (Seán's idea).** Three Claude Code subagents, Haiku 4.5, Sonnet 5.5 and Opus 5.5, each extracted the same 33 documents (the eight provided plus 25 synthetic) by hand from the same brief, with the truth files off limits. Replayed through the pipeline with `--fixtures` and scored against truth:
+
+| Set | Synthetic cases passed | Line recall | Invented lines | Wrong at high confidence |
+|---|---|---|---|---|
+| Haiku 4.5 | 3 of 25 | 0.07 | 0 | 1 |
+| Sonnet 5.5 | 24 of 24 | 1.00 | 0 | 0 |
+| Opus 5.5 | 24 of 24 | 1.00 | 0 | 0 |
+
+Haiku declined most of the work: it marked xlsx, docx, html and csv as needing special parsing, every image as unreadable, and wrote integers where the schema wants evidence strings in seven files. Sonnet and Opus both caught both planted injections and left unreadable digits as illegible rather than guessing. On the provided pack neither contradicted the hand-written reference on any key field; every difference was a value the agent left blank, mostly units per pack on bottle lines where the reference had assumed one per bottle. Caveat, to repeat in the write-up: this is the Claude Code harness reading files with tools, not the API's structured-output path with the pipeline's prompt, so it measures the models' reading more than the extractor. Reports are in evals/reports.
+
+**Haiku's malformed recordings found a pipeline defect (agent fixed).** One schema-invalid recording raised inside the graph node, LangGraph retried, and the whole batch died on one document. A failed extraction is now that document's flagged empty record, like a failed load, and the run finishes.
+
+**Two independent readers found three eval defects (agent fixed, truth regenerated).** Sonnet and Opus failed the same three cases with identical output, which points at the answer key. The fixed-width print-out cuts two cells at the column width, and truth now holds the text as printed. The photo case is page 1 of a three-page quotation, and truth now holds only the ten lines on that page; the generator trims any one-page image of a longer source the same way. The garbled-OCR-layer cases demanded a review flag, but a pipeline that ignores the layer and reads the image correctly has nothing to flag, so the expectation is plain extract. Fixture replay still passes 66 of 66. No prompt or threshold changed: the pipeline was not tuned to the eval, the eval was corrected by evidence from outside it.
+
+**CLI `--fixtures` (agent).** Any recorded set replays without code changes, and the run metadata names the roots it used.
