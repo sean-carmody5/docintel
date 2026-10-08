@@ -1,0 +1,123 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Novara Farmaceutici S.p.A.",
+    "country": "IT",
+    "contact_name": "Giulia Ferraro",
+    "contact_email": "giulia.ferraro@novarafarma.it"
+  },
+  "quotation_ref": null,
+  "buyer_reference": "RFQ-2026-0244",
+  "document_date": "2026-08-04",
+  "valid_until": "2026-09-30",
+  "currency": "EUR",
+  "incoterm": "FCA",
+  "named_place": "Milan Malpensa",
+  "payment_terms": "45 days from invoice for Axmed-registered buyers, otherwise 50% advance",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Azimax 250",
+      "inn": "Azithromycin",
+      "strength": "250 mg",
+      "dosage_form": "film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 6,
+      "packaging": "Blister of 6 tablets",
+      "price_per_pack": 0.804,
+      "price_per_uom": 0.134,
+      "price_basis": "stated",
+      "currency": "EUR",
+      "moq_packs": 30000,
+      "lead_time_days": 42,
+      "cold_chain": false,
+      "superseded": {
+        "field": "price_per_uom",
+        "old": 0.128,
+        "new": 0.134,
+        "reason": "P.S. Correction on line 1 - I quoted you last quarter's price. Azimax 250 is 0.134 per tablet as of this month's list. Sorry about that."
+      },
+      "evidence": {
+        "product_name": "Azimax 250",
+        "inn": "Azithromycin",
+        "strength": "250 mg",
+        "dosage_form": "film-coated tablet",
+        "packaging": "Blister of 6 tablets",
+        "price_per_uom_initial": "0.128 per tablet",
+        "price_per_uom_corrected": "0.134 per tablet",
+        "moq_packs": "30,000 packs",
+        "lead_time": "6 weeks"
+      }
+    },
+    {
+      "line_no": 2,
+      "product_name": "Zincora 20",
+      "inn": "Zinc sulfate",
+      "strength": "20 mg",
+      "dosage_form": "dispersible tablet",
+      "uom": "tablet",
+      "units_per_pack": 100,
+      "packaging": "100 tablets per box",
+      "price_per_pack": 1.55,
+      "price_per_uom": 0.0155,
+      "price_basis": "derived",
+      "currency": "EUR",
+      "moq_packs": 5000,
+      "lead_time_days": 28,
+      "cold_chain": false,
+      "evidence": {
+        "product_name": "Zincora 20",
+        "inn": "Zinc sulfate",
+        "strength": "20 mg",
+        "dosage_form": "dispersible tablet",
+        "units_per_pack": "100 tablets per box",
+        "price_per_pack": "1.55 per box of 100",
+        "moq_packs": "5,000 boxes",
+        "lead_time": "4 weeks",
+        "who_prequalified": "Yes (PQ ref. NU003)"
+      }
+    },
+    {
+      "line_no": 3,
+      "product_name": "Dexafar 4 mg/mL",
+      "inn": "Dexamethasone sodium phosphate",
+      "strength": "4 mg/mL",
+      "dosage_form": "solution for injection",
+      "uom": "ampoule",
+      "units_per_pack": 25,
+      "packaging": "25 x 1 mL ampoules",
+      "price_per_pack": 10.25,
+      "price_per_uom": 0.41,
+      "price_basis": "derived",
+      "currency": "EUR",
+      "moq_packs": 2000,
+      "lead_time_days": 63,
+      "cold_chain": false,
+      "evidence": {
+        "product_name": "Dexafar 4 mg/mL",
+        "inn": "Dexamethasone sodium phosphate",
+        "strength": "4 mg/mL",
+        "dosage_form": "solution for injection",
+        "units_per_pack": "25 x 1 mL ampoules",
+        "price_per_uom": "0.41 per ampoule",
+        "moq_packs": "2,000 packs",
+        "lead_time": "9 weeks",
+        "batch_note": "quoted ex-stock, batch expiring 03/2028"
+      }
+    }
+  ],
+  "evidence": {
+    "document_date": "Tue, 04 Aug 2026 16:42:11 +0200",
+    "valid_until": "30 September 2026",
+    "buyer_reference": "RFQ-2026-0244",
+    "currency": "EUR",
+    "incoterm": "FCA",
+    "named_place": "Milan Malpensa",
+    "payment_terms": "45 days from invoice for Axmed-registered buyers, otherwise 50% advance"
+  },
+  "warnings": [
+    "Price correction in P.S. for line 1 (Azimax 250): changed from 0.128 to 0.134 per tablet",
+    "No explicit quotation reference number provided; using buyer reference RFQ-2026-0244"
+  ]
+}

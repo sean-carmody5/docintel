@@ -1,0 +1,204 @@
+{
+ "document_type": "quotation",
+ "contains_prices": true,
+ "supplier": {
+  "name": "Helvetia Generics AG",
+  "country": "CH",
+  "contact_name": "Lukas Brunner",
+  "contact_email": "lukas.brunner@helvetiagenerics.ch"
+ },
+ "quotation_ref": null,
+ "buyer_reference": "AXMED-RFQ-2026-0406",
+ "document_date": "2026-09-20",
+ "valid_until": "2026-11-19",
+ "currency": "CHF",
+ "incoterm": "FCA",
+ "named_place": "Basel",
+ "payment_terms": "30 days net",
+ "lines": [
+  {
+   "line_no": 1,
+   "product_name": "Helvmoxclav 500",
+   "inn": "amoxicillin + clavulanic acid",
+   "strength": "500 mg / 125 mg",
+   "dosage_form": "tablet",
+   "uom": "tablet",
+   "units_per_pack": 10,
+   "packaging": "alu-alu blister",
+   "price_per_pack": 0.777,
+   "price_per_uom": 0.0777,
+   "price_basis": "derived",
+   "discount_pct": null,
+   "price_tiers": null,
+   "currency": "CHF",
+   "quantity": null,
+   "extended_amount": null,
+   "moq_packs": 1000,
+   "lead_time_days": 28,
+   "cold_chain": null,
+   "superseded": null,
+   "evidence": {
+    "product_name": "Helvmoxclav 500",
+    "inn": "amoxicillin + clavulanic acid",
+    "packaging": "alu-alu blister of 10",
+    "price_per_pack": "CHF 0.7770",
+    "moq_packs": "1,000 packs",
+    "lead_time_days": "lead time 28 days"
+   },
+   "illegible": [],
+   "notes": [
+    "Price is per pack (the HTML table says 'per pack of N'); price_per_uom derived."
+   ]
+  },
+  {
+   "line_no": 2,
+   "product_name": "Helvchlor 7.1%",
+   "inn": "chlorhexidine digluconate",
+   "strength": "7.1% w/w",
+   "dosage_form": "gel",
+   "uom": "tube",
+   "units_per_pack": 50,
+   "packaging": "aluminium tube",
+   "price_per_pack": 12.805,
+   "price_per_uom": 0.2561,
+   "price_basis": "derived",
+   "discount_pct": null,
+   "price_tiers": null,
+   "currency": "CHF",
+   "quantity": null,
+   "extended_amount": null,
+   "moq_packs": 2000,
+   "lead_time_days": 42,
+   "cold_chain": null,
+   "superseded": null,
+   "evidence": {
+    "product_name": "Helvchlor 7.1%",
+    "inn": "chlorhexidine digluconate",
+    "packaging": "aluminium tube of 50",
+    "price_per_pack": "CHF 12.805",
+    "moq_packs": "2,000 packs",
+    "lead_time_days": "lead time 42 days"
+   },
+   "illegible": [],
+   "notes": [
+    "Price is per pack (the HTML table says 'per pack of N'); price_per_uom derived."
+   ]
+  },
+  {
+   "line_no": 3,
+   "product_name": "Helvzinc 20",
+   "inn": "zinc sulfate",
+   "strength": "20 mg",
+   "dosage_form": "dispersible tablet",
+   "uom": "tablet",
+   "units_per_pack": 10,
+   "packaging": "alu-alu blister",
+   "price_per_pack": 0.228,
+   "price_per_uom": 0.0228,
+   "price_basis": "derived",
+   "discount_pct": null,
+   "price_tiers": null,
+   "currency": "CHF",
+   "quantity": null,
+   "extended_amount": null,
+   "moq_packs": 500,
+   "lead_time_days": 60,
+   "cold_chain": null,
+   "superseded": null,
+   "evidence": {
+    "product_name": "Helvzinc 20",
+    "inn": "zinc sulfate",
+    "packaging": "alu-alu blister of 10",
+    "price_per_pack": "CHF 0.2280",
+    "moq_packs": "500 packs",
+    "lead_time_days": "lead time 60 days"
+   },
+   "illegible": [],
+   "notes": [
+    "Price is per pack (the HTML table says 'per pack of N'); price_per_uom derived."
+   ]
+  },
+  {
+   "line_no": 4,
+   "product_name": "Statinex 20",
+   "inn": "atorvastatin",
+   "strength": "20 mg",
+   "dosage_form": "film-coated tablet",
+   "uom": "tablet",
+   "units_per_pack": 30,
+   "packaging": "alu-alu blister",
+   "price_per_pack": 0.927,
+   "price_per_uom": 0.0309,
+   "price_basis": "derived",
+   "discount_pct": null,
+   "price_tiers": null,
+   "currency": "CHF",
+   "quantity": null,
+   "extended_amount": null,
+   "moq_packs": 50000,
+   "lead_time_days": 42,
+   "cold_chain": null,
+   "superseded": null,
+   "evidence": {
+    "product_name": "Statinex 20",
+    "inn": "atorvastatin",
+    "packaging": "alu-alu blister of 30",
+    "price_per_pack": "CHF 0.9270",
+    "moq_packs": "50,000 packs",
+    "lead_time_days": "lead time 42 days"
+   },
+   "illegible": [],
+   "notes": [
+    "Price is per pack (the HTML table says 'per pack of N'); price_per_uom derived."
+   ]
+  },
+  {
+   "line_no": 5,
+   "product_name": "Helvtld 300",
+   "inn": "tenofovir disoproxil fumarate + lamivudine + dolutegravir",
+   "strength": "300 mg / 300 mg / 50 mg",
+   "dosage_form": "film-coated tablet",
+   "uom": "tablet",
+   "units_per_pack": 30,
+   "packaging": "alu-alu blister",
+   "price_per_pack": 3.768,
+   "price_per_uom": 0.1256,
+   "price_basis": "derived",
+   "discount_pct": null,
+   "price_tiers": null,
+   "currency": "CHF",
+   "quantity": null,
+   "extended_amount": null,
+   "moq_packs": 5000,
+   "lead_time_days": 42,
+   "cold_chain": null,
+   "superseded": null,
+   "evidence": {
+    "product_name": "Helvtld 300",
+    "inn": "tenofovir disoproxil fumarate + lamivudine + dolutegravir",
+    "packaging": "alu-alu blister of 30",
+    "price_per_pack": "CHF 3.768",
+    "moq_packs": "5,000 packs",
+    "lead_time_days": "lead time 42 days"
+   },
+   "illegible": [],
+   "notes": [
+    "Price is per pack (the HTML table says 'per pack of N'); price_per_uom derived."
+   ]
+  }
+ ],
+ "evidence": {
+  "supplier": "Helvetia Generics AG",
+  "buyer_reference": "AXMED-RFQ-2026-0406",
+  "document_date": "Date: Sun, 20 Sep 2026",
+  "valid_until": "19 November 2026",
+  "currency": "in CHF, FCA Basel",
+  "incoterm": "FCA Basel",
+  "named_place": "FCA Basel",
+  "payment_terms": "30 days net"
+ },
+ "warnings": [
+  "Plain-text part says only 'Price: CHF x' without a basis; the HTML table states the price is per pack, which was used.",
+  "Described as an indicative offer."
+ ]
+}

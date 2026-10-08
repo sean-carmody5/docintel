@@ -1,0 +1,114 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Sanova Laboratories Pvt. Ltd.",
+    "country": "IN",
+    "contact_name": "Rajiv Menon",
+    "contact_email": "r.menon@sanovalabs.in"
+  },
+  "quotation_ref": "SNV/EXP/2026/0771",
+  "buyer_reference": "AXMED-RFQ-2026-0231",
+  "document_date": "2026-08-03",
+  "valid_until": "2026-10-02",
+  "currency": "EUR",
+  "incoterm": "FCA",
+  "named_place": "Mumbai (INBOM)",
+  "payment_terms": "30% advance with PO, 70% against copy of Bill of Lading",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Sanotri-TLD",
+      "inn": "Tenofovir disoproxil fumarate + Lamivudine + Dolutegravir",
+      "strength": "300 mg + 300 mg + 50 mg",
+      "dosage_form": "Film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 90,
+      "packaging": "HDPE bottle with desiccant",
+      "price_per_pack": 3.15,
+      "price_per_uom": 0.035,
+      "price_basis": "derived",
+      "currency": "EUR",
+      "moq_packs": 5000,
+      "lead_time_days": 56,
+      "cold_chain": false,
+      "evidence": {
+        "product_name": "Sanotri-TLD",
+        "inn": "Tenofovir disoproxil fumarate + Lamivudine + Dolutegravir",
+        "strength": "300 mg / 300 mg / 50 mg",
+        "dosage_form": "Film-coated tablet",
+        "units_per_pack": 90,
+        "price_per_pack": 3.15,
+        "moq_packs": 5000,
+        "lead_time_weeks": 8
+      }
+    },
+    {
+      "line_no": 2,
+      "product_name": "Sanofour Kit",
+      "inn": "Rifampicin + Isoniazid + Pyrazinamide + Ethambutol",
+      "strength": "150 mg + 75 mg + 400 mg + 275 mg",
+      "dosage_form": "Dispersible film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 672,
+      "packaging": "Alu-Alu blister",
+      "price_per_pack": 8.42,
+      "price_per_uom": 0.01253,
+      "price_basis": "derived",
+      "currency": "EUR",
+      "moq_packs": 2000,
+      "lead_time_days": 70,
+      "cold_chain": false,
+      "evidence": {
+        "product_name": "Sanofour Kit",
+        "inn": "Rifampicin + Isoniazid + Pyrazinamide + Ethambutol",
+        "strength": "150 mg / 75 mg / 400 mg / 275 mg",
+        "dosage_form": "Dispersible film-coated tablet",
+        "units_per_pack": 672,
+        "price_per_pack": 8.42,
+        "moq_packs": 2000,
+        "lead_time_weeks": 10
+      }
+    },
+    {
+      "line_no": 3,
+      "product_name": "Sanodip 5",
+      "inn": "Amlodipine besylate",
+      "strength": "5 mg",
+      "dosage_form": "Tablet",
+      "uom": "tablet",
+      "units_per_pack": 30,
+      "packaging": "PVC/Alu blister",
+      "price_per_pack": 0.312,
+      "price_per_uom": 0.0104,
+      "price_basis": "derived",
+      "currency": "EUR",
+      "moq_packs": 40000,
+      "lead_time_days": 35,
+      "cold_chain": false,
+      "evidence": {
+        "product_name": "Sanodip 5",
+        "inn": "Amlodipine besylate",
+        "strength": "5 mg",
+        "dosage_form": "Tablet",
+        "units_per_pack": 30,
+        "price_per_pack": 0.312,
+        "moq_packs": 40000,
+        "lead_time_weeks": 5
+      }
+    }
+  ],
+  "evidence": {
+    "quotation_ref": "SNV/EXP/2026/0771",
+    "buyer_reference": "AXMED-RFQ-2026-0231",
+    "document_date": "2026-08-03",
+    "valid_until": "2026-10-02",
+    "currency": "EUR",
+    "incoterm": "FCA",
+    "named_place": "Mumbai (INBOM)",
+    "payment_terms": "30% advance with PO, 70% against copy of Bill of Lading"
+  },
+  "warnings": [
+    "Unit prices not stated separately; derived from pack price and pack composition"
+  ]
+}

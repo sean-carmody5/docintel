@@ -1,0 +1,109 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Anatolia Ilac Sanayi A.S.",
+    "country": "TR"
+  },
+  "quotation_ref": "AIS-2600109",
+  "buyer_reference": "AXMED-RFQ-2026-0419",
+  "document_date": "2026-09-02",
+  "valid_until": "2026-10-17",
+  "currency": "EUR",
+  "incoterm": "FCA",
+  "named_place": "Istanbul (TRIST)",
+  "payment_terms": "60 days from invoice",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Ketaex 50",
+      "inn": "Ketamine",
+      "strength": "50 mg/mL",
+      "dosage_form": "Solution for injection",
+      "uom": "vial",
+      "units_per_pack": 1,
+      "packaging": "Glass vial, carton",
+      "price_per_pack": 1.746,
+      "price_per_uom": 1.746,
+      "price_basis": "stated",
+      "currency": "EUR",
+      "moq_packs": 1000,
+      "lead_time_days": 35,
+      "cold_chain": false,
+      "evidence": {
+        "product_name": "Ketaex 50",
+        "inn": "Ketamine",
+        "strength": "50 mg/mL, 10 mL",
+        "dosage_form": "Solution for injection",
+        "pack_price": "€1.746 per pack",
+        "unit_price": "€1.746 per vial",
+        "moq": "1,000 packs",
+        "lead_time": "5 weeks"
+      }
+    },
+    {
+      "line_no": 2,
+      "product_name": "Anaprofen 400",
+      "inn": "Ibuprofen",
+      "strength": "400 mg",
+      "dosage_form": "Film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 10,
+      "packaging": "PVC/Alu blister",
+      "price_per_pack": 0.1670,
+      "price_per_uom": 0.0167,
+      "price_basis": "stated",
+      "currency": "EUR",
+      "moq_packs": 20000,
+      "lead_time_days": 63,
+      "cold_chain": false,
+      "evidence": {
+        "product_name": "Anaprofen 400",
+        "inn": "Ibuprofen",
+        "strength": "400 mg",
+        "dosage_form": "Film-coated tablet",
+        "pack_price": "€0.1670 per pack",
+        "unit_price": "€0.0167 per tablet",
+        "moq": "20,000 packs",
+        "lead_time": "9 weeks"
+      }
+    },
+    {
+      "line_no": 3,
+      "product_name": "Anagenta 80",
+      "inn": "Gentamicin",
+      "strength": "80 mg / 2 mL",
+      "dosage_form": "Solution for injection",
+      "uom": "ampoule",
+      "units_per_pack": 100,
+      "packaging": "Amber glass ampoule",
+      "price_per_pack": 26.450,
+      "price_per_uom": 0.2645,
+      "price_basis": "stated",
+      "currency": "EUR",
+      "moq_packs": 2000,
+      "lead_time_days": 21,
+      "cold_chain": false,
+      "evidence": {
+        "product_name": "Anagenta 80",
+        "inn": "Gentamicin",
+        "strength": "80 mg / 2 mL",
+        "dosage_form": "Solution for injection",
+        "pack_price": "€26.450 per pack",
+        "unit_price": "€0.2645 per ampoule",
+        "moq": "2,000 packs",
+        "lead_time": "3 weeks"
+      }
+    }
+  ],
+  "evidence": {
+    "quotation_ref": "AIS-2600109",
+    "buyer_reference": "AXMED-RFQ-2026-0419",
+    "document_date": "02 September 2026",
+    "valid_until": "17 October 2026",
+    "currency": "EUR",
+    "incoterm": "FCA",
+    "named_place": "Istanbul (TRIST)",
+    "payment_terms": "60 days from invoice"
+  }
+}

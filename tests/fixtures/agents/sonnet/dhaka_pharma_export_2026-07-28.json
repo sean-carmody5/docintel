@@ -1,0 +1,145 @@
+{
+ "document_type": "quotation",
+ "contains_prices": true,
+ "supplier": {
+  "name": "Dhaka Pharma Ltd.",
+  "country": null,
+  "contact_name": null,
+  "contact_email": null
+ },
+ "quotation_ref": "DPL/EXP/26/0112",
+ "buyer_reference": "AXMED-RFQ-2026-0317",
+ "document_date": "2026-07-28",
+ "valid_until": "2026-09-11",
+ "currency": "USD",
+ "incoterm": "FOB",
+ "named_place": "Chittagong (BDCGP)",
+ "payment_terms": null,
+ "lines": [
+  {
+   "line_no": 1,
+   "product_name": "Dhasalbsyr 2",
+   "inn": "Salbutamol",
+   "strength": "2 mg / 5 mL",
+   "dosage_form": "Syrup",
+   "uom": "bottle",
+   "units_per_pack": 1,
+   "packaging": null,
+   "price_per_pack": 0.5765,
+   "price_per_uom": 0.5765,
+   "price_basis": "derived",
+   "discount_pct": null,
+   "price_tiers": null,
+   "currency": "USD",
+   "quantity": null,
+   "extended_amount": null,
+   "moq_packs": 50000,
+   "lead_time_days": 35,
+   "cold_chain": null,
+   "superseded": null,
+   "evidence": {
+    "line_no": "1",
+    "product_name": "\"Dhasalbsyr 2\"",
+    "inn": "\"Salbutamol\"",
+    "strength": "\"2 mg / 5 mL\"",
+    "dosage_form": "\"Syrup\"",
+    "uom": "\"bottle\"",
+    "price_per_pack": "0.5765",
+    "moq_packs": "50000",
+    "lead_time_days": "35"
+   },
+   "illegible": [],
+   "notes": [
+    "Unit Px column is empty (null); price_per_uom derived from Pack Px / Pk Sz."
+   ]
+  },
+  {
+   "line_no": 2,
+   "product_name": "Zithex 250",
+   "inn": "Azithromycin",
+   "strength": "250 mg",
+   "dosage_form": "Film-coated tablet",
+   "uom": "tablet",
+   "units_per_pack": 100,
+   "packaging": null,
+   "price_per_pack": 6.17,
+   "price_per_uom": 0.0617,
+   "price_basis": "derived",
+   "discount_pct": null,
+   "price_tiers": null,
+   "currency": "USD",
+   "quantity": null,
+   "extended_amount": null,
+   "moq_packs": 50000,
+   "lead_time_days": 56,
+   "cold_chain": null,
+   "superseded": null,
+   "evidence": {
+    "line_no": "2",
+    "product_name": "\"Zithex 250\"",
+    "inn": "\"Azithromycin\"",
+    "strength": "\"250 mg\"",
+    "dosage_form": "\"Film-coated tablet\"",
+    "uom": "\"tablet\"",
+    "price_per_pack": "6.17",
+    "moq_packs": "50000",
+    "lead_time_days": "56"
+   },
+   "illegible": [],
+   "notes": [
+    "Unit Px column is empty (null); price_per_uom derived from Pack Px / Pk Sz."
+   ]
+  },
+  {
+   "line_no": 3,
+   "product_name": "Dhaoxy 10",
+   "inn": "Oxytocin",
+   "strength": "10 IU/mL",
+   "dosage_form": "Solution for injection",
+   "uom": "ampoule",
+   "units_per_pack": 50,
+   "packaging": null,
+   "price_per_pack": 9.44,
+   "price_per_uom": 0.1888,
+   "price_basis": "derived",
+   "discount_pct": null,
+   "price_tiers": null,
+   "currency": "USD",
+   "quantity": null,
+   "extended_amount": null,
+   "moq_packs": 1000,
+   "lead_time_days": 42,
+   "cold_chain": null,
+   "superseded": null,
+   "evidence": {
+    "line_no": "3",
+    "product_name": "\"Dhaoxy 10\"",
+    "inn": "\"Oxytocin\"",
+    "strength": "\"10 IU/mL\"",
+    "dosage_form": "\"Solution for injection\"",
+    "uom": "\"ampoule\"",
+    "price_per_pack": "9.44",
+    "moq_packs": "1000",
+    "lead_time_days": "42"
+   },
+   "illegible": [],
+   "notes": [
+    "Unit Px column is empty (null); price_per_uom derived from Pack Px / Pk Sz."
+   ]
+  }
+ ],
+ "evidence": {
+  "supplier": "Dhaka Pharma Ltd.",
+  "quotation_ref": "DPL/EXP/26/0112",
+  "buyer_reference": "AXMED-RFQ-2026-0317",
+  "document_date": "28/07/2026",
+  "valid_until": "11/09/2026",
+  "currency": "\"USD\"",
+  "incoterm": "FOB Chittagong (BDCGP)",
+  "named_place": "FOB Chittagong (BDCGP)"
+ },
+ "warnings": [
+  "Unit price column is null for all rows; unit prices derived from pack prices. Pack Px for line 1 assumed per pack of 1 bottle.",
+  "Dates read as day/month/year."
+ ]
+}

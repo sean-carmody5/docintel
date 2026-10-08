@@ -1,0 +1,200 @@
+{
+ "document_type": "quotation",
+ "contains_prices": true,
+ "supplier": {
+  "name": "Baobab Pharmaceuticals Ltd.",
+  "country": "KE",
+  "contact_name": "Wanjiru Kamau",
+  "contact_email": "wanjiru@baobabpharma.co.ke"
+ },
+ "quotation_ref": "BPL/QT/26/0122",
+ "buyer_reference": "AXMED-RFQ-2026-0245",
+ "document_date": "2026-06-02",
+ "valid_until": "2026-08-31",
+ "currency": "KES",
+ "incoterm": "EXW",
+ "named_place": "Nairobi plant",
+ "payment_terms": "30 days from delivery",
+ "lines": [
+  {
+   "line_no": 1,
+   "product_name": "Gentaex 80",
+   "inn": "Gentamicin",
+   "strength": "80 mg / 2 mL",
+   "dosage_form": "solution for injection",
+   "uom": "ampoule",
+   "units_per_pack": 50,
+   "packaging": "glass ampoule, tray",
+   "price_per_pack": 1378.75,
+   "price_per_uom": 27.575,
+   "price_basis": "tiered",
+   "discount_pct": null,
+   "price_tiers": [
+    {
+     "min_packs": 100,
+     "max_packs": 499,
+     "price_per_pack": 1378.75
+    },
+    {
+     "min_packs": 500,
+     "max_packs": 1999,
+     "price_per_pack": 1300.75
+    },
+    {
+     "min_packs": 2000,
+     "max_packs": null,
+     "price_per_pack": 1175.03
+    }
+   ],
+   "currency": "KES",
+   "quantity": null,
+   "extended_amount": null,
+   "moq_packs": 500,
+   "lead_time_days": 90,
+   "cold_chain": null,
+   "superseded": null,
+   "evidence": {
+    "line_no": "Item 1.",
+    "product_name": "Gentaex 80",
+    "inn": "Gentamicin 80 mg / 2 mL",
+    "strength": "Gentamicin 80 mg / 2 mL",
+    "dosage_form": "solution for injection",
+    "packaging": "glass ampoule, tray of 50 ampoules",
+    "units_per_pack": "tray of 50 ampoules",
+    "uom": "ampoules",
+    "price_per_pack": "KES 1,378.75 per pack for 100 to 499 packs",
+    "moq_packs": "Minimum order 500 packs",
+    "lead_time_days": "lead time 90 days"
+   },
+   "illegible": [],
+   "notes": [
+    "Lowest-quantity tier used; price_per_uom derived from pack price.",
+    "Stated minimum order (500 packs) is above the lowest tier start (100 packs)."
+   ]
+  },
+  {
+   "line_no": 2,
+   "product_name": "Baonida 400",
+   "inn": "Metronidazole",
+   "strength": "400 mg",
+   "dosage_form": "tablet",
+   "uom": "tablet",
+   "units_per_pack": 1000,
+   "packaging": "hdpe jar",
+   "price_per_pack": 2071.0,
+   "price_per_uom": 2.071,
+   "price_basis": "tiered",
+   "discount_pct": null,
+   "price_tiers": [
+    {
+     "min_packs": 500,
+     "max_packs": 2499,
+     "price_per_pack": 2071.0
+    },
+    {
+     "min_packs": 2500,
+     "max_packs": 9999,
+     "price_per_pack": 1862.62
+    },
+    {
+     "min_packs": 10000,
+     "max_packs": null,
+     "price_per_pack": 1715.13
+    }
+   ],
+   "currency": "KES",
+   "quantity": null,
+   "extended_amount": null,
+   "moq_packs": 5000,
+   "lead_time_days": 60,
+   "cold_chain": null,
+   "superseded": null,
+   "evidence": {
+    "line_no": "Item 2.",
+    "product_name": "Baonida 400",
+    "inn": "Metronidazole 400 mg",
+    "strength": "Metronidazole 400 mg",
+    "dosage_form": "tablet",
+    "packaging": "hdpe jar of 1000 tablets",
+    "units_per_pack": "1000 tablets",
+    "uom": "tablets",
+    "price_per_pack": "KES 2,071.00 per pack for 500 to 2,499 packs",
+    "moq_packs": "Minimum order 5,000 packs",
+    "lead_time_days": "lead time 60 days"
+   },
+   "illegible": [],
+   "notes": [
+    "Lowest-quantity tier used; price_per_uom derived from pack price."
+   ]
+  },
+  {
+   "line_no": 3,
+   "product_name": "Lidoex 2%",
+   "inn": "Lidocaine hydrochloride",
+   "strength": "2%, 20 mL",
+   "dosage_form": "solution for injection",
+   "uom": "vial",
+   "units_per_pack": 25,
+   "packaging": "clear glass vial with flip-off cap",
+   "price_per_pack": 1952.72,
+   "price_per_uom": 78.1088,
+   "price_basis": "tiered",
+   "discount_pct": null,
+   "price_tiers": [
+    {
+     "min_packs": 250,
+     "max_packs": 1249,
+     "price_per_pack": 1952.72
+    },
+    {
+     "min_packs": 1250,
+     "max_packs": 6249,
+     "price_per_pack": 1724.56
+    },
+    {
+     "min_packs": 6250,
+     "max_packs": null,
+     "price_per_pack": 1571.46
+    }
+   ],
+   "currency": "KES",
+   "quantity": null,
+   "extended_amount": null,
+   "moq_packs": 5000,
+   "lead_time_days": 56,
+   "cold_chain": null,
+   "superseded": null,
+   "evidence": {
+    "line_no": "Item 3.",
+    "product_name": "Lidoex 2%",
+    "inn": "Lidocaine hydrochloride 2%",
+    "strength": "Lidocaine hydrochloride 2%, 20 mL",
+    "dosage_form": "solution for injection",
+    "packaging": "clear glass vial with flip-off cap of 25 vials",
+    "units_per_pack": "25 vials",
+    "uom": "vials",
+    "price_per_pack": "KES 1,952.72 per pack for 250 to 1,249 packs",
+    "moq_packs": "Minimum order 5,000 packs",
+    "lead_time_days": "lead time 56 days"
+   },
+   "illegible": [],
+   "notes": [
+    "Lowest-quantity tier used; price_per_uom derived from pack price."
+   ]
+  }
+ ],
+ "evidence": {
+  "supplier": "Baobab Pharmaceuticals Ltd.",
+  "quotation_ref": "BPL/QT/26/0122",
+  "buyer_reference": "AXMED-RFQ-2026-0245",
+  "document_date": "02 June 2026",
+  "valid_until": "31 August 2026",
+  "currency": "All prices are\nin KES",
+  "incoterm": "EXW Nairobi plant",
+  "named_place": "EXW Nairobi plant",
+  "payment_terms": "30 days from\ndelivery"
+ },
+ "warnings": [
+  "Prices are given in running prose with volume tiers; per-pack prices not per-unit."
+ ]
+}

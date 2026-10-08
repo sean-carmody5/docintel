@@ -1,0 +1,107 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Dhaka Pharma Ltd.",
+    "country": "BD",
+    "contact_name": "Farhana Rahman",
+    "contact_email": "farhana.rahman@dhakapharma.com.bd"
+  },
+  "quotation_ref": null,
+  "buyer_reference": "AXMED-RFQ-2026-0413",
+  "document_date": "2026-09-22",
+  "valid_until": "2026-12-21",
+  "currency": "USD",
+  "incoterm": "CIF",
+  "named_place": "Mombasa (KEMBA)",
+  "payment_terms": "Irrevocable LC at sight",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Prazoleex 20",
+      "inn": "Omeprazole",
+      "strength": "20 mg",
+      "dosage_form": "gastro-resistant capsule",
+      "uom": "capsule",
+      "units_per_pack": 100,
+      "packaging": "alu-alu blister",
+      "price_per_pack": 2.36,
+      "price_per_uom": 0.0236,
+      "price_basis": "stated",
+      "currency": "USD",
+      "moq_packs": 50000,
+      "lead_time_days": 21,
+      "cold_chain": false,
+      "evidence": {
+        "product_name": "Prazoleex 20",
+        "inn": "Omeprazole",
+        "strength": "20 mg",
+        "price_per_uom": "USD 0.0236 per capsule",
+        "moq_packs": 50000,
+        "lead_time_days": 21
+      }
+    },
+    {
+      "line_no": 2,
+      "product_name": "Dhagenta 80",
+      "inn": "Gentamicin",
+      "strength": "80 mg / 2 mL",
+      "dosage_form": "solution for injection",
+      "uom": "ampoule",
+      "units_per_pack": 50,
+      "packaging": "amber glass ampoule",
+      "price_per_pack": 13.58,
+      "price_per_uom": 0.2716,
+      "price_basis": "stated",
+      "currency": "USD",
+      "moq_packs": 50000,
+      "lead_time_days": 75,
+      "cold_chain": false,
+      "evidence": {
+        "product_name": "Dhagenta 80",
+        "inn": "Gentamicin",
+        "strength": "80 mg / 2 mL",
+        "price_per_uom": "USD 0.2716 per ampoule",
+        "moq_packs": 50000,
+        "lead_time_days": 75
+      }
+    },
+    {
+      "line_no": 3,
+      "product_name": "Dhazith 500",
+      "inn": "Azithromycin",
+      "strength": "500 mg",
+      "dosage_form": "film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 30,
+      "packaging": "pvc/alu blister",
+      "price_per_pack": 3.543,
+      "price_per_uom": 0.1181,
+      "price_basis": "stated",
+      "currency": "USD",
+      "moq_packs": 1000,
+      "lead_time_days": 30,
+      "cold_chain": false,
+      "evidence": {
+        "product_name": "Dhazith 500",
+        "inn": "Azithromycin",
+        "strength": "500 mg",
+        "price_per_uom": "USD 0.1181 per tablet",
+        "moq_packs": 1000,
+        "lead_time_days": 30
+      }
+    }
+  ],
+  "evidence": {
+    "buyer_reference": "AXMED-RFQ-2026-0413",
+    "document_date": "22 Sep 2026",
+    "valid_until": "21 December",
+    "currency": "USD",
+    "incoterm": "CIF",
+    "named_place": "Mombasa (KEMBA)",
+    "payment_terms": "Irrevocable LC at sight"
+  },
+  "warnings": [
+    "Email response; formal document mentioned but quotation reference not provided"
+  ]
+}
