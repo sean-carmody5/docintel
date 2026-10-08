@@ -51,3 +51,15 @@ Seán reviewed the first plan and steered the following. Each is now in PLAN.md 
 **Public data (agent researched, Seán to review).** A research agent searched about 45 sources and verified 36 downloadable documents. Thirty-seven are now listed in evals/public/sources.json with publisher, licence and tags, and fetched into a git-ignored folder by a script that checks magic bytes and records hashes. Three hosts need relaxed TLS because of broken certificate chains. Licence note: MSH and Ghana NHIS assert all rights reserved, so nothing in that folder is redistributed.
 
 **Determinism (agent).** Regeneration must be byte-identical for the commit history to stay honest, so PDFs are rendered invariant, email message IDs come from the seeded generator, Office packages are rewritten with fixed timestamps, and all text outputs are LF.
+
+## Session 4, 8 October 2026: diversity, malformed files, vision, licences
+
+**Diversity audit (Seán asked whether the evaluation leaned on the eight files).** The agent's honest count: three of six JSON dialects, two of three PDF layouts and one of six email styles were modelled on the pack. Gaps against the spec were image-only scanned PDFs, PDFs with a garbled OCR layer, XML, HTML, plain text, non-English field names and the malformed family. All added as separate commits: a French-keyed JSON dialect with a Moroccan supplier, XML, HTML and fixed-width text, scanned PDFs with and without a garbage text layer, empty, truncated, encrypted and broken-JSON cases, and a forty-line spreadsheet.
+
+**Formats and malformed files (Seán's requirement, now in the plan).** A tiered table built from the spec: specific loaders for the named and common formats, a generic text path for the rest, render-to-image as a last resort, containers expanded, and encrypted or empty files refused with a reason. Malformed policy: typed loader errors become records, strict parse then lenient then as-text, each step flagged.
+
+**Vision (Seán's assumption, agent agreed with caveats).** Transcribe pages to markdown with a vision model, then run the same extraction as every other format. Safeguards: verbatim transcription with illegible markers, independent Tesseract OCR as an agreement signal, an optional direct second pass on low-confidence price fields, and a text-layer quality gate so garbage OCR layers in PDFs are not trusted.
+
+**Licences (Seán questioned git-ignoring in a private repo).** Decision: commit only files under an explicit open licence, commit a README listing all public sources with publisher and licence, fetch the rest on demand. A private repository is still redistribution.
+
+**Commit practice (Seán asked).** Messages were judged adequate, granularity was not: the generator landed as one large commit with review fixes folded in. CLAUDE.md now requires one module per commit and one review finding per commit, and this session followed it.

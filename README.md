@@ -28,8 +28,8 @@ Evaluation data in place, pipeline build starting. See [PLAN.md](PLAN.md) for th
 | Set | Where | What | Ground truth |
 |---|---|---|---|
 | Provided | `data/provided/` | The eight documents supplied with the brief | Hand-checked fixtures |
-| Synthetic | `data/synthetic/` | 47 generated cases across JSON, PDF, email, WhatsApp exports, scans, Excel, Word, CSV, hostile and misnamed files ([README](data/synthetic/README.md)) | Exact, by construction |
-| Public | `data/public/` (git-ignored) | 37 real price lists, catalogues and RFQ forms from UNICEF, Global Fund, PAHO, national procurement bodies and manufacturers, fetched by `evals/public/fetch.py` | None, robustness only |
+| Synthetic | `data/synthetic/` | 59 generated cases: JSON in seven dialects including French keys, three PDF layouts, scanned PDFs with and without a garbage OCR layer, faxes and photos, four email styles, WhatsApp exports, Excel, Word, CSV, XML, HTML, plain text, hostile carriers, misnamed and malformed files ([README](data/synthetic/README.md)) | Exact, by construction |
+| Public | `data/public/` | 37 real price lists, catalogues and RFQ forms from UNICEF, Global Fund, PAHO, WHO, national procurement bodies and a manufacturer. Six open-licensed files are committed, the rest are fetched by `evals/public/fetch.py` ([README](data/public/README.md) lists all with licences) | None, robustness only |
 
 ## Layout
 
