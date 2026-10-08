@@ -80,7 +80,10 @@ def test_corrections_appear_in_documents(manifest: dict) -> None:
 
 
 def test_duplicate_sets_share_truth(manifest: dict) -> None:
+    """A copy says what its source says, except that a one-page image of a longer
+    document holds only the lines on that page, and the case note says so."""
     out: Path = manifest["_out"]
+    notes = {c["id"]: c.get("note", "") for c in manifest["cases"]}
     for root, copies in manifest["duplicate_sets"].items():
         root_truth = json.loads((out / root / "truth.json").read_text(encoding="utf-8"))[
             "quotation"
@@ -89,7 +92,12 @@ def test_duplicate_sets_share_truth(manifest: dict) -> None:
             copy_truth = json.loads((out / copy / "truth.json").read_text(encoding="utf-8"))[
                 "quotation"
             ]
-            assert copy_truth == root_truth, (root, copy)
+            if copy_truth == root_truth:
+                continue
+            assert {**copy_truth, "lines": None} == {**root_truth, "lines": None}, (root, copy)
+            assert all(ln in root_truth["lines"] for ln in copy_truth["lines"]), (root, copy)
+            assert len(copy_truth["lines"]) < len(root_truth["lines"]), (root, copy)
+            assert notes[copy].startswith("Page 1 of"), (root, copy, notes[copy])
 
 
 def test_case_ids_are_unique() -> None:
