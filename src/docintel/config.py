@@ -64,6 +64,7 @@ class Settings:
     def describe(self) -> dict[str, Any]:
         return {
             "extractor": self.extractor,
+            "fixtures": [str(p) for p in self.fixtures] if self.extractor == "fixture" else None,
             "model": self.model if self.extractor == "model" else None,
             "vision_model": self.effective_vision_model if self.extractor == "model" else None,
             "second_pass_model": self.second_pass_model,

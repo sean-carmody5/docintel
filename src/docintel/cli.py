@@ -25,6 +25,7 @@ def _settings(args: argparse.Namespace) -> Settings:
         output_dir=Path(args.out) if getattr(args, "out", None) else None,
         ocr=False if getattr(args, "no_ocr", False) else None,
         as_of=date.fromisoformat(args.as_of) if getattr(args, "as_of", None) else None,
+        fixtures=[Path(p) for p in args.fixtures] if getattr(args, "fixtures", None) else None,
     )
 
 
@@ -96,6 +97,12 @@ def main(argv: list[str] | None = None) -> int:
     common.add_argument("--model", help="provider:model, e.g. anthropic:claude-sonnet-5-5")
     common.add_argument("--no-ocr", action="store_true", help="skip the independent OCR pass")
     common.add_argument("--as-of", help="ISO date to judge validity against")
+    common.add_argument(
+        "--fixtures",
+        action="append",
+        metavar="DIR",
+        help="fixture root for replay (repeatable; default: tests/fixtures/synthetic and provided)",
+    )
 
     p_run = sub.add_parser("run", parents=[common], help="process a folder up to the review stop")
     p_run.add_argument("input_dir", help="a folder of documents, or a single file")
