@@ -1,0 +1,15 @@
+{
+ "covered_cases": 24,
+ "provided_records": 37,
+ "provided_reference": 37,
+ "provided_matched_lines": 30,
+ "provided_needs_review": 16,
+ "provided_field_agreement": {
+  "product_name": "27/28",
+  "inn": "30/30",
+  "strength": "29/30",
+  "units_per_pack": "25/28",
+  "price_per_uom": "26/27",
+  "currency": "30/30"
+ }
+}

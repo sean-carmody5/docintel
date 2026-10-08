@@ -1,0 +1,15 @@
+{
+ "covered_cases": 25,
+ "provided_records": 20,
+ "provided_reference": 37,
+ "provided_matched_lines": 15,
+ "provided_needs_review": 10,
+ "provided_field_agreement": {
+  "product_name": "13/13",
+  "inn": "15/15",
+  "strength": "15/15",
+  "units_per_pack": "13/13",
+  "price_per_uom": "12/12",
+  "currency": "15/15"
+ }
+}
