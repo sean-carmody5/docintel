@@ -1,0 +1,87 @@
+{
+  "case_id": "malformed_pdf_encrypted",
+  "kind": "malformed",
+  "variant": "pdf_encrypted",
+  "expect": "unsupported",
+  "hostile": null,
+  "source_case": "pdf_modern_02",
+  "files": [
+    "meridian_quotation_MPL-Q-26-0118.pdf"
+  ],
+  "quotation": {
+    "supplier_key": "meridian",
+    "supplier_name": "Meridian Pharma Ltd.",
+    "quotation_ref": "MPL/Q/26/0118",
+    "document_date": "2026-09-27",
+    "valid_until": "2026-11-26",
+    "currency": "USD",
+    "incoterm": "CIF",
+    "named_place": "Mombasa (KEMBA)",
+    "buyer_reference": "AXMED-RFQ-2026-0319",
+    "destination": "Accra, Ghana (via Tema)",
+    "buyer_contact": "Cesar Dominguez",
+    "payment_terms": "30% advance, balance against shipping documents",
+    "features": [
+      "distractor_alt_price",
+      "pack_price_only"
+    ],
+    "lines": [
+      {
+        "line_no": 1,
+        "product_key": "amlodipine_5",
+        "product_name": "Meridip 5",
+        "inn": "Amlodipine",
+        "inn_canonical": "Amlodipine",
+        "strength": "5 mg",
+        "dosage_form": "Tablet",
+        "packaging": "PVC/Alu blister",
+        "uom": "tablet",
+        "units_per_pack": 30,
+        "price_per_uom": 0.0049,
+        "price_per_pack": 0.147,
+        "price_basis": "derived",
+        "discount_pct": null,
+        "price_tiers": null,
+        "moq_packs": 500,
+        "lead_time_days": 90,
+        "quantity": null,
+        "extended_amount": null,
+        "superseded": null,
+        "cold_chain": false,
+        "atc": "C08CA01",
+        "net_price_per_uom": 0.0049
+      },
+      {
+        "line_no": 2,
+        "product_key": "ketamine_50",
+        "product_name": "Meriketa 50",
+        "inn": "Ketamine",
+        "inn_canonical": "Ketamine",
+        "strength": "50 mg/mL, 10 mL",
+        "dosage_form": "Solution for injection",
+        "packaging": "Clear glass vial with flip-off cap",
+        "uom": "vial",
+        "units_per_pack": 10,
+        "price_per_uom": 1.533,
+        "price_per_pack": 15.33,
+        "price_basis": "derived",
+        "discount_pct": null,
+        "price_tiers": null,
+        "moq_packs": 500,
+        "lead_time_days": 21,
+        "quantity": null,
+        "extended_amount": null,
+        "superseded": null,
+        "cold_chain": false,
+        "atc": "N01AX03",
+        "net_price_per_uom": 1.533
+      }
+    ],
+    "notes": [
+      "Lead times run from receipt of a workable letter of credit.",
+      "Certificate of analysis and CPP supplied with every batch.",
+      "A larger presentation of Meridip 5 is available on request at USD 0.0077 per tablet; not included in this offer."
+    ],
+    "alt_price_note": "A larger presentation of Meridip 5 is available on request at USD 0.0077 per tablet; not included in this offer."
+  }
+}

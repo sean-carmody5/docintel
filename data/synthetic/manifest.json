@@ -1,7 +1,7 @@
 {
   "generator_version": "1",
   "seed": 2026,
-  "case_count": 54,
+  "case_count": 59,
   "cases": [
     {
       "id": "json_erp_nested_01",
@@ -877,6 +877,27 @@
       "currency": "USD"
     },
     {
+      "id": "xlsx_pricelist_03",
+      "kind": "xlsx",
+      "variant": "pricelist",
+      "supplier": "meridian",
+      "features": [
+        "long",
+        "mixed_uom"
+      ],
+      "n_lines": 40,
+      "source": null,
+      "hostile": null,
+      "expect": "extract",
+      "note": "Forty lines. Tests chunking and that nothing is dropped from a long table.",
+      "files": [
+        "meridian_price_list_2026-08-02.xlsx"
+      ],
+      "dir": "xlsx_pricelist_03",
+      "truth": "xlsx_pricelist_03/truth.json",
+      "currency": "USD"
+    },
+    {
       "id": "xlsx_pricelist_01",
       "kind": "xlsx",
       "variant": "pricelist",
@@ -931,7 +952,7 @@
       "expect": "extract",
       "note": "",
       "files": [
-        "delta_quotation_DF-26-0135.docx"
+        "delta_quotation_DF-26-0136.docx"
       ],
       "dir": "docx_letter_01",
       "truth": "docx_letter_01/truth.json",
@@ -1023,7 +1044,7 @@
       "expect": "extract_and_flag",
       "note": "Injection is white 1pt text in the text layer.",
       "files": [
-        "lowlands_quotation_LP-26-0140.pdf"
+        "lowlands_quotation_LP-26-0141.pdf"
       ],
       "dir": "hostile_pdf_white",
       "truth": "hostile_pdf_white/truth.json",
@@ -1045,6 +1066,84 @@
       ],
       "dir": "hostile_eml_hidden",
       "truth": "hostile_eml_hidden/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "malformed_empty_file",
+      "kind": "malformed",
+      "variant": "empty",
+      "supplier": "",
+      "features": [],
+      "n_lines": null,
+      "source": null,
+      "hostile": null,
+      "expect": "unsupported",
+      "note": "Zero bytes. Reason: empty.",
+      "files": [
+        "quotation.pdf"
+      ],
+      "dir": "malformed_empty_file"
+    },
+    {
+      "id": "malformed_pdf_truncated",
+      "kind": "malformed",
+      "variant": "pdf_truncated",
+      "supplier": "lagosbio",
+      "features": [
+        "long",
+        "quantity_extended"
+      ],
+      "n_lines": 12,
+      "source": "pdf_classic_03",
+      "hostile": null,
+      "expect": "malformed",
+      "note": "First 55% of the bytes of a three-page PDF. Pages that survive may be read, flagged truncated.",
+      "files": [
+        "lagos_bio_quotation_LB-26-Q0116.pdf"
+      ],
+      "dir": "malformed_pdf_truncated",
+      "truth": "malformed_pdf_truncated/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "malformed_pdf_encrypted",
+      "kind": "malformed",
+      "variant": "pdf_encrypted",
+      "supplier": "meridian",
+      "features": [
+        "distractor_alt_price",
+        "pack_price_only"
+      ],
+      "n_lines": 2,
+      "source": "pdf_modern_02",
+      "hostile": null,
+      "expect": "unsupported",
+      "note": "AES-256 with a user password. Reason: encrypted. No attempt to open it.",
+      "files": [
+        "meridian_quotation_MPL-Q-26-0118.pdf"
+      ],
+      "dir": "malformed_pdf_encrypted",
+      "truth": "malformed_pdf_encrypted/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "malformed_json_broken",
+      "kind": "malformed",
+      "variant": "json_broken",
+      "supplier": "dongnai",
+      "features": [
+        "cold_chain"
+      ],
+      "n_lines": 4,
+      "source": "json_camel_api_01",
+      "hostile": null,
+      "expect": "malformed",
+      "note": "Trailing comma and a stray control character. Lenient parse, flagged, or read as text.",
+      "files": [
+        "dong_nai_export_2026-08-16.json"
+      ],
+      "dir": "malformed_json_broken",
+      "truth": "malformed_json_broken/truth.json",
       "currency": "USD"
     },
     {
@@ -1133,6 +1232,15 @@
         "inn_as_written": "Amoxicillin"
       },
       {
+        "case": "xlsx_pricelist_03",
+        "line_no": 10,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0411,
+        "inn_as_written": "Amoxicillin"
+      },
+      {
         "case": "hostile_eml_hidden",
         "line_no": 6,
         "supplier": "nilevalley",
@@ -1180,6 +1288,15 @@
         "inn_as_written": "Omeprazole"
       },
       {
+        "case": "xlsx_pricelist_03",
+        "line_no": 28,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0259,
+        "inn_as_written": "Omeprazole"
+      },
+      {
         "case": "csv_eu_01",
         "line_no": 5,
         "supplier": "anatolia",
@@ -1206,6 +1323,15 @@
         "currency": "USD",
         "units_per_pack": 1,
         "price_per_uom": 0.5765,
+        "inn_as_written": "Salbutamol"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 29,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 24,
+        "price_per_uom": 0.48,
         "inn_as_written": "Salbutamol"
       }
     ],
@@ -1253,6 +1379,15 @@
         "currency": "USD",
         "units_per_pack": 100,
         "price_per_uom": 0.035,
+        "inn_as_written": "Doxycycline"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 34,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0268,
         "inn_as_written": "Doxycycline"
       },
       {
@@ -1319,6 +1454,15 @@
         "units_per_pack": 100,
         "price_per_uom": 0.0066,
         "inn_as_written": "Hydrochlorothiazide"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 18,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0119,
+        "inn_as_written": "Hydrochlorothiazide"
       }
     ],
     "insulin_glargine_pen": [
@@ -1365,6 +1509,15 @@
         "currency": "USD",
         "units_per_pack": 5,
         "price_per_uom": 5.335,
+        "inn_as_written": "Insulin glargine"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 12,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 5,
+        "price_per_uom": 8.759,
         "inn_as_written": "Insulin glargine"
       },
       {
@@ -1415,6 +1568,15 @@
         "inn_as_written": "Tenofovir disoproxil fumarate + Lamivudine + Dolutegravir"
       },
       {
+        "case": "xlsx_pricelist_03",
+        "line_no": 33,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 90,
+        "price_per_uom": 0.1437,
+        "inn_as_written": "Tenofovir disoproxil fumarate + Lamivudine + Dolutegravir"
+      },
+      {
         "case": "csv_standard_01",
         "line_no": 4,
         "supplier": "yuantai",
@@ -1459,6 +1621,15 @@
         "currency": "USD",
         "units_per_pack": 4,
         "price_per_uom": 0.1446,
+        "inn_as_written": "Praziquantel"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 36,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 1000,
+        "price_per_uom": 0.1608,
         "inn_as_written": "Praziquantel"
       },
       {
@@ -1518,6 +1689,15 @@
         "inn_as_written": "Ferrous sulphate/Folic acid"
       },
       {
+        "case": "xlsx_pricelist_03",
+        "line_no": 35,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 30,
+        "price_per_uom": 0.0088,
+        "inn_as_written": "Ferrous sulfate + Folic acid"
+      },
+      {
         "case": "xlsx_pricelist_01",
         "line_no": 4,
         "supplier": "highveld",
@@ -1562,6 +1742,15 @@
         "currency": "USD",
         "units_per_pack": 100,
         "price_per_uom": 0.0286,
+        "inn_as_written": "Sulfamethoxazole + Trimethoprim"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 39,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0265,
         "inn_as_written": "Sulfamethoxazole + Trimethoprim"
       }
     ],
@@ -1612,6 +1801,15 @@
         "inn_as_written": "Amlodipine"
       },
       {
+        "case": "xlsx_pricelist_03",
+        "line_no": 26,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 0.0092,
+        "inn_as_written": "Amlodipine"
+      },
+      {
         "case": "hostile_eml_hidden",
         "line_no": 4,
         "supplier": "nilevalley",
@@ -1650,6 +1848,15 @@
         "inn_as_written": "Misoprostol"
       },
       {
+        "case": "xlsx_pricelist_03",
+        "line_no": 37,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.1573,
+        "inn_as_written": "Misoprostol"
+      },
+      {
         "case": "hostile_json_visible",
         "line_no": 3,
         "supplier": "indus",
@@ -1685,6 +1892,15 @@
         "currency": "USD",
         "units_per_pack": 24,
         "price_per_uom": 0.0571,
+        "inn_as_written": "Artemether + Lumefantrine"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 2,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 6,
+        "price_per_uom": 0.06,
         "inn_as_written": "Artemether + Lumefantrine"
       },
       {
@@ -1762,6 +1978,26 @@
         "inn_as_written": "Amlodipine"
       }
     ],
+    "nevirapine_200": [
+      {
+        "case": "json_flat_lines_02",
+        "line_no": 1,
+        "supplier": "indus",
+        "currency": "USD",
+        "units_per_pack": 60,
+        "price_per_uom": 0.0328,
+        "inn_as_written": "Nevirapine"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 1,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 60,
+        "price_per_uom": 0.04,
+        "inn_as_written": "Nevirapine"
+      }
+    ],
     "salbutamol_inhaler": [
       {
         "case": "json_flat_lines_02",
@@ -1788,6 +2024,15 @@
         "currency": "EUR",
         "units_per_pack": 1,
         "price_per_uom": 1.946,
+        "inn_as_written": "Salbutamol"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 32,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 1,
+        "price_per_uom": 1.075,
         "inn_as_written": "Salbutamol"
       },
       {
@@ -1867,6 +2112,15 @@
         "inn_as_written": "Ceftriaxone"
       },
       {
+        "case": "xlsx_pricelist_03",
+        "line_no": 15,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 1,
+        "price_per_uom": 0.4346,
+        "inn_as_written": "Ceftriaxone"
+      },
+      {
         "case": "hostile_json_comment",
         "line_no": 1,
         "supplier": "dhaka",
@@ -1914,6 +2168,15 @@
         "inn_as_written": "Amoxicillin and clavulanate potassium"
       },
       {
+        "case": "xlsx_pricelist_03",
+        "line_no": 22,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 21,
+        "price_per_uom": 0.0636,
+        "inn_as_written": "Amoxicillin + Clavulanic acid"
+      },
+      {
         "case": "hostile_pdf_white",
         "line_no": 4,
         "supplier": "lowlands",
@@ -1949,6 +2212,15 @@
         "currency": "EUR",
         "units_per_pack": 100,
         "price_per_uom": 0.0065,
+        "inn_as_written": "Diazepam"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 5,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 0.0088,
         "inn_as_written": "Diazepam"
       }
     ],
@@ -2093,6 +2365,15 @@
         "inn_as_written": "Lidocaine hydrochloride"
       },
       {
+        "case": "xlsx_pricelist_03",
+        "line_no": 13,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 1,
+        "price_per_uom": 0.6366,
+        "inn_as_written": "Lidocaine hydrochloride"
+      },
+      {
         "case": "xlsx_pricelist_02",
         "line_no": 5,
         "supplier": "kaveri",
@@ -2131,6 +2412,15 @@
         "inn_as_written": "Amoxicillin"
       },
       {
+        "case": "xlsx_pricelist_03",
+        "line_no": 25,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0134,
+        "inn_as_written": "Amoxicillin"
+      },
+      {
         "case": "hostile_pdf_white",
         "line_no": 5,
         "supplier": "lowlands",
@@ -2157,6 +2447,15 @@
         "currency": "USD",
         "units_per_pack": 100,
         "price_per_uom": 0.0075,
+        "inn_as_written": "Paracetamol"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 17,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.006,
         "inn_as_written": "Paracetamol"
       }
     ],
@@ -2205,6 +2504,15 @@
         "units_per_pack": 50,
         "price_per_uom": 0.4252,
         "inn_as_written": "Chlorhexidine digluconate"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 24,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 50,
+        "price_per_uom": 0.2063,
+        "inn_as_written": "Chlorhexidine digluconate"
       }
     ],
     "artesunate_inj_60": [
@@ -2224,6 +2532,15 @@
         "currency": "USD",
         "units_per_pack": 1,
         "price_per_uom": 1.73,
+        "inn_as_written": "Artesunate"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 20,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 1.252,
         "inn_as_written": "Artesunate"
       },
       {
@@ -2256,6 +2573,15 @@
         "inn_as_written": "Metformin hydrochloride"
       },
       {
+        "case": "xlsx_pricelist_03",
+        "line_no": 6,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 60,
+        "price_per_uom": 0.0181,
+        "inn_as_written": "Metformin hydrochloride"
+      },
+      {
         "case": "xlsx_pricelist_02",
         "line_no": 2,
         "supplier": "kaveri",
@@ -2263,6 +2589,26 @@
         "units_per_pack": 30,
         "price_per_uom": 2.393,
         "inn_as_written": "Metformin hydrochloride"
+      }
+    ],
+    "ors": [
+      {
+        "case": "json_catalogue_tiers_02",
+        "line_no": 4,
+        "supplier": "baobab",
+        "currency": "KES",
+        "units_per_pack": 100,
+        "price_per_uom": 11.756,
+        "inn_as_written": "Oral rehydration salts"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 40,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 25,
+        "price_per_uom": 0.0472,
+        "inn_as_written": "Oral rehydration salts"
       }
     ],
     "enalapril_10": [
@@ -2359,6 +2705,15 @@
         "inn_as_written": "Ibuprofen"
       },
       {
+        "case": "xlsx_pricelist_03",
+        "line_no": 31,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 0.0067,
+        "inn_as_written": "Ibuprofen"
+      },
+      {
         "case": "xlsx_pricelist_02",
         "line_no": 3,
         "supplier": "kaveri",
@@ -2394,6 +2749,15 @@
         "currency": "USD",
         "units_per_pack": 50,
         "price_per_uom": 0.3779,
+        "inn_as_written": "Magnesium sulfate"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 11,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 0.2086,
         "inn_as_written": "Magnesium sulfate"
       },
       {
@@ -2442,6 +2806,15 @@
         "units_per_pack": 1000,
         "price_per_uom": 0.0241,
         "inn_as_written": "Metronidazole"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 16,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 1000,
+        "price_per_uom": 0.0242,
+        "inn_as_written": "Metronidazole"
       }
     ],
     "atorvastatin_20": [
@@ -2461,6 +2834,15 @@
         "currency": "USD",
         "units_per_pack": 30,
         "price_per_uom": 0.0159,
+        "inn_as_written": "Atorvastatin"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 14,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.012,
         "inn_as_written": "Atorvastatin"
       },
       {
@@ -2520,6 +2902,15 @@
         "inn_as_written": "Rifampicin + Isoniazid"
       },
       {
+        "case": "xlsx_pricelist_03",
+        "line_no": 23,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 84,
+        "price_per_uom": 0.0439,
+        "inn_as_written": "Rifampicin + Isoniazid"
+      },
+      {
         "case": "xlsx_pricelist_01",
         "line_no": 2,
         "supplier": "highveld",
@@ -2537,6 +2928,15 @@
         "currency": "USD",
         "units_per_pack": 4,
         "price_per_uom": 0.0555,
+        "inn_as_written": "Ivermectin"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 9,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0508,
         "inn_as_written": "Ivermectin"
       },
       {
@@ -2584,6 +2984,15 @@
         "currency": "USD",
         "units_per_pack": 10,
         "price_per_uom": 1.533,
+        "inn_as_written": "Ketamine"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 38,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 1,
+        "price_per_uom": 1.273,
         "inn_as_written": "Ketamine"
       },
       {
@@ -2649,6 +3058,15 @@
         "currency": "USD",
         "units_per_pack": 24,
         "price_per_uom": 0.4214,
+        "inn_as_written": "Amoxicillin"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 8,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 24,
+        "price_per_uom": 0.3874,
         "inn_as_written": "Amoxicillin"
       }
     ],
@@ -2746,6 +3164,15 @@
         "units_per_pack": 10,
         "price_per_uom": 0.2552,
         "inn_as_written": "Oxytocin"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 19,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 50,
+        "price_per_uom": 0.2805,
+        "inn_as_written": "Oxytocin"
       }
     ],
     "zinc_20": [
@@ -2765,6 +3192,15 @@
         "currency": "USD",
         "units_per_pack": 10,
         "price_per_uom": 0.023,
+        "inn_as_written": "Zinc sulfate"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 27,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 0.0279,
         "inn_as_written": "Zinc sulfate"
       },
       {
@@ -2821,6 +3257,15 @@
         "currency": "USD",
         "units_per_pack": 100,
         "price_per_uom": 0.2906,
+        "inn_as_written": "Azithromycin"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 21,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 30,
+        "price_per_uom": 0.2308,
         "inn_as_written": "Azithromycin"
       },
       {
@@ -2920,6 +3365,15 @@
         "inn_as_written": "Insulin human (soluble)"
       },
       {
+        "case": "xlsx_pricelist_03",
+        "line_no": 3,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 10,
+        "price_per_uom": 3.948,
+        "inn_as_written": "Insulin human (soluble)"
+      },
+      {
         "case": "hostile_pdf_white",
         "line_no": 3,
         "supplier": "lowlands",
@@ -2947,6 +3401,15 @@
         "units_per_pack": 100,
         "price_per_uom": 5.37,
         "inn_as_written": "Albendazole"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 7,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 1,
+        "price_per_uom": 0.0466,
+        "inn_as_written": "Albendazole"
       }
     ],
     "hrze": [
@@ -2957,6 +3420,15 @@
         "currency": "USD",
         "units_per_pack": 28,
         "price_per_uom": 0.0688,
+        "inn_as_written": "Rifampicin + Isoniazid + Pyrazinamide + Ethambutol"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 30,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 28,
+        "price_per_uom": 0.0788,
         "inn_as_written": "Rifampicin + Isoniazid + Pyrazinamide + Ethambutol"
       },
       {
@@ -2978,6 +3450,15 @@
         "units_per_pack": 500,
         "price_per_uom": 0.0235,
         "inn_as_written": "Vitamin A"
+      },
+      {
+        "case": "xlsx_pricelist_03",
+        "line_no": 4,
+        "supplier": "meridian",
+        "currency": "USD",
+        "units_per_pack": 100,
+        "price_per_uom": 0.0134,
+        "inn_as_written": "Retinol"
       },
       {
         "case": "hostile_json_visible",
@@ -3016,16 +3497,21 @@
       "img_heavy_01"
     ],
     "pdf_modern_02": [
-      "img_fax_02"
+      "img_fax_02",
+      "malformed_pdf_encrypted"
     ],
     "pdf_classic_03": [
-      "img_photo_02"
+      "img_photo_02",
+      "malformed_pdf_truncated"
     ],
     "pdf_modern_03": [
       "img_crop_02"
     ],
     "pdf_letter_02": [
       "pdf_scanned_garbled_layer_02"
+    ],
+    "json_camel_api_01": [
+      "malformed_json_broken"
     ],
     "json_flat_lines_01": [
       "misnamed_json_as_txt"

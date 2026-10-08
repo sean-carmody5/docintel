@@ -22,7 +22,11 @@ def test_every_case_builds_a_file(manifest: dict) -> None:
     for case in manifest["cases"]:
         assert case["files"], case["id"]
         for name in case["files"]:
-            assert (out / case["id"] / name).stat().st_size > 0, f"{case['id']}/{name}"
+            size = (out / case["id"] / name).stat().st_size
+            if case["variant"] == "empty":
+                assert size == 0
+            else:
+                assert size > 0, f"{case['id']}/{name}"
 
 
 def test_truth_prices_are_consistent(manifest: dict) -> None:

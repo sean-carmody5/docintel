@@ -13,6 +13,8 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
 
+import pymupdf
+
 from evals.synth import hostile, vocab
 from evals.synth.render_chat import write_whatsapp
 from evals.synth.render_eml import write_eml
@@ -210,6 +212,15 @@ CASES: tuple[Case, ...] = (
         note="Fixed-width ERP print-out.",
     ),
     # Office formats
+    Case(
+        "xlsx_pricelist_03",
+        "xlsx",
+        "pricelist",
+        "meridian",
+        ("long", "mixed_uom"),
+        n_lines=40,
+        note="Forty lines. Tests chunking and that nothing is dropped from a long table.",
+    ),
     Case("xlsx_pricelist_01", "xlsx", "pricelist", "highveld", ("tiered", "vat_note")),
     Case("xlsx_pricelist_02", "xlsx", "pricelist", "kaveri", ("correction",)),
     Case("docx_letter_01", "docx", "letter", "deltafarm", ("pack_price_only",)),
@@ -256,6 +267,38 @@ CASES: tuple[Case, ...] = (
         hostile="exfil",
         expect="extract_and_flag",
         note="Injection is in a display:none div in the HTML part.",
+    ),
+    # Malformed: arrived, but cannot be read as sent
+    Case(
+        "malformed_empty_file",
+        "malformed",
+        "empty",
+        expect="unsupported",
+        note="Zero bytes. Reason: empty.",
+    ),
+    Case(
+        "malformed_pdf_truncated",
+        "malformed",
+        "pdf_truncated",
+        source="pdf_classic_03",
+        expect="malformed",
+        note="First 55% of the bytes of a three-page PDF. Pages that survive may be read, flagged truncated.",
+    ),
+    Case(
+        "malformed_pdf_encrypted",
+        "malformed",
+        "pdf_encrypted",
+        source="pdf_modern_02",
+        expect="unsupported",
+        note="AES-256 with a user password. Reason: encrypted. No attempt to open it.",
+    ),
+    Case(
+        "malformed_json_broken",
+        "malformed",
+        "json_broken",
+        source="json_camel_api_01",
+        expect="malformed",
+        note="Trailing comma and a stray control character. Lenient parse, flagged, or read as text.",
     ),
     # Wrong extensions and genuinely unsupported bytes
     Case(
@@ -418,6 +461,35 @@ def build(out: Path, seed: int) -> dict[str, Any]:
             shutil.copyfile(src_file, target)
             files.append(target.name)
 
+        elif case.kind == "malformed":
+            if case.variant == "empty":
+                target = case_dir / "quotation.pdf"
+                target.write_bytes(b"")
+            else:
+                src = built[case.source or ""]
+                src_file = out / src["id"] / src["files"][0]
+                q = quotations[src["id"]]
+                target = case_dir / src["files"][0]
+                if case.variant == "pdf_truncated":
+                    data = src_file.read_bytes()
+                    target.write_bytes(data[: int(len(data) * 0.55)])
+                elif case.variant == "pdf_encrypted":
+                    with pymupdf.open(src_file) as doc:
+                        doc.save(
+                            target,
+                            encryption=pymupdf.PDF_ENCRYPT_AES_256,
+                            user_pw="axmed2026",
+                            owner_pw="supplier",
+                            permissions=pymupdf.PDF_PERM_PRINT,
+                        )
+                elif case.variant == "json_broken":
+                    text = src_file.read_text(encoding="utf-8")
+                    text = text.replace("\n  }\n}", ",\n  }\n}", 1).replace(
+                        '"items"', '"items\x07"', 1
+                    )
+                    target.write_text(text, encoding="utf-8", newline="\n")
+            files.append(target.name)
+
         elif case.kind == "unsupported":
             target = case_dir / "export_20260812.bin"
             target.write_bytes(bytes(rng.getrandbits(8) for _ in range(4096)))
@@ -531,6 +603,7 @@ manifest.json       every case, its features, what a correct pipeline should do 
 | partial | Only part of the page is visible. Missing lines are fine, invented lines are not. |
 | low_confidence | Mostly unreadable. Low confidence on what is returned, no confident guesses. |
 | unsupported | An unsupported-document record, not a crash and not a guess. |
+| malformed | Read what can be read, flag what happened (truncated, parsed leniently, parsed as text). Nothing invented. |
 
 ## Feature flags
 
