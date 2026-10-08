@@ -1,6 +1,6 @@
 # Document Intelligence Agent: write-up
 
-Seán Carmody. Repo: github.com/sean-carmody5/axmed-docintel. Model: Claude Sonnet 5.5 for text and pages. Haiku 4.5 compared: a quarter of the cost, 58 against 65 of 66 cases, ten wrong values at high confidence against two. Held-out set, never opened while tuning: Sonnet 63 of 66. Time: well past the 4 to 6 hour box, stated honestly in the agent log.
+Seán Carmody. Repo: github.com/sean-carmody5/axmed-docintel. Model: Claude Sonnet 5.5 for text and pages. Haiku 4.5 compared: a quarter of the cost, 60 against 65 of 66 cases, four wrong values at high confidence against two, twelve invented lines against none. Held-out set, never opened while tuning: Sonnet 63 of 66. Time: well past the 4 to 6 hour box, stated honestly in the agent log.
 
 **Architecture.** Every file becomes one neutral `Document` (text, optional page images, flags, children for attachments), chosen by content sniffing, not file name. One schema-driven extraction runs over all of them and must quote the text each value came from. Code then computes confidence per field from independent signals, reconciles lines across suppliers and across copies of the same quotation, writes the table, and stops at a review page where a person decides and corrects each line with the source beside it. `approve` resumes the run and writes `approved.csv`. Format knowledge lives only in loaders; supplier knowledge lives nowhere; the prompt names nothing from any file we hold.
 
