@@ -144,6 +144,9 @@ def reconcile_duplicates(records: list[Record]) -> list[Duplicate]:
                     if a is None:
                         continue
                     matched += 1
+                    # The product key matched, so the identity fields agree by construction.
+                    for fld in ("product_name", "inn", "uom", "currency"):
+                        _lift(a, b, fld, a_name, b_name)
                     for fld in ("price_per_uom", "units_per_pack", "price_per_pack"):
                         av, bv = getattr(a, fld), getattr(b, fld)
                         if av is None or bv is None:
