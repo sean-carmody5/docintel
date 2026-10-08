@@ -43,7 +43,11 @@ class FixtureExtractor:
             or self.by_key.get(Path(doc.name).stem)
         )
         if path is None:
-            raise KeyError(f"no fixture for {doc.name} (id {doc.id})")
+            log.warning("no fixture for %s (id %s); returning an empty result", doc.name, doc.id)
+            return ExtractionResult(
+                contains_prices=False,
+                warnings=[f"no recorded extraction for {doc.name}; fixture mode cannot read it"],
+            )
         return ExtractionResult.model_validate_json(path.read_text(encoding="utf-8"))
 
 
