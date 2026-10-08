@@ -10,6 +10,8 @@ renderers print them, which is what a careful model would copy.
 
 from __future__ import annotations
 
+import email
+import email.policy
 import json
 from pathlib import Path
 from typing import Any
@@ -105,6 +107,12 @@ def fixture_for(case: dict[str, Any], truth: dict[str, Any]) -> dict[str, Any]:
     return result
 
 
+def _write(path: Path, payload: dict[str, Any]) -> None:
+    path.write_text(
+        json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n"
+    )
+
+
 def main() -> None:
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     OUT.mkdir(parents=True, exist_ok=True)
@@ -115,11 +123,27 @@ def main() -> None:
         if "truth" not in case:
             continue
         truth = json.loads((MANIFEST.parent / case["truth"]).read_text(encoding="utf-8"))
-        (OUT / f"{Path(case['files'][0]).stem}.json").write_text(
-            json.dumps(fixture_for(case, truth), indent=2, ensure_ascii=False) + "\n",
-            encoding="utf-8",
-            newline="\n",
-        )
+        fixture = fixture_for(case, truth)
+        stem = Path(case["files"][0]).stem
+        if case["kind"] == "eml" and case["variant"] == "with_attachment":
+            # The figures live in the attachment, which is its own Document downstream.
+            source = MANIFEST.parent / case["id"] / case["files"][0]
+            msg = email.message_from_bytes(source.read_bytes(), policy=email.policy.default)
+            names = [p.get_filename() for p in msg.walk() if p.get_filename()]
+            for name in names:
+                _write(OUT / f"{Path(name).stem}.json", fixture)
+                n += 1
+            fixture = {
+                "document_type": "correspondence",
+                "contains_prices": False,
+                "supplier": fixture["supplier"],
+                "quotation_ref": fixture["quotation_ref"],
+                "buyer_reference": fixture["buyer_reference"],
+                "currency": fixture["currency"],
+                "lines": [],
+                "warnings": ["cover note only; the quotation is in the attached PDF"],
+            }
+        _write(OUT / f"{stem}.json", fixture)
         n += 1
     print(f"wrote {n} fixtures to {OUT}")
 

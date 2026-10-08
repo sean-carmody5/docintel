@@ -37,6 +37,8 @@ def test_every_fixture_validates(path: Path) -> None:
 @pytest.mark.parametrize("case", [c for c in _cases() if "truth" in c], ids=lambda c: c["id"])
 def test_fixture_backend_matches_truth_line_count(case: dict) -> None:
     doc = load(SYNTH / case["id"] / case["files"][0])
+    if doc.children:  # the figures live in the attachment
+        doc = doc.children[0]
     result = FixtureExtractor(FIXTURES).extract(doc)
     truth = json.loads((SYNTH / case["truth"]).read_text(encoding="utf-8"))["quotation"]
     assert len(result.lines) == len(truth["lines"])
