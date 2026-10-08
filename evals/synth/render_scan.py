@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import io
 import random
+import re
 from pathlib import Path
 
 import pymupdf
@@ -77,4 +78,17 @@ def write_scanned_pdf(src_pdf: Path, out_path: Path, variant: str, rng: random.R
             }
         )
         out.save(out_path, deflate=True, garbage=3)
+    _pin_file_id(out_path)
     return out_path
+
+
+def _pin_file_id(path: Path) -> None:
+    """MuPDF writes a time-based /ID. Replace it with a constant of the same length."""
+    data = path.read_bytes()
+
+    def fixed(m: re.Match[bytes]) -> bytes:
+        return b"/ID[<" + b"0" * len(m.group(1)) + b"><" + b"0" * len(m.group(2)) + b">]"
+
+    data, n = re.subn(rb"/ID\s*\[\s*<([0-9a-fA-F]+)>\s*<([0-9a-fA-F]+)>\s*\]", fixed, data)
+    if n:
+        path.write_bytes(data)

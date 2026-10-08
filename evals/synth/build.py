@@ -13,7 +13,7 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
 
-import pymupdf
+from reportlab.lib.pdfencrypt import StandardEncryption
 
 from evals.synth import hostile, vocab
 from evals.synth.render_chat import write_whatsapp
@@ -290,7 +290,7 @@ CASES: tuple[Case, ...] = (
         "pdf_encrypted",
         source="pdf_modern_02",
         expect="unsupported",
-        note="AES-256 with a user password. Reason: encrypted. No attempt to open it.",
+        note="128-bit standard encryption with a user password. Reason: encrypted. No attempt to open it.",
     ),
     Case(
         "malformed_json_broken",
@@ -474,14 +474,15 @@ def build(out: Path, seed: int) -> dict[str, Any]:
                     data = src_file.read_bytes()
                     target.write_bytes(data[: int(len(data) * 0.55)])
                 elif case.variant == "pdf_encrypted":
-                    with pymupdf.open(src_file) as doc:
-                        doc.save(
-                            target,
-                            encryption=pymupdf.PDF_ENCRYPT_AES_256,
-                            user_pw="axmed2026",
-                            owner_pw="supplier",
-                            permissions=pymupdf.PDF_PERM_PRINT,
-                        )
+                    write_pdf(
+                        q,
+                        rng,
+                        src["variant"],
+                        target,
+                        encrypt=StandardEncryption(
+                            "axmed2026", "supplier", canModify=0, strength=128
+                        ),
+                    )
                 elif case.variant == "json_broken":
                     text = src_file.read_text(encoding="utf-8")
                     text = text.replace("\n  }\n}", ",\n  }\n}", 1).replace(

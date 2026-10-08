@@ -1118,7 +1118,7 @@
       "source": "pdf_modern_02",
       "hostile": null,
       "expect": "unsupported",
-      "note": "AES-256 with a user password. Reason: encrypted. No attempt to open it.",
+      "note": "128-bit standard encryption with a user password. Reason: encrypted. No attempt to open it.",
       "files": [
         "meridian_quotation_MPL-Q-26-0118.pdf"
       ],

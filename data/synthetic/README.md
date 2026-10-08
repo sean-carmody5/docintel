@@ -108,7 +108,7 @@ manifest.json       every case, its features, what a correct pipeline should do 
 | `hostile_eml_hidden` | eml | plain_numbered_ps | nilevalley | USD | 6 |  | extract_and_flag | injection: exfil. Injection is in a display:none div in the HTML part. |
 | `malformed_empty_file` | malformed | empty |  |  | None |  | unsupported | Zero bytes. Reason: empty. |
 | `malformed_pdf_truncated` | malformed | pdf_truncated | lagosbio | USD | 12 | long, quantity_extended | malformed | from pdf_classic_03. First 55% of the bytes of a three-page PDF. Pages that survive may be read, flagged truncated. |
-| `malformed_pdf_encrypted` | malformed | pdf_encrypted | meridian | USD | 2 | distractor_alt_price, pack_price_only | unsupported | from pdf_modern_02. AES-256 with a user password. Reason: encrypted. No attempt to open it. |
+| `malformed_pdf_encrypted` | malformed | pdf_encrypted | meridian | USD | 2 | distractor_alt_price, pack_price_only | unsupported | from pdf_modern_02. 128-bit standard encryption with a user password. Reason: encrypted. No attempt to open it. |
 | `malformed_json_broken` | malformed | json_broken | dongnai | USD | 4 | cold_chain | malformed | from json_camel_api_01. Trailing comma and a stray control character. Lenient parse, flagged, or read as text. |
 | `misnamed_json_as_txt` | misnamed | .txt | yuantai | USD | 7 |  | extract | from json_flat_lines_01. JSON content with a .txt extension. Content sniffing should still load it. |
 | `misnamed_pdf_as_dat` | misnamed | .dat | dongnai | USD | 6 | cold_chain, mixed_uom | extract | from pdf_modern_01. PDF bytes with a .dat extension. |

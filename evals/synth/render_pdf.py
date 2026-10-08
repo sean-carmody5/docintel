@@ -24,7 +24,7 @@ from reportlab.platypus import (
 from evals.synth import vocab
 from evals.synth.truth import Line, Quotation, fmt_money, plural
 
-Layout = Callable[[Quotation, random.Random, Path, str | None], None]
+Layout = Callable[[Quotation, random.Random, Path, str | None, object | None], None]
 
 
 def _shown_unit(line: Line) -> float:
@@ -87,7 +87,13 @@ def _correction_note(q: Quotation) -> str | None:
 # --------------------------------------------------------------------------- classic proforma
 
 
-def classic_proforma(q: Quotation, rng: random.Random, path: Path, hidden_text: str | None) -> None:
+def classic_proforma(
+    q: Quotation,
+    rng: random.Random,
+    path: Path,
+    hidden_text: str | None,
+    encrypt: object | None = None,
+) -> None:
     s = q.supplier
     maroon = colors.HexColor("#6b2233")
     gold = colors.HexColor("#a8812f")
@@ -152,6 +158,7 @@ def classic_proforma(q: Quotation, rng: random.Random, path: Path, hidden_text: 
     doc = SimpleDocTemplate(
         str(path),
         invariant=1,
+        encrypt=encrypt,
         pagesize=LETTER,
         leftMargin=18 * mm,
         rightMargin=18 * mm,
@@ -405,7 +412,13 @@ def classic_proforma(q: Quotation, rng: random.Random, path: Path, hidden_text: 
 # --------------------------------------------------------------------------- modern quote
 
 
-def modern_quote(q: Quotation, rng: random.Random, path: Path, hidden_text: str | None) -> None:
+def modern_quote(
+    q: Quotation,
+    rng: random.Random,
+    path: Path,
+    hidden_text: str | None,
+    encrypt: object | None = None,
+) -> None:
     s = q.supplier
     navy = colors.HexColor("#123a5f")
     teal = colors.HexColor("#1f7a8c")
@@ -459,6 +472,7 @@ def modern_quote(q: Quotation, rng: random.Random, path: Path, hidden_text: str 
     doc = SimpleDocTemplate(
         str(path),
         invariant=1,
+        encrypt=encrypt,
         pagesize=A4,
         leftMargin=14 * mm,
         rightMargin=14 * mm,
@@ -696,7 +710,13 @@ def modern_quote(q: Quotation, rng: random.Random, path: Path, hidden_text: str 
 # --------------------------------------------------------------------------- letter style
 
 
-def letter_style(q: Quotation, rng: random.Random, path: Path, hidden_text: str | None) -> None:
+def letter_style(
+    q: Quotation,
+    rng: random.Random,
+    path: Path,
+    hidden_text: str | None,
+    encrypt: object | None = None,
+) -> None:
     s = q.supplier
     ink = colors.HexColor("#1f1f1f")
     body = _st(
@@ -729,6 +749,7 @@ def letter_style(q: Quotation, rng: random.Random, path: Path, hidden_text: str 
     doc = SimpleDocTemplate(
         str(path),
         invariant=1,
+        encrypt=encrypt,
         pagesize=A4,
         leftMargin=24 * mm,
         rightMargin=24 * mm,
@@ -819,6 +840,12 @@ LAYOUTS: dict[str, Layout] = {
 
 
 def write_pdf(
-    q: Quotation, rng: random.Random, layout: str, path: Path, *, hidden_text: str | None = None
+    q: Quotation,
+    rng: random.Random,
+    layout: str,
+    path: Path,
+    *,
+    hidden_text: str | None = None,
+    encrypt: object | None = None,
 ) -> None:
-    LAYOUTS[layout](q, rng, path, hidden_text)
+    LAYOUTS[layout](q, rng, path, hidden_text, encrypt)
