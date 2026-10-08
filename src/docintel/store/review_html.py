@@ -1,10 +1,10 @@
-"""A self-contained review workstation: the page a person actually works through.
+"""A self-contained review page: one calm list, detail on demand.
 
-Three panes: documents, records, detail. One visual carries the page: a confidence
-strip per record, one cell per key field, so a reviewer sees which field is weak
-before reading a number. No server, no build step, no network dependency beyond an
-optional web font. Decisions are kept in the browser and copied out as JSON for
-`docintel approve --decisions`.
+One row per quotation line: product, price, and at most one short note saying what
+needs a person. Opening a row shows the fields, with reasons and evidence only where
+something is uncertain, and "Show details" for everything else. Decisions are kept in
+the browser and exported as JSON for `docintel approve --decisions`. No server, no
+build step, nothing fetched from the network.
 """
 
 from __future__ import annotations
@@ -14,14 +14,15 @@ from typing import Any
 
 from docintel.reconcile import Conflict, Duplicate
 from docintel.records import KEY_FIELDS, Record
+from docintel.verify.confidence import ESSENTIAL
 
 FIELD_ORDER = (
     "product_name",
     "inn",
     "strength",
     "dosage_form",
-    "uom",
     "units_per_pack",
+    "uom",
     "price_per_uom",
     "price_per_pack",
     "currency",
@@ -35,138 +36,146 @@ FIELD_ORDER = (
     "document_date",
     "valid_until",
 )
-STRIP_FIELDS = ("product_name", "inn", "strength", "units_per_pack", "price_per_uom", "currency")
 
 STYLE = """
-:root{--bg:#f2f4f6;--panel:#ffffff;--panel-2:#f8f9fa;--fg:#15202b;--muted:#5f6b78;--faint:#9aa5b1;--line:#dde2e8;
---accent:#0f5f74;--accent-fg:#ffffff;--sel:#e4eff3;--high:#2b7a4b;--medium:#9a6700;--low:#b4232c;--code:#eef1f4;
---sans:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,sans-serif;--mono:"IBM Plex Mono",Consolas,"SFMono-Regular",monospace}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1319;--panel:#151b22;--panel-2:#1a2129;--fg:#e4e9ee;--muted:#98a3ae;
---faint:#5f6a75;--line:#2a333d;--accent:#62b6cc;--accent-fg:#0b1216;--sel:#1b2b33;--high:#6fcf97;--medium:#e8b84a;--low:#f08a8f;--code:#0b1015;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0e1319;--panel:#151b22;--panel-2:#1a2129;--fg:#e4e9ee;--muted:#98a3ae;--faint:#5f6a75;--line:#2a333d;
---accent:#62b6cc;--accent-fg:#0b1216;--sel:#1b2b33;--high:#6fcf97;--medium:#e8b84a;--low:#f08a8f;--code:#0b1015;color-scheme:dark}
-*{box-sizing:border-box}html,body{height:100%}body{margin:0;background:var(--bg);color:var(--fg);font:13.5px/1.45 var(--sans)}
-button{font:inherit;color:inherit;background:none;border:1px solid var(--line);border-radius:3px;padding:4px 10px;cursor:pointer}
-button:hover{border-color:var(--accent)}button:focus-visible,[tabindex]:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
-input,select{font:inherit;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:5px 8px}
-.mono{font-family:var(--mono)}.num{font-variant-numeric:tabular-nums}.muted{color:var(--muted)}.faint{color:var(--faint)}.sm{font-size:12px}
-.app{display:grid;grid-template-rows:auto auto 1fr;height:100%;min-height:0}
-.top{display:flex;align-items:baseline;gap:18px;padding:10px 18px;border-bottom:1px solid var(--line);background:var(--panel)}
-.brand{font-weight:600;letter-spacing:.02em}.brand b{color:var(--accent);font-weight:600}.top .meta{color:var(--muted);font-size:12px;flex:1}
-.progress{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}.progress i{display:inline-block;width:120px;height:4px;background:var(--line);border-radius:2px;overflow:hidden}
-.progress i b{display:block;height:100%;background:var(--accent)}
-.tools{display:flex;align-items:center;gap:14px;padding:8px 18px;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap}
-.seg{display:inline-flex;border:1px solid var(--line);border-radius:3px;overflow:hidden}.seg button{border:0;border-right:1px solid var(--line);border-radius:0;padding:4px 11px}
-.seg button:last-child{border-right:0}.seg button.on{background:var(--accent);color:var(--accent-fg)}.seg button span{opacity:.75;margin-left:5px;font-variant-numeric:tabular-nums}
-.dist{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);margin-left:auto}.dist i{display:inline-flex;width:160px;height:8px;border-radius:2px;overflow:hidden;background:var(--line)}
-.dist i b{display:block;height:100%}.dist .k{display:inline-flex;gap:10px}.dist .k em{font-style:normal}.dot{display:inline-block;width:8px;height:8px;border-radius:2px;vertical-align:-1px;margin-right:4px}
-.dot.high{background:var(--high)}.dot.medium{background:var(--medium)}.dot.low{background:var(--low)}
-.panes{display:grid;grid-template-columns:250px minmax(420px,1fr) minmax(440px,560px);min-height:0}
-.pane{min-height:0;overflow:auto;border-right:1px solid var(--line);background:var(--panel)}.pane:last-child{border-right:0;background:var(--panel-2)}
-.ph{position:sticky;top:0;z-index:1;display:flex;align-items:center;gap:10px;padding:8px 12px;background:inherit;border-bottom:1px solid var(--line);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.ph .tabs{display:inline-flex;gap:14px;text-transform:none;letter-spacing:0;font-size:13px}.ph .tabs button{border:0;padding:0 0 2px;border-radius:0;border-bottom:2px solid transparent;color:var(--muted)}
-.ph .tabs button.on{color:var(--fg);border-bottom-color:var(--accent)}.ph .tabs button span{color:var(--faint);margin-left:4px}
-.doc{display:block;width:100%;text-align:left;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:8px 12px;cursor:pointer}
-.doc:hover{background:var(--sel)}.doc.on{background:var(--sel);box-shadow:inset 3px 0 0 var(--accent)}.doc .n{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500}
-.doc .s{display:flex;justify-content:space-between;gap:6px;color:var(--muted);font-size:11.5px;margin-top:2px}
-.strip{display:inline-grid;grid-auto-flow:column;gap:2px}.strip i{width:11px;height:11px;border-radius:2px;background:var(--line)}
-.strip i.high{background:var(--high)}.strip i.medium{background:var(--medium)}.strip i.low{background:var(--low)}
-.strip i.none{background:repeating-linear-gradient(135deg,var(--line) 0 2px,transparent 2px 4px)}
-.row{display:grid;grid-template-columns:18px 80px minmax(160px,1fr) 62px 86px 42px 58px 130px;gap:10px;align-items:center;padding:7px 12px;border-bottom:1px solid var(--line);cursor:pointer;min-height:44px}
-.row:hover{background:var(--sel)}.row.on{background:var(--sel);box-shadow:inset 3px 0 0 var(--accent)}.row .p{font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.row .p small{display:block;font-weight:400;color:var(--muted);font-size:11.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.row .r{text-align:right}.row .d{color:var(--muted);font-size:11.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.gl{font-family:var(--mono);color:var(--accent);text-align:center}.gl.reject{color:var(--low)}.gl.hold{color:var(--medium)}
-.empty{padding:28px 14px;color:var(--muted)}
-.dh{padding:12px 16px 10px;border-bottom:1px solid var(--line);background:inherit}.dh h2{margin:0;font-size:16px;font-weight:600}.dh .l{color:var(--muted);font-size:12px;margin-top:2px}
-.dh .bar{display:flex;align-items:center;gap:10px;margin-top:10px;flex-wrap:wrap}.dh .bar .seg button kbd{font:inherit;font-size:10px;opacity:.7;margin-left:6px;border:1px solid currentColor;border-radius:2px;padding:0 3px}
-.ov{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}.ov i{display:inline-block;width:80px;height:6px;background:var(--line);border-radius:2px;overflow:hidden}.ov i b{display:block;height:100%}
-.ov i.high b{background:var(--high)}.ov i.medium b{background:var(--medium)}.ov i.low b{background:var(--low)}
-.sec{padding:10px 16px 4px}.sec h3{margin:0 0 6px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
-table.f{width:100%;border-collapse:collapse;table-layout:fixed}table.f td{padding:5px 6px 2px;vertical-align:top;font-size:12.5px;overflow-wrap:anywhere}
-table.f td:first-child{color:var(--muted);width:118px}table.f td:nth-child(3){width:112px;text-align:right;white-space:nowrap}table.f td.v{font-weight:500}
-table.f tr.x td{padding:0 6px 6px;border-bottom:1px solid var(--line);color:var(--muted);font-size:12px}table.f tr.x code{color:var(--fg)}
-.bar8{display:inline-block;width:54px;height:6px;background:var(--line);border-radius:2px;vertical-align:middle;margin-right:6px;overflow:hidden}.bar8 b{display:block;height:100%}
-.bar8.high b{background:var(--high)}.bar8.medium b{background:var(--medium)}.bar8.low b{background:var(--low)}
-code{font-family:var(--mono);font-size:11.5px;background:var(--code);padding:1px 4px;border-radius:2px}
-ul.t{margin:0;padding-left:16px}ul.t li{margin:3px 0}
-.chip{display:inline-block;margin:0 6px 4px 0;padding:1px 7px;border:1px solid var(--line);border-radius:2px;font-family:var(--mono);font-size:11px;color:var(--muted)}
-.chip.high{border-color:var(--low);color:var(--low)}.chip.warning{border-color:var(--medium);color:var(--medium)}
-.cmp{padding:10px 12px;border-bottom:1px solid var(--line)}.cmp h4{margin:0 0 6px;font-size:13.5px;font-weight:600}.cmp h4 span{color:var(--muted);font-weight:400}
-.cmp table{border-collapse:collapse;width:100%}.cmp th{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;padding:3px 6px;border-bottom:1px solid var(--line)}
-.cmp td{padding:4px 6px;border-bottom:1px solid var(--line);font-size:12.5px}.cmp td.r,.cmp th.r{text-align:right}.cmp .note{margin-top:6px;font-size:12px;color:var(--muted)}.cmp .note.ok{color:var(--fg)}
-.ta{width:100%;height:120px;font-family:var(--mono);font-size:11.5px;margin:8px 0 0}
-@media (max-width:1100px){.panes{grid-template-columns:1fr;grid-auto-rows:minmax(0,auto)}.pane{border-right:0;border-bottom:1px solid var(--line);max-height:60vh}.pane:first-child{max-height:30vh}.row{grid-template-columns:18px 80px 1fr 86px}.row .pk,.row .cu,.row .ba,.row .d{display:none}.dist{display:none}}
+:root{--bg:#fcfcfc;--fg:#1a1a1a;--muted:#6f6f6f;--faint:#a3a3a3;--line:#ebebeb;--soft:#f4f4f4;--hover:#f7f7f7;
+--btn:#1a1a1a;--btn-fg:#ffffff;--amber:#b7791f;--red:#c0392b;--green:#2f7d4f;
+--sans:-apple-system,BlinkMacSystemFont,"Segoe UI Variable Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111111;--fg:#ededed;--muted:#9a9a9a;--faint:#666666;--line:#262626;
+--soft:#1a1a1a;--hover:#171717;--btn:#ededed;--btn-fg:#111111;--amber:#e0a84a;--red:#f07167;--green:#5fbf87;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111111;--fg:#ededed;--muted:#9a9a9a;--faint:#666666;--line:#262626;--soft:#1a1a1a;--hover:#171717;
+--btn:#ededed;--btn-fg:#111111;--amber:#e0a84a;--red:#f07167;--green:#5fbf87;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
+.page{max-width:1040px;margin:0 auto;padding:40px 24px 80px}
+.num{font-variant-numeric:tabular-nums}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+.btn{height:32px;padding:0 14px;border:1px solid var(--line);border-radius:6px;background:var(--bg);font-weight:500}
+.btn:hover{background:var(--hover)}.btn.primary{background:var(--btn);color:var(--btn-fg);border-color:var(--btn)}.btn.primary:hover{opacity:.88}
+.btn.on{background:var(--btn);color:var(--btn-fg);border-color:var(--btn)}
+button:focus-visible,input:focus-visible,select:focus-visible,.row:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+input,select{font:inherit;color:inherit;background:var(--bg);border:1px solid var(--line);border-radius:6px;height:32px;padding:0 10px}
+select{appearance:none;-webkit-appearance:none;padding-right:26px;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:right 13px top 13px,right 9px top 13px;background-size:4px 4px,4px 4px;background-repeat:no-repeat}
+.hd{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:28px}
+h1{font-size:22px;font-weight:600;letter-spacing:-.01em;margin:0 0 4px}.sub{margin:0;color:var(--muted)}
+.hd-r{display:flex;align-items:center;gap:16px;padding-top:6px}
+.prog{display:flex;flex-direction:column;align-items:flex-end;gap:6px;color:var(--muted);font-size:13px}
+.prog i{display:block;width:140px;height:3px;background:var(--line);border-radius:2px;overflow:hidden}.prog i b{display:block;height:100%;background:var(--fg);transition:width .2s}
+.tabs{display:flex;gap:22px;border-bottom:1px solid var(--line);margin-bottom:18px}
+.tabs button{padding:8px 0 10px;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px}
+.tabs button span{color:var(--faint);margin-left:6px}.tabs button.on{color:var(--fg);border-bottom-color:var(--fg)}.tabs button:hover{color:var(--fg)}
+.bar{display:flex;gap:10px;margin-bottom:10px}.bar[hidden]{display:none}.bar input{flex:1;min-width:0}
+.rec{border-bottom:1px solid var(--line)}.rec:first-child{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:14px minmax(0,1fr) minmax(0,240px) 170px 90px;gap:16px;align-items:center;padding:14px 10px;cursor:pointer;border-radius:8px;margin:0 -10px}
+.row:hover{background:var(--hover)}.rec.open .row{background:var(--soft)}
+.ind{width:8px;height:8px;border-radius:50%;justify-self:center}.ind.amber{background:var(--amber)}.ind.red{background:var(--red)}
+.name{font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.meta{color:var(--muted);font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.issue{font-size:13px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.issue.red{color:var(--red)}.issue.amber{color:var(--amber)}
+.price{text-align:right;white-space:nowrap}.price b{font-weight:500;font-size:15px}.price span{color:var(--muted);font-size:13px;margin-left:4px}.price small{display:block;color:var(--faint);font-size:12px}
+.dec{text-align:right;font-size:13px;color:var(--muted)}.dec.approve{color:var(--green)}.dec.reject{color:var(--red)}.dec.hold{color:var(--amber)}
+.detail{padding:6px 10px 26px 40px}
+.actions{display:flex;align-items:center;gap:8px;margin:10px 0 18px}.actions .hint{margin-left:auto;color:var(--faint);font-size:12px}
+.why{margin:0 0 18px;padding:12px 14px;border-left:2px solid var(--amber);background:var(--soft);border-radius:0 6px 6px 0}
+.why.red{border-left-color:var(--red)}.why p{margin:0}.why p+p{margin-top:4px}
+.fields{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:18px 28px;margin:0}
+.f dt{font-size:12px;color:var(--muted);margin-bottom:2px}.f dd{margin:0;font-weight:500}.f dd em{font-style:normal;color:var(--faint);font-weight:400}.f dd .u{color:var(--muted);font-weight:400;font-size:13px}
+.f.flag dd{color:var(--amber)}.f.sev dd{color:var(--red)}.f.flag dd em,.f.sev dd em{color:inherit}
+.f small{display:block;font-size:12px;color:var(--muted);margin-top:3px;font-weight:400}.f small.ev{color:var(--faint);font-style:italic}.f small.sc{color:var(--faint)}
+.more{margin-top:18px;color:var(--muted);font-size:13px;text-decoration:underline;text-underline-offset:3px}.more:hover{color:var(--fg)}
+.extra{margin-top:18px;color:var(--muted);font-size:13px}.extra p{margin:4px 0}.extra b{color:var(--fg);font-weight:500}
+.empty{padding:48px 0;color:var(--muted);text-align:center}
+.cmp h2{font-size:15px;font-weight:600;margin:26px 0 10px}.cmp h2:first-child{margin-top:4px}
+.cmp table{width:100%;border-collapse:collapse;margin-bottom:6px}.cmp th{text-align:left;font-weight:500;color:var(--muted);font-size:13px;padding:8px 10px;border-bottom:1px solid var(--line)}
+.cmp td{padding:10px;border-bottom:1px solid var(--line)}.cmp .r{text-align:right}.cmp caption{text-align:left;font-weight:500;padding:0 0 8px;caption-side:top}
+.cmp .note{color:var(--muted);font-size:13px;margin:0 0 22px}
+.out{width:100%;height:140px;font:12px/1.4 ui-monospace,Consolas,monospace;margin-top:12px;border:1px solid var(--line);border-radius:6px;padding:10px}
+@media (max-width:760px){.page{padding:24px 16px 60px}.row{grid-template-columns:14px minmax(0,1fr) auto}.issue,.dec{display:none}.price small{display:none}.detail{padding-left:10px}.hd{flex-direction:column}.hd-r{padding:0}.prog{align-items:flex-start}}
 """
 
 SCRIPT = r"""
 (function(){
-const D=window.__DATA__,R=D.records,byId=Object.fromEntries(R.map(r=>[r.record_id,r]));
+const D=window.__DATA__,R=D.records;
 const KEY='docintel-decisions-'+(D.run.started||'run');let dec={};try{dec=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
-const S={filter:'review',q:'',doc:null,tab:'records',sel:null,sort:'confidence'};
-const $=s=>document.querySelector(s),esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const tier=s=>s>=0.85?'high':s>=0.6?'medium':'low';
+const S={view:'review',q:'',doc:'',sort:'confidence',open:null,more:{}};
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const LABEL={product_name:'Product',inn:'INN',strength:'Strength',dosage_form:'Form',uom:'Unit',units_per_pack:'Units per pack',price_per_uom:'Unit price',price_per_pack:'Pack price',currency:'Currency',discount_pct:'Discount',quantity:'Quantity',extended_amount:'Extended amount',moq_packs:'Minimum order (packs)',lead_time_days:'Lead time (days)',quotation_ref:'Reference',incoterm:'Incoterm',document_date:'Document date',valid_until:'Valid until'};
+const label=f=>LABEL[f]||f.replace(/_/g,' ');
 const money=v=>v==null||v===''?'':(typeof v==='number'?v.toLocaleString('en-GB',{maximumFractionDigits:v<1?4:v<100?3:2}):esc(v));
+const date=v=>{const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(String(v));return m?new Date(Date.UTC(+m[1],+m[2]-1,+m[3])).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}):esc(v)};
+const fmt=(f,v)=>f==='discount_pct'&&typeof v==='number'?money(v)+'%':/_date$|^valid_until$/.test(f)?date(v):typeof v==='number'?money(v):esc(v);
 const grp=r=>(r.status==='failed'||r.status==='no_lines')?'failed':(r.needs_review?'review':'clean');
 const docOf=r=>r.parent_document||r.source_document;
-function strip(r){const c=r.confidence||{};return'<span class="strip" title="'+D.strip_fields.map(f=>f+' '+(c[f]?c[f].score.toFixed(2):'n/a')).join(', ')+'">'+D.strip_fields.map(f=>{const v=r[f];const x=c[f];const k=v==null?'none':(x?x.tier:'none');return'<i class="'+k+'"></i>'}).join('')+'</span>'}
-function glyph(id){const d=dec[id];return d==='approve'?'<span class="gl">&#9679;</span>':d==='hold'?'<span class="gl hold">&#9684;</span>':d==='reject'?'<span class="gl reject">&times;</span>':'<span class="gl faint">&middot;</span>'}
-function visible(){const q=S.q.toLowerCase();let rows=R.filter(r=>(S.filter==='all'||grp(r)===S.filter)&&(!S.doc||docOf(r)===S.doc)&&(!q||[r.source_document,r.supplier_name,r.product_name,r.inn,r.quotation_ref,r.currency].join(' ').toLowerCase().includes(q)));
+const UNREAD=/could not (be )?read/;
+const REWRITE=[[/^model could not read this field$/,'could not be read'],[/^value not found in the source text$/,'not found verbatim in the text'],[/^not found by \w+$/,'not confirmed by OCR'],[/^agrees with (.+), confidence lifted$/,'matches the copy in $1'],[/^stated in weeks$/,'converted from weeks']];
+const plain=s=>{for(const [re,to] of REWRITE){if(re.test(s))return s.replace(re,to)}return s};
+const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+function human(x){const m=/^([a-z_]+): (.*)$/.exec(x);if(m&&LABEL[m[1]])return label(m[1])+' '+plain(m[2]);let s=x;for(const f in LABEL)s=s.replace(new RegExp('\\b'+f+'\\b','g'),LABEL[f].toLowerCase());return cap(s)}
+const reasons=r=>(r.review_reasons||[]).map(human);
+const RE_ESC=t=>t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+const BY_LEN=Object.keys(LABEL).sort((a,b)=>LABEL[b].length-LABEL[a].length);
+function flaggedFields(r){const out=new Set();for(const x of r.review_reasons||[]){let t=x.toLowerCase();for(const f of BY_LEN){const tok=new RegExp('\\b'+f+'\\b'),lab=new RegExp('\\b'+RE_ESC(LABEL[f].toLowerCase())+'\\b');if(tok.test(t)||lab.test(t)){out.add(f);t=t.replace(tok,' ').replace(lab,' ')}}}return out}
+const severe=r=>grp(r)==='failed'||(r.review_reasons||[]).some(x=>UNREAD.test(x))||D.essential.some(f=>r[f]==null);
+function issue(r){if(grp(r)==='failed')return'Could not load';if(!r.needs_review)return'';const rs=reasons(r);if(!rs.length)return'Check';if(rs.length===1)return rs[0];return rs.length+' things to check'}
+function visible(){const q=S.q.toLowerCase();let rows=R.filter(r=>(S.view==='all'||grp(r)===S.view)&&(!S.doc||docOf(r)===S.doc)&&(!q||[r.source_document,r.supplier_name,r.product_name,r.inn,r.quotation_ref,r.currency].join(' ').toLowerCase().includes(q)));
  if(S.sort==='confidence')rows.sort((a,b)=>a.overall_confidence-b.overall_confidence||docOf(a).localeCompare(docOf(b))||(a.line_no||0)-(b.line_no||0));
  else if(S.sort==='document')rows.sort((a,b)=>docOf(a).localeCompare(docOf(b))||(a.line_no||0)-(b.line_no||0));
  else if(S.sort==='price')rows.sort((a,b)=>(b.price_per_uom||0)-(a.price_per_uom||0));
  else rows.sort((a,b)=>(a.supplier_name||'').localeCompare(b.supplier_name||'')||(a.line_no||0)-(b.line_no||0));return rows}
-function counts(){const c={all:R.length,review:0,clean:0,failed:0};R.forEach(r=>c[grp(r)]++);return c}
-function renderTop(){const need=R.filter(r=>grp(r)==='review');const done=need.filter(r=>dec[r.record_id]).length;
- $('#prog').innerHTML=`${done} of ${need.length} decided <i><b style="width:${need.length?Math.round(done/need.length*100):0}%"></b></i>`;
- const c=counts();$('#seg').innerHTML=[['review','Needs review'],['clean','Clean'],['failed','Failed'],['all','All']].map(([k,l])=>`<button class="${S.filter===k?'on':''}" data-f="${k}">${l}<span>${c[k]}</span></button>`).join('');
- document.querySelectorAll('#seg button').forEach(b=>b.onclick=()=>{S.filter=b.dataset.f;S.sel=null;render()});
- const t={high:0,medium:0,low:0};R.forEach(r=>{const x=(r.confidence||{}).price_per_uom;if(r.price_per_uom==null)t.low++;else if(x)t[x.tier]++});const n=R.length||1;
- $('#dist').innerHTML=`unit price confidence <i><b style="width:${t.high/n*100}%;background:var(--high)"></b><b style="width:${t.medium/n*100}%;background:var(--medium)"></b><b style="width:${t.low/n*100}%;background:var(--low)"></b></i><span class="k"><em><span class="dot high"></span>${t.high} high</em><em><span class="dot medium"></span>${t.medium} medium</em><em><span class="dot low"></span>${t.low} low</em></span>`}
-function renderDocs(){const docs={};R.forEach(r=>{const k=docOf(r);const d=docs[k]||(docs[k]={name:k,kind:r.source_kind,supplier:r.supplier_name,n:0,rev:0,failed:false});d.n++;if(grp(r)==='review')d.rev++;if(grp(r)==='failed')d.failed=true});
- const list=Object.values(docs).sort((a,b)=>b.rev-a.rev||a.name.localeCompare(b.name));
- $('#docs').innerHTML=`<button class="doc ${S.doc?'':'on'}" data-d=""><span class="n">All documents</span><span class="s"><span>${list.length} files</span><span>${R.length} records</span></span></button>`+list.map(d=>`<button class="doc ${S.doc===d.name?'on':''}" data-d="${esc(d.name)}" title="${esc(d.name)}"><span class="n">${esc(d.name)}</span><span class="s"><span>${esc(d.kind)}${d.supplier?' &middot; '+esc(d.supplier):''}</span></span><span class="s"><span>${d.failed?'failed to load':d.n+' records'}</span><span>${d.rev?d.rev+' to review':'clean'}</span></span></button>`).join('');
- document.querySelectorAll('#docs .doc').forEach(b=>b.onclick=()=>{S.doc=b.dataset.d||null;S.sel=null;render()})}
-function renderList(){const rows=visible();$('#tabs').innerHTML=[['records','Records',rows.length],['conflicts','Conflicts',(D.conflicts||[]).length],['duplicates','Duplicates',(D.duplicates||[]).length]].map(([k,l,n])=>`<button class="${S.tab===k?'on':''}" data-t="${k}">${l}<span>${n}</span></button>`).join('');
- document.querySelectorAll('#tabs button').forEach(b=>b.onclick=()=>{S.tab=b.dataset.t;render()});
- const el=$('#list');
- if(S.tab==='conflicts'){const cs=D.conflicts||[];el.innerHTML=cs.length?cs.map(c=>`<div class="cmp"><h4>${esc(c.inn_normalised)} ${esc(c.strength||'')} <span>${esc(c.form||'')}</span></h4><table><thead><tr><th>Supplier</th><th>Currency</th><th class="r">Pack</th><th class="r">Unit price</th></tr></thead><tbody>${c.suppliers.map((s,i)=>`<tr><td>${esc(s)}</td><td class="mono">${esc(c.currencies[i])}</td><td class="r num">${money(c.units_per_pack[i])} ${esc(c.uoms[i])}</td><td class="r num mono">${money(c.unit_prices[i])}</td></tr>`).join('')}</tbody></table><div class="note ${c.comparable?'ok':''}">${esc(c.note)}</div></div>`).join(''):'<div class="empty">No product was quoted by more than one supplier.</div>';return}
- if(S.tab==='duplicates'){const ds=D.duplicates||[];el.innerHTML=ds.length?ds.map(d=>`<div class="cmp"><h4>${esc(d.supplier||'')} <span>${esc(d.quotation_ref)}</span></h4><div class="sm">${d.documents.map(esc).join('<br>')}</div><div class="note">${d.matched_lines} matched lines &middot; ${d.agreements} agreeing values &middot; ${d.disagreements.length} disagreements</div>${d.disagreements.length?`<table><thead><tr><th>Field</th><th>Product</th><th>Values</th></tr></thead><tbody>${d.disagreements.map(x=>`<tr><td class="mono">${esc(x.field)}</td><td>${esc(x.product||'')}</td><td class="mono">${esc(Object.entries(x).filter(([k])=>!['field','product'].includes(k)).map(([k,v])=>k+': '+v).join(' vs '))}</td></tr>`).join('')}</tbody></table>`:''}</div>`).join(''):'<div class="empty">No quotation arrived as more than one file.</div>';return}
- if(!rows.length){el.innerHTML='<div class="empty">Nothing matches this filter.</div>';return}
- if(S.sel==null||!rows.some(r=>r.record_id===S.sel))S.sel=rows[0].record_id;
- el.innerHTML=rows.map(r=>`<div class="row ${S.sel===r.record_id?'on':''}" tabindex="0" data-id="${esc(r.record_id)}">${glyph(r.record_id)}${strip(r)}<div class="p">${esc(r.product_name||(r.status==='failed'?'could not load':'(no product name)'))}<small>${esc(r.inn||'')} ${esc(r.strength||'')}</small></div><div class="pk num sm">${r.units_per_pack!=null?money(r.units_per_pack)+' '+esc(r.uom||''):esc(r.uom||'')}</div><div class="r num mono">${money(r.price_per_uom)}</div><div class="cu mono sm">${esc(r.currency||'')}</div><div class="ba sm muted">${esc(r.price_basis||'')}</div><div class="d" title="${esc(docOf(r))}">${esc(docOf(r))}</div></div>`).join('');
- document.querySelectorAll('.row').forEach(x=>{x.onclick=()=>{S.sel=x.dataset.id;render()}});
- const on=el.querySelector('.row.on');if(on)on.scrollIntoView({block:'nearest'})}
-function fieldRow(r,f){const c=(r.confidence||{})[f],ev=(r.evidence||{})[f],v=r[f];
- if(v==null){const why=c&&c.reasons&&c.reasons[0]||'not stated';const ill=/could not read/.test(why);return`<tr><td>${f}</td><td class="muted">${ill?'illegible':'not stated'}</td><td class="sm">${ill?'<span class="chip high">unreadable</span>':''}</td></tr><tr class="x"><td></td><td colspan="2">${ill?esc(why):''}</td></tr>`}
- const t=c?c.tier:'';return`<tr><td>${f}</td><td class="v num">${typeof v==='number'?money(v):esc(v)}</td><td class="num sm"><span class="bar8 ${t}"><b style="width:${c?Math.round(c.score*100):0}%"></b></span>${c?c.score.toFixed(2):''}</td></tr><tr class="x"><td></td><td colspan="2">${c?esc((c.reasons||[]).join('; ')):''}${ev?` <code>${esc(ev)}</code>`:''}</td></tr>`}
-function renderDetail(){const el=$('#detail');const r=byId[S.sel];if(!r){el.innerHTML='<div class="empty">Select a record.</div>';return}
- const t=tier(r.overall_confidence),d=dec[r.record_id]||'';const conflicts=(D.conflicts||[]).filter(c=>c.record_ids.includes(r.record_id));
- el.innerHTML=`<div class="dh"><h2>${esc(r.product_name||(r.status==='failed'?'Could not load this file':'(no product name)'))}</h2>
- <div class="l">${esc(r.supplier_name||'')}${r.quotation_ref?' &middot; '+esc(r.quotation_ref):''}</div>
- <div class="l">${esc(docOf(r))}${r.parent_document?' &rarr; '+esc(r.source_document):''} &middot; ${esc(r.source_locator||'')} &middot; <span class="mono">${esc(r.record_id)}</span></div>
- <div class="bar"><span class="seg"><button class="${d==='approve'?'on':''}" data-d="approve">Approve<kbd>A</kbd></button><button class="${d==='hold'?'on':''}" data-d="hold">Hold<kbd>H</kbd></button><button class="${d==='reject'?'on':''}" data-d="reject">Reject<kbd>R</kbd></button></span>
- <span class="ov">overall <i class="${t}"><b style="width:${Math.round(r.overall_confidence*100)}%"></b></i>${r.overall_confidence.toFixed(2)}</span></div></div>
- ${(r.review_reasons||[]).length?`<div class="sec"><h3>Why it needs a person</h3><ul class="t">${r.review_reasons.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`:`<div class="sec"><h3>Review</h3><div class="muted sm">Nothing flagged. Every key field is grounded in the source.</div></div>`}
- <div class="sec"><h3>Fields</h3><table class="f"><tbody>${D.field_order.filter(f=>f in r).map(f=>fieldRow(r,f)).join('')}</tbody></table></div>
- ${r.superseded?`<div class="sec"><h3>Corrected in the document</h3><div class="sm"><span class="mono">${esc(r.superseded.field)}</span>: ${money(r.superseded.old)} &rarr; <b>${money(r.superseded.new)}</b></div><div class="sm muted">${esc(r.superseded.reason||'')}</div></div>`:''}
- ${r.price_tiers?`<div class="sec"><h3>Volume tiers</h3><table class="f"><tbody>${r.price_tiers.map(x=>`<tr><td>${money(x.min_packs)}${x.max_packs!=null?' to '+money(x.max_packs):' or more'} packs</td><td class="v num mono">${money(x.price_per_pack)}</td></tr>`).join('')}</tbody></table></div>`:''}
- ${(r.flags||[]).length?`<div class="sec"><h3>Flags</h3>${r.flags.map(f=>`<span class="chip ${esc(f.severity)}" title="${esc(f.detail)}">${esc(f.code)}</span>`).join('')}</div>`:''}
- ${(r.notes||[]).length?`<div class="sec"><h3>Notes</h3><ul class="t sm">${r.notes.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`:''}
- ${conflicts.length?`<div class="sec"><h3>Also quoted by</h3>${conflicts.map(c=>`<div class="sm">${esc(c.suppliers.filter(s=>s!==r.supplier_name).join(', '))} <span class="muted">&middot; ${esc(c.note)}</span></div>`).join('')}</div>`:''}
- <div class="sec"><h3>Source</h3><div class="sm mono muted">${esc(r.source_path||r.source_document)}</div></div>`;
- document.querySelectorAll('.dh .seg button').forEach(b=>b.onclick=()=>decide(r.record_id,b.dataset.d))}
-function decide(id,d){if(dec[id]===d)delete dec[id];else dec[id]=d;try{localStorage.setItem(KEY,JSON.stringify(dec))}catch(e){}render()}
-function render(){renderTop();renderDocs();renderList();renderDetail()}
-document.addEventListener('keydown',e=>{if(e.target.tagName==='INPUT'||e.target.tagName==='TEXTAREA'||e.target.tagName==='SELECT')return;const rows=visible();const i=rows.findIndex(r=>r.record_id===S.sel);
- if(e.key==='j'||e.key==='ArrowDown'){if(i<rows.length-1){S.sel=rows[i+1].record_id;render()}e.preventDefault()}
- else if(e.key==='k'||e.key==='ArrowUp'){if(i>0){S.sel=rows[i-1].record_id;render()}e.preventDefault()}
- else if(S.sel&&(e.key==='a'||e.key==='h'||e.key==='r')){decide(S.sel,{a:'approve',h:'hold',r:'reject'}[e.key])}});
-$('#q').oninput=e=>{S.q=e.target.value;renderList();renderDetail()};$('#sort').onchange=e=>{S.sort=e.target.value;renderList();renderDetail()};
-$('#copy').onclick=()=>{const payload=JSON.stringify({run:D.run.started,decisions:dec},null,2);const ok=()=>{$('#copy').textContent='Copied';setTimeout(()=>$('#copy').textContent='Copy decisions',1500)};
- const show=()=>{$('#out').hidden=false;$('#out').value=payload};
- if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(payload).then(ok).catch(show);else show()};
-$('#clear').onclick=()=>{dec={};try{localStorage.removeItem(KEY)}catch(e){}render()};
+function header(){const docs=new Set(R.map(docOf)).size,need=R.filter(r=>grp(r)==='review'),done=need.filter(r=>dec[r.record_id]).length;
+ $('#sub').textContent=`${docs} documents, ${R.length} quotation lines, ${need.length} need a decision`;
+ $('#progtxt').textContent=`${done} of ${need.length} decided`;$('#progbar').style.width=(need.length?Math.round(done/need.length*100):0)+'%';
+ const c={review:0,clean:0,failed:0};R.forEach(r=>c[grp(r)]++);const cmp=(D.conflicts||[]).length+(D.duplicates||[]).length;
+ $('#tabs').innerHTML=[['review','Needs review',c.review],['clean','Clean',c.clean],['failed','Failed',c.failed],['all','All',R.length],['compare','Comparisons',cmp]].filter(([k,,n])=>n||k==='review'||k==='all').map(([k,l,n])=>`<button class="${S.view===k?'on':''}" data-v="${k}">${l}<span>${n}</span></button>`).join('');
+ document.querySelectorAll('#tabs button').forEach(b=>b.onclick=()=>{S.view=b.dataset.v;S.open=null;render()});
+ const names=[...new Set(R.map(docOf))].sort();$('#doc').innerHTML=`<option value="">All documents</option>`+names.map(n=>`<option value="${esc(n)}"${S.doc===n?' selected':''}>${esc(n)}</option>`).join('')}
+function rowHtml(r){const d=dec[r.record_id]||'',sv=severe(r),g=grp(r),is=issue(r);const tone=g==='failed'||(g==='review'&&sv)?'red':g==='review'?'amber':'';
+ const meta=[r.inn?esc(r.inn)+(r.strength?' '+esc(r.strength):''):'',esc(r.supplier_name||''),esc(docOf(r))].filter(Boolean).join(' · ');
+ const price=r.price_per_uom!=null?`<b>${money(r.price_per_uom)}</b><span>${esc(r.currency||'')}</span><small>per ${esc(r.uom||'unit')}${r.units_per_pack!=null?' · '+money(r.units_per_pack)+' per pack':''}</small>`:r.price_per_pack!=null?`<b>${money(r.price_per_pack)}</b><span>${esc(r.currency||'')}</span><small>per pack</small>`:`<span>${g==='failed'?'':'no price'}</span>`;
+ return`<article class="rec${S.open===r.record_id?' open':''}" data-id="${esc(r.record_id)}"><div class="row" tabindex="0"><span class="ind ${tone}"></span><div><div class="name">${esc(r.product_name||(g==='failed'?r.source_document:'(no product name)'))}</div><div class="meta">${meta}</div></div><div class="issue ${tone}">${esc(is)}</div><div class="price num">${price}</div><div class="dec ${d}">${d==='approve'?'Approved':d==='hold'?'On hold':d==='reject'?'Rejected':''}</div></div>${S.open===r.record_id?detail(r):''}</article>`}
+function detail(r){const d=dec[r.record_id]||'',rs=reasons(r),more=!!S.more[r.record_id],c=r.confidence||{},ev=r.evidence||{},sv=severe(r);
+ const flagged=flaggedFields(r);
+ const fields=D.field_order.filter(f=>f in r&&(r[f]!=null||D.essential.includes(f)||flagged.has(f)||more));
+ const cells=fields.map(f=>{const v=r[f],x=c[f],miss=v==null,rr=x?(x.reasons||[]).map(plain):[],unread=rr.some(s=>UNREAD.test(s));
+  const hot=flagged.has(f)||D.essential.includes(f),sev=hot&&(miss||unread),flag=!sev&&flagged.has(f);
+  const val=miss?`<em>${unread?'unreadable':'not stated'}</em>`:fmt(f,v)+(f==='price_per_uom'&&r.uom?` <span class="u">per ${esc(r.uom)}</span>`:'');
+  const note=more&&rr.length?`<small>${esc(rr.join(' · '))}</small>`:'';
+  const quote=(flag||more)&&ev[f]?`<small class="ev">“${esc(ev[f])}”</small>`:'';
+  const score=more&&x?`<small class="sc">confidence ${x.score.toFixed(2)}</small>`:'';
+  return`<div class="f${flag?' flag':''}${sev?' sev':''}"><dt>${label(f)}</dt><dd>${val}</dd>${note}${quote}${score}</div>`}).join('');
+ const conflicts=(D.conflicts||[]).filter(x=>x.record_ids.includes(r.record_id));
+ const extra=[r.superseded?`<p><b>Corrected in the document:</b> ${label(r.superseded.field).toLowerCase()} ${money(r.superseded.old)} became ${money(r.superseded.new)}${r.superseded.reason?' ('+esc(r.superseded.reason)+')':''}</p>`:'',
+  r.price_tiers?`<p><b>Volume tiers:</b> ${r.price_tiers.map(t=>money(t.min_packs)+(t.max_packs!=null?'–'+money(t.max_packs):'+')+' packs at '+money(t.price_per_pack)).join(', ')}</p>`:'',
+  conflicts.map(x=>`<p><b>Also quoted by</b> ${esc(x.suppliers.filter(s=>s!==r.supplier_name).join(', '))}: ${esc(x.note)}</p>`).join(''),
+  (r.notes||[]).length&&more?`<p><b>Notes:</b> ${r.notes.map(esc).join(' ')}</p>`:'',
+  more?`<p>${esc(docOf(r))}${r.parent_document?' › '+esc(r.source_document):''} · ${esc(r.source_locator||'')} · ${esc(r.record_id)}${r.quotation_ref?' · ref '+esc(r.quotation_ref):''}</p>`:''].join('');
+ return`<div class="detail"><div class="actions"><button class="btn${d==='approve'?' on':d?'':' primary'}" data-d="approve">${d==='approve'?'Approved':'Approve'}</button><button class="btn${d==='hold'?' on':''}" data-d="hold">${d==='hold'?'On hold':'Hold'}</button><button class="btn${d==='reject'?' on':''}" data-d="reject">${d==='reject'?'Rejected':'Reject'}</button><span class="hint">A, H, R · J and K to move</span></div>
+ ${rs.length?`<div class="why${sv?' red':''}">${rs.map(x=>`<p>${esc(x)}</p>`).join('')}</div>`:''}
+ <dl class="fields">${cells}</dl>
+ ${extra?`<div class="extra">${extra}</div>`:''}
+ <button class="more" data-more>${more?'Hide details':'Show details'}</button></div>`}
+function compare(){const cs=D.conflicts||[],ds=D.duplicates||[];if(!cs.length&&!ds.length)return'<div class="empty">Nothing to compare: every product came from one supplier, and no quotation arrived twice.</div>';
+ let h='<div class="cmp">';
+ if(cs.length){h+='<h2>Quoted by more than one supplier</h2>'+cs.map(c=>`<table><caption>${esc(c.inn_normalised)} ${esc(c.strength||'')} ${esc(c.form||'')}</caption><thead><tr><th>Supplier</th><th class="r">Pack</th><th class="r">Unit price</th><th>Currency</th></tr></thead><tbody>${c.suppliers.map((s,i)=>`<tr><td>${esc(s)}</td><td class="r num">${money(c.units_per_pack[i])} ${esc(c.uoms[i])}</td><td class="r num">${money(c.unit_prices[i])}</td><td>${esc(c.currencies[i])}</td></tr>`).join('')}</tbody></table><p class="note">${esc(c.note)}</p>`).join('')}
+ if(ds.length){h+='<h2>Same quotation, more than one file</h2>'+ds.map(d=>`<p><b>${esc(d.supplier||'')}</b> ${esc(d.quotation_ref)}: ${d.documents.map(esc).join(', ')}</p><p class="note">${d.matched_lines} lines matched, ${d.agreements} values agree${d.disagreements.length?', '+d.disagreements.length+' differ: '+d.disagreements.map(x=>label(x.field).toLowerCase()+' on '+esc(x.product||'')).join('; '):''}.</p>`).join('')}
+ return h+'</div>'}
+function render(){header();const el=$('#list');$('#bar').hidden=S.view==='compare';
+ if(S.view==='compare'){el.innerHTML=compare();return}
+ const rows=visible();if(!rows.length){el.innerHTML='<div class="empty">Nothing here.</div>';return}
+ el.innerHTML=rows.map(rowHtml).join('');
+ el.querySelectorAll('.row').forEach(x=>{const id=x.parentElement.dataset.id;x.onclick=()=>{S.open=S.open===id?null:id;render()};x.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();x.onclick()}}});
+ el.querySelectorAll('.actions button').forEach(b=>b.onclick=e=>{e.stopPropagation();decide(S.open,b.dataset.d)});
+ el.querySelectorAll('[data-more]').forEach(b=>b.onclick=()=>{S.more[S.open]=!S.more[S.open];render()});
+ const open=el.querySelector('.rec.open');if(open)open.scrollIntoView({block:'nearest'})}
+function decide(id,d){if(!id)return;if(dec[id]===d)delete dec[id];else dec[id]=d;try{localStorage.setItem(KEY,JSON.stringify(dec))}catch(e){}render()}
+document.addEventListener('keydown',e=>{if(/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)||S.view==='compare')return;const rows=visible();const i=rows.findIndex(r=>r.record_id===S.open);
+ if(e.key==='j'||e.key==='ArrowDown'){if(i<rows.length-1){S.open=rows[i+1].record_id;render()}e.preventDefault()}
+ else if(e.key==='k'||e.key==='ArrowUp'){if(i>0){S.open=rows[i-1].record_id;render()}e.preventDefault()}
+ else if(e.key==='Escape'){S.open=null;render()}
+ else if(S.open&&(e.key==='a'||e.key==='h'||e.key==='r'))decide(S.open,{a:'approve',h:'hold',r:'reject'}[e.key])});
+$('#q').oninput=e=>{S.q=e.target.value;render()};$('#doc').onchange=e=>{S.doc=e.target.value;render()};$('#sort').onchange=e=>{S.sort=e.target.value;render()};
+$('#export').onclick=()=>{const payload=JSON.stringify({run:D.run.started,decisions:dec},null,2);const btn=$('#export');const ok=()=>{btn.textContent='Copied';setTimeout(()=>btn.textContent='Export decisions',1600)};
+ const show=()=>{$('#out').hidden=false;$('#out').value=payload};if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(payload).then(ok).catch(show);else show()};
 render();
 })();
 """
@@ -197,33 +206,19 @@ def render_review_html(
         "duplicates": [d.model_dump() for d in duplicates],
         "field_order": list(FIELD_ORDER),
         "key_fields": list(KEY_FIELDS),
-        "strip_fields": list(STRIP_FIELDS),
+        "essential": list(ESSENTIAL),
     }
     payload = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
-    meta = " &middot; ".join(
-        x
-        for x in (
-            f"{run.get('documents', '?')} documents",
-            f"{len(records)} records",
-            f"extractor {run.get('extractor', '?')}",
-            f"model {run['model']}" if run.get("model") else "",
-            f"as of {run['as_of']}" if run.get("as_of") else "",
-            str(run.get("started", "")),
-        )
-        if x
-    )
     body = f"""<title>Quotation Review</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>{STYLE}</style>
-<div class="app">
-<header class="top"><span class="brand"><b>docintel</b> &middot; Quotation review</span><span class="meta">{meta}</span><span id="prog" class="progress"></span></header>
-<div class="tools"><span id="seg" class="seg"></span><input id="q" type="search" placeholder="Search" size="26"><select id="sort"><option value="confidence">Lowest confidence first</option><option value="document">By document</option><option value="supplier">By supplier</option><option value="price">Highest unit price</option></select><button id="copy">Copy decisions</button><button id="clear" class="sm">Clear</button><span id="dist" class="dist"></span></div>
-<textarea id="out" class="ta" hidden></textarea>
-<div class="panes">
-<aside class="pane"><div class="ph">Documents</div><div id="docs"></div></aside>
-<section class="pane"><div class="ph"><span id="tabs" class="tabs"></span></div><div id="list"></div></section>
-<section class="pane"><div id="detail"></div></section>
-</div></div>
+<main class="page">
+<header class="hd"><div><h1>Quotation review</h1><p class="sub" id="sub"></p></div>
+<div class="hd-r"><div class="prog"><span id="progtxt"></span><i><b id="progbar"></b></i></div><button id="export" class="btn primary">Export decisions</button></div></header>
+<nav class="tabs" id="tabs"></nav>
+<div class="bar" id="bar"><input id="q" type="search" placeholder="Search products, suppliers or documents"><select id="doc"></select><select id="sort"><option value="confidence">Least certain first</option><option value="document">By document</option><option value="supplier">By supplier</option><option value="price">Highest unit price</option></select></div>
+<section id="list"></section>
+<textarea id="out" class="out" hidden></textarea>
+</main>
 <script>window.__DATA__={payload};</script>
 <script>{SCRIPT}</script>
 """
