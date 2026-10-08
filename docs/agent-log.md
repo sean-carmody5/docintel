@@ -73,3 +73,15 @@ Seán reviewed the first plan and steered the following. Each is now in PLAN.md 
 **Findings during build.** pymupdf4llm runs its own OCR on image-only pages unless told not to, which would have hijacked routing. Real scanner OCR layers score 0.95 to 0.99 on the quality heuristic, so structure, not text quality, decides that a PDF is a scan. csv.Sniffer fails on exports with key/value rows above the table. Wrapped PDF table cells arrive as <br> with bold runs per fragment and split product names. One commit went in with a failing test because a pipe hid pytest's exit code; pipefail is now on in every command and the fix was its own commit.
 
 **Security (agent built).** Hidden PDF spans (tiny, off-page, or white with no dark fill beneath), hidden HTML elements via a tag-balanced scan, invisible and bidirectional unicode, and injection phrases. All four hostile cases flag; none of the 55 clean cases or the provided files do.
+
+## Session 6, 8 October 2026: OCR variants, CI, expected failures, verification
+
+**Other OCR models (Seán asked).** Measured rather than argued: RapidOCR's medium and server model variants on the same nine pages recover the same prices as the small default at 20 to 70 times the time per page. Decision unchanged. Image quality, not model size, is the limit; the independent second signal comes from a different model family, not a bigger OCR.
+
+**CI (Seán asked).** GitHub Actions on every push: lint, format, types, a rebuild of the synthetic set compared against the commit, and the offline tests. The first run failed because zlib writes different bytes on Linux for identical PNG and Office content, so the check now compares images by pixels and Office files by zip members. The second failed because uv run pytest does not put the repo root on the path; fixed in pytest config. Green since.
+
+**Expected failures (Seán's point).** Passing means behaving as the case expects, not 100% accuracy. Two glare-wipe photo cases added that erase table rows like the provided scan_03. The plan states the rule.
+
+**Branches and merge requests (Seán asked).** Agent's view, accepted: overkill for a solo take-home; trunk with small commits is what the brief weighs. Not adopted.
+
+**Verification layer (agent built).** Records model; conservative INN, strength and form normalisation; grounding of every value and evidence quote in the source; deterministic arithmetic, code and plausibility checks; confidence per field computed from those signals with every deduction recorded; derived prices inherit confidence from their inputs. Two grounding bugs found by the synthetic set and fixed: a number after a CSV comma, and an INN truncated by a fixed-width column. Hand-written expected extractions for the eight provided documents, with the two scans marking illegible fields honestly.
