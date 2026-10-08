@@ -228,6 +228,8 @@ Eight files is not an evaluation. Two additions, both part of Phase A.
 
 **Model comparison.** The same eval runs across Haiku 4.5, Sonnet 5.5 and Opus 5.5 behind the one config string. The table goes in the write-up with cost per document.
 
+**Passing is behaving as expected, not scoring 100%.** Every case carries an `expect` value and the scorer grades against it. A clean JSON must extract every line exactly. A glare-wiped photo or the provided `scan_03` must return what is legible, flag the rest, and never invent a line; a confident wrong price on such a case is a failure, a flagged gap is a pass. An encrypted file must produce a refused record with the reason. Accuracy on the legible cases and calibration on the illegible ones are reported separately, because a pipeline that is right when it is sure and says so when it is not is the product.
+
 ## Engineering standard
 
 - uv for environment and lockfile, exact pins.
