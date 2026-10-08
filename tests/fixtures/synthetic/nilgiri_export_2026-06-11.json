@@ -1,0 +1,161 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Nilgiri Biologics Ltd.",
+    "country": null,
+    "contact_name": null,
+    "contact_email": null
+  },
+  "quotation_ref": "NB/EXP/260102",
+  "buyer_reference": "AXMED-RFQ-2026-0247",
+  "document_date": "2026-06-11",
+  "valid_until": "2026-07-26",
+  "currency": "USD",
+  "incoterm": "FCA",
+  "named_place": "Hyderabad (INHYD)",
+  "payment_terms": "Confirmed LC at 60 days",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Tldex 300",
+      "inn": "Tenofovir/Lamivudine/Dolutegravir",
+      "strength": "300 mg / 300 mg / 50 mg",
+      "dosage_form": "Film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 90,
+      "packaging": "HDPE bottle",
+      "price_per_pack": 17.145,
+      "price_per_uom": 0.1905,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "USD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 500,
+      "lead_time_days": 30,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Tldex 300",
+        "inn": "Tenofovir/Lamivudine/Dolutegravir",
+        "strength": "300 mg / 300 mg / 50 mg",
+        "dosage_form": "Film-coated tablet",
+        "units_per_pack": "90",
+        "price_per_pack": "17.145"
+      },
+      "illegible": [],
+      "notes": [
+        "unit price derived from pack price and units per pack"
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Nilglar 100",
+      "inn": "Insulin glargine",
+      "strength": "100 IU/mL",
+      "dosage_form": "Solution for injection in pre-filled pen",
+      "uom": "pen",
+      "units_per_pack": 5,
+      "packaging": "Pre-filled pen, carton",
+      "price_per_pack": 63.77,
+      "price_per_uom": 12.754,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "USD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 500,
+      "lead_time_days": 63,
+      "cold_chain": true,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Nilglar 100",
+        "inn": "Insulin glargine",
+        "strength": "100 IU/mL",
+        "dosage_form": "Solution for injection in pre-filled pen",
+        "units_per_pack": "5",
+        "price_per_pack": "63.770"
+      },
+      "illegible": [],
+      "notes": [
+        "unit price derived from pack price and units per pack"
+      ]
+    },
+    {
+      "line_no": 3,
+      "product_name": "Praziex 600",
+      "inn": "Praziquantel",
+      "strength": "600 mg",
+      "dosage_form": "Film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 4,
+      "packaging": "Alu-Alu blister",
+      "price_per_pack": 0.57,
+      "price_per_uom": 0.1425,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "USD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 2000,
+      "lead_time_days": 63,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Praziex 600",
+        "inn": "Praziquantel",
+        "strength": "600 mg",
+        "dosage_form": "Film-coated tablet",
+        "units_per_pack": "4",
+        "price_per_pack": "0.5700"
+      },
+      "illegible": [],
+      "notes": [
+        "unit price derived from pack price and units per pack"
+      ]
+    },
+    {
+      "line_no": 4,
+      "product_name": "Nilfer 60",
+      "inn": "Ferrous sulfate + Folic acid",
+      "strength": "60 mg / 0.4 mg",
+      "dosage_form": "Tablet",
+      "uom": "tablet",
+      "units_per_pack": 30,
+      "packaging": "Alu-Alu blister",
+      "price_per_pack": 0.102,
+      "price_per_uom": 0.0034,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "USD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 500,
+      "lead_time_days": 35,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Nilfer 60",
+        "inn": "Ferrous sulfate + Folic acid",
+        "strength": "60 mg / 0.4 mg",
+        "dosage_form": "Tablet",
+        "units_per_pack": "30",
+        "price_per_pack": "0.1020"
+      },
+      "illegible": [],
+      "notes": [
+        "unit price derived from pack price and units per pack"
+      ]
+    }
+  ],
+  "evidence": {
+    "quotation_ref": "NB/EXP/260102",
+    "currency": "USD"
+  },
+  "warnings": []
+}

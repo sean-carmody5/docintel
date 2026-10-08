@@ -5,6 +5,11 @@ description = "Document intelligence pipeline for supplier quotations"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "langchain>=1.0",
+    "langchain-anthropic>=1.7.5",
+    "langchain-core>=1.6.7",
+    "langgraph>=1.2.14",
+    "langsmith>=0.14.4",
     "markitdown[docx,pptx,xlsx]>=0.1.8",
     "onnxruntime>=1.30.0",
     "openpyxl>=3.1.5",

@@ -1,0 +1,229 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Pacifico Farma S.A.C.",
+    "country": null,
+    "contact_name": null,
+    "contact_email": null
+  },
+  "quotation_ref": "PF-COT-26-126",
+  "buyer_reference": "AXMED-RFQ-2026-0335",
+  "document_date": "2026-08-04",
+  "valid_until": "2026-09-03",
+  "currency": "USD",
+  "incoterm": "CIF",
+  "named_place": "Guayaquil (ECGYE)",
+  "payment_terms": "T/T 30 days from B/L",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Pacmoxsusp 250",
+      "inn": "Amoxicillin",
+      "strength": "250 mg / 5 mL",
+      "dosage_form": "Powder for oral suspension",
+      "uom": "bottle",
+      "units_per_pack": 24,
+      "packaging": "Amber glass bottle",
+      "price_per_pack": 10.114,
+      "price_per_uom": 0.4214,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "USD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 500,
+      "lead_time_days": 28,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Pacmoxsusp 250",
+        "inn": "Amoxicillin",
+        "strength": "250 mg / 5 mL",
+        "dosage_form": "Powder for oral suspension",
+        "units_per_pack": "24",
+        "price_per_pack": "10.114"
+      },
+      "illegible": [],
+      "notes": [
+        "unit price derived from pack price and units per pack"
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Pacprazole 20",
+      "inn": "Omeprazole",
+      "strength": "20 mg",
+      "dosage_form": "DR capsule",
+      "uom": "capsule",
+      "units_per_pack": 100,
+      "packaging": "HDPE bottle",
+      "price_per_pack": 1.73,
+      "price_per_uom": 0.0173,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "USD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 500,
+      "lead_time_days": 35,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Pacprazole 20",
+        "inn": "Omeprazole",
+        "strength": "20 mg",
+        "dosage_form": "DR capsule",
+        "units_per_pack": "100",
+        "price_per_pack": "1.730"
+      },
+      "illegible": [],
+      "notes": [
+        "unit price derived from pack price and units per pack"
+      ]
+    },
+    {
+      "line_no": 3,
+      "product_name": "Artesex 60",
+      "inn": "Artesunate",
+      "strength": "60 mg",
+      "dosage_form": "Powder and solvent for solution for injection",
+      "uom": "vial",
+      "units_per_pack": 1,
+      "packaging": "Glass vial, carton",
+      "price_per_pack": 1.73,
+      "price_per_uom": 1.73,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "USD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 1000,
+      "lead_time_days": 28,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Artesex 60",
+        "inn": "Artesunate",
+        "strength": "60 mg",
+        "dosage_form": "Powder and solvent for solution for injection",
+        "units_per_pack": "1",
+        "price_per_pack": "1.730"
+      },
+      "illegible": [],
+      "notes": [
+        "unit price derived from pack price and units per pack"
+      ]
+    },
+    {
+      "line_no": 4,
+      "product_name": "Pacgenta 80",
+      "inn": "Gentamicin",
+      "strength": "80 mg / 2 mL",
+      "dosage_form": "Solution for injection",
+      "uom": "ampoule",
+      "units_per_pack": 10,
+      "packaging": "Amber glass ampoule",
+      "price_per_pack": 1.742,
+      "price_per_uom": 0.1742,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "USD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 10000,
+      "lead_time_days": 63,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Pacgenta 80",
+        "inn": "Gentamicin",
+        "strength": "80 mg / 2 mL",
+        "dosage_form": "Solution for injection",
+        "units_per_pack": "10",
+        "price_per_pack": "1.742"
+      },
+      "illegible": [],
+      "notes": [
+        "unit price derived from pack price and units per pack"
+      ]
+    },
+    {
+      "line_no": 5,
+      "product_name": "Pachrze 150",
+      "inn": "Rifampicin + Isoniazid + Pyrazinamide + Ethambutol",
+      "strength": "150 mg / 75 mg / 400 mg / 275 mg",
+      "dosage_form": "Film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 28,
+      "packaging": "Alu-Alu blister",
+      "price_per_pack": 1.926,
+      "price_per_uom": 0.0688,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "USD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 20000,
+      "lead_time_days": 21,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Pachrze 150",
+        "inn": "Rifampicin + Isoniazid + Pyrazinamide + Ethambutol",
+        "strength": "150 mg / 75 mg / 400 mg / 275 mg",
+        "dosage_form": "Film-coated tablet",
+        "units_per_pack": "28",
+        "price_per_pack": "1.926"
+      },
+      "illegible": [],
+      "notes": [
+        "unit price derived from pack price and units per pack"
+      ]
+    },
+    {
+      "line_no": 6,
+      "product_name": "Oxyex 10",
+      "inn": "Oxytocin",
+      "strength": "10 IU/mL",
+      "dosage_form": "Solution for injection",
+      "uom": "ampoule",
+      "units_per_pack": 10,
+      "packaging": "Amber glass ampoule",
+      "price_per_pack": 2.552,
+      "price_per_uom": 0.2552,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "USD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 500,
+      "lead_time_days": 35,
+      "cold_chain": true,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Oxyex 10",
+        "inn": "Oxytocin",
+        "strength": "10 IU/mL",
+        "dosage_form": "Solution for injection",
+        "units_per_pack": "10",
+        "price_per_pack": "2.552"
+      },
+      "illegible": [],
+      "notes": [
+        "unit price derived from pack price and units per pack"
+      ]
+    }
+  ],
+  "evidence": {
+    "quotation_ref": "PF-COT-26-126",
+    "currency": "USD"
+  },
+  "warnings": []
+}

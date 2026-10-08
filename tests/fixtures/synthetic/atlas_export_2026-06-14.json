@@ -1,0 +1,161 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Laboratoires Atlas Pharma S.A.",
+    "country": null,
+    "contact_name": null,
+    "contact_email": null
+  },
+  "quotation_ref": "ATL/DEV/26/0113",
+  "buyer_reference": "AXMED-RFQ-2026-0331",
+  "document_date": "2026-06-14",
+  "valid_until": "2026-09-12",
+  "currency": "MAD",
+  "incoterm": "FCA",
+  "named_place": "Casablanca (MACAS)",
+  "payment_terms": "30% a la commande, solde a 60 jours",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Prazoleex 20",
+      "inn": "Omeprazole",
+      "strength": "20 mg",
+      "dosage_form": "Gastro-resistant capsule",
+      "uom": "capsule",
+      "units_per_pack": 100,
+      "packaging": "HDPE bottle",
+      "price_per_pack": 14.31,
+      "price_per_uom": 0.1431,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "MAD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 2000,
+      "lead_time_days": 30,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Prazoleex 20",
+        "inn": "Omeprazole",
+        "strength": "20 mg",
+        "dosage_form": "Gastro-resistant capsule",
+        "units_per_pack": "100",
+        "price_per_pack": "14.310"
+      },
+      "illegible": [],
+      "notes": [
+        "unit price derived from pack price and units per pack"
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Moxdtex 250",
+      "inn": "Amoxicillin",
+      "strength": "250 mg",
+      "dosage_form": "Dispersible tablet",
+      "uom": "tablet",
+      "units_per_pack": 10,
+      "packaging": "Alu-Alu blister",
+      "price_per_pack": 1.41,
+      "price_per_uom": 0.141,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "MAD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 50000,
+      "lead_time_days": 63,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Moxdtex 250",
+        "inn": "Amoxicillin",
+        "strength": "250 mg",
+        "dosage_form": "Dispersible tablet",
+        "units_per_pack": "10",
+        "price_per_pack": "1.410"
+      },
+      "illegible": [],
+      "notes": [
+        "unit price derived from pack price and units per pack"
+      ]
+    },
+    {
+      "line_no": 3,
+      "product_name": "Floxex 500",
+      "inn": "Ciprofloxacin",
+      "strength": "500 mg",
+      "dosage_form": "Film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 100,
+      "packaging": "PVC/Alu blister",
+      "price_per_pack": 31.71,
+      "price_per_uom": 0.3171,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "MAD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 5000,
+      "lead_time_days": 30,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Floxex 500",
+        "inn": "Ciprofloxacin",
+        "strength": "500 mg",
+        "dosage_form": "Film-coated tablet",
+        "units_per_pack": "100",
+        "price_per_pack": "31.710"
+      },
+      "illegible": [],
+      "notes": [
+        "unit price derived from pack price and units per pack"
+      ]
+    },
+    {
+      "line_no": 4,
+      "product_name": "Rifex 150",
+      "inn": "Rifampicin + Isoniazid",
+      "strength": "150 mg / 75 mg",
+      "dosage_form": "Film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 28,
+      "packaging": "Alu-Alu blister",
+      "price_per_pack": 13.591,
+      "price_per_uom": 0.4854,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "MAD",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 1000,
+      "lead_time_days": 42,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Rifex 150",
+        "inn": "Rifampicin + Isoniazid",
+        "strength": "150 mg / 75 mg",
+        "dosage_form": "Film-coated tablet",
+        "units_per_pack": "28",
+        "price_per_pack": "13.591"
+      },
+      "illegible": [],
+      "notes": [
+        "unit price derived from pack price and units per pack"
+      ]
+    }
+  ],
+  "evidence": {
+    "quotation_ref": "ATL/DEV/26/0113",
+    "currency": "MAD"
+  },
+  "warnings": []
+}

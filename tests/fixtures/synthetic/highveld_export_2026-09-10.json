@@ -1,0 +1,265 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Highveld Generics (Pty) Ltd.",
+    "country": null,
+    "contact_name": null,
+    "contact_email": null
+  },
+  "quotation_ref": "HG-Q26-0105",
+  "buyer_reference": "AXMED-RFQ-2026-0374",
+  "document_date": "2026-09-10",
+  "valid_until": "2026-12-09",
+  "currency": "ZAR",
+  "incoterm": "EXW",
+  "named_place": "Isando",
+  "payment_terms": "30 days from statement, prices exclude 15% VAT",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Highmoxdt 250",
+      "inn": "Amoxicillin",
+      "strength": "250 mg",
+      "dosage_form": "Dispersible tablet",
+      "uom": "tablet",
+      "units_per_pack": 10,
+      "packaging": "Alu-Alu blister",
+      "price_per_pack": 2.405,
+      "price_per_uom": 0.2405,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 250,
+          "max_packs": 1249,
+          "price_per_pack": 2.405
+        },
+        {
+          "min_packs": 1250,
+          "max_packs": 4999,
+          "price_per_pack": 2.206
+        },
+        {
+          "min_packs": 5000,
+          "max_packs": null,
+          "price_per_pack": 1.969
+        }
+      ],
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 1000,
+      "lead_time_days": 35,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Highmoxdt 250",
+        "inn": "Amoxicillin",
+        "strength": "250 mg",
+        "dosage_form": "Dispersible tablet",
+        "units_per_pack": "10",
+        "price_per_pack": "2.405"
+      },
+      "illegible": [],
+      "notes": []
+    },
+    {
+      "line_no": 2,
+      "product_name": "Highcetam 500",
+      "inn": "Paracetamol",
+      "strength": "500 mg",
+      "dosage_form": "Tablet",
+      "uom": "tablet",
+      "units_per_pack": 20,
+      "packaging": "Alu-Alu blister",
+      "price_per_pack": 1.956,
+      "price_per_uom": 0.0978,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 100,
+          "max_packs": 999,
+          "price_per_pack": 1.956
+        },
+        {
+          "min_packs": 1000,
+          "max_packs": 4999,
+          "price_per_pack": 1.852
+        },
+        {
+          "min_packs": 5000,
+          "max_packs": null,
+          "price_per_pack": 1.642
+        }
+      ],
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 5000,
+      "lead_time_days": 63,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Highcetam 500",
+        "inn": "Paracetamol",
+        "strength": "500 mg",
+        "dosage_form": "Tablet",
+        "units_per_pack": "20",
+        "price_per_pack": "1.956"
+      },
+      "illegible": [],
+      "notes": []
+    },
+    {
+      "line_no": 3,
+      "product_name": "Thiazex 25",
+      "inn": "Hydrochlorothiazide",
+      "strength": "25 mg",
+      "dosage_form": "Tablet",
+      "uom": "tablet",
+      "units_per_pack": 100,
+      "packaging": "HDPE bottle",
+      "price_per_pack": 12.37,
+      "price_per_uom": 0.1237,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 500,
+          "max_packs": 4999,
+          "price_per_pack": 12.37
+        },
+        {
+          "min_packs": 5000,
+          "max_packs": 24999,
+          "price_per_pack": 11.595
+        },
+        {
+          "min_packs": 25000,
+          "max_packs": null,
+          "price_per_pack": 10.409
+        }
+      ],
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 500,
+      "lead_time_days": 60,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Thiazex 25",
+        "inn": "Hydrochlorothiazide",
+        "strength": "25 mg",
+        "dosage_form": "Tablet",
+        "units_per_pack": "100",
+        "price_per_pack": "12.370"
+      },
+      "illegible": [],
+      "notes": []
+    },
+    {
+      "line_no": 4,
+      "product_name": "Highdip 5",
+      "inn": "Amlodipine",
+      "strength": "5 mg",
+      "dosage_form": "Tablet",
+      "uom": "tablet",
+      "units_per_pack": 10,
+      "packaging": "Alu-Alu blister",
+      "price_per_pack": 1.7,
+      "price_per_uom": 0.17,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 500,
+          "max_packs": 2499,
+          "price_per_pack": 1.7
+        },
+        {
+          "min_packs": 2500,
+          "max_packs": 12499,
+          "price_per_pack": 1.59
+        },
+        {
+          "min_packs": 12500,
+          "max_packs": null,
+          "price_per_pack": 1.429
+        }
+      ],
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 2000,
+      "lead_time_days": 42,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Highdip 5",
+        "inn": "Amlodipine",
+        "strength": "5 mg",
+        "dosage_form": "Tablet",
+        "units_per_pack": "10",
+        "price_per_pack": "1.700"
+      },
+      "illegible": [],
+      "notes": []
+    },
+    {
+      "line_no": 5,
+      "product_name": "Chlorex 7.1%",
+      "inn": "Chlorhexidine digluconate",
+      "strength": "7.1% w/w",
+      "dosage_form": "Gel, 20 g tube",
+      "uom": "tube",
+      "units_per_pack": 1,
+      "packaging": "Laminated tube",
+      "price_per_pack": 6.633,
+      "price_per_uom": 6.633,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 500,
+          "max_packs": 4999,
+          "price_per_pack": 6.633
+        },
+        {
+          "min_packs": 5000,
+          "max_packs": 19999,
+          "price_per_pack": 5.861
+        },
+        {
+          "min_packs": 20000,
+          "max_packs": null,
+          "price_per_pack": 5.263
+        }
+      ],
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 10000,
+      "lead_time_days": 42,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Chlorex 7.1%",
+        "inn": "Chlorhexidine digluconate",
+        "strength": "7.1% w/w",
+        "dosage_form": "Gel, 20 g tube",
+        "units_per_pack": "1",
+        "price_per_pack": "6.633"
+      },
+      "illegible": [],
+      "notes": []
+    }
+  ],
+  "evidence": {
+    "quotation_ref": "HG-Q26-0105",
+    "currency": "ZAR"
+  },
+  "warnings": []
+}

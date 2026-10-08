@@ -1,0 +1,98 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Highveld Generics (Pty) Ltd.",
+    "country": null,
+    "contact_name": null,
+    "contact_email": null
+  },
+  "quotation_ref": "HG-Q26-0119",
+  "buyer_reference": "AXMED-RFQ-2026-0330",
+  "document_date": "2026-09-08",
+  "valid_until": "2026-10-23",
+  "currency": "ZAR",
+  "incoterm": "EXW",
+  "named_place": "Isando",
+  "payment_terms": "30 days from statement, prices exclude 15% VAT",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Dexex 4",
+      "inn": "Dexamethasone sodium phosphate",
+      "strength": "4 mg/mL",
+      "dosage_form": "Solution for injection",
+      "uom": "ampoule",
+      "units_per_pack": 25,
+      "packaging": "Amber glass ampoule",
+      "price_per_pack": 95.7,
+      "price_per_uom": 3.828,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 2000,
+      "lead_time_days": 63,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Dexex 4",
+        "inn": "Dexamethasone sodium phosphate",
+        "strength": "4 mg/mL",
+        "dosage_form": "Solution for injection",
+        "units_per_pack": "25",
+        "price_per_pack": "95.700",
+        "price_per_uom": "3.828"
+      },
+      "illegible": [],
+      "notes": []
+    },
+    {
+      "line_no": 2,
+      "product_name": "Lidoex 2%",
+      "inn": "Lignocaine",
+      "strength": "2%, 20 mL",
+      "dosage_form": "Solution for injection",
+      "uom": "vial",
+      "units_per_pack": 25,
+      "packaging": "Glass vial, carton",
+      "price_per_pack": 216.37,
+      "price_per_uom": 8.655,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 50000,
+      "lead_time_days": 75,
+      "cold_chain": null,
+      "superseded": {
+        "field": "price_per_uom",
+        "old": 8.403,
+        "new": 8.655,
+        "reason": "corrected later in the same document"
+      },
+      "evidence": {
+        "product_name": "Lidoex 2%",
+        "inn": "Lignocaine",
+        "strength": "2%, 20 mL",
+        "dosage_form": "Solution for injection",
+        "units_per_pack": "25",
+        "price_per_pack": "216.37",
+        "price_per_uom": "8.655"
+      },
+      "illegible": [],
+      "notes": [
+        "price_per_uom corrected later in the document"
+      ]
+    }
+  ],
+  "evidence": {
+    "quotation_ref": "HG-Q26-0119",
+    "currency": "ZAR"
+  },
+  "warnings": []
+}

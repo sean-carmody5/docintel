@@ -1,0 +1,121 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Baobab Pharmaceuticals Ltd.",
+    "country": null,
+    "contact_name": null,
+    "contact_email": null
+  },
+  "quotation_ref": "BPL/QT/26/0129",
+  "buyer_reference": "AXMED-RFQ-2026-0263",
+  "document_date": "2026-08-19",
+  "valid_until": "2026-09-18",
+  "currency": "KES",
+  "incoterm": "EXW",
+  "named_place": "Nairobi plant",
+  "payment_terms": "30 days from delivery",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Baothiaz 25",
+      "inn": "Hydrochlorothiazide",
+      "strength": "25 mg",
+      "dosage_form": "Tablet",
+      "uom": "tablet",
+      "units_per_pack": 30,
+      "packaging": "Alu-Alu blister",
+      "price_per_pack": 36.54,
+      "price_per_uom": 1.218,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 250,
+          "max_packs": 2499,
+          "price_per_pack": 36.54
+        },
+        {
+          "min_packs": 2500,
+          "max_packs": 9999,
+          "price_per_pack": 32.559
+        },
+        {
+          "min_packs": 10000,
+          "max_packs": null,
+          "price_per_pack": 29.174
+        }
+      ],
+      "currency": "KES",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 10000,
+      "lead_time_days": 21,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Baothiaz 25",
+        "inn": "Hydrochlorothiazide",
+        "strength": "25 mg",
+        "dosage_form": "Tablet",
+        "units_per_pack": "30",
+        "price_per_pack": "36.540"
+      },
+      "illegible": [],
+      "notes": []
+    },
+    {
+      "line_no": 2,
+      "product_name": "Baoalben 400",
+      "inn": "Albendazole",
+      "strength": "400 mg",
+      "dosage_form": "Chewable tablet",
+      "uom": "tablet",
+      "units_per_pack": 100,
+      "packaging": "Alu-Alu blister",
+      "price_per_pack": 537.0,
+      "price_per_uom": 5.37,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 250,
+          "max_packs": 1249,
+          "price_per_pack": 537.0
+        },
+        {
+          "min_packs": 1250,
+          "max_packs": 4999,
+          "price_per_pack": 484.51
+        },
+        {
+          "min_packs": 5000,
+          "max_packs": null,
+          "price_per_pack": 452.94
+        }
+      ],
+      "currency": "KES",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 50000,
+      "lead_time_days": 75,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Baoalben 400",
+        "inn": "Albendazole",
+        "strength": "400 mg",
+        "dosage_form": "Chewable tablet",
+        "units_per_pack": "100",
+        "price_per_pack": "537.00"
+      },
+      "illegible": [],
+      "notes": []
+    }
+  ],
+  "evidence": {
+    "quotation_ref": "BPL/QT/26/0129",
+    "currency": "KES"
+  },
+  "warnings": []
+}
