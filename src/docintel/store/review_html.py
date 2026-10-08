@@ -47,7 +47,7 @@ STYLE = """
 --btn:#ededed;--btn-fg:#111111;--amber:#e0a84a;--red:#f07167;--green:#5fbf87;color-scheme:dark}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
 .page{max-width:1040px;margin:0 auto;padding:40px 24px 80px}
-.num{font-variant-numeric:tabular-nums}
+.num{font-variant-numeric:tabular-nums}code{font:12px ui-monospace,Consolas,monospace;white-space:nowrap}
 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
 .btn{height:32px;padding:0 14px;border:1px solid var(--line);border-radius:6px;background:var(--bg);font-weight:500}
 .btn:hover{background:var(--hover)}.btn.primary{background:var(--btn);color:var(--btn-fg);border-color:var(--btn)}.btn.primary:hover{opacity:.88}
@@ -56,7 +56,7 @@ button:focus-visible,input:focus-visible,select:focus-visible,.row:focus-visible
 input,select{font:inherit;color:inherit;background:var(--bg);border:1px solid var(--line);border-radius:6px;height:32px;padding:0 10px}
 select{appearance:none;-webkit-appearance:none;padding-right:26px;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:right 13px top 13px,right 9px top 13px;background-size:4px 4px,4px 4px;background-repeat:no-repeat}
 .hd{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:28px}
-h1{font-size:22px;font-weight:600;letter-spacing:-.01em;margin:0 0 4px}.sub{margin:0;color:var(--muted)}
+h1{font-size:22px;font-weight:600;letter-spacing:-.01em;margin:0 0 4px;display:flex;align-items:center;gap:10px}.help{width:22px;height:22px;border-radius:50%;border:1px solid var(--line);color:var(--muted);font-size:13px;font-weight:500;line-height:1;display:inline-flex;align-items:center;justify-content:center}.help:hover,.help.on{color:var(--fg);border-color:var(--fg)}.helpbox{position:absolute;z-index:5;width:340px;max-width:calc(100vw - 32px);padding:16px 18px;background:var(--bg);border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.08);font-size:13px}.helpbox[hidden]{display:none}.helpbox h3{margin:0 0 8px;font-size:13px;font-weight:600}.helpbox h3+p,.helpbox p{margin:0 0 6px;color:var(--muted)}.helpbox p b{color:var(--fg);font-weight:500}.helpbox .sec+.sec{margin-top:14px}.helpbox .ind{display:inline-block;vertical-align:middle;margin:-2px 6px 0 0}.helpbox .ind.none{border:1px solid var(--faint)}.helpbox kbd{font:inherit;font-size:12px;padding:0 5px;border:1px solid var(--line);border-radius:4px;color:var(--fg)}.helpbox .x{position:absolute;top:10px;right:12px;color:var(--faint)}.helpbox .x:hover{color:var(--fg)}.sub{margin:0;color:var(--muted)}
 .hd-r{display:flex;align-items:center;gap:16px;padding-top:6px}
 .prog{display:flex;flex-direction:column;align-items:flex-end;gap:6px;color:var(--muted);font-size:13px}
 .prog i{display:block;width:140px;height:3px;background:var(--line);border-radius:2px;overflow:hidden}.prog i b{display:block;height:100%;background:var(--fg);transition:width .2s}
@@ -170,9 +170,13 @@ function render(){header();const el=$('#list');$('#bar').hidden=S.view==='compar
 function decide(id,d){if(!id)return;if(dec[id]===d)delete dec[id];else dec[id]=d;try{localStorage.setItem(KEY,JSON.stringify(dec))}catch(e){}render()}
 document.addEventListener('keydown',e=>{if(/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)||S.view==='compare')return;const rows=visible();const i=rows.findIndex(r=>r.record_id===S.open);
  if(e.key==='j'||e.key==='ArrowDown'){if(i<rows.length-1){S.open=rows[i+1].record_id;render()}e.preventDefault()}
- else if(e.key==='k'||e.key==='ArrowUp'){if(i>0){S.open=rows[i-1].record_id;render()}e.preventDefault()}
- else if(e.key==='Escape'){S.open=null;render()}
+ else if(e.key==='k'||e.key==='ArrowUp'){S.open=i>0?rows[i-1].record_id:null;render();e.preventDefault()}
+ else if(e.key==='Escape'){if(!$('#helpbox').hidden)help(false);else{S.open=null;render()}}
  else if(S.open&&(e.key==='a'||e.key==='h'||e.key==='r'))decide(S.open,{a:'approve',h:'hold',r:'reject'}[e.key])});
+function help(on){$('#helpbox').hidden=!on;$('#help').classList.toggle('on',on);if(on)try{localStorage.setItem('docintel-help-seen','1')}catch(e){}}
+$('#help').onclick=e=>{e.stopPropagation();help($('#helpbox').hidden)};$('#helpx').onclick=()=>help(false);
+document.addEventListener('click',e=>{if(!$('#helpbox').hidden&&!$('#helpbox').contains(e.target))help(false)});
+try{if(!localStorage.getItem('docintel-help-seen'))help(true)}catch(e){}
 $('#q').oninput=e=>{S.q=e.target.value;render()};$('#doc').onchange=e=>{S.doc=e.target.value;render()};$('#sort').onchange=e=>{S.sort=e.target.value;render()};
 $('#export').onclick=()=>{const payload=JSON.stringify({run:D.run.started,decisions:dec},null,2);const btn=$('#export');const ok=()=>{btn.textContent='Copied';setTimeout(()=>btn.textContent='Export decisions',1600)};
  const show=()=>{$('#out').hidden=false;$('#out').value=payload};if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(payload).then(ok).catch(show);else show()};
@@ -212,7 +216,11 @@ def render_review_html(
     body = f"""<title>Quotation Review</title>
 <style>{STYLE}</style>
 <main class="page">
-<header class="hd"><div><h1>Quotation review</h1><p class="sub" id="sub"></p></div>
+<header class="hd"><div><h1>Quotation review <button id="help" class="help" aria-label="How to read this page">?</button></h1><p class="sub" id="sub"></p>
+<div id="helpbox" class="helpbox" hidden><button class="x" id="helpx" aria-label="Close">&times;</button>
+<div class="sec"><h3>Reading the list</h3><p><span class="ind red"></span><b>Red</b>: an essential value (product, INN, unit price or currency) is unreadable or missing.</p><p><span class="ind amber"></span><b>Amber</b>: worth a look. The value is derived, corrected later in the document, tiered, or not quoted verbatim.</p><p><span class="ind none"></span><b>No mark</b>: every key value is grounded in the source. Nothing to do unless you want to spot-check.</p></div>
+<div class="sec"><h3>Deciding</h3><p><b>Approve</b> sends the line on, <b>Hold</b> keeps it for later, <b>Reject</b> drops it. Decisions stay in this browser until you <b>Export</b> them as JSON for <code>docintel approve --decisions</code>.</p></div>
+<div class="sec"><h3>Keys</h3><p><kbd>J</kbd> <kbd>K</kbd> move and open, <kbd>A</kbd> <kbd>H</kbd> <kbd>R</kbd> decide, <kbd>Esc</kbd> closes.</p></div></div></div>
 <div class="hd-r"><div class="prog"><span id="progtxt"></span><i><b id="progbar"></b></i></div><button id="export" class="btn primary">Export decisions</button></div></header>
 <nav class="tabs" id="tabs"></nav>
 <div class="bar" id="bar"><input id="q" type="search" placeholder="Search products, suppliers or documents"><select id="doc"></select><select id="sort"><option value="confidence">Least certain first</option><option value="document">By document</option><option value="supplier">By supplier</option><option value="price">Highest unit price</option></select></div>
