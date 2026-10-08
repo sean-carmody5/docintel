@@ -163,6 +163,16 @@ def degrade_heavy(im: Image.Image, rng: random.Random) -> Image.Image:
     return ImageOps.grayscale(out).convert("RGB")
 
 
+def degrade_scanner(im: Image.Image, rng: random.Random) -> Image.Image:
+    """A flatbed or sheet-fed scanner: grayscale, faint skew, light noise, a little soft."""
+    g = ImageOps.grayscale(im)
+    g = g.rotate(rng.uniform(-1.2, 1.2), resample=Image.BICUBIC, expand=False, fillcolor=250)
+    g = _noise(g, rng, rng.uniform(4, 8))
+    g = g.filter(ImageFilter.GaussianBlur(rng.uniform(0.3, 0.7)))
+    g = g.point(lambda p: int(max(0, min(255, (p - 20) * 1.12))))
+    return g.convert("RGB")
+
+
 DEGRADATIONS: dict[str, tuple[Degrade, str]] = {
     "fax": (degrade_fax, "png"),
     "photo": (degrade_photo, "jpg"),

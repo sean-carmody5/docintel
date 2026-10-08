@@ -1,7 +1,7 @@
 {
   "generator_version": "1",
   "seed": 2026,
-  "case_count": 51,
+  "case_count": 54,
   "cases": [
     {
       "id": "json_erp_nested_01",
@@ -611,6 +611,68 @@
       "dir": "img_crop_02",
       "truth": "img_crop_02/truth.json",
       "currency": "ZAR"
+    },
+    {
+      "id": "pdf_scanned_image_only_01",
+      "kind": "scanned_pdf",
+      "variant": "image_only",
+      "supplier": "pacifico",
+      "features": [
+        "discount",
+        "quantity_extended"
+      ],
+      "n_lines": 6,
+      "source": "pdf_classic_01",
+      "hostile": null,
+      "expect": "extract",
+      "note": "No text layer at all. Must route to the vision path.",
+      "files": [
+        "scan_pacifico_image_only.pdf"
+      ],
+      "dir": "pdf_scanned_image_only_01",
+      "truth": "pdf_scanned_image_only_01/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "pdf_scanned_garbled_layer_01",
+      "kind": "scanned_pdf",
+      "variant": "garbled_layer",
+      "supplier": "dongnai",
+      "features": [
+        "cold_chain",
+        "mixed_uom"
+      ],
+      "n_lines": 6,
+      "source": "pdf_modern_01",
+      "hostile": null,
+      "expect": "extract_and_flag",
+      "note": "Invisible OCR layer full of substitutions. Trusting it yields confident garbage.",
+      "files": [
+        "scan_dong-nai_garbled_layer.pdf"
+      ],
+      "dir": "pdf_scanned_garbled_layer_01",
+      "truth": "pdf_scanned_garbled_layer_01/truth.json",
+      "currency": "USD"
+    },
+    {
+      "id": "pdf_scanned_garbled_layer_02",
+      "kind": "scanned_pdf",
+      "variant": "garbled_layer",
+      "supplier": "helvetia",
+      "features": [
+        "pack_price_only"
+      ],
+      "n_lines": 7,
+      "source": "pdf_letter_02",
+      "hostile": null,
+      "expect": "extract_and_flag",
+      "note": "",
+      "files": [
+        "scan_helvetia_garbled_layer.pdf"
+      ],
+      "dir": "pdf_scanned_garbled_layer_02",
+      "truth": "pdf_scanned_garbled_layer_02/truth.json",
+      "currency": "CHF"
     },
     {
       "id": "eml_plain_ps_01",
@@ -2939,10 +3001,12 @@
   },
   "duplicate_sets": {
     "pdf_classic_01": [
-      "img_fax_01"
+      "img_fax_01",
+      "pdf_scanned_image_only_01"
     ],
     "pdf_modern_01": [
       "img_photo_01",
+      "pdf_scanned_garbled_layer_01",
       "misnamed_pdf_as_dat"
     ],
     "pdf_classic_02": [
@@ -2959,6 +3023,9 @@
     ],
     "pdf_modern_03": [
       "img_crop_02"
+    ],
+    "pdf_letter_02": [
+      "pdf_scanned_garbled_layer_02"
     ],
     "json_flat_lines_01": [
       "misnamed_json_as_txt"

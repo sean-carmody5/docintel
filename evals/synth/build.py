@@ -21,6 +21,7 @@ from evals.synth.render_json import write_json
 from evals.synth.render_markup import write_html, write_txt, write_xml
 from evals.synth.render_office import write_csv, write_docx, write_xlsx
 from evals.synth.render_pdf import write_pdf
+from evals.synth.render_scan import write_scanned_pdf
 from evals.synth.truth import Quotation, make_quotation
 
 GENERATOR_VERSION = "1"
@@ -138,6 +139,29 @@ CASES: tuple[Case, ...] = (
     Case("img_fax_02", "image", "fax", source="pdf_modern_02"),
     Case("img_photo_02", "image", "photo", source="pdf_classic_03"),
     Case("img_crop_02", "image", "crop", source="pdf_modern_03", expect="partial"),
+    # Scanned PDFs: image-only, or with the garbage OCR layer scanners add
+    Case(
+        "pdf_scanned_image_only_01",
+        "scanned_pdf",
+        "image_only",
+        source="pdf_classic_01",
+        note="No text layer at all. Must route to the vision path.",
+    ),
+    Case(
+        "pdf_scanned_garbled_layer_01",
+        "scanned_pdf",
+        "garbled_layer",
+        source="pdf_modern_01",
+        expect="extract_and_flag",
+        note="Invisible OCR layer full of substitutions. Trusting it yields confident garbage.",
+    ),
+    Case(
+        "pdf_scanned_garbled_layer_02",
+        "scanned_pdf",
+        "garbled_layer",
+        source="pdf_letter_02",
+        expect="extract_and_flag",
+    ),
     # Email
     Case("eml_plain_ps_01", "eml", "plain_numbered_ps", "lowlands", ("correction",)),
     Case("eml_html_table_01", "eml", "html_table_only", "nilevalley"),
@@ -369,6 +393,18 @@ def build(out: Path, seed: int) -> dict[str, Any]:
             target = write_image(
                 src_pdf,
                 case_dir / f"scan_{case.variant}_{_slug(q.supplier.short.lower())}_p1",
+                case.variant,
+                rng,
+            )
+            files.append(target.name)
+
+        elif case.kind == "scanned_pdf":
+            src = built[case.source or ""]
+            src_pdf = out / src["id"] / src["files"][0]
+            q = quotations[src["id"]]
+            target = write_scanned_pdf(
+                src_pdf,
+                case_dir / f"scan_{_slug(q.supplier.short.lower())}_{case.variant}.pdf",
                 case.variant,
                 rng,
             )
