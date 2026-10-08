@@ -173,7 +173,7 @@ function sourcePanel(r){const s=SRC[docId(r)];if(!s)return'';const hasPages=!!(s
  const nav=tab==='page'&&n>1?`<span class="pnav"><button data-pg="-1"${pi===0?' disabled':''}>&lsaquo;</button><span class="num">${pi+1} of ${n}</span><button data-pg="1"${pi===n-1?' disabled':''}>&rsaquo;</button></span>`:'';
  const body=tab==='page'&&hasPages?`<img class="pg" src="${esc(s.pages[pi])}" alt="${esc(s.name)}, page ${pi+1}" data-zoom>`:`<pre class="txt">${highlight(s.text,r.evidence||{})}</pre>`;
  return`<aside class="src"><div class="sh"><span class="sn" title="${esc(s.path)}">${esc(s.name)}</span>${tabs}${nav}</div>${body}</aside>`}
-function detail(r){const d=dec[r.record_id]||'',rs=reasons(r),more=!!S.more[r.record_id],c=r.confidence||{},ev=r.evidence||{},sv=severe(r);
+function detail(r){const d=dec[r.record_id]||'',rs=openIssues(r).map(human),more=!!S.more[r.record_id],c=r.confidence||{},ev=r.evidence||{},sv=severe(r);
  const flagged=flaggedFields(r);
  const fields=D.field_order.filter(f=>f in r&&(r[f]!=null||D.essential.includes(f)||flagged.has(f)||more));
  const cr=corrOf(r);
