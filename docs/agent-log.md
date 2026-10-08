@@ -124,4 +124,6 @@ Haiku declined most of the work: it marked xlsx, docx, html and csv as needing s
 
 **Data residency (Seán's note for the write-up).** Cloud models now; a medical deployment may be bound by confidentiality to open-weight models hosted in the organisation's own environment, or to the cloud provider's inference service under agreement. Recorded in the plan with what the swap costs: a local vision model and open-model structured-output quality are the two unknowns, and the eval set is how a candidate earns the slot.
 
+**Zoom (Seán asked).** The full-size page viewer zooms with the scroll wheel or keys around the cursor, pans by dragging, fits or shows actual size, and steps through pages; previews are rendered at 170 dpi and capped at 2400 px wide so a price cell on a phone photo survives a 2x zoom. Seán's note for the write-up on the open-weight path: the larger Qwen VL models are the first candidates for the scan path because of their OCR-grade reading.
+
 **CLI `--fixtures` (agent).** Any recorded set replays without code changes, and the run metadata names the roots it used.

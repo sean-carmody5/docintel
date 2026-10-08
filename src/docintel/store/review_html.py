@@ -98,7 +98,11 @@ h1{font-size:22px;font-weight:600;letter-spacing:-.01em;margin:0 0 4px}.sub{marg
 .pg{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:6px;cursor:zoom-in;background:#fff}
 .txt{position:relative;margin:0;max-height:560px;overflow:auto;padding:12px 14px;border:1px solid var(--line);border-radius:6px;font:12px/1.55 var(--mono);white-space:pre-wrap;word-break:break-word;color:var(--muted)}
 .txt mark{background:var(--mark);color:var(--fg);border-radius:2px;padding:0 1px}
-.lb{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.72);overflow:auto;cursor:zoom-out;padding:32px}.lb[hidden]{display:none}.lb img{display:block;margin:0 auto;max-width:none;background:#fff;border-radius:4px}
+.lb{position:fixed;inset:0;z-index:20;background:rgba(10,10,10,.97);display:flex;flex-direction:column}.lb[hidden]{display:none}
+.lbbar{display:flex;align-items:center;gap:6px;padding:8px 14px;color:#ddd;font-size:13px}.lbbar .n{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lbbar button{min-width:30px;height:30px;padding:0 10px;border:1px solid #3a3a3a;border-radius:6px;color:#eee;font-size:14px;line-height:1}.lbbar button:hover{background:#2a2a2a}.lbbar button[hidden]{display:none}.lbbar .pct{min-width:48px;text-align:center;font-variant-numeric:tabular-nums}
+.lbview{flex:1;overflow:auto;cursor:grab;position:relative}.lbview.drag{cursor:grabbing}.lbview img{display:block;max-width:none;background:#fff;margin:16px auto;user-select:none;-webkit-user-drag:none}
+.lbhint{position:fixed;bottom:12px;left:0;right:0;text-align:center;color:#888;font-size:12px;pointer-events:none}
 .empty{padding:48px 0;color:var(--muted);text-align:center}
 .cmp h2{font-size:15px;font-weight:600;margin:26px 0 10px}.cmp h2:first-child{margin-top:4px}
 .cmp table{width:100%;border-collapse:collapse;margin-bottom:6px}.cmp th{text-align:left;font-weight:500;color:var(--muted);font-size:13px;padding:8px 10px;border-bottom:1px solid var(--line)}
@@ -198,18 +202,35 @@ function render(){header();const el=$('#list');$('#bar').hidden=S.view==='compar
  el.querySelectorAll('[data-more]').forEach(b=>b.onclick=()=>{S.more[S.open]=!S.more[S.open];render()});
  el.querySelectorAll('[data-stab]').forEach(b=>b.onclick=()=>{S.tab[S.open]=b.dataset.stab;render()});
  el.querySelectorAll('[data-pg]').forEach(b=>b.onclick=()=>{S.page[S.open]=(S.page[S.open]||0)+Number(b.dataset.pg);render()});
- el.querySelectorAll('[data-zoom]').forEach(i=>i.onclick=()=>{$('#lb img').src=i.src;$('#lb').hidden=false});
+ el.querySelectorAll('[data-zoom]').forEach(i=>i.onclick=()=>lbOpen(S.open));
  const pre=el.querySelector('.rec.open .txt');if(pre){const m=pre.querySelector('mark[data-f="product_name"]')||pre.querySelector('mark[data-f="price_per_uom"]')||pre.querySelector('mark[data-f="inn"]')||pre.querySelector('mark');if(m)pre.scrollTop=Math.max(0,m.offsetTop-pre.clientHeight/3)}
  const open=el.querySelector('.rec.open');if(open)open.scrollIntoView({block:'nearest'})}
 function decide(id,d){if(!id)return;if(dec[id]===d)delete dec[id];else dec[id]=d;try{localStorage.setItem(KEY,JSON.stringify(dec))}catch(e){}render()}
 function help(on){$('#helpbox').hidden=!on;$('#help').classList.toggle('on',on);if(on)try{localStorage.setItem('docintel-help-seen','1')}catch(e){}}
 document.addEventListener('keydown',e=>{if(/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;
  if(e.key==='Escape'){if(!$('#lb').hidden)$('#lb').hidden=true;else if(!$('#helpbox').hidden)help(false);else{S.open=null;render()}return}
+ if(!$('#lb').hidden){if(e.key==='+'||e.key==='=')lbZoom(1.25);else if(e.key==='-')lbZoom(0.8);else if(e.key==='0')lbFit();else if(e.key==='ArrowLeft')$('#lbprev').click();else if(e.key==='ArrowRight')$('#lbnext').click();e.preventDefault();return}
  if(S.view==='compare')return;const rows=visible();const i=rows.findIndex(r=>r.record_id===S.open);
  if(e.key==='j'||e.key==='ArrowDown'){if(i<rows.length-1){S.open=rows[i+1].record_id;render()}e.preventDefault()}
  else if(e.key==='k'||e.key==='ArrowUp'){S.open=i>0?rows[i-1].record_id:null;render();e.preventDefault()}
  else if(S.open&&(e.key==='a'||e.key==='h'||e.key==='r'))decide(S.open,{a:'approve',h:'hold',r:'reject'}[e.key])});
-$('#lb').onclick=()=>{$('#lb').hidden=true};
+const LB={id:null,scale:1,fit:true};const lbImg=$('#lbimg'),lbView=$('#lbview');
+function lbSrc(){const r=R.find(x=>x.record_id===LB.id);const s=r&&SRC[docId(r)];return s&&s.pages&&s.pages.length?s:null}
+function lbOpen(id){LB.id=id;if(!lbSrc())return;LB.fit=true;$('#lb').hidden=false;lbShow()}
+function lbShow(){const s=lbSrc();if(!s)return;const n=s.pages.length,pi=Math.min(S.page[LB.id]||0,n-1);$('#lbname').textContent=s.name;$('#lbpage').textContent=n>1?`${pi+1} of ${n}`:'';$('#lbprev').hidden=$('#lbnext').hidden=n<2;$('#lbprev').disabled=pi===0;$('#lbnext').disabled=pi===n-1;
+ lbImg.onload=()=>{if(LB.fit)lbFit();else lbApply()};lbImg.src=s.pages[pi]}
+function lbFit(){LB.fit=true;LB.scale=Math.min(1,(lbView.clientWidth-32)/lbImg.naturalWidth);lbApply()}
+function lbApply(){lbImg.style.width=Math.round(lbImg.naturalWidth*LB.scale)+'px';$('#lbpct').textContent=Math.round(LB.scale*100)+'%'}
+function lbZoom(factor,cx,cy){const old=LB.scale;LB.scale=Math.min(6,Math.max(0.1,old*factor));LB.fit=false;const rect=lbView.getBoundingClientRect();const ax=cx==null?rect.width/2:cx-rect.left,ay=cy==null?rect.height/2:cy-rect.top;const x=ax+lbView.scrollLeft,y=ay+lbView.scrollTop;const k=LB.scale/old;lbApply();lbView.scrollLeft=x*k-ax;lbView.scrollTop=y*k-ay}
+lbView.addEventListener('wheel',e=>{e.preventDefault();lbZoom(e.deltaY<0?1.15:1/1.15,e.clientX,e.clientY)},{passive:false});
+lbView.addEventListener('dblclick',e=>{if(LB.scale<1)lbZoom(1/LB.scale,e.clientX,e.clientY);else lbFit()});
+let drag=null;lbView.addEventListener('mousedown',e=>{if(e.button)return;drag={x:e.clientX,y:e.clientY,l:lbView.scrollLeft,t:lbView.scrollTop};lbView.classList.add('drag');e.preventDefault()});
+window.addEventListener('mousemove',e=>{if(!drag)return;lbView.scrollLeft=drag.l-(e.clientX-drag.x);lbView.scrollTop=drag.t-(e.clientY-drag.y)});
+window.addEventListener('mouseup',()=>{drag=null;lbView.classList.remove('drag')});
+document.querySelectorAll('[data-lz]').forEach(b=>b.onclick=()=>lbZoom(b.dataset.lz==='1'?1.25:0.8));
+$('#lbfit').onclick=lbFit;$('#lb100').onclick=()=>{LB.fit=false;LB.scale=1;lbApply()};$('#lbx').onclick=()=>{$('#lb').hidden=true};
+$('#lbprev').onclick=()=>{S.page[LB.id]=Math.max(0,(S.page[LB.id]||0)-1);lbShow();render()};$('#lbnext').onclick=()=>{S.page[LB.id]=(S.page[LB.id]||0)+1;lbShow();render()};
+window.addEventListener('resize',()=>{if(!$('#lb').hidden&&LB.fit)lbFit()});
 $('#help').onclick=e=>{e.stopPropagation();help($('#helpbox').hidden)};$('#helpx').onclick=()=>help(false);
 document.addEventListener('click',e=>{if(!$('#helpbox').hidden&&!$('#helpbox').contains(e.target))help(false)});
 try{if(!localStorage.getItem('docintel-help-seen'))help(true)}catch(e){}
@@ -225,7 +246,7 @@ HELP = """<div id="helpbox" class="helpbox" hidden><button class="x" id="helpx" 
 <p><span class="ind red"></span><b>Red.</b> This line cannot be used yet. Something you need to price it (the product, the INN, the unit price or the currency) could not be read from the document, or was not in it. Open it, look at the source, then reject or hold it.</p>
 <p><span class="ind amber"></span><b>Amber.</b> The values are there, but one of them was reached in a way that deserves a human look. The usual reasons: the unit price was calculated from the pack price; the document corrected a value further down; the price depends on quantity and the lowest tier is shown; a value does not appear word for word in the document, so it could not be confirmed automatically.</p>
 <p><span class="ind none"></span><b>No mark.</b> Every key value appears word for word in the document and passed the checks. Approve without opening, or spot-check.</p></div>
-<div class="sec"><h3>Keys</h3><table><tr><td><kbd>J</kbd></td><td>open the next line</td></tr><tr><td><kbd>K</kbd></td><td>open the previous line, or close the one at the top</td></tr><tr><td><kbd>A</kbd> <kbd>H</kbd> <kbd>R</kbd></td><td>approve, hold or reject the open line</td></tr><tr><td><kbd>Esc</kbd></td><td>close the open line, the zoomed page, or this help</td></tr></table></div>
+<div class="sec"><h3>Keys</h3><table><tr><td><kbd>J</kbd></td><td>open the next line</td></tr><tr><td><kbd>K</kbd></td><td>open the previous line, or close the one at the top</td></tr><tr><td><kbd>A</kbd> <kbd>H</kbd> <kbd>R</kbd></td><td>approve, hold or reject the open line</td></tr><tr><td><kbd>Esc</kbd></td><td>close the open line, the zoomed page, or this help</td></tr><tr><td><kbd>+</kbd> <kbd>&minus;</kbd> <kbd>0</kbd></td><td>zoom the page in, out, or back to fit (the scroll wheel zooms too)</td></tr></table></div>
 <div class="sec"><h3>Decisions</h3><p><b>Approve</b> sends the line on, <b>Hold</b> keeps it for later, <b>Reject</b> drops it. Decisions stay in this browser until you press <b>Export decisions</b>, which copies them as JSON for <code>docintel approve --decisions</code>.</p></div></div>"""
 
 
@@ -269,7 +290,7 @@ def render_review_html(
 <section id="list"></section>
 <textarea id="out" class="out" hidden></textarea>
 </main>
-<div id="lb" class="lb" hidden><img alt="Page, full size"></div>
+<div id="lb" class="lb" hidden><div class="lbbar"><span class="n" id="lbname"></span><button id="lbprev" title="Previous page">&lsaquo;</button><span id="lbpage"></span><button id="lbnext" title="Next page">&rsaquo;</button><span style="width:10px"></span><button data-lz="-1" title="Zoom out">&minus;</button><span class="pct" id="lbpct"></span><button data-lz="1" title="Zoom in">+</button><button id="lbfit" title="Fit to window">Fit</button><button id="lb100" title="Actual size">100%</button><button id="lbx" title="Close">&times;</button></div><div class="lbview" id="lbview"><img id="lbimg" alt="Page, full size"></div><div class="lbhint">Scroll to zoom, drag to pan, double-click to toggle. Esc closes.</div></div>
 <script>window.__DATA__={payload};</script>
 <script>{SCRIPT}</script>
 """

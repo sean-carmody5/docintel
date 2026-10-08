@@ -19,10 +19,10 @@ from docintel.documents import Document
 
 log = logging.getLogger(__name__)
 
-MAX_WIDTH = 1600
-JPEG_QUALITY = 72
+MAX_WIDTH = 2400  # enough to zoom into a price cell on a phone photo
+JPEG_QUALITY = 76
 MAX_TEXT = 200_000
-PREVIEW_DPI = 110
+PREVIEW_DPI = 170  # A4 at about 1400 px wide
 
 
 def save_source(doc: Document, out_dir: Path) -> dict[str, Any]:
