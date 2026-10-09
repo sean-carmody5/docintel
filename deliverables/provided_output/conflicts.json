@@ -1,0 +1,133 @@
+{
+  "conflicts": [
+    {
+      "conflict_id": "conflict-001",
+      "inn_normalised": "amoxicillin+clavulanic acid",
+      "strength": "500 mg/125 mg",
+      "form": "tablet",
+      "record_ids": [
+        "d987fde6989e14ea:1",
+        "037c65509b9d2e1f:1"
+      ],
+      "suppliers": [
+        "Mekong Pharma JSC",
+        "Zenith Pharma Laboratories Ltd."
+      ],
+      "currencies": [
+        "USD",
+        "USD"
+      ],
+      "uoms": [
+        "tablet",
+        "tablet"
+      ],
+      "units_per_pack": [
+        20,
+        14
+      ],
+      "unit_prices": [
+        0.0715,
+        0.0642
+      ],
+      "differs_in": [
+        "units_per_pack",
+        "price_per_uom",
+        "price_per_pack"
+      ],
+      "comparable": true,
+      "note": "same currency and unit; unit prices differ by 11%"
+    },
+    {
+      "conflict_id": "conflict-002",
+      "inn_normalised": "dolutegravir+lamivudine+tenofovir",
+      "strength": "300 mg/300 mg/50 mg",
+      "form": "tablet",
+      "record_ids": [
+        "d987fde6989e14ea:4",
+        "6dbf066a71947643:1"
+      ],
+      "suppliers": [
+        "Mekong Pharma JSC",
+        "Sanova Laboratories Pvt. Ltd."
+      ],
+      "currencies": [
+        "USD",
+        "EUR"
+      ],
+      "uoms": [
+        "tablet",
+        "tablet"
+      ],
+      "units_per_pack": [
+        30,
+        90
+      ],
+      "unit_prices": [
+        0.0428,
+        0.035
+      ],
+      "differs_in": [
+        "currency",
+        "units_per_pack",
+        "price_per_uom",
+        "price_per_pack"
+      ],
+      "comparable": false,
+      "note": "not directly comparable: different currencies, no FX applied"
+    },
+    {
+      "conflict_id": "conflict-003",
+      "inn_normalised": "paracetamol",
+      "strength": "500 mg",
+      "form": "tablet",
+      "record_ids": [
+        "d8c71b3365a6d381:1",
+        "bcba6cb66af2d7c8:1",
+        "59ff62da1c113cfb:1"
+      ],
+      "suppliers": [
+        "FARMACEUTICA ANDINA S.A.S.",
+        "Ubuntu Health Manufacturing (Pty) Ltd"
+      ],
+      "currencies": [
+        "USD",
+        "ZAR"
+      ],
+      "uoms": [
+        "tablet",
+        "tablet"
+      ],
+      "units_per_pack": [
+        20,
+        1000
+      ],
+      "unit_prices": [
+        0.0091,
+        0.0415
+      ],
+      "differs_in": [
+        "currency",
+        "units_per_pack",
+        "price_per_uom",
+        "price_per_pack"
+      ],
+      "comparable": false,
+      "note": "not directly comparable: different currencies, no FX applied"
+    }
+  ],
+  "duplicates": [
+    {
+      "duplicate_id": "dup-001",
+      "supplier": "FARMACEUTICA ANDINA S.A.S.",
+      "quotation_ref": "FA-COT-2026-118",
+      "documents": [
+        "farmaceutica_andina_proforma_FA-COT-2026-118.pdf",
+        "scan_02_lowres_fax_andina_p1.png",
+        "scan_03_glare_partial_andina_p1.jpg"
+      ],
+      "matched_lines": 14,
+      "agreements": 85,
+      "disagreements": []
+    }
+  ]
+}

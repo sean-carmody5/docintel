@@ -17,6 +17,10 @@ flowchart LR
   H --> A[("<b>approved.csv</b>")]
 ```
 
+## The output table
+
+[deliverables/provided_output/](deliverables/provided_output/) holds the result of running the eight provided documents through Sonnet 5.5: `records.csv` (one row per quotation line with values, evidence quotes, per-field confidence with reasons, flags and source references), `review_report.md`, `conflicts.json`, and `review.html` with its page previews, which opens from disk.
+
 ## Try it
 
 ### Mock run, no key
