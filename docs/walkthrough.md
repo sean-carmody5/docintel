@@ -100,6 +100,7 @@ The file is small and readable. Each key is a record id, the document's content 
 | File | What it is for |
 |---|---|
 | `approved.csv` | The 31 lines a system of record should take. Same columns as `records.csv`. |
+| `final.csv` | Every line with its final status: approved, rejected, or still pending (held or undecided), and any corrected values. Rejected lines are kept here and in the audit, never in `approved.csv`. |
 | `records.csv` | All 37 lines with values, evidence quotes, per-field confidence and flags. The audit trail. |
 | `review.html` | The page, with the decisions still in the browser that made them. |
 | `review_report.md` | The same table as a report: what to look at first, then everything. |

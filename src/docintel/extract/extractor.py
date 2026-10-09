@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import json
 import logging
+import warnings
 from pathlib import Path
 from typing import Any, Protocol
 
@@ -56,9 +57,11 @@ class ModelExtractor:
 
     name = "model"
 
-    def __init__(self, llm: Any, *, max_retries: int = 2) -> None:
+    def __init__(self, llm: Any, *, max_retries: int = 2, method: str | None = None) -> None:
         self.llm = llm
-        self.structured = llm.with_structured_output(ExtractionResult).with_retry(
+        warnings.filterwarnings("ignore", message=".*structured output via forced tool calling.*")
+        kwargs: dict[str, Any] = {"method": method} if method else {}
+        self.structured = llm.with_structured_output(ExtractionResult, **kwargs).with_retry(
             stop_after_attempt=max_retries + 1
         )
         self.last_usage: dict[str, Any] | None = None  # tokens of the most recent call

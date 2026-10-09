@@ -15,6 +15,7 @@ import json
 import logging
 import operator
 import sqlite3
+import sys
 import threading
 from datetime import UTC, datetime
 from pathlib import Path
@@ -104,6 +105,9 @@ class Pipeline:
     def _default_extractor(self) -> Extractor:
         if self.settings.extractor == "model":
             llm = build_llm(self.settings.model, **self.settings.model_kwargs())
+            # Tool calling is the structured-output path. Anthropic's strict JSON-schema mode
+            # rejects a schema this size ("compiled grammar is too large"); tool calling warns
+            # on the newest models but has produced a valid result on every run, with retries.
             return ModelExtractor(llm)
         return FixtureExtractor(self.settings.fixtures)
 
@@ -363,6 +367,7 @@ class Pipeline:
         rejected = sum(1 for r in records if r.status == "rejected")
         approved_csv = self.settings.output_dir / "approved.csv"
         write_csv(ready, approved_csv)
+        write_csv(records, self.settings.output_dir / "final.csv")  # every line, final status
         log.info(
             "promote: %d lines approved, %d rejected, %d held, %d corrected",
             len(ready),
@@ -408,6 +413,13 @@ def sqlite_checkpointer(path: Path) -> SqliteSaver:
     return SqliteSaver(conn)
 
 
+def _progress(done: int, total: int) -> None:
+    if sys.stderr.isatty():
+        print(f"\r  documents {done}/{total}", end="", file=sys.stderr, flush=True)
+    else:
+        log.info("documents %d/%d", done, total)
+
+
 def run(
     pipeline: Pipeline, input_dir: Path, *, thread_id: str, checkpointer: Any | None = None
 ) -> dict[str, Any]:
@@ -417,7 +429,18 @@ def run(
         "configurable": {"thread_id": thread_id},
         "max_concurrency": pipeline.settings.max_concurrency,
     }
-    graph.invoke({"input_dir": str(input_dir), "thread_id": thread_id}, config=config)
+    total = done = 0
+    for update in graph.stream(
+        {"input_dir": str(input_dir), "thread_id": thread_id}, config=config, stream_mode="updates"
+    ):
+        for node, value in update.items():
+            if node == "discover" and isinstance(value, dict):
+                total = len(value.get("paths", []))
+            elif node == "process_document":
+                done += 1
+                _progress(done, total)
+    if done:
+        print(file=sys.stderr)
     state = graph.get_state(config)
     return {"values": state.values, "interrupted": bool(state.next), "next": list(state.next)}
 

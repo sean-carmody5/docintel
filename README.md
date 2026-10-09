@@ -72,7 +72,7 @@ Click any value to correct it from the source; the correction travels with the d
 | `review_report.md` | The same, as a report that leads with what to look at first. |
 | `conflicts.json` | Products quoted by more than one supplier, and duplicate copies of a quotation cross-checked. |
 | `review.sqlite` | Records, conflicts and duplicates, queryable. |
-| `approved.csv`, `decisions_applied.json` | After `approve`: the lines that go on, and every decision. |
+| `approved.csv`, `final.csv`, `decisions_applied.json` | After `approve`: the lines that go on; every line with its final status (rejected lines stay here, held ones stay pending); every decision and correction. |
 
 ## How it knows what it is unsure of
 

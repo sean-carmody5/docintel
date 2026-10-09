@@ -151,6 +151,7 @@ def cmd_approve(args: argparse.Namespace) -> int:
     )
     print(f"approved:  {state.get('promoted', 0)} lines -> {state.get('approved_csv', '')}")
     print(f"rejected:  {state.get('rejected', 0)}")
+    print(f"final:     every line with its status -> {settings.output_dir / 'final.csv'}")
     if state.get("corrected"):
         print(f"corrected: {state['corrected']} lines had values set by the reviewer")
     print(f"held:      {state.get('held', 0)} (no decision yet; run approve again with more)")
@@ -230,7 +231,7 @@ def main(argv: list[str] | None = None) -> int:
         format="%(levelname)s %(name)s: %(message)s",
         stream=sys.stderr,
     )
-    for noisy in ("httpx", "httpcore", "urllib3", "RapidOCR"):
+    for noisy in ("httpx", "httpx2", "httpcore", "urllib3", "anthropic", "RapidOCR"):
         logging.getLogger(noisy).setLevel(logging.WARNING)
     return int(args.fn(args))
 
