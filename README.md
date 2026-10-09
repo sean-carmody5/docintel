@@ -125,7 +125,7 @@ src/docintel/      ingest/ extract/ verify/ reconcile.py store/ graph.py cli.py
 data/              provided/ synthetic/ (truth included) public/ (fetched, licences listed)
 evals/             synth/ generator, score.py, public/ fetcher, ui/ page check, reports/
 tests/             offline, with recorded fixtures
-docs/              brief, walkthrough, agent log, write-up
+docs/              brief, walkthrough, how it works, schema, agent log
 PLAN.md            the design as built, and what was planned but not
 ```
 
