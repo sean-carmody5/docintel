@@ -15,7 +15,7 @@ Take-home for Axmed: a document intelligence pipeline that extracts quotation li
 - Python 3.12, PEP 8, type hints, minimal. Basic meaningful error handling, no over-engineering.
 - Plain Python for loaders, validation, reconciliation and writing. LangGraph only for orchestration. LangChain only for model calls.
 - Never branch on filenames, supplier names or known field names. New formats go in loaders, nothing else changes.
-- Tests run offline by default using recorded fixtures and a fake chat model. Real model calls only when `PIPELINE_LIVE=1`.
+- Tests run offline, replaying recorded extractions. Real model calls only with `--extractor model` and a key in `.env`; every live run is recorded under the output's `extractions/` so it replays for free.
 - Pin exact dependency versions.
 - Secrets live in `.env`, which is git-ignored. Never commit keys.
 

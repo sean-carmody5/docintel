@@ -159,7 +159,7 @@ The build uses cloud models. A medical deployment may be bound by patient confid
 
 ## Engineering standard
 
-uv with a locked environment; ruff for lint and format; mypy strict on `src/`; 411 offline tests on recorded fixtures; GitHub Actions on every push running lint, types, a rebuild of the synthetic set compared against the commit, and the tests. A Playwright script drives every control on the review page. Trunk with small commits, each explaining why; never squashed.
+uv with a locked environment; ruff for lint and format; mypy strict on `src/`; 421 offline tests on recorded fixtures; GitHub Actions on every push running lint, types, a rebuild of the synthetic set compared against the commit, and the tests. A Playwright script drives every control on the review page. Trunk with small commits, each explaining why; never squashed.
 
 ## Assumptions
 
@@ -179,7 +179,7 @@ uv with a locked environment; ruff for lint and format; mypy strict on `src/`; 4
 ## Planned, not built, and why
 
 - **Render-to-image fallback for unknown formats.** Everything the spec names has a loader or converts through markitdown; a LibreOffice dependency was not worth it for the long tail.
-- **Second extraction pass from a different model family on low-confidence prices.** The setting exists; the pass does not. It cannot be verified without live calls, and whether it earns its cost (one extra call per flagged page) is a question the first live run's calibration answers. Until then the OCR agreement signal covers the scan case it was meant for.
-- **Calibration plot** in the write-up. The scorer measures wrong-at-high-confidence; the plot waits for live runs.
-- **Model comparison with cost per document.** Blocked on the same key. The blind agent sets are the interim comparison. In practice the comparison would cover the other closed-source families too (OpenAI, Google), not only Claude's, since the provider is a config string (Seán's note for the write-up).
+- **Second extraction pass from a different model family on low-confidence prices.** The setting exists; the pass does not. The live runs showed what it would buy: the only silent errors left are two readers agreeing on a wrong digit, which a third reading from another family is the one way to catch. One extra call per flagged page; the next step.
+- **Calibration plot.** Not drawn. The scorer's wrong-at-high-confidence and flagged-wrong counts per run stand in, and they are in every report under `evals/reports`.
+- **Comparison beyond Claude.** Sonnet 5.5, Haiku 4.5 and Opus 5.5 are compared with measured cost per document. The other closed-source families (OpenAI, Google) were not run; the provider is a config string, so the same replay would cover them (Seán's note for the write-up).
 - **MCP server over the review table.** A stretch item; the page and the SQLite file cover the need.
