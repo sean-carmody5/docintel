@@ -130,5 +130,6 @@ PLAN.md            the design as built, and what was planned but not
 - [docs/brief.md](docs/brief.md): the task as set.
 - [docs/walkthrough.md](docs/walkthrough.md): a run from start to finish, as the user sees it.
 - [docs/how-it-works.md](docs/how-it-works.md): the mechanism, stage by stage, in two pages.
+- [docs/schema.md](docs/schema.md): the schema, field by field, and why it is wider than the suggested five.
 - [PLAN.md](PLAN.md): the design and why.
 - [docs/agent-log.md](docs/agent-log.md): what was decided, by whom, session by session.
