@@ -1,0 +1,122 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Helvetia Generics AG",
+    "country": "CH",
+    "contact_name": null,
+    "contact_email": null
+  },
+  "quotation_ref": "HG-26-00110",
+  "buyer_reference": "AXMED-RFQ-2026-0255",
+  "document_date": "2026-07-22",
+  "valid_until": "2026-08-21",
+  "currency": "CHF",
+  "incoterm": "FCA",
+  "named_place": "Basel",
+  "payment_terms": "30 days net",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Sartex 50",
+      "inn": "Losartan",
+      "strength": "50 mg",
+      "dosage_form": "Film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 28,
+      "packaging": "PVC/Alu blister",
+      "price_per_pack": 0.2688,
+      "price_per_uom": 0.0096,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "CHF",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 1000,
+      "lead_time_days": 21,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Sartex 50",
+        "inn": "Losartan",
+        "strength": "50 mg",
+        "dosage_form": "Film-coated tablet",
+        "packaging": "28 x tablet, PVC/Alu blister",
+        "units_per_pack": "28 x tablet",
+        "uom": "28 x tablet",
+        "currency": "CHF 0.2688 per pack",
+        "price_per_pack": "CHF 0.2688 per pack",
+        "moq_packs": "1,000 packs",
+        "lead_time_days": "21 days",
+        "line_no": "ITM-001"
+      },
+      "illegible": [],
+      "notes": [
+        "price_per_uom derived: 0.2688 / 28 = 0.0096 CHF per tablet.",
+        "Pack price of CHF 0.2688 for 28 tablets is very low; it could be a per-tablet price mislabelled as per pack. Check with the supplier.",
+        "Orders below MOQ attract a 12% surcharge on the unit price."
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Helvmoxsusp 250",
+      "inn": "Amoxicillin",
+      "strength": "250 mg / 5 mL",
+      "dosage_form": "Oral suspension",
+      "uom": "bottle",
+      "units_per_pack": 12,
+      "packaging": "Amber glass bottle",
+      "price_per_pack": 3.962,
+      "price_per_uom": 0.330167,
+      "price_basis": "derived",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "CHF",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 10000,
+      "lead_time_days": 42,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Helvmoxsusp 250",
+        "inn": "Amoxicillin",
+        "strength": "250 mg / 5 mL",
+        "dosage_form": "Oral suspension",
+        "packaging": "12 x bottle, Amber glass bottle",
+        "units_per_pack": "12 x bottle",
+        "uom": "12 x bottle",
+        "currency": "CHF 3.962 per pack",
+        "price_per_pack": "CHF 3.962 per pack",
+        "moq_packs": "10,000 packs",
+        "lead_time_days": "42 days",
+        "line_no": "ITM-002"
+      },
+      "illegible": [],
+      "notes": [
+        "price_per_uom derived: 3.962 / 12 = 0.330167 CHF per bottle (rounded).",
+        "CHF 0.33 per bottle of suspension is low; the 'pack price' may actually be per bottle. Check with the supplier.",
+        "Bottle fill volume not stated.",
+        "Orders below MOQ attract a 12% surcharge on the unit price."
+      ]
+    }
+  ],
+  "evidence": {
+    "supplier": "\"key\": \"Supplier\", \"value\": \"Helvetia Generics AG\"; \"key\": \"Supplier country\", \"value\": \"CH\"",
+    "quotation_ref": "\"key\": \"Reference\", \"value\": \"HG-26-00110\"",
+    "buyer_reference": "\"key\": \"Buyer reference\", \"value\": \"AXMED-RFQ-2026-0255\"",
+    "document_date": "\"key\": \"Date\", \"value\": \"22 July 2026\"",
+    "valid_until": "\"key\": \"Valid until\", \"value\": \"21 August 2026\"",
+    "currency": "\"key\": \"Currency\", \"value\": \"CHF\"",
+    "incoterm": "FCA Basel",
+    "named_place": "FCA Basel",
+    "payment_terms": "30 days net",
+    "document_type": "\"entity\": \"Quotation\""
+  },
+  "warnings": [
+    "Both lines state only a pack price, so per-unit prices are derived. Both implied unit prices (CHF 0.0096 per tablet, CHF 0.33 per bottle) are unusually low. The stated 'per pack' prices may really be per-unit prices. Check before comparing.",
+    "The CRM item IDs (ITM-001, ITM-002) were mapped to line_no 1 and 2.",
+    "Notes: orders below MOQ attract a 12% surcharge; prices exclude destination duties, VAT and local regulatory fees; the quotation is an offer to treat, not a binding contract."
+  ]
+}

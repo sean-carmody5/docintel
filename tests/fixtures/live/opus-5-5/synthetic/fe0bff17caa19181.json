@@ -1,0 +1,138 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Highveld Generics (Pty) Ltd.",
+    "country": "ZA",
+    "contact_name": "Thabo Mokoena",
+    "contact_email": "export@highveldgenerics.co.za"
+  },
+  "quotation_ref": "HG-Q26-0119",
+  "buyer_reference": "AXMED-RFQ-2026-0330",
+  "document_date": "2026-09-08",
+  "valid_until": "2026-10-23",
+  "currency": "ZAR",
+  "incoterm": null,
+  "named_place": null,
+  "payment_terms": null,
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": null,
+      "inn": null,
+      "strength": null,
+      "dosage_form": null,
+      "uom": null,
+      "units_per_pack": null,
+      "packaging": null,
+      "price_per_pack": null,
+      "price_per_uom": null,
+      "price_basis": "unknown",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": null,
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "line_no": "| 1 | Not PQ; national registrations only | No - waiver requested | 36 months | Below 30 C, dry |"
+      },
+      "illegible": [
+        "product_name",
+        "inn",
+        "strength",
+        "dosage_form",
+        "packaging",
+        "units_per_pack",
+        "uom",
+        "price_per_uom",
+        "price_per_pack",
+        "quantity",
+        "lead_time_days",
+        "moq_packs",
+        "currency"
+      ],
+      "notes": [
+        "The price schedule is hidden by glare. Only the regulatory table shows this item: 'Not PQ; national registrations only', 'No - waiver requested' (not registered at destination), shelf life 36 months, storage below 30 C, dry.",
+        "The product identity and price could not be read."
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Lidoex",
+      "inn": null,
+      "strength": "2%",
+      "dosage_form": null,
+      "uom": null,
+      "units_per_pack": null,
+      "packaging": null,
+      "price_per_pack": null,
+      "price_per_uom": 8.655,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": {
+        "field": "price_per_uom",
+        "old": 8.403,
+        "new": 8.655,
+        "reason": "Terms and conditions item 5: \"Correction to item 02 (Lidoex 2%): the unit price should read ZAR 8.655, not ZAR 8.403 as printed in the schedule above.\""
+      },
+      "evidence": {
+        "line_no": "Correction to item 02",
+        "product_name": "Lidoex 2%",
+        "strength": "Lidoex 2%",
+        "currency": "ZAR 8.655",
+        "price_per_uom": "the unit price should read ZAR 8.655, not ZAR 8.403"
+      },
+      "illegible": [
+        "inn",
+        "dosage_form",
+        "packaging",
+        "units_per_pack",
+        "uom",
+        "price_per_pack",
+        "quantity",
+        "lead_time_days",
+        "moq_packs"
+      ],
+      "notes": [
+        "The price schedule is hidden by glare. The name, strength and corrected unit price come only from the correction note in T&C item 5.",
+        "The INN is not stated anywhere legible and was not inferred from the brand name.",
+        "The strength '2%' may be incomplete because the volume or pack size is not visible.",
+        "The unit of measure is unknown, so it is not clear what the ZAR 8.655 unit price is for.",
+        "Regulatory table: not PQ, registered at destination 'Yes', shelf life 36 months, storage below 30 C, dry."
+      ]
+    }
+  ],
+  "evidence": {
+    "quotation_ref": "[illegible] HG-Q26-0119",
+    "buyer_reference": "Request for quotation AXMED-RFQ-2026-0330 issued by Axmed Ltd",
+    "document_date": "[illegible] 08 September 2026",
+    "valid_until": "[illegible] 23 October 2026",
+    "currency": "**Currency** | ZAR",
+    "supplier": "Highveld Generics (Pty) Ltd.",
+    "supplier.country": "Isando, Kempton Park 1600, Gauteng, South Africa",
+    "supplier.contact_name": "Thabo Mokoena, Key Account Manager",
+    "supplier.contact_email": "export@highveldgenerics.co.za"
+  },
+  "warnings": [
+    "A glare band hides the whole price schedule table and most of its footnote. Only fragments can be read (\"22 [illegible]/pack [illegible] 75\"), and these were not used. The line details are mostly missing.",
+    "The labels for the quotation reference, date and validity are faded. These values were assigned based on the order of the fields and the scan note. The document date matches the signature date (08 September 2026), but valid_until (23 October 2026) depends on the label being 'validity'.",
+    "The Incoterms version and value are illegible and were left null.",
+    "Payment terms are not stated. T&C 2 mentions a letter of credit for lead times.",
+    "There are only two lines, identified from the regulatory table. Line 1's product, strength and price are unknown.",
+    "Line 2's unit price was taken from the correction in T&C 5 (ZAR 8.655, which replaces 8.403). The unit of measure and pack size are unknown.",
+    "Prices exclude 15% VAT where applicable.",
+    "Line 1 is not registered at the destination (waiver requested).",
+    "The page number is covered by a finger. The document says page 1 of 1."
+  ]
+}

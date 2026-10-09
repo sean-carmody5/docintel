@@ -1,0 +1,121 @@
+{
+  "document_type": "quotation",
+  "contains_prices": true,
+  "supplier": null,
+  "quotation_ref": null,
+  "buyer_reference": null,
+  "document_date": null,
+  "valid_until": null,
+  "currency": "ZAR",
+  "incoterm": null,
+  "named_place": null,
+  "payment_terms": "30 days from state[illegible]",
+  "lines": [
+    {
+      "line_no": 1,
+      "product_name": "Dexex 4",
+      "inn": "Dexamethasone sodium phosphate",
+      "strength": "4 mg/mL",
+      "dosage_form": "Solution for injection",
+      "uom": "ampoule",
+      "units_per_pack": 25,
+      "packaging": "Amber glass ampoule",
+      "price_per_pack": 95.7,
+      "price_per_uom": 3.828,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": null,
+      "evidence": {
+        "line_no": "1",
+        "product_name": "**Dexex 4**",
+        "inn": "Dexamethasone sodium phosphate",
+        "strength": "4 mg/mL Solution for injection",
+        "dosage_form": "4 mg/mL Solution for injection",
+        "packaging": "Amber glass ampoule 25 ampoules/pack",
+        "units_per_pack": "25 ampoules/pack",
+        "uom": "ampoule",
+        "currency": "Unit price ZAR / UOM",
+        "price_per_uom": "3.828",
+        "price_per_pack": "Pack price is unit price multiplied by units per pack"
+      },
+      "illegible": [
+        "cold_chain"
+      ],
+      "notes": [
+        "price_per_pack computed as unit price x 25 per the document's stated rule; any printed pack price column is cut off.",
+        "Storage column truncated ('Belo[illegible]'), so storage/cold-chain status is unknown.",
+        "Not WHO PQ; not registered at destination - waiver requested."
+      ]
+    },
+    {
+      "line_no": 2,
+      "product_name": "Lidoex 2%",
+      "inn": "Lignocaine",
+      "strength": "2%, 20 mL",
+      "dosage_form": "Solution for injection",
+      "uom": "vial",
+      "units_per_pack": 25,
+      "packaging": "Glass vial, carton",
+      "price_per_pack": 216.375,
+      "price_per_uom": 8.655,
+      "price_basis": "stated",
+      "discount_pct": null,
+      "price_tiers": null,
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": null,
+      "lead_time_days": null,
+      "cold_chain": null,
+      "superseded": {
+        "field": "price_per_uom",
+        "old": 8.403,
+        "new": 8.655,
+        "reason": "Terms and conditions item 5: \"Correction to item 02 (Lidoex 2%): the unit price should read ZAR 8.655, not ZAR 8.403 as printed in the schedule ab[illegible] month; apologies for the error.\""
+      },
+      "evidence": {
+        "line_no": "2",
+        "product_name": "**Lidoex 2%**",
+        "inn": "Lignocaine",
+        "strength": "2%, 20 mL Solution for injection",
+        "dosage_form": "2%, 20 mL Solution for injection",
+        "packaging": "Glass vial, carton 25 vials/pack",
+        "units_per_pack": "25 vials/pack",
+        "uom": "vial",
+        "currency": "Unit price ZAR / UOM",
+        "price_per_uom": "the unit price should read ZAR 8.655, not ZAR 8.403",
+        "price_per_pack": "Pack price is unit price multiplied by units per pack"
+      },
+      "illegible": [
+        "cold_chain"
+      ],
+      "notes": [
+        "Unit price corrected from 8.403 to 8.655 in term 5. The end of that term is cut off ('ab[illegible] month'), so it may include a timing condition (e.g. an effective date).",
+        "price_per_pack computed as corrected unit price x 25; any printed pack price column is cut off.",
+        "Storage column truncated ('Belo[illegible]'), so storage/cold-chain status is unknown.",
+        "Not WHO PQ; registered at destination: Yes."
+      ]
+    }
+  ],
+  "evidence": {
+    "currency": "Unit price ZAR / UOM",
+    "payment_terms": "**Payment terms** 30 days from state[illegible]",
+    "document_type": "## Quoted line items"
+  },
+  "warnings": [
+    "Image is cropped: the top of the page is missing, so there is no supplier name, quotation ref, buyer ref, date, validity, incoterm or named place. The file name says 'highveld', but the supplier is not named in the text, so it is left null.",
+    "The right edge is cut off: payment terms are truncated ('30 days from state[illegible]'), and further columns (e.g. pack price, lead time, MOQ) may be missing.",
+    "The storage column is truncated ('Belo[illegible]'), so cold-chain status cannot be determined for either line.",
+    "Line 2's price was corrected in term 5 from ZAR 8.403 to 8.655, but the end of the correction is cut off ('ab[illegible] month'). It may say the correction only applies from a certain month. Please confirm with the supplier.",
+    "Prices exclude 15% VAT.",
+    "Pack prices were computed (unit x 25) using the document's stated rule; they were not read from the page.",
+    "Line 1 is not registered at destination ('No - waiver requested')."
+  ]
+}

@@ -1,0 +1,333 @@
+{
+  "document_type": "price_list",
+  "contains_prices": true,
+  "supplier": {
+    "name": "Highveld Generics (Pty) Ltd.",
+    "country": "ZA",
+    "contact_name": "Thabo Mokoena",
+    "contact_email": "thabo@highveldgenerics.co.za"
+  },
+  "quotation_ref": "HG-Q26-0137",
+  "buyer_reference": "AXMED-RFQ-2026-0260",
+  "document_date": "2026-06-13",
+  "valid_until": "2026-09-11",
+  "currency": "ZAR",
+  "incoterm": "DAP",
+  "named_place": "Lusaka",
+  "payment_terms": "30 days from statement, prices exclude 15% VAT",
+  "lines": [
+    {
+      "line_no": null,
+      "product_name": "Highketa 50",
+      "inn": "Ketamine",
+      "strength": "50 mg/mL, 10 mL",
+      "dosage_form": "Solution for injection",
+      "uom": "vial",
+      "units_per_pack": 1,
+      "packaging": "Glass vial, carton",
+      "price_per_pack": 24.591,
+      "price_per_uom": 24.591,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 100,
+          "max_packs": 999,
+          "price_per_pack": 24.591
+        },
+        {
+          "min_packs": 1000,
+          "max_packs": 4999,
+          "price_per_pack": 23.051
+        },
+        {
+          "min_packs": 5000,
+          "max_packs": null,
+          "price_per_pack": 20.427
+        }
+      ],
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 1000,
+      "lead_time_days": 30,
+      "cold_chain": false,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Highketa 50",
+        "inn": "Ketamine",
+        "strength": "50 mg/mL, 10 mL",
+        "dosage_form": "Solution for injection",
+        "units_per_pack": "1",
+        "uom": "vial",
+        "packaging": "Glass vial, carton",
+        "price_per_pack": "24.591",
+        "price_tiers": "100 | 24.591 | 1000 | 23.051 | 5000 | 20.427",
+        "currency": "Currency | ZAR",
+        "moq_packs": "1000",
+        "lead_time_days": "30",
+        "cold_chain": "No"
+      },
+      "illegible": [],
+      "notes": [
+        "Item code HIG-KETAMINE",
+        "MOQ 1000 packs is above the Tier 1 start of 100 packs. The 12% surcharge for orders below MOQ may apply."
+      ]
+    },
+    {
+      "line_no": null,
+      "product_name": "Highrif 150",
+      "inn": "Rifampicin + Isoniazid",
+      "strength": "150 mg / 75 mg",
+      "dosage_form": "Film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 84,
+      "packaging": "HDPE bottle",
+      "price_per_pack": 77.07,
+      "price_per_uom": 0.9175,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 200,
+          "max_packs": 999,
+          "price_per_pack": 77.07
+        },
+        {
+          "min_packs": 1000,
+          "max_packs": 3999,
+          "price_per_pack": 72.634
+        },
+        {
+          "min_packs": 4000,
+          "max_packs": null,
+          "price_per_pack": 64.097
+        }
+      ],
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 20000,
+      "lead_time_days": 75,
+      "cold_chain": false,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Highrif 150",
+        "inn": "Rifampicin + Isoniazid",
+        "strength": "150 mg / 75 mg",
+        "dosage_form": "Film-coated tablet",
+        "units_per_pack": "84",
+        "uom": "tablet",
+        "packaging": "HDPE bottle",
+        "price_per_pack": "77.07",
+        "price_tiers": "200 | 77.07 | 1000 | 72.634 | 4000 | 64.097",
+        "currency": "Currency | ZAR",
+        "moq_packs": "20000",
+        "lead_time_days": "75",
+        "cold_chain": "No"
+      },
+      "illegible": [],
+      "notes": [
+        "Item code HIG-RH_150_7",
+        "MOQ of 20000 packs is far above every tier threshold (the highest is 4000). It may actually be a unit count. Please check.",
+        "price_per_uom is derived as 77.07 / 84."
+      ]
+    },
+    {
+      "line_no": null,
+      "product_name": "Efaex 600",
+      "inn": "Efavirenz",
+      "strength": "600 mg",
+      "dosage_form": "Film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 30,
+      "packaging": "PVC/Alu blister",
+      "price_per_pack": 26.169,
+      "price_per_uom": 0.8723,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 500,
+          "max_packs": 4999,
+          "price_per_pack": 26.169
+        },
+        {
+          "min_packs": 5000,
+          "max_packs": 24999,
+          "price_per_pack": 23.966
+        },
+        {
+          "min_packs": 25000,
+          "max_packs": null,
+          "price_per_pack": 22.634
+        }
+      ],
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 5000,
+      "lead_time_days": 28,
+      "cold_chain": false,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Efaex 600",
+        "inn": "Efavirenz",
+        "strength": "600 mg",
+        "dosage_form": "Film-coated tablet",
+        "units_per_pack": "30",
+        "uom": "tablet",
+        "packaging": "PVC/Alu blister",
+        "price_per_pack": "26.169",
+        "price_tiers": "500 | 26.169 | 5000 | 23.966 | 25000 | 22.634",
+        "currency": "Currency | ZAR",
+        "moq_packs": "5000",
+        "lead_time_days": "28",
+        "cold_chain": "No"
+      },
+      "illegible": [],
+      "notes": [
+        "Item code HIG-EFAVIREN",
+        "MOQ 5000 packs is the same as the Tier 2 start, so Tier 1 is below MOQ and the 12% surcharge may apply.",
+        "price_per_uom is derived as 26.169 / 30."
+      ]
+    },
+    {
+      "line_no": null,
+      "product_name": "Ferex 60",
+      "inn": "Ferrous sulfate + Folic acid",
+      "strength": "60 mg / 0.4 mg",
+      "dosage_form": "Tablet",
+      "uom": "tablet",
+      "units_per_pack": 30,
+      "packaging": "Alu-Alu blister",
+      "price_per_pack": 4.95,
+      "price_per_uom": 0.165,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 500,
+          "max_packs": 2499,
+          "price_per_pack": 4.95
+        },
+        {
+          "min_packs": 2500,
+          "max_packs": 9999,
+          "price_per_pack": 4.374
+        },
+        {
+          "min_packs": 10000,
+          "max_packs": null,
+          "price_per_pack": 3.907
+        }
+      ],
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 5000,
+      "lead_time_days": 42,
+      "cold_chain": false,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Ferex 60",
+        "inn": "Ferrous sulfate + Folic acid",
+        "strength": "60 mg / 0.4 mg",
+        "dosage_form": "Tablet",
+        "units_per_pack": "30",
+        "uom": "tablet",
+        "packaging": "Alu-Alu blister",
+        "price_per_pack": "4.95",
+        "price_tiers": "500 | 4.95 | 2500 | 4.374 | 10000 | 3.907",
+        "currency": "Currency | ZAR",
+        "moq_packs": "5000",
+        "lead_time_days": "42",
+        "cold_chain": "No"
+      },
+      "illegible": [],
+      "notes": [
+        "Item code HIG-IRON_FOL",
+        "MOQ 5000 packs is above the Tier 1 and Tier 2 starting quantities, so the 12% surcharge for orders below MOQ may apply.",
+        "price_per_uom is derived as 4.95 / 30."
+      ]
+    },
+    {
+      "line_no": null,
+      "product_name": "Highzith 500",
+      "inn": "Azithromycin",
+      "strength": "500 mg",
+      "dosage_form": "Film-coated tablet",
+      "uom": "tablet",
+      "units_per_pack": 3,
+      "packaging": "PVC/Alu blister",
+      "price_per_pack": 10.632,
+      "price_per_uom": 3.544,
+      "price_basis": "tiered",
+      "discount_pct": null,
+      "price_tiers": [
+        {
+          "min_packs": 200,
+          "max_packs": 1999,
+          "price_per_pack": 10.632
+        },
+        {
+          "min_packs": 2000,
+          "max_packs": 9999,
+          "price_per_pack": 10.003
+        },
+        {
+          "min_packs": 10000,
+          "max_packs": null,
+          "price_per_pack": 9.452
+        }
+      ],
+      "currency": "ZAR",
+      "quantity": null,
+      "extended_amount": null,
+      "moq_packs": 5000,
+      "lead_time_days": 42,
+      "cold_chain": false,
+      "superseded": null,
+      "evidence": {
+        "product_name": "Highzith 500",
+        "inn": "Azithromycin",
+        "strength": "500 mg",
+        "dosage_form": "Film-coated tablet",
+        "units_per_pack": "3",
+        "uom": "tablet",
+        "packaging": "PVC/Alu blister",
+        "price_per_pack": "10.632",
+        "price_tiers": "200 | 10.632 | 2000 | 10.003 | 10000 | 9.452",
+        "currency": "Currency | ZAR",
+        "moq_packs": "5000",
+        "lead_time_days": "42",
+        "cold_chain": "No"
+      },
+      "illegible": [],
+      "notes": [
+        "Item code HIG-AZITHROM",
+        "MOQ 5000 packs is above the Tier 1 and Tier 2 starting quantities, so the 12% surcharge for orders below MOQ may apply.",
+        "price_per_uom is derived as 10.632 / 3."
+      ]
+    }
+  ],
+  "evidence": {
+    "quotation_ref": "Reference | HG-Q26-0137",
+    "buyer_reference": "Buyer ref | AXMED-RFQ-2026-0260",
+    "document_date": "Valid from | 2026-06-13T00:00:00",
+    "valid_until": "to | 2026-09-11T00:00:00",
+    "currency": "Currency | ZAR",
+    "incoterm": "Delivery | DAP Lusaka",
+    "named_place": "Delivery | DAP Lusaka",
+    "payment_terms": "Payment | 30 days from statement, prices exclude 15% VAT",
+    "supplier": "Highveld Generics (Pty) Ltd. - Institutional Price List; Name: Thabo Mokoena; Email: thabo@highveldgenerics.co.za; Address: 12 Isando Road, Isando, Kempton Park 1600, Gauteng, South Africa",
+    "document_type": "Institutional Price List"
+  },
+  "warnings": [
+    "document_date was taken from the 'Valid from' date (2026-06-13), which matches the file name. No separate issue date is printed.",
+    "All lines have tiered pricing. price_per_pack and price_per_uom use Tier 1 (the lowest quantity), and price_per_uom is derived as the pack price divided by the pack size.",
+    "On every line the stated MOQ is higher than the Tier 1 starting quantity. The Terms sheet says orders below MOQ attract a 12% surcharge on the unit price, so Tier 1 prices may carry that surcharge or not apply at all. Please check this with the supplier.",
+    "Highrif 150 (HIG-RH_150_7): the MOQ of 20000 packs is far above the Tier 3 threshold of 4000 packs. The supplier may have meant tablets rather than packs. Please check.",
+    "Prices exclude 15% VAT."
+  ]
+}
