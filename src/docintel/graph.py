@@ -55,6 +55,9 @@ from docintel.verify import Sources, build_records, failed_record
 
 log = logging.getLogger(__name__)
 _USAGE_LOCK = threading.Lock()
+# About 100k tokens: a 2,000-row price list would otherwise blow the context and the bill.
+# Chunked extraction is the proper answer and is on the backlog; until then the cut is flagged.
+MAX_MODEL_CHARS = 400_000
 
 SKIP_NAMES = {"truth.json", "manifest.json", "README.md", ".DS_Store", "Thumbs.db"}
 VISION_FLAGS = {"no_text_layer", "scanned_with_text_layer", "text_layer_untrusted"}
@@ -149,6 +152,15 @@ class Pipeline:
         schema, or a backend that gives up, becomes a flagged empty result so the run
         finishes and the reviewer sees why this file produced nothing.
         """
+        text = transcript if transcript is not None else doc.text
+        if len(text) > MAX_MODEL_CHARS:
+            doc.flag(
+                "truncated_for_model",
+                Severity.WARNING,
+                f"{len(text):,} characters of text; only the first {MAX_MODEL_CHARS:,} were read. "
+                "Lines beyond that point are not in the table.",
+            )
+            transcript = text[:MAX_MODEL_CHARS]
         try:
             result = self.extractor.extract(doc, transcript)
             if self.settings.extractor == "model":

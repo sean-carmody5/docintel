@@ -183,3 +183,12 @@ def test_live_extractions_and_transcripts_are_recorded_and_replay(tmp_path: Path
     second = run(Pipeline(replay), scan, thread_id="t9")["values"]["final_records"]
     assert [r["product_name"] for r in second] == [r["product_name"] for r in first]
     assert any("recorded by an earlier live run" in f["detail"] for r in second for f in r["flags"])
+
+
+def test_a_huge_document_is_cut_for_the_model_and_says_so(tmp_path: Path) -> None:
+    big = tmp_path / "huge_pricelist.txt"
+    line = "Paracetamol 500 mg tablet USD 0.0091 per tablet" + chr(10)
+    big.write_text("Quotation" + chr(10) + line * 20000, encoding="utf-8")
+    result = run(Pipeline(_settings(tmp_path / "out")), big, thread_id="t10")
+    records = result["values"]["final_records"]
+    assert any(f["code"] == "truncated_for_model" for r in records for f in r["flags"])
