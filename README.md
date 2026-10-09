@@ -131,6 +131,7 @@ PLAN.md            the design as built, and what was planned but not
 
 ## Documents
 
+- [deliverables/](deliverables/): the five deliverables and where each one is.
 - [docs/brief.md](docs/brief.md): the task as set.
 - [docs/walkthrough.md](docs/walkthrough.md): a run from start to finish, as the user sees it.
 - [docs/how-it-works.md](docs/how-it-works.md): the mechanism, stage by stage, in two pages.
