@@ -248,3 +248,12 @@ def test_evidence_sent_as_numbers_is_kept_as_text() -> None:
         }
     )
     assert result.lines[0].evidence == {"units_per_pack": "90", "price_per_uom": "0.5"}
+
+
+def test_a_currency_stated_as_a_symbol_is_grounded() -> None:
+    from docintel.verify.confidence import Sources, Weights, score_field
+
+    src = Sources(primary="| Material | Minimum price (US$) | Maximum price (US$) |")
+    c = score_field("currency", "USD", "US$", src, [], False, Weights())
+    assert c.tier == "high" and "stated as us$" in c.reasons
+    assert score_field("currency", "EUR", None, src, [], False, Weights()).tier != "high"

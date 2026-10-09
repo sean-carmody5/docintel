@@ -81,9 +81,30 @@ def _tier(score: float, w: Weights) -> Tier:
     return "low"
 
 
+CURRENCY_ALIASES = {
+    "USD": ("us$", "u.s.$", "us dollar", "dollars"),
+    "EUR": ("€", "euro", "euros"),
+    "GBP": ("£", "sterling", "pounds"),
+    "ZAR": ("rand",),
+    "PHP": ("₱", "php", "peso", "pesos"),
+    "INR": ("₹", "rupee", "rupees"),
+    "KES": ("ksh", "kshs", "shilling", "shillings"),
+    "TZS": ("tsh", "tshs"),
+    "GHS": ("gh₵", "cedi", "cedis"),
+    "NGN": ("₦", "naira"),
+    "JOD": ("dinar", "dinars"),
+    "PKR": ("rs.", "rupee", "rupees"),
+}
+
+
 def _found_anywhere(name: str, value: object, sources: Sources) -> tuple[bool, str | None]:
     if value_in_text(value, sources.primary):
         return True, None
+    if name == "currency" and isinstance(value, str):
+        # Documents say "US$" or "€" far more often than the ISO code the schema asks for.
+        for alias in CURRENCY_ALIASES.get(value.upper(), ()):
+            if value_in_text(alias, sources.primary):
+                return True, f"stated as {alias}"
     if (
         name == "lead_time_days"
         and isinstance(value, int)
