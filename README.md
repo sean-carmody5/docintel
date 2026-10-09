@@ -109,7 +109,7 @@ Loaders are chosen by what the file contains, not what it is called. A new forma
 | Provided pack, live | 8 documents through Sonnet 5.5 | Hand-written fixtures | 37 lines in 76 s; key values agree with the fixtures except where the model was more careful than the fixture writer |
 | Held-out synthetic, live | Same generator, different seed, never opened while tuning | Exact | Sonnet 5.5: 63 of 66, recall 0.97, 2 wrong at high confidence (the same cropped-photo digit). Haiku 4.5: 54 of 66, 14 wrong at high confidence |
 | Model comparison | Synthetic set: Sonnet 5.5, Haiku 4.5, Opus 5.5 | Exact | Haiku 60 of 66, 4 wrong at high confidence, 12 invented lines, a quarter of Sonnet's cost. Opus 60 of 66, 5 wrong at high confidence (4 are a pack size written into the strength), nearly twice Sonnet's cost. About 2, 8 and 14 cents a document from recorded tokens with assumed prices ([evals/reports/cost.md](evals/reports/cost.md)) |
-| Public | 37 real price lists and RFQ forms | None | Robustness only |
+| Public | 37 real price lists and RFQ forms, fetched on demand, licences listed | None | Robustness only |
 
 Cases are judged by the behaviour expected of them (extract, flag, degrade honestly, refuse), not by accuracy alone. CI replays the whole synthetic set through the pipeline and scores it on every push, alongside 411 offline tests. Details in [PLAN.md](PLAN.md#data-and-evaluation) and [evals/reports](evals/reports).
 

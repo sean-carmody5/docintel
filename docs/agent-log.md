@@ -176,4 +176,4 @@ Replayed through the final pipeline, free: Haiku main set 60 of 66 with 4 wrong 
 
 **Opus 5.5 (Seán said yes).** 60 of 66, recall 0.986, one invented line, five wrong at high confidence, about $8.80. Four of the five are a pack size written into the strength, a convention the schema leaves ambiguous and the data-model section of the write-up now says so. Sonnet stays the default on quality and cost. Recordings committed; cost table updated.
 
-**Repository size (Seán's concern).** 741 files and 12 MB, half of it recordings and fixtures whose job is done. Agent proposed dropping the held-out recordings, the three hand-written agent sets, the committed public documents and the raw reports, about 430 files and 5 MB after; awaiting Seán's yes.
+**Repository size (Seán's concern).** 741 files and 12 MB, half of it recordings and fixtures whose job is done. Agent proposed dropping the held-out recordings, the three hand-written agent sets, the committed public documents and the raw reports, Seán said yes: 741 files to 548, the public documents now fetched on demand only, screenshots recompressed, one reports README in place of the raw and duplicate reports.
