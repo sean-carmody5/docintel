@@ -17,9 +17,9 @@ flowchart LR
   H --> A[("<b>approved.csv</b>")]
 ```
 
-## The output table
+## The output table (deliverable 2)
 
-[deliverables/provided_output/](deliverables/provided_output/) holds the result of running the eight provided documents through Sonnet 5.5: `records.csv` (one row per quotation line with values, evidence quotes, per-field confidence with reasons, flags and source references), `review_report.md`, `conflicts.json`, and `review.html` with its page previews, which opens from disk.
+**[deliverables/provided_output/records.csv](deliverables/provided_output/records.csv)** is the table the brief asks for: the records extracted from the eight provided documents, one row per quotation line, with each value's evidence quote, per-field confidence and reasons, flags, and the source document and locator. It comes from a live Sonnet 5.5 run. Beside it, views of the same records: `review_report.md`, `conflicts.json`, and `review.html` with its page previews, which opens from disk.
 
 ## Try it
 
